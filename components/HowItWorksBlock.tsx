@@ -10,21 +10,23 @@ const HowItWorksBlock = (props: any) => {
   return (
     <Flex
       as={"li"}
-      flexDirection={"column"}
-      bg={theme.colors.gray1}
+      flexDirection={["column", "row"]}
       sx={{
-        border: `0.1rem solid ${theme.colors.gray10}`,
+        border: [`0.1rem solid ${theme.colors.cardLine}`, 'none'],
         borderBottom: "none",
         "&:last-child": {
-          borderBottom: `0.1rem solid ${theme.colors.gray10}`,
+          borderBottom: [`0.1rem solid ${theme.colors.cardLine}`, 'none'],
         },
       }}
     >
       <Flex
         className={"hiw-heading"}
         sx={{
-          height: "9.6rem",
-          borderBottom: `0.1rem solid ${theme.colors.gray10}`,
+          height: ['9.6rem', isOpen ? 'auto' : '9.6rem'],
+          borderBottom: [
+            `0.1rem solid ${theme.colors.cardLine}`,
+            'none'
+          ],
         }}
       >
         <Flex
@@ -32,9 +34,13 @@ const HowItWorksBlock = (props: any) => {
           justifyContent={"center"}
           alignItems={"center"}
           fontSize={"4.8rem"}
+          height={['auto', '9.6rem']}
           fontWeight={700}
+          bg={theme.colors.cardBackground}
           sx={{
-            borderRight: `0.1rem solid ${theme.colors.gray10}`,
+            border: ['none', `0.1rem solid ${theme.colors.cardLine}`],
+            borderBottom: ['none', isOpen ? `0.1rem solid ${theme.colors.cardLine}` : 'none'],
+            borderRight: 'none !important'
           }}
         >
           {props.index + 1}.
@@ -43,18 +49,29 @@ const HowItWorksBlock = (props: any) => {
           alignItems={"center"}
           fontSize={"2.8rem"}
           fontWeight={700}
+          bg={theme.colors.cardBackground}
           paddingLeft={"3.2rem"}
+          width={['auto', '24.8rem']}
+          height={['auto', isOpen ? '14.4rem' : 'auto']}
+          sx={{
+            border: ['none', `0.1rem solid ${theme.colors.cardLine}`],
+            borderLeft: [`0.1rem solid ${theme.colors.cardLine}`, `0.1rem solid ${theme.colors.cardLine}`]
+          }}
         >
           {props.content.heading}
         </Flex>
       </Flex>
-      <Flex className={"hiw-body"}>
+      <Flex className={"hiw-body"} width={['auto', '36rem']} bg={theme.colors.cardBackground} sx={{
+        borderLeft: ['none', `0.1rem solid ${theme.colors.cardLine}`],
+        flexDirection: 'column'
+      }}>
         <Flex
           className={"hiw-trigger"}
-          p={"2.4rem"}
+          p={["2.4rem", "0 2.4rem"]}
           justifyContent={"space-between"}
           alignItems={"center"}
           width={"100%"}
+          height={'9.6rem'}
         >
           <Text fontSize={"1.6rem"} lineHeight={"2.4rem"} as={"p"}>
             {props.content.triggerLabel}
@@ -72,7 +89,7 @@ const HowItWorksBlock = (props: any) => {
               position: "relative",
               borderRadius: "10rem",
               ml: "1.6rem",
-              '.plus-line:nth-child(2)': {
+              '.plus-line:nth-of-type(2)': {
                 transform: isOpen ? 'rotate(180deg)' : 'rotate(90deg)'
               }
             }}
@@ -101,7 +118,17 @@ const HowItWorksBlock = (props: any) => {
             />
           </Button>
         </Flex>
-        <Flex className={"hiw-content"}></Flex>
+        <Flex 
+          className={"hiw-content"} 
+          flexDirection={'column'} 
+          sx={{
+            maxHeight: isOpen ? 'auto' : '0',
+            overflowY: 'hidden',
+            p: isOpen ? '2.4rem' : '0'
+          }}
+        >
+          {props.content.content}
+        </Flex> 
       </Flex>
     </Flex>
   );

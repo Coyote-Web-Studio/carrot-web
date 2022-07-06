@@ -7,8 +7,27 @@ export default {
     green5: "#7DF882",
     yellow6: "#F6FB18",
     gray1: "#F5F5F5",
+    gray2: "#E9E9E9",
+    gray3: '#CCCCCC',
     gray9: "#272727",
     gray10: "#0B0B0B",
+
+    background: "#FEFEFE",
+    logoColor: "#0B0B0B",
+    textColor: "#0B0B0B",
+    gridColor: "#F5F5F5",
+
+    customerCommentBackground: "#0B0B0B",
+    customerCommentGrid: "#272727",
+    customerCommentText: "#F5F5F5",
+
+    protocolCardBackground: '#F5F5F5',
+    protocolCardLine: '#0B0B0B',
+
+    cardBackground: '#F5F5F5',
+    cardText: '#0B0B0B',
+    cardLine: '#0B0B0B',
+    cardButtonHover: '#E9E9E9'
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -32,7 +51,7 @@ export default {
   variants: {},
   boxSizes: {
     defaultBox: {
-      width: ["calc(100vw - 4rem)", "calc(100vw - 4rem)", "1248px", "1600px"],
+      width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "1248px", "1600px"],
       mx: "auto",
     },
     reducedBox: {
@@ -40,7 +59,7 @@ export default {
       mx: "auto",
     },
     expandedBox: {
-      width: ["calc(100vw - 2rem)", "calc(100vw - 2rem)", "100%"],
+      width: ["calc(100vw - 2rem)", "calc(100vw - 4.8rem)", "100%"],
       mx: "auto",
     },
   },
@@ -57,4 +76,7 @@ export default {
       bg: "primary",
     },
   },
+  misc: {
+    invertedProtocolLogo: false
+  }
 };

@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
   body,
   html {
+    overflow-x: hidden;
     padding: 0;
     margin: 0;
     font-size: 10px;
@@ -16,8 +17,10 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+
   * {
     box-sizing: border-box;
+    color: ${props => props.theme.colors.textColor};
   }   
 
   ul {

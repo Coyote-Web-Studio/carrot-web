@@ -3,6 +3,8 @@ import styled, { useTheme } from 'styled-components';
 import GridBackground from './GridBackground';
 import Button from './Button';
 import HowItWorksBlock from './HowItWorksBlock';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css'
 
 const MainContent = (props : any) => {
   interface ContentBlock {
@@ -38,8 +40,8 @@ const MainContent = (props : any) => {
           <Text as={'p'}>
             Use the campaign creation interface to set your campaign's goal, collateral, duration, and more.
           </Text>
-          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'}/>
-          <Text>
+          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'} my={'2rem'}/>
+          <Text as={'p'}>
             Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
           </Text>
         </>
@@ -52,8 +54,8 @@ const MainContent = (props : any) => {
           <Text as={'p'}>
             Issue reward tokens to your community
           </Text>
-          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'}/>
-          <Text>
+          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'} my={'2rem'}/>
+          <Text as={'p'}>
             Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
           </Text>
         </>
@@ -66,8 +68,8 @@ const MainContent = (props : any) => {
           <Text as={'p'}>
             Use the campaign creation interface to set your campaign's goal, collateral, duration, and more.
           </Text>
-          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'}/>
-          <Text>
+          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'} my={'2rem'}/>
+          <Text as={'p'}>
             Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
           </Text>
         </>
@@ -149,7 +151,7 @@ const MainContent = (props : any) => {
 
   return (
     <Flex flexDirection={"column"} sx={{ position: "relative" }} mt={"2.4rem"}>
-      <GridBackground rows={200} />
+      <GridBackground />
       {/* BREAKDOWN */}
       <Flex
         flexDirection={"column"}
@@ -162,7 +164,9 @@ const MainContent = (props : any) => {
       >
         {MainContent.map((contentBlock: ContentBlock, index: number) => (
           <Flex
-            flexDirection={"column"}
+            flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
+            justifyContent={['auto', 'space-between']}
+            alignItems={['auto', 'center']}
             sx={{
               mb: "4.8rem",
               "&:last-child": {
@@ -170,13 +174,15 @@ const MainContent = (props : any) => {
               },
             }}
           >
-            <Image src={contentBlock.image} mb={"2rem"} />
-            <Text as="h3" mb={"1.8rem"}>
-              {contentBlock.heading}
-            </Text>
-            <Text as="p" sx={{ ...theme.text.paragraph }}>
-              {contentBlock.content}
-            </Text>
+            <Image src={contentBlock.image} mb={["2rem", "0"]} width={['100%', 'calc(50% - 1rem)']} />
+            <Flex flexDirection={'column'} width={['100%', 'calc(50% - 1rem)']}>
+              <Text as="h3" mb={"1.8rem"}>
+                {contentBlock.heading}
+              </Text>
+              <Text as="p" sx={{ ...theme.text.paragraph }}>
+                {contentBlock.content}
+              </Text>
+            </Flex>
           </Flex>
         ))}
       </Flex>
@@ -207,54 +213,82 @@ const MainContent = (props : any) => {
         <Text as={'h2'} mb={'3.6rem'}>
           Succesful Campaigns
         </Text>
-        <Flex as={'ul'} flexDirection={'column'} mb={'1.6rem'}>
-          {SuccesfullCampaigns.map((campaign, index) => (
-            <Flex flexDirection={'column'} bg={theme.colors.gray1} sx={{
-              border: `1px solid ${theme.colors.gray10}`,
-              borderRadius: '1.6rem',
-              overflow: 'hidden',
-              width: '100%',
-              mb: '2.4rem',
-              '&:last-child': {
-                mb: 0
+        <Flex as={'ul'} flexDirection={['column', 'row']} mb={'1.6rem'}>
+          <Splide options={{
+            width: '100%',
+            pagination: false,
+            breakpoints: {
+              360: {
+                perPage: 1
+              },
+              768: {
+                perPage: 2,
+                gap: '2rem'
+              },
+              1440: {
+                perPage: 3,
+                gap: '2rem'
               }
-            }}>
-              <Flex className={'campaign-header'} 
-                sx={{
-                  borderBottom: `0.1rem solid ${theme.colors.gray10}`,
-                  height: '6.4rem'
-                }}
-              >
-                <Flex sx={{justifyContent: 'center', alignItems: 'center', borderRight: `0.1rem solid ${theme.colors.gray10}`, width: '7rem'}}>
-                  <Box sx={{bg: theme.colors.blue6, width: '2.4rem', height: '2.4rem', borderRadius: '2.4rem'}}
-                  />
-                </Flex>
-                <Flex alignItems='center' pl='2rem'>
-                  <Text as={'p'}>
-                    {campaign.heading}
-                  </Text>
-                </Flex>
-              </Flex>
-              <Flex className={'campaign-body'} p={'2.4rem'} flexDirection={'column'}>
-                <Text as={'p'} mb={'2.4rem'}>
-                  {campaign.content}
-                </Text>
-                <Flex flexDirection={'column'}>
-                  <Flex justifyContent={'space-between'}>
-                    <Text as={'p'} fontSize={'1.2rem'}>REWARDS</Text>
-                    <Text as={'p'} fontSize={'1.2rem'}>{campaign.rewards}</Text>
+            }}
+          }>
+            {SuccesfullCampaigns.map((campaign, index) => (
+              <SplideSlide>
+                <Flex flexDirection={['column']} bg={theme.colors.cardBackground} sx={{
+                  border: `1px solid ${theme.colors.cardLine}`,
+                  borderRadius: '1.6rem',
+                  overflow: 'hidden',
+                  width: ['100%', '100%'],
+                  mb: ['2.4rem', '4.8rem'],
+                }}>
+                  <Flex className={'campaign-header'} 
+                    sx={{
+                      borderBottom: `0.1rem solid ${theme.colors.cardLine}`,
+                      height: '6.4rem'
+                    }}
+                  >
+                    <Flex sx={{justifyContent: 'center', alignItems: 'center', borderRight: `0.1rem solid ${theme.colors.gray10}`, width: '7rem'}}>
+                      <Box sx={{bg: theme.colors.blue6, width: '2.4rem', height: '2.4rem', borderRadius: '2.4rem'}}
+                      />
+                    </Flex>
+                    <Flex alignItems='center' pl='2rem'>
+                      <Text as={'p'}>
+                        {campaign.heading}
+                      </Text>
+                    </Flex>
                   </Flex>
-                  <Flex justifyContent={'space-between'}>
-                    <Text as={'p'} fontSize={'1.2rem'}>TIME LEFT</Text>
-                    <Text as={'p'} fontSize={'1.2rem'}>{campaign.timeLeft}</Text>
+                  <Flex className={'campaign-body'} p={'2.4rem'} flexDirection={'column'}>
+                    <Text as={'p'} mb={'2.4rem'}>
+                      {campaign.content}
+                    </Text>
+                    <Flex flexDirection={'column'}>
+                      <Flex justifyContent={'space-between'}>
+                        <Text as={'p'} fontSize={'1.2rem'}>REWARDS</Text>
+                        <Text as={'p'} fontSize={'1.2rem'}>{campaign.rewards}</Text>
+                      </Flex>
+                      <Flex justifyContent={'space-between'}>
+                        <Text as={'p'} fontSize={'1.2rem'}>TIME LEFT</Text>
+                        <Text as={'p'} fontSize={'1.2rem'}>{campaign.timeLeft}</Text>
+                      </Flex>
+                    </Flex>
                   </Flex>
+                  <RBButton sx={{
+                    height: '6.4rem', 
+                    borderTop: `0.1rem solid ${theme.colors.cardLine}`, 
+                    bg: theme.colors.cardBackground, 
+                    borderRadius: 0, 
+                    fontSize: '1.6rem', 
+                    color: theme.colors.cardText,
+                    '&:hover': {
+                      background: theme.colors.cardButtonHover
+                    }
+                  }}
+                  >
+                    ↳ see campaign
+                  </RBButton>
                 </Flex>
-              </Flex>
-              <RBButton sx={{height: '6.4rem', borderTop: `0.1rem solid ${theme.colors.gray10}`, bg: 'none', borderRadius: 0, fontSize: '1.6rem', color: theme.colors.gray10}}>
-                ↳ see campaign
-              </RBButton>
-            </Flex>
-          ))}
+              </SplideSlide>
+            ))}
+          </Splide>
         </Flex>
         <Button>
           SEE ALL CAMPAIGNS
@@ -267,7 +301,7 @@ const MainContent = (props : any) => {
           pt: '2.4rem',
           flexDirection: 'column'
         }}>
-          <Text as="h2" mb={'2.4rem'}>
+          <Text as="h2" mb={'2.4rem'} sx={{color: theme.colors.gray10}}>
             Carrot in<br/> numbers
           </Text>
           <Flex as={'ul'} flexDirection={'column'}>
@@ -279,8 +313,8 @@ const MainContent = (props : any) => {
                   borderBottom: `0.1rem solid ${theme.colors.gray10}`,
                 }
               }}>
-                <Text fontSize={'4rem'} fontWeight={700}>{item.value}</Text>
-                <Text as={'p'}>{item.label}</Text>
+                <Text fontSize={'4rem'} fontWeight={700} sx={{color: theme.colors.gray10}}>{item.value}</Text>
+                <Text sx={{color: theme.colors.gray10}} as={'p'}>{item.label}</Text>
               </Flex>
             ))}
           </Flex>
@@ -300,19 +334,21 @@ const MainContent = (props : any) => {
               {Protocols.map((protocol, index) => (
                 <Flex as={'li'} width={[1/2]} height={'calc(50vw - 2rem)'} alignItems={'center'} justifyContent={'center'}
                   sx={{
-                    border: `0.1rem solid ${theme.colors.gray10}`,
+                    border: `0.1rem solid ${theme.colors.protocolCardLine}`,
                     borderRight: 'none',
                     borderBottom: 'none',
-                    background: 'white',
-                    '&:nth-child(2), &:last-child': {
-                      borderRight: `0.1rem solid ${theme.colors.gray10}`,
+                    background: theme.colors.protocolCardBackground,
+                    '&:nth-of-type(2), &:last-child': {
+                      borderRight: `0.1rem solid ${theme.colors.protocolCardLine}`,
                     },
-                    '&:nth-child(3), &:last-child': {
-                      borderBottom: `0.1rem solid ${theme.colors.gray10}`,
+                    '&:nth-of-type(3), &:last-child': {
+                      borderBottom: `0.1rem solid ${theme.colors.protocolCardLine}`,
                     }
                   }}>
                   <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
-                    <Image src={protocol.logo} />
+                    <Image src={protocol.logo} sx={{
+                      filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset'
+                    }}/>
                     <Text as={'p'}>{protocol.label}</Text>
                   </Flex>
                 </Flex>
@@ -320,19 +356,19 @@ const MainContent = (props : any) => {
             </Flex>
         </Flex>
       </Flex>
-      {/*  */}
-      <Flex sx={{zIndex: 1, position: 'relative', bg: theme.colors.gray10, borderRadius: '1.6rem', pb: '6.4rem', pt: '8.7rem', mb: '4.8rem'}}>
-        <GridBackground rows={20} color={theme.colors.gray9} top={'6.4rem'} />
+      {/* CUSTOMER REVIEW */}
+      <Flex sx={{zIndex: 1, position: 'relative', bg: theme.colors.customerCommentBackground, borderRadius: '1.6rem', pb: '6.4rem', pt: '8.7rem', mb: '4.8rem'}}>
+        <GridBackground trimRows={3} color={theme.colors.customerCommentGrid} top={'6.4rem'} />
         <Flex sx={{
             ...theme.boxSizes.defaultBox,
             flexDirection: 'column',
             position: 'relative',
             zIndex: 1
         }}>
-          <Text fontSize={'2.8rem'} mb={'3.8rem'} fontWeight={700} lineHeight={'3.8rem'} color={theme.colors.gray1}>
+          <Text fontSize={'2.8rem'} mb={'3.8rem'} fontWeight={700} lineHeight={'3.8rem'} color={theme.colors.customerCommentText}>
             “Carrot was the best project on xDAI that allowed us to deploy KPI options in the Agave incentives program. This allows us to optimize our rewards towards specific goals rather than just throw them away.”
           </Text>
-          <Text fontSize={'1.4rem'} color={theme.colors.gray1}>
+          <Text fontSize={'1.4rem'} color={theme.colors.customerCommentText}>
             — Luigi Lemon, Agave Core Contributor
           </Text>
         </Flex>

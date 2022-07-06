@@ -3,13 +3,14 @@
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import theme from './../themes/light';
+import darkTheme from './../themes/dark';
 import GlobalStyle from '../styles/global.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyle theme={theme} />
       <Component {...pageProps} />
     </ThemeProvider>
   )

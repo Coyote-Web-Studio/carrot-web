@@ -1,4 +1,4 @@
-import { Flex, Link, Text } from "rebass";
+import { Flex, Link, Text, Box } from "rebass";
 import styled, { useTheme } from "styled-components";
 import Logo from '../components/Logo';
 import GridBackground from '../components/GridBackground';
@@ -93,7 +93,9 @@ const Footer = (props: any) => {
         flexDirection: 'column'
       }}
     >
-      <GridBackground rows={4} color={theme.colors.gray9} top={"4.7rem"} />
+      <Box sx={{position: 'absolute', width: '100%', height: ['10rem', '20rem'], top: 0, left: 0}}>
+        <GridBackground color={theme.colors.gray9} top={"4.7rem"} />
+      </Box>
       <Flex sx={{ ...theme.boxSizes.defaultBox, position: "relative", flexDirection: 'column' }}>
         <Logo color={theme.colors.orange6} mb={"4.8rem"} sx={{ zIndex: 1 }} />
         <Flex as="ul" flexWrap="wrap">

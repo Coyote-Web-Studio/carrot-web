@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           Carrot | Increase your TVL, volume, price, engagement and more. Yes, on any campaign. Carrot does it all.
         </title>
       </Head>
-      <Flex flexDirection={'column'} >
+      <Flex flexDirection={'column'} bg={theme.colors.background}>
         <Navbar />
         <Hero />
         <Marquees />
