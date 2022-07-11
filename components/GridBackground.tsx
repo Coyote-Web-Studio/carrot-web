@@ -33,6 +33,10 @@ const GridBackground = (props : any) => {
             setGridSquareDivider(70);
         } 
 
+        if (window.innerWidth <= 1440) {
+            setGridSquareDivider(70);
+        } 
+
         if (gridRef.current) {
             setGridHeight(gridRef.current.getBoundingClientRect().height);
         }
@@ -42,9 +46,17 @@ const GridBackground = (props : any) => {
         updateSquares();
         window.addEventListener('resize', updateSquares);
 
+        return (
+            window.removeEventListener('resize', updateSquares)
+        )
     }, []);
 
+    useEffect(() => {
+        
+    }, [gridHeight])
+
     const getRows = (props : any) => {
+        console.log('Hello')
         if (props.rows) {
             return props.rows;
         } else if (Math.round(gridHeight / gridSquareDivider) - (props.trimRows || 0) + (props.addRows || 0 )> 0) {
@@ -58,9 +70,13 @@ const GridBackground = (props : any) => {
             position: 'absolute',
             top: props.top || 0,
             zIndex: 0,
-            left: ['1rem', '2.4rem', 'calc(50% - (134.4rem / 2))'],
+            left: [
+                '1rem', 
+                '2.4rem', 
+                'calc(50% - (100vw / 2) + 2rem)'
+            ],
             flexWrap: 'wrap',
-            // background: 'blue',
+            background: 'blue',
             height: props.rows ? 'unset' : '100%',
             flexDirection: 'column',
         }}>
@@ -84,8 +100,8 @@ const GridBackground = (props : any) => {
                                     borderBottom: '0',
                                     transformOrigin: 'center',
                                     transform: 'rotate3d(0,1,0, 90deg)',
-                                    animation: `${boxFade} 0.25s forwards`,
-                                    animationDelay: `${(i + j) * 50}ms`,
+                                    animation: props.useAnimation && `${boxFade} 0.25s forwards`,
+                                    animationDelay: props.useAnimation && `${(i + j) * 50}ms`,
                                     '&:last-child': {
                                         borderRight: `1px solid ${props.color || theme.colors.gridColor}`,
                                     }

@@ -5,6 +5,7 @@ import ThemeContext from './../context/theme';
 import GlobalStyle from '../styles/global.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import Loading from './../components/Loading';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
       <ThemeContext>
         <GlobalStyle />
+        <Loading />
         <Component {...pageProps} />
       </ThemeContext>
   )

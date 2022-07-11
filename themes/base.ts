@@ -38,7 +38,7 @@ export default {
       defaultBox: {
         width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)"],
         mx: "auto",
-        '@media screen and (min-width: 1300px)': {
+        '@media screen and (min-width: 1439px)': {
             width: '1248px'
         },
         '@media screen and (min-width: 1920px)': {
@@ -50,8 +50,14 @@ export default {
         mx: "auto",
       },
       expandedBox: {
-        width: ["calc(100vw - 2rem)", "calc(100vw - 4.8rem)", "calc(134.4rem)"],
+        width: [
+          "calc(100vw - 2rem)", 
+          "calc(100vw - 4.8rem)", 
+          "calc(100vw - 4rem)"],
         mx: "auto",
+        '@media screen and (min-width: 1439px)': {
+          width: "calc(134.4rem)",
+        },
       },
     },
     text: {

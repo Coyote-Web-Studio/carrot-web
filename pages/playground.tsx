@@ -26,7 +26,6 @@ const Playground: NextPage = () => {
         <Flex flexDirection={'column'} bg={theme.colors.background} height={'100vh'} p={'10rem'}>
             <Box>
                 <Button3D>
-                    Hello bitch asdasasd
                 </Button3D>
             </Box>
         </Flex>

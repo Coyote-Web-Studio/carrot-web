@@ -50,7 +50,7 @@ const Hero = (props : any) => {
 
     return (
         <StyledHero className="hero" sx={{position: 'relative', pb: '5.2rem'}}>
-            <GridBackground top={['0', '0', '4rem']} trimRows={1} />
+            <GridBackground top={['0', '0', '4rem']} trimRows={1} useAnimation/>
             <Flex 
                 flexDirection={['column', 'row']} 
                 justifyContent={['auto', 'space-between']}
@@ -67,7 +67,9 @@ const Hero = (props : any) => {
                         lineHeight: ['4.88rem', '4.88rem', '9.9rem'] ,
                         mb: ['1.6rem', '1.6rem', '5.2rem']
                     }}>
-                        {generateAnimatedText('Reach your goals with a Carrot')}
+                        {/* {generateAnimatedText(` */}
+                        Reach your goals with a Carrot
+                        {/* `)} */}
                     </Text>
                     <Fade>
                         <Text mb={['2.8rem', '2.4rem', '7.3rem']} sx={{
