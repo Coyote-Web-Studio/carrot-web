@@ -4,7 +4,6 @@ import styled, { useTheme } from 'styled-components';
 import Button from './Button';
 import GridBackground from './GridBackground';
 import Fade from './Fade';
-import Card from 'react-animated-3d-card';
 
 const Hero = (props : any) => {
 
@@ -52,28 +51,26 @@ const Hero = (props : any) => {
                     </Fade>
                 </Flex>
                 <Box>
-                    {/* <Card> */}
-                        <Fade>
-                            <Image 
-                                src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657037016/carrot/hero_small_kyeynt.png" 
-                                width={['100%', '31.2rem', '50rem']}
-                                sx={{
-                                    display: ['block', 'block', 'none'],
-                                    position: 'relative',
-                                    top: [0,0,'-4rem']
-                                }}  
-                            />
-                            <Image 
-                                src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657037016/carrot/hero_large_ozaddv.png" 
-                                width={['100%', '31.2rem', '50rem']}
-                                sx={{
-                                    position: 'relative',
-                                    display: ['none', 'none', 'block'],
-                                    top: [0,0,'-4rem']
-                                }}
-                            />
-                        </Fade>
-                    {/* </Card> */}
+                    <Fade>
+                        <Image 
+                            src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657037016/carrot/hero_small_kyeynt.png" 
+                            width={['100%', '31.2rem', '50rem']}
+                            sx={{
+                                display: ['block', 'block', 'none'],
+                                position: 'relative',
+                                top: [0,0,'-4rem']
+                            }}  
+                        />
+                        <Image 
+                            src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657037016/carrot/hero_large_ozaddv.png" 
+                            width={['100%', '31.2rem', '50rem']}
+                            sx={{
+                                position: 'relative',
+                                display: ['none', 'none', 'block'],
+                                top: [0,0,'-4rem']
+                            }}
+                        />
+                    </Fade>
                 </Box>
             </Flex>
         </StyledHero>
