@@ -41,7 +41,7 @@ const MainContent = (props : any) => {
       content: 
         <>
           <Text as={'p'}>
-            Use the campaign creation interface to set your campaign's goal, collateral, duration, and more.
+            Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more.
           </Text>
           <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'} my={'2rem'}/>
           <Text as={'p'}>
@@ -69,7 +69,7 @@ const MainContent = (props : any) => {
       content: 
         <>
           <Text as={'p'}>
-            Use the campaign creation interface to set your campaign's goal, collateral, duration, and more.
+            Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more.
           </Text>
           <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'} my={'2rem'}/>
           <Text as={'p'}>

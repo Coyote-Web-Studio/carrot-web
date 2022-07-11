@@ -46,7 +46,7 @@ const Button = (props : any) => {
                 pointerEvents: 'none',
                 minWidth: 'inherit',
             }}/>
-            <StyledButton children={props.children} className={'button'} sx={{
+            <StyledButton className={'button'} sx={{
                 background: theme.colors.buttonBackground,
                 height: '100%',
                 px: ['1.8rem'],
@@ -67,7 +67,9 @@ const Button = (props : any) => {
                 m: 0,
                 minWidth: 'inherit',
                 ...props.sx,
-            }}/>
+            }}>
+                {props.children}
+            </StyledButton>
         </Box>
     )
 }
