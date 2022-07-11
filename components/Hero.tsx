@@ -5,12 +5,49 @@ import Button from './Button';
 import GridBackground from './GridBackground';
 import Fade from './Fade';
 import { transparentize } from 'polished';
+import { keyframes } from '@emotion/react';
+
+const initialTextState = {
+    transform: 'rotate3d(0,1,0, 90deg)',
+    opacity: 0
+};
+
+const endTextState = {
+    transform: 'rotate3d(0,1,0, 0deg)',
+    opacity: 1
+};
 
 const Hero = (props : any) => {
 
     const heroContentRef = useRef(null);
 
+    const generateAnimatedText = (text : string) => {
+        let letterCounter = 0;
+        return (
+            text.split(' ').map((word : any, i : any) => (
+                <>
+                    <Text as={'span'} sx={{display: 'inline-block'}}>
+                        {
+                            word.split('').map((character : any, j : any) => (
+                                <Text as={'span'} sx={{
+                                    animation: `${textAnimation} 0.25s ease-out forwards`,
+                                    animationDelay: `${(++letterCounter) * 30}ms`,
+                                    display: 'inline-block',
+                                    ...initialTextState
+                                }} key={j}>
+                                    {character}
+                                </Text>
+                            ))
+                        }
+                    </Text>
+                    <Text as={'span'}>{' '}</Text>
+                </>
+            ))
+        )
+    }
+
     const theme : any = useTheme();
+
     return (
         <StyledHero className="hero" sx={{position: 'relative', pb: '5.2rem'}}>
             <GridBackground top={['0', '0', '4rem']} trimRows={1} />
@@ -25,14 +62,14 @@ const Hero = (props : any) => {
                 ref={heroContentRef}
             >
                 <Flex flexDirection={'column'} width={['100%', '32rem', '68.4rem']} justifyContent={['auto', 'center']} sx={{position: 'relative', top: [0,0,'-1.6rem']}}>
+                    <Text as="h1" sx={{
+                        fontSize: ['4.8rem', '4.8rem', '9.9rem'], 
+                        lineHeight: ['4.88rem', '4.88rem', '9.9rem'] ,
+                        mb: ['1.6rem', '1.6rem', '5.2rem']
+                    }}>
+                        {generateAnimatedText('Reach your goals with a Carrot')}
+                    </Text>
                     <Fade>
-                        <Text as="h1" sx={{
-                            fontSize: ['4.8rem', '4.8rem', '9.9rem'], 
-                            lineHeight: ['4.88rem', '4.88rem', '9.9rem'] ,
-                            mb: ['1.6rem', '1.6rem', '5.2rem']
-                        }}>
-                            Reach your goals with a Carrot
-                        </Text>
                         <Text mb={['2.8rem', '2.4rem', '7.3rem']} sx={{
                             fontSize: ['1.4rem', '1.4rem', '1.9rem'],
                             lineHeight: ['2.2rem', '2.2rem', '2.85rem'],
@@ -108,6 +145,15 @@ const Hero = (props : any) => {
         </StyledHero>
     )
 }
+const textAnimation = keyframes({
+    from: {
+        ...initialTextState
+    },
+    to: {
+        // opacity: 1,
+        ...endTextState
+    },
+})
 
 const StyledHero = styled(Flex)``;
 
