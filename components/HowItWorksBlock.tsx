@@ -112,7 +112,7 @@ const HowItWorksBlock = (props: any) => {
               borderRadius: "10rem",
               width: ["4rem", '4rem', '8rem'],
               height: ["4rem", '4rem', '8rem'],
-              minWidth: [0, 0, '8rem'],
+              minWidth: ['4rem', '4rem', '8rem'],
               position: "relative",
               ml: ["1.6rem", "1.6rem", "2.4rem"],
               '&:hover': {

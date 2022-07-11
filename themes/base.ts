@@ -11,12 +11,14 @@ export default {
       gray3: '#CCCCCC',
       gray9: "#272727",
       gray10: "#0B0B0B",
+      white: '#FFFFFF',
+      black: '#000000',
     },
     space: [0, 4, 8, 16, 32, 64, 128, 256],
     fonts: {
       body: "system-ui, sans-serif",
       heading: "inherit",
-      monospace: "Menlo, monospace",
+      monospace: "IBM Plex Mono, monospace",
     },
     fontWeights: {
       body: 400,

@@ -28,7 +28,7 @@ const GridBackground = (props : any) => {
         setWindowWidth(window.innerWidth);
 
         if (window.innerWidth >= 1440) {
-            setGridSquareDivider(75);
+            setGridSquareDivider(70);
         } 
 
         if (gridRef.current) {

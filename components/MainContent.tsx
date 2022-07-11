@@ -165,7 +165,7 @@ const MainContent = (props : any) => {
   const theme : any = useTheme();
 
   return (
-    <Flex flexDirection={"column"} sx={{ position: "relative" }} mt={"2.4rem"}>
+    <Flex flexDirection={"column"} sx={{ position: "relative" }} mt={["2.4rem", "2.4rem", "6.4rem"]}>
       <GridBackground />
       {/* BREAKDOWN */}
       <Flex
@@ -174,7 +174,7 @@ const MainContent = (props : any) => {
           ...theme.boxSizes.reducedBox,
           zIndex: 1,
         }}
-        pt={"5.2rem"}
+        pt={["2.4rem","5.2rem", "12.8rem"]}
         pb={"9.2rem"}
       >
         {MainContent.map((contentBlock: ContentBlock, index: number) => (

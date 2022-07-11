@@ -66,14 +66,25 @@ const Navbar = (props : any) => {
                     <Flex as="nav">
                         <Flex as="ul" alignItems={'center'}>
                             {NavLinks.map((link, index) => (
-                                <Link fontFamily={'IBM Plex Mono'} fontSize={['1rem', '1rem', '1.6rem']} ml={['1.6rem', '1.6rem', '3.2rem']} sx={{whiteSpace: 'nowrap'}} key={index}>
+                                <Link 
+                                    fontFamily={'IBM Plex Mono'} 
+                                    fontSize={['1rem', '1rem', '1.6rem']} 
+                                    key={index}
+                                    sx={{
+                                        ml:['1.6rem', '1.6rem', '3.2rem'],
+                                        whiteSpace: 'nowrap',
+                                        '&:first-child': {
+                                            ml: 0
+                                        }
+                                    }}
+                                >
                                     {link.label}
                                 </Link>
                             ))}
                         </Flex>
                     </Flex>
                     <Button buttonWrapperStyles={{
-                        ml: ['2.4rem', '4.8rem']
+                        ml: ['2.4rem', '2.4rem', '4.8rem']
                     }}>
                         CARROT DAPP
                     </Button>

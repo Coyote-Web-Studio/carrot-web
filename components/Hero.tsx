@@ -4,6 +4,7 @@ import styled, { useTheme } from 'styled-components';
 import Button from './Button';
 import GridBackground from './GridBackground';
 import Fade from './Fade';
+import { transparentize } from 'polished';
 
 const Hero = (props : any) => {
 
@@ -51,7 +52,38 @@ const Hero = (props : any) => {
                     </Fade>
                 </Flex>
                 <Box>
-                    <Fade>
+                    <Fade sx={{position: 'relative'}}>
+                        <Flex sx={{
+                            position: 'absolute', 
+                            bottom: '7.6rem', 
+                            zIndex: 1,
+                            height: '4.8rem',
+                            alignItems: 'center',
+                            ml: 'calc(50% - 9.6rem)',
+                            width: '19.2rem',
+                            border: `0.1rem solid ${theme.colors.gray10}`,
+                            borderRadius: '4.8rem',
+                            bg: transparentize(0.5, theme.colors.black)
+                        }}>
+                            <Flex sx={{
+                                background: theme.colors.gray10,
+                                height: '4.8rem',
+                                width: '4.8rem',
+                                borderRadius: 'inherit',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                mr: ['1.6rem']
+                            }}>
+                                <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657505776/carrot/icons/triangle_orange_yhixbu.svg" />
+                            </Flex>
+                            <Box sx={{
+                                color: theme.colors.white,
+                                fontFamily: theme.fonts.monospace,
+                                letterSpacing: '0.05rem'
+                            }}>
+                                HOW IT WORKS
+                            </Box>
+                        </Flex>
                         <Image 
                             src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657037016/carrot/hero_small_kyeynt.png" 
                             width={['100%', '31.2rem', '50rem']}

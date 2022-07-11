@@ -15,6 +15,7 @@ const CampaignCard = (props : any) => {
             height: ['38.4rem', '38.4rem', '44.8rem'],
             mb: ['2.4rem', '4.8rem']
           }}>
+            {/* HEADER */}
             <Flex className={'campaign-header'} 
               sx={{
                 borderBottom: `0.1rem solid ${theme.colors.cardLine}`,
@@ -26,36 +27,46 @@ const CampaignCard = (props : any) => {
                 />
               </Flex>
               <Flex alignItems='center' pl='2rem'>
-                <Text as={'p'} fontSize={['1.2rem', '1.2rem', '1.9rem']}>
+                <Text as={'p'} fontSize={['1.6rem', '1.6rem', '1.9rem']}>
                   {campaign.heading}
                 </Text>
               </Flex>
             </Flex>
+            {/* BODY */}
             <Flex className={'campaign-body'} p={'2.4rem'} flexDirection={'column'} flexGrow={1}>
-              <Text as={'p'} mb={'2.4rem'} fontSize={['1.2rem', '1.2rem', '1.9rem']} lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
+              <Text as={'p'} mb={'2.4rem'} fontSize={['1.6rem', '1.6rem', '1.9rem']} lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
                 {campaign.content}
               </Text>
-              <Flex flexDirection={'column'} mt={'auto'}>
+              <Flex flexDirection={'column'} mt={'auto'} fontSize={['1.6rem', '1.2rem', '1.9rem']}>
                 <Flex justifyContent={'space-between'} >
-                  <Text as={'p'} fontSize={['1.2rem', '1.2rem', '1.9rem']} 
-                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>REWARDS</Text>
-                  <Text as={'p'} fontSize={['1.2rem', '1.2rem', '1.9rem']} 
-                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>{campaign.rewards}</Text>
+                  <Text as={'p'}  
+                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
+                        REWARDS
+                    </Text>
+                    <Text as={'p'}
+                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
+                        {campaign.rewards}
+                    </Text>
                 </Flex>
                 <Flex justifyContent={'space-between'}>
-                  <Text as={'p'} fontSize={['1.2rem', '1.2rem', '1.9rem']} 
-                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>TIME LEFT</Text>
-                  <Text as={'p'} fontSize={['1.2rem', '1.2rem', '1.9rem']} 
-                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>{campaign.timeLeft}</Text>
+                  <Text as={'p'} 
+                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
+                        TIME LEFT
+                    </Text>
+                  <Text as={'p'} 
+                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
+                    {campaign.timeLeft}
+                </Text>
                 </Flex>
               </Flex>
             </Flex>
+            {/* LINK */}
             <RBButton sx={{
               height: '6.4rem', 
               borderTop: `0.1rem solid ${theme.colors.cardLine}`, 
               bg: theme.colors.cardBackground, 
               borderRadius: 0, 
-              fontSize: ['1.2rem', '1.2rem', '1.9rem'], 
+              fontSize: ['1.6rem', '1.2rem', '1.9rem'], 
               color: theme.colors.cardText,
               '&:hover': {
                 background: theme.colors.cardButtonHover
