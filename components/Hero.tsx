@@ -98,8 +98,8 @@ const Hero = (props : any) => {
                             zIndex: 1,
                             height: '4.8rem',
                             alignItems: 'center',
-                            ml: 'calc(50% - 9.6rem)',
-                            width: '19.2rem',
+                            ml: ['calc(50% - 9.6rem)','calc(50% - 9.6rem)','calc(50% - 11.1rem)'],
+                            width: ['19.2rem', '19.2rem', '22.2rem'],
                             border: `0.1rem solid ${theme.colors.gray10}`,
                             borderRadius: '4.8rem',
                             bg: transparentize(0.5, theme.colors.black)
@@ -118,7 +118,8 @@ const Hero = (props : any) => {
                             <Box sx={{
                                 color: theme.colors.white,
                                 fontFamily: theme.fonts.monospace,
-                                letterSpacing: '0.05rem'
+                                letterSpacing: '0.05rem',
+                                fontSize: ['1rem', '1.2rem', '1.6rem']
                             }}>
                                 HOW IT WORKS
                             </Box>

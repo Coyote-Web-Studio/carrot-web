@@ -27,14 +27,19 @@ const GridBackground = (props : any) => {
 
 
     const updateSquares = debounce(() => {
+        console.log('Updated')
         setWindowWidth(window.innerWidth);
 
         if (window.innerWidth >= 1440) {
-            setGridSquareDivider(70);
+            setGridSquareDivider(76);
         } 
 
         if (window.innerWidth <= 1440) {
-            setGridSquareDivider(70);
+            setGridSquareDivider(60);
+        } 
+
+        if (window.innerWidth <= 768) {
+            setGridSquareDivider(25);
         } 
 
         if (gridRef.current) {
@@ -45,18 +50,9 @@ const GridBackground = (props : any) => {
     useEffect(() => {
         updateSquares();
         window.addEventListener('resize', updateSquares);
-
-        return (
-            window.removeEventListener('resize', updateSquares)
-        )
     }, []);
 
-    useEffect(() => {
-        
-    }, [gridHeight])
-
     const getRows = (props : any) => {
-        console.log('Hello')
         if (props.rows) {
             return props.rows;
         } else if (Math.round(gridHeight / gridSquareDivider) - (props.trimRows || 0) + (props.addRows || 0 )> 0) {
@@ -71,14 +67,17 @@ const GridBackground = (props : any) => {
             top: props.top || 0,
             zIndex: 0,
             left: [
-                '1rem', 
+                'calc(50% - (100vw / 2) + 1rem)', 
                 '2.4rem', 
-                'calc(50% - (100vw / 2) + 2rem)'
+                'calc(50% - (100vw / 2) + 1rem)',
             ],
             flexWrap: 'wrap',
-            background: 'blue',
+            // background: 'blue',
             height: props.rows ? 'unset' : '100%',
             flexDirection: 'column',
+            '@media screen and (min-width: 1439px)': {
+                left: "calc(50% - (134.4rem / 2))",
+            },
         }}>
             {getRows(props) > 0 && (
                 [...Array(getRows(props))].map((item, i, array) => (
