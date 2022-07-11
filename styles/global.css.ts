@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    color: ${props => props.theme.colors.textColor};
+    color: ${(props : any) => props.theme.colors.textColor};
   }   
 
   ul {
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 4rem;
     line-height: 4.8rem;
     letter-spacing: -0.02rem;
-    @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
       line-height: 9.99rem;
       font-size: 9.9rem;
     }
@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 3.3rem;
     line-height: 3.36rem;
     letter-spacing: -0.02rem;
-    @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
       line-height: 6.969rem;
       font-size: 6.9rem;
     }
@@ -49,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'IBM Plex Mono';
     font-size: 1.4rem;
     line-height: 2.2rem;
-    @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
       line-height: 2.85rem;
       font-size: 1.9rem;
     }
