@@ -45,7 +45,7 @@ const Navbar = (props : any) => {
         <StyledNavbar sx={{width: '100%', pt: ['2.4rem', '2.4rem', '6.2rem'], pb: ['3.2rem', '2.4rem', '4.5rem']}}>
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
                 <Logo color={theme.colors.logoColor} height={['2.7rem', '4rem']}/>
-                <Box ml={'auto'} mr={'2rem'}>
+                <Flex ml={'auto'} mr={['2rem', '2rem', '4rem']} alignItems={'center'}>
                     <Switch checked={themeSwitchActive} color={theme.colors.textColor} onClick={() => {
                         setThemeSwitchActive(!themeSwitchActive);
                         setTheme(
@@ -55,6 +55,7 @@ const Navbar = (props : any) => {
                         height: '1.32rem', 
                         width: '2.6rem',
                         cursor: 'pointer',
+                        bg: theme.colors.textColor,
                         '&:focus': {
                             boxShadow: 'none',
                         },
@@ -62,9 +63,10 @@ const Navbar = (props : any) => {
                             boxShadow: 'none',
                             width: '1.32rem',
                             height: '1.32rem',
+                            bg: theme.colors.background,
                         }
                     }}/>
-                </Box>
+                </Flex>
                 <HamburgerIcon sx={{
                     display: ['auto', 'none']
                 }} onClick={() => {
