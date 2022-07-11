@@ -12,10 +12,15 @@ const HowItWorksBlock = (props: any) => {
       as={"li"}
       flexDirection={["column", "row"]}
       sx={{
-        maxHeight: ['auto', isOpen ? 'auto' : '1000rem', isOpen ? 'auto' : '1000rem'],
+        maxHeight: [
+          'auto', 
+          isOpen ? 'auto' : '1000rem', 
+          isOpen ? 'auto' : '1000rem'
+        ],
         border: [`0.1rem solid ${theme.colors.cardLine}`, 'none'],
         borderBottom: "none",
         transition: '0.25s ease-in-out max-height',
+        width: ['100%'],
         "&:last-child": {
           borderBottom: [`0.1rem solid ${theme.colors.cardLine}`, 'none'],
           '.block-index': {
@@ -66,7 +71,7 @@ const HowItWorksBlock = (props: any) => {
           fontWeight={700}
           bg={theme.colors.cardBackground}
           paddingLeft={"3.2rem"}
-          width={['auto', '24.8rem', '41.6rem']}
+          width={['100%', '24.8rem', '41.6rem']}
           height={['auto', isOpen ? '14.4rem' : 'auto', isOpen ? '32rem' : '19.2rem']}
           sx={{
             border: ['none', `0.1rem solid ${theme.colors.cardLine}`],
@@ -85,7 +90,8 @@ const HowItWorksBlock = (props: any) => {
         borderLeft: ['none', `0.1rem solid ${theme.colors.cardLine}`],
         flexDirection: 'column',
         transition: '0.25s ease-in-out all',
-        maxHeight: isOpen ? '1000px' : '19.2rem'
+        maxHeight: isOpen ? '1000px' : '19.2rem',
+        flexGrow: [null, null, 1]
       }}>
         <Flex
           className={"hiw-trigger"}

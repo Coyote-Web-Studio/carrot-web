@@ -50,7 +50,13 @@ const Hero = (props : any) => {
 
     return (
         <StyledHero className="hero" sx={{position: 'relative', pb: '5.2rem'}}>
-            <GridBackground top={['0', '0', '4rem']} trimRows={1} useAnimation/>
+            <Box sx={{
+                ...theme.boxSizes.expandedBox, 
+                position: 'absolute',
+                height: '100%'
+            }}>
+                <GridBackground top={['0', '0', '4rem']} trimRows={1} useAnimation/>
+            </Box>
             <Flex 
                 flexDirection={['column', 'row']} 
                 justifyContent={['auto', 'space-between']}
@@ -61,11 +67,15 @@ const Hero = (props : any) => {
                 pt={['3.4rem', '5.2rem', '2.4rem']}
                 ref={heroContentRef}
             >
-                <Flex flexDirection={'column'} width={['100%', '32rem', '68.4rem']} justifyContent={['auto', 'center']} sx={{position: 'relative', top: [0,0,'-1.6rem']}}>
+                <Flex flexDirection={'column'} width={['100%', '32rem', '68.4rem']} justifyContent={['auto', 'center']} sx={{
+                    position: 'relative', 
+                    top: [0,0,'-1.6rem'],
+                    pr: '1rem'
+                    }}>
                     <Text as="h1" sx={{
                         fontSize: ['4.8rem', '4.8rem', '9.9rem'], 
                         lineHeight: ['4.88rem', '4.88rem', '9.9rem'] ,
-                        mb: ['1.6rem', '1.6rem', '5.2rem']
+                        mb: ['1.6rem', '1.6rem', '5.2rem'],
                     }}>
                         {/* {generateAnimatedText(` */}
                         Reach your goals with a Carrot

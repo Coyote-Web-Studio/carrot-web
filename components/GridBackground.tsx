@@ -5,9 +5,12 @@ import { keyframes } from '@emotion/react'
 
 
 const GridBackground = (props : any) => {
-    const [ windowWidth, setWindowWidth ] = useState(0);
+    const [ gridWidth, setGridWidth ] = useState(0);
     const [ gridHeight, setGridHeight ] = useState(0);
-    const [ gridSquareDivider, setGridSquareDivider ] = useState(25);
+
+    const [ gridRows, setGridRows ] = useState(0);
+    const [ gridColumns, setGridColumns ] = useState(0);
+
     const theme : any = useTheme();
     const gridRef : any = useRef(null);
 
@@ -26,89 +29,75 @@ const GridBackground = (props : any) => {
     };
 
 
-    const updateSquares = debounce(() => {
-        console.log('Updated')
-        setWindowWidth(window.innerWidth);
-
-        if (window.innerWidth >= 1440) {
-            setGridSquareDivider(76);
-        } 
-
-        if (window.innerWidth <= 1440) {
-            setGridSquareDivider(60);
-        } 
-
-        if (window.innerWidth <= 768) {
-            setGridSquareDivider(25);
-        } 
-
+    const updateDimensions = debounce(() => {
+        console.log('Updated');
         if (gridRef.current) {
             setGridHeight(gridRef.current.getBoundingClientRect().height);
+            setGridWidth(gridRef.current.getBoundingClientRect().width);
         }
-    }, 200)
+    }, 200);
     
     useEffect(() => {
-        updateSquares();
-        window.addEventListener('resize', updateSquares);
+        updateDimensions();
+        window.addEventListener('resize', updateDimensions);
     }, []);
 
-    const getRows = (props : any) => {
-        if (props.rows) {
-            return props.rows;
-        } else if (Math.round(gridHeight / gridSquareDivider) - (props.trimRows || 0) + (props.addRows || 0 )> 0) {
-            return Math.round(gridHeight / gridSquareDivider) - (props.trimRows || 0) + (props.addRows || 0);
+    useEffect(() => {
+        console.log('Height: ' + gridHeight);
+        console.log('Width: ' + gridWidth);
+
+        const availableTabletRows = Math.round(gridHeight / 24);
+        const availableTabletColumns = Math.round(gridWidth / 24);
+
+        const availableDesktopRows = Math.round(gridHeight / 64);
+        const availableDesktopColumns = Math.round(gridWidth / 64);
+
+        console.log(availableDesktopRows)
+        console.log(availableDesktopColumns);
+
+        if (window.innerWidth > 1104) {
+            setGridRows(availableDesktopRows - (props.trimRows ? props.trimRows : 0))
+            setGridColumns(availableDesktopColumns)
+        } else {
+            setGridRows(availableTabletRows - (props.trimRows ? props.trimRows : 0))
+            setGridColumns(availableTabletColumns)
         }
-    }
+    }, [gridHeight, gridWidth, props.trimRows]);
+
+    let boxCounter = 0;
 
     return (
         <StyledGridBackground ref={gridRef} sx={{
-            ...theme.boxSizes.expandedBox,
             position: 'absolute',
             top: props.top || 0,
             zIndex: 0,
-            left: [
-                'calc(50% - (100vw / 2) + 1rem)', 
-                '2.4rem', 
-                'calc(50% - (100vw / 2) + 1rem)',
-            ],
-            flexWrap: 'wrap',
+            width: '100%',
             // background: 'blue',
             height: props.rows ? 'unset' : '100%',
+            gridTemplateColumns: ['repeat(42, 1fr)',null, 'repeat(21, 1fr)'],
+            // backgroundColor: theme.colors.background,
+            opacity: 1,
+            flexWrap: 'wrap',
             flexDirection: 'column',
-            '@media screen and (min-width: 1439px)': {
-                left: "calc(50% - (134.4rem / 2))",
-            },
+            gap: '1px',
+            backgroundSize: [`2.4rem 2.4rem`,`2.4rem 2.4rem`,`6.4rem 6.4rem`],
         }}>
-            {getRows(props) > 0 && (
-                [...Array(getRows(props))].map((item, i, array) => (
-                    <Flex flexWrap={'nowrap'} width={'100%'} key={i} sx={{
-                        height: ['2.4rem', '2.4rem', '6.4rem'],
-                        '.square': {
-                            borderBottom: i == array.length - 1 ? `1px solid ${props.color || theme.colors.gridColor}` : 'none'
-                        }
-                    }}>
-                        {[...Array(Math.round(windowWidth / gridSquareDivider))].map((item, j) => (
-                            <Box 
-                                key={j}
-                                className={'square'}
-                                sx={{
-                                    width: ['2.4rem', '2.4rem', '6.4rem'],
-                                    height: ['2.4rem', '2.4rem', '6.4rem'],
-                                    border: `1px solid ${props.color || theme.colors.gridColor}`,
-                                    borderRight: '0',
-                                    borderBottom: '0',
-                                    transformOrigin: 'center',
-                                    transform: 'rotate3d(0,1,0, 90deg)',
-                                    animation: props.useAnimation && `${boxFade} 0.25s forwards`,
-                                    animationDelay: props.useAnimation && `${(i + j) * 50}ms`,
-                                    '&:last-child': {
-                                        borderRight: `1px solid ${props.color || theme.colors.gridColor}`,
-                                    }
-                                }} 
-                            />
-                        ))}
+            {gridRows > 0 && (
+                [...Array(gridRows)].map((elem, index) => 
+                    <Flex sx={{ width: '100%', gap: '1px'}}>
+                        {[...Array(gridColumns)].map((elem, index) => 
+                            <Box sx={{
+                                animation: props.useAnimation && `${scale} 1s forwards`,
+                                transformOrigin: 'center',
+                                animationDelay:  props.useAnimation && `${++boxCounter * 5}ms`,
+                                transform: props.useAnimation ? 'rotate3d(0,1,0, 90deg)' : 'none',
+                                boxShadow: `0 0 0 1px ${props.color || theme.colors.gridColor}`,
+                                width: [`2.4rem`,`2.4rem`,`6.4rem`],
+                                height: [`2.4rem`,`2.4rem`,`6.4rem`],
+                            }} />
+                        )}
                     </Flex>
-                ))
+                )
             )}
         </StyledGridBackground>
     )
@@ -117,13 +106,32 @@ const GridBackground = (props : any) => {
 const StyledGridBackground = styled(Flex)``;
 
 const boxFade = keyframes({
-    from: {
+   ['0%']: {
         // opacity: 0,
         transform: 'rotate3d(0,1,0, 90deg)'
     },
-    to: {
+    ['33%']: {
         // opacity: 1,
         transform: 'rotate3d(0,1,0, 0deg)'
+    },
+    ['66%']: {
+        // opacity: 1,
+        transform: 'rotate3d(0,1,0, 0deg)'
+    },
+    ['100%']: {
+        // opacity: 1,
+        transform: 'rotate3d(0,0,1, 180deg)'
+    },
+})
+
+const scale = keyframes({
+   ['0%']: {
+        opacity: 0,
+        transform: 'scale(0)'
+    },
+    ['100%']: {
+        opacity: 1,
+        transform: 'scale(1)'
     },
 })
 

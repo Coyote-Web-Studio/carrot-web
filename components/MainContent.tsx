@@ -166,20 +166,36 @@ const MainContent = (props : any) => {
 
   return (
     <Flex flexDirection={"column"} sx={{ position: "relative" }} mt={["2.4rem", "2.4rem", "6.4rem"]}>
-      <GridBackground />
+      <Box sx={{
+        ...theme.boxSizes.expandedBox, 
+        position: 'absolute',
+        height: '100%'
+      }}>
+        <GridBackground />
+      </Box>
       {/* BREAKDOWN */}
       <Flex
         flexDirection={"column"}
         sx={{
           ...theme.boxSizes.reducedBox,
+          position: 'relative',
           zIndex: 1,
         }}
         pt={["2.4rem","5.2rem", "12.8rem"]}
         pb={"9.2rem"}
       >
+        <Image className={'rellax'} src={'misc/sphere.png'} sx={{
+          position: 'absolute',
+          top: '0',
+          width: '10rem',
+          right: '30rem',
+          zIndex: '3'
+          
+        }} />
         {MainContent.map((contentBlock: ContentBlock, index: number) => (
           <Fade key={index} sx={{
             mb: ["4.8rem", "4.8rem", "6.4rem"],
+            position: 'relative'
           }}>
             <Flex
               flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
@@ -343,37 +359,26 @@ const MainContent = (props : any) => {
             </Text>
             <Flex as={'ul'} flexWrap={['wrap', 'nowrap']} width={'100%'}>
               {Protocols.map((protocol, index) => (
-                <Flex as={'li'} width={[1/2, 1/4]} key={index} height={[
-                  'calc(50vw - 2rem)', 
-                  '17rem', 
-                  '10rem',
-                  '30rem',
-                  ]} alignItems={'center'} justifyContent={'center'}
+                <Flex as={'li'}  key={index} 
+                  width={['calc(50vw - 2rem)', 'calc(25vw - 11.5rem)']}
+                  height={[
+                    'calc(50vw - 2rem)', 
+                    '17rem', 
+                    '10rem',
+                    'calc(25vw - 11.5rem)',
+                  ]} 
+                  alignItems={'center'} 
+                  justifyContent={'center'}
                   sx={{
+                    position: 'relative',
                     mt: [
                       0, 
                       index % 2 == 0 ? 0 : '17rem', 
                       index % 2 == 0 ? 0 : '10rem',
-                      index % 2 == 0 ? 0 : '30rem',
+                      index % 2 == 0 ? 0 : 'calc(25vw - 11.5rem)',
                     ],
-                    position: 'relative',
-                    '&:hover .protocol-card-front': {
-                      transform: ['none', 'none', 'rotate3d(0, 1, 0, -90deg) !important'],
-                    },
-                    '&:hover .protocol-card-back': {
-                      transform: ['none', 'none', 'rotate3d(0, 1, 0, 0deg) !important'],
-                    },
-                    '&:nth-of-type(2), &:last-child .protocol-card-front': {
-                      borderRight: [`0.1rem solid ${theme.colors.protocolCardLine}`],
-                    },
-                    '&:nth-of-type(3), &:last-child .protocol-card-front': {
-                      borderBottom: [`0.1rem solid ${theme.colors.protocolCardLine}`, `0.1rem solid ${theme.colors.protocolCardLine}`],
-                    },
-                    '&:nth-of-type(2) .protocol-card-front': {
-                      borderRight: ['none', 'none', `0.1rem solid ${theme.colors.protocolCardLine}`],
-                    },
                   }}
-                  >
+                >
                   <Flex 
                     className={'protocol-card protocol-card-front'}
                     width={'100%'}
@@ -383,13 +388,9 @@ const MainContent = (props : any) => {
                       position: 'absolute',
                       top: 0,
                       left: 0,
-                      border: `0.1rem solid ${theme.colors.protocolCardLine}`,
-                      borderRight: ['none', `0.1rem solid ${theme.colors.protocolCardLine}`],
-                      borderBottom: ['none', `0.1rem solid ${theme.colors.protocolCardLine}`],
+                      boxShadow: `0 0 0 1px ${theme.colors.textColor}`,
                       backgroundColor: theme.colors.protocolCardBackground,
                       transition: '0.35s cubic-bezier(0,1.19,.62,1.44) all',
-                      transformOrigin: 'center',
-                      transform: ['none','none', 'scale(1.0065) rotate3d(0,1,0,0deg)'],
                     }}>
                     <Box sx={{
                       width: '0.46rem', 
@@ -425,74 +426,10 @@ const MainContent = (props : any) => {
                     }}/>
                     <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
                       <Image src={protocol.logo} sx={{
-                        filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset'
+                        filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset',
+                        width: [null, null, '17.2rem']
                       }}/>
                       <Text as={'p'}>{protocol.label}</Text>
-                    </Flex>
-                  </Flex>
-                  <Flex 
-                    className={'protocol-card protocol-card-back'}
-                    width={'100%'}
-                    height={'100%'}
-                    alignItems={'center'} justifyContent={'center'}
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      border: `0.1rem solid ${theme.colors.protocolCardLine}`,
-                      borderRight: ['none', `0.1rem solid ${theme.colors.protocolCardLine}`],
-                      borderBottom: ['none', `0.1rem solid ${theme.colors.protocolCardLine}`],
-                      background: theme.colors.protocolCardLine,
-                      transition: '0.35s cubic-bezier(0,1.19,.62,1.44) all',
-                      transformOrigin: 'center',
-                      transform: ['none', 'none', 'scale(1.0065) rotate3d(0,1,0, 90deg)'],
-                      '&:nth-of-type(2), &:last-child': {
-                        borderRight: [`0.1rem solid ${theme.colors.protocolCardLine}`],
-                      },
-                      '&:nth-of-type(3), &:last-child': {
-                        borderBottom: [`0.1rem solid ${theme.colors.protocolCardLine}`],
-                      },
-                      '&:nth-of-type(2)': {
-                        borderRight: [`0.1rem solid ${theme.colors.protocolCardLine}`],
-                      },
-                    }}>
-                    <Box sx={{
-                      width: '0.46rem', 
-                      height: '0.46rem', 
-                      background: theme.colors.protocolCardLine,
-                      position: 'absolute',
-                      top: '-0.25rem',
-                      left: '-0.25rem'
-                    }}/>
-                    <Box sx={{
-                      width: '0.46rem', 
-                      height: '0.46rem', 
-                      background: theme.colors.protocolCardLine,
-                      position: 'absolute',
-                      top: '-0.25rem',
-                      right: '-0.25rem'
-                    }}/>
-                    <Box sx={{
-                      width: '0.46rem', 
-                      height: '0.46rem', 
-                      background: theme.colors.protocolCardLine,
-                      position: 'absolute',
-                      bottom: '-0.25rem',
-                      right: '-0.25rem'
-                    }}/>
-                    <Box sx={{
-                      width: '0.46rem', 
-                      height: '0.46rem', 
-                      background: theme.colors.protocolCardLine,
-                      position: 'absolute',
-                      bottom: '-0.25rem',
-                      left: '-0.25rem'
-                    }}/>
-                    <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
-                      <Image src={protocol.logo} sx={{
-                        filter: !theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset'
-                      }}/>
-                      <Text as={'p'} color={theme.colors.protocolCardBackground}>{protocol.label}</Text>
                     </Flex>
                   </Flex>
                 </Flex>
@@ -502,7 +439,14 @@ const MainContent = (props : any) => {
       </Flex>
       {/* CUSTOMER REVIEW */}
       <Flex sx={{zIndex: 1, position: 'relative', bg: theme.colors.customerCommentBackground, borderRadius: '1.6rem', pb: ['6.4rem', '6.4rem', '14.4rem'], pt: ['8.7rem'], mb: ['4.8rem']}}>
-        <GridBackground trimRows={3} color={theme.colors.customerCommentGrid} top={'6.4rem'} />
+        <Box sx={{
+          ...theme.boxSizes.expandedBox, 
+          position: 'absolute',
+          height: '100%',
+          top: '6.4rem'
+        }}>
+          <GridBackground trimRows={3} color={theme.colors.customerCommentGrid} />
+        </Box>
         <Fade sx={{
           ...theme.boxSizes.defaultBox,
           flexDirection: 'column',

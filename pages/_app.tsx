@@ -6,9 +6,11 @@ import GlobalStyle from '../styles/global.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import Loading from './../components/Loading';
+import Rellax from 'rellax';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
+    let rellax = new Rellax('.rellax');
     AOS.init();
   }, []);
 

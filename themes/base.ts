@@ -1,5 +1,5 @@
 export default {
-    breakpoints: ["360px", "768px", "1440px", "1919px"],
+    breakpoints: ["40em", "52em", "64em"],
     fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
     colors: {
       blue6: '#0029FF',
@@ -36,13 +36,10 @@ export default {
     variants: {},
     boxSizes: {
       defaultBox: {
-        width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)"],
+        width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "calc(100vw - 9.6rem)"],
         mx: "auto",
-        '@media screen and (min-width: 1439px)': {
-            width: '1248px'
-        },
-        '@media screen and (min-width: 1920px)': {
-            width: '1600px'
+        '@media screen and (min-width: 1520px)': {
+            width: '1420px'
         }
       },
       reducedBox: {
@@ -53,10 +50,15 @@ export default {
         width: [
           "calc(100vw - 2rem)", 
           "calc(100vw - 4.8rem)", 
-          "calc(100vw - 4rem)"],
-        mx: "auto",
-        '@media screen and (min-width: 1439px)': {
-          width: "calc(134.4rem)",
+          "calc(100vw - 4.8rem)"],
+        left: [
+          '1rem',
+          '2.4rem',
+          '2.4rem'
+        ],
+        '@media screen and (min-width: 1720px)': {
+          width: "calc(160.4rem)",
+          left: "calc(50% - (160.4rem / 2))"
         },
       },
     },
