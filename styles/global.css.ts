@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
   body,
   html {
     overflow-x: hidden;
@@ -31,21 +29,36 @@ const GlobalStyle = createGlobalStyle`
     font-size: 4rem;
     line-height: 4.8rem;
     letter-spacing: -0.02rem;
+    @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+      line-height: 9.99rem;
+      font-size: 9.9rem;
+    }
   }
-
+  
   h3 {
     font-size: 3.3rem;
     line-height: 3.36rem;
     letter-spacing: -0.02rem;
+    @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+      line-height: 6.969rem;
+      font-size: 6.9rem;
+    }
   }
 
   p {
     font-family: 'IBM Plex Mono';
     font-size: 1.4rem;
     line-height: 2.2rem;
+    @media screen and (min-width: ${props => props.theme.breakpoints[2]}) {
+      line-height: 2.85rem;
+      font-size: 1.9rem;
+    }
   }
   button {
     font-family: 'IBM Plex Mono'
+  }
+  * {
+    transition: 0.15s ease-in-out background, border-color, color, fill;
   }
 `;
 

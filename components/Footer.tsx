@@ -2,6 +2,7 @@ import { Flex, Link, Text, Box } from "rebass";
 import styled, { useTheme } from "styled-components";
 import Logo from '../components/Logo';
 import GridBackground from '../components/GridBackground';
+import Fade from '../components/Fade';
 import Button from "./Button";
 
 const Footer = (props: any) => {
@@ -85,7 +86,7 @@ const Footer = (props: any) => {
   return (
     <Flex
       as="footer"
-      pt={"4.8rem"}
+      pt={["4.8rem", '12.8rem', '26rem']}
       pb={'5.6rem'}
       bg={theme.colors.gray10}
       sx={{
@@ -93,26 +94,30 @@ const Footer = (props: any) => {
         flexDirection: 'column'
       }}
     >
-      <Box sx={{position: 'absolute', width: '100%', height: ['10rem', '20rem'], top: 0, left: 0}}>
-        <GridBackground color={theme.colors.gray9} top={"4.7rem"} />
+      <Box sx={{position: 'absolute', width: '100%', height: ['10rem', '20rem', '70rem'], top: 0, left: 0}}>
+        <GridBackground color={theme.colors.gray9} top={["4.7rem", "7rem", "12.6rem"]} />
       </Box>
+      <Fade sx={{...theme.boxSizes.defaultBox}}>
+        <Logo color={theme.colors.orange6} height={['auto', '15.5rem', 'auto']} width={['auto', 'auto', '100%']} mb={["4.8rem", "4.8rem", "34rem"]} sx={{ zIndex: 1 }} />
+      </Fade>
       <Flex sx={{ ...theme.boxSizes.defaultBox, position: "relative", flexDirection: 'column' }}>
-        <Logo color={theme.colors.orange6} mb={"4.8rem"} sx={{ zIndex: 1 }} />
-        <Flex as="ul" flexWrap="wrap">
-          {FooterLinks.map((footerColumn, index) => (
-            <Flex flexDirection="column" width={[1/2]} mb={'4.8rem'} fontFamily={'IBM Plex Mono'}>
-              <Text fontSize={'1.4rem'} color={theme.colors.gray1} mb={'0.8rem'}>
-                {footerColumn.heading}
-              </Text>
-              {footerColumn.links.map((link, index) => (
-                <Link href={link.href} mb={'0.4rem'} color={theme.colors.gray1} fontSize={'1.2rem'}>
-                  {link.label}
-                </Link>
-              ))}
-            </Flex>
-          ))}
+        <Flex flexDirection={['column', 'column', 'row']} justifyContent={['auto', 'auto', 'space-between']}>
+          <Flex as="ul" flexWrap="wrap">
+            {FooterLinks.map((footerColumn, i) => (
+              <Flex flexDirection="column" width={[1/2, 1/4, '15.2rem']} mb={['4.8rem', '4.8rem', 0]} fontFamily={'IBM Plex Mono'} key={i}>
+                <Text fontSize={'1.4rem'} color={theme.colors.gray1} mb={['0.8rem', '2.4rem']} >
+                  {footerColumn.heading}
+                </Text>
+                {footerColumn.links.map((link, j) => (
+                  <Link href={link.href} mb={['0.4rem', '0.8rem']} color={theme.colors.gray1} fontSize={'1.2rem'} key={j}>
+                    {link.label}
+                  </Link>
+                ))}
+              </Flex>
+            ))}
+          </Flex>
+          <Button>CARROT DAPP</Button>
         </Flex>
-        <Button>CARROT DAPP</Button>
       </Flex>
     </Flex>
   );

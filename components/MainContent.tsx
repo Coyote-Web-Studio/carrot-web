@@ -3,8 +3,11 @@ import styled, { useTheme } from 'styled-components';
 import GridBackground from './GridBackground';
 import Button from './Button';
 import HowItWorksBlock from './HowItWorksBlock';
+import CampaignCard from './CampaignCard';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css'
+import { relative } from 'node:path/win32';
+import Fade from './Fade';
 
 const MainContent = (props : any) => {
   interface ContentBlock {
@@ -95,6 +98,18 @@ const MainContent = (props : any) => {
       rewards: '$3,000.93',
       timeLeft: '01D 02H 54M'
     },
+    {
+      heading: 'DXDAO',
+      content: 'Did the Atlantis World team complete deliverables #1, #2 and #3 outlined in the DXdao Atlantis World.',
+      rewards: '$3,000.93',
+      timeLeft: '01D 02H 54M'
+    },
+    {
+      heading: 'DXDAO',
+      content: 'Did the Atlantis World team complete deliverables #1, #2 and #3 outlined in the DXdao Atlantis World.',
+      rewards: '$3,000.93',
+      timeLeft: '01D 02H 54M'
+    },
   ];
 
   const CarrotInNumbers = [
@@ -156,34 +171,37 @@ const MainContent = (props : any) => {
       <Flex
         flexDirection={"column"}
         sx={{
-          ...theme.boxSizes.defaultBox,
+          ...theme.boxSizes.reducedBox,
           zIndex: 1,
         }}
         pt={"5.2rem"}
         pb={"9.2rem"}
       >
         {MainContent.map((contentBlock: ContentBlock, index: number) => (
-          <Flex
-            flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
-            justifyContent={['auto', 'space-between']}
-            alignItems={['auto', 'center']}
-            sx={{
-              mb: "4.8rem",
-              "&:last-child": {
-                mb: 0,
-              },
-            }}
-          >
-            <Image src={contentBlock.image} mb={["2rem", "0"]} width={['100%', 'calc(50% - 1rem)']} />
-            <Flex flexDirection={'column'} width={['100%', 'calc(50% - 1rem)']}>
-              <Text as="h3" mb={"1.8rem"}>
-                {contentBlock.heading}
-              </Text>
-              <Text as="p" sx={{ ...theme.text.paragraph }}>
-                {contentBlock.content}
-              </Text>
+          <Fade key={index} sx={{
+            mb: ["4.8rem", "4.8rem", "6.4rem"],
+          }}>
+            <Flex
+              flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
+              justifyContent={['auto', 'space-between']}
+              alignItems={['auto', 'center']}
+              sx={{
+                "&:last-child": {
+                  mb: 0,
+                },
+              }}
+            >
+              <Image src={contentBlock.image} mb={["2rem", "0"]} width={['100%', 'calc(50% - 1rem)', '53rem']} />
+              <Flex flexDirection={'column'} width={['100%', 'calc(50% - 1rem)', '53rem']}>
+                <Text as="h3" mb={"1.8rem"}>
+                  {contentBlock.heading}
+                </Text>
+                <Text as="p" sx={{ ...theme.text.paragraph }}>
+                  {contentBlock.content}
+                </Text>
+              </Flex>
             </Flex>
-          </Flex>
+          </Fade>
         ))}
       </Flex>
       {/* HOW IT WORKS */}
@@ -195,13 +213,17 @@ const MainContent = (props : any) => {
           mb: '8.2rem'
         }}
       >
-        <Text as={"h2"} mb={"1.4rem"}>
-          How it works
-        </Text>
-        <Flex as={"ul"} flexDirection={"column"}>
-          {HowItWorksContent.map((contentBlock, index) => (
-            <HowItWorksBlock content={contentBlock} key={index} index={index}/>
-          ))}
+        <Fade>
+          <Text as={"h2"} mb={["1.4rem", '4.8rem']}>
+            How it works
+          </Text>
+        </Fade>
+        <Flex as={"ul"} flexDirection={"column"} width={"100%"}>
+          <Fade>
+            {HowItWorksContent.map((contentBlock, index) => (
+              <HowItWorksBlock content={contentBlock} key={index} index={index}/>
+            ))}
+          </Fade>
         </Flex>
       </Flex>
       {/* SUCCESFUL CAMPAIGNS */}
@@ -210,10 +232,11 @@ const MainContent = (props : any) => {
         zIndex: 1,
         mb: '9.6rem'
       }}>
-        <Text as={'h2'} mb={'3.6rem'}>
+        <Text as={'h2'} mb={['3.6rem', '11.2rem']}>
           Succesful Campaigns
         </Text>
-        <Flex as={'ul'} flexDirection={['column', 'row']} mb={'1.6rem'}>
+        {/* TABLET / DESKTOP VIEW */}
+        <Flex as={'ul'} flexDirection={['column', 'row']} mb={'1.6rem'} sx={{display: ['none !important', 'block !important', 'block !important']}}>
           <Splide options={{
             width: '100%',
             pagination: false,
@@ -225,131 +248,252 @@ const MainContent = (props : any) => {
                 perPage: 2,
                 gap: '2rem'
               },
-              1440: {
+              1680: {
                 perPage: 3,
-                gap: '2rem'
+                gap: '6.2rem'
+              },
+              1920: {
+                perPage: 4,
+                gap: '1rem'
               }
             }}
           }>
             {SuccesfullCampaigns.map((campaign, index) => (
-              <SplideSlide>
-                <Flex flexDirection={['column']} bg={theme.colors.cardBackground} sx={{
-                  border: `1px solid ${theme.colors.cardLine}`,
-                  borderRadius: '1.6rem',
-                  overflow: 'hidden',
-                  width: ['100%', '100%'],
-                  mb: ['2.4rem', '4.8rem'],
-                }}>
-                  <Flex className={'campaign-header'} 
-                    sx={{
-                      borderBottom: `0.1rem solid ${theme.colors.cardLine}`,
-                      height: '6.4rem'
-                    }}
-                  >
-                    <Flex sx={{justifyContent: 'center', alignItems: 'center', borderRight: `0.1rem solid ${theme.colors.gray10}`, width: '7rem'}}>
-                      <Box sx={{bg: theme.colors.blue6, width: '2.4rem', height: '2.4rem', borderRadius: '2.4rem'}}
-                      />
-                    </Flex>
-                    <Flex alignItems='center' pl='2rem'>
-                      <Text as={'p'}>
-                        {campaign.heading}
-                      </Text>
-                    </Flex>
-                  </Flex>
-                  <Flex className={'campaign-body'} p={'2.4rem'} flexDirection={'column'}>
-                    <Text as={'p'} mb={'2.4rem'}>
-                      {campaign.content}
-                    </Text>
-                    <Flex flexDirection={'column'}>
-                      <Flex justifyContent={'space-between'}>
-                        <Text as={'p'} fontSize={'1.2rem'}>REWARDS</Text>
-                        <Text as={'p'} fontSize={'1.2rem'}>{campaign.rewards}</Text>
-                      </Flex>
-                      <Flex justifyContent={'space-between'}>
-                        <Text as={'p'} fontSize={'1.2rem'}>TIME LEFT</Text>
-                        <Text as={'p'} fontSize={'1.2rem'}>{campaign.timeLeft}</Text>
-                      </Flex>
-                    </Flex>
-                  </Flex>
-                  <RBButton sx={{
-                    height: '6.4rem', 
-                    borderTop: `0.1rem solid ${theme.colors.cardLine}`, 
-                    bg: theme.colors.cardBackground, 
-                    borderRadius: 0, 
-                    fontSize: '1.6rem', 
-                    color: theme.colors.cardText,
-                    '&:hover': {
-                      background: theme.colors.cardButtonHover
-                    }
-                  }}
-                  >
-                    ↳ see campaign
-                  </RBButton>
-                </Flex>
+              <SplideSlide key={index}>
+                <CampaignCard campaign={campaign} sx={{
+                  width: ['100%', '100%', '37.3rem', '35.2rem'],
+                }} />
               </SplideSlide>
             ))}
           </Splide>
+        </Flex>
+        {/* MOBILE VIEW (NO SLIDE) */}
+        <Flex as={'ul'} sx={{display: ['block', 'none', 'none']}}flexDirection={['column', 'row']} mb={'1.6rem'}>
+            {SuccesfullCampaigns.map((campaign, index) => (
+              index < 2 && (
+                <CampaignCard campaign={campaign} sx={{
+                  width: ['100%', '100%', '37.3rem', '35.2rem'],
+                }} key={index} />
+              )
+            ))}
         </Flex>
         <Button>
           SEE ALL CAMPAIGNS
         </Button>
       </Flex>
       {/* CARROT IN NUMBERS */}
-      <Flex sx={{zIndex: 1, position: 'relative', bg: theme.colors.orange6, borderRadius: '1.6rem', pb: '3.6rem'}}>
+      <Flex sx={{
+        zIndex: 1, 
+        position: 'relative', 
+        bg: theme.colors.orange6, 
+        borderRadius: '1.6rem', 
+        pb: '3.6rem',
+      }}
+      >
         <Flex sx={{
           ...theme.boxSizes.defaultBox,
-          pt: '2.4rem',
-          flexDirection: 'column'
+          pt: ['2.4rem', '2.4rem', '10rem'],
+          flexDirection: 'column',
         }}>
-          <Text as="h2" mb={'2.4rem'} sx={{color: theme.colors.gray10}}>
-            Carrot in<br/> numbers
-          </Text>
-          <Flex as={'ul'} flexDirection={'column'}>
+          <Fade>
+            <Text as="h2" mb={'2.4rem'} sx={{color: theme.colors.gray10}}>
+              Carrot in<Box as="br" sx={{display: ['block', 'none', 'none']}}/> numbers
+            </Text>
+          </Fade>
+          <Fade as={'ul'} flexDirection={'column'} sx={{
+            flexWrap: 'wrap',
+            width: ['100%'],
+            mx: [0, '-2.4rem', '-6.4rem'],
+            height: ['auto', '30rem', '60rem'],
+            alignItems: ['auto', 'center', 'center']
+          }}>
             {CarrotInNumbers.map((item, index) => (
-              <Flex as={'li'} flexDirection={'column'} sx={{
+              <Flex as={'li'} flexDirection={'column'} key={index} sx={{
                 borderTop: `0.1rem solid ${theme.colors.gray10}`,
                 py: '1.2rem',
+                mx: ['0', '2.4rem', '6.4rem'],
+                width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
                 '&:last-child': {
-                  borderBottom: `0.1rem solid ${theme.colors.gray10}`,
-                }
+                  borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
+                },
+                '&:nth-of-type(3)': {
+                  borderBottom: ['none', `0.1rem solid ${theme.colors.gray10}`],
+                },
               }}>
-                <Text fontSize={'4rem'} fontWeight={700} sx={{color: theme.colors.gray10}}>{item.value}</Text>
-                <Text sx={{color: theme.colors.gray10}} as={'p'}>{item.label}</Text>
+                <Text fontSize={['4rem', '4rem', '9.9rem']} fontWeight={700} sx={{color: theme.colors.gray10}}>
+                  {item.value}
+                </Text>
+                <Text sx={{color: theme.colors.gray10}} as={'p'}>
+                  {item.label}
+                </Text>
               </Flex>
             ))}
-          </Flex>
+          </Fade>
         </Flex>
       </Flex>
       {/* TRUSTING PROTOCOLS */}
-      <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={"8.2rem"} pb={'9.6rem'}>
+      <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem"]} pb={'9.6rem'}>
         <Flex sx={{
             ...theme.boxSizes.defaultBox,
-            pt: '2.4rem',
+            pt: ['2.4rem', '0'],
             flexDirection: 'column'
           }}>
-            <Text as="h2" mb={'2.4rem'}>
-              Trusted by Some of Your Favorite Protocols
+            <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>
+              Trusted by Some of <Box as="br" sx={{display: ['none', 'block']}}/>Your Favorite Protocols
             </Text>
-            <Flex as={'ul'} flexWrap={'wrap'}>
+            <Flex as={'ul'} flexWrap={['wrap', 'nowrap']} width={'100%'}>
               {Protocols.map((protocol, index) => (
-                <Flex as={'li'} width={[1/2]} height={'calc(50vw - 2rem)'} alignItems={'center'} justifyContent={'center'}
+                <Flex as={'li'} width={[1/2, 1/4]} key={index} height={[
+                  'calc(50vw - 2rem)', 
+                  '17rem', 
+                  '10rem',
+                  '30rem',
+                  ]} alignItems={'center'} justifyContent={'center'}
                   sx={{
-                    border: `0.1rem solid ${theme.colors.protocolCardLine}`,
-                    borderRight: 'none',
-                    borderBottom: 'none',
-                    background: theme.colors.protocolCardBackground,
-                    '&:nth-of-type(2), &:last-child': {
-                      borderRight: `0.1rem solid ${theme.colors.protocolCardLine}`,
+                    mt: [
+                      0, 
+                      index % 2 == 0 ? 0 : '17rem', 
+                      index % 2 == 0 ? 0 : '10rem',
+                      index % 2 == 0 ? 0 : '30rem',
+                    ],
+                    position: 'relative',
+                    '&:hover .protocol-card-front': {
+                      transform: ['none', 'none', 'rotate3d(0, 1, 0, -90deg) !important'],
                     },
-                    '&:nth-of-type(3), &:last-child': {
-                      borderBottom: `0.1rem solid ${theme.colors.protocolCardLine}`,
-                    }
-                  }}>
-                  <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
-                    <Image src={protocol.logo} sx={{
-                      filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset'
+                    '&:hover .protocol-card-back': {
+                      transform: ['none', 'none', 'rotate3d(0, 1, 0, 0deg) !important'],
+                    },
+                    '&:nth-of-type(2), &:last-child .protocol-card-front': {
+                      borderRight: [`0.1rem solid ${theme.colors.protocolCardLine}`],
+                    },
+                    '&:nth-of-type(3), &:last-child .protocol-card-front': {
+                      borderBottom: [`0.1rem solid ${theme.colors.protocolCardLine}`, `0.1rem solid ${theme.colors.protocolCardLine}`],
+                    },
+                    '&:nth-of-type(2) .protocol-card-front': {
+                      borderRight: ['none', 'none', `0.1rem solid ${theme.colors.protocolCardLine}`],
+                    },
+                  }}
+                  >
+                  <Flex 
+                    className={'protocol-card protocol-card-front'}
+                    width={'100%'}
+                    height={'100%'}
+                    alignItems={'center'} justifyContent={'center'}
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      border: `0.1rem solid ${theme.colors.protocolCardLine}`,
+                      borderRight: ['none', `0.1rem solid ${theme.colors.protocolCardLine}`],
+                      borderBottom: ['none', `0.1rem solid ${theme.colors.protocolCardLine}`],
+                      backgroundColor: theme.colors.protocolCardBackground,
+                      transition: '0.35s cubic-bezier(0,1.19,.62,1.44) all',
+                      transformOrigin: 'center',
+                      transform: ['none','none', 'scale(1.0065) rotate3d(0,1,0,0deg)'],
+                    }}>
+                    <Box sx={{
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      top: '-0.25rem',
+                      left: '-0.25rem'
                     }}/>
-                    <Text as={'p'}>{protocol.label}</Text>
+                    <Box sx={{
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      top: '-0.25rem',
+                      right: '-0.25rem'
+                    }}/>
+                    <Box sx={{
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      bottom: '-0.25rem',
+                      right: '-0.25rem'
+                    }}/>
+                    <Box sx={{
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      bottom: '-0.25rem',
+                      left: '-0.25rem'
+                    }}/>
+                    <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
+                      <Image src={protocol.logo} sx={{
+                        filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset'
+                      }}/>
+                      <Text as={'p'}>{protocol.label}</Text>
+                    </Flex>
+                  </Flex>
+                  <Flex 
+                    className={'protocol-card protocol-card-back'}
+                    width={'100%'}
+                    height={'100%'}
+                    alignItems={'center'} justifyContent={'center'}
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      border: `0.1rem solid ${theme.colors.protocolCardLine}`,
+                      borderRight: ['none', `0.1rem solid ${theme.colors.protocolCardLine}`],
+                      borderBottom: ['none', `0.1rem solid ${theme.colors.protocolCardLine}`],
+                      background: theme.colors.protocolCardLine,
+                      transition: '0.35s cubic-bezier(0,1.19,.62,1.44) all',
+                      transformOrigin: 'center',
+                      transform: ['none', 'none', 'scale(1.0065) rotate3d(0,1,0, 90deg)'],
+                      '&:nth-of-type(2), &:last-child': {
+                        borderRight: [`0.1rem solid ${theme.colors.protocolCardLine}`],
+                      },
+                      '&:nth-of-type(3), &:last-child': {
+                        borderBottom: [`0.1rem solid ${theme.colors.protocolCardLine}`],
+                      },
+                      '&:nth-of-type(2)': {
+                        borderRight: [`0.1rem solid ${theme.colors.protocolCardLine}`],
+                      },
+                    }}>
+                    <Box sx={{
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      top: '-0.25rem',
+                      left: '-0.25rem'
+                    }}/>
+                    <Box sx={{
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      top: '-0.25rem',
+                      right: '-0.25rem'
+                    }}/>
+                    <Box sx={{
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      bottom: '-0.25rem',
+                      right: '-0.25rem'
+                    }}/>
+                    <Box sx={{
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      bottom: '-0.25rem',
+                      left: '-0.25rem'
+                    }}/>
+                    <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
+                      <Image src={protocol.logo} sx={{
+                        filter: !theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset'
+                      }}/>
+                      <Text as={'p'} color={theme.colors.protocolCardBackground}>{protocol.label}</Text>
+                    </Flex>
                   </Flex>
                 </Flex>
               ))}
@@ -357,21 +501,21 @@ const MainContent = (props : any) => {
         </Flex>
       </Flex>
       {/* CUSTOMER REVIEW */}
-      <Flex sx={{zIndex: 1, position: 'relative', bg: theme.colors.customerCommentBackground, borderRadius: '1.6rem', pb: '6.4rem', pt: '8.7rem', mb: '4.8rem'}}>
+      <Flex sx={{zIndex: 1, position: 'relative', bg: theme.colors.customerCommentBackground, borderRadius: '1.6rem', pb: ['6.4rem', '6.4rem', '14.4rem'], pt: ['8.7rem'], mb: ['4.8rem']}}>
         <GridBackground trimRows={3} color={theme.colors.customerCommentGrid} top={'6.4rem'} />
-        <Flex sx={{
-            ...theme.boxSizes.defaultBox,
-            flexDirection: 'column',
-            position: 'relative',
-            zIndex: 1
+        <Fade sx={{
+          ...theme.boxSizes.defaultBox,
+          flexDirection: 'column',
+          position: 'relative',
+          zIndex: 1
         }}>
-          <Text fontSize={'2.8rem'} mb={'3.8rem'} fontWeight={700} lineHeight={'3.8rem'} color={theme.colors.customerCommentText}>
+          <Text fontSize={['2.8rem', '3.3em', '6.9rem']} mb={['3.8rem', '3.8rem', '12rem']} fontWeight={700} lineHeight={['3.8rem', '3.36rem', '6.969rem']} color={theme.colors.customerCommentText}>
             “Carrot was the best project on xDAI that allowed us to deploy KPI options in the Agave incentives program. This allows us to optimize our rewards towards specific goals rather than just throw them away.”
           </Text>
-          <Text fontSize={'1.4rem'} color={theme.colors.customerCommentText}>
+          <Text fontSize={['1.4rem', '1.4rem', '2.8rem']} color={theme.colors.customerCommentText}>
             — Luigi Lemon, Agave Core Contributor
           </Text>
-        </Flex>
+        </Fade>
       </Flex>
     </Flex>
   );
