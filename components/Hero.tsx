@@ -21,7 +21,7 @@ const Hero = (props : any) => {
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1
                     }} 
-                pt={['5.2rem', '2.4rem']}
+                pt={['3.4rem', '5.2rem', '2.4rem']}
                 ref={heroContentRef}
             >
                 <Flex flexDirection={'column'} width={['100%', '32rem', '68.4rem']} justifyContent={['auto', 'center']} sx={{position: 'relative', top: [0,0,'-1.6rem']}}>
@@ -33,7 +33,7 @@ const Hero = (props : any) => {
                         }}>
                             Reach your goals with a Carrot
                         </Text>
-                        <Text mb={['2.4rem', '2.4rem', '7.3rem']} sx={{
+                        <Text mb={['2.8rem', '2.4rem', '7.3rem']} sx={{
                             fontSize: ['1.4rem', '1.4rem', '1.9rem'],
                             lineHeight: ['2.2rem', '2.2rem', '2.85rem'],
                             color: theme.colors.textColor,

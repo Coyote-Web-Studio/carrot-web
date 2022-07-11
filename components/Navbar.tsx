@@ -33,7 +33,7 @@ const Navbar = (props : any) => {
     ];
 
     return (
-        <StyledNavbar sx={{width: '100%', pt: ['2.4rem', '2.4rem', '6.2rem'], pb: ['2.4rem', '2.4rem', '4.5rem']}}>
+        <StyledNavbar sx={{width: '100%', pt: ['2.4rem', '2.4rem', '6.2rem'], pb: ['3.2rem', '2.4rem', '4.5rem']}}>
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
                 <Logo color={theme.colors.logoColor} height={['2.7rem', '4rem']}/>
                 <Box ml={'auto'} mr={'2rem'}>
