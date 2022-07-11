@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Flex, Box, Text, Link } from 'rebass';
 import styled, { useTheme } from 'styled-components';
 import { Switch } from '@rebass/forms'
@@ -33,6 +33,14 @@ const Navbar = (props : any) => {
         },
     ];
 
+    useEffect(() => {
+        let body = document.querySelector('html');
+        if (body !== null) {
+            body.style.overflow = 
+                isMobileNavbarOpen ? 'hidden' : 'auto';
+        };
+    }, [isMobileNavbarOpen])
+
     return (
         <StyledNavbar sx={{width: '100%', pt: ['2.4rem', '2.4rem', '6.2rem'], pb: ['3.2rem', '2.4rem', '4.5rem']}}>
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
@@ -60,8 +68,8 @@ const Navbar = (props : any) => {
                 <HamburgerIcon sx={{
                     display: ['auto', 'none']
                 }} onClick={() => {
-                    setIsMobileNavbarOpen(!isMobileNavbarOpen)
-                }}/>
+                    setIsMobileNavbarOpen(!isMobileNavbarOpen);
+                }} />
                 <Box sx={{
                     display: ['none', 'flex', 'flex', 'flex'],
                     alignItems: 'center'
@@ -104,7 +112,7 @@ const Navbar = (props : any) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                transition: '0.15s ease-in-out all',
+                transition: '0.25s ease-in-out all',
                 opacity: isMobileNavbarOpen ? 1 : 0
             }}>
                 <Flex as="nav" sx={{mb: '4rem'}}>
