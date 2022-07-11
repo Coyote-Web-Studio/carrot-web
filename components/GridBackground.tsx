@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Flex, Box } from 'rebass';
-import styled, { useTheme } from 'styled-components';
+import styled, { useTheme, css } from 'styled-components';
+import { keyframes } from '@emotion/react'
+
 
 const GridBackground = (props : any) => {
     const [ windowWidth, setWindowWidth ] = useState(0);
@@ -63,16 +65,16 @@ const GridBackground = (props : any) => {
             flexDirection: 'column',
         }}>
             {getRows(props) > 0 && (
-                [...Array(getRows(props))].map((item, index, array) => (
-                    <Flex flexWrap={'nowrap'} width={'100%'} key={index} sx={{
+                [...Array(getRows(props))].map((item, i, array) => (
+                    <Flex flexWrap={'nowrap'} width={'100%'} key={i} sx={{
                         height: ['2.4rem', '2.4rem', '6.4rem'],
                         '.square': {
-                            borderBottom: index == array.length - 1 ? `1px solid ${props.color || theme.colors.gridColor}` : 'none'
+                            borderBottom: i == array.length - 1 ? `1px solid ${props.color || theme.colors.gridColor}` : 'none'
                         }
                     }}>
-                        {[...Array(Math.round(windowWidth / gridSquareDivider))].map((item, index) => (
+                        {[...Array(Math.round(windowWidth / gridSquareDivider))].map((item, j) => (
                             <Box 
-                                key={index}
+                                key={j}
                                 className={'square'}
                                 sx={{
                                     width: ['2.4rem', '2.4rem', '6.4rem'],
@@ -80,6 +82,10 @@ const GridBackground = (props : any) => {
                                     border: `1px solid ${props.color || theme.colors.gridColor}`,
                                     borderRight: '0',
                                     borderBottom: '0',
+                                    transformOrigin: 'center',
+                                    transform: 'rotate3d(0,1,0, 90deg)',
+                                    animation: `${boxFade} 0.25s forwards`,
+                                    animationDelay: `${(i + j) * 50}ms`,
                                     '&:last-child': {
                                         borderRight: `1px solid ${props.color || theme.colors.gridColor}`,
                                     }
@@ -94,5 +100,16 @@ const GridBackground = (props : any) => {
 }
 
 const StyledGridBackground = styled(Flex)``;
+
+const boxFade = keyframes({
+    from: {
+        // opacity: 0,
+        transform: 'rotate3d(0,1,0, 90deg)'
+    },
+    to: {
+        // opacity: 1,
+        transform: 'rotate3d(0,1,0, 0deg)'
+    },
+})
 
 export default GridBackground;

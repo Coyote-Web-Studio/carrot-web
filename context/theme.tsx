@@ -6,7 +6,7 @@ import darkTheme from './../themes/dark';
 const Context : any = createContext('');
 
 const ThemeContext = ({children} : any) => {
-    const [theme, setTheme] = useState(lightTheme);
+    const [theme, setTheme] = useState(darkTheme);
 
     return (
         <Context.Provider value={[theme, setTheme]}>
