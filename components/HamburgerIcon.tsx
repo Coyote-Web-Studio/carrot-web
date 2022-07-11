@@ -27,7 +27,11 @@ export const HamburgerIcon = (props : any) => {
       height: '1.6rem',
       ...props.sx
     }}
-      onClick={onClick}>
+      onClick={() => {
+        onClick();
+        props.onClick()
+      }}
+    >
       <Box sx={{
         top: '0',
         opacity: isActive ? 0 : 1,
