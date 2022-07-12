@@ -1,8 +1,8 @@
 import { Flex, Link, Text, Box } from "rebass";
 import styled, { useTheme } from "styled-components";
-import Logo from '../components/Logo';
-import GridBackground from '../components/GridBackground';
-import Fade from '../components/Fade';
+import Logo from './Logo';
+import GridBackground from './GridBackground';
+import Fade from './Fade';
 import Button from "./Button";
 
 const Footer = (props: any) => {

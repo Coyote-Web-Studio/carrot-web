@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Flex, Box, Text } from "rebass";
-import styeld, { useTheme } from "styled-components";
-import Button from "./Button";
+import { useTheme } from "styled-components";
+
+import Button from "./../common/Button";
 
 const HowItWorksBlock = (props: any) => {
   const theme : any = useTheme();
@@ -12,27 +13,18 @@ const HowItWorksBlock = (props: any) => {
       as={"li"}
       flexDirection={["column", "row"]}
       sx={{
+        rowGap: '1px',
+        columnGap: '1px',
         maxHeight: [
           'auto', 
           isOpen ? 'auto' : '1000rem', 
           isOpen ? 'auto' : '1000rem'
         ],
-        border: [`0.1rem solid ${theme.colors.cardLine}`, 'none'],
-        borderBottom: "none",
         transition: '0.25s ease-in-out max-height',
         width: ['100%'],
-        "&:last-child": {
-          borderBottom: [`0.1rem solid ${theme.colors.cardLine}`, 'none'],
-          '.block-index': {
-            borderBottom: ['none', `0.1rem solid ${theme.colors.cardLine}`],
-          },
-          '.block-title': {
-            borderBottom: ['none', `0.1rem solid ${theme.colors.cardLine} !important`],
-          },
-          '.hiw-body': {
-            borderBottom: ['none', `0.1rem solid ${theme.colors.cardLine} !important`],
-          },
-        },
+        '.bordered': {
+          boxShadow: `0 0 0 1px ${theme.colors.textColor}`
+        }
       }}
     >
       <Flex
@@ -40,14 +32,12 @@ const HowItWorksBlock = (props: any) => {
         sx={{
           height: ['9.6rem', isOpen ? 'auto' : '9.6rem', isOpen ? 'auto' : '19.2rem'],
           transition: '0.25s ease-in-out height',
-          borderBottom: [
-            `0.1rem solid ${theme.colors.cardLine}`,
-            'none'
-          ],
+          rowGap: '1px',
+          columnGap: '1px',
         }}
       >
         <Flex
-          className={'block-index'}
+          className={'block-index bordered'}
           minWidth={["6.4rem", '6.4rem', '19.2rem']}
           justifyContent={"center"}
           alignItems={"center"}
@@ -55,16 +45,11 @@ const HowItWorksBlock = (props: any) => {
           height={['auto', '9.6rem', '19.2rem']}
           fontWeight={700}
           bg={theme.colors.cardBackground}
-          sx={{
-            border: ['none', `0.1rem solid ${theme.colors.cardLine}`],
-            borderBottom: ['none', isOpen ? `0.1rem solid ${theme.colors.cardLine}` : 'none'],
-            borderRight: 'none !important',
-          }}
         >
           {props.index + 1}.
         </Flex>
         <Flex
-          className="block-title"
+          className="block-title bordered"
           alignItems={"center"}
           fontSize={["2.8rem", "2.8rem", "4.8rem"]}
           lineHeight={['3rem', '3rem', '4.88rem']}
@@ -74,20 +59,13 @@ const HowItWorksBlock = (props: any) => {
           width={['100%', '24.8rem', '41.6rem']}
           height={['auto', isOpen ? '14.4rem' : 'auto', isOpen ? '32rem' : '19.2rem']}
           sx={{
-            border: ['none', `0.1rem solid ${theme.colors.cardLine}`],
-            borderLeft: [`0.1rem solid ${theme.colors.cardLine}`],
-            borderRight: [`none`, 'none'],
-            borderBottom: [`none !important`, isOpen ? `0.1rem solid ${theme.colors.cardLine} !important` : 'none'],
             transition: '0.25s ease-in-out all'
           }}
         >
           {props.content.heading}
         </Flex>
       </Flex>
-      <Flex className={"hiw-body"} width={['auto', '36rem', '64rem']} bg={theme.colors.cardBackground} sx={{
-        border: ['none', `0.1rem solid ${theme.colors.cardLine}`],
-        borderBottom: ['none !important'],
-        borderLeft: ['none', `0.1rem solid ${theme.colors.cardLine}`],
+      <Flex className={"hiw-body bordered"} width={['auto', '36rem', '64rem']} bg={theme.colors.cardBackground} sx={{
         flexDirection: 'column',
         transition: '0.25s ease-in-out all',
         maxHeight: isOpen ? '1000px' : '19.2rem',
@@ -177,7 +155,7 @@ const HowItWorksBlock = (props: any) => {
             p: isOpen ? '2.4rem 2.4rem' : '2.4rem 2.4rem'
           }}
         >
-          <Box sx={{'opacity': isOpen ? '1' : '0', transition: '0.25s ease-in-out all',}} >
+          <Box sx={{overflowY: 'hidden'}} >
             {props.content.content}
           </Box>
         </Flex> 

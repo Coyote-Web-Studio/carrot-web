@@ -36,10 +36,10 @@ export default {
     variants: {},
     boxSizes: {
       defaultBox: {
-        width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "calc(100vw - 9.6rem)"],
+        width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "1280px"],
         mx: "auto",
         '@media screen and (min-width: 1520px)': {
-            width: '1420px'
+          width: '1280px'
         }
       },
       reducedBox: {

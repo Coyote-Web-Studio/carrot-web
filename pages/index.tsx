@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import { useTheme } from 'styled-components';
 
-import Navbar from './../components/Navbar';
-import Hero from './../components/Hero';
-import Marquees from './../components/Marquees';
-import MainContent from '../components/MainContent';
-import Footer from '../components/Footer';
+import Navbar from '../components/common/Navbar';
+import Footer from '../components/common/Footer';
+import Hero from '../components/homepage/Hero';
+import Marquees from './../components/homepage/Marquees';
+import MainContent from '../components/homepage/MainContent';
 
 const Home: NextPage = () => {
 

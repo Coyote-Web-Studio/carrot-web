@@ -5,7 +5,7 @@ import ThemeContext from './../context/theme';
 import GlobalStyle from '../styles/global.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
-import Loading from './../components/Loading';
+import Loading from '../components/common/Loading';
 import Rellax from 'rellax';
 
 function MyApp({ Component, pageProps }: AppProps) {

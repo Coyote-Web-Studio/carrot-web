@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Flex, Box, Text, Image } from 'rebass';
 import styled, { useTheme } from 'styled-components';
-import Button from './Button';
-import GridBackground from './GridBackground';
-import Fade from './Fade';
+import Button from '../common/Button';
+import GridBackground from '../common/GridBackground';
+import Fade from '../common/Fade';
 import { transparentize } from 'polished';
 import { keyframes } from '@emotion/react';
 

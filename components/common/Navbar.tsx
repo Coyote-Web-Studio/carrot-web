@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { Flex, Box, Text, Link } from 'rebass';
 import styled, { useTheme } from 'styled-components';
 import { Switch } from '@rebass/forms'
-import { useThemeContext } from './../context/theme'
+import { useThemeContext } from '../../context/theme'
 import Logo from './Logo';
 import HamburgerIcon from './HamburgerIcon';
 import Button from './Button';
-import darkTheme from './../themes/dark';
-import lightTheme from './../themes/light';
+import darkTheme from '../../themes/dark';
+import lightTheme from '../../themes/light';
 
 const Navbar = (props : any) => {
     const [theme, setTheme] : any = useThemeContext();
@@ -81,7 +81,7 @@ const Navbar = (props : any) => {
                                     sx={{
                                         ml:['1.6rem', '1.6rem', '3.2rem'],
                                         whiteSpace: 'nowrap',
-                                        '&:first-child': {
+                                        '&:first-of-type': {
                                             ml: 0
                                         }
                                     }}
