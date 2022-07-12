@@ -83,10 +83,10 @@ const GridBackground = (props : any) => {
             backgroundSize: [`2.4rem 2.4rem`,`2.4rem 2.4rem`,`6.4rem 6.4rem`],
         }}>
             {gridRows > 0 && (
-                [...Array(gridRows)].map((elem, index) => 
-                    <Flex sx={{ width: '100%', gap: '1px'}}>
-                        {[...Array(gridColumns)].map((elem, index) => 
-                            <Box sx={{
+                [...Array(gridRows)].map((elem : any, index : number) => 
+                    <Flex sx={{ width: '100%', gap: '1px'}} key={index}>
+                        {[...Array(gridColumns)].map((elem : any, index : number) => 
+                            <Box key={index} sx={{
                                 animation: props.useAnimation && `${scale} 1s forwards`,
                                 transformOrigin: 'center',
                                 animationDelay:  props.useAnimation && `${++boxCounter * 5}ms`,

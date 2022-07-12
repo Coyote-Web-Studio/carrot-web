@@ -186,9 +186,9 @@ const MainContent = (props : any) => {
       >
         <Image className={'rellax'} src={'misc/sphere.png'} sx={{
           position: 'absolute',
-          top: '0',
+          top: '0rem',
           width: '10rem',
-          right: '30rem',
+          right: '-5rem',
           zIndex: '3'
           
         }} />

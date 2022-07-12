@@ -174,7 +174,7 @@ const HowItWorksBlock = (props: any) => {
             maxHeight: isOpen ? '1000px' : '0',
             overflowY: 'hidden',
             transition: '0.25s ease-in-out max-height, padding',
-            p: isOpen ? '2.4rem 2.4rem' : '0rem 2.4rem'
+            p: isOpen ? '2.4rem 2.4rem' : '2.4rem 2.4rem'
           }}
         >
           <Box sx={{'opacity': isOpen ? '1' : '0', transition: '0.25s ease-in-out all',}} >
