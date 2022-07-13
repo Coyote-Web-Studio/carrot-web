@@ -8,8 +8,8 @@ import CampaignCard from "./../common/CampaignCard";
 
 const SuccesfulCampaigns = () => {
   const theme: any = useTheme();
-  const highlightRef = useRef();
-  const sliderRef = useRef();
+  const highlightRef = useRef<HTMLInputElement>();
+  const sliderRef = useRef<HTMLInputElement>();
 
   return (
     <Flex
@@ -93,10 +93,7 @@ const SuccesfulCampaigns = () => {
 
               let highlighterExtraWidth = 138;
 
-              console.log(e.currentTarget.getBoundingClientRect())
-              console.log(sliderRef.current.offsetLeft);
-
-              if (highlightRef.current !== undefined && sliderRef.current !== undefined) {
+              if ( highlightRef.current && sliderRef.current ) {
                 highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
 
                 highlightRef.current.style.left = e.currentTarget.getBoundingClientRect().left - sliderRef.current.offsetLeft + - highlighterExtraWidth / 2 + 'px';
