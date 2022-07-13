@@ -1,4 +1,4 @@
-import { Button as RBButton, Box } from 'rebass';
+import { Button as RBButton, Box, Text } from 'rebass';
 import styled, { useTheme } from 'styled-components';
 
 const Button = (props : any) => {
@@ -13,10 +13,20 @@ const Button = (props : any) => {
             minWidth: '14.4rem',
             '&:hover .button, &:hover .button-border': {
                 transitionTimingFunction: 'cubic-bezier(0,1.19,.62,1.44)',
-                fontWeight: 500,
             },
             '&:hover .button': {
-                backgroundColor: theme.colors.buttonBackground
+                backgroundColor: theme.colors.buttonBackground,
+                'span': {
+                    textShadow: `
+                    0.5px 0 ${theme.colors.buttonBorder}, 
+                    -0.5px 0 ${theme.colors.buttonBorder}, 
+                    0 0.5px ${theme.colors.buttonBorder}, 
+                    0 -0.5px ${theme.colors.buttonBorder},
+                    0.25px 0.25px ${theme.colors.buttonBorder}, 
+                    -0.25px -0.25px ${theme.colors.buttonBorder}, 
+                    0.25px -0.25px ${theme.colors.buttonBorder}, 
+                    -0.25px 0.25px ${theme.colors.buttonBorder}`,
+                }
             },
             '&:hover .button-border': {
                 borderWidth: '0.2rem'
@@ -47,7 +57,6 @@ const Button = (props : any) => {
                 lineHeight: ['1.8rem'],
                 fontSize: ['1.2rem', '1.2rem', '1.6rem'],
                 fontWeight: 400,
-                color: theme.colors.gray10,
                 width: 'inherit',
                 fontFamily: 'IBM Plex Mono',
                 letterSpacing: '0.05rem',
@@ -62,7 +71,9 @@ const Button = (props : any) => {
                 minWidth: 'inherit',
                 ...props.sx,
             }}>
-                {props.children}
+                <Text as={'span'} sx={{color: theme.colors.gray10, textShadow: '0 0 transparent', transition: '0.1s ease-in-out all'}}>
+                    {props.children}
+                </Text>
             </StyledButton>
         </Box>
     )

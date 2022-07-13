@@ -83,6 +83,8 @@ const Navbar = (props : any) => {
             </Flex>
             <Flex sx={{
                 position: 'absolute',
+                pointerEvents: isMobileNavbarOpen ? 'auto' : 'none',
+                opacity: isMobileNavbarOpen ? 1 : 0,
                 top: isMobileNavbarOpen ? '8rem' : '20rem',
                 left: 0,
                 width: '100vw',
@@ -93,7 +95,6 @@ const Navbar = (props : any) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 transition: '0.25s ease-in-out all',
-                opacity: isMobileNavbarOpen ? 1 : 0
             }}>
                 <Flex as="nav" sx={{mb: '4rem'}}>
                     <Flex as="ul" alignItems={'center'} flexDirection={'column'}>

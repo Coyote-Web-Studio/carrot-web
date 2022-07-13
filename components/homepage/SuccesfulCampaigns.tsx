@@ -45,7 +45,7 @@ const SuccesfulCampaigns = () => {
           width: 'calc(100% + 4rem)',
           height: 'calc(100% + 4rem)',
           pointerEvents: 'none',
-          transition: '0.25s cubic-bezier(0,.68,.71,1.32) all',
+          transition: '0.25s ease-in-out all',
           // opacity: 0,
           clipPath: 'polygon(0 100% ,0 100%, 0 100%, 0 100%)',
           background: `repeating-linear-gradient(
