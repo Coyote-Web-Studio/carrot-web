@@ -5,78 +5,12 @@ import { useTheme } from 'styled-components';
 import GridBackground from './../common/GridBackground';
 import Fade from './../common/Fade';
 
+import Breakdown from './Breakdown';
+import HowItWorks from './HowItWorks';
 import HowItWorksBlock from './HowItWorksBlock';
 import SuccesfulCampaigns from './SuccesfulCampaigns';
 
 const MainContent = (props : any) => {
-  interface ContentBlock {
-    heading: string,
-    content: string,
-    image: string
-  }
-
-  const MainContent = [
-    {
-      heading: 'Measure what matters',
-      content: 'Carrot allows you to set precise goals and targets based on the needs of your project. Use strong cryptoeconomic incentives to bring your community together and achieve common goals.',
-      image: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'
-    },
-    {
-      heading: 'Incentivize your community',
-      content: 'Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met. Carrot has helped distribute over $XX in rewards to date.',
-      image: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/2-mobile_xlekiw.png'
-    },
-    {
-      heading: 'Reward real value',
-      content: 'Anyone who contributes to a goal will receive rewards directly proportional to their impact thanks to the magic of KPI tokens. Get real value in exchange for real value. ',
-      image: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048106/carrot/main-content/3-mobile_yryzyt.png'
-    },
-  ];
-
-  const HowItWorksContent = [
-    {
-      heading: 'Create your campaign',
-      triggerLabel: 'Set conditions and collateral',
-      content: 
-        <>
-          <Text as={'p'}>
-            Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more.
-          </Text>
-          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'} my={'2rem'}/>
-          <Text as={'p'}>
-            Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
-          </Text>
-        </>
-    },
-    {
-      heading: 'Distribute KPI tokens',
-      triggerLabel: 'Issue reward tokens to your community',
-      content: 
-        <>
-          <Text as={'p'}>
-            Issue reward tokens to your community
-          </Text>
-          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'} my={'2rem'}/>
-          <Text as={'p'}>
-            Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
-          </Text>
-        </>
-    },
-    {
-      heading: 'Finalize and Redeem',
-      triggerLabel: 'Distribute rewards and claim collateral saved by Carrot',
-      content: 
-        <>
-          <Text as={'p'}>
-            Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more.
-          </Text>
-          <Image src={'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png'} my={'2rem'}/>
-          <Text as={'p'}>
-            Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
-          </Text>
-        </>
-    },
-  ];
 
   const CarrotInNumbers = [
     {
@@ -140,74 +74,9 @@ const MainContent = (props : any) => {
         <GridBackground />
       </Box>
       {/* BREAKDOWN */}
-      <Flex
-        flexDirection={"column"}
-        sx={{
-          ...theme.boxSizes.reducedBox,
-          position: 'relative',
-          zIndex: 1,
-        }}
-        pt={["2.4rem","5.2rem", "12.8rem"]}
-        pb={["9.2rem"]}
-      >
-        <Image className={'rellax'} src={'misc/sphere.png'} sx={{
-          position: 'absolute',
-          top: '0rem',
-          width: '10rem',
-          right: '-5rem',
-          zIndex: '3'
-          
-        }} />
-        {MainContent.map((contentBlock: ContentBlock, index: number) => (
-          <Fade key={index} sx={{
-            mb: ["4.8rem", "4.8rem", "6.4rem"],
-            position: 'relative'
-          }}>
-            <Flex
-              flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
-              justifyContent={['auto', 'space-between']}
-              alignItems={['auto', 'center']}
-              sx={{
-                "&:last-child": {
-                  mb: 0,
-                },
-              }}
-            >
-              <Image src={contentBlock.image} mb={["2rem", "0"]} width={['100%', 'calc(50% - 1rem)', '53rem']} />
-              <Flex flexDirection={'column'} width={['100%', 'calc(50% - 1rem)', '53rem']}>
-                <Text as="h3" mb={"1.8rem"}>
-                  {contentBlock.heading}
-                </Text>
-                <Text as="p" sx={{ ...theme.text.paragraph }}>
-                  {contentBlock.content}
-                </Text>
-              </Flex>
-            </Flex>
-          </Fade>
-        ))}
-      </Flex>
+      <Breakdown />
       {/* HOW IT WORKS */}
-      <Flex
-        flexDirection={"column"}
-        sx={{
-          ...theme.boxSizes.defaultBox,
-          zIndex: 1,
-          mb: ['8.2rem', '8.2rem', '16.9rem']
-        }}
-      >
-        <Fade>
-          <Text as={"h2"} mb={["1.4rem", '4.8rem']}>
-            How it works
-          </Text>
-        </Fade>
-        <Flex as={"ul"} flexDirection={"column"} width={"100%"}>
-          <Fade>
-            {HowItWorksContent.map((contentBlock, index) => (
-              <HowItWorksBlock content={contentBlock} key={index} index={index}/>
-            ))}
-          </Fade>
-        </Flex>
-      </Flex>
+      <HowItWorks />
       {/* SUCCESFUL CAMPAIGNS */}
       <SuccesfulCampaigns />
       {/* CARROT IN NUMBERS */}

@@ -53,13 +53,26 @@ const Navbar = (props : any) => {
                                 <Link 
                                     fontFamily={'IBM Plex Mono'} 
                                     fontSize={['1rem', '1rem', '1.6rem']} 
+                                    href={'#'}
                                     key={index}
                                     sx={{
                                         ml:['1.6rem', '1.6rem', '3.2rem', '6.4rem'],
                                         whiteSpace: 'nowrap',
+                                        transition: '0.1s ease-in-out all',
                                         '&:first-of-type': {
                                             ml: 0
-                                        }
+                                        },
+                                        '&:hover': {
+                                            textShadow: `
+                                                0.25px 0 ${theme.colors.textColor}, 
+                                                -0.25px 0 ${theme.colors.textColor}, 
+                                                0 0.25px ${theme.colors.textColor}, 
+                                                0 -0.25px ${theme.colors.textColor},
+                                                0.125px 0.125px ${theme.colors.textColor}, 
+                                                -0.125px -0.125px ${theme.colors.textColor}, 
+                                                0.125px -0.125px ${theme.colors.textColor}, 
+                                                -0.125px 0.125px ${theme.colors.textColor}`
+                                        },
                                     }}
                                 >
                                     {link.label}
