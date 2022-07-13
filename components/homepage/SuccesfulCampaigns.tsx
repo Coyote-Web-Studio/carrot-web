@@ -45,15 +45,15 @@ const SuccesfulCampaigns = () => {
           width: 'calc(100% + 4rem)',
           height: 'calc(100% + 4rem)',
           pointerEvents: 'none',
-          transition: '0.25s ease-in-out all',
+          transition: '0.25s cubic-bezier(0,.68,.71,1.32) all',
           // opacity: 0,
-          clipPath: 'polygon(100% 0 ,100% 0, 100% 0, 100% 0)',
+          clipPath: 'polygon(0 100% ,0 100%, 0 100%, 0 100%)',
           background: `repeating-linear-gradient(
             135deg,
             transparent,
-            transparent 8.2rem,
-            ${theme.colors.green5} 8.2rem,
-            ${theme.colors.green5} 16.4rem
+            transparent 6.4rem,
+            ${theme.colors.green5} 6.4rem,
+            ${theme.colors.green5} 12.8rem
           )`
         }}>
 
