@@ -19,7 +19,7 @@ const TrustingProtocols = () => {
             </Text>
             <Flex as={'ul'} flexWrap={['wrap', 'nowrap']} width={'100%'}>
               {Protocols.map((protocol, index) => (
-                <Flex as={'li'}  key={index} 
+                <Flex as={'li'}  key={index} data-aos={'flip-left'} 
                   width={['calc(50vw - 2rem)', 'calc(25vw - 11.5rem)']}
                   height={[
                     'calc(50vw - 2rem)', 

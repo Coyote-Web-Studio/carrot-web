@@ -1,11 +1,21 @@
-import { Flex, Box, Text } from 'rebass';
+import { Flex, Box, Text, Image } from 'rebass';
 import { useTheme } from 'styled-components';
+import { useParallax } from 'react-scroll-parallax';
 
 import Fade from '../common/Fade';
 import GridBackground from '../common/GridBackground';
+import { transparentize } from 'polished';
 
 const CustomerReview = () => {
   const theme : any = useTheme();
+  const goldParallax = useParallax({
+    speed: -20,
+  });
+
+  const sphereParallax = useParallax({
+    speed: -10,
+  });
+
   return (
     <Flex
       sx={{
@@ -29,6 +39,31 @@ const CustomerReview = () => {
       >
         <GridBackground trimRows={3} color={theme.colors.customerCommentGrid} />
       </Box>
+      <Image
+        ref={sphereParallax.ref}
+        src={"misc/sphere.png"}
+        sx={{
+          position: "absolute",
+          top: '-10rem',
+          width: "10rem",
+          height: '10rem',
+          left: "18%",
+          zIndex: "10",
+        }}
+      />
+      <Image
+        ref={goldParallax.ref}
+        src={"misc/gold-curve.png"}
+        sx={{
+          position: "absolute",
+          top: "50rem",
+          width: "13rem",
+          height: '13rem',
+          right: "25%",
+          zIndex: "10",
+          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`
+        }}
+      />
       <Fade
         sx={{
           ...theme.boxSizes.defaultBox,

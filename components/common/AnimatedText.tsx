@@ -4,6 +4,11 @@ import { keyframes } from '@emotion/react';
 const AnimatedText = (props : any) => {
     let letterCounter = 0;
 
+    let options = {
+        rootMargin: '0px',
+        threshold: 1.0,
+    }
+
     const initialTextState = {
         transform: 'rotate3d(0,1,0, 90deg)',
         opacity: 0
