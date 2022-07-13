@@ -10,20 +10,28 @@ const AnimatedText = (props : any) => {
     }
 
     const initialTextState = {
-        transform: 'rotate3d(0,1,0, 90deg)',
-        opacity: 0
+        // visibility: 'hidden',
+        opacity: 0,
+        // display: 'none'
     };
     
     const endTextState = {
-        transform: 'rotate3d(0,1,0, 0deg)',
-        opacity: 1
+        // visibility: 'show',
+        opacity: 1,
+        // display: 'block'
     };
 
     const textAnimation = keyframes({
-        from: {
+        ['0%']: {
             ...initialTextState
         },
-        to: {
+        ['49%']: {
+            ...initialTextState
+        },
+        ['50%']: {
+            ...endTextState
+        },
+        ['100%']: {
             ...endTextState
         },
     })
@@ -36,7 +44,7 @@ const AnimatedText = (props : any) => {
                         word.split('').map((character : any, j : any) => (
                             <Text as={'span'} sx={{
                                 animation: `${textAnimation} 0.25s ease-out forwards`,
-                                animationDelay: `${(++letterCounter) * 30}ms`,
+                                animationDelay: `${((++letterCounter) * 50) + 150}ms`,
                                 display: 'inline-block',
                                 ...initialTextState
                             }} key={j}>

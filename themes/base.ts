@@ -3,8 +3,8 @@ export default {
     fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
     colors: {
       blue6: '#0029FF',
-      orange6: "#EC672C",
-      green5: "#7DF882",
+      orange6: "#EF692B",
+      green5: "#6EFF95",
       yellow6: "#F6FB18",
       gray1: "#F5F5F5",
       gray2: "#E9E9E9",

@@ -9,7 +9,7 @@ const HowItWorksBlock = (props: any) => {
 
   return (
     <Box data-aos={'flip-up'}
-    data-aos-offset={'300'}>
+    data-aos-offset={'200'}>
       <Flex
         as={"li"}
         flexDirection={["column", "row"]}

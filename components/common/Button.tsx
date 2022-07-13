@@ -1,5 +1,6 @@
 import { Button as RBButton, Box, Text } from 'rebass';
 import styled, { useTheme } from 'styled-components';
+import { darken, lighten, saturate } from 'polished';
 
 const Button = (props : any) => {
     const theme : any = useTheme();
@@ -15,18 +16,7 @@ const Button = (props : any) => {
                 transitionTimingFunction: 'cubic-bezier(0,1.19,.62,1.44)',
             },
             '&:hover .button': {
-                backgroundColor: theme.colors.buttonBackground,
-                'span': {
-                    textShadow: `
-                    0.5px 0 ${theme.colors.buttonBorder}, 
-                    -0.5px 0 ${theme.colors.buttonBorder}, 
-                    0 0.5px ${theme.colors.buttonBorder}, 
-                    0 -0.5px ${theme.colors.buttonBorder},
-                    0.25px 0.25px ${theme.colors.buttonBorder}, 
-                    -0.25px -0.25px ${theme.colors.buttonBorder}, 
-                    0.25px -0.25px ${theme.colors.buttonBorder}, 
-                    -0.25px 0.25px ${theme.colors.buttonBorder}`,
-                }
+                backgroundColor: saturate('1', theme.colors.buttonBackground),
             },
             '&:hover .button-border': {
                 borderWidth: '0.2rem'
@@ -44,7 +34,7 @@ const Button = (props : any) => {
                 top: 0,
                 left: 0,
                 bg: 'transparent',
-                transition: '0.15s ease-in-out all',
+                transition: '0.15s ease-in-out border',
                 zIndex: 1,
                 borderRadius: 'inherit',
                 pointerEvents: 'none',
@@ -65,7 +55,7 @@ const Button = (props : any) => {
                 position: 'relative',
                 top: '0rem',
                 left: '0rem',
-                transition: '0.15s ease-in-out all',
+                transition: '0.15s ease-in-out background-color',
                 cursor: 'pointer',
                 m: 0,
                 minWidth: 'inherit',
