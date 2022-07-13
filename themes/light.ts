@@ -20,7 +20,7 @@ export default {
     protocolCardBackground: '#F5F5F5',
     protocolCardLine: '#0B0B0B',
 
-    cardBackground: '#F5F5F5',
+    cardBackground: '#FEFEFE',
     cardText: '#0B0B0B',
     cardLine: '#0B0B0B',
     cardButtonHover: '#E9E9E9',

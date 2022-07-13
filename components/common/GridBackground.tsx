@@ -30,7 +30,7 @@ const GridBackground = (props : any) => {
 
 
     const updateDimensions = debounce(() => {
-        console.log('Updated');
+        // console.log('Updated');
         if (gridRef.current) {
             setGridHeight(gridRef.current.getBoundingClientRect().height);
             setGridWidth(gridRef.current.getBoundingClientRect().width);
@@ -43,8 +43,8 @@ const GridBackground = (props : any) => {
     }, []);
 
     useEffect(() => {
-        console.log('Height: ' + gridHeight);
-        console.log('Width: ' + gridWidth);
+        // console.log('Height: ' + gridHeight);
+        // console.log('Width: ' + gridWidth);
 
         const availableTabletRows = Math.round(gridHeight / 24);
         const availableTabletColumns = Math.round(gridWidth / 24);
@@ -52,8 +52,8 @@ const GridBackground = (props : any) => {
         const availableDesktopRows = Math.round(gridHeight / 64);
         const availableDesktopColumns = Math.round(gridWidth / 64);
 
-        console.log(availableDesktopRows)
-        console.log(availableDesktopColumns);
+        // console.log(availableDesktopRows)
+        // console.log(availableDesktopColumns);
 
         if (window.innerWidth > 1104) {
             setGridRows(availableDesktopRows - (props.trimRows ? props.trimRows : 0))

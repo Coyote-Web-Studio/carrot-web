@@ -8,6 +8,7 @@ const CampaignCard = (props : any) => {
 
     const theme : any = useTheme()
     return (
+      <Box sx={{position: 'relative'}}>
         <StyledCampaignCard {...props} flexDirection={['column']} bg={theme.colors.cardBackground} sx={{
             border: `0.1rem solid ${theme.colors.cardLine}`,
             borderRadius: '1.6rem',
@@ -57,25 +58,26 @@ const CampaignCard = (props : any) => {
                     lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
                     {campaign.timeLeft}
                 </Text>
-                </Flex>
               </Flex>
             </Flex>
-            {/* LINK */}
-            <RBButton sx={{
-              height: '6.4rem', 
-              borderTop: `0.1rem solid ${theme.colors.cardLine}`, 
-              bg: theme.colors.cardBackground, 
-              borderRadius: 0, 
-              fontSize: ['1.6rem', '1.2rem', '1.9rem'], 
-              color: theme.colors.cardText,
-              '&:hover': {
-                background: theme.colors.cardButtonHover
-              }
-            }}
-            >
-              ↳ see campaign
-            </RBButton>
-          </StyledCampaignCard>
+          </Flex>
+          {/* LINK */}
+          <RBButton sx={{
+            height: '6.4rem', 
+            borderTop: `0.1rem solid ${theme.colors.cardLine}`, 
+            bg: theme.colors.cardBackground, 
+            borderRadius: 0, 
+            fontSize: ['1.6rem', '1.2rem', '1.9rem'], 
+            color: theme.colors.cardText,
+            '&:hover': {
+              background: theme.colors.cardButtonHover
+            }
+          }}
+          >
+            ↳ see campaign
+          </RBButton>
+        </StyledCampaignCard>
+      </Box>
     )
 };
 

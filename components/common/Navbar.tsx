@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Flex, Box, Text, Link } from 'rebass';
+import { Flex, Box, Text, Link, Image } from 'rebass';
 import styled, { useTheme } from 'styled-components';
-import { Switch } from '@rebass/forms'
 import { useThemeContext } from '../../context/theme'
 import Logo from './Logo';
 import HamburgerIcon from './HamburgerIcon';
 import Button from './Button';
-import darkTheme from '../../themes/dark';
-import lightTheme from '../../themes/light';
+import StyleSwitch from './StyleSwitch';
 
 const Navbar = (props : any) => {
-    const [theme, setTheme] : any = useThemeContext();
-    const [themeSwitchActive, setThemeSwitchActive] = useState(false);
+    
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
+    const theme : any = useTheme();
 
     const NavLinks = [
         {
@@ -44,29 +42,7 @@ const Navbar = (props : any) => {
     return (
         <StyledNavbar sx={{width: '100%', pt: ['2.4rem', '2.4rem', '6.2rem'], pb: ['3.2rem', '2.4rem', '4.5rem']}}>
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
-                <Logo color={theme.colors.logoColor} height={['2.7rem', '4rem']}/>
-                <Flex ml={'auto'} mr={['2rem', '2rem', '4rem']} alignItems={'center'}>
-                    <Switch checked={themeSwitchActive} color={theme.colors.textColor} onClick={() => {
-                        setThemeSwitchActive(!themeSwitchActive);
-                        setTheme(
-                            themeSwitchActive ? lightTheme : darkTheme
-                        )
-                    }} sx={{
-                        height: '1.32rem', 
-                        width: '2.6rem',
-                        cursor: 'pointer',
-                        bg: theme.colors.textColor,
-                        '&:focus': {
-                            boxShadow: 'none',
-                        },
-                        'div': {
-                            boxShadow: 'none',
-                            width: '1.32rem',
-                            height: '1.32rem',
-                            bg: theme.colors.background,
-                        }
-                    }}/>
-                </Flex>
+                <Logo color={theme.colors.logoColor} height={['2.7rem', '2.7rem', '4.8rem']}/>
                 <Box sx={{
                     display: ['none', 'flex', 'flex', 'flex'],
                     alignItems: 'center'
@@ -79,7 +55,7 @@ const Navbar = (props : any) => {
                                     fontSize={['1rem', '1rem', '1.6rem']} 
                                     key={index}
                                     sx={{
-                                        ml:['1.6rem', '1.6rem', '3.2rem'],
+                                        ml:['1.6rem', '1.6rem', '3.2rem', '6.4rem'],
                                         whiteSpace: 'nowrap',
                                         '&:first-of-type': {
                                             ml: 0
@@ -91,12 +67,14 @@ const Navbar = (props : any) => {
                             ))}
                         </Flex>
                     </Flex>
+                    <StyleSwitch ml={['2rem', '2rem', '4rem']} />
                     <Button buttonWrapperStyles={{
                         ml: ['2.4rem', '2.4rem', '4.8rem']
                     }}>
                         CARROT DAPP
                     </Button>
                 </Box>
+                <StyleSwitch sx={{display: ['inline-block', 'none', 'none']}}/>
                 <HamburgerIcon sx={{
                     display: ['auto', 'none']
                 }} onClick={() => {

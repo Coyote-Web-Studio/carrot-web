@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Flex, Box, Text } from "rebass";
 import { useTheme } from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -7,6 +8,9 @@ import CampaignCard from "./../common/CampaignCard";
 
 const SuccesfulCampaigns = () => {
   const theme: any = useTheme();
+  const highlightRef = useRef();
+  const sliderRef = useRef();
+
   return (
     <Flex
       flexDirection={"column"}
@@ -22,16 +26,44 @@ const SuccesfulCampaigns = () => {
       {/* TABLET / DESKTOP VIEW */}
       <Flex
         as={"ul"}
-        flexDirection={["column", "row"]}
         mb={"1.6rem"}
+        ref={sliderRef}
         sx={{
           display: ["none !important", "block !important", "block !important"],
+          position: 'relative',
+          ['&:hover .highlight-box']: {
+            opacity: 1,
+            clipPath: 'polygon(0 0 ,100% 0, 100% 100%, 0 100%)',
+          }
         }}
       >
+        <Box className="highlight-box" ref={highlightRef} sx={{
+          zIndex: 0,
+          position: 'absolute',
+          top: '-2rem',
+          left: '-2rem',
+          width: 'calc(100% + 4rem)',
+          height: 'calc(100% + 4rem)',
+          pointerEvents: 'none',
+          transition: '0.25s ease-in-out all',
+          // opacity: 0,
+          clipPath: 'polygon(100% 0 ,100% 0, 100% 0, 100% 0)',
+          background: `repeating-linear-gradient(
+            135deg,
+            transparent,
+            transparent 8.2rem,
+            ${theme.colors.green5} 8.2rem,
+            ${theme.colors.green5} 16.4rem
+          )`
+        }}>
+
+        </Box>
         <Splide
+          style={{zIndex: 2}}
           options={{
             width: "100%",
             pagination: false,
+            type: 'loop',
             breakpoints: {
               360: {
                 perPage: 1,
@@ -52,7 +84,26 @@ const SuccesfulCampaigns = () => {
           }}
         >
           {SuccesfullCampaigns.map((campaign, index) => (
-            <SplideSlide key={index}>
+            <SplideSlide key={index} onMouseEnter={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+
+              let cardWidth = e.currentTarget.getBoundingClientRect().width;
+              let cardHeight = e.currentTarget.getBoundingClientRect().height;
+
+              let highlighterExtraWidth = 138;
+
+              console.log(e.currentTarget.getBoundingClientRect())
+              console.log(sliderRef.current.offsetLeft);
+
+              if (highlightRef.current !== undefined && sliderRef.current !== undefined) {
+                highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
+
+                highlightRef.current.style.left = e.currentTarget.getBoundingClientRect().left - sliderRef.current.offsetLeft + - highlighterExtraWidth / 2 + 'px';
+
+                highlightRef.current.style.top = - (highlighterExtraWidth / 4) + 'px';
+              }
+            }}>
               <CampaignCard
                 campaign={campaign}
                 sx={{

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Flex, Box, Text } from "rebass";
 import { useTheme } from "styled-components";
-
-import Button from "./../common/Button";
+import SeeMoreButton from '../common/SeeMoreButton';
 
 const HowItWorksBlock = (props: any) => {
   const theme : any = useTheme();
@@ -73,7 +72,7 @@ const HowItWorksBlock = (props: any) => {
       }}>
         <Flex
           className={"hiw-trigger"}
-          p={["2.4rem", "0 2.4rem"]}
+          p={["2.4rem", "0 2.4rem", '0 6.4rem']}
           justifyContent={"space-between"}
           alignItems={"center"}
           width={"100%"}
@@ -88,62 +87,7 @@ const HowItWorksBlock = (props: any) => {
           >
             {props.content.triggerLabel}
           </Text>
-          <Button
-            onClick={() => {
-              setIsOpen(!isOpen)
-            }}
-            buttonWrapperStyles={{
-              borderRadius: "10rem",
-              width: ["4rem", '4rem', '8rem'],
-              height: ["4rem", '4rem', '8rem'],
-              minWidth: ['4rem', '4rem', '8rem'],
-              position: "relative",
-              ml: ["1.6rem", "1.6rem", "2.4rem"],
-              '&:hover': {
-                '&.button': {
-                  background: ['auto', 'auto', `${theme.colors.orange6} !important`],
-                },
-                '.plus-line': {
-                  height: '0.2rem'
-                }
-              },
-              '.plus-line:nth-of-type(2)': {
-                transform: isOpen ? 'rotate(180deg)' : 'rotate(90deg)'
-              },
-            }}
-            sx={{
-              backgroundColor: [
-                theme.colors.orange6, 
-                theme.colors.orange6, 
-                theme.colors.cardBackground
-              ],
-            }}
-          >
-            <Box
-              className="plus-line"
-              sx={{
-                position: "absolute",
-                left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", "calc(50% - 2.6rem)"],
-                width: ["1.4rem", "1.4rem", '5.2rem'],
-                height: "0.1rem",
-                background: theme.colors.cardLine,
-                borderRadius: '100px'
-              }}
-            />
-            <Box
-              className="plus-line"
-              sx={{
-                position: "absolute",
-                left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", "calc(50% - 2.6rem)"],
-                width: ["1.4rem", "1.4rem", '5.2rem'],
-                height: "0.1rem",
-                background: theme.colors.cardLine,
-                transform: "rotate(90deg)",
-                transition: '0.15s ease-in-out transform',
-                borderRadius: '100px'
-              }}
-            />
-          </Button>
+          <SeeMoreButton isOpen={isOpen} onClick={() => {setIsOpen(!isOpen)}}/>
         </Flex>
         <Flex 
           className={"hiw-content"} 
@@ -152,10 +96,10 @@ const HowItWorksBlock = (props: any) => {
             maxHeight: isOpen ? '1000px' : '0',
             overflowY: 'hidden',
             transition: '0.25s ease-in-out max-height, padding',
-            p: isOpen ? '2.4rem 2.4rem' : '2.4rem 2.4rem'
+            p: ['2.4rem', '2.4rem', '0 6.4rem 13.3rem']
           }}
         >
-          <Box sx={{overflowY: 'hidden'}} >
+          <Box sx={{overflowY: 'hidden', 'img': { width: '100%'}}} >
             {props.content.content}
           </Box>
         </Flex> 

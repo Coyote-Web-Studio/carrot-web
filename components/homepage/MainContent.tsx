@@ -148,7 +148,7 @@ const MainContent = (props : any) => {
           zIndex: 1,
         }}
         pt={["2.4rem","5.2rem", "12.8rem"]}
-        pb={"9.2rem"}
+        pb={["9.2rem"]}
       >
         <Image className={'rellax'} src={'misc/sphere.png'} sx={{
           position: 'absolute',
@@ -192,7 +192,7 @@ const MainContent = (props : any) => {
         sx={{
           ...theme.boxSizes.defaultBox,
           zIndex: 1,
-          mb: '8.2rem'
+          mb: ['8.2rem', '8.2rem', '16.9rem']
         }}
       >
         <Fade>

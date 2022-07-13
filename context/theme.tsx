@@ -10,7 +10,7 @@ const ThemeContext = ({children} : any) => {
 
     useEffect(() => {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // setTheme(darkTheme);
+            setTheme(darkTheme);
         };
     }, [])
 

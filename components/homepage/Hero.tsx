@@ -26,7 +26,7 @@ const Hero = (props : any) => {
         return (
             text.split(' ').map((word : any, i : any) => (
                 <>
-                    <Text as={'span'} sx={{display: 'inline-block'}}>
+                    <Text as={'span'} sx={{display: 'inline-block'}} key={i}>
                         {
                             word.split('').map((character : any, j : any) => (
                                 <Text as={'span'} sx={{
@@ -77,9 +77,9 @@ const Hero = (props : any) => {
                         lineHeight: ['4.88rem', '4.88rem', '9.9rem'] ,
                         mb: ['1.6rem', '1.6rem', '5.2rem'],
                     }}>
-                        {/* {generateAnimatedText(` */}
-                        Reach your goals with a Carrot
-                        {/* `)} */}
+                        {
+                        generateAnimatedText(`Reach your goals with a Carrot`)
+                        }
                     </Text>
                     <Fade>
                         <Text mb={['2.8rem', '2.4rem', '7.3rem']} sx={{

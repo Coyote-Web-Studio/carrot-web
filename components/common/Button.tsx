@@ -12,9 +12,6 @@ const Button = (props : any) => {
             cursor: 'pointer',
             minWidth: '14.4rem',
             '&:hover .button, &:hover .button-border': {
-                // top: '-1rem',
-                // left: '1rem',
-                // boxShadow: `-1rem 1rem 0 0 ${theme.colors.shadow}`,
                 transitionTimingFunction: 'cubic-bezier(0,1.19,.62,1.44)',
                 fontWeight: 500,
             },
@@ -25,9 +22,6 @@ const Button = (props : any) => {
                 borderWidth: '0.2rem'
             },
             '&:active .button, &:active .button-border': {
-                // top: '0',
-                // left: '0',
-                // boxShadow: `0 0 0 0 ${theme.colors.shadow}`,
                 transitionDuration: '0s'
             },
             ...props.buttonWrapperStyles

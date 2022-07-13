@@ -11,6 +11,11 @@ const GlobalStyle = createGlobalStyle`
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
+  * {
+    /* outline: 1px solid black; */
+    /* border-bottom: 1px solid black; */
+  }
+
   a {
     color: inherit;
     text-decoration: none;
