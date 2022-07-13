@@ -12,8 +12,9 @@ const CarrotInNumbers = () => {
       zIndex: 1, 
       position: 'relative', 
       bg: theme.colors.orange6, 
-      borderRadius: '1.6rem', 
+      borderRadius: ['1.6rem', null, '5rem'], 
       pb: '3.6rem',
+      boxShadow: `0 0 5rem 2rem ${theme.colors.black}`
     }}
     >
       <Flex sx={{

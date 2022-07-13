@@ -1,9 +1,7 @@
 import { Flex, Box, Image, Text } from 'rebass';
-import '@splidejs/react-splide/css'
 import { useTheme } from 'styled-components';
 
 import GridBackground from './../common/GridBackground';
-import Fade from './../common/Fade';
 
 import Breakdown from './Breakdown';
 import HowItWorks from './HowItWorks';

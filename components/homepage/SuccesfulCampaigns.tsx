@@ -36,6 +36,22 @@ const SuccesfulCampaigns = () => {
             clipPath: 'polygon(0 0 ,100% 0, 100% 100%, 0 100%)',
             filter: 'blur(0px)',
             transform: 'scale(1)',
+          },
+          '.splide .splide__arrows': {
+            '.splide__arrow': {
+              top: 'calc(50% - 5rem)',
+              bg: 'transparent',
+              transform: 'scale(1.5)',
+              'svg': {
+                fill: theme.colors.textColor
+              }
+            },
+            '.splide__arrow--prev': {
+              left: '-4rem'
+            },
+            '.splide__arrow--next': {
+              right: '-4rem'
+            },
           }
         }}
       >
@@ -67,7 +83,7 @@ const SuccesfulCampaigns = () => {
           options={{
             width: "100%",
             pagination: false,
-            type: 'loop',
+            type: 'slider',
             breakpoints: {
               360: {
                 perPage: 1,

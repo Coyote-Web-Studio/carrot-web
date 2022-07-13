@@ -12,10 +12,11 @@ const CustomerReview = () => {
         zIndex: 1,
         position: "relative",
         bg: theme.colors.customerCommentBackground,
-        borderRadius: "1.6rem",
+        borderRadius: ['1.6rem', null, '5rem'],
         pb: ["6.4rem", "6.4rem", "14.4rem"],
         pt: ["8.7rem"],
         mb: ["4.8rem"],
+        boxShadow: `0 0 5rem 2rem ${theme.colors.black}`
       }}
     >
       <Box

@@ -89,6 +89,7 @@ const GridBackground = (props : any) => {
                             <Box key={index} sx={{
                                 animation: props.useAnimation && `${scale} 1s forwards`,
                                 transformOrigin: 'center',
+                                transition: '0.15s ease-in-out boxShadow',
                                 animationDelay:  props.useAnimation && `${++boxCounter * 5}ms`,
                                 transform: props.useAnimation ? 'rotate3d(0,1,0, 90deg)' : 'none',
                                 boxShadow: `0 0 0 1px ${props.color || theme.colors.gridColor}`,
@@ -127,11 +128,11 @@ const boxFade = keyframes({
 const scale = keyframes({
    ['0%']: {
         opacity: 0,
-        transform: 'scale(0)'
+        transform: 'rotate(180deg) scale(-2)'
     },
     ['100%']: {
         opacity: 1,
-        transform: 'scale(1)'
+        transform: 'rotate(0) scale(1)'
     },
 })
 
