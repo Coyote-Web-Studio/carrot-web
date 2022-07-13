@@ -1,5 +1,6 @@
 import { Flex, Button as RBButton, Text, Box} from 'rebass';
 import styled, {useTheme} from 'styled-components';
+import { transparentize } from 'polished';
 
 const CampaignCard = (props : any) => {
     const {
@@ -9,7 +10,9 @@ const CampaignCard = (props : any) => {
     const theme : any = useTheme()
     return (
       <Box sx={{position: 'relative'}}>
-        <StyledCampaignCard {...props} flexDirection={['column']} bg={theme.colors.cardBackground} sx={{
+        <StyledCampaignCard {...props} flexDirection={['column']} 
+          bg={transparentize('0.1', theme.colors.cardBackground)} sx={{
+            backdropFilter: 'blur(10px)',
             border: `0.1rem solid ${theme.colors.cardLine}`,
             borderRadius: '1.6rem',
             overflow: 'hidden',
@@ -65,7 +68,7 @@ const CampaignCard = (props : any) => {
           <RBButton sx={{
             height: '6.4rem', 
             borderTop: `0.1rem solid ${theme.colors.cardLine}`, 
-            bg: theme.colors.cardBackground, 
+            bg: 'transparent', 
             borderRadius: 0, 
             fontSize: ['1.6rem', '1.2rem', '1.9rem'], 
             color: theme.colors.cardText,

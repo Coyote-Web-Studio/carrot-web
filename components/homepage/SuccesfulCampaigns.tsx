@@ -34,6 +34,8 @@ const SuccesfulCampaigns = () => {
           ['&:hover .highlight-box']: {
             opacity: 1,
             clipPath: 'polygon(0 0 ,100% 0, 100% 100%, 0 100%)',
+            filter: 'blur(0px)',
+            transform: 'scale(1)',
           }
         }}
       >
@@ -46,8 +48,10 @@ const SuccesfulCampaigns = () => {
           height: 'calc(100% + 4rem)',
           pointerEvents: 'none',
           transition: '0.25s ease-in-out all',
-          // opacity: 0,
+          opacity: 0,
+          filter: 'blur(10px)',
           clipPath: 'polygon(0 100% ,0 100%, 0 100%, 0 100%)',
+          transform: 'scale(0.5)',
           background: `repeating-linear-gradient(
             135deg,
             transparent,
@@ -89,7 +93,6 @@ const SuccesfulCampaigns = () => {
               e.preventDefault();
 
               let cardWidth = e.currentTarget.getBoundingClientRect().width;
-              let cardHeight = e.currentTarget.getBoundingClientRect().height;
 
               let highlighterExtraWidth = 138;
 
@@ -111,7 +114,9 @@ const SuccesfulCampaigns = () => {
           ))}
         </Splide>
       </Flex>
+
       {/* MOBILE VIEW (NO SLIDE) */}
+
       <Flex
         as={"ul"}
         sx={{ display: ["block", "none", "none"] }}
