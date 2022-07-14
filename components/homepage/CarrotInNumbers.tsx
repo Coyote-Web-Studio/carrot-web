@@ -32,7 +32,7 @@ const CarrotInNumbers = () => {
           // background: 'blue',
           }}
         >
-          <GridBackground trimRows={3} color={theme.colors.carrotInNumbersGrid} />
+          <GridBackground trimRows={1} color={theme.colors.carrotInNumbersGrid} />
         </Box>
         <Fade sx={{zIndexX: 1}}>
           <Text as="h2" mb={['2.4rem', '9rem']} sx={{color: theme.colors.gray10}}>

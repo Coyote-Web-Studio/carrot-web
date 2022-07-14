@@ -22,7 +22,7 @@ const JoinTheCommunity = () => {
                             }}
                         >
                             <Text sx={{position: 'absolute', top: 0}}>• GET UPDATES</Text>
-                            <Text sx={{position: 'absolute', top: 0}}>• DON'T BY SHY</Text>
+                            <Text sx={{position: 'absolute', top: 0}}>• DON&apos;T BY SHY</Text>
                         </Flex>
                         <Flex flexDirection={'column'}>
                             <Flex as={'ul'} flexDirection={'column'} width={'100%'}>

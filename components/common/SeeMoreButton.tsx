@@ -15,15 +15,16 @@ const SeeMoreButton = (props : any) => {
               minWidth: ['4rem', '4rem', '8rem'],
               position: "relative",
               ml: ["1.6rem", "1.6rem", "2.4rem"],
-              '.button-border': {
-                borderColor: theme.colors.textColor
+              '.button': {
+                boxShadow: `0 0 0 0.1rem ${theme.colors.textColor}`
               },
               '&:hover': {
-                '&.button': {
-                  background: ['auto', 'auto', `${theme.colors.orange6} !important`],
+                '.button': {
+                  background: ['auto', 'auto', `${theme.colors.orange6}`],
+                  boxShadow: `0 0 0 0.1rem ${theme.colors.textColor}`
                 },
                 '.plus-line': {
-                  height: '0.2rem'
+                  boxShadow: `0 0 0 0.05rem ${theme.colors.textColor}`
                 }
               },
               '.plus-line:nth-of-type(2)': {

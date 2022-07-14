@@ -40,7 +40,7 @@ const Hero = (props : any) => {
                     top: [null, null, null, '6rem']
                     }}>
                     <Text as="h1" sx={{
-                        fontSize: ['4.8rem', '4.8rem', '9.9rem'], 
+                        fontSize: ['4.8rem', '4.8rem', '9.9rem', '12.8rem'], 
                         lineHeight: ['4.88rem', '4.88rem', '9.9rem'] ,
                         mb: ['1.6rem', '1.6rem', '5.2rem'],
                     }}>

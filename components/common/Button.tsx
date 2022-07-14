@@ -16,30 +16,17 @@ const Button = (props : any) => {
                 transitionTimingFunction: 'cubic-bezier(0,1.19,.62,1.44)',
             },
             '&:hover .button': {
-                backgroundColor: saturate('1', theme.colors.buttonBackground),
-            },
-            '&:hover .button-border': {
-                borderWidth: '0.2rem'
+                backgroundColor: theme.colors.buttonBorder,
+                boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBackground}`,
+                'span': {
+                    color: theme.colors.buttonBackground,
+                }
             },
             '&:active .button, &:active .button-border': {
                 transitionDuration: '0s'
             },
             ...props.buttonWrapperStyles
         }}>
-            <Box className={'button-border'} sx={{
-                width: '100%',
-                height: '100%',
-                border: `0.1rem solid ${theme.colors.buttonBorder}`,
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                bg: 'transparent',
-                transition: '0.15s ease-in-out border',
-                zIndex: 1,
-                borderRadius: 'inherit',
-                pointerEvents: 'none',
-                minWidth: 'inherit',
-            }}/>
             <StyledButton className={'button'} sx={{
                 background: theme.colors.buttonBackground,
                 height: '100%',
@@ -51,7 +38,7 @@ const Button = (props : any) => {
                 fontFamily: 'IBM Plex Mono',
                 letterSpacing: '0.05rem',
                 borderRadius: 'inherit',
-                boxShadow: `0rem 0rem 0 0 ${theme.colors.shadow}`,
+                zIndex: 1,
                 position: 'relative',
                 top: '0rem',
                 left: '0rem',
@@ -59,6 +46,7 @@ const Button = (props : any) => {
                 cursor: 'pointer',
                 m: 0,
                 minWidth: 'inherit',
+                boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBorder}`,
                 ...props.sx,
             }}>
                 <Text as={'span'} sx={{color: theme.colors.gray10, textShadow: '0 0 transparent', transition: '0.1s ease-in-out all'}}>
