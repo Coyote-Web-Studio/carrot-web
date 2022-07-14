@@ -40,7 +40,13 @@ const Navbar = (props : any) => {
     }, [isMobileNavbarOpen])
 
     return (
-        <StyledNavbar sx={{width: '100%', pt: ['2.4rem', '2.4rem', '6.2rem'], pb: ['3.2rem', '2.4rem', '4.5rem']}}>
+        <StyledNavbar 
+            sx={{
+                width: '100%', 
+                pt: ['2.4rem', '2.4rem', '6.2rem'], 
+                pb: ['3.2rem', '2.4rem', '3.3rem']
+            }}
+        >
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
                 <Logo color={theme.colors.logoColor} height={['2.7rem', '2.7rem', '4.8rem']}/>
                 <Box sx={{

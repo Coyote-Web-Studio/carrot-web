@@ -94,14 +94,17 @@ const Footer = (props: any) => {
         flexDirection: 'column'
       }}
     >
-      <Box sx={{
-        ...theme.boxSizes.expandedBox,
-        position: 'absolute',
-        height: ['10rem', '20rem', '70rem'], 
-        top: ["4.7rem", "7rem", "12.6rem"], 
-        left: 0}}
+      <Box 
+        sx={{
+          ...theme.boxSizes.expandedBox,
+          position: 'absolute',
+          height: ['10rem', '20rem', '70rem'], 
+          // bg: 'blue',
+          top: ["4.7rem", "7rem", "12.6rem"], 
+          // left: 0
+        }}
       >
-        <GridBackground color={theme.colors.gray9} />
+        <GridBackground color={theme.colors.gray9} trimRows={2}/>
       </Box>
       <Fade sx={{...theme.boxSizes.defaultBox}}>
         <Logo color={theme.colors.orange6} height={['auto', '15.5rem', 'auto']} width={['auto', 'auto', '100%']} mb={["4.8rem", "4.8rem", "34rem"]} sx={{ zIndex: 1 }} />

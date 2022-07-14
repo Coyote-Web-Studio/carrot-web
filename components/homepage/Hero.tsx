@@ -15,13 +15,14 @@ const Hero = (props : any) => {
     const theme : any = useTheme();
 
     return (
-        <StyledHero className="hero" sx={{position: 'relative', pb: '5.2rem'}}>
+        <StyledHero className="hero" sx={{position: 'relative', pb: ['5.2rem', null, null, '11.3rem']}}>
             <Box sx={{
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
-                height: '100%'
+                height: '100%',
+                top: ['0', '0', '0', '6.4rem']
             }}>
-                <GridBackground top={['0', '0', '4rem']} trimRows={1} useAnimation/>
+                <GridBackground trimRows={2} useAnimation/>
             </Box>
             <Flex 
                 flexDirection={['column', 'row']} 
@@ -30,20 +31,20 @@ const Hero = (props : any) => {
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1
                     }} 
-                pt={['3.4rem', '5.2rem', '2.4rem']}
+                pt={['3.4rem', '5.2rem', '0rem',  null]}
                 ref={heroContentRef}
             >
                 <Flex flexDirection={'column'} width={['100%', '32rem', '68.4rem']} justifyContent={['auto', 'center']} sx={{
                     position: 'relative', 
-                    top: [0,0,'-1.6rem'],
-                    pr: '1rem'
+                    pr: '1rem',
+                    top: [null, null, null, '6rem']
                     }}>
                     <Text as="h1" sx={{
                         fontSize: ['4.8rem', '4.8rem', '9.9rem'], 
                         lineHeight: ['4.88rem', '4.88rem', '9.9rem'] ,
                         mb: ['1.6rem', '1.6rem', '5.2rem'],
                     }}>
-                        <AnimatedText>
+                        <AnimatedText speed={80} initialDelay={150}>
                             Reach your goals with a Carrot
                         </AnimatedText>
                     </Text>
@@ -54,7 +55,13 @@ const Hero = (props : any) => {
                             color: theme.colors.textColor,
                             fontFamily: 'IBM Plex Mono'
                         }}>
-                            Increase your TVL, volume, price, engagement and more. <br/> Yes, on any campaign. Carrot does it all.
+                            <AnimatedText speed={30} initialDelay={1800}>
+                                Increase your TVL, volume, price, engagement and more.
+                            </AnimatedText>
+                            <br/>
+                            <AnimatedText speed={30} initialDelay={3200}>
+                                Yes, on any campaign. Carrot does it all.
+                            </AnimatedText>
                         </Text>
                         <Button buttonWrapperStyles={{
                             mb: '2.4rem',
@@ -115,7 +122,7 @@ const Hero = (props : any) => {
                             sx={{
                                 position: 'relative',
                                 display: ['none', 'none', 'block'],
-                                top: [0,0,'-4rem']
+                                top: [0,0,'0rem']
                             }}
                         />
                     </Fade>

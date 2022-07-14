@@ -62,28 +62,28 @@ const CarrotInNumbers = () => {
 
 const CarrotInNumbersData = [
   {
-    label: 'Open Campaignes',
-    value: 23
+    label: 'Total Number Of Campaigns',
+    value: 24
   },
   {
-    label: 'Locked in Campaigns',
-    value: '$17M+',
+    label: 'Total Historic Campaign Issuers',
+    value: 9,
   },
   {
-    label: 'Companies Created',
-    value: '1,425'
+    label: 'Total Historic Carrot Token Owners',
+    value: '2,324'
   },
   {
-    label: 'Community Members',
-    value: '98,732'
+    label: 'Total Historic TVL',
+    value: '$17.5M'
   },
   {
-    label: 'Bounties Claimed',
-    value: 731
+    label: 'Historic Rewards Distributed',
+    value: '$14.3M'
   },
   {
-    label: 'Community Members',
-    value: '98,732'
+    label: 'Historic Value “Saved”',
+    value: '$3.2M'
   },
 ];
 

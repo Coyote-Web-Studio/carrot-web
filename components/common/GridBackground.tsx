@@ -56,10 +56,10 @@ const GridBackground = (props : any) => {
         // console.log(availableDesktopColumns);
 
         if (window.innerWidth > 1104) {
-            setGridRows(availableDesktopRows - (props.trimRows ? props.trimRows : 0))
+            setGridRows(availableDesktopRows)
             setGridColumns(availableDesktopColumns)
         } else {
-            setGridRows(availableTabletRows - (props.trimRows ? props.trimRows : 0))
+            setGridRows(availableTabletRows)
             setGridColumns(availableTabletColumns)
         }
     }, [gridHeight, gridWidth, props.trimRows]);
@@ -83,7 +83,7 @@ const GridBackground = (props : any) => {
             backgroundSize: [`2.4rem 2.4rem`,`2.4rem 2.4rem`,`6.4rem 6.4rem`],
         }}>
             {gridRows > 0 && (
-                [...Array(gridRows)].map((elem : any, index : number) => 
+                [...Array(gridRows - (props.trimRows ? props.trimRows : 0))].map((elem : any, index : number) => 
                     <Flex sx={{ width: '100%', gap: '1px'}} key={index}>
                         {[...Array(gridColumns)].map((elem : any, index : number) => 
                             <Box key={index} sx={{

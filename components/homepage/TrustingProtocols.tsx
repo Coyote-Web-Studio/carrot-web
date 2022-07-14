@@ -8,7 +8,7 @@ const TrustingProtocols = () => {
   const theme : any = useTheme();
 
   return (
-    <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem"]} pb={'9.6rem'}>
+    <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem", "15.1rem"]} pb={['9.6rem', null, '22.4rem']}>
         <Flex sx={{
             ...theme.boxSizes.defaultBox,
             pt: ['2.4rem', '0'],
@@ -19,7 +19,10 @@ const TrustingProtocols = () => {
             </Text>
             <Flex as={'ul'} flexWrap={['wrap', 'nowrap']} width={'100%'}>
               {Protocols.map((protocol, index) => (
-                <Flex as={'li'}  key={index} data-aos={'flip-left'} 
+                <Flex as={'li'} 
+                  key={index} 
+                  data-aos={'flip-left'} 
+                  data-aos-offset={index % 2 ? 200 : 500}
                   width={['calc(50vw - 2rem)', 'calc(25vw - 11.5rem)']}
                   height={[
                     'calc(50vw - 2rem)', 

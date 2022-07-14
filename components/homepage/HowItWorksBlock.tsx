@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Flex, Box, Text } from "rebass";
 import { useTheme } from "styled-components";
+import AnimatedText from '../common/AnimatedText';
 import SeeMoreButton from '../common/SeeMoreButton';
 
 const HowItWorksBlock = (props: any) => {
@@ -47,7 +48,9 @@ const HowItWorksBlock = (props: any) => {
             fontWeight={700}
             bg={theme.colors.cardBackground}
           >
-            {props.index + 1}.
+            <AnimatedText>
+              {props.index + 1 + '.'}
+            </AnimatedText>
           </Flex>
           <Flex
             className="block-title bordered"
@@ -63,7 +66,11 @@ const HowItWorksBlock = (props: any) => {
               transition: '0.25s ease-in-out all'
             }}
           >
-            {props.content.heading}
+            <Box>
+              {/* <AnimatedText> */}
+                {props.content.heading}
+              {/* </AnimatedText> */}
+            </Box>
           </Flex>
         </Flex>
         <Flex className={"hiw-body bordered"} width={['auto', '36rem', '64rem']} bg={theme.colors.cardBackground} sx={{

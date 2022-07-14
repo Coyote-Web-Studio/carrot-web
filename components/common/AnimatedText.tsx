@@ -1,22 +1,42 @@
 import { Text } from 'rebass';
 import { keyframes } from '@emotion/react';
+import { useEffect, useRef, useState } from 'react';
 
 const AnimatedText = (props : any) => {
     let letterCounter = 0;
+    const [isVisible, setIsVisible] = useState(false);
 
-    let options = {
-        rootMargin: '0px',
-        threshold: 1.0,
-    }
+    const ioCallback = (e : any) => {
+       setIsVisible(e[0].isIntersecting)
+    };
+
+    const animationRef = useRef(null);
+
+    
+    useEffect(() => {
+
+        let options = {
+            rootMargin: '0px',
+            threshold: 1.0,
+        };
+    
+        let observer = new IntersectionObserver(ioCallback, options);
+
+        if (animationRef.current) {
+            observer.observe(animationRef.current)
+        }
+    }, [animationRef.current])
+
 
     const initialTextState = {
-        // visibility: 'hidden',
         opacity: 0,
+        // transform: 'scale(2)'
+        // opacity: 0,
         // display: 'none'
     };
     
     const endTextState = {
-        // visibility: 'show',
+        // transform: 'scale(1)',
         opacity: 1,
         // display: 'block'
     };
@@ -25,10 +45,10 @@ const AnimatedText = (props : any) => {
         ['0%']: {
             ...initialTextState
         },
-        ['49%']: {
+        ['20%']: {
             ...initialTextState
         },
-        ['50%']: {
+        ['60%']: {
             ...endTextState
         },
         ['100%']: {
@@ -39,12 +59,13 @@ const AnimatedText = (props : any) => {
     return (
         props.children.split(' ').map((word : any, i : any) => (
             <>
-                <Text as={'span'} sx={{display: 'inline-block'}} key={i}>
+                <Text as={'span'} sx={{display: 'inline-block'}} key={i} ref={animationRef}>
                     {
                         word.split('').map((character : any, j : any) => (
                             <Text as={'span'} sx={{
-                                animation: `${textAnimation} 0.25s ease-out forwards`,
-                                animationDelay: `${((++letterCounter) * 50) + 150}ms`,
+                                ...initialTextState,
+                                animation: isVisible ? `${textAnimation} 0.50s ease-out forwards` : 'none',
+                                animationDelay: `${((++letterCounter) * props.speed) + props.initialDelay}ms`,
                                 display: 'inline-block',
                                 ...initialTextState
                             }} key={j}>
@@ -57,6 +78,11 @@ const AnimatedText = (props : any) => {
             </>
         ))
     )
+};
+
+AnimatedText.defaultProps = {
+    speed: 40,
+    initialDelay: 0
 }
 
 export default AnimatedText;

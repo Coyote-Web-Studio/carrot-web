@@ -36,29 +36,34 @@ export default {
     variants: {},
     boxSizes: {
       defaultBox: {
-        width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "1280px"],
+        width: [
+          "calc(100vw - 4rem)", 
+          "calc(100vw - 9.6rem)", 
+          "1280px"
+        ],
         mx: "auto",
-        '@media screen and (min-width: 1520px)': {
-          width: '1280px'
-        }
       },
       reducedBox: {
         width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "1124px"],
         mx: "auto",
       },
       expandedBox: {
+        // bg: ['yellow', 'blue', 'red', 'purple'],
         width: [
           "calc(100vw - 2rem)", 
           "calc(100vw - 4.8rem)", 
-          "calc(100vw - 4.8rem)"],
+          "calc(100vw - 4.8rem)",
+          "134rem"
+        ],
         left: [
           '1rem',
           '2.4rem',
-          '2.4rem'
+          '2.4rem',
+          "calc(50% - (134rem / 2))"
         ],
         '@media screen and (min-width: 1720px)': {
-          width: "calc(160.4rem)",
-          left: "calc(50% - (160.4rem / 2))"
+          width: "calc(160rem)",
+          left: "calc(50% - (160rem / 2))"
         },
       },
     },
