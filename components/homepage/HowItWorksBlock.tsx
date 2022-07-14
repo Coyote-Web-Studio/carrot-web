@@ -144,13 +144,14 @@ const HowItWorksBlock = (props: any) => {
             className={"hiw-content"} 
             flexDirection={'column'} 
             sx={{
+              display: 'inline-block',
               maxHeight: isOpen ? '1000px' : '0',
               overflowY: 'hidden',
-              transition: '0.25s ease-in-out max-height, padding',
-              p: ['2.4rem', '2.4rem', '0 6.4rem 13.3rem']
+              transition: '0.25s ease-in-out all, padding',
+              p: [isOpen ? '0 2.4rem' : '0 2.4rem', isOpen ? '0 2.4rem' : '0 2.4rem', '0 6.4rem 13.3rem']
             }}
           >
-            <Box sx={{overflowY: 'hidden', 'img': { width: '100%'}}} >
+            <Box sx={{overflowY: 'hidden', 'img': { width: '100%'}}} my={['2.4rem', '2.4rem', '6.4rem 13.3rem']}>
               {props.content.content}
             </Box>
           </Flex> 

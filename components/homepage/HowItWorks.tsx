@@ -1,5 +1,6 @@
 import { Flex, Text, Image } from 'rebass';
 import { useTheme } from 'styled-components';
+import AnimatedText from '../common/AnimatedText';
 
 import Fade from '../common/Fade';
 import HowItWorksBlock from './HowItWorksBlock';
@@ -39,7 +40,9 @@ const HowItWorksContent = [
     triggerLabel: 'Set conditions and collateral',
     content: 
       <Text as={'p'}>
-        Use the campaign creation interface to set your campaign's goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
+        <AnimatedText speed={10}>
+          Use the campaign creation interface to set your campaign's goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
+        </AnimatedText>
       </Text>
   },
   {
@@ -47,11 +50,15 @@ const HowItWorksContent = [
     triggerLabel: 'Issue reward tokens to your community',
     content: 
       <>
-        <Text as={'p'}>
-          Distribute your KPI tokens to your community. This could be liquidity mining stakers, in-person event attendees, or anyone else relevant to your campaign!
+        <Text as={'p'} mb={'2rem'}>
+          <AnimatedText speed={10}>
+            Distribute your KPI tokens to your community. This could be liquidity mining stakers, in-person event attendees, or anyone else relevant to your campaign!
+          </AnimatedText>
         </Text>
         <Text as={'p'}>
-          These tokens will later be redeemable by users for the underlying collateral depending on how much of the condition was met.
+          <AnimatedText initialDelay={1300} speed={10}>
+            These tokens will later be redeemable by users for the underlying collateral depending on how much of the condition was met.
+          </AnimatedText>
         </Text>
       </>
   },
@@ -60,11 +67,15 @@ const HowItWorksContent = [
     triggerLabel: 'Distribute rewards and claim collateral saved by Carrot',
     content: 
       <>
-        <Text as={'p'}>
-          At the end of the campaign, finalization will occur through the selected oracle. KPI token holders can then convert to the collateral at the settled rate.
+        <Text as={'p'} mb={'2rem'}>
+          <AnimatedText speed={10}>
+            At the end of the campaign, finalization will occur through the selected oracle. KPI token holders can then convert to the collateral at the settled rate.
+          </AnimatedText>
         </Text>
         <Text as={'p'}>
-          If 50% of the target is met, 50% of the rewards will be claimable by your community with the remaining 50% accessible to you!
+          <AnimatedText initialDelay={1300} speed={10}>
+            If 50% of the target is met, 50% of the rewards will be claimable by your community with the remaining 50% accessible to you!
+          </AnimatedText>
         </Text>
       </>
   },
