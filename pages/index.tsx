@@ -9,6 +9,7 @@ import Footer from '../components/common/Footer';
 import Hero from '../components/homepage/Hero';
 import Marquees from './../components/homepage/Marquees';
 import MainContent from '../components/homepage/MainContent';
+import JoinTheCommunity from '../components/homepage/JoinTheCommunity';
 
 const Home: NextPage = () => {
 
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
         <Marquees />
         <MainContent />
         <Marquees />
+        {/* <JoinTheCommunity /> */}
         <Footer />
       </Flex>
     </>

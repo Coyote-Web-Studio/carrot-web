@@ -120,6 +120,7 @@ const Navbar = (props : any) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
+                maxWidth: '100%',
                 transition: '0.25s ease-in-out all',
             }}>
                 <Flex as="nav" sx={{mb: '4rem'}}>
