@@ -1,7 +1,5 @@
 import Router from "next/router";
 import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
-
 
 import { useEffect, useState} from "react";
 import { Box } from 'rebass';
@@ -12,6 +10,30 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done())
 
 const Loading = () => {
+    useEffect(() => {
+        NProgress.start();
+    
+        let imgs = document.images,
+        len = imgs.length,
+        counter = 0;
+    
+        const incrementCounter = () => {
+            counter++;
+            if ( counter === len ) {
+                // console.log( 'All images loaded!' );
+                NProgress.done();
+            }
+        };
+        
+        [].forEach.call( imgs, ( img : any ) => {
+            if(img.complete)
+                incrementCounter();
+            else
+                img.addEventListener( 'load', incrementCounter, false );
+        });
+    
+    }, []);
+
     return (
         <></>
     )

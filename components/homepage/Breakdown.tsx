@@ -1,6 +1,7 @@
 import { Flex, Image, Text } from "rebass";
 import Fade from "../common/Fade";
 import { useTheme } from "styled-components";
+import AnimatedText from "../common/AnimatedText";
 
 const Breakdown = (props: any) => {
   const theme: any = useTheme();
@@ -55,10 +56,14 @@ const Breakdown = (props: any) => {
               width={["100%", "calc(50% - 1rem)", "53rem"]}
             >
               <Text as="h3" mb={"1.8rem"}>
-                {contentBlock.heading}
+                <AnimatedText speed={20}>
+                  {contentBlock.heading}
+                </AnimatedText>
               </Text>
               <Text as="p" sx={{ ...theme.text.paragraph }}>
-                {contentBlock.content}
+                <AnimatedText speed={20}>
+                  {contentBlock.content}
+                </AnimatedText>
               </Text>
             </Flex>
           </Flex>

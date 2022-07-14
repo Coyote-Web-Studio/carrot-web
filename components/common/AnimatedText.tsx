@@ -1,20 +1,21 @@
 import { Text } from 'rebass';
 import { keyframes } from '@emotion/react';
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 
 const AnimatedText = (props : any) => {
     let letterCounter = 0;
     const [isVisible, setIsVisible] = useState(false);
 
     const ioCallback = (e : any) => {
-       setIsVisible(e[0].isIntersecting)
+        if (e[0].isIntersecting) {
+            setIsVisible(e[0].isIntersecting)
+        }
     };
 
     const animationRef = useRef(null);
 
     
     useEffect(() => {
-
         let options = {
             rootMargin: '100px 0px',
             threshold: 1.0,
@@ -58,8 +59,8 @@ const AnimatedText = (props : any) => {
 
     return (
         props.children.split(' ').map((word : any, i : any) => (
-            <>
-                <Text as={'span'} sx={{display: 'inline-block'}} key={i} ref={animationRef}>
+            <Fragment key={i}>
+                <Text as={'span'} sx={{display: 'inline-block'}} ref={animationRef}>
                     {
                         word.split('').map((character : any, j : any) => (
                             <Text as={'span'} sx={{
@@ -75,14 +76,15 @@ const AnimatedText = (props : any) => {
                     }
                 </Text>
                 <Text as={'span'}>{' '}</Text>
-            </>
+            </Fragment>
         ))
     )
 };
 
 AnimatedText.defaultProps = {
     speed: 40,
-    initialDelay: 0
+    initialDelay: 0,
+    color: 'inherit'
 }
 
 export default AnimatedText;

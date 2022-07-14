@@ -66,6 +66,21 @@ const GlobalStyle = createGlobalStyle`
   * {
     transition: 0.15s ease-in-out background, border-color, color, fill;
   }
+
+  #nprogress .bar {
+    background: ${(props : any) => props.theme.colors.orange6}
+  }
+
+  #nprogress .peg {
+    box-shadow: 
+      0 0 10px ${(props : any) => props.theme.colors.orange6}, 
+      0 0 5px ${(props : any) => props.theme.colors.orange6};
+  }
+
+  #nprogress .spinner-icon { 
+    border-top-color: ${(props : any) => props.theme.colors.orange6};
+    border-left-color: ${(props : any) => props.theme.colors.orange6};
+  }
 `;
 
 export default GlobalStyle;
