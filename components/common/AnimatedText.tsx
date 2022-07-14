@@ -16,7 +16,7 @@ const AnimatedText = (props : any) => {
     useEffect(() => {
 
         let options = {
-            rootMargin: '0px',
+            rootMargin: '100px 0px',
             threshold: 1.0,
         };
     
@@ -64,10 +64,10 @@ const AnimatedText = (props : any) => {
                         word.split('').map((character : any, j : any) => (
                             <Text as={'span'} sx={{
                                 ...initialTextState,
+                                color: props.color,
                                 animation: isVisible ? `${textAnimation} 0.50s ease-out forwards` : 'none',
                                 animationDelay: `${((++letterCounter) * props.speed) + props.initialDelay}ms`,
                                 display: 'inline-block',
-                                ...initialTextState
                             }} key={j}>
                                 {character}
                             </Text>

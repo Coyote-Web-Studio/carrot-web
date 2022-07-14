@@ -34,7 +34,7 @@ const StyleSwitch = (props : any) => {
                     bg: theme.colors.textColor,
                     position: 'inherit',
                     '&[aria-checked=true] div': {
-                        transform: [null, `translateX(24px) translateY(0.5px) !important`]
+                        transform: [null, `translateX(13px) translateY(0px) !important`, `translateX(24px) translateY(0.5px) !important`]
                     },
                     '&:focus': {
                         boxShadow: 'none',
@@ -53,20 +53,20 @@ const StyleSwitch = (props : any) => {
             <Flex className={'icons'} width={'100%'} height={'100%'} sx={{position: 'absolute', pointerEvents: 'none', zIndex: 1}}>
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.5rem'],
-                    right: ['0.5rem'],
+                    top: ['0.3rem', '0.25rem', '0.5rem'],
+                    right: ['0.5rem', '0.3rem', '0.5rem'],
                     zIndex: '4',
-                    width: '1.2rem',
-                    height: '1.2rem',
+                    width: [ '0.8rem', null, '1.2rem'],
+                    height: [ '0.8rem', null, '1.2rem'],
                     opacity: darkThemeActive ? 0 : 1
                 }} src={'/icons/dark-icon.svg'} />
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.5rem'],
-                    left: ['0.5rem'],
+                    top: ['0.3rem', '0.25rem', '0.5rem'],
+                    left: ['0.5rem', '0.3rem', '0.5rem'],
                     zIndex: '4',
-                    width: '1.2rem',
-                    height: '1.2rem',
+                    width: [ '0.8rem', null, '1.2rem'],
+                    height: [ '0.8rem', null, '1.2rem'],
                     opacity: darkThemeActive ? 1 : 0
                 }} src={'/icons/light-icon.svg'} />
             </Flex>

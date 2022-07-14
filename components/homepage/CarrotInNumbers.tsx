@@ -1,7 +1,9 @@
 import { Flex, Box, Text } from 'rebass';
 import { useTheme } from 'styled-components';
+import AnimatedText from '../common/AnimatedText';
 
 import Fade from '../common/Fade';
+import GridBackground from '../common/GridBackground';
 
 const CarrotInNumbers = () => {
   
@@ -20,9 +22,20 @@ const CarrotInNumbers = () => {
         ...theme.boxSizes.defaultBox,
         pt: ['2.4rem', '2.4rem', '10rem'],
         flexDirection: 'column',
+        position: 'relative'
       }}>
-        <Fade>
-          <Text as="h2" mb={'2.4rem'} sx={{color: theme.colors.gray10}}>
+        <Box sx={{
+          ...theme.boxSizes.defaultBox,
+          position: 'absolute',
+          height: 'calc((64rem * 11) / 10)',
+          top: '22.6rem'
+          // background: 'blue',
+          }}
+        >
+          <GridBackground trimRows={3} color={theme.colors.carrotInNumbersGrid} />
+        </Box>
+        <Fade sx={{zIndexX: 1}}>
+          <Text as="h2" mb={['2.4rem', '9rem']} sx={{color: theme.colors.gray10}}>
             Carrot in<Box as="br" sx={{display: ['block', 'none', 'none']}}/> numbers
           </Text>
         </Fade>
@@ -31,12 +44,14 @@ const CarrotInNumbers = () => {
           width: ['100%'],
           mx: [0, '-2.4rem', '-6.4rem'],
           height: ['auto', '30rem', '60rem'],
-          alignItems: ['auto', 'center', 'center']
+          position: 'relative',
+          alignItems: ['auto', 'center', 'center'],
         }}>
           {CarrotInNumbersData.map((item, index) => (
             <Flex as={'li'} flexDirection={'column'} key={index} sx={{
               borderTop: `0.1rem solid ${theme.colors.gray10}`,
               py: '1.2rem',
+              height: [null, null, 'calc(6.5rem * 3)'],
               mx: ['0', '2.4rem', '6.4rem'],
               width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
               '&:last-child': {
@@ -47,10 +62,14 @@ const CarrotInNumbers = () => {
               },
             }}>
               <Text fontSize={['4rem', '4rem', '9.9rem']} fontWeight={700} sx={{color: theme.colors.gray10}}>
-                {item.value}
+                <AnimatedText color={theme.colors.gray10}>
+                  {item.value}
+                </AnimatedText>
               </Text>
               <Text sx={{color: theme.colors.gray10}} as={'p'}>
-                {item.label}
+                <AnimatedText color={theme.colors.gray10}>
+                  {item.label}
+                </AnimatedText>
               </Text>
             </Flex>
           ))}
@@ -63,11 +82,11 @@ const CarrotInNumbers = () => {
 const CarrotInNumbersData = [
   {
     label: 'Total Number Of Campaigns',
-    value: 24
+    value: '24'
   },
   {
     label: 'Total Historic Campaign Issuers',
-    value: 9,
+    value: '9',
   },
   {
     label: 'Total Historic Carrot Token Owners',

@@ -25,6 +25,7 @@ export default {
     cardLine: '#0B0B0B',
     cardButtonHover: '#E9E9E9',
 
-    shadow: "#0B0B0B"
+    shadow: "#0B0B0B",
+    carrotInNumbersGrid: '#ED5B16'
   }
 };

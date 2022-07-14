@@ -48,9 +48,7 @@ const HowItWorksBlock = (props: any) => {
             fontWeight={700}
             bg={theme.colors.cardBackground}
           >
-            <AnimatedText>
-              {props.index + 1 + '.'}
-            </AnimatedText>
+            {props.index + 1 + '.'}
           </Flex>
           <Flex
             className="block-title bordered"
@@ -66,19 +64,20 @@ const HowItWorksBlock = (props: any) => {
               transition: '0.25s ease-in-out all'
             }}
           >
-            <Box>
-              {/* <AnimatedText> */}
-                {props.content.heading}
-              {/* </AnimatedText> */}
-            </Box>
+            {props.content.heading}
           </Flex>
         </Flex>
-        <Flex className={"hiw-body bordered"} width={['auto', '36rem', '64rem']} bg={theme.colors.cardBackground} sx={{
-          flexDirection: 'column',
-          transition: '0.25s ease-in-out all',
-          maxHeight: isOpen ? '1000px' : '19.2rem',
-          flexGrow: [null, null, 1]
-        }}>
+        <Flex 
+          className={"hiw-body bordered"} 
+          width={['auto', '36rem', '64rem']} 
+          bg={theme.colors.cardBackground} 
+          sx={{
+            flexDirection: 'column',
+            transition: '0.25s ease-in-out all',
+            maxHeight: isOpen ? '1000px' : '19.2rem',
+            flexGrow: [null, null, 1]
+          }}
+        >
           <Flex
             className={"hiw-trigger"}
             p={["2.4rem", "0 2.4rem", '0 6.4rem']}

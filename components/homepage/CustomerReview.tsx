@@ -5,6 +5,7 @@ import { useParallax } from 'react-scroll-parallax';
 import Fade from '../common/Fade';
 import GridBackground from '../common/GridBackground';
 import { transparentize } from 'polished';
+import AnimatedText from '../common/AnimatedText';
 
 const CustomerReview = () => {
   const theme : any = useTheme();
@@ -79,9 +80,11 @@ const CustomerReview = () => {
           lineHeight={["3.8rem", "3.36rem", "6.969rem"]}
           color={theme.colors.customerCommentText}
         >
-          “Carrot was the best project on xDAI that allowed us to deploy KPI
-          options in the Agave incentives program. This allows us to optimize
-          our rewards towards specific goals rather than just throw them away.”
+          <AnimatedText color={theme.colors.gray10} speed={30}>
+            “Carrot was the best project on xDAI that allowed us to deploy KPI
+            options in the Agave incentives program. This allows us to optimize
+            our rewards towards specific goals rather than just throw them away.”
+          </AnimatedText>
         </Text>
         <Text
           fontSize={["1.4rem", "1.4rem", "2.8rem"]}

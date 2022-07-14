@@ -93,7 +93,14 @@ const Navbar = (props : any) => {
                         CARROT DAPP
                     </Button>
                 </Box>
-                <StyleSwitch sx={{display: ['inline-block', 'none', 'none']}}/>
+                <StyleSwitch 
+                    sx={{
+                        display: ['inline-block', 'none', 'none'], 
+                        ml: 'auto', 
+                        mr: '2rem',
+                        position: 'relative'
+                    }}
+                />
                 <HamburgerIcon sx={{
                     display: ['auto', 'none']
                 }} onClick={() => {
