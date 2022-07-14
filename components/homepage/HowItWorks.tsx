@@ -24,8 +24,8 @@ const HowItWorks = () => {
       </Fade>
       <Flex as={"ul"} flexDirection={"column"} width={"100%"}>
         <Fade>
-          {HowItWorksContent.map((contentBlock, index) => (
-            <HowItWorksBlock content={contentBlock} key={index} index={index} />
+          {HowItWorksContent.map((contentBlock, index, array) => (
+            <HowItWorksBlock content={contentBlock} key={index} index={index} totalElements={array.length}/>
           ))}
         </Fade>
       </Flex>

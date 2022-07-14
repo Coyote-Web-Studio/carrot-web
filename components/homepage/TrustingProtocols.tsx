@@ -52,7 +52,7 @@ const TrustingProtocols = () => {
                       top: 0,
                       left: 0,
                       boxShadow: `0 0 0 1px ${theme.colors.textColor}`,
-                      backgroundColor: theme.colors.protocolCardBackground,
+                      backgroundColor: theme.colors.cardBackground,
                       transition: '0.35s cubic-bezier(0,1.19,.62,1.44) all',
                     }}>
                     <Box sx={{

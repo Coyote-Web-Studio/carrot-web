@@ -47,7 +47,28 @@ const HowItWorksBlock = (props: any) => {
             height={['auto', '9.6rem', '19.2rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
+            sx={{position: 'relative'}}
           >
+            {props.index == 0 && (
+              <Box sx={{
+                width: '0.46rem', 
+                height: '0.46rem', 
+                background: theme.colors.protocolCardLine,
+                position: 'absolute',
+                top: '-0.25rem',
+                left: '-0.25rem'
+              }}/>
+            )}
+            {props.index + 1 == props.totalElements && (
+              <Box sx={{
+                width: '0.46rem', 
+                height: '0.46rem', 
+                background: theme.colors.protocolCardLine,
+                position: 'absolute',
+                bottom: '-0.25rem',
+                left: '-0.25rem'
+              }}/>
+            )}
             {props.index + 1 + '.'}
           </Flex>
           <Flex
@@ -75,9 +96,20 @@ const HowItWorksBlock = (props: any) => {
             flexDirection: 'column',
             transition: '0.25s ease-in-out all',
             maxHeight: isOpen ? '1000px' : '19.2rem',
-            flexGrow: [null, null, 1]
+            flexGrow: [null, null, 1],
+            position: 'relative'
           }}
         >
+          {props.index + 1 == props.totalElements && (
+              <Box sx={{
+                width: '0.46rem', 
+                height: '0.46rem', 
+                background: theme.colors.protocolCardLine,
+                position: 'absolute',
+                bottom: '-0.25rem',
+                right: '-0.25rem'
+              }}/>
+          )}
           <Flex
             className={"hiw-trigger"}
             p={["2.4rem", "0 2.4rem", '0 6.4rem']}
@@ -85,7 +117,18 @@ const HowItWorksBlock = (props: any) => {
             alignItems={"center"}
             width={"100%"}
             minHeight={['9.6rem', '9.6rem', '19.2rem'] }
+            sx={{position: 'relative'}}
           >
+            {props.index == 0 && (
+              <Box sx={{
+                width: '0.46rem', 
+                height: '0.46rem', 
+                background: theme.colors.protocolCardLine,
+                position: 'absolute',
+                top: '-0.25rem',
+                right: '-0.25rem'
+              }}/>
+            )}
             <Text 
               fontSize={["1.6rem", "1.6rem", "2.2rem"]} 
               lineHeight={["2.4rem", "2.4rem", '3.3rem']} 
