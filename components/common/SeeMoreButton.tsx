@@ -20,7 +20,7 @@ const SeeMoreButton = (props : any) => {
               },
               '&:hover': {
                 '.button': {
-                  background: ['auto', 'auto', `${theme.colors.orange6}`],
+                  background: [`${theme.colors.orange6}`, `${theme.colors.orange6}`, `transparent`],
                   boxShadow: `0 0 0 0.1rem ${theme.colors.textColor}`
                 },
                 '.plus-line': {
