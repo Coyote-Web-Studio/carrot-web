@@ -22,7 +22,7 @@ const Hero = (props : any) => {
                 height: '100%',
                 top: ['0', '0', '0', '6.4rem'],
                 '@media screen and (min-width: 1680px)': {
-                   height: '76%'
+                   height: 'calc(64 * 1.3rem)'
                 },
             }}>
                 <GridBackground trimRows={3} useAnimation/>
