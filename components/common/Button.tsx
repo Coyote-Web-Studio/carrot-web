@@ -7,11 +7,11 @@ const Button = (props : any) => {
     return (
         <Box onClick={props.onClick} sx={{
             width: 'fit-content',
-            height: ['4.8rem', '4.8rem', '6.4rem'],
+            height: ['4.8rem', null, null, '6.4rem'],
             borderRadius: '1rem',
             position: 'relative',
             cursor: 'pointer',
-            minWidth: '14.4rem',
+            minWidth: [null, null, null, '14.4rem'],
             '&:hover .button, &:hover .button-border': {
                 transitionTimingFunction: 'cubic-bezier(0,1.19,.62,1.44)',
             },
@@ -32,7 +32,7 @@ const Button = (props : any) => {
                 height: '100%',
                 px: ['1.8rem'],
                 lineHeight: ['1.8rem'],
-                fontSize: ['1.2rem', '1.2rem', '1.6rem'],
+                fontSize: ['1.2rem', null, null, '1.6rem'],
                 fontWeight: 400,
                 width: 'inherit',
                 fontFamily: 'IBM Plex Mono',

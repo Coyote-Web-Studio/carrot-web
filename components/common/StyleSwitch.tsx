@@ -28,13 +28,14 @@ const StyleSwitch = (props : any) => {
                     );
                 }} 
                 sx={{
-                    height: ['1.32rem', null, '2.2rem'], 
-                    minWidth: ['2.6rem', null, '4.4rem'],
+                    height: ['1.32rem', null, null, '2.2rem'], 
+                    width: ['2.6rem', null, null, '4.4rem'],
                     cursor: 'pointer',
                     bg: theme.colors.textColor,
                     position: 'inherit',
                     '&[aria-checked=true] div': {
                         transform: [
+                            null, 
                             null, 
                             `translateX(13px) translateY(0px) !important`, 
                             `translateX(23px) translateY(0.5px) !important`]
@@ -44,32 +45,32 @@ const StyleSwitch = (props : any) => {
                     },
                     'div': {
                         boxShadow: 'none',
-                        width: ['1.32rem', null, '2rem'],
-                        height: ['1.32rem', null, '2rem'],
+                        width: ['1.32rem', null, null, '2rem'],
+                        height: ['1.32rem', null, null, '2rem'],
                         bg: theme.colors.background,
                         top: '0.1rem',
                         zIndex: '100',
-                        transform: [null, null, `translateX(1px) translateY(0.5px) !important`]
+                        transform: [null, null, null, `translateX(1px) translateY(0.5px) !important`]
                     }
                 }}
             />
             <Flex className={'icons'} width={'100%'} height={'100%'} sx={{position: 'absolute', pointerEvents: 'none', zIndex: 1, top: 0}}>
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.3rem', '0.25rem', '0.5rem'],
+                    top: ['0.3rem', '0.25rem', null, '0.5rem'],
                     right: ['0.5rem', '0.3rem', '0.5rem'],
                     zIndex: '4',
-                    width: [ '0.8rem', null, '1.2rem'],
-                    height: [ '0.8rem', null, '1.2rem'],
+                    width: [ '0.8rem', null, null, '1.2rem'],
+                    height: [ '0.8rem', null, null, '1.2rem'],
                     opacity: darkThemeActive ? 0 : 1
                 }} src={'/icons/dark-icon.svg'} />
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.3rem', '0.25rem', '0.5rem'],
-                    left: ['0.5rem', '0.3rem', '0.5rem'],
+                    top: ['0.3rem', '0.25rem', null, '0.5rem'],
+                    left: ['0.5rem', '0.3rem', null, '0.5rem'],
                     zIndex: '4',
-                    width: [ '0.8rem', null, '1.2rem'],
-                    height: [ '0.8rem', null, '1.2rem'],
+                    width: [ '0.8rem', null, null, '1.2rem'],
+                    height: [ '0.8rem', null, null, '1.2rem'],
                     opacity: darkThemeActive ? 1 : 0
                 }} src={'/icons/light-icon.svg'} />
             </Flex>
