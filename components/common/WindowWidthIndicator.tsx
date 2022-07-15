@@ -5,7 +5,7 @@ import { debounce } from './../../utils/utils'
 const WindowWidthIndicator = () => {
     const [windowWidth, setWindowWidth] = useState<number>(0);
     const [currentBreakpoint, setCurrentBreakpoint] = useState<string>('undefined');
-    const [isVisible, setIsVisible] = useState(false)
+    const [isVisible, setIsVisible] = useState(true)
 
     const BREAKPOINTS = [
         {
@@ -81,17 +81,23 @@ const WindowWidthIndicator = () => {
             background: 'rgba(0,0,0,0.5)',
             padding: '1rem',
             zIndex: 1000,
-            pointerEvents: 'none',
+            // pointerEvents: 'none',
             opacity: isVisible ? 1 : 0,
             borderRadius: '0 0 0 1rem',
-            transition: '0.15s ease-in-out all'
-
+            transition: '0.15s ease-in-out all',
+            textAlign: 'right',
+            '&:hover': {
+                opacity: 0.1
+            }
         }}>
             <Text as="p" fontSize={'1rem'} color={'white'} lineHeight={'1.2rem'}>
                 {currentBreakpoint}
             </Text>
             <Text as="p" fontSize={'1rem'} color={'white'} lineHeight={'1.2rem'}>
                 {windowWidth}px
+            </Text>
+            <Text as="p" fontSize={'1rem'} color={'white'} lineHeight={'1.2rem'} mt={'1rem'}>
+                v0.0.1
             </Text>
         </Box>
     )

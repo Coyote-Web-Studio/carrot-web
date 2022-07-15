@@ -35,7 +35,7 @@ const JoinTheCommunity = () => {
                                 borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, 'none', 'none'],
                                 p: ['0 0 2.4rem', null, '3.2rem'],
                                 width: [null, null, null, '51.5rem'],
-                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                     width: '64rem',
                                 },
                                 maxWidth: '100%'
@@ -130,7 +130,7 @@ const JoinTheCommunity = () => {
                                             />
                                             <Flex flexDirection={'column'} sx={{
                                                 ml: ['auto', null, null, '5rem'],
-                                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                                     ml: ['auto'],
                                                     maxWidth: '26rem'
                                                 }

@@ -1,5 +1,5 @@
 export default {
-    breakpoints: ["639px", "831px", "1023px", "1919px"],
+    breakpoints: ["639px", "831px", "1023px", "1440px", "1919px"],
     fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
     colors: {
       blue6: '#0029FF',
@@ -45,7 +45,7 @@ export default {
         ],
         maxWidth: [null, null, '1440px', '1600px'],
         mx: "auto",
-        '@media screen and (min-width: 1440px)': {
+        '@media screen and (min-width: 1919px)': {
           width: "calc(100vw - 19.2rem) !important",
         }
       },
@@ -55,14 +55,17 @@ export default {
           "calc(100vw - 2rem)", 
           "calc(100vw - 4.8rem)", 
           "calc(100vw - 9.6rem)",
-          "calc(100vw - 19.2rem)"
+          "calc(100vw - 6.4rem)"
         ],
         left: [
           '1rem',
           '2.4rem',
           '4.8rem',
-          '9.6rem'
+          '3.2rem'
         ],
+        '@media screen and (min-width: 1919px)': {
+          width: "calc(100vw - 19.2rem) !important",
+        }
       },
       reducedBox: {
         width: [

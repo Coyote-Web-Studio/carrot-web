@@ -39,24 +39,32 @@ const Hero = (props : any) => {
                 {/* COPY CONTENT */}
                 <Flex 
                     flexDirection={'column'} 
-                    width={['100%', '32rem', 'calc(50vw - 9.6rem)', 'calc(50vw - 9.6rem)']} 
+                    width={[
+                        '100%', 
+                        '32rem', 
+                        'calc(50vw - 9.6rem)', 
+                        'calc(50vw)']} 
                     justifyContent={['auto', 'center']} 
                     sx={{
                         position: 'relative', 
                         pr: '1rem',
                         top: [null, null, null, '6rem'],
-                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                             top: '-0.6rem'
                         }
                     }}
                 >
                     <Text as="h1" sx={{
-                        fontSize: ['4.8rem', null, null, '9.9rem'], 
-                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '9.9rem'] ,
+                        fontSize: ['4.8rem', null, null, '7.2rem'], 
+                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '7.2rem'] ,
                         mb: ['1.6rem', '1.6rem', '1.8rem'],
                         letterSpacing: '-0.02em',
                         pr: ['2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            fontSize: '9.9rem',
+                            lineHeight: '9.9rem'
+                        },
+                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                             mb: '5.2rem',
                             fontSize: '11.9rem',
                             lineHeight: '12.7rem'
@@ -136,7 +144,7 @@ const Hero = (props : any) => {
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
-                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                 width: 'calc(50vw - 20rem)',
                                 height: 'calc(50vw - 5rem)',
                                 maxWidth: 'unset'

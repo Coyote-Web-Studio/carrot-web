@@ -48,7 +48,13 @@ const Navbar = (props : any) => {
             }}
         >
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
-                <Logo color={theme.colors.logoColor} height={['2.7rem', '2.7rem', '4.8rem']}/>
+                <Logo 
+                    color={theme.colors.logoColor} sx={{
+                        height: ['2.7rem', '2.7rem', null, '4rem'],
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            height: "4.8rem",
+                        },
+                    }}/>
                 <Box sx={{
                     display: ['none', 'none', 'flex'],
                     alignItems: 'center'
@@ -58,11 +64,11 @@ const Navbar = (props : any) => {
                             {NavLinks.map((link, index) => (
                                 <Link 
                                     fontFamily={'IBM Plex Mono'} 
-                                    fontSize={['1rem', '1rem', '1rem', '1.6rem']} 
+                                    fontSize={['1rem', '1rem', '1rem', '1.2rem']} 
                                     href={'#'}
                                     key={index}
                                     sx={{
-                                        ml:['1.2rem', '1.2rem', '1.2rem', '3.2rem'],
+                                        ml:['1.2rem', '1.2rem', '1.2rem', '2.4rem'],
                                         position: 'relative',
                                         whiteSpace: 'nowrap',
                                         transition: '0.1s ease-in-out all',
@@ -75,8 +81,11 @@ const Navbar = (props : any) => {
                                             }
                                         },
                                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                            ml: "3.2rem",
+                                        },
+                                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                             ml: "6.4rem",
-                                          }
+                                        }
                                     }}
                                 >
                                     <Box
@@ -95,12 +104,17 @@ const Navbar = (props : any) => {
                             ))}
                         </Flex>
                     </Flex>
-                    <StyleSwitch ml={['2.4rem', null, null, '4.8rem']} />
-                    <Button buttonWrapperStyles={{
-                        ml: ['2.4rem', null, null, '4.8rem'],
+                    <StyleSwitch sx={{
+                        ml:['2.4rem', null, null, '3.2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             ml: "4.8rem",
-                        }
+                        },
+                    }}/>
+                    <Button buttonWrapperStyles={{
+                        ml: ['2.4rem', null, null, '3.2rem'],
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            ml: "4.8rem",
+                        },
                     }}>
                         CARROT DAPP
                     </Button>
