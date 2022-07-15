@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import { Box, Text } from 'rebass'
 import { debounce } from './../../utils/utils'
 
-const WindowWidthIndicator = () => {
+const WindowWidthIndicator = (props : any) => {
     const [windowWidth, setWindowWidth] = useState<number>(0);
     const [currentBreakpoint, setCurrentBreakpoint] = useState<string>('undefined');
-    const [isVisible, setIsVisible] = useState(true)
+    const [isVisible, setIsVisible] = useState(props.enabled)
 
     const BREAKPOINTS = [
         {

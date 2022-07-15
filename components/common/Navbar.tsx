@@ -64,7 +64,6 @@ const Navbar = (props : any) => {
                             {NavLinks.map((link, index) => (
                                 <Link 
                                     fontFamily={'IBM Plex Mono'} 
-                                    fontSize={['1rem', '1rem', '1rem', '1.2rem']} 
                                     href={'#'}
                                     key={index}
                                     sx={{
@@ -72,6 +71,7 @@ const Navbar = (props : any) => {
                                         position: 'relative',
                                         whiteSpace: 'nowrap',
                                         transition: '0.1s ease-in-out all',
+                                        fontSize: ['1rem', '1rem', '1rem', '1.2rem'],
                                         '&:first-of-type': {
                                             ml: 0
                                         },
@@ -80,12 +80,14 @@ const Navbar = (props : any) => {
                                                 width: '100%'
                                             }
                                         },
-                                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                        [`@media screen and (min-width: ${theme.breakpoints[2]})`]: {
                                             ml: "3.2rem",
+                                            fontSize: '1.6rem'
                                         },
-                                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                             ml: "6.4rem",
-                                        }
+                                            fontSize: '1.6rem'
+                                        },
                                     }}
                                 >
                                     <Box

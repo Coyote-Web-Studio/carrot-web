@@ -17,7 +17,7 @@ const StyleSwitch = (props : any) => {
     }, [])
 
     return (
-        <Flex alignItems={'center'} sx={{position: 'relative'}} {...props}>
+        <Flex {...props} alignItems={'center'} sx={{position: 'relative', ...props.sx}} >
             <Switch 
                 checked={darkThemeActive} 
                 color={theme.colors.textColor} 
