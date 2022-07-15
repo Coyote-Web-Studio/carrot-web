@@ -34,7 +34,7 @@ const CustomerReview = () => {
         sx={{
           ...theme.boxSizes.expandedBox,
           position: "absolute",
-          height: ["82%", "100%"],
+          height: ["82%", "80%", "100%"],
           top: "6.4rem",
         }}
       >
@@ -46,9 +46,9 @@ const CustomerReview = () => {
         sx={{
           position: "absolute",
           top: '-10rem',
-          width: ["5rem", "10rem"],
-          height: ["5rem", '10rem'],
-          left: ["3%", "18%"],
+          width: ["5rem", null, "10rem"],
+          height: ["5rem", null, '10rem'],
+          left: ["3%", null, "18%"],
           zIndex: "10",
         }}
       />
@@ -58,9 +58,9 @@ const CustomerReview = () => {
         sx={{
           position: "absolute",
           top: "50rem",
-          width: ["8rem", "13rem"],
-          height: ["8rem", '13rem'],
-          right: "4%",
+          width: ["8rem", null, "13rem"],
+          height: ["8rem", null, '13rem'],
+          right: ["4%", null, "15%"],
           zIndex: "100",
           filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`
         }}

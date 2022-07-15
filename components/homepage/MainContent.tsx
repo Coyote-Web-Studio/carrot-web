@@ -23,17 +23,11 @@ const MainContent = (props : any) => {
       }}>
         <GridBackground />
       </Box>
-      {/* BREAKDOWN */}
       <Breakdown />
-      {/* HOW IT WORKS */}
       <HowItWorks />
-      {/* SUCCESFUL CAMPAIGNS */}
       <SuccesfulCampaigns />
-      {/* CARROT IN NUMBERS */}
       <CarrotInNumbers />
-      {/* TRUSTING PROTOCOLS */}
       <TrustingProtocols />
-      {/* CUSTOMER REVIEW */}
       <CustomerReview />
     </Flex>
   );

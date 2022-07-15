@@ -98,17 +98,23 @@ const Footer = (props: any) => {
         sx={{
           ...theme.boxSizes.expandedBox,
           position: 'absolute',
-          height: ['10rem', '20rem', '70rem'], 
-          // bg: 'blue',
+          height: ['10rem', '28rem', '70rem'], 
           top: ["4.7rem", "7rem", "12.6rem"], 
-          // left: 0
         }}
       >
-        <GridBackground color={theme.colors.gray9} trimRows={2}/>
+        <GridBackground color={theme.colors.gray9} />
       </Box>
+
       <Fade sx={{...theme.boxSizes.defaultBox}}>
-        <Logo color={theme.colors.orange6} height={['auto', '15.5rem', 'auto']} width={['auto', 'auto', '100%']} mb={["4.8rem", "4.8rem", "34rem"]} sx={{ zIndex: 1 }} />
+        <Logo 
+          color={theme.colors.orange6} 
+          height={['auto', '15.5rem', 'auto']} 
+          width={['auto', 'auto', '100%']} 
+          mb={["4.8rem", "12.2rem", "34rem"]} 
+          sx={{ zIndex: 1 }} 
+        />
       </Fade>
+
       <Flex sx={{ ...theme.boxSizes.defaultBox, position: "relative", flexDirection: 'column' }}>
         <Flex flexDirection={['column', 'column', 'row']} justifyContent={['auto', 'auto', 'space-between']}>
           <Flex as="ul" flexWrap="wrap">

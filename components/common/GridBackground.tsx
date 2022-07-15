@@ -15,7 +15,6 @@ const GridBackground = (props : any) => {
     const gridRef : any = useRef(null);
 
     const updateDimensions = debounce(() => {
-        // console.log('Updated');
         if (gridRef.current) {
             setGridHeight(gridRef.current.getBoundingClientRect().height);
             setGridWidth(gridRef.current.getBoundingClientRect().width);

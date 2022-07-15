@@ -27,15 +27,15 @@ const CarrotInNumbers = () => {
         <Box sx={{
           ...theme.boxSizes.defaultBox,
           position: 'absolute',
-          height: ['61rem', 'calc((64rem * 11) / 10)'],
-          top: ['14.4rem', '22.6rem']
+          height: ['61rem', '30rem', 'calc((64rem * 11) / 10)'],
+          top: ['14.4rem', '9.7rem', '22.6rem']
           // background: 'blue',
           }}
         >
           <GridBackground trimRows={1} color={theme.colors.carrotInNumbersGrid} />
         </Box>
         <Fade sx={{zIndexX: 1}}>
-          <Text as="h2" mb={['2.4rem', '9rem']} sx={{color: theme.colors.gray10}}>
+          <Text as="h2" mb={['2.4rem', null, '9rem']} sx={{color: theme.colors.gray10}}>
             Carrot in<Box as="br" sx={{display: ['block', 'none', 'none']}}/> numbers
           </Text>
         </Fade>
