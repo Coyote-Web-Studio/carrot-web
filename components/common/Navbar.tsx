@@ -63,18 +63,33 @@ const Navbar = (props : any) => {
                                     key={index}
                                     sx={{
                                         ml:['1.2rem', '1.2rem', '1.2rem', '3.2rem'],
+                                        position: 'relative',
                                         whiteSpace: 'nowrap',
                                         transition: '0.1s ease-in-out all',
                                         '&:first-of-type': {
                                             ml: 0
                                         },
                                         '&:hover': {
+                                            '.underline': {
+                                                width: '100%'
+                                            }
                                         },
                                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                             ml: "6.4rem",
                                           }
                                     }}
                                 >
+                                    <Box
+                                        className="underline"
+                                        sx={{
+                                            height: '0.1rem',
+                                            width: '0',
+                                            position: 'absolute',
+                                            bottom: '-1rem',
+                                            background: theme.colors.orange6,
+                                            transition: '0.15s ease-in-out all'
+                                        }}
+                                    />
                                     {link.label}
                                 </Link>
                             ))}

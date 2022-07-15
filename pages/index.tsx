@@ -27,12 +27,12 @@ const Home: NextPage = () => {
       <Flex flexDirection={'column'} bg={theme.colors.background}>
         <WindowWidthIndicator />
         <Navbar />
-        <Hero />
+        {/* <Hero />
         <Marquees />
         <MainContent />
         <Marquees />
         <JoinTheCommunity />
-        <Footer />
+        <Footer /> */}
       </Flex>
     </>
   )
