@@ -22,7 +22,7 @@ const Hero = (props : any) => {
                 height: '100%',
                 top: ['0', '0', '0', '6.4rem']
             }}>
-                <GridBackground trimRows={2} useAnimation/>
+                <GridBackground trimRows={3} useAnimation/>
             </Box>
             <Flex 
                 flexDirection={['column', 'row']} 
@@ -34,15 +34,19 @@ const Hero = (props : any) => {
                 pt={['3.4rem', '5.2rem', '0rem',  null]}
                 ref={heroContentRef}
             >
-                <Flex flexDirection={'column'} width={['100%', '32rem', '68.4rem']} justifyContent={['auto', 'center']} sx={{
+                <Flex flexDirection={'column'} width={['100%', '32rem', '68.4rem', '72rem']} justifyContent={['auto', 'center']} sx={{
                     position: 'relative', 
                     pr: '1rem',
-                    top: [null, null, null, '6rem']
+                    top: [null, null, null, '6rem'],
+                    '@media screen and (min-width: 1620px)': {
+                        top: '-0.6rem'
+                    }
                     }}>
                     <Text as="h1" sx={{
-                        fontSize: ['4.8rem', '4.8rem', '9.9rem', '12.8rem'], 
-                        lineHeight: ['4.88rem', '4.88rem', '9.9rem'] ,
+                        fontSize: ['4.8rem', '4.8rem', '4.8rem', '9.9rem', '12.8rem'], 
+                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '10rem', '12.8rem'] ,
                         mb: ['1.6rem', '1.6rem', '5.2rem'],
+                        letterSpacing: '-0.02em'
                     }}>
                         <AnimatedText speed={80} initialDelay={150}>
                             Reach your goals with a Carrot
@@ -107,24 +111,20 @@ const Hero = (props : any) => {
                                 HOW IT WORKS
                             </Box>
                         </Flex>
-                        <Image 
-                            src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657037016/carrot/hero_small_kyeynt.png" 
-                            width={['100%', '31.2rem', '50rem']}
-                            sx={{
-                                display: ['block', 'block', 'none'],
-                                position: 'relative',
-                                top: [0,0,'-4rem']
-                            }}  
-                        />
-                        <Image 
-                            src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657037016/carrot/hero_large_ozaddv.png" 
-                            width={['100%', '31.2rem', '50rem']}
-                            sx={{
-                                position: 'relative',
-                                display: ['none', 'none', 'block'],
-                                top: [0,0,'0rem']
-                            }}
-                        />
+                        <Box sx={{
+                            backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
+                            width: ['100%', '31.2rem', '50rem'],
+                            height: ['120vw', '43rem', '70rem'],
+                            borderRadius: ['0.85rem', null, '1.3rem'],
+                            border: `0.1rem solid ${theme.colors.textColor}`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            '@media screen and (min-width: 1620px)': {
+                                width: '58rem',
+                                height: '78rem'
+                            }
+,                        }} />
                     </Fade>
                 </Box>
             </Flex>

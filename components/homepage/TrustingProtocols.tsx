@@ -23,77 +23,61 @@ const TrustingProtocols = () => {
                   key={index} 
                   data-aos={'flip-left'} 
                   data-aos-offset={index % 2 ? 200 : 500}
-                  width={['calc(50vw - 2rem)', 'calc(25vw - 11.5rem)']}
-                  height={[
-                    'calc(50vw - 2rem)', 
-                    '17rem', 
-                    '10rem',
-                    'calc(25vw - 11.5rem)',
-                  ]} 
+                  width={['calc(50vw - 2rem)', '22.2vw']}
+                  height={['calc(50vw - 2rem)', '22.2vw']}
+                  maxWidth={[null, null, null]}
                   alignItems={'center'} 
                   justifyContent={'center'}
                   sx={{
+                    bg: theme.colors.cardBackground,
                     position: 'relative',
+                    boxShadow: `0 0 0 1px ${theme.colors.textColor}`,
                     mt: [
                       0, 
                       index % 2 == 0 ? 0 : '17rem', 
                       index % 2 == 0 ? 0 : '10rem',
-                      index % 2 == 0 ? 0 : 'calc(25vw - 11.5rem)',
+                      index % 2 == 0 ? 0 : '22.2vw',
                     ],
                   }}
                 >
-                  <Flex 
-                    className={'protocol-card protocol-card-front'}
-                    width={'100%'}
-                    height={'100%'}
-                    alignItems={'center'} justifyContent={'center'}
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      boxShadow: `0 0 0 1px ${theme.colors.textColor}`,
-                      backgroundColor: theme.colors.cardBackground,
-                      transition: '0.35s cubic-bezier(0,1.19,.62,1.44) all',
-                    }}>
-                    <Box sx={{
-                      width: '0.46rem', 
-                      height: '0.46rem', 
-                      background: theme.colors.protocolCardLine,
-                      position: 'absolute',
-                      top: '-0.25rem',
-                      left: '-0.25rem'
+                  <Box sx={{
+                    width: '0.46rem', 
+                    height: '0.46rem', 
+                    background: theme.colors.protocolCardLine,
+                    position: 'absolute',
+                    top: '-0.25rem',
+                    left: '-0.25rem'
+                  }}/>
+                  <Box sx={{
+                    width: '0.46rem', 
+                    height: '0.46rem', 
+                    background: theme.colors.protocolCardLine,
+                    position: 'absolute',
+                    top: '-0.25rem',
+                    right: '-0.25rem'
+                  }}/>
+                  <Box sx={{
+                    width: '0.46rem', 
+                    height: '0.46rem', 
+                    background: theme.colors.protocolCardLine,
+                    position: 'absolute',
+                    bottom: '-0.25rem',
+                    right: '-0.25rem'
+                  }}/>
+                  <Box sx={{
+                    width: '0.46rem', 
+                    height: '0.46rem', 
+                    background: theme.colors.protocolCardLine,
+                    position: 'absolute',
+                    bottom: '-0.25rem',
+                    left: '-0.25rem'
+                  }}/>
+                  <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
+                    <Image src={protocol.logo} sx={{
+                      filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset',
+                      width: [null, null, '17.2rem']
                     }}/>
-                    <Box sx={{
-                      width: '0.46rem', 
-                      height: '0.46rem', 
-                      background: theme.colors.protocolCardLine,
-                      position: 'absolute',
-                      top: '-0.25rem',
-                      right: '-0.25rem'
-                    }}/>
-                    <Box sx={{
-                      width: '0.46rem', 
-                      height: '0.46rem', 
-                      background: theme.colors.protocolCardLine,
-                      position: 'absolute',
-                      bottom: '-0.25rem',
-                      right: '-0.25rem'
-                    }}/>
-                    <Box sx={{
-                      width: '0.46rem', 
-                      height: '0.46rem', 
-                      background: theme.colors.protocolCardLine,
-                      position: 'absolute',
-                      bottom: '-0.25rem',
-                      left: '-0.25rem'
-                    }}/>
-                    <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
-                      <Image src={protocol.logo} sx={{
-                        filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset',
-                        width: [null, null, '17.2rem']
-                      }}/>
-                      <Text as={'p'}>{protocol.label}</Text>
-                    </Flex>
+                    <Text as={'p'}>{protocol.label}</Text>
                   </Flex>
                 </Flex>
               ))}

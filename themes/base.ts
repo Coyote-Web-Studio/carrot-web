@@ -39,14 +39,11 @@ export default {
         width: [
           "calc(100vw - 4rem)", 
           "calc(100vw - 9.6rem)", 
-          "calc(100vw - 9.6rem)"
+          "calc(100vw - 19.2rem)",
+          "calc(100vw - 19.2rem)",
         ],
         maxWidth: [null, null, '1440px'],
         minWidth: [null, null, null, null, '1600px'],
-        mx: "auto",
-      },
-      reducedBox: {
-        width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "1124px"],
         mx: "auto",
       },
       expandedBox: {
@@ -54,15 +51,19 @@ export default {
         width: [
           "calc(100vw - 2rem)", 
           "calc(100vw - 4.8rem)", 
-          "calc(100vw - 4.8rem)",
-          "calc(100vw - 6.4rem)"
+          "calc(100vw - 9.6rem)",
+          "calc(100vw - 19.2rem)"
         ],
         left: [
           '1rem',
           '2.4rem',
-          '2.4rem',
-          '3.2rem'
+          '4.8rem',
+          '9.6rem'
         ],
+      },
+      reducedBox: {
+        width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "1124px"],
+        mx: "auto",
       },
     },
     text: {
