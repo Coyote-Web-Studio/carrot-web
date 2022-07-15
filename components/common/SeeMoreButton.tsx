@@ -10,9 +10,9 @@ const SeeMoreButton = (props : any) => {
             onClick={props.onClick}
             buttonWrapperStyles={{
               borderRadius: "10rem",
-              width: ["4rem", '4rem', '8rem'],
-              height: ["4rem", '4rem', '8rem'],
-              minWidth: ['4rem', '4rem', '8rem'],
+              width: ["4rem", '4rem', null, '8rem'],
+              height: ["4rem", '4rem', null, '8rem'],
+              minWidth: ['4rem', '4rem', null, '8rem'],
               position: "relative",
               ml: ["1.6rem", "1.6rem", "2.4rem"],
               '.button': {
@@ -43,8 +43,8 @@ const SeeMoreButton = (props : any) => {
               className="plus-line"
               sx={{
                 position: "absolute",
-                left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", "calc(50% - 2.6rem)"],
-                width: ["1.4rem", "1.4rem", '5.2rem'],
+                left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", null, "calc(50% - 2.6rem)"],
+                width: ["1.4rem", "1.4rem", null, '5.2rem'],
                 height: "0.1rem",
                 background: theme.colors.cardLine,
                 borderRadius: '100px'
@@ -54,8 +54,8 @@ const SeeMoreButton = (props : any) => {
               className="plus-line"
               sx={{
                 position: "absolute",
-                left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", "calc(50% - 2.6rem)"],
-                width: ["1.4rem", "1.4rem", '5.2rem'],
+                left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", null, "calc(50% - 2.6rem)"],
+                width: ["1.4rem", "1.4rem", null, '5.2rem'],
                 height: "0.1rem",
                 background: theme.colors.cardLine,
                 transform: "rotate(90deg)",

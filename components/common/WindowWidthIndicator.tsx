@@ -32,7 +32,7 @@ const WindowWidthIndicator = (props : any) => {
 
     useEffect(() => {
         document.addEventListener('keydown', (e) => {
-            console.log(e.keyCode);
+            // console.log(e.keyCode);
             if (e.keyCode == 192) {
                 setIsVisible(!isVisible)
             }

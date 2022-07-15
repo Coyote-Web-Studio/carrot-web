@@ -27,8 +27,8 @@ const CarrotInNumbers = () => {
         <Box sx={{
           ...theme.boxSizes.defaultBox,
           position: 'absolute',
-          height: ['61rem', '30rem', null, 'calc((64rem * 11) / 10)'],
-          top: ['14.4rem', '9.7rem', '22.6rem']
+          height: ['61rem', '30rem', null, 'calc(100% - 30rem)'],
+          top: ['14.4rem', '9.7rem', null, '22.6rem']
           // background: 'blue',
           }}
         >

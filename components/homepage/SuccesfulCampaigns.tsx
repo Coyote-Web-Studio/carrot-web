@@ -16,13 +16,12 @@ const SuccesfulCampaigns = () => {
   const [cardNumber, setCardNumber] = useState(4);
 
   const updateDimensions = debounce(() => {
-    console.log('hello')
     let windowWidth = window.innerWidth;
-    if (windowWidth > 500 && windowWidth <= 760 ) {
+    if (windowWidth > 500 && windowWidth <= 1140 ) {
       setCardNumber(2);
-    } else if (windowWidth > 760 && windowWidth <= 1420 ){
+    } else if (windowWidth > 1140 && windowWidth < 1680 ){
       setCardNumber(3);
-    } else if (windowWidth > 1420) {
+    } else if (windowWidth >= 1680) {
       setCardNumber(4)
     }
   }, 200);

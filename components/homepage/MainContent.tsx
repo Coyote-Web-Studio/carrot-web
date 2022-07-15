@@ -21,7 +21,7 @@ const MainContent = (props : any) => {
         position: 'absolute',
         height: '100%'
       }}>
-        <GridBackground />
+        <GridBackground trimRows={2}/>
       </Box>
       <Breakdown />
       <HowItWorks />

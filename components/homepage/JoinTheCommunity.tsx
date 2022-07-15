@@ -52,15 +52,15 @@ const JoinTheCommunity = () => {
                             </Text>
                         </Box>
                         <Flex sx={{
-                            boxShadow: [null, null, `0 0 0 1px ${theme.colors.gray10}`],
+                            boxShadow: [null, null, null, `0 0 0 1px ${theme.colors.gray10}`],
                             rowGap: '0.1rem', columnGap: '0.1rem'
                         }}>
                             <Flex 
                                 sx={{
-                                    boxShadow: [null, null, `0 0 0 1px ${theme.colors.gray10}`], 
+                                    boxShadow: [null, null, null, `0 0 0 1px ${theme.colors.gray10}`], 
                                     minWidth: ['6.4rem'],
                                     position: 'relative',
-                                    display: ['none !important', null, 'flex !important']
+                                    display: ['none !important', null, null, 'flex !important']
                                 }}
                             >
                                 <Text 
@@ -137,8 +137,8 @@ const JoinTheCommunity = () => {
                                             }}>
                                                 <Text
                                                     sx={{
-                                                        fontSize: ['1.2rem', null, '1.6rem'],
-                                                        lineHeight: ['1.8rem', null, '2.4rem'],
+                                                        fontSize: ['1.2rem', null, null, '1.6rem'],
+                                                        lineHeight: ['1.8rem', null, null, '2.4rem'],
                                                         mb: ['1.6rem', null, '2.4rem'],
                                                         fontFamily: theme.fonts.monospace
                                                     }}
@@ -146,7 +146,7 @@ const JoinTheCommunity = () => {
                                                     {item.detail}
                                                 </Text>
                                                 <Box sx={{
-                                                        ml: [null, null, 'auto']
+                                                        ml: [null, null, null, 'auto']
                                                     }}>
                                                     <Button>
                                                         {item.buttonLabel}
@@ -163,10 +163,10 @@ const JoinTheCommunity = () => {
             </Flex>
             <Flex width={[null, 1/2, 1/2]}
                 sx={{
-                    bg: 'blue',
                     backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657822465/carrot/antonitudisco_272455743_5068059243228334_3680368816274666884_n_4_vzorvz.png)`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center'
+                    backgroundPosition: 'center',
+                    display: ['none', 'none', 'flex', 'flex']
                 }}
             >
 

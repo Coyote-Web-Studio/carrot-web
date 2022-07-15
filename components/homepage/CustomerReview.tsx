@@ -34,7 +34,7 @@ const CustomerReview = () => {
           ...theme.boxSizes.expandedBox,
           position: "absolute",
           // bg: 'blue',
-          height: ["82%", "80%", "100%"],
+          height: ["82%", "80%", "calc(100% - 10rem)"],
           top: "6.4rem",
         }}
       >
@@ -74,10 +74,10 @@ const CustomerReview = () => {
         }}
       >
         <Text
-          fontSize={["2.8rem", "3.3em", "6.9rem"]}
-          mb={["3.8rem", "3.8rem", "12rem"]}
+          fontSize={["2.8rem", "3.3em", null, "6.9rem"]}
+          mb={["3.8rem", "3.8rem", null, "12rem"]}
           fontWeight={700}
-          lineHeight={["3.8rem", "3.36rem", "6.969rem"]}
+          lineHeight={["3.8rem", "3.36rem", null, "6.969rem"]}
           color={theme.colors.customerCommentText}
         >
           <AnimatedText color={theme.colors.gray10} speed={10}>

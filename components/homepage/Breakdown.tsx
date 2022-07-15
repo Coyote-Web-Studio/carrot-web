@@ -50,8 +50,8 @@ const Breakdown = (props: any) => {
             <Box
               mb={["2.4rem", "0"]}
               sx={{
-                width: ["100%", "calc(50% - 1rem)", "34vw"],
-                height: ['55vw', '24vw'],
+                width: ["100%", "30vw", "32vw", "32vw"],
+                height: ['55vw', '24vw', '18vw', "18vw"],
                 backgroundImage: `url(${contentBlock.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
