@@ -16,24 +16,29 @@ const JoinTheCommunity = () => {
             flexDirection={'row'}
         >
             <Flex sx={{
-                p: ['2.4rem 0', '2.4rem 4.8rem', '12.6rem 6.4rem 12.6rem 9.6rem'],
+                p: [
+                    '2.4rem 0', 
+                    '2.4rem 4.8rem', 
+                    null, 
+                    '12.6rem 6.4rem 12.6rem 9.6rem'],
                 width: [
                     "calc(100vw - 4rem)", 
                     '50%',
                 ],
                 mx: "auto",
             }}>
-                <Fade>
+                <Fade width={'100%'}>
                     <Flex flexDirection={'column'} sx={{rowGap: '0.1rem', columnGap: '0.1rem'}}>
                         <Box 
                             sx={{
                                 boxShadow: [null, null,  `0 0 0 1px ${theme.colors.gray10}`],
-                                borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, null, 'none'],
+                                borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, 'none', 'none'],
                                 p: ['0 0 2.4rem', null, '3.2rem'],
                                 width: [null, null, null, '51.5rem'],
                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                    width: '70.4rem'
-                                }
+                                    width: '64rem',
+                                },
+                                maxWidth: '100%'
                             }}
                         >
                             <Text 
@@ -53,7 +58,7 @@ const JoinTheCommunity = () => {
                             <Flex 
                                 sx={{
                                     boxShadow: [null, null, `0 0 0 1px ${theme.colors.gray10}`], 
-                                    width: ['6.4rem'],
+                                    minWidth: ['6.4rem'],
                                     position: 'relative',
                                     display: ['none !important', null, 'flex !important']
                                 }}
@@ -62,7 +67,7 @@ const JoinTheCommunity = () => {
                                     sx={{
                                         position: 'absolute', 
                                         top: '2rem', 
-                                        left: ['1rem', '1.5rem'],
+                                        left: ['2.2rem'],
                                         writingMode: 'vertical-rl',
                                         transform: `rotate(180deg)`,
                                         fontSize: '1.6rem',
@@ -75,7 +80,7 @@ const JoinTheCommunity = () => {
                                     sx={{
                                         position: 'absolute', 
                                         bottom: '2rem', 
-                                        left: ['1rem', '1.5rem'],
+                                        left: ['2.2rem'],
                                         writingMode: 'vertical-rl',
                                         transform: `rotate(180deg)`,
                                         fontSize: '1.6rem',
@@ -85,7 +90,7 @@ const JoinTheCommunity = () => {
                                     • DON&apos;T BY SHY
                                 </Text>
                             </Flex>
-                            <Flex flexDirection={'column'}>
+                            <Flex flexDirection={'column'} flexGrow={1}>
                                 <Flex as={'ul'} flexDirection={'column'} width={'100%'} sx={{
                                     rowGap: '0.1rem', columnGap: '0.1rem'
                                 }}>
@@ -97,8 +102,13 @@ const JoinTheCommunity = () => {
                                                 boxShadow: [null, null, `0 0 0 1px ${theme.colors.gray10}`], 
                                                 height: ['auto', null, '25.6rem'], 
                                                 width: '100%',
-                                                borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, null, 'none'],
-                                                p: ['2.6rem 1rem', null, '2.4rem 3.3rem 2.4rem 6.4rem'],
+                                                borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, 'none'],
+                                                p: [
+                                                    '2.6rem 1rem', 
+                                                    null, 
+                                                    '2.4rem',
+                                                    '2.4rem 3.3rem 2.4rem 6.4rem'
+                                                ],
                                                 alignItems: 'center',
                                                 '&:last-of-type': {
                                                     border: 'none'
@@ -108,14 +118,21 @@ const JoinTheCommunity = () => {
                                             <Image 
                                                 src={item.img}
                                                 sx={{
-                                                    minWidth: ['5.4rem', null, '12.6rem'],
+                                                    maxWidth: [
+                                                        '5.4rem', 
+                                                        null, 
+                                                        null,
+                                                        'unset'
+                                                    ],
                                                     height: ['5.4rem', null, '12.6rem'],
-                                                    mr: ['4.6rem']
+                                                    mr: ['4.6rem', '0', 'auto']
                                                 }}
                                             />
                                             <Flex flexDirection={'column'} sx={{
+                                                ml: ['auto', null, null, '5rem'],
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    ml: '15rem'
+                                                    ml: ['auto'],
+                                                    maxWidth: '26rem'
                                                 }
                                             }}>
                                                 <Text
