@@ -39,6 +39,7 @@ const Button = (props : any) => {
                 letterSpacing: '0.05rem',
                 borderRadius: 'inherit',
                 zIndex: 1,
+                whiteSpace: 'nowrap',
                 position: 'relative',
                 top: '0rem',
                 left: '0rem',

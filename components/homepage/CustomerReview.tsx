@@ -24,21 +24,21 @@ const CustomerReview = () => {
         position: "relative",
         bg: theme.colors.customerCommentBackground,
         borderRadius: ['1.6rem', null, '5rem'],
-        pb: ["6.4rem", "6.4rem", "14.4rem"],
-        pt: ["8.7rem"],
+        pb: ["6.4rem", "6.4rem", "14.4rem", '21.3rem'],
+        pt: ["8.7rem" , null, null, '18.3rem'],
         mb: ["4.8rem"],
-        boxShadow: `0 0 5rem 2rem ${theme.colors.black}`
       }}
     >
       <Box
         sx={{
           ...theme.boxSizes.expandedBox,
           position: "absolute",
+          // bg: 'blue',
           height: ["82%", "80%", "100%"],
           top: "6.4rem",
         }}
       >
-        <GridBackground trimRows={3} color={theme.colors.customerCommentGrid} />
+        <GridBackground color={theme.colors.customerCommentGrid} />
       </Box>
       <Image
         ref={sphereParallax.ref}

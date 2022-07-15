@@ -50,7 +50,7 @@ const Navbar = (props : any) => {
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
                 <Logo color={theme.colors.logoColor} height={['2.7rem', '2.7rem', '4.8rem']}/>
                 <Box sx={{
-                    display: ['none', 'flex', 'flex', 'flex'],
+                    display: ['none', 'none', 'none', 'flex'],
                     alignItems: 'center'
                 }}>
                     <Flex as="nav">
@@ -86,14 +86,14 @@ const Navbar = (props : any) => {
                 </Box>
                 <StyleSwitch 
                     sx={{
-                        display: ['inline-block', 'none', 'none'], 
+                        display: ['inline-block', 'inline-block', 'inline-block', 'none'], 
                         ml: 'auto', 
                         mr: '2rem',
                         position: 'relative'
                     }}
                 />
                 <HamburgerIcon sx={{
-                    display: ['auto', 'none']
+                    display: ['inline-block', 'inline-block', 'inline-block', 'none']
                 }} onClick={() => {
                     setIsMobileNavbarOpen(!isMobileNavbarOpen);
                 }} />
@@ -102,7 +102,10 @@ const Navbar = (props : any) => {
                 position: 'absolute',
                 pointerEvents: isMobileNavbarOpen ? 'auto' : 'none',
                 opacity: isMobileNavbarOpen ? 1 : 0,
-                top: isMobileNavbarOpen ? '8rem' : '20rem',
+                top: [
+                    isMobileNavbarOpen ? '8rem' : '20rem',
+                    isMobileNavbarOpen ? '14rem' : '20rem',
+                ],
                 left: 0,
                 width: '100vw',
                 height: 'calc(100vh - 8rem)',

@@ -37,14 +37,19 @@ const Hero = (props : any) => {
                 pt={['3.4rem', '5.2rem', '0rem',  null]}
                 ref={heroContentRef}
             >
-                <Flex flexDirection={'column'} width={['100%', '32rem', '68.4rem', '72rem']} justifyContent={['auto', 'center']} sx={{
+                <Flex 
+                    flexDirection={'column'} 
+                    width={['100%', '32rem', '50vw', '72rem']} 
+                    justifyContent={['auto', 'center']} 
+                    sx={{
                     position: 'relative', 
                     pr: '1rem',
                     top: [null, null, null, '6rem'],
                     '@media screen and (min-width: 1620px)': {
                         top: '-0.6rem'
                     }
-                    }}>
+                    }}
+                >
                     <Text as="h1" sx={{
                         fontSize: ['4.8rem', '4.8rem', '4.8rem', '9.9rem', '12.8rem'], 
                         lineHeight: ['4.88rem', '4.88rem', '4.8rem', '10rem', '12.8rem'] ,
@@ -116,8 +121,8 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', '50rem'],
-                            height: ['120vw', '43rem', '70rem'],
+                            width: ['100%', '31.2rem', null, '50rem'],
+                            height: ['120vw', '43rem', null, '70rem'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',

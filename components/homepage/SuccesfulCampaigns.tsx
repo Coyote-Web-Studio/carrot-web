@@ -21,7 +21,7 @@ const SuccesfulCampaigns = () => {
     if (windowWidth > 500 && windowWidth <= 760 ) {
       setCardNumber(2);
     } else if (windowWidth > 760 && windowWidth <= 1420 ){
-      setCardNumber(3);
+      setCardNumber(2);
     } else if (windowWidth > 1420) {
       setCardNumber(4)
     }
@@ -135,7 +135,11 @@ const SuccesfulCampaigns = () => {
 
       <Flex
         as={"ul"}
-        sx={{ display: ["block", "none", "none"] }}
+        sx={{ 
+          display: ["block", "none", "none"] ,
+          mx: '-2rem',
+          bg: 'blue'
+        }}
         flexDirection={["column", "row"]}
         mb={"1.6rem"}
       >
@@ -144,9 +148,6 @@ const SuccesfulCampaigns = () => {
             index < 2 && (
               <CampaignCard
                 campaign={campaign}
-                sx={{
-                  width: ["100%", "100%", "37.3rem", "35.2rem"],
-                }}
                 key={index}
               />
             )

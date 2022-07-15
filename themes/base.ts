@@ -64,7 +64,11 @@ export default {
         ],
       },
       reducedBox: {
-        width: ["calc(100vw - 4rem)", "calc(100vw - 9.6rem)", "1124px"],
+        width: [
+          "calc(100vw - 4rem)", 
+          "calc(100vw - 9.6rem)", 
+          "calc(100vw - 19.2rem)"
+        ],
         mx: "auto",
       },
     },

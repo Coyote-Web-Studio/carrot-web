@@ -9,8 +9,9 @@ const CampaignCard = (props : any) => {
 
     const theme : any = useTheme()
     return (
-      <Box sx={{position: 'relative'}}>
-        <StyledCampaignCard {...props} flexDirection={['column']} 
+      <Box sx={{position: 'relative', ...props.sx, 
+      mx: ['2rem']}}>
+        <StyledCampaignCard flexDirection={['column']} 
           bg={transparentize('0.1', theme.colors.cardBackground)} sx={{
             backdropFilter: 'blur(10px)',
             border: `0.1rem solid ${theme.colors.cardLine}`,
@@ -18,7 +19,6 @@ const CampaignCard = (props : any) => {
             overflow: 'hidden',
             height: ['38.4rem', '38.4rem', '44.8rem'],
             mb: ['2.4rem', '4.8rem'],
-            ...props.sx
           }}>
             {/* HEADER */}
             <Flex className={'campaign-header'} 
