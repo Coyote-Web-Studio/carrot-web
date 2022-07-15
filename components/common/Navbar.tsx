@@ -80,9 +80,9 @@ const Navbar = (props : any) => {
                             ))}
                         </Flex>
                     </Flex>
-                    <StyleSwitch ml={['2.4rem']} />
+                    <StyleSwitch ml={['2.4rem', null, null, '4.8rem']} />
                     <Button buttonWrapperStyles={{
-                        ml: ['2.4rem'],
+                        ml: ['2.4rem', null, null, '4.8rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             ml: "4.8rem",
                         }
