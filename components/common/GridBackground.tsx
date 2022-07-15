@@ -42,7 +42,7 @@ const GridBackground = (props : any) => {
         // console.log(availableDesktopRows)
         // console.log(availableDesktopColumns);
 
-        if (window.innerWidth > 980) {
+        if (window.innerWidth > 1023) {
             setGridRows(availableDesktopRows)
             setGridColumns(availableDesktopColumns)
         } else {
@@ -82,7 +82,7 @@ const GridBackground = (props : any) => {
                                 boxShadow: `0 0 0 1px ${props.color || theme.colors.gridColor}`,
                                 width: '2.4rem',
                                 height: '2.4rem',
-                                '@media screen and (min-width: 980px)': {
+                                [`@media screen and (min-width: ${theme.breakpoints[2]})`]: {
                                     width: '6.4rem',
                                     height: '6.4rem',
                                 }

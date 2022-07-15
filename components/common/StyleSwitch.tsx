@@ -29,12 +29,15 @@ const StyleSwitch = (props : any) => {
                 }} 
                 sx={{
                     height: ['1.32rem', null, '2.2rem'], 
-                    width: ['2.6rem', null, '4.4rem'],
+                    minWidth: ['2.6rem', null, '4.4rem'],
                     cursor: 'pointer',
                     bg: theme.colors.textColor,
                     position: 'inherit',
                     '&[aria-checked=true] div': {
-                        transform: [null, `translateX(13px) translateY(0px) !important`, `translateX(24px) translateY(0.5px) !important`]
+                        transform: [
+                            null, 
+                            `translateX(13px) translateY(0px) !important`, 
+                            `translateX(23px) translateY(0.5px) !important`]
                     },
                     '&:focus': {
                         boxShadow: 'none',
@@ -50,7 +53,7 @@ const StyleSwitch = (props : any) => {
                     }
                 }}
             />
-            <Flex className={'icons'} width={'100%'} height={'100%'} sx={{position: 'absolute', pointerEvents: 'none', zIndex: 1}}>
+            <Flex className={'icons'} width={'100%'} height={'100%'} sx={{position: 'absolute', pointerEvents: 'none', zIndex: 1, top: 0}}>
                 <Image sx={{
                     position: 'absolute',
                     top: ['0.3rem', '0.25rem', '0.5rem'],

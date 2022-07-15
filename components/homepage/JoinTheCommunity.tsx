@@ -31,7 +31,7 @@ const JoinTheCommunity = () => {
                                 borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, null, 'none'],
                                 p: ['0 0 2.4rem', null, '3.2rem'],
                                 width: [null, null, null, '51.5rem'],
-                                '@media screen and (min-width: 1680px)': {
+                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                     width: '70.4rem'
                                 }
                             }}
@@ -114,7 +114,7 @@ const JoinTheCommunity = () => {
                                                 }}
                                             />
                                             <Flex flexDirection={'column'} sx={{
-                                                '@media screen and (min-width: 1680px)': {
+                                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                                     ml: '15rem'
                                                 }
                                             }}>

@@ -62,7 +62,7 @@ const Navbar = (props : any) => {
                                     href={'#'}
                                     key={index}
                                     sx={{
-                                        ml:['1.2rem', '1.2rem', '3.2rem', '6.4rem'],
+                                        ml:['1.2rem', '1.2rem', '1.2rem', '3.2rem'],
                                         whiteSpace: 'nowrap',
                                         transition: '0.1s ease-in-out all',
                                         '&:first-of-type': {
@@ -70,6 +70,9 @@ const Navbar = (props : any) => {
                                         },
                                         '&:hover': {
                                         },
+                                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                            ml: "6.4rem",
+                                          }
                                     }}
                                 >
                                     {link.label}
@@ -77,9 +80,12 @@ const Navbar = (props : any) => {
                             ))}
                         </Flex>
                     </Flex>
-                    <StyleSwitch ml={['2rem', '2rem', '4rem']} />
+                    <StyleSwitch ml={['2.4rem']} />
                     <Button buttonWrapperStyles={{
-                        ml: ['2.4rem', '2.4rem', '4.8rem']
+                        ml: ['2.4rem'],
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            ml: "4.8rem",
+                        }
                     }}>
                         CARROT DAPP
                     </Button>

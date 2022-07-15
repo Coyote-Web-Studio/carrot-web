@@ -16,18 +16,16 @@ const Hero = (props : any) => {
 
     return (
         <StyledHero className="hero" sx={{position: 'relative', pb: ['5.2rem', null, null, '11.3rem']}}>
+            {/* BACKGROUND DECORATION */}
             <Box sx={{
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
                 height: '100%',
-                // bg: 'blue',
-                top: ['0', '0', '0', '6.4rem'],
-                '@media screen and (min-width: 1680px)': {
-                   height: 'calc(64 * 1.3rem)'
-                },
+                top: ['0', null, null, '6.4rem'],
             }}>
                 <GridBackground trimRows={3} useAnimation/>
             </Box>
+            {/* HERO CONTENT */}
             <Flex 
                 flexDirection={['column', 'row']} 
                 justifyContent={['auto', 'space-between']}
@@ -38,15 +36,16 @@ const Hero = (props : any) => {
                 pt={['3.4rem', '5.2rem', '0rem',  null]}
                 ref={heroContentRef}
             >
+                {/* COPY CONTENT */}
                 <Flex 
                     flexDirection={'column'} 
-                    width={['100%', '32rem', '50vw', '72rem']} 
+                    width={['100%', '32rem', 'calc(50vw - 9.6rem)', 'calc(50vw - 9.6rem)']} 
                     justifyContent={['auto', 'center']} 
                     sx={{
                     position: 'relative', 
                     pr: '1rem',
                     top: [null, null, null, '6rem'],
-                    '@media screen and (min-width: 1620px)': {
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                         top: '-0.6rem'
                     }
                     }}
@@ -54,11 +53,13 @@ const Hero = (props : any) => {
                     <Text as="h1" sx={{
                         fontSize: ['4.8rem', null, null, '7.2rem'], 
                         lineHeight: ['4.88rem', '4.88rem', '4.8rem', '7.2rem'] ,
-                        mb: ['1.6rem', '1.6rem', '5.2rem'],
+                        mb: ['1.6rem', '1.6rem', '1.8rem'],
                         letterSpacing: '-0.02em',
-                        '@media screen and (min-width: 1114px)': {
-                            fontSize: '9.9rem',
-                            lineHeight: '10rem'
+                        pr: ['2rem'],
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            mb: '5.2rem',
+                            fontSize: '11.9rem',
+                            lineHeight: '12.7rem'
                         },
                     }}>
                         <AnimatedText speed={80} initialDelay={150}>
@@ -66,9 +67,9 @@ const Hero = (props : any) => {
                         </AnimatedText>
                     </Text>
                     <Fade>
-                        <Text mb={['2.8rem', '2.4rem', '7.3rem']} sx={{
-                            fontSize: ['1.4rem', '1.4rem', '1.9rem'],
-                            lineHeight: ['2.2rem', '2.2rem', '2.85rem'],
+                        <Text mb={['2.8rem', '2.4rem', null, '7.3rem']} sx={{
+                            fontSize: ['1.4rem', null, null, '1.9rem'],
+                            lineHeight: ['2.2rem', null, null, '2.85rem'],
                             color: theme.colors.textColor,
                             fontFamily: 'IBM Plex Mono'
                         }}>
@@ -90,6 +91,7 @@ const Hero = (props : any) => {
                         </Button>
                     </Fade>
                 </Flex>
+                {/* IMAGE / VIDEO */}
                 <Box>
                     <Fade sx={{position: 'relative'}}>
                         <Flex sx={{
@@ -126,20 +128,18 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', null, '50rem'],
-                            height: ['120vw', '43rem', null, '70rem'],
+                            width: ['100%', '31.2rem', null, 'calc(50vw - 12rem)'],
+                            height: ['120vw', '43rem', null, 'calc(50vw)'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
+                            maxWidth: [null, null, null, '50rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
-                            '@media screen and (min-width: 1114px)': {
-                                width: '58rem',
-                                height: '78rem'
-                            },
-                            '@media screen and (min-width: 1620px)': {
-                                width: '58rem',
-                                height: '78rem'
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                width: '73.6rem',
+                                height: '95.7rem',
+                                maxWidth: 'unset'
                             }
 ,                        }} />
                     </Fade>

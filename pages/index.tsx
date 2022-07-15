@@ -11,6 +11,8 @@ import Marquees from './../components/homepage/Marquees';
 import MainContent from '../components/homepage/MainContent';
 import JoinTheCommunity from '../components/homepage/JoinTheCommunity';
 
+import WindowWidthIndicator from '../components/common/WindowWidthIndicator';
+
 const Home: NextPage = () => {
 
   const theme : any = useTheme();
@@ -23,6 +25,7 @@ const Home: NextPage = () => {
         </title>
       </Head>
       <Flex flexDirection={'column'} bg={theme.colors.background}>
+        <WindowWidthIndicator />
         <Navbar />
         <Hero />
         <Marquees />

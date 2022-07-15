@@ -1,5 +1,5 @@
 export default {
-    breakpoints: ["40em", "52em", "64em"],
+    breakpoints: ["639px", "831px", "1023px", "1440px"],
     fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
     colors: {
       blue6: '#0029FF',
@@ -36,6 +36,7 @@ export default {
     variants: {},
     boxSizes: {
       defaultBox: {
+        // bg: ['blue', 'yellow', 'red', 'green'],
         width: [
           "calc(100vw - 4rem)", 
           "calc(100vw - 9.6rem)", 
@@ -44,7 +45,7 @@ export default {
         ],
         maxWidth: [null, null, '1440px', '1600px'],
         mx: "auto",
-        '@media screen and (min-width: 1680px)': {
+        '@media screen and (min-width: 1440px)': {
           width: "calc(100vw - 19.2rem) !important",
         }
       },
