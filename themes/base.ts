@@ -42,9 +42,11 @@ export default {
           "calc(100vw - 19.2rem)",
           "calc(100vw - 19.2rem)",
         ],
-        maxWidth: [null, null, '1440px'],
-        minWidth: [null, null, null, null, '1600px'],
+        maxWidth: [null, null, '1440px', '1600px'],
         mx: "auto",
+        '@media screen and (min-width: 1680px)': {
+          width: "calc(100vw - 19.2rem) !important",
+        }
       },
       expandedBox: {
         // bg: ['yellow', 'blue', 'red', 'purple'],

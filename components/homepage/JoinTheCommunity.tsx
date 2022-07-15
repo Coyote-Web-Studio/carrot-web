@@ -16,7 +16,7 @@ const JoinTheCommunity = () => {
             flexDirection={'row'}
         >
             <Flex sx={{
-                p: ['2.4rem 0', '2.4rem 4.8rem', '12.6rem 6.4rem 0 9.6rem'],
+                p: ['2.4rem 0', '2.4rem 4.8rem', '12.6rem 6.4rem 12.6rem 9.6rem'],
                 width: [
                     "calc(100vw - 4rem)", 
                     '50%',
@@ -62,7 +62,7 @@ const JoinTheCommunity = () => {
                                     sx={{
                                         position: 'absolute', 
                                         top: '2rem', 
-                                        left: '1rem',
+                                        left: ['1rem', '1.5rem'],
                                         writingMode: 'vertical-rl',
                                         transform: `rotate(180deg)`,
                                         fontSize: '1.6rem',
@@ -75,7 +75,7 @@ const JoinTheCommunity = () => {
                                     sx={{
                                         position: 'absolute', 
                                         bottom: '2rem', 
-                                        left: '1rem',
+                                        left: ['1rem', '1.5rem'],
                                         writingMode: 'vertical-rl',
                                         transform: `rotate(180deg)`,
                                         fontSize: '1.6rem',
@@ -113,7 +113,11 @@ const JoinTheCommunity = () => {
                                                     mr: ['4.6rem']
                                                 }}
                                             />
-                                            <Flex flexDirection={'column'}>
+                                            <Flex flexDirection={'column'} sx={{
+                                                '@media screen and (min-width: 1680px)': {
+                                                    ml: '15rem'
+                                                }
+                                            }}>
                                                 <Text
                                                     sx={{
                                                         fontSize: ['1.2rem', null, '1.6rem'],

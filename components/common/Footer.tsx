@@ -124,7 +124,19 @@ const Footer = (props: any) => {
                   {footerColumn.heading}
                 </Text>
                 {footerColumn.links.map((link, j) => (
-                  <Link href={link.href} mb={['0.4rem', '0.8rem']} color={theme.colors.gray1} fontSize={'1.2rem'} key={j}>
+                  <Link 
+                    href={link.href} 
+                    mb={['0.4rem', '0.8rem']} 
+                    color={theme.colors.gray1} 
+                    fontSize={'1.2rem'}
+                    key={j}
+                    sx={{
+                      transition: '0.15s ease-in-out all',
+                      '&:hover': {
+                        opacity: 0.7
+                      }
+                    }}
+                  >
                     {link.label}
                   </Link>
                 ))}

@@ -20,7 +20,10 @@ const Hero = (props : any) => {
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
                 height: '100%',
-                top: ['0', '0', '0', '6.4rem']
+                top: ['0', '0', '0', '6.4rem'],
+                '@media screen and (min-width: 1680px)': {
+                   height: '76%'
+                },
             }}>
                 <GridBackground trimRows={3} useAnimation/>
             </Box>

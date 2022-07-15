@@ -69,15 +69,6 @@ const Navbar = (props : any) => {
                                             ml: 0
                                         },
                                         '&:hover': {
-                                            textShadow: `
-                                                0.25px 0 ${theme.colors.textColor}, 
-                                                -0.25px 0 ${theme.colors.textColor}, 
-                                                0 0.25px ${theme.colors.textColor}, 
-                                                0 -0.25px ${theme.colors.textColor},
-                                                0.125px 0.125px ${theme.colors.textColor}, 
-                                                -0.125px -0.125px ${theme.colors.textColor}, 
-                                                0.125px -0.125px ${theme.colors.textColor}, 
-                                                -0.125px 0.125px ${theme.colors.textColor}`
                                         },
                                     }}
                                 >
