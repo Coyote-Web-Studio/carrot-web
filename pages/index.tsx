@@ -23,13 +23,13 @@ const Home: NextPage = () => {
         </title>
       </Head>
       <Flex flexDirection={'column'} bg={theme.colors.background}>
-        {/* <Navbar /> */}
-        {/* <Hero /> */}
-        {/* <Marquees /> */}
-        {/* <MainContent /> */}
-        {/* <Marquees /> */}
+        <Navbar />
+        <Hero />
+        <Marquees />
+        <MainContent />
+        <Marquees />
         <JoinTheCommunity />
-        {/* <Footer /> */}
+        <Footer />
       </Flex>
     </>
   )

@@ -17,7 +17,8 @@ const CampaignCard = (props : any) => {
             borderRadius: '1.6rem',
             overflow: 'hidden',
             height: ['38.4rem', '38.4rem', '44.8rem'],
-            mb: ['2.4rem', '4.8rem']
+            mb: ['2.4rem', '4.8rem'],
+            ...props.sx
           }}>
             {/* HEADER */}
             <Flex className={'campaign-header'} 

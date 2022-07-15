@@ -1,15 +1,36 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Flex, Box, Text } from "rebass";
 import { useTheme } from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { debounce } from "../../utils/utils";
 
 import Button from "./../common/Button";
 import CampaignCard from "./../common/CampaignCard";
+import Fade from "../common/Fade";
 
 const SuccesfulCampaigns = () => {
   const theme: any = useTheme();
   const highlightRef = useRef<HTMLInputElement>();
   const sliderRef = useRef<HTMLInputElement>();
+
+  const [cardNumber, setCardNumber] = useState(4);
+
+  const updateDimensions = debounce(() => {
+    console.log('hello')
+    let windowWidth = window.innerWidth;
+    if (windowWidth > 500 && windowWidth <= 760 ) {
+      setCardNumber(2);
+    } else if (windowWidth > 760 && windowWidth <= 1420 ){
+      setCardNumber(3);
+    } else if (windowWidth > 1420) {
+      setCardNumber(4)
+    }
+  }, 200);
+
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+  }, []); 
 
   return (
     <Flex
@@ -78,57 +99,36 @@ const SuccesfulCampaigns = () => {
         }}>
 
         </Box>
-        <Splide
-          style={{zIndex: 2}}
-          options={{
-            width: "100%",
-            pagination: false,
-            type: 'slider',
-            breakpoints: {
-              360: {
-                perPage: 1,
-              },
-              768: {
-                perPage: 2,
-                gap: "2rem",
-              },
-              1680: {
-                perPage: 3,
-                gap: "6.2rem",
-              },
-              1920: {
-                perPage: 4,
-                gap: "1rem",
-              },
-            },
-          }}
-        >
-          {SuccesfullCampaigns.map((campaign, index) => (
-            <SplideSlide key={index} onMouseEnter={(e) => {
-              e.stopPropagation();
-              e.preventDefault();
-
-              let cardWidth = e.currentTarget.getBoundingClientRect().width;
-
-              let highlighterExtraWidth = 138;
-
-              if ( highlightRef.current && sliderRef.current ) {
-                highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
-
-                highlightRef.current.style.left = e.currentTarget.getBoundingClientRect().left - sliderRef.current.offsetLeft + - highlighterExtraWidth / 2 + 'px';
-
-                highlightRef.current.style.top = - (highlighterExtraWidth / 4) + 'px';
-              }
-            }}>
-              <CampaignCard
-                campaign={campaign}
-                sx={{
-                  width: ["100%", "100%", "37.3rem", "35.2rem"],
-                }}
-              />
-            </SplideSlide>
-          ))}
-        </Splide>
+        <Fade sx={{display: ['none', 'flex']}}>
+          <Flex ref={sliderRef} justifyContent={'space-between'}>
+            {SuccesfullCampaigns.map((campaign, index) => (
+              index < cardNumber && (
+                <CampaignCard
+                  campaign={campaign}
+                  sx={{
+                    width: ["100%", "100%", "37.3rem", "32rem"],
+                  }}
+                  key={index} onMouseEnter={(e : any) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+      
+                    let cardWidth = e.currentTarget.getBoundingClientRect().width;
+      
+                    let highlighterExtraWidth = 138;
+      
+                    if ( highlightRef.current && sliderRef.current ) {
+                      highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
+      
+                      highlightRef.current.style.left = e.currentTarget.getBoundingClientRect().left - sliderRef.current.offsetLeft + - highlighterExtraWidth / 2 + 'px';
+      
+                      highlightRef.current.style.top = - (highlighterExtraWidth / 4) + 'px';
+                    }
+                  }}
+                />
+              )))
+            }
+          </Flex>
+        </Fade>
       </Flex>
 
       {/* MOBILE VIEW (NO SLIDE) */}
