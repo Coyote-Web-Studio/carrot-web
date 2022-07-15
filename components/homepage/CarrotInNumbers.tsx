@@ -27,8 +27,8 @@ const CarrotInNumbers = () => {
         <Box sx={{
           ...theme.boxSizes.defaultBox,
           position: 'absolute',
-          height: 'calc((64rem * 11) / 10)',
-          top: '22.6rem'
+          height: ['61rem', 'calc((64rem * 11) / 10)'],
+          top: ['14.4rem', '22.6rem']
           // background: 'blue',
           }}
         >
@@ -51,7 +51,7 @@ const CarrotInNumbers = () => {
             <Flex as={'li'} flexDirection={'column'} key={index} sx={{
               borderTop: `0.1rem solid ${theme.colors.gray10}`,
               py: '1.2rem',
-              height: [null, null, 'calc(6.5rem * 3)'],
+              height: ['10rem', null, 'calc(6.5rem * 3)'],
               mx: ['0', '2.4rem', '6.4rem'],
               width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
               '&:last-child': {

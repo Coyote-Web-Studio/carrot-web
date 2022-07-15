@@ -9,6 +9,7 @@ const Marquees = (props : any) => {
         <StyledMarquees flexDirection={'column'} sx={{
             '.marquee': {
                 height: ['4.8rem', '4.8rem', '7.2rem'],
+                zIndex: 0,
                 'img': {
                     mx: ['1.6rem', '1rem'],
                     height: ['3rem', '2.7rem', '4.3rem']

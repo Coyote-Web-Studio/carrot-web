@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Flex, Box } from 'rebass';
 import styled, { useTheme, css } from 'styled-components';
 import { keyframes } from '@emotion/react'
-
+import { debounce } from './../../utils/utils'
 
 const GridBackground = (props : any) => {
     const [ gridWidth, setGridWidth ] = useState(0);
@@ -13,21 +13,6 @@ const GridBackground = (props : any) => {
 
     const theme : any = useTheme();
     const gridRef : any = useRef(null);
-
-    const debounce = (func : any, wait : any) => {
-        let timeout : any;
-      
-        return function executedFunction(...args : any) {
-          const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-          };
-      
-          clearTimeout(timeout);
-          timeout = setTimeout(later, wait);
-        };
-    };
-
 
     const updateDimensions = debounce(() => {
         // console.log('Updated');

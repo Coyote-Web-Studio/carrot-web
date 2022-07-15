@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from "rebass";
+import { Flex, Image, Text, Box } from "rebass";
 import Fade from "../common/Fade";
 import { useTheme } from "styled-components";
 import AnimatedText from "../common/AnimatedText";
@@ -22,9 +22,9 @@ const Breakdown = (props: any) => {
         src={"misc/sphere.png"}
         sx={{
           position: "absolute",
-          top: "0rem",
+          top: ["-5rem", "0rem"],
           width: "10rem",
-          right: "-5rem",
+          right: ["-8rem", "-5rem"],
           zIndex: "3",
         }}
       />
@@ -46,16 +46,23 @@ const Breakdown = (props: any) => {
               },
             }}
           >
-            <Image
-              src={contentBlock.image}
-              mb={["2rem", "0"]}
-              width={["100%", "calc(50% - 1rem)", "53rem"]}
+            <Box
+              mb={["2.4rem", "0"]}
+              sx={{
+                width: ["100%", "calc(50% - 1rem)", "53rem"],
+                height: ['55vw', '24vw'],
+                backgroundImage: `url(${contentBlock.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                border: `0.1rem solid ${theme.colors.textColor}`,
+                borderRadius: ['0.85rem', null, '1.3rem'],
+              }}
             />
             <Flex
               flexDirection={"column"}
               width={["100%", "calc(50% - 1rem)", "53rem"]}
             >
-              <Text as="h3" mb={"1.8rem"}>
+              <Text as="h3" mb={"2rem"}>
                 <AnimatedText speed={20}>
                   {contentBlock.heading}
                 </AnimatedText>
@@ -85,21 +92,21 @@ const MainContent = [
     content:
       "Carrot allows you to set precise goals and targets based on the needs of your project. Use strong cryptoeconomic incentives to bring your community together and achieve common goals.",
     image:
-      "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/1-mobile_njnkt7.png",
+      "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850185/carrot/main-content/Measure-what-matters_dnay2p.png",
   },
   {
     heading: "Incentivize your community",
     content:
       "Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met. Carrot has helped distribute over $XX in rewards to date.",
     image:
-      "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048107/carrot/main-content/2-mobile_xlekiw.png",
+      "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850167/carrot/main-content/Incentivize-your-community_svcdu3.png",
   },
   {
     heading: "Reward real value",
     content:
       "Anyone who contributes to a goal will receive rewards directly proportional to their impact thanks to the magic of KPI tokens. Get real value in exchange for real value. ",
     image:
-      "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657048106/carrot/main-content/3-mobile_yryzyt.png",
+      "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850191/carrot/main-content/Reward-real-value_souwan.png",
   },
 ];
 
