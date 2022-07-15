@@ -1,4 +1,4 @@
-import { Flex, Text, Image } from 'rebass';
+import { Flex, Text, Box } from 'rebass';
 import { useTheme } from 'styled-components';
 import AnimatedText from '../common/AnimatedText';
 
@@ -23,7 +23,49 @@ const HowItWorks = () => {
           How it works
         </Text>
       </Fade>
-      <Flex as={"ul"} flexDirection={"column"} width={"100%"}>
+      <Flex as={"ul"} flexDirection={"column"} width={"100%"} sx={{position: 'relative'}}>
+        <>
+          <Box sx={{
+            width: '0.46rem', 
+            height: '0.46rem', 
+            background: theme.colors.protocolCardLine,
+            position: 'absolute',
+            top: '-0.25rem',
+            right: '-0.25rem',
+            display: ['block', 'none'],
+            zIndex: 10
+          }}/>
+          <Box sx={{
+            width: '0.46rem', 
+            height: '0.46rem', 
+            background: theme.colors.protocolCardLine,
+            position: 'absolute',
+            top: '-0.25rem',
+            left: '-0.25rem',
+            display: ['block', 'none'],
+            zIndex: 10
+          }}/>
+          <Box sx={{
+            width: '0.46rem', 
+            height: '0.46rem', 
+            background: theme.colors.protocolCardLine,
+            position: 'absolute',
+            bottom: '-0.25rem',
+            left: '-0.25rem',
+            display: ['block', 'none'],
+            zIndex: 10
+          }}/>
+          <Box sx={{
+            width: '0.46rem', 
+            height: '0.46rem', 
+            background: theme.colors.protocolCardLine,
+            position: 'absolute',
+            bottom: '-0.25rem',
+            right: '-0.25rem',
+            display: ['block', 'none'],
+            zIndex: 10
+          }}/>
+        </>
         <Fade>
           {HowItWorksContent.map((contentBlock, index, array) => (
             <HowItWorksBlock content={contentBlock} key={index} index={index} totalElements={array.length}/>

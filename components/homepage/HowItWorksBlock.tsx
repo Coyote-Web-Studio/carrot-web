@@ -9,12 +9,12 @@ const HowItWorksBlock = (props: any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Box data-aos={'flip-up'}
-    data-aos-offset={'200'}>
+    <Box>
       <Flex
         as={"li"}
         flexDirection={["column", "row"]}
         sx={{
+          position: 'relative',
           rowGap: '1px',
           columnGap: '1px',
           maxHeight: [
@@ -50,24 +50,30 @@ const HowItWorksBlock = (props: any) => {
             sx={{position: 'relative'}}
           >
             {props.index == 0 && (
-              <Box sx={{
-                width: '0.46rem', 
-                height: '0.46rem', 
-                background: theme.colors.protocolCardLine,
-                position: 'absolute',
-                top: '-0.25rem',
-                left: '-0.25rem'
-              }}/>
+              <>
+                <Box sx={{
+                  width: '0.46rem', 
+                  height: '0.46rem', 
+                  background: theme.colors.protocolCardLine,
+                  position: 'absolute',
+                  top: '-0.25rem',
+                  left: '-0.25rem',
+                  display: ['none', 'block']
+                }}/>
+              </>
             )}
             {props.index + 1 == props.totalElements && (
-              <Box sx={{
-                width: '0.46rem', 
-                height: '0.46rem', 
-                background: theme.colors.protocolCardLine,
-                position: 'absolute',
-                bottom: '-0.25rem',
-                left: '-0.25rem'
-              }}/>
+              <>
+                <Box sx={{
+                  width: '0.46rem', 
+                  height: '0.46rem', 
+                  background: theme.colors.protocolCardLine,
+                  position: 'absolute',
+                  bottom: '-0.25rem',
+                  left: '-0.25rem',
+                  display: ['none', 'block']
+                }}/>
+              </>
             )}
             {props.index + 1 + '.'}
           </Flex>
@@ -82,7 +88,8 @@ const HowItWorksBlock = (props: any) => {
             width={['100%', '24.8rem', '41.6rem']}
             height={['auto', isOpen ? '14.4rem' : 'auto', isOpen ? '32rem' : '19.2rem']}
             sx={{
-              transition: '0.25s ease-in-out all'
+              transition: '0.25s ease-in-out all',
+              position: 'relative'
             }}
           >
             {props.content.heading}
@@ -107,7 +114,8 @@ const HowItWorksBlock = (props: any) => {
                 background: theme.colors.protocolCardLine,
                 position: 'absolute',
                 bottom: '-0.25rem',
-                right: '-0.25rem'
+                right: '-0.25rem',
+                display: ['none', 'block']
               }}/>
           )}
           <Flex
@@ -126,7 +134,8 @@ const HowItWorksBlock = (props: any) => {
                 background: theme.colors.protocolCardLine,
                 position: 'absolute',
                 top: '-0.25rem',
-                right: '-0.25rem'
+                right: '-0.25rem',
+                display: ['none', 'block']
               }}/>
             )}
             <Text 
