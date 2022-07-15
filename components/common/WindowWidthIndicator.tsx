@@ -97,7 +97,7 @@ const WindowWidthIndicator = (props : any) => {
                 {windowWidth}px
             </Text>
             <Text as="p" fontSize={'1rem'} color={'white'} lineHeight={'1.2rem'} mt={'1rem'}>
-                v0.0.1
+                {props.version}
             </Text>
         </Box>
     )

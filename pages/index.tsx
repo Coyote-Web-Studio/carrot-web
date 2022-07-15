@@ -13,8 +13,7 @@ import JoinTheCommunity from '../components/homepage/JoinTheCommunity';
 
 import WindowWidthIndicator from '../components/common/WindowWidthIndicator';
 
-const Home: NextPage = () => {
-
+const Home: NextPage = (props : any) => {
   const theme : any = useTheme();
 
   return (
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
         </title>
       </Head>
       <Flex flexDirection={'column'} bg={theme.colors.background}>
-        <WindowWidthIndicator />
+        <WindowWidthIndicator enabled={true} version={props.version}/>
         <Navbar />
         <Hero />
         <Marquees />
@@ -39,3 +38,11 @@ const Home: NextPage = () => {
 }
 
 export default Home;
+
+export async function getStaticProps() {
+  return {
+    props: {
+      version: process.env.VERSION
+    }
+  }
+}

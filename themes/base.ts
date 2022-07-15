@@ -46,7 +46,7 @@ export default {
         maxWidth: [null, null, '1440px', '1600px'],
         mx: "auto",
         '@media screen and (min-width: 1919px)': {
-          width: "calc(100vw - 19.2rem) !important",
+          width: "160rem !important",
         }
       },
       expandedBox: {
@@ -65,6 +65,7 @@ export default {
         ],
         '@media screen and (min-width: 1919px)': {
           width: "calc(100vw - 19.2rem) !important",
+          left: '9.6rem'
         }
       },
       reducedBox: {

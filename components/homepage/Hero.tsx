@@ -20,8 +20,11 @@ const Hero = (props : any) => {
             <Box sx={{
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
-                height: '100%',
+                height: ['100%', null, null, '74rem'],
                 top: ['0', null, null, '6.4rem'],
+                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    height: '85rem'
+                }
             }}>
                 <GridBackground trimRows={3} useAnimation/>
             </Box>
@@ -43,14 +46,14 @@ const Hero = (props : any) => {
                         '100%', 
                         '32rem', 
                         'calc(50vw - 9.6rem)', 
-                        'calc(50vw)']} 
+                        '40vw']} 
                     justifyContent={['auto', 'center']} 
                     sx={{
                         position: 'relative', 
                         pr: '1rem',
                         top: [null, null, null, '6rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            top: '-0.6rem'
+                            top: '4rem'
                         }
                     }}
                 >
@@ -144,9 +147,14 @@ const Hero = (props : any) => {
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                width: 'calc(36vw)',
+                                height: 'calc(45vw)',
+                                maxWidth: 'unset'
+                            },
                             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                width: 'calc(50vw - 20rem)',
-                                height: 'calc(50vw - 5rem)',
+                                width: 'calc(35vw)',
+                                height: 'calc(45vw)',
                                 maxWidth: 'unset'
                             }
 ,                        }} />
