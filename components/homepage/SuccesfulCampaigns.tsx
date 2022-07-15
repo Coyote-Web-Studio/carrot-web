@@ -21,7 +21,7 @@ const SuccesfulCampaigns = () => {
     if (windowWidth > 500 && windowWidth <= 760 ) {
       setCardNumber(2);
     } else if (windowWidth > 760 && windowWidth <= 1420 ){
-      setCardNumber(2);
+      setCardNumber(3);
     } else if (windowWidth > 1420) {
       setCardNumber(4)
     }
@@ -100,13 +100,14 @@ const SuccesfulCampaigns = () => {
 
         </Box>
         <Fade sx={{display: ['none', 'flex']}}>
-          <Flex ref={sliderRef} justifyContent={'space-between'}>
+          <Flex ref={sliderRef} justifyContent={'space-between'} mx={[null, '-3.2rem', '-2.4rem']}>
             {SuccesfullCampaigns.map((campaign, index) => (
               index < cardNumber && (
                 <CampaignCard
                   campaign={campaign}
                   sx={{
-                    width: ["100%", "100%", "37.3rem", "32rem"],
+                    width: ["100%"],
+                    mx: [null, '3.2rem', '2.4rem']
                   }}
                   key={index} onMouseEnter={(e : any) => {
                     e.stopPropagation();
@@ -135,11 +136,7 @@ const SuccesfulCampaigns = () => {
 
       <Flex
         as={"ul"}
-        sx={{ 
-          display: ["block", "none", "none"] ,
-          mx: '-2rem',
-          bg: 'blue'
-        }}
+        sx={{ display: ["block", "none", "none"] }}
         flexDirection={["column", "row"]}
         mb={"1.6rem"}
       >
@@ -148,6 +145,9 @@ const SuccesfulCampaigns = () => {
             index < 2 && (
               <CampaignCard
                 campaign={campaign}
+                sx={{
+                  width: ["100%", "100%", "37.3rem", "35.2rem"],
+                }}
                 key={index}
               />
             )

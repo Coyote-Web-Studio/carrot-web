@@ -43,7 +43,7 @@ const HowItWorksBlock = (props: any) => {
             minWidth={["6.4rem", '6.4rem', '19.2rem']}
             justifyContent={"center"}
             alignItems={"center"}
-            fontSize={["4.8rem", "4.8rem", "11.9rem"]}
+            fontSize={["4.8rem", "4.8rem", null, "11.9rem"]}
             height={['auto', '9.6rem', '19.2rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
@@ -74,8 +74,8 @@ const HowItWorksBlock = (props: any) => {
           <Flex
             className="block-title bordered"
             alignItems={"center"}
-            fontSize={["2.8rem", "2.8rem", "4.8rem"]}
-            lineHeight={['3rem', '3rem', '4.88rem']}
+            fontSize={["2.8rem", "2.8rem", null, "4.8rem"]}
+            lineHeight={['3rem', '3rem', null, '4.88rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
             paddingLeft={"3.2rem"}
@@ -130,8 +130,8 @@ const HowItWorksBlock = (props: any) => {
               }}/>
             )}
             <Text 
-              fontSize={["1.6rem", "1.6rem", "2.2rem"]} 
-              lineHeight={["2.4rem", "2.4rem", '3.3rem']} 
+              fontSize={["1.6rem", "1.6rem", null, "2.2rem"]} 
+              lineHeight={["2.4rem", "2.4rem", null, '3.3rem']} 
               as={"p"}
               maxWidth={'40rem'}
               width={['auto', 'auto', '100%']}

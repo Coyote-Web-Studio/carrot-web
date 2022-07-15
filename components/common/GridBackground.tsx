@@ -15,8 +15,11 @@ const GridBackground = (props : any) => {
     const gridRef : any = useRef(null);
 
     const updateDimensions = debounce(() => {
+        // console.log('Updated');
         if (gridRef.current) {
+
             setGridHeight(gridRef.current.getBoundingClientRect().height);
+
             setGridWidth(gridRef.current.getBoundingClientRect().width);
         }
     }, 200);
@@ -30,16 +33,16 @@ const GridBackground = (props : any) => {
         // console.log('Height: ' + gridHeight);
         // console.log('Width: ' + gridWidth);
 
-        const availableTabletRows = Math.round(gridHeight / 24) - 1;
+        const availableTabletRows = Math.round(gridHeight / 24);
         const availableTabletColumns = Math.round(gridWidth / 24);
 
-        const availableDesktopRows = Math.round(gridHeight / 64) - 1;
+        const availableDesktopRows = Math.round(gridHeight / 64);
         const availableDesktopColumns = Math.round(gridWidth / 64);
 
         // console.log(availableDesktopRows)
         // console.log(availableDesktopColumns);
 
-        if (window.innerWidth > 1104) {
+        if (window.innerWidth > 980) {
             setGridRows(availableDesktopRows)
             setGridColumns(availableDesktopColumns)
         } else {
@@ -77,8 +80,12 @@ const GridBackground = (props : any) => {
                                 animationDelay:  props.useAnimation && `${++boxCounter * 5}ms`,
                                 transform: props.useAnimation ? 'rotate3d(0,1,0, 90deg)' : 'none',
                                 boxShadow: `0 0 0 1px ${props.color || theme.colors.gridColor}`,
-                                width: [`2.4rem`,`2.4rem`,`6.4rem`],
-                                height: [`2.4rem`,`2.4rem`,`6.4rem`],
+                                width: '2.4rem',
+                                height: '2.4rem',
+                                '@media screen and (min-width: 980px)': {
+                                    width: '6.4rem',
+                                    height: '6.4rem',
+                                }
                             }} />
                         )}
                     </Flex>

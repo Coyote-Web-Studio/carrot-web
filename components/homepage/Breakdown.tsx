@@ -41,6 +41,7 @@ const Breakdown = (props: any) => {
             justifyContent={["auto", "space-between"]}
             alignItems={["auto", "center"]}
             sx={{
+              columnGap: '4rem',
               "&:last-child": {
                 mb: 0,
               },
@@ -49,7 +50,7 @@ const Breakdown = (props: any) => {
             <Box
               mb={["2.4rem", "0"]}
               sx={{
-                width: ["100%", "calc(50% - 1rem)", "53rem"],
+                width: ["100%", "calc(50% - 1rem)", "34vw"],
                 height: ['55vw', '24vw'],
                 backgroundImage: `url(${contentBlock.image})`,
                 backgroundSize: 'cover',

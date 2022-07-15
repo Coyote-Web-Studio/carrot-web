@@ -15,19 +15,19 @@ const CarrotInNumbers = () => {
       position: 'relative', 
       bg: theme.colors.orange6, 
       borderRadius: ['1.6rem', null, '5rem'], 
-      pb: '3.6rem',
+      pb: ['3.6rem', '4.8rem'],
     }}
     >
       <Flex sx={{
         ...theme.boxSizes.defaultBox,
-        pt: ['2.4rem', '2.4rem', '10rem'],
+        pt: ['2.4rem', '2.4rem', '4.8rem', '10rem'],
         flexDirection: 'column',
         position: 'relative'
       }}>
         <Box sx={{
           ...theme.boxSizes.defaultBox,
           position: 'absolute',
-          height: ['61rem', '30rem', 'calc((64rem * 11) / 10)'],
+          height: ['61rem', '30rem', null, 'calc((64rem * 11) / 10)'],
           top: ['14.4rem', '9.7rem', '22.6rem']
           // background: 'blue',
           }}
@@ -35,7 +35,7 @@ const CarrotInNumbers = () => {
           <GridBackground trimRows={1} color={theme.colors.carrotInNumbersGrid} />
         </Box>
         <Fade sx={{zIndexX: 1}}>
-          <Text as="h2" mb={['2.4rem', null, '9rem']} sx={{color: theme.colors.gray10}}>
+          <Text as="h2" mb={['2.4rem', null, null, '9rem']} sx={{color: theme.colors.gray10}}>
             Carrot in<Box as="br" sx={{display: ['block', 'none', 'none']}}/> numbers
           </Text>
         </Fade>
@@ -43,7 +43,7 @@ const CarrotInNumbers = () => {
           flexWrap: 'wrap',
           width: ['100%'],
           mx: [0, '-2.4rem', '-6.4rem'],
-          height: ['auto', '30rem', '60rem'],
+          height: ['auto', '30rem', null, '60rem'],
           position: 'relative',
           alignItems: ['auto', 'center', 'center'],
         }}>
@@ -51,7 +51,7 @@ const CarrotInNumbers = () => {
             <Flex as={'li'} flexDirection={'column'} key={index} sx={{
               borderTop: `0.1rem solid ${theme.colors.gray10}`,
               py: '1.2rem',
-              height: ['10rem', null, 'calc(6.5rem * 3)'],
+              height: ['10rem', null, null, 'calc(6.5rem * 3)'],
               mx: ['0', '2.4rem', '6.4rem'],
               width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
               '&:last-child': {
@@ -61,12 +61,12 @@ const CarrotInNumbers = () => {
                 borderBottom: ['none', `0.1rem solid ${theme.colors.gray10}`],
               },
             }}>
-              <Text fontSize={['4rem', '4rem', '9.9rem']} fontWeight={700} sx={{color: theme.colors.gray10}}>
+              <Text fontSize={['4rem', '4rem', null, '9.9rem']} fontWeight={700} sx={{color: theme.colors.gray10, whiteSpace: 'nowrap'}}>
                 <AnimatedText color={theme.colors.gray10}>
                   {item.value}
                 </AnimatedText>
               </Text>
-              <Text sx={{color: theme.colors.gray10}} as={'p'}>
+              <Text sx={{color: theme.colors.gray10, whiteSpace: 'nowrap'}} as={'p'}>
                 <AnimatedText color={theme.colors.gray10}>
                   {item.label}
                 </AnimatedText>

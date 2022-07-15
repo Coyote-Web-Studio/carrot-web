@@ -20,6 +20,7 @@ const Hero = (props : any) => {
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
                 height: '100%',
+                // bg: 'blue',
                 top: ['0', '0', '0', '6.4rem'],
                 '@media screen and (min-width: 1680px)': {
                    height: 'calc(64 * 1.3rem)'
@@ -39,7 +40,7 @@ const Hero = (props : any) => {
             >
                 <Flex 
                     flexDirection={'column'} 
-                    width={['100%', '32rem', '50vw', '72rem']} 
+                    width={['100%', '32rem', '50vw', 'auto']} 
                     justifyContent={['auto', 'center']} 
                     sx={{
                     position: 'relative', 
@@ -51,10 +52,19 @@ const Hero = (props : any) => {
                     }}
                 >
                     <Text as="h1" sx={{
-                        fontSize: ['4.8rem', '4.8rem', '4.8rem', '9.9rem', '12.8rem'], 
-                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '10rem', '12.8rem'] ,
+                        fontSize: ['4.8rem', null, null, '7.2rem'], 
+                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '7.2rem'] ,
                         mb: ['1.6rem', '1.6rem', '5.2rem'],
-                        letterSpacing: '-0.02em'
+                        letterSpacing: '-0.02em',
+                        width: ['100%', null, '40rem'],
+                        '@media screen and (min-width: 1114px)': {
+                            fontSize: '9.9rem',
+                            lineHiehgt: '10rem'
+                        },
+                        '@media screen and (min-width: 1620px)': {
+                            fontSize: '12.8rem',
+                            lineHiehgt: '12.8rem'
+                        }
                     }}>
                         <AnimatedText speed={80} initialDelay={150}>
                             Reach your goals with a Carrot
@@ -121,13 +131,17 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', null, '50rem'],
+                            width: ['100%', '31.2rem', null, '30vw'],
                             height: ['120vw', '43rem', null, '70rem'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
+                            // '@media screen and (min-width: 1114px)': {
+                            //     width: '20vw',
+                            //     height: '20vw'
+                            // },
                             '@media screen and (min-width: 1620px)': {
                                 width: '58rem',
                                 height: '78rem'

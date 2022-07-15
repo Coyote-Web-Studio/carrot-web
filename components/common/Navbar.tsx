@@ -62,7 +62,7 @@ const Navbar = (props : any) => {
                                     href={'#'}
                                     key={index}
                                     sx={{
-                                        ml:['1.6rem', '1.6rem', '3.2rem', '6.4rem'],
+                                        ml:['1.2rem', '1.2rem', '3.2rem', '6.4rem'],
                                         whiteSpace: 'nowrap',
                                         transition: '0.1s ease-in-out all',
                                         '&:first-of-type': {

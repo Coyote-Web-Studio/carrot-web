@@ -67,7 +67,8 @@ export default {
         width: [
           "calc(100vw - 4rem)", 
           "calc(100vw - 9.6rem)", 
-          "calc(100vw - 19.2rem)"
+          "calc(100vw - 19.2rem)",
+          "calc(70vw)"
         ],
         mx: "auto",
       },
