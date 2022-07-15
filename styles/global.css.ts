@@ -60,10 +60,7 @@ const GlobalStyle = createGlobalStyle`
   button {
     font-family: 'IBM Plex Mono'
   }
-  * {
-    transition: 0.15s ease-in-out background, border-color, color, fill;
-  }
-
+  
   #nprogress .bar {
     background: ${(props : any) => props.theme.colors.orange6}
   }

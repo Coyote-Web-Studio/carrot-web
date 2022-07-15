@@ -24,6 +24,7 @@ const HowItWorks = () => {
         </Text>
       </Fade>
       <Flex as={"ul"} flexDirection={"column"} width={"100%"} sx={{position: 'relative'}}>
+        <Fade>
         <>
           <Box sx={{
             width: '0.46rem', 
@@ -66,7 +67,6 @@ const HowItWorks = () => {
             zIndex: 10
           }}/>
         </>
-        <Fade>
           {HowItWorksContent.map((contentBlock, index, array) => (
             <HowItWorksBlock content={contentBlock} key={index} index={index} totalElements={array.length}/>
           ))}

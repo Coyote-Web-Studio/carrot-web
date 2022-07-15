@@ -42,17 +42,17 @@ const Hero = (props : any) => {
                     width={['100%', '32rem', 'calc(50vw - 9.6rem)', 'calc(50vw - 9.6rem)']} 
                     justifyContent={['auto', 'center']} 
                     sx={{
-                    position: 'relative', 
-                    pr: '1rem',
-                    top: [null, null, null, '6rem'],
-                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                        top: '-0.6rem'
-                    }
+                        position: 'relative', 
+                        pr: '1rem',
+                        top: [null, null, null, '6rem'],
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            top: '-0.6rem'
+                        }
                     }}
                 >
                     <Text as="h1" sx={{
-                        fontSize: ['4.8rem', null, null, '7.2rem'], 
-                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '7.2rem'] ,
+                        fontSize: ['4.8rem', null, null, '9.9rem'], 
+                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '9.9rem'] ,
                         mb: ['1.6rem', '1.6rem', '1.8rem'],
                         letterSpacing: '-0.02em',
                         pr: ['2rem'],
@@ -128,8 +128,8 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', null, 'calc(50vw - 12rem)'],
-                            height: ['120vw', '43rem', null, 'calc(50vw)'],
+                            width: ['100%', '31.2rem', null, 'calc(50vw - 16rem)'],
+                            height: ['120vw', '43rem', null, 'calc(50vw - 5.8rem)'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             maxWidth: [null, null, null, '50rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
@@ -137,8 +137,8 @@ const Hero = (props : any) => {
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                width: '73.6rem',
-                                height: '95.7rem',
+                                width: 'calc(50vw - 20rem)',
+                                height: 'calc(50vw - 5rem)',
                                 maxWidth: 'unset'
                             }
 ,                        }} />
