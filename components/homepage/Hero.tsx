@@ -40,7 +40,7 @@ const Hero = (props : any) => {
             >
                 <Flex 
                     flexDirection={'column'} 
-                    width={['100%', '32rem', '50vw', 'auto']} 
+                    width={['100%', '32rem', '50vw', '72rem']} 
                     justifyContent={['auto', 'center']} 
                     sx={{
                     position: 'relative', 
@@ -56,15 +56,10 @@ const Hero = (props : any) => {
                         lineHeight: ['4.88rem', '4.88rem', '4.8rem', '7.2rem'] ,
                         mb: ['1.6rem', '1.6rem', '5.2rem'],
                         letterSpacing: '-0.02em',
-                        width: ['100%', null, '40rem'],
                         '@media screen and (min-width: 1114px)': {
                             fontSize: '9.9rem',
-                            lineHiehgt: '10rem'
+                            lineHeight: '10rem'
                         },
-                        '@media screen and (min-width: 1620px)': {
-                            fontSize: '12.8rem',
-                            lineHiehgt: '12.8rem'
-                        }
                     }}>
                         <AnimatedText speed={80} initialDelay={150}>
                             Reach your goals with a Carrot
@@ -131,17 +126,17 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', null, '30vw'],
+                            width: ['100%', '31.2rem', null, '50rem'],
                             height: ['120vw', '43rem', null, '70rem'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
-                            // '@media screen and (min-width: 1114px)': {
-                            //     width: '20vw',
-                            //     height: '20vw'
-                            // },
+                            '@media screen and (min-width: 1114px)': {
+                                width: '58rem',
+                                height: '78rem'
+                            },
                             '@media screen and (min-width: 1620px)': {
                                 width: '58rem',
                                 height: '78rem'
