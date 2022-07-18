@@ -77,7 +77,7 @@ const CustomerReview = () => {
           fontSize={["2.8rem", "3.3em", null, "6.9rem"]}
           mb={["3.8rem", "3.8rem", null, "12rem"]}
           fontWeight={700}
-          lineHeight={["3.8rem", "3.36rem", null, "6.969rem"]}
+          lineHeight={["110%", "3.36rem", null, "6.969rem"]}
           color={theme.colors.customerCommentText}
         >
           <AnimatedText color={theme.colors.gray10} speed={10}>

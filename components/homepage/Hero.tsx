@@ -89,11 +89,15 @@ const Hero = (props : any) => {
                             color: theme.colors.textColor,
                             fontFamily: 'IBM Plex Mono'
                         }}>
-                            <AnimatedText speed={30} initialDelay={1800}>
+                            <AnimatedText speed={15} initialDelay={1800}>
                                 Increase your TVL, volume, price, engagement and more.
                             </AnimatedText>
-                            <br/>
-                            <AnimatedText speed={30} initialDelay={3200}>
+                            <Box as={'br'} sx={{
+                                display: ['none', null, null, null],
+
+                                }}
+                            />
+                            <AnimatedText speed={15} initialDelay={3200}>
                                 Yes, on any campaign. Carrot does it all.
                             </AnimatedText>
                         </Text>
@@ -108,7 +112,12 @@ const Hero = (props : any) => {
                     </Fade>
                 </Flex>
                 {/* IMAGE / VIDEO */}
-                <Box>
+                <Box sx={{
+                    ml: [
+                        null,
+                        '4.2rem'
+                    ],
+                }}>
                     <Fade sx={{position: 'relative'}}>
                         <Flex sx={{
                             position: 'absolute', 
@@ -116,7 +125,11 @@ const Hero = (props : any) => {
                             zIndex: 1,
                             height: '4.8rem',
                             alignItems: 'center',
-                            ml: ['calc(50% - 9.6rem)','calc(50% - 9.6rem)','calc(50% - 11.1rem)'],
+                            ml: [
+                                'calc(50% - 9.6rem)',
+                                null,
+                                'calc(50% - 11.1rem)'
+                            ],
                             width: ['19.2rem', '19.2rem', '22.2rem'],
                             border: `0.1rem solid ${theme.colors.gray10}`,
                             borderRadius: '4.8rem',

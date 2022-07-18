@@ -82,7 +82,7 @@ const HowItWorksContent = [
     triggerLabel: 'Set conditions and collateral',
     content: 
       <Text as={'p'}>
-        <AnimatedText speed={10}>
+        <AnimatedText speed={5}>
           Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
         </AnimatedText>
       </Text>
@@ -93,12 +93,12 @@ const HowItWorksContent = [
     content: 
       <>
         <Text as={'p'} mb={'2rem'}>
-          <AnimatedText speed={10}>
+          <AnimatedText speed={5}>
             Distribute your KPI tokens to your community. This could be liquidity mining stakers, in-person event attendees, or anyone else relevant to your campaign!
           </AnimatedText>
         </Text>
         <Text as={'p'}>
-          <AnimatedText initialDelay={1300} speed={10}>
+          <AnimatedText initialDelay={650} speed={5}>
             These tokens will later be redeemable by users for the underlying collateral depending on how much of the condition was met.
           </AnimatedText>
         </Text>
@@ -110,12 +110,12 @@ const HowItWorksContent = [
     content: 
       <>
         <Text as={'p'} mb={'2rem'}>
-          <AnimatedText speed={10}>
+          <AnimatedText speed={5}>
             At the end of the campaign, finalization will occur through the selected oracle. KPI token holders can then convert to the collateral at the settled rate.
           </AnimatedText>
         </Text>
         <Text as={'p'}>
-          <AnimatedText initialDelay={1300} speed={10}>
+          <AnimatedText initialDelay={650} speed={5}>
             If 50% of the target is met, 50% of the rewards will be claimable by your community with the remaining 50% accessible to you!
           </AnimatedText>
         </Text>

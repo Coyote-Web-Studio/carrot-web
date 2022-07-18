@@ -31,7 +31,7 @@ const CampaignCard = (props : any) => {
                 />
               </Flex>
               <Flex alignItems='center' pl='2rem'>
-                <Text as={'p'} fontSize={['1.6rem', '1.6rem', '1.9rem']}>
+                <Text as={'p'} fontSize={['1.6rem', null, null, '1.9rem']}>
                   {campaign.heading}
                 </Text>
               </Flex>
@@ -41,23 +41,27 @@ const CampaignCard = (props : any) => {
               <Text as={'p'} mb={'2.4rem'} fontSize={['1.6rem', '1.6rem', '1.9rem']} lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
                 {campaign.content}
               </Text>
-              <Flex flexDirection={'column'} mt={'auto'} fontSize={['1.6rem', '1.2rem', '1.9rem']}>
+              <Flex flexDirection={'column'} mt={'auto'}>
                 <Flex justifyContent={'space-between'} >
-                  <Text as={'p'}  
+                  <Text as={'p'}
+                  sx={{fontSize: ['1.2rem', null, null, '1.6rem']}}  
                     lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
                         REWARDS
                     </Text>
                     <Text as={'p'}
+                    sx={{fontSize: ['1.2rem', null, null, '1.6rem']}}
                     lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
                         {campaign.rewards}
                     </Text>
                 </Flex>
                 <Flex justifyContent={'space-between'}>
                   <Text as={'p'} 
+                    sx={{fontSize: ['1.2rem', null, null, '1.6rem']}}
                     lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
                         TIME LEFT
                     </Text>
                   <Text as={'p'} 
+                    sx={{fontSize: ['1.2rem', null, null, '1.6rem']}}
                     lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
                     {campaign.timeLeft}
                 </Text>
@@ -72,6 +76,7 @@ const CampaignCard = (props : any) => {
             borderRadius: 0, 
             fontSize: ['1.6rem', '1.2rem', '1.9rem'], 
             color: theme.colors.cardText,
+            textTransform: 'uppercase',
             '&:hover': {
               background: theme.colors.cardButtonHover
             }

@@ -50,8 +50,8 @@ const Breakdown = (props: any) => {
             <Box
               mb={["2.4rem", "0"]}
               sx={{
-                width: ["100%", "30vw", "32vw", "32vw"],
-                height: ['55vw', '24vw', '18vw', "18vw"],
+                width: ["100%", "43vw", null, "32vw"],
+                height: ['55vw', '24vw', null, "18vw"],
                 backgroundImage: `url(${contentBlock.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -69,7 +69,7 @@ const Breakdown = (props: any) => {
                 </AnimatedText>
               </Text>
               <Text as="p" sx={{ ...theme.text.paragraph }}>
-                <AnimatedText speed={20}>
+                <AnimatedText speed={10}>
                   {contentBlock.content}
                 </AnimatedText>
               </Text>

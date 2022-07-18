@@ -143,10 +143,7 @@ const Navbar = (props : any) => {
                 position: 'absolute',
                 pointerEvents: isMobileNavbarOpen ? 'auto' : 'none',
                 opacity: isMobileNavbarOpen ? 1 : 0,
-                top: [
-                    isMobileNavbarOpen ? '8rem' : '20rem',
-                    isMobileNavbarOpen ? '14rem' : '20rem',
-                ],
+                top: ['8rem', '14rem'],
                 left: 0,
                 width: '100vw',
                 height: 'calc(100vh - 8rem)',

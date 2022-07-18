@@ -22,6 +22,7 @@ const StyleSwitch = (props : any) => {
                 checked={darkThemeActive} 
                 color={theme.colors.textColor} 
                 onClick={() => {
+                    console.log('Hello')
                     setDarkThemeActive(!darkThemeActive);
                     setTheme(
                         darkThemeActive ? lightTheme : darkTheme
@@ -33,7 +34,6 @@ const StyleSwitch = (props : any) => {
                     cursor: 'pointer',
                     bg: theme.colors.textColor,
                     position: 'inherit',
-                    pointerEvents: 'none',
                     '&[aria-checked=true] div': {
                         transform: [
                             null, 
@@ -58,22 +58,22 @@ const StyleSwitch = (props : any) => {
             <Flex className={'icons'} width={'100%'} height={'100%'} sx={{position: 'absolute', pointerEvents: 'none', zIndex: 1, top: 0}}>
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.3rem', '0.25rem', null, '0.5rem'],
-                    right: ['0.5rem', '0.3rem', '0.5rem'],
-                    zIndex: '4',
-                    width: [ '0.8rem', null, null, '1.2rem'],
-                    height: [ '0.8rem', null, null, '1.2rem'],
-                    opacity: darkThemeActive ? 0 : 1
-                }} src={'/icons/dark-icon.svg'} />
-                <Image sx={{
-                    position: 'absolute',
-                    top: ['0.3rem', '0.25rem', null, '0.5rem'],
+                    top: ['0.35rem', '0.25rem', null, '0.5rem'],
                     left: ['0.5rem', '0.3rem', null, '0.5rem'],
                     zIndex: '4',
                     width: [ '0.8rem', null, null, '1.2rem'],
                     height: [ '0.8rem', null, null, '1.2rem'],
                     opacity: darkThemeActive ? 1 : 0
                 }} src={'/icons/light-icon.svg'} />
+                <Image sx={{
+                    position: 'absolute',
+                    top: ['0.35rem', '0.25rem', null, '0.5rem'],
+                    right: ['0.3rem', null, '0.5rem'],
+                    zIndex: '4',
+                    width: [ '0.8rem', null, null, '1.2rem'],
+                    height: [ '0.8rem', null, null, '1.2rem'],
+                    opacity: darkThemeActive ? 0 : 1
+                }} src={'/icons/dark-icon.svg'} />
             </Flex>
         </Flex>
     )
