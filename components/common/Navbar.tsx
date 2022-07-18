@@ -121,7 +121,7 @@ const Navbar = (props : any) => {
                         CARROT DAPP
                     </Button>
                 </Box>
-                <Box 
+                <Flex 
                     className="mobile-controls" 
                     sx={{
                         display: ['inline-block', 'none'],
@@ -137,7 +137,7 @@ const Navbar = (props : any) => {
                     <HamburgerIcon onClick={() => {
                         setIsMobileNavbarOpen(!isMobileNavbarOpen);
                     }} />
-                </Box>
+                </Flex>
             </Flex>
             <Flex sx={{
                 position: 'absolute',

@@ -38,7 +38,7 @@ const CustomerReview = () => {
           top: "6.4rem",
         }}
       >
-        <GridBackground color={theme.colors.customerCommentGrid} trimRows={3}/>
+        <GridBackground color={theme.colors.customerCommentGrid} trimRows={1}/>
       </Box>
       <Image
         ref={sphereParallax.ref}
