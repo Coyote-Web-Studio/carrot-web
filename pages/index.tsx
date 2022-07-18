@@ -38,11 +38,3 @@ const Home: NextPage = (props : any) => {
 }
 
 export default Home;
-
-export async function getStaticProps() {
-  return {
-    props: {
-      version: process.env.VERSION
-    }
-  }
-}
