@@ -16,7 +16,7 @@ const Button = (props : any) => {
                 transitionTimingFunction: 'cubic-bezier(0,1.19,.62,1.44)',
             },
             '&:hover .button': {
-                backgroundColor: theme.colors.buttonBorder,
+                backgroundColor: theme.colors.background,
                 boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBackground}`,
                 'span': {
                     color: theme.colors.buttonBackground,

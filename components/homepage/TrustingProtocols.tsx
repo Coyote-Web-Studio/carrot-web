@@ -40,13 +40,18 @@ const TrustingProtocols = () => {
                       index % 2 == 0 ? 0 : '19.9vw',
                       index % 2 == 0 ? 0 : '21.5vw',
                     ],
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                      width: '23vw !important',
+                      height: '23vw !important',
+                      mt: index % 2 == 0 ? 0 : '23vw !important',
+                    },
                     '.corner-square': {
                       width: '0.46rem', 
                       height: '0.46rem', 
                       background: theme.colors.protocolCardLine,
                       position: 'absolute',
                       zIndex: 100,
-                    }
+                    },
                   }}
                 >
                   <Box className="corner-square" sx={{

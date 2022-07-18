@@ -46,17 +46,16 @@ const Hero = (props : any) => {
                         '100%', 
                         '32rem', 
                         'calc(50vw - 9.6rem)', '50%']} 
-                    justifyContent={['auto', 'center']} 
                     sx={{
                         position: 'relative', 
                         pr: '1rem',
-                        top: [null, null, null, '5rem'],
+                        top: [null, null, null, '13rem'],
                         flexGrow: 1,
                         maxWidth: '64.6rem',
-                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            top: '1rem',
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            top: '10.6rem',
                         },
-                        [`@media screen and (min-width: ${theme.breakpoints[5]})`]: {
+                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                             top: '4.6rem',
                             maxWidth: '73.6rem',
                         }

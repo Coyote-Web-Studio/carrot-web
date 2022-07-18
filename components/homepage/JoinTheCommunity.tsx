@@ -145,7 +145,8 @@ const JoinTheCommunity = () => {
                                             />
                                             <Flex flexDirection={['column', 'row', 'column']} sx={{
                                                 ml: ['auto', null, null, '2rem'],
-                                                alignItems: ['auto', 'center', 'end', 'auto'],
+                                                alignItems: ['auto', 'center', 'auto'],
+                                                justifyContent: [null, 'right', 'auto'],
                                                 width: ['100%'],
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                                     ml: ['5rem'],
