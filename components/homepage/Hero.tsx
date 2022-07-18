@@ -26,7 +26,7 @@ const Hero = (props : any) => {
                     height: '85rem'
                 }
             }}>
-                <GridBackground trimRows={3} useAnimation/>
+                <GridBackground trimRows={1} useAnimation/>
             </Box>
             {/* HERO CONTENT */}
             <Flex 
@@ -45,22 +45,27 @@ const Hero = (props : any) => {
                     width={[
                         '100%', 
                         '32rem', 
-                        'calc(50vw - 9.6rem)', 
-                        '40vw']} 
+                        'calc(50vw - 9.6rem)', '50%']} 
                     justifyContent={['auto', 'center']} 
                     sx={{
                         position: 'relative', 
                         pr: '1rem',
-                        top: [null, null, null, '6rem'],
+                        top: [null, null, null, '5rem'],
+                        flexGrow: 1,
+                        maxWidth: '64.6rem',
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            top: '4rem'
+                            top: '1rem',
+                        },
+                        [`@media screen and (min-width: ${theme.breakpoints[5]})`]: {
+                            top: '4.6rem',
+                            maxWidth: '73.6rem',
                         }
                     }}
                 >
                     <Text as="h1" sx={{
                         fontSize: ['4.8rem', null, null, '7.2rem'], 
                         lineHeight: ['4.88rem', '4.88rem', '4.8rem', '7.2rem'] ,
-                        mb: ['1.6rem', '1.6rem', '1.8rem'],
+                        mb: ['1.6rem', '1.6rem', '1.8rem', '4.6rem'],
                         letterSpacing: '-0.02em',
                         pr: ['2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
@@ -139,24 +144,13 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', null, 'calc(50vw - 16rem)'],
-                            height: ['120vw', '43rem', null, 'calc(50vw - 5.8rem)'],
+                            width: ['100%', '31.2rem', null, '34.5vw'],
+                            height: ['120vw', '43rem', null, '48vw'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
-                            maxWidth: [null, null, null, '50rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                width: 'calc(36vw)',
-                                height: 'calc(45vw)',
-                                maxWidth: 'unset'
-                            },
-                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                width: 'calc(35vw)',
-                                height: 'calc(45vw)',
-                                maxWidth: 'unset'
-                            }
+                            backgroundPosition: 'center'
 ,                        }} />
                     </Fade>
                 </Box>

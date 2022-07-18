@@ -56,7 +56,7 @@ const Navbar = (props : any) => {
                         },
                     }}/>
                 <Box sx={{
-                    display: ['none', 'none', 'flex'],
+                    display: ['none', 'flex'],
                     alignItems: 'center'
                 }}>
                     <Flex as="nav">
@@ -121,19 +121,23 @@ const Navbar = (props : any) => {
                         CARROT DAPP
                     </Button>
                 </Box>
-                <StyleSwitch 
+                <Box 
+                    className="mobile-controls" 
                     sx={{
-                        display: ['inline-block', 'inline-block', 'none'], 
+                        display: ['inline-block', 'none'],
                         ml: 'auto', 
-                        mr: '2rem',
-                        position: 'relative'
                     }}
-                />
-                <HamburgerIcon sx={{
-                    display: ['inline-block', 'inline-block', 'none']
-                }} onClick={() => {
-                    setIsMobileNavbarOpen(!isMobileNavbarOpen);
-                }} />
+                >
+                    <StyleSwitch 
+                        sx={{ 
+                            mr: '2rem',
+                            position: 'relative'
+                        }}
+                    />
+                    <HamburgerIcon onClick={() => {
+                        setIsMobileNavbarOpen(!isMobileNavbarOpen);
+                    }} />
+                </Box>
             </Flex>
             <Flex sx={{
                 position: 'absolute',

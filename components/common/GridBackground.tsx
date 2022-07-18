@@ -33,11 +33,11 @@ const GridBackground = (props : any) => {
         // console.log('Height: ' + gridHeight);
         // console.log('Width: ' + gridWidth);
 
-        const availableTabletRows = Math.round(gridHeight / 24);
-        const availableTabletColumns = Math.round(gridWidth / 24);
+        const availableTabletRows = Math.floor(gridHeight / 24);
+        const availableTabletColumns = Math.floor(gridWidth / 24);
 
-        const availableDesktopRows = Math.round(gridHeight / 64);
-        const availableDesktopColumns = Math.round(gridWidth / 64);
+        const availableDesktopRows = Math.floor(gridHeight / 64);
+        const availableDesktopColumns = Math.floor(gridWidth / 64);
 
         // console.log(availableDesktopRows)
         // console.log(availableDesktopColumns);
