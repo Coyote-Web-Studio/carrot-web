@@ -20,14 +20,14 @@ const TrustingProtocols = () => {
             <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>
               <AnimatedText>Trusted by Some of </AnimatedText><Box as="br" sx={{display: ['none', 'block']}}/><AnimatedText initialDelay={600}>Your Favorite Protocols</AnimatedText>
             </Text>
-            <Flex as={'ul'} flexWrap={['wrap', 'nowrap']} width={'100%'}>
+            <Flex as={'ul'} flexWrap={['wrap', null, null, 'nowrap']} width={'100%'}>
               {Protocols.map((protocol, index) => (
                 <Flex as={'li'} 
                   key={index} 
                   data-aos={'flip-left'} 
                   data-aos-offset={index % 2 ? 200 : 500}
-                  width={['47vw', '22.2vw']}
-                  height={['47vw', '22.2vw']}
+                  width={['46vw', '21.3vw', '19.9vw', '21.5vw']}
+                  height={['46vw', '21.3vw', '19.9vw', '21.5vw']}
                   alignItems={'center'} 
                   justifyContent={'center'}
                   sx={{
@@ -35,8 +35,10 @@ const TrustingProtocols = () => {
                     position: 'relative',
                     boxShadow: `0 0 0 1px ${theme.colors.textColor}`,
                     mt: [
-                      index % 2 == 0 ? 0 : '47vw',
-                      index % 2 == 0 ? 0 : '22.2vw',
+                      null,
+                      index % 2 == 0 ? 0 : '21.3vw',
+                      index % 2 == 0 ? 0 : '19.9vw',
+                      index % 2 == 0 ? 0 : '21.5vw',
                     ],
                     '.corner-square': {
                       width: '0.46rem', 
