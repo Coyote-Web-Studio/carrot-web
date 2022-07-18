@@ -2,6 +2,7 @@ import { Box, Flex, Text, Image } from 'rebass';
 import Button from '../common/Button';
 import { useTheme } from 'styled-components';
 import Fade from '../common/Fade';
+import AnimatedText from '../common/AnimatedText';
 
 const JoinTheCommunity = () => {
     const theme : any = useTheme();
@@ -17,12 +18,14 @@ const JoinTheCommunity = () => {
         >
             <Flex sx={{
                 p: [
-                    '2.4rem 0', 
+                    '2.4rem', 
                     '2.4rem 4.8rem', 
                     null, 
                     '12.6rem 6.4rem 12.6rem 9.6rem'],
                 width: [
-                    "calc(100vw - 4rem)", 
+                    "100vw", 
+                    null,
+                    null,
                     '50%',
                 ],
                 mx: "auto",
@@ -44,11 +47,17 @@ const JoinTheCommunity = () => {
                             <Text 
                                 as={'h2'} 
                                 sx={{
-                                    fontSize: [null, null, null, '6.9rem'],
-                                    lineHeight: [null, null, null, '6.9rem']
+                                    fontSize: [null, null, null, '5.2rem'],
+                                    lineHeight: [null, null, null, '5.2rem'],
+                                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                        fontSize: '6.9rem',
+                                        lineHeight: '6.9rem'
+                                    },
                                 }}
                             >
-                                Join the Community!
+                                <AnimatedText>
+                                    Join the Community!
+                                </AnimatedText>
                             </Text>
                         </Box>
                         <Flex sx={{
@@ -107,11 +116,14 @@ const JoinTheCommunity = () => {
                                                     '2.6rem 1rem', 
                                                     null, 
                                                     '2.4rem',
-                                                    '2.4rem 3.3rem 2.4rem 6.4rem'
+                                                    null,
                                                 ],
                                                 alignItems: 'center',
                                                 '&:last-of-type': {
                                                     border: 'none'
+                                                },
+                                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                                    p: '2.4rem 3.3rem 2.4rem 6.4rem'
                                                 }
                                             }} 
                                         >
@@ -119,17 +131,26 @@ const JoinTheCommunity = () => {
                                                 src={item.img}
                                                 sx={{
                                                     maxWidth: [
-                                                        '5.4rem', 
-                                                        null, 
-                                                        null,
-                                                        'unset'
+                                                        '5.4rem',
+                                                        '8rem', null,
+                                                        '10rem'
                                                     ],
+                                                    width: '100%',
                                                     height: ['5.4rem', null, '12.6rem'],
-                                                    mr: ['4.6rem', '0', 'auto']
+                                                    mr: ['4.6rem', '2rem', null, '2.3rem'],
+                                                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                                        maxWidth: 'unset'
+                                                    },
                                                 }}
                                             />
-                                            <Flex flexDirection={'column'} sx={{
-                                                ml: ['auto', null, null, '5rem'],
+                                            <Flex flexDirection={['column', 'row', 'column']} sx={{
+                                                ml: ['auto', null, null, '2rem'],
+                                                alignItems: ['auto', 'center', 'end', 'auto'],
+                                                width: ['100%'],
+                                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                                    ml: ['5rem'],
+                                                    maxWidth: '26rem'
+                                                },
                                                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                                     ml: ['auto'],
                                                     maxWidth: '26rem'
@@ -139,14 +160,14 @@ const JoinTheCommunity = () => {
                                                     sx={{
                                                         fontSize: ['1.2rem', null, null, '1.6rem'],
                                                         lineHeight: ['1.8rem', null, null, '2.4rem'],
-                                                        mb: ['1.6rem', null, '2.4rem'],
+                                                        mb: ['1.6rem', '0', '2.4rem'],
                                                         fontFamily: theme.fonts.monospace
                                                     }}
                                                 >
                                                     {item.detail}
                                                 </Text>
                                                 <Box sx={{
-                                                        ml: [null, null, null, 'auto']
+                                                        ml: [null, '2rem', null, 'auto']
                                                     }}>
                                                     <Button>
                                                         {item.buttonLabel}

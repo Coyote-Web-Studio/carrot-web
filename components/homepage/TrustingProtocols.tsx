@@ -1,11 +1,14 @@
 import { Flex, Box, Text, Image } from 'rebass';
 import { useTheme } from 'styled-components';
+import AnimatedText from '../common/AnimatedText';
 
 import Fade from '../common/Fade';
 
 const TrustingProtocols = () => {
 
   const theme : any = useTheme();
+
+  const cornerOffset = -0.23;
 
   return (
     <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem", "15.1rem"]} pb={['9.6rem', null, '22.4rem']}>
@@ -15,7 +18,7 @@ const TrustingProtocols = () => {
             flexDirection: 'column'
           }}>
             <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>
-              Trusted by Some of <Box as="br" sx={{display: ['none', 'block']}}/>Your Favorite Protocols
+              <AnimatedText>Trusted by Some of </AnimatedText><Box as="br" sx={{display: ['none', 'block']}}/><AnimatedText initialDelay={600}>Your Favorite Protocols</AnimatedText>
             </Text>
             <Flex as={'ul'} flexWrap={['wrap', 'nowrap']} width={'100%'}>
               {Protocols.map((protocol, index) => (
@@ -23,9 +26,8 @@ const TrustingProtocols = () => {
                   key={index} 
                   data-aos={'flip-left'} 
                   data-aos-offset={index % 2 ? 200 : 500}
-                  width={['calc(50vw - 2rem)', '22.2vw']}
-                  height={['calc(50vw - 2rem)', '22.2vw']}
-                  maxWidth={[null, null, null]}
+                  width={['47vw', '22.2vw']}
+                  height={['47vw', '22.2vw']}
                   alignItems={'center'} 
                   justifyContent={'center'}
                   sx={{
@@ -33,49 +35,39 @@ const TrustingProtocols = () => {
                     position: 'relative',
                     boxShadow: `0 0 0 1px ${theme.colors.textColor}`,
                     mt: [
-                      0, 
-                      index % 2 == 0 ? 0 : '17rem', 
-                      index % 2 == 0 ? 0 : '10rem',
+                      index % 2 == 0 ? 0 : '47vw',
                       index % 2 == 0 ? 0 : '22.2vw',
                     ],
+                    '.corner-square': {
+                      width: '0.46rem', 
+                      height: '0.46rem', 
+                      background: theme.colors.protocolCardLine,
+                      position: 'absolute',
+                      zIndex: 100,
+                    }
                   }}
                 >
-                  <Box sx={{
-                    width: '0.46rem', 
-                    height: '0.46rem', 
-                    background: theme.colors.protocolCardLine,
-                    position: 'absolute',
-                    top: '-0.25rem',
-                    left: '-0.25rem'
+                  <Box className="corner-square" sx={{
+                    top: `${cornerOffset}rem`,
+                    left: `${cornerOffset}rem`
                   }}/>
-                  <Box sx={{
-                    width: '0.46rem', 
-                    height: '0.46rem', 
-                    background: theme.colors.protocolCardLine,
-                    position: 'absolute',
-                    top: '-0.25rem',
-                    right: '-0.25rem'
+                  <Box className="corner-square" sx={{
+                    top: `${cornerOffset}rem`,
+                    right: `${cornerOffset}rem`
                   }}/>
-                  <Box sx={{
-                    width: '0.46rem', 
-                    height: '0.46rem', 
-                    background: theme.colors.protocolCardLine,
-                    position: 'absolute',
-                    bottom: '-0.25rem',
-                    right: '-0.25rem'
+                  <Box className="corner-square" sx={{
+                    bottom: `${cornerOffset}rem`,
+                    right: `${cornerOffset}rem`
                   }}/>
-                  <Box sx={{
-                    width: '0.46rem', 
-                    height: '0.46rem', 
-                    background: theme.colors.protocolCardLine,
-                    position: 'absolute',
-                    bottom: '-0.25rem',
-                    left: '-0.25rem'
+                  <Box className="corner-square" sx={{
+                    bottom: `${cornerOffset}rem`,
+                    left: `${cornerOffset}rem`
                   }}/>
                   <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
                     <Image src={protocol.logo} sx={{
                       filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset',
-                      width: [null, null, '17.2rem']
+                      width: ['20vw', '10vw'],
+                      height: ['20vw', '10vw']
                     }}/>
                     <Text as={'p'}>{protocol.label}</Text>
                   </Flex>

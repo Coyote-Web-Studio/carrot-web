@@ -23,10 +23,10 @@ const MainContent = (props : any) => {
       }}>
         <GridBackground trimRows={2}/>
       </Box>
-      <Breakdown />
-      <HowItWorks />
-      <SuccesfulCampaigns />
-      <CarrotInNumbers />
+      {/* <Breakdown /> */}
+      {/* <HowItWorks /> */}
+      {/* <SuccesfulCampaigns /> */}
+      {/* <CarrotInNumbers /> */}
       <TrustingProtocols />
       <CustomerReview />
     </Flex>

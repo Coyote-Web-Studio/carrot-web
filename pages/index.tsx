@@ -26,12 +26,12 @@ const Home: NextPage = (props : any) => {
       <Flex flexDirection={'column'} bg={theme.colors.background}>
         <WindowWidthIndicator enabled={true} version={props.version}/>
         <Navbar />
-        <Hero />
-        <Marquees />
-        <MainContent />
-        <Marquees />
+        {/* <Hero /> */}
+        {/* <Marquees /> */}
+        {/* <MainContent /> */}
+        {/* <Marquees /> */}
         <JoinTheCommunity />
-        <Footer />
+        {/* <Footer /> */}
       </Flex>
     </>
   )

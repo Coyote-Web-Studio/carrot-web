@@ -33,6 +33,7 @@ const StyleSwitch = (props : any) => {
                     cursor: 'pointer',
                     bg: theme.colors.textColor,
                     position: 'inherit',
+                    pointerEvents: 'none',
                     '&[aria-checked=true] div': {
                         transform: [
                             null, 
