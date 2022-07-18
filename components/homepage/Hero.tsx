@@ -124,6 +124,7 @@ const Hero = (props : any) => {
                             zIndex: 1,
                             height: '4.8rem',
                             alignItems: 'center',
+                            cursor: 'pointer',
                             ml: [
                                 'calc(50% - 9.6rem)',
                                 null,
