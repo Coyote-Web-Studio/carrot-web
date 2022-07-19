@@ -8,7 +8,13 @@ const TrustingProtocols = () => {
 
   const theme : any = useTheme();
 
-  const cornerOffset = -0.23;
+  const cornerBoxesSize = 4;
+  const cornerBoxesOffset = -2;
+
+  const offsetStyles = [
+    `${(cornerBoxesOffset) / 10}rem`, 
+    `${(cornerBoxesOffset * 2) / 10}rem`
+  ]
 
   return (
     <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem", "15.1rem"]} pb={['9.6rem', null, '22.4rem']}>
@@ -18,7 +24,9 @@ const TrustingProtocols = () => {
             flexDirection: 'column'
           }}>
             <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>
-              <AnimatedText>Trusted by Some of </AnimatedText><Box as="br" sx={{display: ['none', 'block']}}/><AnimatedText initialDelay={600}>Your Favorite Protocols</AnimatedText>
+              <AnimatedText>
+                Trusted by Some of </AnimatedText><Box as="br" sx={{display: ['none', 'block']}}/><AnimatedText initialDelay={600}>Your Favorite Protocols
+              </AnimatedText>
             </Text>
             <Flex as={'ul'} flexWrap={['wrap', null, null, 'nowrap']} width={'100%'}>
               {Protocols.map((protocol, index) => (
@@ -50,8 +58,12 @@ const TrustingProtocols = () => {
                       mt: index % 2 == 0 ? 0 : '23vw !important',
                     },
                     '.corner-square': {
-                      width: '0.46rem', 
-                      height: '0.46rem', 
+                      width: [
+                        `${(cornerBoxesSize) / 10}rem`, 
+                        `${(cornerBoxesSize * 2) / 10}rem`], 
+                      height: [
+                        `${(cornerBoxesSize) / 10}rem`, 
+                        `${(cornerBoxesSize * 2) / 10}rem`], 
                       background: theme.colors.protocolCardLine,
                       position: 'absolute',
                       zIndex: 100,
@@ -59,20 +71,20 @@ const TrustingProtocols = () => {
                   }}
                 >
                   <Box className="corner-square" sx={{
-                    top: `${cornerOffset}rem`,
-                    left: `${cornerOffset}rem`
+                    top: offsetStyles,
+                    left: offsetStyles,
                   }}/>
                   <Box className="corner-square" sx={{
-                    top: `${cornerOffset}rem`,
-                    right: `${cornerOffset}rem`
+                    top: offsetStyles,
+                    right: offsetStyles
                   }}/>
                   <Box className="corner-square" sx={{
-                    bottom: `${cornerOffset}rem`,
-                    right: `${cornerOffset}rem`
+                    bottom: offsetStyles,
+                    right: offsetStyles
                   }}/>
                   <Box className="corner-square" sx={{
-                    bottom: `${cornerOffset}rem`,
-                    left: `${cornerOffset}rem`
+                    bottom:offsetStyles,
+                    left: offsetStyles
                   }}/>
                   <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
                     <Image src={protocol.logo} sx={{

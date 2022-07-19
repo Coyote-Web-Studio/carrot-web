@@ -22,7 +22,6 @@ const StyleSwitch = (props : any) => {
                 checked={darkThemeActive} 
                 color={theme.colors.textColor} 
                 onClick={() => {
-                    console.log('Hello')
                     setDarkThemeActive(!darkThemeActive);
                     setTheme(
                         darkThemeActive ? lightTheme : darkTheme
