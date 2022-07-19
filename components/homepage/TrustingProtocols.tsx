@@ -26,8 +26,8 @@ const TrustingProtocols = () => {
                   key={index} 
                   data-aos={'flip-left'} 
                   data-aos-offset={index % 2 ? 200 : 500}
-                  width={['46vw', '21.3vw', '19.9vw', '21.5vw']}
-                  height={['46vw', '21.3vw', '19.9vw', '21.5vw']}
+                  width={['45vw', '21.3vw', '19.9vw', '21.5vw']}
+                  height={['45vw', '21.3vw', '19.9vw', '21.5vw']}
                   alignItems={'center'} 
                   justifyContent={'center'}
                   sx={{
@@ -40,6 +40,10 @@ const TrustingProtocols = () => {
                       index % 2 == 0 ? 0 : '19.9vw',
                       index % 2 == 0 ? 0 : '21.5vw',
                     ],
+                    [`@media screen and (max-width: 420px)`]: {
+                      width: '42.7vw',
+                      height: '42.7vw',
+                    },
                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                       width: '23vw !important',
                       height: '23vw !important',
