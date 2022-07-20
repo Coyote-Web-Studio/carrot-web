@@ -97,8 +97,8 @@ const Hero = (props : any) => {
                             pt: [0, '2.4rem', '9rem', '11.8rem'],
                             flexGrow: 1,
                             maxWidth: [null, null, null, '60rem'],
-                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                pt: '19rem',
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                pt: '11rem',
                                 maxWidth: '73.6rem',
                             }
                      }}
