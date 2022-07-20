@@ -1,5 +1,7 @@
+import { useState, useEffect } from 'react';
 import { Flex, Box, Text, Image } from 'rebass';
 import { useTheme } from 'styled-components';
+import { debounce } from '../../utils/utils';
 import AnimatedText from '../common/AnimatedText';
 
 import Fade from '../common/Fade';
@@ -7,6 +9,8 @@ import Fade from '../common/Fade';
 const TrustingProtocols = () => {
 
   const theme : any = useTheme();
+
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
   const cornerBoxesSize = 4;
   const cornerBoxesOffset = -2;
@@ -16,7 +20,21 @@ const TrustingProtocols = () => {
     null,
     null,
     `${(cornerBoxesOffset * 2) / 10}rem`
-  ]
+  ];
+
+  const updateWidth : any = debounce(() => {
+    if (window) {
+      setWindowWidth(window.innerWidth)
+    }
+  }, 200);
+
+  useEffect(() => {
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return (
+      window.removeEventListener('resize', updateWidth)
+    )
+  })
 
   return (
     <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem", "15.1rem"]} pb={['9.6rem', null, '22.4rem']}>
@@ -36,8 +54,9 @@ const TrustingProtocols = () => {
                   key={index} 
                   data-aos={'flip-left'} 
                   data-aos-offset={index % 2 ? 200 : 500}
-                  width={['45vw', '21.3vw', '19.9vw', '21.5vw']}
-                  height={['45vw', '21.3vw', '19.9vw', '21.5vw']}
+                  maxWidth={['50%', '25%']}
+                  width={['calc(46.2vw * 0.93)', '21.3vw', '19.9vw', '21.5vw']}
+                  height={['calc(46.2vw * 0.93)', '21.3vw', '19.9vw', '21.5vw']}
                   alignItems={'center'} 
                   justifyContent={'center'}
                   sx={{

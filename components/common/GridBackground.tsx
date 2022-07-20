@@ -14,7 +14,7 @@ const GridBackground = (props : any) => {
     const theme : any = useTheme();
     const gridRef : any = useRef(null);
 
-    const updateDimensions = debounce(() => {
+    const updateDimensions : any = debounce(() => {
         // console.log('Updated');
         if (gridRef.current) {
 
@@ -27,6 +27,9 @@ const GridBackground = (props : any) => {
     useEffect(() => {
         updateDimensions();
         window.addEventListener('resize', updateDimensions);
+        return (
+            window.removeEventListener('resize', updateDimensions)
+        );
     }, []);
 
     useEffect(() => {

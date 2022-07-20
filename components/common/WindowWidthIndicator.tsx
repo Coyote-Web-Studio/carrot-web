@@ -10,7 +10,7 @@ const WindowWidthIndicator = (props : any) => {
     const BREAKPOINTS = [
         {
             name: 'phone',
-            value: 639
+            value: 640
         },
         {
             name: 'tablet',

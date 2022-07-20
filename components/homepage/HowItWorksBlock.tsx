@@ -96,7 +96,7 @@ const HowItWorksBlock = (props: any) => {
             sx={{
               transition: '0.25s ease-in-out all',
               position: 'relative',
-              fontSize: ["2.8rem", "2.8rem", null, "4.8rem"],
+              fontSize: ["2.8rem", "2.8rem", null, '3.2rem'],
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 fontSize: '4.8rem'
               }
@@ -129,12 +129,17 @@ const HowItWorksBlock = (props: any) => {
           )}
           <Flex
             className={"hiw-trigger"}
-            p={["2.4rem", "0 2.4rem", null, '0 6.4rem']}
+            p={["2.4rem", "0 2.4rem", null, '0 3.2rem']}
             justifyContent={"space-between"}
             alignItems={"center"}
             width={"100%"}
             minHeight={['9.6rem', '9.6rem', null, '19.2rem'] }
-            sx={{position: 'relative'}}
+            sx={{
+              position: 'relative',
+              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                p: '0.64rem'
+              }
+            }}
           >
             {props.index == 0 && (
               <Box sx={{
@@ -148,8 +153,8 @@ const HowItWorksBlock = (props: any) => {
               }}/>
             )}
             <Text 
-              fontSize={["1.6rem", "1.6rem", null, "2.2rem"]} 
-              lineHeight={["2.4rem", "2.4rem", null, '3.3rem']} 
+              fontSize={["1.6rem", null, null, "2.2rem"]} 
+              lineHeight={["2.4rem", null, null, '3.3rem']} 
               as={"p"}
               maxWidth={'40rem'}
               width={['auto', 'auto', null, '100%']}

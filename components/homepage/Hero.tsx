@@ -21,8 +21,9 @@ const Hero = (props : any) => {
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
                 height: ['100%', null, null, '74rem'],
-                top: ['0', null, null, '6.4rem'],
+                top: ['0', null, null, null],
                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    top: '6.4rem',
                     height: '85rem'
                 }
             }}>
@@ -52,7 +53,7 @@ const Hero = (props : any) => {
                             pr: '1rem',
                             flexGrow: 1,
                             maxWidth: '64.6rem',
-                            top: [null, '4.6rem', null, '13rem'],
+                            top: [null, '4.6rem', null],
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                 top: '10.6rem',
                             },
