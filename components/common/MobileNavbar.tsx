@@ -20,21 +20,21 @@ const MobileNavbar = (props : any) => {
             zIndex: 4,
             flexDirection: 'column',
             maxWidth: '100%',
-            transition: '0.25s ease-in-out all',
+            transition: '0.25s ease-in-out opacity',
             overflow: 'hidden'
         }}>
             <Flex 
                 className={'grid-container'}
                 sx={{
-                    height: '100%',
+                    height: 'calc(100% - 2rem)',
                     width: '100%',
                     position: 'absolute',
-                    top: '0',
-                    left: ['2.4rem'],
+                    top: '1rem',
+                    left: ['2rem'],
                     ...theme.boxSizes.defaultBox
                 }}
             >
-                <GridBackground trimRows={1}/>
+                <GridBackground trimRows={2}/>
             </Flex>
             <Flex 
                 className="navigation-container"

@@ -107,13 +107,14 @@ const HowItWorksBlock = (props: any) => {
         </Flex>
         <Flex 
           className={"hiw-body bordered"} 
-          width={['auto', '36rem', '64rem']} 
+          width={['auto', '36rem', '']} 
           bg={theme.colors.cardBackground} 
           sx={{
             flexDirection: 'column',
             transition: '0.25s ease-in-out all',
             maxHeight: isOpen ? '1000px' : '19.2rem',
-            position: 'relative'
+            position: 'relative',
+            flexGrow: [null, null, null, 1]
           }}
         >
           {props.index + 1 == props.totalElements && (

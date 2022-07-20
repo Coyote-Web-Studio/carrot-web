@@ -47,7 +47,13 @@ const CarrotInNumbers = () => {
                 }
               }}
             >
-              Carrot in<Box as="br" sx={{display: ['block', 'none', 'none']}}/> numbers
+              <AnimatedText color={theme.colors.gray10}>
+                Carrot in
+              </AnimatedText>
+              <Box as="br" sx={{display: ['block', 'none', 'none']}}/>
+              <AnimatedText color={theme.colors.gray10}>
+                numbers
+              </AnimatedText>
             </Text>
           </Fade>
           <Fade as={'ul'} flexDirection={'column'} sx={{
@@ -62,6 +68,7 @@ const CarrotInNumbers = () => {
               <Flex as={'li'} flexDirection={'column'} key={index} sx={{
                 borderTop: `0.1rem solid ${theme.colors.gray10}`,
                 py: '1.2rem',
+                justifyContent: 'center',
                 height: ['10rem', null, null, 'calc(6.5rem * 3)'],
                 mx: ['0', '2.4rem', '6.4rem'],
                 width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
@@ -74,8 +81,8 @@ const CarrotInNumbers = () => {
               }}>
                 <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
                   color: theme.colors.gray10, 
+                  mb: ['1rem', '1.4rem', null, '2rem'],
                   whiteSpace: 'nowrap',
-                  lineHeight: '12rem',
                   [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                    fontSize: '9.9rem'
                   }

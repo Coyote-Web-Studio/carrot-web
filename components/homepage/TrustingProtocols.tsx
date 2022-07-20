@@ -53,7 +53,6 @@ const TrustingProtocols = () => {
                 <Flex as={'li'} 
                   key={index} 
                   data-aos={'flip-left'} 
-                  data-aos-offset={index % 2 ? 200 : 500}
                   maxWidth={['50%', '25%']}
                   width={['calc(46.2vw * 0.93)', '21.3vw', '19.9vw', '21.5vw']}
                   height={['calc(46.2vw * 0.93)', '21.3vw', '19.9vw', '21.5vw']}

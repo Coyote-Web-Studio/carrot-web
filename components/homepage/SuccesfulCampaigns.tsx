@@ -7,6 +7,7 @@ import { debounce } from "../../utils/utils";
 import Button from "./../common/Button";
 import CampaignCard from "./../common/CampaignCard";
 import Fade from "../common/Fade";
+import AnimatedText from "../common/AnimatedText";
 
 const SuccesfulCampaigns = () => {
   const theme: any = useTheme();
@@ -41,7 +42,9 @@ const SuccesfulCampaigns = () => {
       }}
     >
       <Text as={"h2"} mb={["3.6rem", "11.2rem"]}>
-        Succesful Campaigns
+        <AnimatedText>
+          Succesful Campaigns
+        </AnimatedText>
       </Text>
       {/* TABLET / DESKTOP VIEW */}
       <Flex
