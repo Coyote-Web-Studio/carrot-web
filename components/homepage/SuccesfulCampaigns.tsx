@@ -37,7 +37,7 @@ const SuccesfulCampaigns = () => {
       sx={{
         ...theme.boxSizes.defaultBox,
         zIndex: 1,
-        mb: "9.6rem",
+        mb: ["9.6rem", null, null, "18rem"],
       }}
     >
       <Text as={"h2"} mb={["3.6rem", "11.2rem"]}>

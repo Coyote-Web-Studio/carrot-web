@@ -26,7 +26,7 @@ const CampaignCard = (props : any) => {
                 height: '6.4rem'
               }}
             >
-              <Flex sx={{justifyContent: 'center', alignItems: 'center', borderRight: `0.1rem solid ${theme.colors.gray10}`, width: '7rem'}}>
+              <Flex sx={{justifyContent: 'center', alignItems: 'center', borderRight: `0.1rem solid ${theme.colors.textColor}`, width: '7rem'}}>
                 <Box sx={{bg: theme.colors.blue6, width: '2.4rem', height: '2.4rem', borderRadius: '2.4rem'}}
                 />
               </Flex>

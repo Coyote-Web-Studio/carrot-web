@@ -64,13 +64,13 @@ const GridBackground = (props : any) => {
             width: '100%',
             // background: 'blue',
             height: props.rows ? 'unset' : '100%',
-            gridTemplateColumns: ['repeat(42, 1fr)',null, 'repeat(21, 1fr)'],
+            gridTemplateColumns: ['repeat(42, 1fr)',null, null, 'repeat(21, 1fr)'],
             // backgroundColor: theme.colors.background,
             opacity: 1,
             flexWrap: 'wrap',
             flexDirection: 'column',
             gap: '1px',
-            backgroundSize: [`2.4rem 2.4rem`,`2.4rem 2.4rem`,`6.4rem 6.4rem`],
+            backgroundSize: [`2.4rem 2.4rem`, null , null, `6.4rem 6.4rem`],
         }}>
             {gridRows > 0 && (
                 [...Array(gridRows - (props.trimRows ? props.trimRows : 0))].map((elem : any, index : number) => 

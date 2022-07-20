@@ -31,11 +31,11 @@ const CarrotInNumbers = () => {
           <Box sx={{
             ...theme.boxSizes.defaultBox,
             position: 'absolute',
-            height: ['61rem', '30rem', null, 'calc(100% - 30rem)'],
-            top: ['14.4rem', '9.7rem', null, '22.6rem']
+            height: ['61rem', '30rem', null, '100%'],
+            top: ['14.4rem', '9.7rem', null, '17rem']
             }}
           >
-            <GridBackground color={theme.colors.carrotInNumbersGrid} />
+            <GridBackground color={theme.colors.carrotInNumbersGrid} trimRows={3}/>
           </Box>
           <Fade sx={{zIndexX: 1}}>
             <Text as="h2"
