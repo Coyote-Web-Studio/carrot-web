@@ -96,9 +96,9 @@ const HowItWorksBlock = (props: any) => {
             sx={{
               transition: '0.25s ease-in-out all',
               position: 'relative',
-              fontSize: ["2.8rem", "2.8rem", null, '3.2rem'],
-              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                fontSize: '4.8rem'
+              fontSize: ["2.8rem", "2.8rem", "2.8", '3.2rem'],
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                fontSize: '4.8rem !important'
               }
             }}
           >

@@ -59,8 +59,8 @@ export default {
           '3.2rem'
         ],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
-          width: "calc(100vw - 22rem) !important",
-          left: '11rem'
+          width: "calc(100vw - 12rem) !important",
+          left: '6rem'
         }
       },
       reducedBox: {

@@ -45,7 +45,7 @@ const Marquees = (props : any) => {
                     bg: theme.colors.yellow6,
                     'img': {
                         mx: ['1.6rem', '1rem'],
-                        height: ['1.8rem', null, null, '3rem']
+                        height: ['1.8rem', null, null, '2.8rem']
                     }
                 }
             }}>

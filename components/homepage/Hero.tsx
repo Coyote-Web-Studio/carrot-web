@@ -31,34 +31,34 @@ const Hero = (props : any) => {
                 <Text 
                     sx={{
                         position: 'absolute', 
-                        top: '40.9rem', 
+                        top: '12.9rem', 
                         display: 'flex',
                         left: ['2rem'],
                         alignItems: 'center',
                         writingMode: 'vertical-rl',
                         transform: `rotate(180deg)`,
-                        fontSize: '1.6rem',
+                        fontSize: '1.4rem',
                         fontFamily: theme.fonts.monospace
                     }}
                 >
                     <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
-                    GET UPDATES
+                    BY DXDAO
                 </Text>
                 <Text 
                     sx={{
                         position: 'absolute', 
-                        bottom: '27.1rem', 
+                        bottom: '18.1rem', 
                         left: ['2.2rem'],
                         alignItems: 'center',
                         display: 'flex',
                         writingMode: 'vertical-rl',
                         transform: `rotate(180deg)`,
-                        fontSize: '1.6rem',
+                        fontSize: '1.4rem',
                         fontFamily: theme.fonts.monospace
                     }}
                 >   
                     <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
-                    DON&apos;T BY SHY
+                    100% DECENTRALISED
                 </Text>
             </Flex>
             <Box sx={{
@@ -71,7 +71,7 @@ const Hero = (props : any) => {
                     height: '85rem'
                 }
             }}>
-                <GridBackground trimRows={1} useAnimation/>
+                <GridBackground trimRows={2} useAnimation/>
             </Box>
             {/* HERO CONTENT */}
             <Flex 
