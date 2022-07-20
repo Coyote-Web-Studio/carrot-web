@@ -75,27 +75,33 @@ const JoinTheCommunity = () => {
                                     sx={{
                                         position: 'absolute', 
                                         top: '2rem', 
+                                        display: 'flex',
                                         left: ['2.2rem'],
+                                        alignItems: 'center',
                                         writingMode: 'vertical-rl',
                                         transform: `rotate(180deg)`,
                                         fontSize: '1.6rem',
                                         fontFamily: theme.fonts.monospace
                                     }}
                                 >
-                                    • GET UPDATES
+                                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mb: '1rem', borderRadius: '1rem'}}/> 
+                                    GET UPDATES
                                 </Text>
                                 <Text 
                                     sx={{
                                         position: 'absolute', 
                                         bottom: '2rem', 
                                         left: ['2.2rem'],
+                                        alignItems: 'center',
+                                        display: 'flex',
                                         writingMode: 'vertical-rl',
                                         transform: `rotate(180deg)`,
                                         fontSize: '1.6rem',
                                         fontFamily: theme.fonts.monospace
                                     }}
-                                >
-                                    • DON&apos;T BY SHY
+                                >   
+                                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mb: '1rem', borderRadius: '1rem'}}/> 
+                                    DON&apos;T BY SHY
                                 </Text>
                             </Flex>
                             <Flex flexDirection={'column'} flexGrow={1}>
@@ -122,7 +128,7 @@ const JoinTheCommunity = () => {
                                                     border: 'none'
                                                 },
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    p: '2.4rem 3.3rem 2.4rem 6.4rem'
+                                                    p: ['2.4rem 3.3rem 2.4rem 6.4rem', null, null, '3.2rem']
                                                 }
                                             }} 
                                         >
@@ -134,9 +140,9 @@ const JoinTheCommunity = () => {
                                                         '8rem', null,
                                                         '10rem'
                                                     ],
-                                                    width: '100%',
+                                                    width: ['100%', null, null, '12rem'],
                                                     height: ['5.4rem', null, '12.6rem'],
-                                                    mr: ['4.6rem', '2rem', null, '2.3rem'],
+                                                    mr: ['4.6rem', '2rem', null, 'auto'],
                                                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                                         maxWidth: 'unset'
                                                     },
@@ -147,11 +153,11 @@ const JoinTheCommunity = () => {
                                                 width: ['100%'],
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                                     ml: ['5rem'],
-                                                    maxWidth: '26rem'
+                                                    maxWidth: '23.6rem'
                                                 },
                                                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                                     ml: ['auto'],
-                                                    maxWidth: '26rem'
+                                                    maxWidth: '34.8rem'
                                                 }
                                             }}>
                                                 <Text
@@ -167,7 +173,7 @@ const JoinTheCommunity = () => {
                                                 <Box sx={{
                                                         ml: [null, '2rem', null, 'auto']
                                                     }}>
-                                                    <Button>
+                                                    <Button sx={{width:['auto', null, null, '20rem']}}>
                                                         {item.buttonLabel}
                                                     </Button>
                                                 </Box>

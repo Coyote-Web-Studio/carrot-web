@@ -27,8 +27,8 @@ const Navbar = (props : any) => {
         <StyledNavbar 
             sx={{
                 width: '100%', 
-                pt: ['2.4rem', '2.4rem', '6.2rem'], 
-                pb: ['3.2rem', '2.4rem', '3.3rem']
+                pt: ['2.4rem', '2.4rem', null, '6.2rem'], 
+                pb: ['3.2rem', '2.4rem', null, '3.3rem']
             }}
         >
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
@@ -36,7 +36,7 @@ const Navbar = (props : any) => {
                     color={theme.colors.logoColor} sx={{
                         height: ['2.7rem', '2.7rem', null, '4rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                            height: "4.8rem",
+                            height: "7.7rem",
                         },
                     }}/>
                 <Box sx={{

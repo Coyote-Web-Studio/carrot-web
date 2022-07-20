@@ -17,13 +17,57 @@ const Hero = (props : any) => {
     return (
         <StyledHero className="hero" sx={{position: 'relative', pb: ['5.2rem', null, null, '11.3rem']}}>
             {/* BACKGROUND DECORATION */}
+            <Flex className="side-text"
+                sx={{
+                    minWidth: ['6.4rem'],
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    height: '100%',
+                    zIndex: 100,
+                    display: ['none !important', null, null, 'flex !important']
+                }}
+            >
+                <Text 
+                    sx={{
+                        position: 'absolute', 
+                        top: '40.9rem', 
+                        display: 'flex',
+                        left: ['2rem'],
+                        alignItems: 'center',
+                        writingMode: 'vertical-rl',
+                        transform: `rotate(180deg)`,
+                        fontSize: '1.6rem',
+                        fontFamily: theme.fonts.monospace
+                    }}
+                >
+                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
+                    GET UPDATES
+                </Text>
+                <Text 
+                    sx={{
+                        position: 'absolute', 
+                        bottom: '27.1rem', 
+                        left: ['2.2rem'],
+                        alignItems: 'center',
+                        display: 'flex',
+                        writingMode: 'vertical-rl',
+                        transform: `rotate(180deg)`,
+                        fontSize: '1.6rem',
+                        fontFamily: theme.fonts.monospace
+                    }}
+                >   
+                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
+                    DON&apos;T BY SHY
+                </Text>
+            </Flex>
             <Box sx={{
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
                 height: ['100%', null, null, '74rem'],
-                top: ['0', null, null, null],
+                top: ['0', null, null, '6.4rem'],
                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                    top: '6.4rem',
+                    top: '10.7rem',
                     height: '85rem'
                 }
             }}>
@@ -37,7 +81,6 @@ const Hero = (props : any) => {
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1,
                 }} 
-                pt={['3.4rem', '5.2rem', '0rem',  null]}
                 ref={heroContentRef}
                 >
                 {/* COPY CONTENT */}
@@ -51,14 +94,11 @@ const Hero = (props : any) => {
                         sx={{
                             position: 'relative', 
                             pr: '1rem',
+                            pt: [0, '2.4rem', '9rem', '11.8rem'],
                             flexGrow: 1,
-                            maxWidth: '64.6rem',
-                            top: [null, '4.6rem', null],
-                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                top: '10.6rem',
-                            },
+                            maxWidth: [null, null, null, '60rem'],
                             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                top: '4.6rem',
+                                pt: '19rem',
                                 maxWidth: '73.6rem',
                             }
                      }}
