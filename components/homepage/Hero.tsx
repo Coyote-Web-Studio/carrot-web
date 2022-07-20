@@ -34,32 +34,33 @@ const Hero = (props : any) => {
                 justifyContent={['auto', 'space-between']}
                 sx={{
                     ...theme.boxSizes.defaultBox,
-                    zIndex: 1
-                    }} 
+                    zIndex: 1,
+                }} 
                 pt={['3.4rem', '5.2rem', '0rem',  null]}
                 ref={heroContentRef}
-            >
+                >
                 {/* COPY CONTENT */}
                 <Flex 
                     flexDirection={'column'} 
                     width={[
                         '100%', 
                         '32rem', 
+                        null,
                         'calc(50vw - 9.6rem)', '50%']} 
-                    sx={{
-                        position: 'relative', 
-                        pr: '1rem',
-                        top: [null, null, null, '13rem'],
-                        flexGrow: 1,
-                        maxWidth: '64.6rem',
-                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                            top: '10.6rem',
-                        },
-                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            top: '4.6rem',
-                            maxWidth: '73.6rem',
-                        }
-                    }}
+                        sx={{
+                            position: 'relative', 
+                            pr: '1rem',
+                            flexGrow: 1,
+                            maxWidth: '64.6rem',
+                            top: [null, '4.6rem', null, '13rem'],
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                top: '10.6rem',
+                            },
+                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                top: '4.6rem',
+                                maxWidth: '73.6rem',
+                            }
+                     }}
                 >
                     <Text as="h1" sx={{
                         fontSize: ['4.8rem', null, null, '7.2rem'], 

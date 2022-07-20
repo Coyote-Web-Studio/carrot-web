@@ -78,7 +78,7 @@ export default {
     },
     text: {
       paragraph: {
-        fontSize: ["1.4rem", "1.4rem", "1.9rem"],
+        fontSize: ["1.4rem", "1.4rem", null, "1.9rem"],
         lineHeight: ["2.2rem", "2.2rem", "2.85rem"],
         fontFamily: 'IBM Plex Mono'
       },
