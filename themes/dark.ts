@@ -15,7 +15,7 @@ export default {
 
     customerCommentBackground: "#E9E9E9",
     customerCommentGrid: "#CCCCCC",
-    customerCommentText: "#272727",
+    customerCommentText: baseTheme.colors.gray10,
 
     protocolCardBackground: "#0B0B0B",
     protocolCardLine: "#F5F5F5",
@@ -26,7 +26,8 @@ export default {
     cardButtonHover: "#272727",
 
     shadow: "#E9E9E9",
-    carrotInNumbersGrid: '#ED5B16'
+    carrotInNumbersGrid: '#ED5B16',
+
   },
   misc: {
     invertedProtocolLogo: true

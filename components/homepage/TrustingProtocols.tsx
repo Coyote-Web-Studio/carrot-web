@@ -13,6 +13,8 @@ const TrustingProtocols = () => {
 
   const offsetStyles = [
     `${(cornerBoxesOffset) / 10}rem`, 
+    null,
+    null,
     `${(cornerBoxesOffset * 2) / 10}rem`
   ]
 
@@ -60,9 +62,13 @@ const TrustingProtocols = () => {
                     '.corner-square': {
                       width: [
                         `${(cornerBoxesSize) / 10}rem`, 
+                        null,
+                        null,
                         `${(cornerBoxesSize * 2) / 10}rem`], 
                       height: [
                         `${(cornerBoxesSize) / 10}rem`, 
+                        null,
+                        null,
                         `${(cornerBoxesSize * 2) / 10}rem`], 
                       background: theme.colors.protocolCardLine,
                       position: 'absolute',

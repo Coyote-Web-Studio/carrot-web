@@ -1,4 +1,7 @@
+// These are custom breakpoints we are using to override the default
+
 const breakpoints = ["639px", "831px", "1023px", "1440px", "1919px"];
+// [phone, tablet, tablet-xl, desktop, desktop-xl];
 
 export default {
     breakpoints: breakpoints,

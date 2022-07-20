@@ -6,30 +6,14 @@ import Logo from './Logo';
 import HamburgerIcon from './HamburgerIcon';
 import Button from './Button';
 import StyleSwitch from './StyleSwitch';
+import MobileNavbar from './MobileNavbar';
+
+import NavLinks from './../../content/navigation';
 
 const Navbar = (props : any) => {
     
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
     const theme : any = useTheme();
-
-    const NavLinks = [
-        {
-            label: '↳ ABOUT',
-            href: '#'
-        },
-        {
-            label: '↳ PARTNER',
-            href: '#'
-        },
-        {
-            label: '↳ CAMPAIGNS',
-            href: '#'
-        },
-        {
-            label: '↳ COMMUNITY',
-            href: '#'
-        },
-    ];
 
     useEffect(() => {
         let body = document.querySelector('html');
@@ -128,59 +112,12 @@ const Navbar = (props : any) => {
                         ml: 'auto', 
                     }}
                 >
-                    <StyleSwitch 
-                        sx={{ 
-                            mr: '2rem',
-                            position: 'relative'
-                        }}
-                    />
                     <HamburgerIcon onClick={() => {
                         setIsMobileNavbarOpen(!isMobileNavbarOpen);
                     }} />
                 </Flex>
             </Flex>
-            <Flex sx={{
-                position: 'absolute',
-                pointerEvents: isMobileNavbarOpen ? 'auto' : 'none',
-                opacity: isMobileNavbarOpen ? 1 : 0,
-                top: ['8rem', '14rem'],
-                left: 0,
-                width: '100vw',
-                height: 'calc(100vh - 8rem)',
-                background: theme.colors.background,
-                zIndex: 4,
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                maxWidth: '100%',
-                transition: '0.25s ease-in-out all',
-            }}>
-                <Flex as="nav" sx={{mb: '4rem'}}>
-                    <Flex as="ul" alignItems={'center'} flexDirection={'column'}>
-                        {NavLinks.map((link, index) => (
-                            <Link 
-                                fontFamily={'IBM Plex Mono'} 
-                                fontSize={['3rem']} 
-                                key={index}
-                                sx={{
-                                    whiteSpace: 'nowrap',
-                                    mb: '2rem',
-                                    '&:last-child': {
-                                        mb: 0
-                                    },
-                                }}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-                    </Flex>
-                </Flex>
-                <Button buttonWrapperStyles={{
-                    ml: ['2.4rem', '2.4rem', '4.8rem']
-                }}>
-                    CARROT DAPP
-                </Button>
-            </Flex>
+            <MobileNavbar isOpen={isMobileNavbarOpen} />
         </StyledNavbar>
     )
 }

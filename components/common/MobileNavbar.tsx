@@ -1,0 +1,101 @@
+import { Flex, Box, Link, Text } from 'rebass';
+import Button from './Button';
+import { useTheme } from 'styled-components';
+import NavLinks from '../../content/navigation';
+import GridBackground from './GridBackground';
+import StyleSwitch from './StyleSwitch';
+
+const MobileNavbar = (props : any) => {
+    const theme : any = useTheme();
+    return (
+        <Flex sx={{
+            position: 'absolute',
+            pointerEvents: props.isOpen ? 'auto' : 'none',
+            opacity: props.isOpen ? 1 : 0,
+            top: ['8rem', '14rem'],
+            left: 0,
+            width: '100vw',
+            height: 'calc(100vh - 7rem)',
+            background: theme.colors.background,
+            zIndex: 4,
+            flexDirection: 'column',
+            maxWidth: '100%',
+            transition: '0.25s ease-in-out all',
+        }}>
+            <Flex 
+                className={'grid-container'}
+                sx={{
+                    height: '100%',
+                    width: '100%',
+                    position: 'absolute',
+                    top: '0',
+                    left: ['2.4rem'],
+                    ...theme.boxSizes.defaultBox
+                }}
+            >
+                <GridBackground trimRows={1}/>
+            </Flex>
+            <Flex 
+                className="navigation-container"
+                sx={{
+                    flexDirection: 'column', 
+                    height: '100%', 
+                    pb: '2.6rem', ...
+                    theme.boxSizes.defaultBox,
+                    position: 'relative',
+                    top: props.isOpen ? '0' : '20rem',
+                    transition: '0.3s ease-in-out all',
+                }}
+            >
+                <Flex 
+                    as="nav" 
+                    sx={{
+                        ...theme.boxSizes.defaultBox, 
+                        pt: '6.4rem',
+                    }}
+                >
+                    <Flex 
+                        as="ul" 
+                        flexDirection={'column'} 
+                        sx={{
+                            ...theme.boxSizes.defaultBox, 
+                            zIndex: 10, 
+                            pl: '1rem'
+                        }}
+                    >
+                        {NavLinks.map((link, index) => (
+                            <Link 
+                                fontFamily={'IBM Plex Mono'} 
+                                fontSize={['2.4rem']} 
+                                fontWeight={400}
+                                lineHeight={'3.6rem'}
+                                key={index}
+                                sx={{
+                                    whiteSpace: 'nowrap',
+                                    mb: '2.35rem',
+                                    '&:last-child': {
+                                        mb: 0
+                                    },
+                                }}
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                    </Flex>
+                </Flex>
+                <Flex justifyContent={'space-between'} sx={{
+                    mt: 'auto',
+                    width: '100%',
+                    alignItems: 'center'
+                }}>
+                    <Button>
+                        CARROT DAPP
+                    </Button>
+                    <StyleSwitch />
+                </Flex>
+            </Flex>
+        </Flex>
+    )
+}
+
+export default MobileNavbar;

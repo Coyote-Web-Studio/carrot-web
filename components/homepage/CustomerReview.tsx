@@ -80,7 +80,7 @@ const CustomerReview = () => {
           lineHeight={["110%", "3.36rem", null, "6.969rem"]}
           color={theme.colors.customerCommentText}
         >
-          <AnimatedText color={theme.colors.gray10} speed={10}>
+          <AnimatedText color={theme.colors.customerCommentText} speed={10}>
             “Carrot was the best project on xDAI that allowed us to deploy KPI
             options in the Agave incentives program. This allows us to optimize
             our rewards towards specific goals rather than just throw them away.”

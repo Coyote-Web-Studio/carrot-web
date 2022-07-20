@@ -17,7 +17,14 @@ const StyleSwitch = (props : any) => {
     }, [])
 
     return (
-        <Flex {...props} alignItems={'center'} sx={{position: 'relative', ...props.sx}} >
+        <Flex {...props} alignItems={'center'} 
+            sx={{
+                position: 'relative', 
+                height: ['1.32rem', null, null, '2.2rem'], 
+                width: ['2.6rem', null, null, '4.4rem'],
+                ...props.sx
+            }} 
+        >
             <Switch 
                 checked={darkThemeActive} 
                 color={theme.colors.textColor} 
@@ -57,7 +64,7 @@ const StyleSwitch = (props : any) => {
             <Flex className={'icons'} width={'100%'} height={'100%'} sx={{position: 'absolute', pointerEvents: 'none', zIndex: 1, top: 0}}>
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.35rem', '0.25rem', null, '0.5rem'],
+                    top: ['0.30rem', '0.25rem', null, '0.5rem'],
                     left: ['0.5rem', '0.3rem', null, '0.5rem'],
                     zIndex: '4',
                     width: [ '0.8rem', null, null, '1.2rem'],
@@ -66,7 +73,7 @@ const StyleSwitch = (props : any) => {
                 }} src={'/icons/light-icon.svg'} />
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.35rem', '0.25rem', null, '0.5rem'],
+                    top: ['0.30rem', '0.25rem', null, '0.5rem'],
                     right: ['0.3rem', null, '0.5rem'],
                     zIndex: '4',
                     width: [ '0.8rem', null, null, '1.2rem'],

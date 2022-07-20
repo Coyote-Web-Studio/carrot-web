@@ -188,7 +188,7 @@ const JoinTheCommunity = () => {
                     backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657822465/carrot/antonitudisco_272455743_5068059243228334_3680368816274666884_n_4_vzorvz.png)`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    display: ['none', 'none', 'flex', 'flex']
+                    display: ['none', 'flex', 'flex']
                 }}
             >
 
