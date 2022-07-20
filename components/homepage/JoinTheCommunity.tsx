@@ -23,16 +23,15 @@ const JoinTheCommunity = () => {
                     null, 
                     '12.6rem 6.4rem 12.6rem 9.6rem'],
                 width: [
-                    "100vw", 
-                    null,
-                    null,
-                    '50%',
+                    "100vw",
+                    '50vw',
                 ],
                 mx: "auto",
             }}>
                 <Fade width={'100%'}>
                     <Flex flexDirection={'column'} sx={{rowGap: '0.1rem', columnGap: '0.1rem'}}>
                         <Box 
+                            className="section-title"
                             sx={{
                                 boxShadow: [null, null,  `0 0 0 1px ${theme.colors.gray10}`],
                                 borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, 'none', 'none'],
@@ -143,10 +142,8 @@ const JoinTheCommunity = () => {
                                                     },
                                                 }}
                                             />
-                                            <Flex flexDirection={['column', 'row', 'column']} sx={{
+                                            <Flex flexDirection={['column']} sx={{
                                                 ml: ['auto', null, null, '2rem'],
-                                                alignItems: ['auto', 'center', 'auto'],
-                                                justifyContent: [null, 'right', 'auto'],
                                                 width: ['100%'],
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                                     ml: ['5rem'],
@@ -161,7 +158,7 @@ const JoinTheCommunity = () => {
                                                     sx={{
                                                         fontSize: ['1.2rem', null, null, '1.6rem'],
                                                         lineHeight: ['1.8rem', null, null, '2.4rem'],
-                                                        mb: ['1.6rem', '0', '2.4rem'],
+                                                        mb: ['1.6rem', '2.4rem'],
                                                         fontFamily: theme.fonts.monospace
                                                     }}
                                                 >

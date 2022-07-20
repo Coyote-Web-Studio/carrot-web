@@ -1,4 +1,7 @@
-// These are custom breakpoints we are using to override the default
+// There seems to be a bug with rebass or styled system
+// that prevents you from ochanging the default breakpoints.
+// These are custom breakpoints we are using to complement the default ones 
+// the default styled system breakpoints. 
 
 const breakpoints = ["639px", "831px", "1023px", "1440px", "1919px"];
 // [phone, tablet, tablet-xl, desktop, desktop-xl];
@@ -34,6 +37,9 @@ export default {
         ],
         maxWidth: [null, null, '1440px', '1600px'],
         mx: "auto",
+        [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
+          width: "calc(100vw - 8rem)", 
+        },
         [`@media screen and (min-width: ${breakpoints[4]})`]: {
           width: "160rem !important",
         }
@@ -64,6 +70,9 @@ export default {
           "calc(100vw - 19.2rem)",
           "70vw"
         ],
+        [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
+          width: "calc(100vw - 8rem)", 
+        },
         mx: "auto",
       },
     },

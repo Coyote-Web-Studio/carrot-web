@@ -86,7 +86,7 @@ const Footer = (props: any) => {
   return (
     <Flex
       as="footer"
-      pt={["4.8rem", '12.8rem', '26rem']}
+      pt={["4.8rem", '12.8rem', null, '26rem']}
       pb={'5.6rem'}
       bg={theme.colors.gray10}
       sx={{
@@ -98,8 +98,8 @@ const Footer = (props: any) => {
         sx={{
           ...theme.boxSizes.expandedBox,
           position: 'absolute',
-          height: ['10rem', '28rem', '70rem'], 
-          top: ["4.7rem", "7rem", "12.6rem"], 
+          height: ['10rem', '28rem', null, '70rem'], 
+          top: ["4.7rem", "7rem", null, "12.6rem"], 
         }}
       >
         <GridBackground color={theme.colors.gray9} />
@@ -108,18 +108,18 @@ const Footer = (props: any) => {
       <Fade sx={{...theme.boxSizes.defaultBox}}>
         <Logo 
           color={theme.colors.orange6} 
-          height={['auto', '15.5rem', 'auto']} 
-          width={['auto', 'auto', '100%']} 
-          mb={["4.8rem", "12.2rem", "34rem"]} 
+          height={['auto', '15.5rem', null, 'auto']} 
+          width={['auto', 'auto', null, '100%']} 
+          mb={["4.8rem", "12.2rem", null, "34rem"]} 
           sx={{ zIndex: 1 }} 
         />
       </Fade>
 
       <Flex sx={{ ...theme.boxSizes.defaultBox, position: "relative", flexDirection: 'column' }}>
-        <Flex flexDirection={['column', 'column', 'row']} justifyContent={['auto', 'auto', 'space-between']}>
+        <Flex flexDirection={['column', 'column', null, 'row']} justifyContent={['auto', null, null, 'space-between']}>
           <Flex as="ul" flexWrap="wrap">
             {FooterLinks.map((footerColumn, i) => (
-              <Flex flexDirection="column" width={[1/2, 1/4, '15.2rem']} mb={['4.8rem', '4.8rem', 0]} fontFamily={'IBM Plex Mono'} key={i}>
+              <Flex flexDirection="column" width={[1/2, 1/4, null, '15.2rem']} mb={['4.8rem', '4.8rem', null, 0]} fontFamily={'IBM Plex Mono'} key={i}>
                 <Text fontSize={'1.4rem'} color={theme.colors.gray1} mb={['0.8rem', '2.4rem']} >
                   {footerColumn.heading}
                 </Text>

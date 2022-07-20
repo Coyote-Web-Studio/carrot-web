@@ -21,6 +21,7 @@ const MobileNavbar = (props : any) => {
             flexDirection: 'column',
             maxWidth: '100%',
             transition: '0.25s ease-in-out all',
+            overflow: 'hidden'
         }}>
             <Flex 
                 className={'grid-container'}

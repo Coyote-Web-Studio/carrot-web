@@ -14,7 +14,7 @@ const Breakdown = (props: any) => {
         position: "relative",
         zIndex: 1,
       }}
-      pt={["2.4rem", "5.2rem", "12.8rem"]}
+      pt={["2.4rem", "5.2rem", null, "12.8rem"]}
       pb={["9.2rem"]}
     >
       <Image
@@ -32,7 +32,7 @@ const Breakdown = (props: any) => {
         <Fade
           key={index}
           sx={{
-            mb: ["4.8rem", "4.8rem", "6.4rem"],
+            mb: ["4.8rem", null, null, "6.4rem"],
             position: "relative",
           }}
         >

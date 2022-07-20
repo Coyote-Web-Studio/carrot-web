@@ -14,13 +14,13 @@ const CarrotInNumbers = () => {
       zIndex: 1, 
       position: 'relative', 
       bg: theme.colors.orange6, 
-      borderRadius: ['1.6rem', null, '5rem'], 
+      borderRadius: ['1.6rem', null, null, '5rem'], 
       pb: ['3.6rem', '4.8rem'],
     }}
     >
       <Flex sx={{
         ...theme.boxSizes.defaultBox,
-        pt: ['2.4rem', '2.4rem', '4.8rem', '10rem'],
+        pt: ['2.4rem', null, '4.8rem', '10rem'],
         flexDirection: 'column',
         position: 'relative'
       }}>

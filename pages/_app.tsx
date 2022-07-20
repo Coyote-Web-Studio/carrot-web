@@ -14,9 +14,10 @@ import Rellax from 'rellax';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    let rellax = new Rellax('.rellax', {
+    let rellax = new Rellax('.rellax');
+    AOS.init({
+      once: true
     });
-    AOS.init();
   }, []);
 
   return (

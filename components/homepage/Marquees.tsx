@@ -8,11 +8,11 @@ const Marquees = (props : any) => {
     return (
         <StyledMarquees flexDirection={'column'} sx={{
             '.marquee': {
-                height: ['4.8rem', '4.8rem', '7.2rem'],
+                height: ['4.8rem', '4.8rem', null, '7.2rem'],
                 zIndex: 0,
                 'img': {
                     mx: ['1.6rem', '1rem'],
-                    height: ['3rem', '2.7rem', '4.3rem']
+                    height: ['3rem', '2.7rem', null, '4.3rem']
                 }
             }
         }}>
@@ -45,7 +45,7 @@ const Marquees = (props : any) => {
                     bg: theme.colors.yellow6,
                     'img': {
                         mx: ['1.6rem', '1rem'],
-                        height: ['3rem', '2.7rem', '3rem']
+                        height: ['1.8rem', null, null, '3rem']
                     }
                 }
             }}>
