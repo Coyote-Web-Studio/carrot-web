@@ -31,7 +31,7 @@ const Hero = (props : any) => {
                 <Text 
                     sx={{
                         position: 'absolute', 
-                        top: '12.9rem', 
+                        top: '10.9rem', 
                         display: 'flex',
                         left: ['2rem'],
                         alignItems: 'center',
@@ -47,7 +47,7 @@ const Hero = (props : any) => {
                 <Text 
                     sx={{
                         position: 'absolute', 
-                        bottom: '18.1rem', 
+                        bottom: '28.1rem', 
                         left: ['2.2rem'],
                         alignItems: 'center',
                         display: 'flex',
