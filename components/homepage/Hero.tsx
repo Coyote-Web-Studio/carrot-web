@@ -119,7 +119,7 @@ const Hero = (props : any) => {
                             lineHeight: '12.7rem'
                         },
                     }}>
-                        <AnimatedText speed={80} initialDelay={150}>
+                        <AnimatedText speed={20} initialDelay={150}>
                             Reach your goals with a Carrot
                         </AnimatedText>
                     </Text>
@@ -130,7 +130,7 @@ const Hero = (props : any) => {
                             color: theme.colors.textColor,
                             fontFamily: 'IBM Plex Mono'
                         }}>
-                            <AnimatedText speed={5} initialDelay={1800}>
+                            <AnimatedText speed={5} initialDelay={700}>
                                 Increase your TVL, volume, price, engagement and more.
                             </AnimatedText>
                             <Box as={'br'} sx={{
@@ -138,7 +138,7 @@ const Hero = (props : any) => {
 
                                 }}
                             />
-                            <AnimatedText speed={5} initialDelay={2000}>
+                            <AnimatedText speed={5} initialDelay={700}>
                                 Yes, on any campaign. Carrot does it all.
                             </AnimatedText>
                         </Text>

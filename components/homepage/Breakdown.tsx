@@ -69,7 +69,7 @@ const Breakdown = (props: any) => {
                 </AnimatedText>
               </Text>
               <Text as="p" sx={{ ...theme.text.paragraph }}>
-                <AnimatedText speed={10}>
+                <AnimatedText speed={5}>
                   {contentBlock.content}
                 </AnimatedText>
               </Text>
