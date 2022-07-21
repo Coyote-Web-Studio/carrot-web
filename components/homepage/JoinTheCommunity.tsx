@@ -19,6 +19,7 @@ const JoinTheCommunity = () => {
             <Flex sx={{
                 p: [
                     '2.4rem', 
+                    '6.1rem 2.4rem 6.1rem 4.8rem', 
                     '6.1rem 4.8rem', 
                     null],
                 width: [
@@ -62,7 +63,14 @@ const JoinTheCommunity = () => {
                                     top: '0',
                                     right: '0',
                                     flexDirection: 'column',
-                                    transform: 'rotate(-90deg) translateX(-2rem) translateY(3.2rem)',
+                                    transform: 
+                                        [
+                                            'rotate(-90deg) translateX(-2.6rem) translateY(3.2rem)',
+                                            'rotate(-90deg) translateX(-2rem) translateY(3.2rem)',
+                                        ],
+                                    [`@media screen and (max-width: 330px)`]: {
+                                        display: 'none',
+                                    },
                                 }}
                             >
                                 <Text 
@@ -98,10 +106,15 @@ const JoinTheCommunity = () => {
                                         fontSize: '6.9rem !important',
                                         lineHeight: '6.9rem !important'
                                     },
+                                    pr: ['4rem']
                                 }}
                             >
                                 <AnimatedText>
-                                    Join the Community!
+                                    Join the 
+                                </AnimatedText>
+                                <br/>
+                                <AnimatedText initialDelay={300}>
+                                    Community!
                                 </AnimatedText>
                             </Text>
                         </Box>

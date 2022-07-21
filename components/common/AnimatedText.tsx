@@ -60,7 +60,7 @@ const AnimatedText = (props : any) => {
     return (
         props.children.split(' ').map((word : any, i : any) => (
             <Fragment key={i}>
-                <Text as={'span'} sx={{display: 'inline-block'}} ref={animationRef}>
+                <Text as={'span'} className={'word'} sx={{display: 'inline-block', whiteSpace: 'nowrap'}} ref={animationRef}>
                     {
                         word.split('').map((character : any, j : any) => (
                             <Text as={'span'} sx={{
