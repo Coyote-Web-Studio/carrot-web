@@ -26,6 +26,7 @@ const Breakdown = (props: any) => {
           width: "10rem",
           right: ["-8rem", "-5rem"],
           zIndex: "3",
+          display: ['none', 'block']
         }}
       />
       {MainContent.map((contentBlock: ContentBlock, index: number) => (

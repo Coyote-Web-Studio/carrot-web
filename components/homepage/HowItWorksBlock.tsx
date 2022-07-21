@@ -8,6 +8,16 @@ const HowItWorksBlock = (props: any) => {
   const theme : any = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
+  const cornerBoxesSize = 4;
+  const cornerBoxesOffset = -2;
+
+  const offsetStyles = [
+    `${(cornerBoxesOffset) / 10}rem`, 
+    null,
+    null,
+    `${(cornerBoxesOffset * 2) / 10}rem`
+  ];
+
   return (
     <Box>
       <Flex
@@ -25,7 +35,22 @@ const HowItWorksBlock = (props: any) => {
           width: ['100%'],
           '.bordered': {
             boxShadow: `0 0 0 1px ${theme.colors.textColor}`
-          }
+          },
+          '.corner-square': {
+            width: [
+              `${(cornerBoxesSize) / 10}rem`, 
+              null,
+              null,
+              `${(cornerBoxesSize * 2) / 10}rem`], 
+            height: [
+              `${(cornerBoxesSize) / 10}rem`, 
+              null,
+              null,
+              `${(cornerBoxesSize * 2) / 10}rem`], 
+            background: theme.colors.protocolCardLine,
+            position: 'absolute',
+            zIndex: 100,
+          },
         }}
       >
         <Flex
@@ -54,27 +79,17 @@ const HowItWorksBlock = (props: any) => {
           >
             {props.index == 0 && (
               <>
-                <Box sx={{
-                  width: '0.46rem', 
-                  height: '0.46rem', 
-                  background: theme.colors.protocolCardLine,
-                  position: 'absolute',
-                  top: '-0.25rem',
-                  left: '-0.25rem',
-                  display: ['none', 'block']
+                <Box className={'corner-square'} sx={{
+                  top: offsetStyles,
+                  left: offsetStyles,
                 }}/>
               </>
             )}
             {props.index + 1 == props.totalElements && (
               <>
-                <Box sx={{
-                  width: '0.46rem', 
-                  height: '0.46rem', 
-                  background: theme.colors.protocolCardLine,
-                  position: 'absolute',
-                  bottom: '-0.25rem',
-                  left: '-0.25rem',
-                  display: ['none', 'block']
+                <Box className={'corner-square'} sx={{
+                  bottom:offsetStyles,
+                  left: offsetStyles,
                 }}/>
               </>
             )}
@@ -118,13 +133,11 @@ const HowItWorksBlock = (props: any) => {
           }}
         >
           {props.index + 1 == props.totalElements && (
-              <Box sx={{
-                width: '0.46rem', 
-                height: '0.46rem', 
+              <Box className={'corner-square'} sx={{
                 background: theme.colors.protocolCardLine,
+                bottom: offsetStyles,
+                right: offsetStyles,
                 position: 'absolute',
-                bottom: '-0.25rem',
-                right: '-0.25rem',
                 display: ['none', 'block']
               }}/>
           )}
@@ -143,14 +156,10 @@ const HowItWorksBlock = (props: any) => {
             }}
           >
             {props.index == 0 && (
-              <Box sx={{
-                width: '0.46rem', 
-                height: '0.46rem', 
+              <Box className={'corner-square'} sx={{
                 background: theme.colors.protocolCardLine,
-                position: 'absolute',
-                top: '-0.25rem',
-                right: '-0.25rem',
-                display: ['none', 'block']
+                top: offsetStyles,
+                right: offsetStyles,
               }}/>
             )}
             <Text 

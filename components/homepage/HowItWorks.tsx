@@ -20,7 +20,9 @@ const HowItWorks = () => {
     >
       <Fade>
         <Text as={"h2"} mb={["1.4rem", "4.8rem"]}>
-          How it works
+          <AnimatedText>
+            How it works
+          </AnimatedText>
         </Text>
       </Fade>
       <Flex as={"ul"} flexDirection={"column"} width={"100%"} sx={{position: 'relative'}}>

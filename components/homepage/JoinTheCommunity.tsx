@@ -19,14 +19,17 @@ const JoinTheCommunity = () => {
             <Flex sx={{
                 p: [
                     '2.4rem', 
-                    '2.4rem 4.8rem', 
-                    null, 
-                    '12.6rem 6.4rem 12.6rem 9.6rem'],
+                    '6.1rem 4.8rem', 
+                    null],
                 width: [
                     "100vw",
                     '50vw',
                 ],
                 mx: "auto",
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    p: '12.6rem 6.4rem 12.6rem 9.6rem',
+                },
+
             }}>
                 <Fade width={'100%'}>
                     <Flex flexDirection={'column'} sx={{rowGap: '0.1rem', columnGap: '0.1rem'}}>
@@ -34,23 +37,66 @@ const JoinTheCommunity = () => {
                             className="section-title"
                             sx={{
                                 boxShadow: [null, null,  `0 0 0 1px ${theme.colors.gray10}`],
-                                borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, 'none', 'none'],
+                                borderBottom: [
+                                    `0.1rem solid ${theme.colors.gray10}`, 
+                                    null, 
+                                    'none', 
+                                    'none'
+                                ],
                                 p: ['0 0 2.4rem', null, '3.2rem'],
                                 width: [null, null, null, '51.5rem'],
                                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                     width: '64rem',
                                 },
-                                maxWidth: '100%'
+                                maxWidth: '95%',
+                                position: 'relative'
                             }}
                         >
+                            <Flex 
+                                className={'vertical-copy'}
+                                sx={{
+                                    // width: '100%',
+                                    // height: '100%',
+                                    position: 'absolute',
+                                    display: [null, null, 'none !important'],
+                                    top: '0',
+                                    right: '0',
+                                    flexDirection: 'column',
+                                    transform: 'rotate(-90deg) translateX(-2rem) translateY(3.2rem)',
+                                }}
+                            >
+                                <Text 
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        fontSize: ['1rem'],
+                                        fontFamily: theme.fonts.monospace,
+                                        mb: '0.8rem'
+                                    }}
+                                >
+                                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mr: '1rem', borderRadius: '1rem'}}/> 
+                                    GET UPDATES
+                                </Text>
+                                <Text 
+                                    sx={{
+                                        alignItems: 'center',
+                                        display: 'flex',
+                                        fontSize: ['1rem'],
+                                        fontFamily: theme.fonts.monospace
+                                    }}
+                                >   
+                                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mr: '1rem', borderRadius: '1rem'}}/> 
+                                    DON&apos;T BY SHY
+                                </Text>
+                            </Flex>
                             <Text 
                                 as={'h2'} 
                                 sx={{
-                                    fontSize: [null, null, null, '5.2rem'],
-                                    lineHeight: [null, null, null, '5.2rem'],
+                                    fontSize: [null,  '4rem !important', null, '5.2rem !important'],
+                                    lineHeight: [null, '4rem !important', null, '5.2rem'],
                                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                        fontSize: '6.9rem',
-                                        lineHeight: '6.9rem'
+                                        fontSize: '6.9rem !important',
+                                        lineHeight: '6.9rem !important'
                                     },
                                 }}
                             >
@@ -114,7 +160,7 @@ const JoinTheCommunity = () => {
                                             key={index}
                                             sx={{
                                                 boxShadow: [null, null, `0 0 0 1px ${theme.colors.gray10}`], 
-                                                height: ['auto', null, '25.6rem'], 
+                                                height: ['auto', null, null, '25.6rem'], 
                                                 width: '100%',
                                                 borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, 'none'],
                                                 p: [
@@ -152,13 +198,10 @@ const JoinTheCommunity = () => {
                                                 ml: ['auto', null, null, '2rem'],
                                                 width: ['100%'],
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    ml: ['5rem'],
-                                                    maxWidth: '23.6rem'
+                                                    ml: ['5rem', '0'],
+                                                    maxWidth: '34.6rem'
                                                 },
-                                                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                                    ml: ['auto'],
-                                                    maxWidth: '34.8rem'
-                                                }
+                                                alignItems: ['start', null, null, 'end'],
                                             }}>
                                                 <Text
                                                     sx={{
@@ -170,10 +213,13 @@ const JoinTheCommunity = () => {
                                                 >
                                                     {item.detail}
                                                 </Text>
-                                                <Box sx={{
-                                                        ml: [null, '2rem', null, 'auto']
-                                                    }}>
-                                                    <Button sx={{width:['auto', null, null, '20rem']}}>
+                                                <Box>
+                                                    <Button 
+                                                        sx={{
+                                                            width:['auto', null, null, '20rem'],
+                                                            fontWeight: 600
+                                                        }}
+                                                    >
                                                         {item.buttonLabel}
                                                     </Button>
                                                 </Box>

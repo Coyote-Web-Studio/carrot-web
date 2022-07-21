@@ -51,6 +51,7 @@ const CustomerReview = () => {
             height: ["5rem", null, '10rem'],
             left: ["3%", null, "18%"],
             zIndex: "10",
+            display: ['none', 'block']
           }}
         />
         <Image
@@ -63,7 +64,8 @@ const CustomerReview = () => {
             height: ["8rem", null, '13rem'],
             right: ["4%", null, "15%"],
             zIndex: "100",
-            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`
+            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+            display: ['none', 'block']
           }}
         />
         <Fade

@@ -74,7 +74,8 @@ const CampaignCard = (props : any) => {
             borderTop: `0.1rem solid ${theme.colors.cardLine}`, 
             bg: 'transparent', 
             borderRadius: 0, 
-            fontSize: ['1.6rem', '1.2rem', '1.9rem'], 
+            cursor: 'pointer',
+            fontSize: ['1.6rem', '1.4rem', null, '1.9rem'], 
             color: theme.colors.cardText,
             textTransform: 'uppercase',
             '&:hover': {

@@ -41,7 +41,7 @@ const SuccesfulCampaigns = () => {
         mb: ["9.6rem", null, null, "18rem"],
       }}
     >
-      <Text as={"h2"} mb={["3.6rem", "11.2rem"]}>
+      <Text as={"h2"} mb={["3.6rem", "3.8rem", null, "11.2rem"]}>
         <AnimatedText>
           Succesful Campaigns
         </AnimatedText>
@@ -86,9 +86,8 @@ const SuccesfulCampaigns = () => {
           width: 'calc(100% + 4rem)',
           height: 'calc(100% + 4rem)',
           pointerEvents: 'none',
-          transition: '0.25s ease-in-out all',
+          transition: '0.15s ease-in-out all',
           opacity: 0,
-          filter: 'blur(10px)',
           clipPath: 'polygon(0 100% ,0 100%, 0 100%, 0 100%)',
           transform: 'scale(0.5)',
           background: `repeating-linear-gradient(
