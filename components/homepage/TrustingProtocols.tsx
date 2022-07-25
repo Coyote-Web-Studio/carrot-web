@@ -40,7 +40,10 @@ const TrustingProtocols = () => {
     <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem", "15.1rem"]} pb={['9.6rem', null, '22.4rem']}>
         <Flex sx={{
             ...theme.boxSizes.defaultBox,
-            flexDirection: 'column'
+            flexDirection: 'column',
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              width: "124.8rem !important",
+            },
           }}>
             <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>
               <AnimatedText>
@@ -72,9 +75,9 @@ const TrustingProtocols = () => {
                       height: '42.7vw',
                     },
                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                      width: '23vw !important',
-                      height: '23vw !important',
-                      mt: index % 2 == 0 ? 0 : '23vw !important',
+                      width: '19vw !important',
+                      height: '19vw !important',
+                      mt: index % 2 == 0 ? 0 : '19vw !important',
                     },
                     '.corner-square': {
                       width: [

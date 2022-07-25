@@ -98,14 +98,20 @@ const Footer = (props: any) => {
         sx={{
           ...theme.boxSizes.expandedBox,
           position: 'absolute',
-          height: ['10rem', '28rem', null, '70rem'], 
+          height: ['10rem', '28rem', null, '70.4rem'], 
           top: ["4.7rem", "7rem", null, "12.6rem"], 
         }}
-      >
+        >
         <GridBackground color={theme.colors.gray9} />
       </Box>
 
-      <Fade sx={{...theme.boxSizes.defaultBox}}>
+      <Fade sx={{
+        ...theme.boxSizes.defaultBox,
+        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+          width: "124.8rem !important",
+        },
+        }}
+      >
         <Logo 
           color={theme.colors.orange6} 
           height={['auto', '15.5rem', null, 'auto']} 

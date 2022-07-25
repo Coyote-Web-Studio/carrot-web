@@ -49,7 +49,7 @@ const Breakdown = (props: any) => {
         >
           <Flex
             flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
-            justifyContent={["auto", "space-between"]}
+            justifyContent={["auto", "center"]}
             alignItems={["auto", "center"]}
             sx={{
               columnGap: '4rem',
@@ -61,8 +61,8 @@ const Breakdown = (props: any) => {
             <Box
               mb={["2.4rem", "0"]}
               sx={{
-                width: ["100%", "31.2rem", null, "32rem"],
-                height: ['19.2rem', '19.2rem', null, "40.8rem"],
+                width: ["100%", "31.2rem", null, "40.8rem"],
+                height: ['19.2rem', '19.2rem', null, "32rem"],
                 backgroundImage: `url(${contentBlock.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',

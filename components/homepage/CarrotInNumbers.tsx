@@ -27,19 +27,26 @@ const CarrotInNumbers = () => {
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             pt: '10rem'
           },
-          maxWidth: [null, '67.2rem', null, 'unset']
+          maxWidth: [null, '67.2rem', null, 'unset'],
         }}>
           <Box sx={{
             ...theme.boxSizes.defaultBox,
             position: 'absolute',
-            height: ['61rem', '30rem', null, '100%'],
-            top: ['14.4rem', '9.7rem', null, '17rem'],
-            mixBlendMode: 'color-burn'
+            height: ['61rem', '30rem', null, '57.5rem'],
+            top: ['14.4rem', '9.7rem', null, '17.2rem'],
+            mixBlendMode: 'color-burn',
+            opacity: 0.2
+          }}
+          >
+            <GridBackground />
+          </Box>
+          <Fade sx={{
+            zIndexX: 1,
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              width: "124.8rem !important",
+            },
             }}
           >
-            <GridBackground color={theme.colors.carrotInNumbersGrid} trimRows={3}/>
-          </Box>
-          <Fade sx={{zIndexX: 1}}>
             <Text as="h2"
               sx={{
                 color: theme.colors.gray10,
@@ -67,21 +74,26 @@ const CarrotInNumbers = () => {
             alignItems: ['auto', 'center', 'center'],
           }}>
             {CarrotInNumbersData.map((item, index) => (
-              <Flex as={'li'} flexDirection={'column'} key={index} sx={{
-                borderTop: `0.1rem solid ${theme.colors.gray10}`,
-                width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
-                mx: ['0', '2.4rem', '6.4rem'],
-                '&:last-child': {
-                  borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
-                },
-                '&:nth-of-type(3)': {
-                  borderBottom: ['none', `0.1rem solid ${theme.colors.gray10}`],
-                },
-              }}>
+              <Flex 
+                as={'li'} 
+                flexDirection={'column'} 
+                key={index} 
+                sx={{
+                  borderTop: `0.1rem solid ${theme.colors.gray10}`,
+                  width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
+                  mx: ['0', '2.4rem', '6.4rem'],
+                  '&:last-child': {
+                    borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
+                  },
+                  '&:nth-of-type(3)': {
+                    borderBottom: ['none', `0.1rem solid ${theme.colors.gray10}`],
+                  },
+                }}
+              >
                 <Flex flexDirection={'column'} sx={{
                   py: '1.2rem',
                   justifyContent: 'center',
-                  height: ['10rem', null, null, 'calc(6.5rem * 3)'],
+                  height: ['10rem', null, null, 'calc(6.4rem * 3 - 1px)'],
                 }}>
                   <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
                     color: theme.colors.gray10, 

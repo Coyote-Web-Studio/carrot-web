@@ -15,7 +15,7 @@ const GridBackground = (props : any) => {
             width: '100%',
             height: 'calc(100% + 2px)',
             backgroundImage: theme.patternImage,
-            backgroundSize: '2.4rem',
+            backgroundSize: ['2.4rem', null, null, '6.4rem'],
             ...props.sx
         }}>
 

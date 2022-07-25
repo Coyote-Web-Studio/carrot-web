@@ -57,17 +57,17 @@ const CustomerReview = () => {
             pt: ["8.7rem" , null, null, '18.3rem'],
             mb: ["4.8rem"],
           }}
-        >
+          >
           <Box
             sx={{
               ...theme.boxSizes.expandedBox,
               position: "absolute",
               // bg: 'blue',
-              height: ["82%", "80%", "calc(100% - 10rem)"],
+              height: ["82%", "80%", "calc(100% - 13.6rem)"],
               top: "6.4rem",
             }}
-          >
-            <GridBackground color={theme.colors.customerCommentGrid} trimRows={1}/>
+            >
+            <GridBackground sx={{opacity: 0.2}}/>
           </Box>
           <Fade
             sx={{
@@ -75,6 +75,9 @@ const CustomerReview = () => {
               flexDirection: "column",
               position: "relative",
               zIndex: 1,
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                width: "124.8rem !important",
+              },
             }}
           >
             <Text

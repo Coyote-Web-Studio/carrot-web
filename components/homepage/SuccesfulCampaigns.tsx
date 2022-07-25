@@ -39,7 +39,10 @@ const SuccesfulCampaigns = () => {
         ...theme.boxSizes.defaultBox,
         zIndex: 1,
         mb: ["9.6rem", null, null, "18rem"],
-        maxWidth: [null, '67.2rem', null, 'unset']
+        maxWidth: [null, '67.2rem', null, 'unset'],
+        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+          width: "124.8rem !important",
+      },
       }}
     >
       <Text as={"h2"} mb={["3.6rem", "3.8rem", null, "11.2rem"]}>

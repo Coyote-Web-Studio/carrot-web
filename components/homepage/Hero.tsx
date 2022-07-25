@@ -47,7 +47,7 @@ const Hero = (props : any) => {
                 <Text 
                     sx={{
                         position: 'absolute', 
-                        bottom: '28.1rem', 
+                        top: '42.1rem', 
                         left: ['2.2rem'],
                         alignItems: 'center',
                         display: 'flex',
@@ -64,10 +64,10 @@ const Hero = (props : any) => {
             <Box sx={{
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
-                height: ['100%', null, null, '74rem'],
+                height: ['100%', null, null, '57.6rem'],
                 top: ['0', null, null, '6.4rem'],
             }}>
-                <GridBackground />
+                <GridBackground sx={{backgroundPosition: [null, null, null, 'center']}}/>
             </Box>
             {/* HERO CONTENT */}
             <Flex 
@@ -76,7 +76,10 @@ const Hero = (props : any) => {
                 sx={{
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1,
-                    maxWidth: [null, '67.2rem', null, 'unset']
+                    maxWidth: [null, '67.2rem', null, 'unset'],
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        width: "124.8rem !important",
+                    },
                 }} 
                 ref={heroContentRef}
                 >
@@ -95,7 +98,7 @@ const Hero = (props : any) => {
                             flexGrow: 1,
                             maxWidth: [null, null, null, '60rem'],
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                pt: '11rem',
+                                pt: '10.4rem',
                                 maxWidth: '73.6rem',
                             }
                      }}
@@ -156,7 +159,7 @@ const Hero = (props : any) => {
                         '4.2rem'
                     ],
                     position: 'relative',
-                    top: [0, '2.4rem']
+                    top: [0]
                 }}>
                     <Fade sx={{position: 'relative'}}>
                         <Flex sx={{
@@ -223,13 +226,17 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', null, '34.5vw'],
-                            height: ['120vw', '43.66rem', null, '48vw'],
+                            width: ['100%', '31.2rem', null, '40.8rem'],
+                            height: ['120vw', '43.66rem', null, '57rem'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
-                            backgroundPosition: 'center'
+                            backgroundPosition: 'center',
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                width: '50rem',
+                                height: '69.9rem'
+                            }
 ,                        }} />
                     </Fade>
                 </Box>

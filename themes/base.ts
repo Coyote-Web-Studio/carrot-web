@@ -33,7 +33,6 @@ export default {
           "calc(100vw - 4rem)", 
           "calc(100vw - 9.6rem)", 
           "calc(100vw - 19.2rem)",
-          "calc(100vw - 19.2rem)",
         ],
         maxWidth: ['504px', 'unset', '1440px', '1600px'],
         mx: "auto",
@@ -50,17 +49,15 @@ export default {
           "calc(100vw)", 
           "calc(72rem + 1px)", 
           null,
-          "calc(100vw - 12rem)"
+          "100vw"
         ],
         left: [
           '0',
-          'calc(50% - (72rem / 2))',
           'calc(50% - (72rem / 2) + 2px)',
-          '6rem'
+          null,
+          '0'
         ],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
-          width: "calc(100vw - 11rem) !important",
-          left: '5.5rem'
         }
       },
       reducedBox: {
