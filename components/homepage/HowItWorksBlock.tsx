@@ -144,7 +144,7 @@ const HowItWorksBlock = (props: any) => {
           )}
           <Flex
             className={"hiw-trigger"}
-            p={["2.4rem", "0 2.4rem", null, '0 3.2rem']}
+            p={["2.4rem", "0 2.4rem", null, '0 6.4rem']}
             justifyContent={"space-between"}
             alignItems={"center"}
             width={"100%"}
@@ -179,14 +179,13 @@ const HowItWorksBlock = (props: any) => {
             flexDirection={'column'} 
             sx={{
               display: 'inline-block',
-              maxHeight: isOpen ? '1000px' : '0',
+              maxHeight: isOpen ? '100rem' : '0',
               overflowY: 'hidden',
               transition: '0.25s ease-in-out all, padding',
-              p: [
-                isOpen ? '0 2.4rem' : '0 2.4rem', 
-                isOpen ? '0 2.4rem' : '0 2.4rem', 
-                null,
-                '0 6.4rem 13.3rem']
+              p: ['0 6.4rem 6.4rem'],
+              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                p: '0 6.4rem 6.4rem', 
+              },
             }}
           >
             <Box sx={{overflowY: 'hidden', 'img': { width: '100%'}}} my={['2.4rem', '2.4rem', '6.4rem 13.3rem']}>

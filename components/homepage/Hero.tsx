@@ -90,7 +90,7 @@ const Hero = (props : any) => {
                         '100%', 
                         '32rem', 
                         null,
-                        'calc(50vw - 9.6rem)', '50%']} 
+                        'calc(50vw - 30rem)', '50%']} 
                         sx={{
                             position: 'relative', 
                             pr: '1rem',

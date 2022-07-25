@@ -19,6 +19,17 @@ const CarrotInNumbers = () => {
         pb: ['3.6rem', null, null, '4.8rem'],
       }}
       >
+        <Box sx={{
+          position: 'absolute',
+          height: ['61rem', '30rem', null, '57.5rem'],
+          top: ['14.4rem', '9.7rem', null, '17.2rem'],
+          mixBlendMode: 'color-burn',
+          opacity: 0.2,
+          width: '100%'
+        }}
+        >
+          <GridBackground sx={{backgroundPosition: [null, null, null, 'center']}}/>
+        </Box>
         <Flex sx={{
           ...theme.boxSizes.defaultBox,
           pt: ['2.4rem', null, null, '4.8rem'],
@@ -29,93 +40,87 @@ const CarrotInNumbers = () => {
           },
           maxWidth: [null, '67.2rem', null, 'unset'],
         }}>
-          <Box sx={{
+          <Flex flexDirection={'column'} sx={{
             ...theme.boxSizes.defaultBox,
-            position: 'absolute',
-            height: ['61rem', '30rem', null, '57.5rem'],
-            top: ['14.4rem', '9.7rem', null, '17.2rem'],
-            mixBlendMode: 'color-burn',
-            opacity: 0.2
-          }}
-          >
-            <GridBackground />
-          </Box>
-          <Fade sx={{
-            zIndexX: 1,
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               width: "124.8rem !important",
-            },
-            }}
-          >
-            <Text as="h2"
-              sx={{
-                color: theme.colors.gray10,
-                mb: ['2.4rem', null],
-                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                  mb: '9rem'
-                }
-              }}
-            >
-              <AnimatedText color={theme.colors.gray10}>
-                Carrot in
-              </AnimatedText>
-              <Box as="br" sx={{display: ['block', 'none', 'none']}}/>
-              <AnimatedText color={theme.colors.gray10}>
-                numbers
-              </AnimatedText>
-            </Text>
-          </Fade>
-          <Fade as={'ul'} flexDirection={'column'} sx={{
-            flexWrap: 'wrap',
-            width: ['100%'],
-            mx: [0, '-2.4rem', '-6.4rem'],
-            height: ['auto', '30rem', '31rem', '60rem'],
-            position: 'relative',
-            alignItems: ['auto', 'center', 'center'],
+              mx: 'auto'
+            }
           }}>
-            {CarrotInNumbersData.map((item, index) => (
-              <Flex 
-                as={'li'} 
-                flexDirection={'column'} 
-                key={index} 
+            <Fade sx={{
+              zIndexX: 1 }}
+            >
+
+              <Text as="h2"
                 sx={{
-                  borderTop: `0.1rem solid ${theme.colors.gray10}`,
-                  width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
-                  mx: ['0', '2.4rem', '6.4rem'],
-                  '&:last-child': {
-                    borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
-                  },
-                  '&:nth-of-type(3)': {
-                    borderBottom: ['none', `0.1rem solid ${theme.colors.gray10}`],
-                  },
+                  color: theme.colors.gray10,
+                  mb: ['2.4rem', null],
+                  [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    mb: '9rem'
+                  }
                 }}
               >
-                <Flex flexDirection={'column'} sx={{
-                  py: '1.2rem',
-                  justifyContent: 'center',
-                  height: ['10rem', null, null, 'calc(6.4rem * 3 - 1px)'],
-                }}>
-                  <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
-                    color: theme.colors.gray10, 
-                    mb: ['1rem', '1.4rem', null, '2rem'],
-                    whiteSpace: 'nowrap',
-                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                    fontSize: '9.9rem'
-                    }
-                    }}>
-                    <AnimatedText color={theme.colors.gray10}>
-                      {item.value}
-                    </AnimatedText>
-                  </Text>
-                  <Text sx={{color: theme.colors.gray10, whiteSpace: 'nowrap'}} as={'p'}>
-                    <AnimatedText color={theme.colors.gray10}>
-                      {item.label}
-                    </AnimatedText>
-                  </Text>
+                <AnimatedText color={theme.colors.gray10}>
+                  Carrot in
+                </AnimatedText>
+                <Box as="br" sx={{display: ['block', 'none', 'none']}}/>
+                <AnimatedText color={theme.colors.gray10}>
+                  numbers
+                </AnimatedText>
+              </Text>
+            </Fade>
+            <Fade as={'ul'} flexDirection={'column'} sx={{
+              flexWrap: 'wrap',
+              width: ['100%'],
+              mx: [0, '-2.4rem', '-6.4rem'],
+              height: ['auto', '30rem', '31rem', '60rem'],
+              position: 'relative',
+              alignItems: ['auto', 'center', 'center'],
+            }}>
+              {CarrotInNumbersData.map((item, index) => (
+                <Flex 
+                  as={'li'} 
+                  flexDirection={'column'} 
+                  key={index} 
+                  sx={{
+                    borderTop: `0.1rem solid ${theme.colors.gray10}`,
+                    width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
+                    mx: ['0', '2.4rem', '6.4rem'],
+                    '&:last-child': {
+                      borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
+                    },
+                    '&:nth-of-type(3)': {
+                      borderBottom: ['none', `0.1rem solid ${theme.colors.gray10}`],
+                    },
+                  }}
+                >
+                  <Flex flexDirection={'column'} sx={{
+                    py: '1.2rem',
+                    justifyContent: 'center',
+                    height: ['10rem', null, null, 'calc(6.4rem * 3 - 1px)'],
+                  }}>
+                    <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
+                      color: theme.colors.gray10, 
+                      mb: ['1rem', '1.4rem', null, '2rem'],
+                      whiteSpace: 'nowrap',
+                      [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                      fontSize: '9.9rem'
+                      }
+                      }}>
+                      <AnimatedText color={theme.colors.gray10}>
+                        {item.value}
+                      </AnimatedText>
+                    </Text>
+                    <Text sx={{color: theme.colors.gray10, whiteSpace: 'nowrap'}} as={'p'}>
+                      <AnimatedText color={theme.colors.gray10}>
+                        {item.label}
+                      </AnimatedText>
+                    </Text>
+                  </Flex>
                 </Flex>
-              </Flex>
-            ))}
-          </Fade>
+              ))}
+            </Fade>
+          </Flex>
         </Flex>
       </Flex>
     </Fade>

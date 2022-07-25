@@ -21,8 +21,10 @@ const SuccesfulCampaigns = () => {
     if (windowWidth > 500 && windowWidth <= 1140 ) {
       setCardNumber(2);
     } else if (windowWidth > 1140 && windowWidth < 1680 ){
-      setCardNumber(3);
+      setCardNumber(2);
     } else if (windowWidth >= 1680) {
+      setCardNumber(3)
+    } else {
       setCardNumber(4)
     }
   }, 200);

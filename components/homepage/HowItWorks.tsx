@@ -1,4 +1,4 @@
-import { Flex, Text, Box } from 'rebass';
+import { Flex, Text, Box, Image } from 'rebass';
 import { useTheme } from 'styled-components';
 import AnimatedText from '../common/AnimatedText';
 
@@ -23,7 +23,7 @@ const HowItWorks = () => {
       }}
     >
       <Fade>
-        <Text as={"h2"} mb={["1.4rem", "4.8rem"]}>
+        <Text as={"h2"} mb={["1.4rem", null, null, "5.4rem"]}>
           <AnimatedText>
             How it works
           </AnimatedText>
@@ -93,6 +93,19 @@ const HowItWorksContent = [
         <AnimatedText speed={5}>
           Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
         </AnimatedText>
+        <Box 
+          mt={'3.2rem'} 
+          sx={{
+            borderRadius: '2rem', 
+            border: '1px solid white',
+            backgroundImage: 'url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850167/carrot/main-content/Incentivize-your-community_svcdu3.png)',
+            height: '31.8rem',
+            width: '100%',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}
+        />
       </Text>
   },
   {

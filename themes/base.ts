@@ -41,7 +41,10 @@ export default {
         },
         [`@media screen and (min-width: ${breakpoints[4]})`]: {
           width: "160rem !important",
-        }
+        },
+        [`@media screen and (min-width: ${breakpoints[3]})`]: {
+          width: "124.8rem !important",
+      },
       },
       expandedBox: {
         // bg: ['yellow', 'blue', 'red', 'purple'],
