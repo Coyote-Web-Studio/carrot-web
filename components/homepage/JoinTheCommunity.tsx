@@ -53,50 +53,52 @@ const JoinTheCommunity = () => {
                                 position: 'relative'
                             }}
                         >
-                            <Flex 
-                                className={'vertical-copy'}
-                                sx={{
-                                    // width: '100%',
-                                    // height: '100%',
-                                    position: 'absolute',
-                                    display: [null, null, 'none !important'],
-                                    top: '0',
-                                    right: '0',
-                                    flexDirection: 'column',
-                                    transform: 
-                                        [
-                                            'rotate(-90deg) translateX(-2.6rem) translateY(3.2rem)',
-                                            'rotate(-90deg) translateX(-2rem) translateY(3.2rem)',
-                                        ],
-                                    [`@media screen and (max-width: 330px)`]: {
-                                        display: 'none',
-                                    },
-                                }}
-                            >
-                                <Text 
+                            <Fade>
+                                <Flex 
+                                    className={'vertical-copy'}
                                     sx={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        fontSize: ['1rem'],
-                                        fontFamily: theme.fonts.monospace,
-                                        mb: '0.8rem'
+                                        // width: '100%',
+                                        // height: '100%',
+                                        position: 'absolute',
+                                        display: [null, null, 'none !important'],
+                                        top: '0',
+                                        right: '0',
+                                        flexDirection: 'column',
+                                        transform: 
+                                            [
+                                                'rotate(-90deg) translateX(-2.6rem) translateY(3.2rem)',
+                                                'rotate(-90deg) translateX(-2rem) translateY(3.2rem)',
+                                            ],
+                                        [`@media screen and (max-width: 330px)`]: {
+                                            display: 'none',
+                                        },
                                     }}
                                 >
-                                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mr: '1rem', borderRadius: '1rem'}}/> 
-                                    GET UPDATES
-                                </Text>
-                                <Text 
-                                    sx={{
-                                        alignItems: 'center',
-                                        display: 'flex',
-                                        fontSize: ['1rem'],
-                                        fontFamily: theme.fonts.monospace
-                                    }}
-                                >   
-                                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mr: '1rem', borderRadius: '1rem'}}/> 
-                                    DON&apos;T BY SHY
-                                </Text>
-                            </Flex>
+                                    <Text 
+                                        sx={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            fontSize: ['1rem'],
+                                            fontFamily: theme.fonts.monospace,
+                                            mb: '0.8rem'
+                                        }}
+                                    >
+                                        <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mr: '1rem', borderRadius: '1rem'}}/> 
+                                        GET UPDATES
+                                    </Text>
+                                    <Text 
+                                        sx={{
+                                            alignItems: 'center',
+                                            display: 'flex',
+                                            fontSize: ['1rem'],
+                                            fontFamily: theme.fonts.monospace
+                                        }}
+                                    >   
+                                        <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mr: '1rem', borderRadius: '1rem'}}/> 
+                                        DON&apos;T BY SHY
+                                    </Text>
+                                </Flex>
+                            </Fade>
                             <Text 
                                 as={'h2'} 
                                 sx={{
@@ -230,7 +232,12 @@ const JoinTheCommunity = () => {
                                                     <Button 
                                                         sx={{
                                                             width:['auto', null, null, '20rem'],
-                                                            fontWeight: 600
+                                                            fontWeight: 600,
+                                                            '&:hover': {
+                                                                '.button': {
+                                                                    backgroundColor: theme.colors.gray10
+                                                                }
+                                                            }
                                                         }}
                                                     >
                                                         {item.buttonLabel}

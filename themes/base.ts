@@ -35,7 +35,7 @@ export default {
           "calc(100vw - 19.2rem)",
           "calc(100vw - 19.2rem)",
         ],
-        maxWidth: [null, null, '1440px', '1600px'],
+        maxWidth: ['504px', 'unset', '1440px', '1600px'],
         mx: "auto",
         [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
           width: "calc(100vw - 8rem)", 
@@ -47,20 +47,20 @@ export default {
       expandedBox: {
         // bg: ['yellow', 'blue', 'red', 'purple'],
         width: [
-          "calc(100vw - 2rem)", 
-          "calc(100vw - 4.8rem)", 
-          "calc(100vw - 9.6rem)",
-          "calc(100vw - 6.4rem)"
+          "calc(100vw)", 
+          "calc(72rem + 1px)", 
+          null,
+          "calc(100vw - 12rem)"
         ],
         left: [
-          '1rem',
-          '2.4rem',
-          '4.8rem',
-          '3.2rem'
+          '0',
+          'calc(50% - (72rem / 2))',
+          'calc(50% - (72rem / 2) + 2px)',
+          '6rem'
         ],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
-          width: "calc(100vw - 12rem) !important",
-          left: '6rem'
+          width: "calc(100vw - 11rem) !important",
+          left: '5.5rem'
         }
       },
       reducedBox: {
@@ -70,6 +70,7 @@ export default {
           "calc(100vw - 19.2rem)",
           "70vw"
         ],
+        maxWidth: ['504px', '67.2rem', null, '1600px'],
         [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
           width: "calc(100vw - 8rem)", 
         },

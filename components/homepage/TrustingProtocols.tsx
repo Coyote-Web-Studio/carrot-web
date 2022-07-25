@@ -40,7 +40,6 @@ const TrustingProtocols = () => {
     <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem", "15.1rem"]} pb={['9.6rem', null, '22.4rem']}>
         <Flex sx={{
             ...theme.boxSizes.defaultBox,
-            pt: ['2.4rem', '0'],
             flexDirection: 'column'
           }}>
             <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>

@@ -2,9 +2,15 @@ import { Flex, Image, Text, Box } from "rebass";
 import Fade from "../common/Fade";
 import { useTheme } from "styled-components";
 import AnimatedText from "../common/AnimatedText";
+import { useParallax } from 'react-scroll-parallax';
+
 
 const Breakdown = (props: any) => {
   const theme: any = useTheme();
+
+  const sphereParallax = useParallax({
+    speed: -10,
+  });
 
   return (
     <Flex
@@ -18,14 +24,15 @@ const Breakdown = (props: any) => {
       pb={["9.2rem"]}
     >
       <Image
-        className={"rellax"}
+        ref={sphereParallax.ref}
         src={"misc/sphere.png"}
         sx={{
           position: "absolute",
-          top: ["-5rem", "0rem"],
-          width: "10rem",
-          right: ["-8rem", "-5rem"],
-          zIndex: "3",
+          top: ["-5rem", "10rem"],
+          width: [null, "6rem", "10rem"],
+          height:  [null, "6rem", "10rem"],
+          right: ["3rem", null, null, "-5rem"],
+          zIndex: "100000",
           display: ['none', 'block']
         }}
       />
@@ -35,6 +42,9 @@ const Breakdown = (props: any) => {
           sx={{
             mb: ["4.8rem", null, null, "6.4rem"],
             position: "relative",
+            '&:last-child': {
+              mb: '0'
+            }
           }}
         >
           <Flex
@@ -51,8 +61,8 @@ const Breakdown = (props: any) => {
             <Box
               mb={["2.4rem", "0"]}
               sx={{
-                width: ["100%", "43vw", null, "32vw"],
-                height: ['55vw', '24vw', null, "18vw"],
+                width: ["100%", "31.2rem", null, "32rem"],
+                height: ['19.2rem', '19.2rem', null, "40.8rem"],
                 backgroundImage: `url(${contentBlock.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -62,7 +72,7 @@ const Breakdown = (props: any) => {
             />
             <Flex
               flexDirection={"column"}
-              width={["100%", "calc(50% - 1rem)", "53rem"]}
+              width={["100%", "calc(50% - 1rem)", null, "53rem"]}
             >
               <Text as="h3" mb={"2rem"}>
                 <AnimatedText speed={20}>

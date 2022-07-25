@@ -66,12 +66,8 @@ const Hero = (props : any) => {
                 position: 'absolute',
                 height: ['100%', null, null, '74rem'],
                 top: ['0', null, null, '6.4rem'],
-                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                    top: '10.7rem',
-                    height: '85rem'
-                }
             }}>
-                <GridBackground trimRows={2} useAnimation/>
+                <GridBackground />
             </Box>
             {/* HERO CONTENT */}
             <Flex 
@@ -80,6 +76,7 @@ const Hero = (props : any) => {
                 sx={{
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1,
+                    maxWidth: [null, '67.2rem', null, 'unset']
                 }} 
                 ref={heroContentRef}
                 >
@@ -94,7 +91,7 @@ const Hero = (props : any) => {
                         sx={{
                             position: 'relative', 
                             pr: '1rem',
-                            pt: [0, '2.4rem', '9rem', '11.8rem'],
+                            pt: [0, '8rem', '9rem', '11.8rem'],
                             flexGrow: 1,
                             maxWidth: [null, null, null, '60rem'],
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
@@ -145,7 +142,7 @@ const Hero = (props : any) => {
                         <Button buttonWrapperStyles={{
                             mb: '2.4rem',
                             position: 'relative',
-                            top: [0,0,'0.25rem'],
+                            top: [0,'-0.4rem','0.25rem'],
                             minWidth: 'unset'
                         }}>
                             CREATE YOUR CAMPAIGN
@@ -158,6 +155,8 @@ const Hero = (props : any) => {
                         null,
                         '4.2rem'
                     ],
+                    position: 'relative',
+                    top: [0, '2.4rem']
                 }}>
                     <Fade sx={{position: 'relative'}}>
                         <Flex sx={{
@@ -225,7 +224,7 @@ const Hero = (props : any) => {
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
                             width: ['100%', '31.2rem', null, '34.5vw'],
-                            height: ['120vw', '43rem', null, '48vw'],
+                            height: ['120vw', '43.66rem', null, '48vw'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',

@@ -25,10 +25,10 @@ export default {
     cardLine: "#F5F5F5",
     cardButtonHover: "#272727",
 
-    shadow: "#E9E9E9",
     carrotInNumbersGrid: '#ED5B16',
 
   },
+  patternImage: 'url("/Pattern.svg")',
   misc: {
     invertedProtocolLogo: true
   }

@@ -26,13 +26,15 @@ const CarrotInNumbers = () => {
           position: 'relative',
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             pt: '10rem'
-          }
+          },
+          maxWidth: [null, '67.2rem', null, 'unset']
         }}>
           <Box sx={{
             ...theme.boxSizes.defaultBox,
             position: 'absolute',
             height: ['61rem', '30rem', null, '100%'],
-            top: ['14.4rem', '9.7rem', null, '17rem']
+            top: ['14.4rem', '9.7rem', null, '17rem'],
+            mixBlendMode: 'color-burn'
             }}
           >
             <GridBackground color={theme.colors.carrotInNumbersGrid} trimRows={3}/>
@@ -60,18 +62,15 @@ const CarrotInNumbers = () => {
             flexWrap: 'wrap',
             width: ['100%'],
             mx: [0, '-2.4rem', '-6.4rem'],
-            height: ['auto', '30rem', null, '60rem'],
+            height: ['auto', '30rem', '31rem', '60rem'],
             position: 'relative',
             alignItems: ['auto', 'center', 'center'],
           }}>
             {CarrotInNumbersData.map((item, index) => (
               <Flex as={'li'} flexDirection={'column'} key={index} sx={{
                 borderTop: `0.1rem solid ${theme.colors.gray10}`,
-                py: '1.2rem',
-                justifyContent: 'center',
-                height: ['10rem', null, null, 'calc(6.5rem * 3)'],
-                mx: ['0', '2.4rem', '6.4rem'],
                 width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
+                mx: ['0', '2.4rem', '6.4rem'],
                 '&:last-child': {
                   borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
                 },
@@ -79,23 +78,29 @@ const CarrotInNumbers = () => {
                   borderBottom: ['none', `0.1rem solid ${theme.colors.gray10}`],
                 },
               }}>
-                <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
-                  color: theme.colors.gray10, 
-                  mb: ['1rem', '1.4rem', null, '2rem'],
-                  whiteSpace: 'nowrap',
-                  [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                   fontSize: '9.9rem'
-                  }
-                  }}>
-                  <AnimatedText color={theme.colors.gray10}>
-                    {item.value}
-                  </AnimatedText>
-                </Text>
-                <Text sx={{color: theme.colors.gray10, whiteSpace: 'nowrap'}} as={'p'}>
-                  <AnimatedText color={theme.colors.gray10}>
-                    {item.label}
-                  </AnimatedText>
-                </Text>
+                <Flex flexDirection={'column'} sx={{
+                  py: '1.2rem',
+                  justifyContent: 'center',
+                  height: ['10rem', null, null, 'calc(6.5rem * 3)'],
+                }}>
+                  <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
+                    color: theme.colors.gray10, 
+                    mb: ['1rem', '1.4rem', null, '2rem'],
+                    whiteSpace: 'nowrap',
+                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    fontSize: '9.9rem'
+                    }
+                    }}>
+                    <AnimatedText color={theme.colors.gray10}>
+                      {item.value}
+                    </AnimatedText>
+                  </Text>
+                  <Text sx={{color: theme.colors.gray10, whiteSpace: 'nowrap'}} as={'p'}>
+                    <AnimatedText color={theme.colors.gray10}>
+                      {item.label}
+                    </AnimatedText>
+                  </Text>
+                </Flex>
               </Flex>
             ))}
           </Fade>

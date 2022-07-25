@@ -16,6 +16,7 @@ const HowItWorks = () => {
         ...theme.boxSizes.defaultBox,
         zIndex: 1,
         mb: ["8.2rem", "8.2rem", "16.9rem"],
+        maxWidth: [null, '67.2rem', null, 'unset']
       }}
     >
       <Fade>
@@ -70,7 +71,9 @@ const HowItWorks = () => {
           }}/>
         </>
           {HowItWorksContent.map((contentBlock, index, array) => (
-            <HowItWorksBlock content={contentBlock} key={index} index={index} totalElements={array.length}/>
+            <Fade key={index}>
+              <HowItWorksBlock content={contentBlock} key={index} index={index} totalElements={array.length}/>
+            </Fade>
           ))}
         </Fade>
       </Flex>
