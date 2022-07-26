@@ -111,9 +111,6 @@ const Footer = (props: any) => {
 
       <Fade sx={{
         ...theme.boxSizes.defaultBox,
-        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          width: "124.8rem !important",
-        },
         }}
       >
         <Logo 

@@ -41,9 +41,6 @@ const TrustingProtocols = () => {
         <Flex sx={{
             ...theme.boxSizes.defaultBox,
             flexDirection: 'column',
-            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              width: "124.8rem !important",
-            },
           }}>
             <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>
               <AnimatedText>

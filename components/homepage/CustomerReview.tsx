@@ -75,9 +75,6 @@ const CustomerReview = () => {
               flexDirection: "column",
               position: "relative",
               zIndex: 1,
-              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                width: "124.8rem !important",
-              },
             }}
           >
             <Text
