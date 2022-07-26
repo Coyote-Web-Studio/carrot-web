@@ -128,8 +128,8 @@ const Footer = (props: any) => {
         <Flex flexDirection={['column', 'column', null, 'row']} justifyContent={['auto', null, null, 'space-between']}>
           <Flex as="ul" flexWrap="wrap">
             {FooterLinks.map((footerColumn, i) => (
-              <Flex flexDirection="column" width={[1/2, 1/4, null, '15.2rem']} mb={['4.8rem', '4.8rem', null, 0]} fontFamily={'IBM Plex Mono'} key={i}>
-                <Text fontSize={'1.4rem'} mb={['0.8rem', '2.4rem']} >
+              <Flex flexDirection="column" width={[1/2, 1/4, null, '15.2rem']} mb={['4.8rem', '4.8rem', null, 0]} fontFamily={'IBM Plex Mono'} key={i} fontWeight={300}>
+                <Text fontSize={'1.4rem'} mb={['0.8rem', '2.4rem']} letterSpacing={'0.08em'}>
                   {footerColumn.heading}
                 </Text>
                 {footerColumn.links.map((link, j) => (

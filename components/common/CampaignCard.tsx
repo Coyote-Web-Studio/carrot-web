@@ -31,7 +31,7 @@ const CampaignCard = (props : any) => {
                 />
               </Flex>
               <Flex alignItems='center' pl='2rem'>
-                <Text as={'p'} fontSize={['1.6rem', null, null, '1.9rem']}>
+                <Text as={'p'} fontSize={['1.6rem', null, null, '1.6rem']} letterSpacing={'0.08em'} fontWeight={400}>
                   {campaign.heading}
                 </Text>
               </Flex>
@@ -75,9 +75,10 @@ const CampaignCard = (props : any) => {
             bg: 'transparent', 
             borderRadius: 0, 
             cursor: 'pointer',
-            fontSize: ['1.4rem', null, null, '1.9rem'], 
+            fontSize: ['1.4rem', null, null, '1.6rem'], 
             color: theme.colors.cardText,
             textTransform: 'uppercase',
+            letterSpacing: '0.08em',
             '&:hover': {
               background: theme.colors.cardButtonHover
             }

@@ -157,7 +157,9 @@ const SuccesfulCampaigns = () => {
             )
         )}
       </Flex>
-      <Button>SEE ALL CAMPAIGNS</Button>
+      <Button sx={{px: [null, '3.2rem', null, '4.8rem']}}>
+        SEE ALL CAMPAIGNS
+      </Button>
     </Flex>
   );
 };

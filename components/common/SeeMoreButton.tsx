@@ -47,7 +47,7 @@ const SeeMoreButton = (props : any) => {
                 left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", null, "calc(50% - 2.6rem)"],
                 width: ["1.4rem", "1.4rem", null, '5.2rem'],
                 height: "0.1rem",
-                background: [theme.colors.gray10, theme.colors.textColor],
+                background: [theme.colors.textColor],
                 borderRadius: '100px'
               }}
             />
@@ -58,7 +58,7 @@ const SeeMoreButton = (props : any) => {
                 left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", null, "calc(50% - 2.6rem)"],
                 width: ["1.4rem", "1.4rem", null, '5.2rem'],
                 height: "0.1rem",
-                background: [theme.colors.gray10, theme.colors.textColor],
+                background: [theme.colors.textColor],
                 transform: "rotate(90deg)",
                 transition: '0.15s ease-in-out transform',
                 borderRadius: '100px'

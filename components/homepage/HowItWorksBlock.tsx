@@ -112,10 +112,12 @@ const HowItWorksBlock = (props: any) => {
             sx={{
               transition: '0.25s ease-in-out all',
               position: 'relative',
+              maxWidth: [null, null, null, '30rem'],
               fontSize: ["2.8rem", "2.8rem", "2.8", '3.2rem'],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                 fontSize: '4.8rem !important',
-                width: '57.6rem'
+                width: '57.6rem',
+                maxWidth: 'unset'
               }
             }}
           >
@@ -145,15 +147,16 @@ const HowItWorksBlock = (props: any) => {
           )}
           <Flex
             className={"hiw-trigger"}
-            p={["2.4rem", "0 2.4rem", null, '0 6.4rem']}
+            p={["2.4rem", "0 2.4rem"]}
             justifyContent={"space-between"}
             alignItems={"center"}
             width={"100%"}
             minHeight={['9.6rem', '9.6rem', null, '19.2rem'] }
             sx={{
               position: 'relative',
-              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                p: '0.64rem'
+              p: ["2.4rem", "0 2.4rem"],
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                p: '0 6.4rem !important',
               }
             }}
           >
@@ -185,12 +188,9 @@ const HowItWorksBlock = (props: any) => {
               transition: '0.25s ease-in-out all, padding',
               p: [
                 isOpen ? '0 2.2rem 2.2rem' : '0 2.2rem 0',
-                isOpen ? '0 2.2rem 2.2rem' : '0 2.2rem 0',
-                isOpen ? '0 6.4rem 6.4rem' : '0 2.2rem 0',
-                isOpen ? '0 6.4rem 6.4rem' : '0 6.4rem 0'
               ],
-              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                p: '0 6.4rem 6.4rem', 
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                p: isOpen ? '0 6.4rem 6.4rem' : '0 6.4rem 0' 
               },
             }}
           >

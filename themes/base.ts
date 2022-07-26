@@ -71,9 +71,8 @@ export default {
           "calc(100vw - 4rem)", 
           "calc(100vw - 9.6rem)", 
           "calc(100vw - 19.2rem)",
-          "70vw"
         ],
-        maxWidth: ['504px', '67.2rem', null, '1600px'],
+        maxWidth: ['504px', 'unset', '88rem', null],
         [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
           width: "calc(100vw - 8rem)", 
         },

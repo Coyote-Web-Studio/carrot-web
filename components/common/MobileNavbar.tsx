@@ -26,12 +26,14 @@ const MobileNavbar = (props : any) => {
             <Flex 
                 className={'grid-container'}
                 sx={{
+                    ...theme.boxSizes.defaultBox,
+                    left: 0,
+                    maxWidth: 'unset',
                     height: 'calc(100% - 2rem)',
-                    width: '100%',
+                    width: '100vw !important',
                     position: 'absolute',
-                    top: '1rem',
-                    left: ['2rem'],
-                    ...theme.boxSizes.defaultBox
+                    // top: '1rem',
+                    // left: ['2rem'],
                 }}
             >
                 <GridBackground trimRows={2}/>

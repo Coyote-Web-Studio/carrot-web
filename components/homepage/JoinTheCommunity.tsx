@@ -80,10 +80,18 @@ const JoinTheCommunity = () => {
                                             alignItems: 'center',
                                             fontSize: ['1rem'],
                                             fontFamily: theme.fonts.monospace,
-                                            mb: '0.8rem'
+                                            mb: '0.8rem',
                                         }}
                                     >
-                                        <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mr: '1rem', borderRadius: '1rem'}}/> 
+                                        <Box as={'div'} sx={{
+                                            width: '0.8rem', 
+                                            height: '0.8rem', 
+                                            background: theme.colors.gray10, 
+                                            mr: '1rem', 
+                                            borderRadius: '1rem',
+                                            fontWeight: '300 !important',
+                                            }}
+                                        /> 
                                         GET UPDATES
                                     </Text>
                                     <Text 
@@ -177,6 +185,7 @@ const JoinTheCommunity = () => {
                                                 boxShadow: [null, null, `0 0 0 1px ${theme.colors.gray10}`], 
                                                 height: ['auto', null, null, '25.6rem'], 
                                                 width: '100%',
+                                                fontWeight: 300,
                                                 borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, 'none'],
                                                 p: [
                                                     '2.6rem 1rem', 
@@ -232,7 +241,7 @@ const JoinTheCommunity = () => {
                                                     <Button 
                                                         sx={{
                                                             width:['auto', null, null, '20rem'],
-                                                            fontWeight: 600,
+                                                            fontWeight: 400,
                                                             '&:hover': {
                                                                 '.button': {
                                                                     backgroundColor: theme.colors.gray10
