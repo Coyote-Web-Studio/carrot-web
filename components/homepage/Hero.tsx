@@ -64,10 +64,19 @@ const Hero = (props : any) => {
             <Box sx={{
                 ...theme.boxSizes.expandedBox, 
                 position: 'absolute',
-                height: ['100%', null, null, '57.6rem'],
+                height: ['100%', null, null, '44.7rem'],
                 top: ['0', null, null, '6.4rem'],
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    height: '57.6rem'
+                },
             }}>
-                <GridBackground sx={{backgroundPosition: [null, null, null, 'center']}}/>
+                <GridBackground 
+                    sx={{
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            backgroundPosition: 'center'
+                        },
+                    }}
+                />
             </Box>
             {/* HERO CONTENT */}
             <Flex 
@@ -76,10 +85,6 @@ const Hero = (props : any) => {
                 sx={{
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1,
-                    maxWidth: [null, '67.2rem', null, 'unset'],
-                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                        width: "124.8rem !important",
-                    },
                 }} 
                 ref={heroContentRef}
                 >
@@ -104,14 +109,15 @@ const Hero = (props : any) => {
                      }}
                 >
                     <Text as="h1" sx={{
-                        fontSize: ['4.8rem', null, null, '7.2rem'], 
-                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '7.2rem'] ,
-                        mb: ['1.6rem', '1.6rem', '1.8rem', '4.6rem'],
+                        fontSize: ['4.8rem', null, null, '6.9rem'], 
+                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '6.99rem'] ,
+                        mb: ['1.6rem', '1.6rem', '1.8rem', '2rem'],
                         letterSpacing: '-0.02em',
                         pr: ['2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             fontSize: '9.9rem',
-                            lineHeight: '9.9rem'
+                            lineHeight: '9.9rem',
+                            mb: '4.6rem'
                         },
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                             mb: '5.2rem',
@@ -124,11 +130,14 @@ const Hero = (props : any) => {
                         </AnimatedText>
                     </Text>
                     <Fade>
-                        <Text mb={['2.8rem', '2.4rem', null, '7.3rem']} sx={{
+                        <Text mb={['2.8rem', '2.4rem', null, '1.4rem']} sx={{
                             fontSize: ['1.4rem', null, null, '1.9rem'],
                             lineHeight: ['2.2rem', null, null, '2.85rem'],
                             color: theme.colors.textColor,
-                            fontFamily: 'IBM Plex Mono'
+                            fontFamily: 'IBM Plex Mono',
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                mb: '7.3rem'
+                            },
                         }}>
                             <AnimatedText speed={5} initialDelay={700}>
                                 Increase your TVL, volume, price, engagement and more.
@@ -226,15 +235,15 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', null, '40.8rem'],
-                            height: ['120vw', '43.66rem', null, '57rem'],
+                            width: ['100%', '31.2rem', '40.8rem', null],
+                            height: ['120vw', '43.66rem', '57rem', null],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                width: '50rem',
+                                width: "50rem",
                                 height: '69.9rem'
                             }
 ,                        }} />

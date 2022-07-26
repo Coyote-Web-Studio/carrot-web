@@ -98,8 +98,12 @@ const Footer = (props: any) => {
         sx={{
           ...theme.boxSizes.expandedBox,
           position: 'absolute',
-          height: ['10rem', '28rem', null, '70.4rem'], 
-          top: ["4.7rem", "7rem", null, "12.6rem"], 
+          height: ['14.24rem', '28.7rem', null, '51.1rem'], 
+          top: ["2.8rem", "7rem", null, "12.6rem"], 
+          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            height: "70.4rem",
+          },
+
         }}
         >
         <GridBackground color={theme.colors.gray9} />
@@ -149,7 +153,9 @@ const Footer = (props: any) => {
               </Flex>
             ))}
           </Flex>
-          <Button>CARROT DAPP</Button>
+          <Button buttonWrapperStyles={{
+            mt: 'auto'
+          }}>CARROT DAPP</Button>
         </Flex>
       </Flex>
     </Flex>

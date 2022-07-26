@@ -24,7 +24,7 @@ const Home: NextPage = (props : any) => {
         </title>
       </Head>
       <Flex flexDirection={'column'} bg={theme.colors.background}>
-        <WindowWidthIndicator enabled={true} version={props.version}/>
+        <WindowWidthIndicator />
         <Navbar />
         <Hero />
         <Marquees />

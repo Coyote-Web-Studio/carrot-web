@@ -123,6 +123,19 @@ const HowItWorksContent = [
             These tokens will later be redeemable by users for the underlying collateral depending on how much of the condition was met.
           </AnimatedText>
         </Text>
+        <Box 
+          mt={'3.2rem'} 
+          sx={{
+            borderRadius: '2rem', 
+            border: '1px solid white',
+            backgroundImage: 'url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850167/carrot/main-content/Incentivize-your-community_svcdu3.png)',
+            height: '31.8rem',
+            width: '100%',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}
+        />
       </>
   },
   {
@@ -140,6 +153,19 @@ const HowItWorksContent = [
             If 50% of the target is met, 50% of the rewards will be claimable by your community with the remaining 50% accessible to you!
           </AnimatedText>
         </Text>
+        <Box 
+          mt={'3.2rem'} 
+          sx={{
+            borderRadius: '2rem', 
+            border: '1px solid white',
+            backgroundImage: 'url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850167/carrot/main-content/Incentivize-your-community_svcdu3.png)',
+            height: '31.8rem',
+            width: '100%',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+          }}
+        />
       </>
   },
 ];

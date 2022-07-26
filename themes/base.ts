@@ -29,22 +29,24 @@ export default {
     boxSizes: {
       defaultBox: {
         // bg: ['blue', 'yellow', 'red', 'green'],
+        mx: "auto",
         width: [
           "calc(100vw - 4rem)", 
           "calc(100vw - 9.6rem)", 
           "calc(100vw - 19.2rem)",
+          null
         ],
-        maxWidth: ['504px', 'unset', '1440px', '1600px'],
-        mx: "auto",
-        [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
-          width: "calc(100vw - 8rem)", 
+        maxWidth: ['504px', 'unset', '88rem', null],
+        [`@media screen and (min-width: ${breakpoints[3]})`]: {
+          maxWidth: '124.8rem !important',
+          width: "124.8rem !important",
         },
         [`@media screen and (min-width: ${breakpoints[4]})`]: {
           width: "160rem !important",
         },
-        [`@media screen and (min-width: ${breakpoints[3]})`]: {
-          width: "124.8rem !important",
-      },
+        [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
+          width: "calc(100vw - 8rem)", 
+        },
       },
       expandedBox: {
         // bg: ['yellow', 'blue', 'red', 'purple'],
