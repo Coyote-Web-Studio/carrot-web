@@ -88,7 +88,7 @@ const Footer = (props: any) => {
       as="footer"
       pt={["4.8rem", '12.8rem', null, '26rem']}
       pb={'5.6rem'}
-      bg={theme.colors.gray10}
+      bg={theme.colors.background}
       sx={{
         position: "relative",
         flexDirection: 'column'
@@ -107,7 +107,7 @@ const Footer = (props: any) => {
         }}
         >
         <GridBackground color={theme.colors.gray9} sx={{
-          backgroundImage: 'url(./Pattern.svg)'
+          // backgroundImage: 'url(./Pattern.svg)'
         }}/>
       </Box>
 
@@ -129,14 +129,13 @@ const Footer = (props: any) => {
           <Flex as="ul" flexWrap="wrap">
             {FooterLinks.map((footerColumn, i) => (
               <Flex flexDirection="column" width={[1/2, 1/4, null, '15.2rem']} mb={['4.8rem', '4.8rem', null, 0]} fontFamily={'IBM Plex Mono'} key={i}>
-                <Text fontSize={'1.4rem'} color={theme.colors.gray1} mb={['0.8rem', '2.4rem']} >
+                <Text fontSize={'1.4rem'} mb={['0.8rem', '2.4rem']} >
                   {footerColumn.heading}
                 </Text>
                 {footerColumn.links.map((link, j) => (
                   <Link 
                     href={link.href} 
                     mb={['0.4rem', '0.8rem']} 
-                    color={theme.colors.gray1} 
                     fontSize={'1.2rem'}
                     key={j}
                     sx={{
