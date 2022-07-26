@@ -20,9 +20,13 @@ const StyleSwitch = (props : any) => {
         <Flex {...props} alignItems={'center'} 
             sx={{
                 position: 'relative', 
-                height: ['1.32rem', null, null, '2.2rem'], 
-                width: ['2.6rem', null, null, '4.4rem'],
-                ...props.sx
+                height: ['1.32rem'], 
+                width: ['2.6rem'],
+                ...props.sx,
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    height: '2.2rem',
+                    width: '4.4rem'
+                },
             }} 
         >
             <Switch 
@@ -35,8 +39,8 @@ const StyleSwitch = (props : any) => {
                     );
                 }} 
                 sx={{
-                    height: ['1.32rem', null, null, '2.2rem'], 
-                    width: ['2.6rem', null, null, '4.4rem'],
+                    height: ['1.32rem'], 
+                    width: ['2.6rem'],
                     cursor: 'pointer',
                     bg: theme.colors.textColor,
                     position: 'inherit',
@@ -44,41 +48,64 @@ const StyleSwitch = (props : any) => {
                         transform: [
                             null, 
                             null, 
-                            `translateX(13px) translateY(0px) !important`, 
-                            `translateX(23px) translateY(0.5px) !important`]
+                            null,
+                            `translateX(13px) translateY(0px) !important`]
                     },
                     '&:focus': {
                         boxShadow: 'none',
                     },
                     'div': {
                         boxShadow: 'none',
-                        width: ['1.32rem', null, null, '2rem'],
-                        height: ['1.32rem', null, null, '2rem'],
+                        width: ['1.32rem'],
+                        height: ['1.32rem'],
                         bg: theme.colors.background,
                         top: '0.1rem',
                         zIndex: '100',
-                        transform: [null, null, null, `translateX(1px) translateY(0.5px) !important`]
+                    },
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        height: '2.2rem',
+                        width: '4.4rem',
+                        '&[aria-checked=true] div': {
+                            transform: `translateX(23px) translateY(0.5px) !important`
+                        },
+                        'div': {
+                            width: '2rem',
+                            height: '2rem',
+                            transform: `translateX(1px) translateY(0.5px) !important`
+                        }
                     }
                 }}
             />
             <Flex className={'icons'} width={'100%'} height={'100%'} sx={{position: 'absolute', pointerEvents: 'none', zIndex: 1, top: 0}}>
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.30rem', '0.25rem', null, '0.5rem'],
-                    left: ['0.5rem', '0.3rem', null, '0.5rem'],
+                    top: ['0.30rem', '0.25rem'],
+                    left: ['0.5rem', '0.3rem'],
                     zIndex: '4',
-                    width: [ '0.8rem', null, null, '1.2rem'],
-                    height: [ '0.8rem', null, null, '1.2rem'],
-                    opacity: darkThemeActive ? 1 : 0
+                    width: [ '0.8rem'],
+                    height: [ '0.8rem'],
+                    opacity: darkThemeActive ? 1 : 0,
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        top: '0.5rem',
+                        left: '0.5rem',
+                        width: '1.2rem',
+                        height: '1.2rem'
+                    }
                 }} src={'/icons/light-icon.svg'} />
                 <Image sx={{
                     position: 'absolute',
-                    top: ['0.30rem', '0.25rem', null, '0.5rem'],
-                    right: ['0.3rem', null, '0.5rem'],
+                    top: ['0.30rem', '0.25rem'],
+                    right: ['0.3rem'],
                     zIndex: '4',
-                    width: [ '0.8rem', null, null, '1.2rem'],
-                    height: [ '0.8rem', null, null, '1.2rem'],
-                    opacity: darkThemeActive ? 0 : 1
+                    width: [ '0.8rem'],
+                    height: [ '0.8rem'],
+                    opacity: darkThemeActive ? 0 : 1,
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        top: '0.5rem',
+                        right: '0.5rem',
+                        width: '1.2rem',
+                        height: '1.2rem'
+                    }
                 }} src={'/icons/dark-icon.svg'} />
             </Flex>
         </Flex>

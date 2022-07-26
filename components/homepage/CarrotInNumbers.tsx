@@ -28,7 +28,10 @@ const CarrotInNumbers = () => {
           width: '100%'
         }}
         >
-          <GridBackground sx={{backgroundPosition: [null, null, null, 'center']}}/>
+          <GridBackground sx={{
+            backgroundPosition: [null, null, null, 'center'],
+            backgroundImage: 'url(/Pattern.svg)'
+            }}/>
         </Box>
         <Flex sx={{
           ...theme.boxSizes.defaultBox,

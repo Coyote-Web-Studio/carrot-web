@@ -184,6 +184,12 @@ const HowItWorksBlock = (props: any) => {
             sx={{
               display: 'inline-block',
               maxHeight: isOpen ? '100rem' : '0',
+              height: [
+                null,
+                null,
+                null,
+                isOpen ? 'calc(6.4rem * 10)' : 'auto'
+              ],
               overflowY: 'hidden',
               transition: '0.25s ease-in-out all, padding',
               p: [
