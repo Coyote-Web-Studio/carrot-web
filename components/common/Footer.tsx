@@ -106,7 +106,9 @@ const Footer = (props: any) => {
 
         }}
         >
-        <GridBackground color={theme.colors.gray9} />
+        <GridBackground color={theme.colors.gray9} sx={{
+          backgroundImage: 'url(./Pattern.svg)'
+        }}/>
       </Box>
 
       <Fade sx={{

@@ -55,7 +55,8 @@ const CustomerReview = () => {
             borderRadius: ['1.6rem', null, null, '5rem'],
             pb: ["6.4rem", "8.4rem", null, '21.3rem'],
             pt: ["8.7rem" , null, null, '18.3rem'],
-            mb: ["4.8rem"],
+            mb: ["12.8rem"],
+            height: [null, null, null, 'calc(6.4rem * 15)']
           }}
           >
           <Box
@@ -63,11 +64,11 @@ const CustomerReview = () => {
               ...theme.boxSizes.expandedBox,
               position: "absolute",
               // bg: 'blue',
-              height: ["82%", "80%", "calc(100% - 13.6rem)"],
+              height: ["82%", "80%", "calc(6.4rem * 13)"],
               top: "6.4rem",
             }}
             >
-            <GridBackground sx={{opacity: 0.2}}/>
+            <GridBackground sx={{opacity: 0.1}}/>
           </Box>
           <Fade
             sx={{

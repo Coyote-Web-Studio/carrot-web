@@ -25,6 +25,7 @@ const Hero = (props : any) => {
                     left: 0,
                     height: '100%',
                     zIndex: 100,
+                    fontWeight: 300,
                     display: ['none !important', null, null, 'flex !important']
                 }}
             >
@@ -104,7 +105,7 @@ const Hero = (props : any) => {
                             maxWidth: [null, '36rem', '42rem', '60rem'],
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                 pt: '10.4rem',
-                                maxWidth: '73.6rem',
+                                maxWidth: '64rem',
                             }
                      }}
                 >
@@ -135,6 +136,7 @@ const Hero = (props : any) => {
                             lineHeight: ['2.2rem', null, null, '2.85rem'],
                             color: theme.colors.textColor,
                             fontFamily: 'IBM Plex Mono',
+                            fontWeight: 300,
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                 mb: '7.3rem !important'
                             },
@@ -178,6 +180,7 @@ const Hero = (props : any) => {
                             height: '4.8rem',
                             alignItems: 'center',
                             cursor: 'pointer',
+                            fontWeight: 300,
                             ml: [
                                 'calc(50% - 9.6rem)',
                                 null,

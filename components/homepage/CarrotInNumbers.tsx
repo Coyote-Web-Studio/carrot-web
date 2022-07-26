@@ -22,7 +22,7 @@ const CarrotInNumbers = () => {
         <Box sx={{
           position: 'absolute',
           height: ['61rem', '30rem', null, '57.5rem'],
-          top: ['14.4rem', '9.7rem', null, '17.2rem'],
+          top: ['14.4rem', '9.7rem', null, '12.8rem'],
           mixBlendMode: 'color-burn',
           opacity: 0.2,
           width: '100%'

@@ -33,7 +33,7 @@ const Button = (props : any) => {
                 px: ['1.8rem'],
                 lineHeight: ['1.8rem'],
                 fontSize: ['1.2rem', null, null, '1.6rem'],
-                fontWeight: 400,
+                fontWeight: 300,
                 width: 'inherit',
                 fontFamily: 'IBM Plex Mono',
                 letterSpacing: '0.05rem',

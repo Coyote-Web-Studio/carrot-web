@@ -97,11 +97,12 @@ const HowItWorksBlock = (props: any) => {
           </Flex>
           <Flex
             className="block-title bordered"
-            alignItems={"center"}
+            // alignItems={"center"}
             lineHeight={['3rem', '3rem', null, '4.88rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
             paddingLeft={"3.2rem"}
+            paddingTop={['2.4rem', null, null, '4.8rem']}
             width={['100%', '24.8rem', null, '41.6rem']}
             height={[
               'auto', 
@@ -183,10 +184,10 @@ const HowItWorksBlock = (props: any) => {
               overflowY: 'hidden',
               transition: '0.25s ease-in-out all, padding',
               p: [
-                isOpen ? '0 2.2rem 2.2rem' : 0,
-                isOpen ? '0 2.2rem 2.2rem' : 0,
-                isOpen ? '0 2.2rem 2.2rem' : 0,
-                isOpen ? '0 6.4rem 6.4rem' : 0
+                isOpen ? '0 2.2rem 2.2rem' : '0 2.2rem 0',
+                isOpen ? '0 2.2rem 2.2rem' : '0 2.2rem 0',
+                isOpen ? '0 6.4rem 6.4rem' : '0 2.2rem 0',
+                isOpen ? '0 6.4rem 6.4rem' : '0 6.4rem 0'
               ],
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 p: '0 6.4rem 6.4rem', 

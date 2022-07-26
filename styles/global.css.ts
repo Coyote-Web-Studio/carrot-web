@@ -60,6 +60,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'IBM Plex Mono';
     font-size: 1.4rem;
     line-height: 2.2rem;
+    font-weight: 300;
     @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
       line-height: 2.85rem;
       font-size: 1.9rem;

@@ -52,10 +52,12 @@ const Navbar = (props : any) => {
                                     key={index}
                                     sx={{
                                         ml:['1.2rem', '1.2rem', '1.2rem', '2.4rem'],
+                                        fontWeight: 300,
                                         position: 'relative',
                                         whiteSpace: 'nowrap',
                                         transition: '0.1s ease-in-out all',
                                         fontSize: ['1rem'],
+                                        letterSpacing: '0.08em',
                                         '&:first-of-type': {
                                             ml: 0
                                         },

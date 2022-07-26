@@ -16,12 +16,12 @@ const SeeMoreButton = (props : any) => {
               position: "relative",
               ml: ["1.6rem", "1.6rem", "2.4rem"],
               '.button': {
-                boxShadow: `0 0 0 0.2rem ${theme.colors.textColor}`
+                boxShadow: `0 0 0 0.1rem ${theme.colors.textColor}`
               },
               '&:hover': {
                 '.button': {
                   background: [`${theme.colors.orange6}`],
-                  boxShadow: `0 0 0 0.2rem ${theme.colors.textColor}`
+                  boxShadow: `0 0 0 0.1rem ${theme.colors.textColor}`
                 },
                 '.plus-line': {
                   // boxShadow: `0 0 0 0.1rem ${theme.colors.textColor}`,
@@ -46,7 +46,7 @@ const SeeMoreButton = (props : any) => {
                 position: "absolute",
                 left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", null, "calc(50% - 2.6rem)"],
                 width: ["1.4rem", "1.4rem", null, '5.2rem'],
-                height: "0.2rem",
+                height: "0.1rem",
                 background: [theme.colors.gray10, theme.colors.textColor],
                 borderRadius: '100px'
               }}
@@ -57,7 +57,7 @@ const SeeMoreButton = (props : any) => {
                 position: "absolute",
                 left: ["calc(50% - 0.7rem)", "calc(50% - 0.7rem)", null, "calc(50% - 2.6rem)"],
                 width: ["1.4rem", "1.4rem", null, '5.2rem'],
-                height: "0.2rem",
+                height: "0.1rem",
                 background: [theme.colors.gray10, theme.colors.textColor],
                 transform: "rotate(90deg)",
                 transition: '0.15s ease-in-out transform',

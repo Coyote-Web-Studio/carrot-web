@@ -13,7 +13,7 @@ export default {
     buttonBackground: baseTheme.colors.orange6,
     buttonBorder: baseTheme.colors.gray10,
 
-    customerCommentBackground: "#E9E9E9",
+    customerCommentBackground: baseTheme.colors.gray1,
     customerCommentGrid: "#CCCCCC",
     customerCommentText: baseTheme.colors.gray10,
 
