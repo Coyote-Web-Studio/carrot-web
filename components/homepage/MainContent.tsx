@@ -19,7 +19,9 @@ const MainContent = (props : any) => {
       <Box sx={{
         ...theme.boxSizes.expandedBox, 
         position: 'absolute',
-        height: '100%'
+        height: '100%',
+        width: '100vw !important',
+        left: '0 !important'
       }}>
         <GridBackground sx={{backgroundPosition: 'top center'}}/>
       </Box>

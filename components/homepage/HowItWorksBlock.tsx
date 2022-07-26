@@ -182,7 +182,12 @@ const HowItWorksBlock = (props: any) => {
               maxHeight: isOpen ? '100rem' : '0',
               overflowY: 'hidden',
               transition: '0.25s ease-in-out all, padding',
-              p: ['0 6.4rem 6.4rem'],
+              p: [
+                isOpen ? '0 2.2rem 2.2rem' : 0,
+                isOpen ? '0 2.2rem 2.2rem' : 0,
+                isOpen ? '0 2.2rem 2.2rem' : 0,
+                isOpen ? '0 6.4rem 6.4rem' : 0
+              ],
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 p: '0 6.4rem 6.4rem', 
               },

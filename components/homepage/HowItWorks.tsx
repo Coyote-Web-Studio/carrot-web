@@ -17,9 +17,6 @@ const HowItWorks = () => {
         zIndex: 1,
         mb: ["8.2rem", "8.2rem", "16.9rem"],
         maxWidth: [null, '67.2rem', null, 'unset'],
-        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          width: "124.8rem !important",
-      },
       }}
     >
       <Fade>
