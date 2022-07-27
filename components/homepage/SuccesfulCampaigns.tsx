@@ -49,7 +49,7 @@ const SuccesfulCampaigns = () => {
       {/* TABLET / DESKTOP VIEW */}
       <Flex
         as={"ul"}
-        mb={"1.6rem"}
+        mb={["1.6rem", '0']}
         ref={sliderRef}
         sx={{
           display: ["none !important", "block !important", "block !important"],
@@ -154,7 +154,9 @@ const SuccesfulCampaigns = () => {
             )
         )}
       </Flex>
-      <Button sx={{px: [null, '3.2rem', null, '4.8rem']}}>
+      <Button sx={{
+        px: [null, '3.2rem', null, '4.8rem']
+      }}>
         SEE ALL CAMPAIGNS
       </Button>
     </Flex>

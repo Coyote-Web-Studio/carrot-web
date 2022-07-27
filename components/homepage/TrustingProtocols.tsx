@@ -44,7 +44,15 @@ const TrustingProtocols = () => {
   })
 
   return (
-    <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem", "15.1rem"]} pb={['9.6rem', null, null, 'calc(6.4rem * 3)']}>
+    <Flex 
+      flexDirection={"column"} 
+      sx={{ position: "relative", zIndex: 1 }} 
+      mt={[
+        "8.2rem",
+        "8rem", 
+        null,
+        "15.1rem"]} 
+      pb={['9.6rem', null, null, 'calc(6.4rem * 3)']}>
       <Image
         ref={hexagonParallax.ref}
         src={"hexagon.png"}

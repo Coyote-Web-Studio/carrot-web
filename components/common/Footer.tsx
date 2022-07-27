@@ -12,11 +12,11 @@ const Footer = (props: any) => {
   const theme: any = useTheme();
 
   const goldParallax = useParallax({
-    speed: -5,
+    speed: -10,
   });
 
   const sphereParallax = useParallax({
-    speed: -20,
+    speed: -12.5,
   });
 
   const hexagonParallax = useParallax({
@@ -114,10 +114,10 @@ const Footer = (props: any) => {
         src={"misc/gold-curve.png"}
         sx={{
           position: "absolute",
-          top: "75rem",
+          top: ["75rem", "28rem"],
           width: ["8rem", null, "13rem"],
           height: ["8rem", null, '13rem'],
-          right: ["4%", null, "45%"],
+          right: ["4%", "45%"],
           zIndex: "100000000",
           filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
           display: ['none', 'block']
@@ -128,7 +128,7 @@ const Footer = (props: any) => {
         src={"misc/sphere.png"}
         sx={{
           position: "absolute",
-          top: "10rem",
+          top: ["10rem", "5rem"],
           width: ["8rem", null, "10rem"],
           height: ["8rem", null, '10rem'],
           left: ["4%", null, "12%"],
@@ -142,9 +142,9 @@ const Footer = (props: any) => {
         src={"hexagon.png"}
         sx={{
           position: "absolute",
-          top: "24rem",
-          width: ["8rem", null, "12rem"],
-          height: ["8rem", null, '13rem'],
+          top: ["24rem", "8rem"],
+          width: ["8rem", "11rem"],
+          height: ["8rem", '13rem'],
           right: ["4%", null, "12%"],
           zIndex: "100000000",
           filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,

@@ -103,7 +103,7 @@ const Hero = (props : any) => {
                         sx={{
                             position: 'relative', 
                             pr: '1rem',
-                            pt: [0, '4rem', '9rem', '11.8rem'],
+                            pt: [0, '5.2rem', '9rem', '11.8rem'],
                             flexGrow: 1,
                             maxWidth: [null, '36rem', '42rem', '60rem'],
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
@@ -150,13 +150,6 @@ const Hero = (props : any) => {
                         }}>
                             <AnimatedText speed={5} initialDelay={700}>
                                 Increase your TVL, volume, price, engagement and more.
-                            </AnimatedText>
-                            <Box as={'br'} sx={{
-                                display: ['none', null, null, null],
-
-                                }}
-                            />
-                            <AnimatedText speed={5} initialDelay={700}>
                                 Yes, on any campaign. Carrot does it all.
                             </AnimatedText>
                         </Text>
@@ -177,7 +170,7 @@ const Hero = (props : any) => {
                         '4.2rem'
                     ],
                     position: 'relative',
-                    top: [0]
+                    top: [0, '2.4rem']
                 }}>
                     <Fade sx={{position: 'relative'}}>
                         <Flex sx={{
@@ -245,8 +238,8 @@ const Hero = (props : any) => {
                         </Flex>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '26rem', '31.2rem', '40.8rem'],
-                            height: ['120vw', '36rem', '43.66rem', '57rem'],
+                            width: ['100%', '31.2rem', '31.2rem', '40.8rem'],
+                            height: ['120vw', '43.66rem', '43.66rem', '57rem'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',
