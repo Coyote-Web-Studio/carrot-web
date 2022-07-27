@@ -26,8 +26,10 @@ export default {
     cardButtonHover: '#E9E9E9',
 
     carrotInNumbersGrid: '#ED5B16',
+    footerBackground: baseTheme.colors.gray10,
 
   },
 
-  patternImage: 'url("/Pattern_light.svg")'
+  patternImage: 'url("/Pattern_light.svg")',
+  footerPatternImage: 'url("/Pattern.svg")'
 };

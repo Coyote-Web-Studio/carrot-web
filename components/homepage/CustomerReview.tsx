@@ -20,32 +20,32 @@ const CustomerReview = () => {
   return (
     <Box sx={{position: 'relative'}}>
       <Image
-          ref={sphereParallax.ref}
-          src={"misc/sphere.png"}
-          sx={{
-            position: "absolute",
-            top: '-10rem',
-            width: ["5rem", null, "10rem"],
-            height: ["5rem", null, '10rem'],
-            left: ["3%", null, "18%"],
-            zIndex: "10",
-            display: ['none', 'block']
-          }}
-        />
-        <Image
-          ref={goldParallax.ref}
-          src={"misc/gold-curve.png"}
-          sx={{
-            position: "absolute",
-            top: "50rem",
-            width: ["8rem", null, "13rem"],
-            height: ["8rem", null, '13rem'],
-            right: ["4%", null, "15%"],
-            zIndex: "100000000",
-            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-            display: ['none', 'block']
-          }}
-        />
+        ref={sphereParallax.ref}
+        src={"misc/sphere.png"}
+        sx={{
+          position: "absolute",
+          top: '-10rem',
+          width: ["5rem", null, "10rem"],
+          height: ["5rem", null, '10rem'],
+          left: ["3%", null, "18%"],
+          zIndex: "10",
+          display: ['none', 'block']
+        }}
+      />
+      <Image
+        ref={goldParallax.ref}
+        src={"misc/gold-curve.png"}
+        sx={{
+          position: "absolute",
+          top: "50rem",
+          width: ["8rem", null, "13rem"],
+          height: ["8rem", null, '13rem'],
+          right: ["4%", null, "15%"],
+          zIndex: "100000000",
+          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+          display: ['none', 'block']
+        }}
+      />
       <Fade>
         <Flex
           sx={{

@@ -26,9 +26,12 @@ export default {
     cardButtonHover: "#272727",
 
     carrotInNumbersGrid: '#ED5B16',
+    footerBackground: 'white',
 
   },
   patternImage: 'url("/Pattern.svg")',
+  footerPatternImage: 'url("/Pattern_light.svg")',
+
   misc: {
     invertedProtocolLogo: true
   }

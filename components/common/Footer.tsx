@@ -1,13 +1,27 @@
-import { Flex, Link, Text, Box } from "rebass";
+import { Flex, Link, Text, Box, Image } from "rebass";
 import styled, { useTheme } from "styled-components";
 import Logo from './Logo';
 import GridBackground from './GridBackground';
 import Fade from './Fade';
 import Button from "./Button";
-import { invert } from "polished";
+import { invert, transparentize } from "polished";
+import { useParallax } from 'react-scroll-parallax';
+
 
 const Footer = (props: any) => {
   const theme: any = useTheme();
+
+  const goldParallax = useParallax({
+    speed: -5,
+  });
+
+  const sphereParallax = useParallax({
+    speed: -20,
+  });
+
+  const hexagonParallax = useParallax({
+    speed: -15,
+  });
 
   const FooterLinks = [
     {
@@ -89,12 +103,54 @@ const Footer = (props: any) => {
       as="footer"
       pt={["4.8rem", '12.8rem', null, '26rem']}
       pb={'5.6rem'}
-      bg={invert(theme.colors.background) }
+      bg={theme.colors.footerBackground}
       sx={{
         position: "relative",
         flexDirection: 'column'
       }}
     >
+      <Image
+        ref={goldParallax.ref}
+        src={"misc/gold-curve.png"}
+        sx={{
+          position: "absolute",
+          top: "75rem",
+          width: ["8rem", null, "13rem"],
+          height: ["8rem", null, '13rem'],
+          right: ["4%", null, "45%"],
+          zIndex: "100000000",
+          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+          display: ['none', 'block']
+        }}
+      />
+      <Image
+        ref={sphereParallax.ref}
+        src={"misc/sphere.png"}
+        sx={{
+          position: "absolute",
+          top: "10rem",
+          width: ["8rem", null, "10rem"],
+          height: ["8rem", null, '10rem'],
+          left: ["4%", null, "12%"],
+          zIndex: "100000000",
+          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+          display: ['none', 'block']
+        }}
+      />
+      <Image
+        ref={hexagonParallax.ref}
+        src={"hexagon.png"}
+        sx={{
+          position: "absolute",
+          top: "24rem",
+          width: ["8rem", null, "12rem"],
+          height: ["8rem", null, '13rem'],
+          right: ["4%", null, "12%"],
+          zIndex: "100000000",
+          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+          display: ['none', 'block']
+        }}
+      />
       <Box 
         sx={{
           ...theme.boxSizes.expandedBox,
@@ -108,7 +164,7 @@ const Footer = (props: any) => {
         }}
         >
         <GridBackground color={theme.colors.gray9} sx={{
-          backgroundImage: 'url(./Pattern.svg)',
+          backgroundImage: theme.footerPatternImage,
           backgroundPosition: 'top center'
         }}/>
       </Box>
