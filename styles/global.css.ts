@@ -46,13 +46,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: 3.3rem;
     line-height: 3.36rem;
     letter-spacing: -0.02rem;
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
       line-height: 5.2rem;
       font-size: 5.2rem;
-    }
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[4]}) {
-      line-height: 6.969rem;
-      font-size: 6.9rem;
     }
   }
 
@@ -61,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
     line-height: 2.2rem;
     font-weight: 300;
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
       line-height: 2.85rem;
       font-size: 1.9rem;
     }
