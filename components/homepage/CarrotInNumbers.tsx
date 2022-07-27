@@ -22,10 +22,13 @@ const CarrotInNumbers = () => {
         <Box sx={{
           position: 'absolute',
           height: ['61rem', '30rem', null, '57.6rem'],
-          top: ['14.4rem', '9.7rem', null, '17.1rem'],
+          top: ['14.4rem', '9.7rem', null, '13.3rem'],
           mixBlendMode: 'color-burn',
           opacity: 0.2,
-          width: '100%'
+          width: '100%',
+          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            top: '17.1rem'
+          },
         }}
         >
           <GridBackground sx={{

@@ -56,7 +56,10 @@ const CustomerReview = () => {
             pb: ["6.4rem", "8.4rem", null, '21.3rem'],
             pt: ["8.7rem" , null, null, '18.3rem'],
             mb: ["12.8rem"],
-            height: [null, null, null, 'calc(6.4rem * 15)']
+            height: [null, null, null, 'calc(6.4rem * 17)'],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: "calc(6.4rem * 13)"
+            },
           }}
           >
           <Box
@@ -64,7 +67,7 @@ const CustomerReview = () => {
               ...theme.boxSizes.expandedBox,
               position: "absolute",
               // bg: 'blue',
-              height: ["82%", "80%", "calc(6.4rem * 13)"],
+              height: ["82%", "80%", "calc(6.4rem * 15)", ],
               top: "6.4rem",
             }}
             >

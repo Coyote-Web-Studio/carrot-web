@@ -53,8 +53,18 @@ const TrustingProtocols = () => {
                   key={index} 
                   data-aos={'flip-left'} 
                   maxWidth={['50%', '25%']}
-                  width={['calc(46.2vw * 0.93)', '21.3vw', '19.9vw', '21.5vw']}
-                  height={['calc(46.2vw * 0.93)', '21.3vw', '19.9vw', '21.5vw']}
+                  width={[
+                    'calc(46.2vw * 0.93)', 
+                    '21.3vw', 
+                    '19.9vw', 
+                    '24rem'
+                  ]}
+                  height={[
+                    'calc(46.2vw * 0.93)', 
+                    '21.3vw', 
+                    '19.9vw', 
+                    '24rem'
+                  ]}
                   alignItems={'center'} 
                   justifyContent={'center'}
                   sx={{
@@ -65,7 +75,7 @@ const TrustingProtocols = () => {
                       null,
                       index % 2 == 0 ? 0 : '21.3vw',
                       index % 2 == 0 ? 0 : '19.9vw',
-                      index % 2 == 0 ? 0 : '21.5vw',
+                      index % 2 == 0 ? 0 : '24rem',
                     ],
                     [`@media screen and (max-width: 420px)`]: {
                       width: '42.7vw',

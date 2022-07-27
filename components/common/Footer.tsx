@@ -4,6 +4,7 @@ import Logo from './Logo';
 import GridBackground from './GridBackground';
 import Fade from './Fade';
 import Button from "./Button";
+import { invert } from "polished";
 
 const Footer = (props: any) => {
   const theme: any = useTheme();
@@ -88,7 +89,7 @@ const Footer = (props: any) => {
       as="footer"
       pt={["4.8rem", '12.8rem', null, '26rem']}
       pb={'5.6rem'}
-      bg={theme.colors.background}
+      bg={invert(theme.colors.background) }
       sx={{
         position: "relative",
         flexDirection: 'column'
@@ -107,7 +108,8 @@ const Footer = (props: any) => {
         }}
         >
         <GridBackground color={theme.colors.gray9} sx={{
-          // backgroundImage: 'url(./Pattern.svg)'
+          backgroundImage: 'url(./Pattern.svg)',
+          backgroundPosition: 'top center'
         }}/>
       </Box>
 
@@ -125,11 +127,14 @@ const Footer = (props: any) => {
       </Fade>
 
       <Flex sx={{ ...theme.boxSizes.defaultBox, position: "relative", flexDirection: 'column' }}>
-        <Flex flexDirection={['column', 'column', null, 'row']} justifyContent={['auto', null, null, 'space-between']}>
+        <Flex 
+          flexDirection={['column', 'column', null, 'row']} 
+          justifyContent={['auto', null, null, 'space-between']}
+        >
           <Flex as="ul" flexWrap="wrap">
             {FooterLinks.map((footerColumn, i) => (
               <Flex flexDirection="column" width={[1/2, 1/4, null, '15.2rem']} mb={['4.8rem', '4.8rem', null, 0]} fontFamily={'IBM Plex Mono'} key={i} fontWeight={300}>
-                <Text fontSize={'1.4rem'} mb={['0.8rem', '2.4rem']} letterSpacing={'0.08em'}>
+                <Text fontSize={'1.4rem'} mb={['0.8rem', '2.4rem']} letterSpacing={'0.08em'} color={invert(theme.colors.textColor)}>
                   {footerColumn.heading}
                 </Text>
                 {footerColumn.links.map((link, j) => (
@@ -139,6 +144,7 @@ const Footer = (props: any) => {
                     fontSize={'1.2rem'}
                     key={j}
                     sx={{
+                      color: invert(theme.colors.textColor),
                       transition: '0.15s ease-in-out all',
                       '&:hover': {
                         opacity: 0.7
@@ -151,7 +157,7 @@ const Footer = (props: any) => {
               </Flex>
             ))}
           </Flex>
-          <Button buttonWrapperStyles={{
+          <Button inverted buttonWrapperStyles={{
             mt: 'auto'
           }}>CARROT DAPP</Button>
         </Flex>

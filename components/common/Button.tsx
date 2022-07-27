@@ -1,6 +1,6 @@
 import { Button as RBButton, Box, Text } from 'rebass';
 import styled, { useTheme } from 'styled-components';
-import { darken, lighten, saturate } from 'polished';
+import { invert } from 'polished';
 
 const Button = (props : any) => {
     const theme : any = useTheme();
@@ -12,11 +12,11 @@ const Button = (props : any) => {
             position: 'relative',
             cursor: 'pointer',
             minWidth: [null, null, null, '14.4rem'],
-            '&:hover .button, &:hover .button-border': {
-                transitionTimingFunction: 'cubic-bezier(0,1.19,.62,1.44)',
-            },
             '&:hover .button': {
-                backgroundColor: theme.colors.background,
+                backgroundColor: 
+                    props.inverted ?
+                        invert(theme.colors.background) :
+                        theme.colors.background,
                 boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBackground}`,
                 'span': {
                     color: theme.colors.buttonBackground,

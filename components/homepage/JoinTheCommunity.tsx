@@ -239,7 +239,7 @@ const JoinTheCommunity = () => {
                                                 </Text>
                                                 <Box>
                                                     <Button 
-                                                        sx={{
+                                                        buttonWrapperStyles={{
                                                             width:['auto', null, null, '20rem'],
                                                             fontWeight: 400,
                                                             '&:hover': {

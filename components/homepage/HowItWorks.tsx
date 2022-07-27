@@ -103,7 +103,6 @@ const HowItWorks = () => {
         ...theme.boxSizes.defaultBox,
         zIndex: 1,
         mb: ["8.2rem", "8.2rem", "16.9rem"],
-        maxWidth: [null, '67.2rem', null, 'unset'],
       }}
     >
       <Fade>
