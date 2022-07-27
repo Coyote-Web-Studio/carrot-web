@@ -71,11 +71,13 @@ const HowItWorksBlock = (props: any) => {
             minWidth={["6.4rem", '6.4rem', null, '19.2rem']}
             justifyContent={"center"}
             alignItems={"center"}
-            fontSize={["4.8rem", "4.8rem", null, "11.9rem"]}
+            fontSize={["4.8rem", "4.8rem", "4rem", '11.9rem']}
             height={['auto', '9.6rem', null, '19.2rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
-            sx={{position: 'relative'}}
+            sx={{
+              position: 'relative',
+            }}
           >
             {props.index == 0 && (
               <>
@@ -126,14 +128,14 @@ const HowItWorksBlock = (props: any) => {
         </Flex>
         <Flex 
           className={"hiw-body bordered"} 
-          width={['auto', '36rem', '']} 
+          width={['auto', '36rem', null, null]} 
           bg={theme.colors.cardBackground} 
           sx={{
             flexDirection: 'column',
             transition: '0.25s ease-in-out all',
             maxHeight: isOpen ? '1000px' : '19.2rem',
             position: 'relative',
-            flexGrow: [null, null, null, 1]
+            // flexGrow: [null, null, 1]
           }}
         >
           {props.index + 1 == props.totalElements && (

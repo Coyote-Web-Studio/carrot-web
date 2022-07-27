@@ -21,7 +21,7 @@ const Breakdown = (props: any) => {
         zIndex: 1,
       }}
       pt={["2.4rem", "5.2rem", null, "12.8rem"]}
-      pb={["16.8rem"]}
+      pb={["16.8rem", null, null, "20.2rem"]}
     >
       <Image
         ref={sphereParallax.ref}

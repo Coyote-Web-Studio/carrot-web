@@ -37,7 +37,7 @@ export default {
           "calc(100vw - 19.2rem)",
           null
         ],
-        maxWidth: ['504px', 'unset', '88rem', null],
+        maxWidth: ['504px', '67.2rem', null , '88rem'],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
           maxWidth: '124.8rem !important',
           width: "124.8rem !important",

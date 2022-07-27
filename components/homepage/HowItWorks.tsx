@@ -95,7 +95,6 @@ const HowItWorks = () => {
     },
   ];
   
-
   return (
     <Flex
       flexDirection={"column"}
@@ -106,7 +105,7 @@ const HowItWorks = () => {
       }}
     >
       <Fade>
-        <Text as={"h2"} mb={["1.4rem", null, null, "5.4rem"]}>
+        <Text as={"h2"} mb={["1.4rem", '4.8rem', "6.4rem"]} lineHeight={'5.6rem'}>
           <AnimatedText>
             How it works
           </AnimatedText>
