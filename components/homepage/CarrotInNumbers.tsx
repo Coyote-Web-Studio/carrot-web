@@ -25,14 +25,14 @@ const CarrotInNumbers = () => {
       <Box sx={{
         position: 'absolute',
         height: ['61rem', 'calc(2.4rem * 12)', null, '57.6rem'],
-        top: ['14.4rem', '9.7rem', '15.1rem', '13.3rem'],
+        top: ['14.4rem', '9.7rem', null, '15.1rem',],
         mixBlendMode: 'color-burn',
         opacity: 0.1,
         width: '100%',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
           top: '21.1rem'
         },
-        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
           top: '28.9rem'
         },
       }}
@@ -60,7 +60,7 @@ const CarrotInNumbers = () => {
             <Text as="h2"
               sx={{
                 color: theme.colors.gray10,
-                mb: ['2.4rem', null, '6.4rem'],
+                mb: ['2.4rem', null, null, '6.4rem'],
                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                   mb: '9rem'
                 }
@@ -103,7 +103,7 @@ const CarrotInNumbers = () => {
                 <Flex flexDirection={'column'} sx={{
                   py: '1.2rem',
                   justifyContent: 'center',
-                  height: ['10rem', 'calc(2.4rem * 4 - 1px)', 'calc(6.4rem * 3 - 1px)'],
+                  height: ['10rem', 'calc(2.4rem * 4 - 1px)', null, 'calc(6.4rem * 3 - 1px)'],
                 }}>
                   <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
                     color: theme.colors.gray10, 

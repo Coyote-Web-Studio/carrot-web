@@ -59,8 +59,8 @@ const TrustingProtocols = () => {
         sx={{
           position: "absolute",
           top: "24rem",
-          width: ["8rem", null, "15rem"],
-          height: ["8rem", null, '18rem'],
+          width: ["8rem", "9rem"],
+          height: ["8rem", '10.9rem'],
           right: ["4%", null, "18%"],
           zIndex: "100000000",
           filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
