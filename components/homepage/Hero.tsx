@@ -103,7 +103,7 @@ const Hero = (props : any) => {
                         sx={{
                             position: 'relative', 
                             pr: '1rem',
-                            pt: [0, '5.2rem', '9rem', '11.8rem'],
+                            pt: [0, '7.6rem', '9rem', '11.8rem'],
                             flexGrow: 1,
                             maxWidth: [null, '36rem', '42rem', '60rem'],
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
@@ -138,14 +138,14 @@ const Hero = (props : any) => {
                         </AnimatedText>
                     </Text>
                     <Fade>
-                        <Text mb={['2.8rem', '2.4rem', null, '1.4rem']} sx={{
+                        <Text mb={['2.8rem', '3.6rem', null, '1.4rem']} sx={{
                             fontSize: ['1.4rem', null, null, '1.9rem'],
                             lineHeight: ['2.2rem', null, null, '2.85rem'],
                             color: theme.colors.textColor,
                             fontFamily: 'IBM Plex Mono',
                             fontWeight: 300,
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                mb: '7.3rem !important'
+                                mb: '7.1rem !important'
                             },
                         }}>
                             <AnimatedText speed={5} initialDelay={700}>
