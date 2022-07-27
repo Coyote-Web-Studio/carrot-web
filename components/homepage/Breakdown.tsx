@@ -20,8 +20,8 @@ const Breakdown = (props: any) => {
         position: "relative",
         zIndex: 1,
       }}
-      pt={["2.4rem", "5.2rem", null, "12.8rem"]}
-      pb={["16.8rem", null, null, "20.2rem"]}
+      pt={["2.4rem", "calc(2.4rem * 2)", null, "12.8rem"]}
+      pb={["16.8rem", 'calc(2.4rem * 4)', null, "20.2rem"]}
     >
       <Image
         ref={sphereParallax.ref}
@@ -62,7 +62,7 @@ const Breakdown = (props: any) => {
               mb={["2.4rem", "0"]}
               sx={{
                 width: ["100%", "31.2rem", null, "40.8rem"],
-                height: ['19.2rem', '19.2rem', null, "32rem"],
+                height: ['19.2rem', '24rem', null, "32rem"],
                 backgroundImage: `url(${contentBlock.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -74,7 +74,7 @@ const Breakdown = (props: any) => {
               flexDirection={"column"}
               width={["100%", "calc(50% - 1rem)", null, "53rem"]}
             >
-              <Text as="h3" mb={"2rem"}>
+              <Text as="h3" mb={["2rem", "1.6rem"]}>
                 <AnimatedText speed={20}>
                   {contentBlock.heading}
                 </AnimatedText>
