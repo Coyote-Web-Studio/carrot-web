@@ -135,6 +135,7 @@ const HowItWorksBlock = (props: any) => {
             transition: '0.25s ease-in-out all',
             maxHeight: isOpen ? '1000px' : '19.2rem',
             position: 'relative',
+            flexGrow: [null, null, 1],
             // flexGrow: [null, null, 1]
           }}
         >

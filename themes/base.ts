@@ -33,11 +33,11 @@ export default {
         mx: "auto",
         width: [
           "calc(100vw - 4rem)", 
-          "calc(100vw - 9.6rem)", 
-          "calc(100vw - 19.2rem)",
-          null
+          "67.2rem", 
+          null,
+          "88rem"
         ],
-        maxWidth: ['504px', '67.2rem', null , '88rem'],
+        // maxWidth: ['504px', '67.2rem', null , '88rem'],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
           maxWidth: '124.8rem !important',
           width: "124.8rem !important",
