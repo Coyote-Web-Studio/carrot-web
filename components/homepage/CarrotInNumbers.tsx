@@ -16,7 +16,7 @@ const CarrotInNumbers = () => {
       bg: theme.colors.orange6, 
       borderRadius: ['1.6rem', null, null, '5rem'], 
       pb: ['3.6rem', null, null, '4.8rem'],
-      height: [null, 'calc(2.4rem * 20)', null, 'calc(6.4rem * 14)'],
+      height: ['calc(2.4rem * 34)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 14)'],
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
         height: 'calc(6.4rem * 13)'
       },
@@ -25,7 +25,7 @@ const CarrotInNumbers = () => {
       <Box sx={{
         position: 'absolute',
         height: ['61rem', 'calc(2.4rem * 12)', null, '57.6rem'],
-        top: ['14.4rem', '12rem', null, '16.1rem',],
+        top: ['12.9rem', '12rem', null, '16.1rem',],
         mixBlendMode: 'color-burn',
         opacity: 0.1,
         width: '100%',
@@ -44,7 +44,7 @@ const CarrotInNumbers = () => {
       </Box>
       <Flex sx={{
         ...theme.boxSizes.defaultBox,
-        pt: ['2.4rem', '4.8rem'],
+        py: ['4.8rem'],
         flexDirection: 'column',
         position: 'relative',
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {

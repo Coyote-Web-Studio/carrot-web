@@ -57,10 +57,10 @@ const HowItWorksBlock = (props: any) => {
           className={"hiw-heading"}
           sx={{
             height: [
-              '9.6rem', 
-              isOpen ? 'auto' : '9.6rem', 
+              '9.4rem', 
+              isOpen ? 'auto' : '9.4rem', 
               null,
-              isOpen ? 'auto' : '19.2rem'],
+              isOpen ? 'auto' : '19rem'],
             transition: '0.25s ease-in-out height',
             rowGap: '1px',
             columnGap: '1px',
@@ -72,7 +72,7 @@ const HowItWorksBlock = (props: any) => {
             justifyContent={"center"}
             alignItems={"center"}
             fontSize={["4.8rem", "4.8rem", "4rem", '11.9rem']}
-            height={['auto', '9.6rem', null, '19.2rem']}
+            height={['auto', '9.4rem', null, '19rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
             sx={{
@@ -108,7 +108,7 @@ const HowItWorksBlock = (props: any) => {
             width={['100%', '24.8rem', null, '41.6rem']}
             height={[
               'auto', 
-              isOpen ? '14.4rem' : '9.6rem', 
+              isOpen ? '14.4rem' : '9.4rem', 
               null,
               isOpen ? '32rem' : '19.2rem']}
             sx={{
@@ -154,7 +154,7 @@ const HowItWorksBlock = (props: any) => {
             justifyContent={"space-between"}
             alignItems={"center"}
             width={"100%"}
-            minHeight={['9.6rem', '9.6rem', null, '19.2rem'] }
+            minHeight={['9.4rem', '9.4rem', null, '19rem'] }
             sx={{
               position: 'relative',
               p: ["2.4rem", "0 2.4rem"],

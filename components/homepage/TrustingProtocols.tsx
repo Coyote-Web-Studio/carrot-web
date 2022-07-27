@@ -73,7 +73,8 @@ const TrustingProtocols = () => {
           }}>
             <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>
               <AnimatedText>
-                Trusted by Some of </AnimatedText><Box as="br" sx={{display: ['none', 'block']}}/><AnimatedText initialDelay={600}>Your Favorite Protocols
+                Trusted by Some of 
+                Your Favorite Protocols
               </AnimatedText>
             </Text>
             <Flex as={'ul'} flexWrap={['wrap', null, null, 'nowrap']} width={'100%'}>

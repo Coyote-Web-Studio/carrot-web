@@ -41,7 +41,7 @@ const SuccesfulCampaigns = () => {
         mb: ["9.6rem", null, null, "calc(6.4rem * 3)"],
       }}
     >
-      <Text as={"h2"} mb={["3.6rem", "3.8rem", null, "11.2rem"]}>
+      <Text as={"h2"} mb={["5rem", "3.8rem", null, "11.2rem"]}>
         <AnimatedText>
           Succesful Campaigns
         </AnimatedText>
