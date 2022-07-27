@@ -15,7 +15,8 @@ const MainContent = (props : any) => {
   const theme : any = useTheme();
 
   return (
-    <Flex flexDirection={"column"} sx={{ position: "relative" }} mt={["2.4rem", "2.4rem", "6.4rem"]}>
+    <Flex 
+      flexDirection={"column"} sx={{ position: "relative" }} mt={["2.4rem", null, null, "6.4rem"]}>
       <Box sx={{
         ...theme.boxSizes.expandedBox, 
         position: 'absolute',
