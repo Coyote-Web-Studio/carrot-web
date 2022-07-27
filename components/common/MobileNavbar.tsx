@@ -22,7 +22,6 @@ const MobileNavbar = (props : any) => {
             maxWidth: '100%',
             transition: '0.25s ease-in-out opacity',
             overflow: 'hidden',
-            // pb: '8.8rem'
         }}>
             <Flex 
                 className={'grid-container'}
@@ -33,8 +32,6 @@ const MobileNavbar = (props : any) => {
                     height: 'calc(100% - 2rem)',
                     width: '100vw !important',
                     position: 'absolute',
-                    // top: '1rem',
-                    // left: ['2rem'],
                 }}
             >
                 <GridBackground trimRows={2}/>
@@ -44,7 +41,7 @@ const MobileNavbar = (props : any) => {
                 sx={{
                     flexDirection: 'column', 
                     height: '100%', 
-                    pb: '8.8rem', 
+                    pb: '12rem', 
                     ...theme.boxSizes.defaultBox,
                     position: 'relative',
                     top: props.isOpen ? '0' : '20rem',
