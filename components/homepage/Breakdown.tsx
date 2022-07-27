@@ -21,7 +21,7 @@ const Breakdown = (props: any) => {
         zIndex: 1,
       }}
       pt={["2.4rem", "calc(2.4rem * 2)", null, "12.8rem"]}
-      pb={["16.8rem", 'calc(2.4rem * 3 + 0.3rem)', null, "20.2rem"]}
+      pb={["calc(2.4rem * 4 - 0.8rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "20.2rem"]}
     >
       <Image
         ref={sphereParallax.ref}
@@ -79,7 +79,7 @@ const Breakdown = (props: any) => {
                   {contentBlock.heading}
                 </AnimatedText>
               </Text>
-              <Text as="p" sx={{ ...theme.text.paragraph }}>
+              <Text as="p">
                 <AnimatedText speed={5}>
                   {contentBlock.content}
                 </AnimatedText>

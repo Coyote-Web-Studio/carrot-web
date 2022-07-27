@@ -103,8 +103,8 @@ const HowItWorksBlock = (props: any) => {
             lineHeight={['3rem', '3rem', null, '4.88rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
-            paddingLeft={"3.2rem"}
-            paddingTop={['2.4rem', '1.8rem', null, '4.8rem']}
+            px={["1.8rem", "3.2rem"]}
+            py={['1.8rem', null, null, '4.8rem']}
             width={['100%', '24.8rem', null, '41.6rem']}
             height={[
               'auto', 

@@ -70,26 +70,18 @@ export default {
       reducedBox: {
         width: [
           "calc(100vw - 4rem)", 
-          "calc(100vw - 9.6rem)", 
-          "calc(100vw - 19.2rem)",
+          "67.2rem", 
+          null,
+          '88rem'
         ],
         maxWidth: [
           '504px',
-          '67.2rem', 
-          null,
-          '88rem',
+          'unset',
         ],
-        [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
-          width: "calc(100vw - 8rem)", 
-        },
         mx: "auto",
-      },
-    },
-    text: {
-      paragraph: {
-        fontSize: ["1.4rem", "1.4rem", null, "1.9rem"],
-        lineHeight: ["2.2rem", "2.2rem", "2.85rem"],
-        fontFamily: 'IBM Plex Mono'
+        [`@media screen and (min-width: ${breakpoints[3]})`]: {
+          width: '112.4rem'
+        },
       },
     },
     misc: {

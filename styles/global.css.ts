@@ -30,14 +30,12 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 4rem;
-    line-height: 4.8rem;
+    line-height: 101%;
     letter-spacing: -0.02rem;
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
-      line-height: 6.29rem;
-      font-size: 6.2rem;
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
+      font-size: 6.9rem;
     }
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[4]}) {
-      line-height: 9.99rem;
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
       font-size: 9.9rem;
     }
   }
@@ -46,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 3.3rem;
     line-height: 3.36rem;
     letter-spacing: -0.02rem;
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
+      line-height: 4.8rem;
+      font-size: 4.8rem;
+    }
     @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
       line-height: 5.2rem;
       font-size: 5.2rem;
@@ -55,13 +57,16 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-family: 'IBM Plex Mono';
     font-size: 1.4rem;
-    line-height: 2.2rem;
+    line-height: 150%;
     font-weight: 300;
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
-      line-height: 2.85rem;
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[1]}) {
+      font-size: 1.6rem;
+    }
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
       font-size: 1.9rem;
     }
   }
+
   button {
     font-family: 'IBM Plex Mono'
   }

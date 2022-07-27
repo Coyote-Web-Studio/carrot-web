@@ -7,7 +7,7 @@ const Button = (props : any) => {
     return (
         <Box onClick={props.onClick} sx={{
             width: 'fit-content',
-            height: ['4.8rem', null, null, '6.4rem'],
+            height: ['4.6rem', null, null, '6.2rem'],
             borderRadius: '1rem',
             position: 'relative',
             cursor: 'pointer',

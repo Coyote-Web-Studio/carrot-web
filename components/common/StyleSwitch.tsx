@@ -60,7 +60,7 @@ const StyleSwitch = (props : any) => {
                         bg: theme.colors.background,
                         top: '0.1rem',
                         zIndex: '100',
-                        transform: 'translate(1px, 0.5px) !important'
+                        transform: 'translate(0px, 0.5px) !important'
                     },
                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                         height: '2.2rem',
@@ -71,7 +71,7 @@ const StyleSwitch = (props : any) => {
                         'div': {
                             width: '2rem',
                             height: '2rem',
-                            transform: `translateX(1px) translateY(0.5px) !important`
+                            transform: `translateX(0px) translateY(0.5px) !important`
                         }
                     }
                 }}

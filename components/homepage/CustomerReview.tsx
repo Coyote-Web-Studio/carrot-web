@@ -46,63 +46,61 @@ const CustomerReview = () => {
           display: ['none', 'block']
         }}
       />
-      <Fade>
-        <Flex
+      <Flex
+        sx={{
+          zIndex: 1,
+          position: "relative",
+          bg: theme.colors.customerCommentBackground,
+          borderRadius: ['1.6rem', null, null, '5rem'],
+          pb: ["6.4rem", "8.4rem", null, '21.3rem'],
+          pt: ["8.7rem" , null, null, '18.3rem'],
+          mb: ["12.8rem", "calc(2.4rem * 2)"],
+          height: [null, null, null, 'calc(6.4rem * 17)'],
+          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            height: "calc(6.4rem * 13)"
+          },
+        }}
+        >
+        <Box
           sx={{
-            zIndex: 1,
-            position: "relative",
-            bg: theme.colors.customerCommentBackground,
-            borderRadius: ['1.6rem', null, null, '5rem'],
-            pb: ["6.4rem", "8.4rem", null, '21.3rem'],
-            pt: ["8.7rem" , null, null, '18.3rem'],
-            mb: ["12.8rem", "calc(2.4rem * 2)"],
-            height: [null, null, null, 'calc(6.4rem * 17)'],
-            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height: "calc(6.4rem * 13)"
-            },
+            ...theme.boxSizes.expandedBox,
+            position: "absolute",
+            // bg: 'blue',
+            height: ["82%", "80%", "calc(6.4rem * 15)", ],
+            top: "6.4rem",
           }}
           >
-          <Box
-            sx={{
-              ...theme.boxSizes.expandedBox,
-              position: "absolute",
-              // bg: 'blue',
-              height: ["82%", "80%", "calc(6.4rem * 15)", ],
-              top: "6.4rem",
-            }}
-            >
-            <GridBackground sx={{opacity: 0.1}}/>
-          </Box>
-          <Fade
-            sx={{
-              ...theme.boxSizes.defaultBox,
-              flexDirection: "column",
-              position: "relative",
-              zIndex: 1,
-            }}
+          <GridBackground sx={{opacity: 0.1}}/>
+        </Box>
+        <Fade
+          sx={{
+            ...theme.boxSizes.defaultBox,
+            flexDirection: "column",
+            position: "relative",
+            zIndex: 1,
+          }}
+        >
+          <Text
+            fontSize={["2.8rem", "3.3em", null, "6.9rem"]}
+            mb={["3.8rem", "3.8rem", null, "12rem"]}
+            fontWeight={700}
+            lineHeight={["110%", "3.36rem", null, "6.969rem"]}
+            color={theme.colors.customerCommentText}
           >
-            <Text
-              fontSize={["2.8rem", "3.3em", null, "6.9rem"]}
-              mb={["3.8rem", "3.8rem", null, "12rem"]}
-              fontWeight={700}
-              lineHeight={["110%", "3.36rem", null, "6.969rem"]}
-              color={theme.colors.customerCommentText}
-            >
-              <AnimatedText color={theme.colors.customerCommentText} speed={10}>
-                “Carrot was the best project on xDAI that allowed us to deploy KPI
-                options in the Agave incentives program. This allows us to optimize
-                our rewards towards specific goals rather than just throw them away.”
-              </AnimatedText>
-            </Text>
-            <Text
-              fontSize={["1.4rem", "1.4rem", "2.8rem"]}
-              color={theme.colors.customerCommentText}
-            >
-              — Luigi Lemon, Agave Core Contributor
-            </Text>
-          </Fade>
-        </Flex>
-      </Fade>
+            <AnimatedText color={theme.colors.customerCommentText} speed={10}>
+              “Carrot was the best project on xDAI that allowed us to deploy KPI
+              options in the Agave incentives program. This allows us to optimize
+              our rewards towards specific goals rather than just throw them away.”
+            </AnimatedText>
+          </Text>
+          <Text
+            fontSize={["1.4rem", "1.4rem", "2.8rem"]}
+            color={theme.colors.customerCommentText}
+          >
+            — Luigi Lemon, Agave Core Contributor
+          </Text>
+        </Fade>
+      </Flex>
     </Box>
   );
 };

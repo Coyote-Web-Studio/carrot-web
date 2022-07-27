@@ -21,7 +21,8 @@ const MobileNavbar = (props : any) => {
             flexDirection: 'column',
             maxWidth: '100%',
             transition: '0.25s ease-in-out opacity',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            // pb: '8.8rem'
         }}>
             <Flex 
                 className={'grid-container'}
@@ -43,8 +44,8 @@ const MobileNavbar = (props : any) => {
                 sx={{
                     flexDirection: 'column', 
                     height: '100%', 
-                    pb: '2.6rem', ...
-                    theme.boxSizes.defaultBox,
+                    pb: '8.8rem', 
+                    ...theme.boxSizes.defaultBox,
                     position: 'relative',
                     top: props.isOpen ? '0' : '20rem',
                     transition: '0.3s ease-in-out all',
