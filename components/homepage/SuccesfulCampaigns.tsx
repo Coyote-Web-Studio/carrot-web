@@ -54,6 +54,9 @@ const SuccesfulCampaigns = () => {
         sx={{
           display: ["none !important", "block !important", "block !important"],
           position: 'relative',
+          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+            mb: '3rem !important'
+          },
           ['&:hover .highlight-box']: {
             opacity: 1,
             clipPath: 'polygon(0 0 ,100% 0, 100% 100%, 0 100%)',

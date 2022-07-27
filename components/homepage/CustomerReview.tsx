@@ -60,6 +60,10 @@ const CustomerReview = () => {
             height: "calc(6.4rem * 13)",
             mb: 'calc(6.4rem * 2)'
           },
+          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+            height: "calc(6.4rem * 16)",
+            mb: 'calc(6.4rem * 2)'
+          },
         }}
         >
         <Box
@@ -69,6 +73,9 @@ const CustomerReview = () => {
             // bg: 'blue',
             height: ["82%", "80%", "calc(6.4rem * 15)", "calc(6.4rem * 11)"],
             top: "6.4rem",
+            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+              height:  "calc(6.4rem * 14)",
+            },
           }}
           >
           <GridBackground sx={{opacity: 0.1}}/>
@@ -90,7 +97,7 @@ const CustomerReview = () => {
             sx={{
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 fontSize: "8.3rem !important",
-                lineHeight: '110%'
+                lineHeight: '110% !important'
               },
             }}
           >
