@@ -256,7 +256,7 @@ const Hero = (props : any) => {
                                 width: "50rem",
                                 height: '69.9rem'
                             },
-                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                 width: "73.6rem",
                                 height: '95.8rem'
                             }
