@@ -34,12 +34,9 @@ const Navbar = (props : any) => {
             <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
                 <Logo 
                     color={theme.colors.logoColor} sx={{
-                        height: ['2.7rem'],
-                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                            height: "4rem",
-                        },
+                        height: ['2.7rem', null, null, '4.8rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            height: "7.7rem",
+                            height: "7.79rem",
                         },
                     }}/>
                 <Box sx={{
@@ -54,7 +51,7 @@ const Navbar = (props : any) => {
                                     href={'#'}
                                     key={index}
                                     sx={{
-                                        ml:['1.2rem', '1.2rem', '1.2rem', '2.4rem'],
+                                        ml:['1.2rem', null, null, '2.4rem'],
                                         fontWeight: 300,
                                         position: 'relative',
                                         whiteSpace: 'nowrap',
