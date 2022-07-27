@@ -118,9 +118,10 @@ const HowItWorksBlock = (props: any) => {
               fontSize: ["2.8rem", "2.8rem", "2.8", '3.2rem'],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                 fontSize: '4.8rem !important',
-                width: '57.6rem',
+                width: '54rem !important',
                 maxWidth: 'unset'
-              }
+              },
+              
             }}
           >
             {props.content.heading}

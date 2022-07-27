@@ -56,6 +56,9 @@ const Breakdown = (props: any) => {
               "&:last-child": {
                 mb: 0,
               },
+              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                justifyContent: 'space-between !important',
+              },
             }}
           >
             <Box
@@ -72,11 +75,20 @@ const Breakdown = (props: any) => {
                   width: '53rem',
                   height: '38.4rem'
                 },
+                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                  width: '70.4rem',
+                  height: '38.4rem'
+                },
               }}
             />
             <Flex
               flexDirection={"column"}
               width={["100%", "calc(50% - 1rem)", null, "53rem"]}
+              sx={{
+                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                  width: '70.4rem !important'
+                },
+              }}
             >
               <Text as="h3" mb={["2rem", "1.6rem"]}>
                 <AnimatedText speed={20}>

@@ -16,7 +16,10 @@ const CarrotInNumbers = () => {
       bg: theme.colors.orange6, 
       borderRadius: ['1.6rem', null, null, '5rem'], 
       pb: ['3.6rem', null, null, '4.8rem'],
-      height: ['calc(2.4rem * 34)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 14)']
+      height: ['calc(2.4rem * 34)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 14)'],
+      [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+        height: 'calc(6.4rem * 16)'
+      },
     }}
     >
       <Box sx={{
@@ -30,7 +33,7 @@ const CarrotInNumbers = () => {
           top: '21rem'
         },
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-          top: '28.9rem'
+          top: '31.6rem'
         },
       }}
       >

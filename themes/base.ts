@@ -82,6 +82,9 @@ export default {
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
           width: '112.4rem'
         },
+        [`@media screen and (min-width: ${breakpoints[4]})`]: {
+          width: '147.2rem'
+        },
         [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
           width: "calc(100vw - 8rem)", 
         },

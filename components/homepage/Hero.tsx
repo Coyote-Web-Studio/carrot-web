@@ -112,7 +112,7 @@ const Hero = (props : any) => {
                             },
                             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                 pt: '14rem',
-                                maxWidth: '80rem',
+                                maxWidth: '68rem',
                             }
                      }}
                 >
