@@ -18,19 +18,19 @@ const CarrotInNumbers = () => {
       pb: ['3.6rem', null, null, '4.8rem'],
       height: [null, 'calc(2.4rem * 18)', null, 'calc(6.4rem * 14)'],
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-        height: 'calc(6.4rem * 15)'
+        height: 'calc(6.4rem * 13)'
       },
     }}
     >
       <Box sx={{
         position: 'absolute',
         height: ['61rem', 'calc(2.4rem * 12)', null, '57.6rem'],
-        top: ['14.4rem', '9.7rem', null, '15.1rem',],
+        top: ['14.4rem', '9.7rem', null, '16.1rem',],
         mixBlendMode: 'color-burn',
         opacity: 0.1,
         width: '100%',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          top: '21.1rem'
+          top: '17.4rem'
         },
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
           top: '28.9rem'
