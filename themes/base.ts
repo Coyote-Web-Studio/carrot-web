@@ -39,7 +39,7 @@ export default {
         ],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
           width: '100%',
-          maxWidth: "160rem !important",
+          maxWidth: "124.8rem !important",
         },
         [`@media screen and (min-width: ${breakpoints[4]})`]: {
           width: "100% !important",
