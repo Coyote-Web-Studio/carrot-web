@@ -59,7 +59,7 @@ const Navbar = (props : any) => {
                                         position: 'relative',
                                         whiteSpace: 'nowrap',
                                         transition: '0.1s ease-in-out all',
-                                        fontSize: ['1rem'],
+                                        fontSize: ['1rem', null, null, '1.2rem'],
                                         letterSpacing: '0.08em',
                                         '&:first-of-type': {
                                             ml: 0
