@@ -110,9 +110,10 @@ const CarrotInNumbers = () => {
                     mb: ['1rem', '1.4rem', null, '2rem'],
                     whiteSpace: 'nowrap',
                     [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                    fontSize: '9.9rem'
+                      fontSize: '9.9rem !important'
                     }
-                    }}>
+                    }}
+                  >
                     <AnimatedText color={theme.colors.gray10}>
                       {item.value}
                     </AnimatedText>

@@ -37,21 +37,18 @@ export default {
           null,
           "88rem"
         ],
-        // maxWidth: ['504px', '67.2rem', null , '88rem'],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
-          maxWidth: '124.8rem !important',
-          width: "124.8rem !important",
+          width: '100%',
+          maxWidth: "160rem !important",
         },
         [`@media screen and (min-width: ${breakpoints[4]})`]: {
           width: "100% !important",
-          maxWidth: '160rem !important'
         },
         [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
           width: "calc(100vw - 8rem)", 
         },
       },
       expandedBox: {
-        // bg: ['yellow', 'blue', 'red', 'purple'],
         width: [
           "calc(100vw)", 
           "calc(72rem + 1px)", 
