@@ -68,6 +68,10 @@ const Breakdown = (props: any) => {
                 backgroundPosition: 'center',
                 border: `0.1rem solid ${theme.colors.textColor}`,
                 borderRadius: ['0.85rem', null, '1.3rem'],
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                  width: '53rem',
+                  height: '38.4rem'
+                },
               }}
             />
             <Flex

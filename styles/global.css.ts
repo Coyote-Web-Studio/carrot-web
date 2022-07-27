@@ -42,15 +42,13 @@ const GlobalStyle = createGlobalStyle`
   
   h3 {
     font-size: 3.3rem;
-    line-height: 3.36rem;
+    line-height: 101%;
     letter-spacing: -0.02rem;
     @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
-      line-height: 4.8rem;
       font-size: 4.8rem;
     }
     @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
-      line-height: 5.2rem;
-      font-size: 5.2rem;
+      font-size: 6.9rem;
     }
   }
 
