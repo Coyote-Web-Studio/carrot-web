@@ -121,6 +121,10 @@ const HowItWorksBlock = (props: any) => {
                 width: '54rem !important',
                 maxWidth: 'unset'
               },
+              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                width: '57.6rem !important',
+                py: '7rem !important'
+              },
               
             }}
           >
