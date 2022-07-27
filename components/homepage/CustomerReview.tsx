@@ -87,6 +87,12 @@ const CustomerReview = () => {
             fontWeight={700}
             lineHeight={["110%", "3.36rem", null, "6.969rem"]}
             color={theme.colors.customerCommentText}
+            sx={{
+              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                fontSize: "8.3rem !important",
+                lineHeight: '110%'
+              },
+            }}
           >
             <AnimatedText color={theme.colors.customerCommentText} speed={10}>
               “Carrot was the best project on xDAI that allowed us to deploy KPI
