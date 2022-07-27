@@ -17,7 +17,7 @@ const CarrotInNumbers = () => {
         bg: theme.colors.orange6, 
         borderRadius: ['1.6rem', null, null, '5rem'], 
         pb: ['3.6rem', null, null, '4.8rem'],
-        height: [null, null, null, 'calc(6.4rem * 14)'],
+        height: [null, 'calc(2.4rem * 18)', null, 'calc(6.4rem * 14)'],
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
           height: 'calc(6.4rem * 15)'
         },
@@ -25,7 +25,7 @@ const CarrotInNumbers = () => {
       >
         <Box sx={{
           position: 'absolute',
-          height: ['61rem', '30rem', null, '57.6rem'],
+          height: ['61rem', 'calc(2.4rem * 12)', null, '57.6rem'],
           top: ['14.4rem', '9.7rem', '15.1rem', '13.3rem'],
           mixBlendMode: 'color-burn',
           opacity: 0.1,
@@ -58,7 +58,6 @@ const CarrotInNumbers = () => {
             <Fade sx={{
               zIndexX: 1 }}
             >
-
               <Text as="h2"
                 sx={{
                   color: theme.colors.gray10,
@@ -81,7 +80,7 @@ const CarrotInNumbers = () => {
               flexWrap: 'wrap',
               width: ['100%'],
               mx: [0, '-2.4rem', '-6.4rem'],
-              height: ['auto', '30rem', '31rem', '60rem'],
+              height: ['auto', '32rem', '31rem', '60rem'],
               position: 'relative',
               alignItems: ['auto', 'center', 'center'],
             }}>
@@ -105,7 +104,7 @@ const CarrotInNumbers = () => {
                   <Flex flexDirection={'column'} sx={{
                     py: '1.2rem',
                     justifyContent: 'center',
-                    height: ['10rem', null, null, 'calc(6.4rem * 3 - 1px)'],
+                    height: ['10rem', 'calc(2.4rem * 4 - 1px)', 'calc(6.4rem * 3 - 1px)'],
                   }}>
                     <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
                       color: theme.colors.gray10, 
