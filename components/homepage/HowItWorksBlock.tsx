@@ -68,7 +68,7 @@ const HowItWorksBlock = (props: any) => {
         >
           <Flex
             className={'block-index bordered'}
-            minWidth={["6.4rem", '6.4rem', null, '19.2rem']}
+            minWidth={["6.4rem", '6.4rem', null, '19rem']}
             justifyContent={"center"}
             alignItems={"center"}
             fontSize={["4.8rem", "4.8rem", "4rem", '11.9rem']}
@@ -108,9 +108,9 @@ const HowItWorksBlock = (props: any) => {
             width={['100%', '24.8rem', null, '41.6rem']}
             height={[
               'auto', 
-              isOpen ? '14.4rem' : '9.4rem', 
+              isOpen ? '14.2rem' : '9.2rem', 
               null,
-              isOpen ? '32rem' : '19.2rem']}
+              isOpen ? '32rem' : '19rem']}
             sx={{
               transition: '0.15s ease-in-out all',
               position: 'relative',
@@ -133,7 +133,7 @@ const HowItWorksBlock = (props: any) => {
           sx={{
             flexDirection: 'column',
             transition: '0.25s ease-in-out all',
-            maxHeight: isOpen ? '1000px' : '19.2rem',
+            maxHeight: isOpen ? '1000px' : '19rem',
             position: 'relative',
             flexGrow: [null, null, 1],
             // flexGrow: [null, null, 1]
