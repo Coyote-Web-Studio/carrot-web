@@ -20,9 +20,9 @@ const SuccesfulCampaigns = () => {
     let windowWidth = window.innerWidth;
     if (windowWidth > 500 && windowWidth <= 1440 ) {
       setCardNumber(2);
-    } else if (windowWidth > 1440 && windowWidth < 1720 ){
+    } else if (windowWidth > 1440 && windowWidth < 1920 ){
       setCardNumber(3);
-    } else {
+    } else if (windowWidth >= 1920) {
       setCardNumber(4)
     }
   }, 200);

@@ -17,7 +17,10 @@ const CarrotInNumbers = () => {
         bg: theme.colors.orange6, 
         borderRadius: ['1.6rem', null, null, '5rem'], 
         pb: ['3.6rem', null, null, '4.8rem'],
-        height: [null, null, null, 'calc(6.4rem * 14)']
+        height: [null, null, null, 'calc(6.4rem * 14)'],
+        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+          height: 'calc(6.4rem * 15)'
+        },
       }}
       >
         <Box sx={{
@@ -25,16 +28,19 @@ const CarrotInNumbers = () => {
           height: ['61rem', '30rem', null, '57.6rem'],
           top: ['14.4rem', '9.7rem', null, '13.3rem'],
           mixBlendMode: 'color-burn',
-          opacity: 0.2,
+          opacity: 0.1,
           width: '100%',
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             top: '21.1rem'
+          },
+          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            top: '28.9rem'
           },
         }}
         >
           <GridBackground sx={{
             backgroundPosition: [null, null, null, 'center'],
-            backgroundImage: 'url(/Pattern.svg)'
+            backgroundImage: 'url(/Pattern.svg)',
             }}/>
         </Box>
         <Flex sx={{

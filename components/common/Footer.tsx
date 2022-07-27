@@ -190,7 +190,17 @@ const Footer = (props: any) => {
           <Flex as="ul" flexWrap="wrap">
             {FooterLinks.map((footerColumn, i) => (
               <Flex flexDirection="column" width={[1/2, 1/4, null, '15.2rem']} mb={['4.8rem', '4.8rem', null, 0]} fontFamily={'IBM Plex Mono'} key={i} fontWeight={300}>
-                <Text fontSize={'1.4rem'} mb={['0.8rem', '2.4rem']} letterSpacing={'0.08em'} color={invert(theme.colors.textColor)}>
+                <Text 
+                  fontSize={'1.4rem'} 
+                  mb={['0.8rem', '2.4rem']} 
+                  letterSpacing={'0.08em'} 
+                  color={invert(theme.colors.textColor)}
+                  sx={{
+                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                      fontSize: '1.6rem',
+                    },
+                  }}
+                >
                   {footerColumn.heading}
                 </Text>
                 {footerColumn.links.map((link, j) => (
@@ -204,7 +214,10 @@ const Footer = (props: any) => {
                       transition: '0.15s ease-in-out all',
                       '&:hover': {
                         opacity: 0.7
-                      }
+                      },
+                      [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                        fontSize: '1.4rem',
+                      },
                     }}
                   >
                     {link.label}

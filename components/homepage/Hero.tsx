@@ -70,11 +70,14 @@ const Hero = (props : any) => {
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                     height: '57.6rem'
                 },
+                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    height: 'calc(6.4rem * 13)'
+                }
             }}>
                 <GridBackground 
                     sx={{
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                            backgroundPosition: 'center'
+                            backgroundPosition: 'top center'
                         },
                     }}
                 />
@@ -106,6 +109,10 @@ const Hero = (props : any) => {
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                 pt: '10.4rem',
                                 maxWidth: '64rem',
+                            },
+                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                pt: '14rem',
+                                maxWidth: '80rem',
                             }
                      }}
                 >
@@ -248,6 +255,10 @@ const Hero = (props : any) => {
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                 width: "50rem",
                                 height: '69.9rem'
+                            },
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                width: "73.6rem",
+                                height: '95.8rem'
                             }
 ,                        }} />
                     </Fade>
