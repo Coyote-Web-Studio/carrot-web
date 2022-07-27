@@ -104,15 +104,15 @@ const HowItWorksBlock = (props: any) => {
             fontWeight={700}
             bg={theme.colors.cardBackground}
             paddingLeft={"3.2rem"}
-            paddingTop={['2.4rem', null, null, '4.8rem']}
+            paddingTop={['2.4rem', '1.8rem', null, '4.8rem']}
             width={['100%', '24.8rem', null, '41.6rem']}
             height={[
               'auto', 
-              isOpen ? '14.4rem' : 'auto', 
+              isOpen ? '14.4rem' : '9.6rem', 
               null,
               isOpen ? '32rem' : '19.2rem']}
             sx={{
-              transition: '0.25s ease-in-out all',
+              transition: '0.15s ease-in-out all',
               position: 'relative',
               maxWidth: [null, null, null, '30rem'],
               fontSize: ["2.8rem", "2.8rem", "2.8", '3.2rem'],

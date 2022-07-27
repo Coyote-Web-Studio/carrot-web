@@ -105,7 +105,7 @@ const HowItWorks = () => {
       }}
     >
       <Fade>
-        <Text as={"h2"} mb={["1.4rem", '4rem', null, "6.4rem"]} lineHeight={'5.6rem'}>
+        <Text as={"h2"} mb={["1.4rem", '3.8rem', null, "6.4rem"]} lineHeight={'5.6rem'}>
           <AnimatedText>
             How it works
           </AnimatedText>
