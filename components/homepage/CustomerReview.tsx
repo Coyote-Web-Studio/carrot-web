@@ -54,7 +54,7 @@ const CustomerReview = () => {
           borderRadius: ['1.6rem', null, null, '5rem'],
           pb: ["6.4rem", "8.4rem", null, '21.3rem'],
           pt: ["8.7rem" , null, null, '18.3rem'],
-          mb: ["12.8rem", "calc(2.4rem * 2)"],
+          mb: ["4.8rem", "12.8rem", "calc(2.4rem * 2)"],
           height: [null, null, null, 'calc(6.4rem * 17)'],
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             height: "calc(6.4rem * 13)"
