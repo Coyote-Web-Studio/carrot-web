@@ -4,11 +4,18 @@ import { useTheme } from 'styled-components';
 import { debounce } from '../../utils/utils';
 import AnimatedText from '../common/AnimatedText';
 
+import { useParallax } from 'react-scroll-parallax';
+import { invert, transparentize } from "polished";
+
 import Fade from '../common/Fade';
 
 const TrustingProtocols = () => {
 
   const theme : any = useTheme();
+
+  const hexagonParallax = useParallax({
+    speed: -15,
+  });
 
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
@@ -38,6 +45,20 @@ const TrustingProtocols = () => {
 
   return (
     <Flex flexDirection={"column"} sx={{ position: "relative", zIndex: 1 }} mt={["8.2rem","5.8rem", "15.1rem"]} pb={['9.6rem', null, '22.4rem']}>
+      <Image
+        ref={hexagonParallax.ref}
+        src={"hexagon.png"}
+        sx={{
+          position: "absolute",
+          top: "24rem",
+          width: ["8rem", null, "15rem"],
+          height: ["8rem", null, '18rem'],
+          right: ["4%", null, "18%"],
+          zIndex: "100000000",
+          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+          display: ['none', 'block']
+        }}
+      />
         <Flex sx={{
             ...theme.boxSizes.defaultBox,
             flexDirection: 'column',
