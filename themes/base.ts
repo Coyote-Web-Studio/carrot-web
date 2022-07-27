@@ -75,8 +75,8 @@ export default {
         ],
         maxWidth: [
           '504px',
-          null,  
           '67.2rem', 
+          null,
           '88rem',
         ],
         [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
