@@ -1,7 +1,4 @@
-// There seems to be a bug with rebass or styled system
-// that prevents you from ochanging the default breakpoints.
-// These are custom breakpoints we are using to complement the default ones 
-// the default styled system breakpoints. 
+// There seems to be a bug with rebass or styled system that prevents you from ochanging the default breakpoints. These are custom breakpoints we are using to complement the default ones the default styled system breakpoints. 
 
 const breakpoints = ["640px", "831px", "1023px", "1440px", "1919px"];
 // [phone, tablet, tablet-xl, desktop, desktop-xl];
@@ -29,7 +26,6 @@ export default {
     },
     boxSizes: {
       defaultBox: {
-        // bg: ['blue', 'yellow', 'red', 'green'],
         mx: "auto",
         width: [
           "calc(100vw - 4rem)", 

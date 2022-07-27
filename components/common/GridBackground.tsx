@@ -34,7 +34,6 @@ const ProgramaticBackground = (props : any) => {
     const gridRef : any = useRef(null);
     
     const updateDimensions : any = debounce(() => {
-        // console.log('Updated');
         if (gridRef.current) {
             setGridHeight(gridRef.current.getBoundingClientRect().height);
     
@@ -111,19 +110,15 @@ const StyledGridBackground = styled(Flex)``;
 
 const boxFade = keyframes({
    ['0%']: {
-        // opacity: 0,
         transform: 'rotate3d(0,1,0, 90deg)'
     },
     ['33%']: {
-        // opacity: 1,
         transform: 'rotate3d(0,1,0, 0deg)'
     },
     ['66%']: {
-        // opacity: 1,
         transform: 'rotate3d(0,1,0, 0deg)'
     },
     ['100%']: {
-        // opacity: 1,
         transform: 'rotate3d(0,0,1, 180deg)'
     },
 })

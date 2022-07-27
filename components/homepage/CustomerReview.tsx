@@ -70,7 +70,6 @@ const CustomerReview = () => {
           sx={{
             ...theme.boxSizes.expandedBox,
             position: "absolute",
-            // bg: 'blue',
             height: ["82%", "80%", "calc(6.4rem * 15)", "calc(6.4rem * 11)"],
             top: "6.4rem",
             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {

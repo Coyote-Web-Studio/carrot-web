@@ -10,7 +10,6 @@ const Button3D = (props : any) => {
             color: 'white',
             background: 'transparent',
             height: '6rem',
-            // width: '16rem',
             border: '2px solid black',
             fontSize: '3rem',
             position: 'relative',
@@ -59,7 +58,6 @@ const Button3D = (props : any) => {
             <Box className={'border-left'} sx={{
                 width: `${distance + (distance * 0.4)}px`,
                 height: 'calc(100% - 1rem)',
-                // background: 'white',
                 position: 'absolute',
                 border: '2px solid black',
                 top: '0.5rem',
@@ -72,7 +70,6 @@ const Button3D = (props : any) => {
                 
                 width: `${distance + (distance * 0.4)}px`,
                 height: 'calc(100% - 1rem)',
-                // background: 'white',
                 position: 'absolute',
                 border: '2px solid black',
                 top: '0.5rem',

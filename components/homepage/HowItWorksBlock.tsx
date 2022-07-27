@@ -99,7 +99,6 @@ const HowItWorksBlock = (props: any) => {
           </Flex>
           <Flex
             className="block-title bordered"
-            // alignItems={"center"}
             lineHeight={['3rem', '3rem', null, '4.88rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
@@ -141,7 +140,6 @@ const HowItWorksBlock = (props: any) => {
             maxHeight: isOpen ? '1000px' : '19rem',
             position: 'relative',
             flexGrow: [null, null, 1],
-            // flexGrow: [null, null, 1]
           }}
         >
           {props.index + 1 == props.totalElements && (

@@ -57,8 +57,6 @@ const JoinTheCommunity = () => {
                                 <Flex 
                                     className={'vertical-copy'}
                                     sx={{
-                                        // width: '100%',
-                                        // height: '100%',
                                         position: 'absolute',
                                         display: [null, null, 'none !important'],
                                         top: '0',

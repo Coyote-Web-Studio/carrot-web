@@ -23,10 +23,6 @@ const SeeMoreButton = (props : any) => {
                   background: [`${theme.colors.orange6}`],
                   boxShadow: `0 0 0 0.1rem ${theme.colors.textColor}`
                 },
-                '.plus-line': {
-                  // boxShadow: `0 0 0 0.1rem ${theme.colors.textColor}`,
-                  // bg: theme.colors.textColor
-                }
               },
               '.plus-line:nth-of-type(2)': {
                 transform: props.isOpen ? 'rotate(180deg)' : 'rotate(90deg)'

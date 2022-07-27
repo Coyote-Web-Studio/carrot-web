@@ -31,15 +31,10 @@ const AnimatedText = (props : any) => {
 
     const initialTextState = {
         opacity: 0,
-        // transform: 'scale(2)'
-        // opacity: 0,
-        // display: 'none'
     };
     
     const endTextState = {
-        // transform: 'scale(1)',
         opacity: 1,
-        // display: 'block'
     };
 
     const textAnimation = keyframes({
