@@ -16,7 +16,7 @@ const CarrotInNumbers = () => {
       bg: theme.colors.orange6, 
       borderRadius: ['1.6rem', null, null, '5rem'], 
       pb: ['3.6rem', null, null, '4.8rem'],
-      height: ['calc(2.4rem * 34)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 14)'],
+      height: ['calc(2.4rem * 34)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 10)'],
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
         height: 'calc(6.4rem * 16)'
       },
@@ -24,8 +24,8 @@ const CarrotInNumbers = () => {
     >
       <Box sx={{
         position: 'absolute',
-        height: ['61rem', 'calc(2.4rem * 12)', null, '57.6rem'],
-        top: ['12.9rem', '12rem', null, '16.1rem',],
+        height: ['61rem', 'calc(2.4rem * 12)', null, 'calc(6.4rem * 6)'],
+        top: ['12.9rem', '12rem', null, '16.6rem',],
         mixBlendMode: 'color-burn',
         opacity: 0.1,
         width: '100%',
@@ -38,9 +38,12 @@ const CarrotInNumbers = () => {
       }}
       >
         <GridBackground sx={{
-          backgroundPosition: [null, null, null, 'center'],
           backgroundImage: 'url(/Pattern.svg)',
-          }}/>
+          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            backgroundPosition: 'center',
+          },
+          
+        }}/>
       </Box>
       <Flex sx={{
         ...theme.boxSizes.defaultBox,
@@ -60,7 +63,10 @@ const CarrotInNumbers = () => {
             <Text as="h2"
               sx={{
                 color: theme.colors.gray10,
-                mb: ['2.4rem', null, null, '6.4rem'],
+                mb: ['2.4rem', null, null, '4.8rem'],
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                  mb: '6.4rem'
+                },
                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                   mb: '9rem'
                 }
@@ -79,9 +85,12 @@ const CarrotInNumbers = () => {
             flexWrap: 'wrap',
             width: ['100%'],
             mx: [0, '-2.4rem', '-6.4rem'],
-            height: ['auto', '32rem', '31rem', '60rem'],
+            height: ['auto', '32rem', '31rem', '40rem'],
             position: 'relative',
             alignItems: ['auto', 'center', 'center'],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: '60rem'
+            },
           }}>
             {CarrotInNumbersData.map((item, index) => (
               <Flex 
@@ -103,11 +112,18 @@ const CarrotInNumbers = () => {
                 <Flex flexDirection={'column'} sx={{
                   py: '1.2rem',
                   justifyContent: 'center',
-                  height: ['10rem', 'calc(2.4rem * 4 - 1px)', null, 'calc(6.4rem * 3 - 1px)'],
+                  height: [
+                    '10rem', 
+                    'calc(2.4rem * 4 - 1px)', 
+                    null, 
+                    'calc(6.4rem * 2 - 1px)'],
+                  [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    height: 'calc(6.4rem * 3 - 1px)'
+                  },
                 }}>
                   <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
                     color: theme.colors.gray10, 
-                    mb: ['1rem', '1.4rem', null, '2rem'],
+                    mb: ['1rem', '1.4rem', null, '1.2rem'],
                     whiteSpace: 'nowrap',
                     [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                       fontSize: '9.9rem !important'
