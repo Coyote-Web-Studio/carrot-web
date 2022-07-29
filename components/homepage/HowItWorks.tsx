@@ -19,6 +19,7 @@ const HowItWorks = () => {
             Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
           </AnimatedText>
           <Box 
+            className={'content-image'}
             mt={'3.2rem'} 
             sx={{
               borderRadius: '2rem', 
@@ -49,6 +50,7 @@ const HowItWorks = () => {
             </AnimatedText>
           </Text>
           <Box 
+            className={'content-image'}
             mt={'3.2rem'} 
             sx={{
               borderRadius: '2rem', 
@@ -79,6 +81,7 @@ const HowItWorks = () => {
             </AnimatedText>
           </Text>
           <Box 
+            className={'content-image'}
             mt={'3.2rem'} 
             sx={{
               borderRadius: '2rem', 

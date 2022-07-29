@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Flex, Box, Text } from "rebass";
 import { useTheme } from "styled-components";
-import AnimatedText from '../common/AnimatedText';
 import SeeMoreButton from '../common/SeeMoreButton';
 
 const HowItWorksBlock = (props: any) => {
@@ -57,8 +56,8 @@ const HowItWorksBlock = (props: any) => {
           className={"hiw-heading"}
           sx={{
             height: [
-              '9.4rem', 
-              isOpen ? 'auto' : '9.4rem', 
+              '9.2rem', 
+              isOpen ? 'auto' : '9.2rem', 
               null,
               isOpen ? 'auto' : '9.6rem'],
             transition: '0.25s ease-in-out height',
@@ -75,8 +74,8 @@ const HowItWorksBlock = (props: any) => {
             minWidth={["6.4rem", '6.4rem']}
             justifyContent={"center"}
             alignItems={"center"}
-            fontSize={["4.8rem", "4.8rem", "4rem"]}
-            height={['auto', '9.4rem', null, '9.6rem']}
+            fontSize={["4.8rem", "4rem"]}
+            height={['auto', '9.2rem', null, '9.6rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
             sx={{
@@ -168,7 +167,7 @@ const HowItWorksBlock = (props: any) => {
             justifyContent={"space-between"}
             alignItems={"center"}
             width={"100%"}
-            minHeight={['9.4rem', '9.4rem', null, '9.6rem'] }
+            minHeight={['9.2rem', null, null, '9.6rem'] }
             sx={{
               position: 'relative',
               p: ["2.4rem", "0 2.4rem"],
@@ -209,9 +208,9 @@ const HowItWorksBlock = (props: any) => {
               maxHeight: isOpen ? '100rem' : '0',
               height: [
                 null,
+                isOpen ? 'calc(6.4rem * 9) !important' : 'auto',
                 null,
-                null,
-                isOpen ? 'calc(6.4rem * 10)' : 'auto'
+                isOpen ? 'calc(6.4rem * 10 !important)' : 'auto'
               ],
               overflowY: 'hidden',
               transition: '0.25s ease-in-out all, padding',
@@ -226,12 +225,15 @@ const HowItWorksBlock = (props: any) => {
             <Box 
               sx={{
                 overflowY: 'hidden', 
-                'img': { width: '100%'},
+                '.content-image': { 
+                  height: [null, '14.8rem'],
+                  minHeight: ['14.8rem']
+                  // width: '100%'
+                },
                 'p': {
                   fontSize: [null, null, null, '1.6rem !important'],
                 },
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                  width: '112.4rem',
                   'p': {
                     fontSize: '1.9rem !important'
                   }
