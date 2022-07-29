@@ -164,7 +164,7 @@ const Footer = (props: any) => {
         }}
         >
         <GridBackground color={theme.colors.gray9} sx={{
-          backgroundImage: theme.footerPatternImage,
+          backgroundImage: theme.misc.footerPatternImage,
           backgroundPosition: 'top center'
         }}/>
       </Box>

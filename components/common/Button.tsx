@@ -1,6 +1,7 @@
 import { Button as RBButton, Box, Text } from 'rebass';
 import styled, { useTheme } from 'styled-components';
 import { invert } from 'polished';
+import Theme from '../../types/Theme';
 
 const Button = (props : any) => {
     const theme : any = useTheme();

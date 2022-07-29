@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Flex, Box, Text, Link, Image } from 'rebass';
+import { Flex, Box } from 'rebass';
 import styled, { useTheme } from 'styled-components';
-import { useThemeContext } from '../../context/theme'
 import Logo from './Logo';
 import HamburgerIcon from './HamburgerIcon';
 import Button from './Button';
 import StyleSwitch from './StyleSwitch';
 import MobileNavbar from './MobileNavbar';
-
-import NavLinks from './../../content/navigation';
+import NavigationLinks from './NavigationLinks';
 
 const Navbar = (props : any) => {
     
@@ -46,55 +44,7 @@ const Navbar = (props : any) => {
                     display: ['none', 'flex'],
                     alignItems: 'center'
                 }}>
-                    <Flex as="nav">
-                        <Flex as="ul" alignItems={'center'}>
-                            {NavLinks.map((link, index) => (
-                                <Link 
-                                    fontFamily={'IBM Plex Mono'} 
-                                    href={'#'}
-                                    key={index}
-                                    sx={{
-                                        ml:['1.2rem', null, null, '2.4rem'],
-                                        fontWeight: 300,
-                                        position: 'relative',
-                                        whiteSpace: 'nowrap',
-                                        transition: '0.1s ease-in-out all',
-                                        fontSize: ['1rem', null, null, '1.2rem'],
-                                        letterSpacing: '0.08em',
-                                        '&:first-of-type': {
-                                            ml: 0
-                                        },
-                                        '&:hover': {
-                                            '.underline': {
-                                                width: '100%'
-                                            }
-                                        },
-                                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                            ml: "3.2rem",
-                                            fontSize: '1.6rem'
-                                        },
-                                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                            ml: "6.4rem",
-                                            fontSize: '1.6rem'
-                                        },
-                                    }}
-                                >
-                                    <Box
-                                        className="underline"
-                                        sx={{
-                                            height: '0.1rem',
-                                            width: '0',
-                                            position: 'absolute',
-                                            bottom: '-1rem',
-                                            background: theme.colors.orange6,
-                                            transition: '0.15s ease-in-out all'
-                                        }}
-                                    />
-                                    {link.label}
-                                </Link>
-                            ))}
-                        </Flex>
-                    </Flex>
+                    <NavigationLinks />
                     <StyleSwitch sx={{
                         ml:['2.4rem', null, null, '3.2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
@@ -103,8 +53,17 @@ const Navbar = (props : any) => {
                     }}/>
                     <Button buttonWrapperStyles={{
                         ml: ['2.4rem', null, null, '3.2rem'],
+                        height: [null, null, null, '4.8rem'],
+                        'button': {
+                            fontSize: [null, null, null, '1.2rem'],
+                            minWidth: 'unset'
+                        },
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                            ml: "4.8rem",
+                            height: '6.4rem',
+                            minWidth: '14.4rem',
+                            'button': {
+                                fontSize: '1.6rem',
+                            },
                         },
                     }}>
                         CARROT DAPP

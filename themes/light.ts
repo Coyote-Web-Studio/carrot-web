@@ -1,3 +1,4 @@
+import Theme from '../types/Theme';
 import baseTheme from './base';
 
 export default {
@@ -29,7 +30,8 @@ export default {
     footerBackground: baseTheme.colors.gray10,
 
   },
-
-  patternImage: 'url("/Pattern_light.svg")',
-  footerPatternImage: 'url("/Pattern.svg")'
-};
+  misc: {
+    patternImage: 'url("/Pattern_light.svg")',
+    footerPatternImage: 'url("/Pattern.svg")'
+  }
+} as Theme;

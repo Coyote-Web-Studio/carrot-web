@@ -16,8 +16,11 @@ const CampaignCard = (props : any) => {
             border: `0.1rem solid ${theme.colors.cardLine}`,
             borderRadius: '1.6rem',
             overflow: 'hidden',
-            height: ['38.4rem', '38.4rem', '44.8rem'],
-            mb: ['2.4rem', '4.8rem']
+            height: ['38.4rem', '38.4rem', null, '38.4rem'],
+            mb: ['2.4rem', '4.8rem'],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: '44.8rem'
+            },
           }}>
             {/* HEADER */}
             <Flex className={'campaign-header'} 
@@ -38,32 +41,44 @@ const CampaignCard = (props : any) => {
             </Flex>
             {/* BODY */}
             <Flex className={'campaign-body'} p={'2.4rem'} flexDirection={'column'} flexGrow={1}>
-              <Text as={'p'} mb={'2.4rem'} fontSize={['1.6rem', '1.6rem', '1.9rem']} lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
+              <Text 
+                as={'p'} 
+                mb={'2.4rem'} 
+                fontSize={['1.6rem', '1.6rem']} 
+                lineHeight={['2.4rem', '2.4rem']}
+                sx={{
+                  [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    fontSize: '1.9rem !important',
+                    lineHeight: '2.85rem !important'
+                  },
+                }}
+              >
                 {campaign.content}
               </Text>
-              <Flex flexDirection={'column'} mt={'auto'}>
-                <Flex justifyContent={'space-between'} >
-                  <Text as={'p'}
-                  sx={{fontSize: ['1.2rem', null, null, '1.6rem']}}  
-                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
-                        REWARDS
-                    </Text>
-                    <Text as={'p'}
-                    sx={{fontSize: ['1.2rem', null, null, '1.6rem']}}
-                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
-                        {campaign.rewards}
-                    </Text>
-                </Flex>
-                <Flex justifyContent={'space-between'}>
-                  <Text as={'p'} 
-                    sx={{fontSize: ['1.2rem', null, null, '1.6rem']}}
-                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
-                        TIME LEFT
-                    </Text>
-                  <Text as={'p'} 
-                    sx={{fontSize: ['1.2rem', null, null, '1.6rem']}}
-                    lineHeight={['2.4rem', '2.4rem', '2.85rem']}>
-                    {campaign.timeLeft}
+              <Flex flexDirection={'column'} mt={'auto'} sx={{
+                'p': {
+                  fontSize: '1.2rem',
+                  lineHeight: '2.4rem',
+                  [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    fontSize: '1.6rem',
+                    lineHeight: '2.85rem',
+                  },
+                }
+              }}>
+              <Flex justifyContent={'space-between'}>
+                <Text as={'p'}>
+                  REWARDS
+                </Text>
+                <Text as={'p'}>
+                  {campaign.rewards}
+                </Text>
+              </Flex>
+              <Flex justifyContent={'space-between'}>
+                <Text as={'p'}>
+                    TIME LEFT
+                </Text>
+                <Text as={'p'}>
+                  {campaign.timeLeft}
                 </Text>
               </Flex>
             </Flex>
@@ -75,13 +90,16 @@ const CampaignCard = (props : any) => {
             bg: 'transparent', 
             borderRadius: 0, 
             cursor: 'pointer',
-            fontSize: ['1.4rem', null, null, '1.6rem'], 
+            fontSize: ['1.4rem'], 
             color: theme.colors.cardText,
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             '&:hover': {
               background: theme.colors.cardButtonHover
-            }
+            },
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              fontSize: '1.6rem'
+            },
           }}
           >
             ↳ see campaign
