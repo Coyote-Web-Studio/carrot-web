@@ -52,13 +52,15 @@ const CustomerReview = () => {
           position: "relative",
           bg: theme.colors.customerCommentBackground,
           borderRadius: ['1.6rem', null, null, '5rem'],
-          pb: ["6.4rem", "8.4rem", null, '21.3rem'],
-          pt: ["8.7rem" , null, null, '18.3rem'],
+          pb: ["6.4rem", "8.4rem"],
+          pt: ["8.7rem" , "8.4rem"],
           mb: ["4.8rem", "12.8rem", "calc(2.4rem * 2)"],
-          height: [null, null, null, 'calc(6.4rem * 17)'],
+          height: [null, null, null, 'calc(6.4rem * 9)'],
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-            height: "calc(6.4rem * 13)",
-            mb: 'calc(6.4rem * 2)'
+            mb: 'calc(6.4rem * 2)',
+            pb: '21.3rem',
+            pt: '11.3rem',
+            height: 'calc(6.4rem * 14)',
           },
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             height: "calc(6.4rem * 16)",
@@ -70,8 +72,11 @@ const CustomerReview = () => {
           sx={{
             ...theme.boxSizes.expandedBox,
             position: "absolute",
-            height: ["82%", "80%", "calc(6.4rem * 15)", "calc(6.4rem * 11)"],
+            height: ["82%", "80%", "calc(6.4rem * 15)", "calc(6.4rem * 7)"],
             top: "6.4rem",
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height:  "calc(6.4rem * 12)",
+            },
             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
               height:  "calc(6.4rem * 14)",
             },
@@ -88,15 +93,19 @@ const CustomerReview = () => {
           }}
         >
           <Text
-            fontSize={["2.8rem", "3.3em", null, "6.9rem"]}
-            mb={["3.8rem", "3.8rem", null, "12rem"]}
+            fontSize={["2.8rem", "3.3rem", null, "4.8rem"]}
+            mb={["3.8rem", "3.8rem", null, "5.3rem"]}
             fontWeight={700}
-            lineHeight={["110%", "3.36rem", null, "6.969rem"]}
+            lineHeight={"110%"}
             color={theme.colors.customerCommentText}
             sx={{
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                fontSize: "6.9rem !important",
+                mb: '13.4rem !important'
+              },
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 fontSize: "8.3rem !important",
-                lineHeight: '110% !important'
+                // mb: '13.4rem !important'
               },
             }}
           >
@@ -109,6 +118,7 @@ const CustomerReview = () => {
           <Text
             fontSize={["1.4rem", "1.4rem", "2.8rem"]}
             color={theme.colors.customerCommentText}
+            fontWeight={300}
           >
             — Luigi Lemon, Agave Core Contributor
           </Text>
