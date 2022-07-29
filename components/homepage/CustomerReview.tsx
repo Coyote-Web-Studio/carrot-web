@@ -52,10 +52,10 @@ const CustomerReview = () => {
           position: "relative",
           bg: theme.colors.customerCommentBackground,
           borderRadius: ['1.6rem', null, null, '5rem'],
-          pb: ["6.4rem", "8.4rem"],
-          pt: ["8.7rem" , "8.4rem"],
+          pb: ["6.4rem", '6.8rem', null, "8.4rem"],
+          pt: ["8.7rem" , '6.8rem', null, "8.4rem"],
           mb: ["4.8rem", "12.8rem", "calc(2.4rem * 2)"],
-          height: [null, null, null, 'calc(6.4rem * 9)'],
+          height: [null, 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: 'calc(6.4rem * 2)',
             pb: '21.3rem',
@@ -72,8 +72,8 @@ const CustomerReview = () => {
           sx={{
             ...theme.boxSizes.expandedBox,
             position: "absolute",
-            height: ["82%", "80%", "calc(6.4rem * 15)", "calc(6.4rem * 7)"],
-            top: "6.4rem",
+            height: ["82%", "calc(2.4rem * 12)", "calc(6.4rem * 15)", "calc(6.4rem * 7)"],
+            top: [null, 'calc(2.4rem * 2)', null, "6.4rem"],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height:  "calc(6.4rem * 12)",
             },
