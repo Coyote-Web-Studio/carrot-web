@@ -60,23 +60,32 @@ const HowItWorksBlock = (props: any) => {
               '9.4rem', 
               isOpen ? 'auto' : '9.4rem', 
               null,
-              isOpen ? 'auto' : '19rem'],
+              isOpen ? 'auto' : '9.6rem'],
             transition: '0.25s ease-in-out height',
             rowGap: '1px',
             columnGap: '1px',
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: isOpen ? 'auto !important' : '19rem !important'
+            },
+            
           }}
         >
           <Flex
             className={'block-index bordered'}
-            minWidth={["6.4rem", '6.4rem', null, '19rem']}
+            minWidth={["6.4rem", '6.4rem']}
             justifyContent={"center"}
             alignItems={"center"}
-            fontSize={["4.8rem", "4.8rem", "4rem", '11.9rem']}
-            height={['auto', '9.4rem', null, '19rem']}
+            fontSize={["4.8rem", "4.8rem", "4rem"]}
+            height={['auto', '9.4rem', null, '9.6rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
             sx={{
               position: 'relative',
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                fontSize: '11.9rem !important',
+                minWidth: '19rem !important',
+                height: '19rem !important'
+              },
             }}
           >
             {props.index == 0 && (
@@ -99,26 +108,28 @@ const HowItWorksBlock = (props: any) => {
           </Flex>
           <Flex
             className="block-title bordered"
-            lineHeight={['3rem', '3rem', null, '4.88rem']}
+            lineHeight={['110%']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
             px={["1.8rem", "3.2rem"]}
-            py={['1.8rem', null, null, '4.8rem']}
+            py={['1.8rem', null, null, '1.8rem']}
             width={['100%', '24.8rem', null, '41.6rem']}
             height={[
               'auto', 
               isOpen ? '14.2rem' : '9.2rem', 
               null,
-              isOpen ? '32rem' : '19rem']}
+              isOpen ? '12.6rem' : '9.6rem']}
             sx={{
               transition: '0.15s ease-in-out all',
               position: 'relative',
               maxWidth: [null, null, null, '30rem'],
-              fontSize: ["2.8rem", "2.8rem", "2.8", '3.2rem'],
+              fontSize: ["2.8rem", "2.8rem", "2.8rem"],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                 fontSize: '4.8rem !important',
                 width: '54rem !important',
-                maxWidth: 'unset'
+                maxWidth: 'unset',
+                height: isOpen ? '32rem !important' : '19rem !important',
+                py: '4.2rem !important'
               },
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 width: '57.6rem !important',
@@ -157,11 +168,12 @@ const HowItWorksBlock = (props: any) => {
             justifyContent={"space-between"}
             alignItems={"center"}
             width={"100%"}
-            minHeight={['9.4rem', '9.4rem', null, '19rem'] }
+            minHeight={['9.4rem', '9.4rem', null, '9.6rem'] }
             sx={{
               position: 'relative',
               p: ["2.4rem", "0 2.4rem"],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                minHeight: '19rem !important',
                 p: '0 6.4rem !important',
               }
             }}
@@ -174,11 +186,16 @@ const HowItWorksBlock = (props: any) => {
               }}/>
             )}
             <Text 
-              fontSize={["1.6rem", null, null, "2.2rem"]} 
+              fontSize={["1.6rem"]} 
               lineHeight={["2.4rem", null, null, '3.3rem']} 
               as={"p"}
               maxWidth={'40rem'}
               width={['auto', 'auto', null, '100%']}
+              sx={{
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                  fontSize: '2.2rem'
+                }
+              }}
             >
               {props.content.triggerLabel}
             </Text>
@@ -206,7 +223,22 @@ const HowItWorksBlock = (props: any) => {
               },
             }}
           >
-            <Box sx={{overflowY: 'hidden', 'img': { width: '100%'}}} my={['2.4rem', '2.4rem', '6.4rem 13.3rem']}>
+            <Box 
+              sx={{
+                overflowY: 'hidden', 
+                'img': { width: '100%'},
+                'p': {
+                  fontSize: [null, null, null, '1.6rem !important'],
+                },
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                  width: '112.4rem',
+                  'p': {
+                    fontSize: '1.9rem !important'
+                  }
+                },
+              }} 
+              my={['2.4rem', '2.4rem', '6.4rem 13.3rem']}
+            >
               {props.content.content}
             </Box>
           </Flex> 
