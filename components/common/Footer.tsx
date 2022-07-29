@@ -7,6 +7,7 @@ import Button from "./Button";
 import { invert, transparentize } from "polished";
 import { useParallax } from 'react-scroll-parallax';
 
+import FooterLinks from './../../content/footer-navigation';
 
 const Footer = (props: any) => {
   const theme: any = useTheme();
@@ -23,142 +24,33 @@ const Footer = (props: any) => {
     speed: -15,
   });
 
-  const FooterLinks = [
-    {
-      heading: 'ABOUT',
-      links: [
-        {
-          label: 'Faq',
-          href: '#'
-        },
-        {
-          label: 'Blog',
-          href: '#'
-        },
-        {
-          label: 'Audits',
-          href: '#'
-        },
-        {
-          label: 'Brand Assets',
-          href: '#'
-        },
-      ]
-    },
-    {
-      heading: 'COMMUNITY',
-      links: [
-        {
-          label: 'Discord',
-          href: '#'
-        },
-        {
-          label: 'Twitter',
-          href: '#'
-        },
-        {
-          label: 'Keybase',
-          href: '#'
-        },
-        {
-          label: 'Brand Forum',
-          href: '#'
-        },
-      ]
-    },
-    {
-      heading: 'DOCUMENTATION',
-      links: [
-        {
-          label: 'FIY Liq. Mining',
-          href: '#'
-        },
-        {
-          label: 'Roadmap',
-          href: '#'
-        },
-        {
-          label: 'We\'re hiring ',
-          href: '#'
-        },
-        {
-          label: 'Token',
-          href: '#'
-        },
-      ]
-    },
-    {
-      heading: 'ANALYTICS',
-      links: [
-        {
-          label: 'FIY Liq. Mining',
-          href: '#'
-        },
-      ]
-    },
-  ];
-
   return (
     <Flex
       as="footer"
-      pt={["4.8rem", '12.8rem', null, '26rem']}
+      pt={["4.8rem", '12.8rem', null, 'calc(6.4rem * 2)']}
       pb={'5.6rem'}
       bg={theme.colors.footerBackground}
       sx={{
         position: "relative",
-        flexDirection: 'column'
+        flexDirection: 'column',
+        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+          pt: '26rem'
+        },
       }}
     >
-      <Image
-        ref={goldParallax.ref}
-        src={"misc/gold-curve.png"}
-        sx={{
-          position: "absolute",
-          top: ["75rem", "28rem"],
-          width: ["8rem", null, "13rem"],
-          height: ["8rem", null, '13rem'],
-          right: ["4%", "45%"],
-          zIndex: "100000000",
-          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-          display: ['none', 'block']
-        }}
-      />
-      <Image
-        ref={sphereParallax.ref}
-        src={"misc/sphere.png"}
-        sx={{
-          position: "absolute",
-          top: ["10rem", "5rem"],
-          width: ["8rem", null, "10rem"],
-          height: ["8rem", null, '10rem'],
-          left: ["4%", null, "12%"],
-          zIndex: "100000000",
-          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-          display: ['none', 'block']
-        }}
-      />
-      <Image
-        ref={hexagonParallax.ref}
-        src={"hexagon.png"}
-        sx={{
-          position: "absolute",
-          top: ["24rem", "8rem"],
-          width: ["8rem", "11rem"],
-          height: ["8rem", '13rem'],
-          right: ["4%", null, "12%"],
-          zIndex: "100000000",
-          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-          display: ['none', 'block']
-        }}
-      />
       <Box 
         sx={{
           ...theme.boxSizes.expandedBox,
           position: 'absolute',
-          height: ['14.24rem', '28.7rem', null, '51.1rem'], 
-          top: ["2.8rem", "7rem", null, "12.6rem"], 
+          height: ['14.24rem', '28.7rem', null, 'calc(6.4rem * 6)'], 
+          top: ["2.8rem", "7rem", null, "calc(6.4rem * 1)"], 
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            height: "51.1rem",
+            top: '12.6rem',
+          },
+          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             height: "70.4rem",
+            top: '12.6rem',
           },
 
         }}
@@ -177,8 +69,13 @@ const Footer = (props: any) => {
           color={theme.colors.orange6} 
           height={['auto', '15.5rem', null, 'auto']} 
           width={['auto', 'auto', null, '100%']} 
-          mb={["4.8rem", "12.2rem", null, "34rem"]} 
-          sx={{ zIndex: 1 }} 
+          mb={["4.8rem", "12.2rem", null, "12.3rem"]} 
+          sx={{ 
+              zIndex: 1,
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                mb: '34rem'
+              },
+          }} 
         />
       </Fade>
 
@@ -231,10 +128,61 @@ const Footer = (props: any) => {
           }}>CARROT DAPP</Button>
         </Flex>
       </Flex>
+      
+      <Box className="footer-decoration">
+        <Image
+          ref={goldParallax.ref}
+          src={"misc/gold-curve.png"}
+          sx={{
+            position: "absolute",
+            top: ["75rem", "28rem"],
+            width: ["8rem", null, null, "9rem"],
+            height: ["8rem", null, null, '9rem'],
+            right: ["4%", "45%"],
+            zIndex: "100000000",
+            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+            display: ['none', 'block'],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: "13rem",
+              width: '13rem'
+            },
+          }}
+          />
+        <Image
+          ref={sphereParallax.ref}
+          src={"misc/sphere.png"}
+          sx={{
+            position: "absolute",
+            top: ["10rem", "5rem"],
+            width: ["8rem"],
+            height: ["8rem"],
+            left: ["4%", null, "12%"],
+            zIndex: "100000000",
+            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+            display: ['none', 'block'],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: "10rem",
+              width: '10rem'
+            },
+          }}
+        />
+        <Image
+          ref={hexagonParallax.ref}
+          src={"hexagon.png"}
+          sx={{
+            position: "absolute",
+            top: ["24rem", "8rem"],
+            width: ["8rem", "11rem"],
+            height: ["8rem", '13rem'],
+            right: ["4%", null, "12%"],
+            zIndex: "100000000",
+            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+            display: ['none', 'block']
+          }}
+        />
+      </Box>
     </Flex>
   );
 };
-
-const StyledFooter = styled(Flex)``;
 
 export default Footer;

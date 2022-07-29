@@ -34,11 +34,11 @@ export default {
           "88rem"
         ],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
-          width: '100%',
+          width: '100% !important',
           maxWidth: "124.8rem !important",
         },
         [`@media screen and (min-width: ${breakpoints[4]})`]: {
-          width: "100% !important",
+          maxWidth: '160rem !important',
         },
         [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
           width: "calc(100vw - 8rem)", 

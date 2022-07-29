@@ -54,9 +54,9 @@ const Navbar = (props : any) => {
                     <Button buttonWrapperStyles={{
                         ml: ['2.4rem', null, null, '3.2rem'],
                         height: [null, null, null, '4.8rem'],
+                        minWidth: 'unset',
                         'button': {
                             fontSize: [null, null, null, '1.2rem'],
-                            minWidth: 'unset'
                         },
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             height: '6.4rem',
