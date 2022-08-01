@@ -49,8 +49,8 @@ const Footer = (props: any) => {
             top: '6.4rem',
           },
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-            height: "70.4rem",
-            top: '12.6rem',
+            height: "calc(6.4rem * 8)",
+            top: '6.4rem',
           },
 
         }}
