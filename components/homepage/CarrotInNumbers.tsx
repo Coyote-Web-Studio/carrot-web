@@ -18,6 +18,9 @@ const CarrotInNumbers = () => {
       pb: ['3.6rem', null, null, '4.8rem'],
       height: ['calc(2.4rem * 34)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 10)'],
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+        height: 'calc(6.4rem * 14)'
+      },
+      [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
         height: 'calc(6.4rem * 16)'
       },
     }}
