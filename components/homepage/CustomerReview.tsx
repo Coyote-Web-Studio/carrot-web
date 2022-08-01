@@ -19,33 +19,6 @@ const CustomerReview = () => {
 
   return (
     <Box sx={{position: 'relative'}}>
-      <Image
-        ref={sphereParallax.ref}
-        src={"misc/sphere.png"}
-        sx={{
-          position: "absolute",
-          top: '-10rem',
-          width: ["5rem", null, "10rem"],
-          height: ["5rem", null, '10rem'],
-          left: ["3%", null, "18%"],
-          zIndex: "10",
-          display: ['none', 'block']
-        }}
-      />
-      <Image
-        ref={goldParallax.ref}
-        src={"misc/gold-curve.png"}
-        sx={{
-          position: "absolute",
-          top: "50rem",
-          width: ["8rem", null, "13rem"],
-          height: ["8rem", null, '13rem'],
-          right: ["4%", null, "15%"],
-          zIndex: "100000000",
-          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-          display: ['none', 'block']
-        }}
-      />
       <Flex
         sx={{
           zIndex: 1,
@@ -72,7 +45,7 @@ const CustomerReview = () => {
           sx={{
             ...theme.boxSizes.expandedBox,
             position: "absolute",
-            height: ["82%", "calc(2.4rem * 12)", "calc(6.4rem * 15)", "calc(6.4rem * 7)"],
+            height: ["calc(2.4rem * 16)", "calc(2.4rem * 12)", "calc(6.4rem * 15)", "calc(6.4rem * 7)"],
             top: [null, 'calc(2.4rem * 2)', null, "6.4rem"],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height:  "calc(6.4rem * 12)",
@@ -124,6 +97,33 @@ const CustomerReview = () => {
           </Text>
         </Fade>
       </Flex>
+      <Image
+        ref={sphereParallax.ref}
+        src={"misc/sphere.png"}
+        sx={{
+          position: "absolute",
+          top: '-10rem',
+          width: ["5rem", null, "10rem"],
+          height: ["5rem", null, '10rem'],
+          left: ["3%", null, "18%"],
+          zIndex: "10",
+          display: ['none', 'block']
+        }}
+      />
+      <Image
+        ref={goldParallax.ref}
+        src={"misc/gold-curve.png"}
+        sx={{
+          position: "absolute",
+          top: "50rem",
+          width: ["8rem", null, "13rem"],
+          height: ["8rem", null, '13rem'],
+          right: ["4%", null, "15%"],
+          zIndex: "100000000",
+          filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+          display: ['none', 'block']
+        }}
+      />
     </Box>
   );
 };

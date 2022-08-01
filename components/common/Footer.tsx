@@ -42,7 +42,7 @@ const Footer = (props: any) => {
         sx={{
           ...theme.boxSizes.expandedBox,
           position: 'absolute',
-          height: ['14.24rem', '28.7rem', null, 'calc(6.4rem * 6)'], 
+          height: ['calc(2.4rem * 5)', '28.7rem', null, 'calc(6.4rem * 6)'], 
           top: ["2.8rem", "7rem", null, "calc(6.4rem * 1)"], 
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             height: "51.1rem",
