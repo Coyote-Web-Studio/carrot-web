@@ -210,7 +210,7 @@ const HowItWorksBlock = (props: any) => {
                 null,
                 isOpen ? 'calc(6.4rem * 9) !important' : 'auto',
                 null,
-                isOpen ? 'calc(6.4rem * 10 !important)' : 'auto'
+                isOpen ? 'calc(6.4rem * 11) !important' : 'auto'
               ],
               overflowY: 'hidden',
               transition: '0.25s ease-in-out all, padding',
@@ -227,8 +227,10 @@ const HowItWorksBlock = (props: any) => {
                 overflowY: 'hidden', 
                 '.content-image': { 
                   height: [null, '14.8rem'],
-                  minHeight: ['14.8rem']
-                  // width: '100%'
+                  minHeight: ['14.8rem'],
+                  [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    minHeight: '31.8rem'
+                  },
                 },
                 'p': {
                   fontSize: [null, null, null, '1.6rem !important'],

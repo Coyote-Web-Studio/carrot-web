@@ -54,8 +54,9 @@ const SuccesfulCampaigns = () => {
         sx={{
           display: ["none !important", "block !important", "block !important"],
           position: 'relative',
+          mb: [null, null, null, '6.4rem !important'],
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-            mb: '3rem !important'
+            mb: '6.4rem !important'
           },
           ['&:hover .highlight-box']: {
             opacity: 1,
@@ -84,10 +85,10 @@ const SuccesfulCampaigns = () => {
         <Box className="highlight-box" ref={highlightRef} sx={{
           zIndex: 0,
           position: 'absolute',
-          top: '-2rem',
-          left: '-2rem',
+          top: '-6.4rem',
+          left: '-6.4rem',
           width: 'calc(100% + 4rem)',
-          height: 'calc(100% + 4rem)',
+          height: 'calc(100% + (6.4rem * 2))',
           pointerEvents: 'none',
           transition: '0.15s ease-in-out all',
           opacity: 0,
@@ -119,14 +120,14 @@ const SuccesfulCampaigns = () => {
       
                     let cardWidth = e.currentTarget.getBoundingClientRect().width;
       
-                    let highlighterExtraWidth = 138;
+                    let highlighterExtraWidth = 128;
       
                     if ( highlightRef.current && sliderRef.current ) {
                       highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
       
                       highlightRef.current.style.left = e.currentTarget.getBoundingClientRect().left - sliderRef.current.offsetLeft + - highlighterExtraWidth / 2 + 'px';
       
-                      highlightRef.current.style.top = - (highlighterExtraWidth / 4) + 'px';
+                      highlightRef.current.style.top = - (64) + 'px';
                     }
                   }}
                 />
@@ -142,7 +143,7 @@ const SuccesfulCampaigns = () => {
         as={"ul"}
         sx={{ display: ["block", "none", "none"] }}
         flexDirection={["column", "row"]}
-        mb={"1.6rem"}
+        mb={["1.6rem"]}
       >
         {SuccesfullCampaigns.map(
           (campaign, index) =>

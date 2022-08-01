@@ -3,9 +3,7 @@ import styled, {useTheme} from 'styled-components';
 import { transparentize } from 'polished';
 
 const CampaignCard = (props : any) => {
-    const {
-        campaign
-    } = props;
+    const { campaign } = props;
 
     const theme : any = useTheme()
     return (
@@ -17,7 +15,7 @@ const CampaignCard = (props : any) => {
             borderRadius: '1.6rem',
             overflow: 'hidden',
             height: ['38.4rem', '38.4rem', null, '38.4rem'],
-            mb: ['2.4rem', '4.8rem'],
+            mb: ['2.4rem', '0'],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height: '44.8rem'
             },

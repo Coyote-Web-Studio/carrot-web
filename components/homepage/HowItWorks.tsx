@@ -97,18 +97,30 @@ const HowItWorks = () => {
         </>
     },
   ];
-  
+
   return (
     <Flex
       flexDirection={"column"}
       sx={{
         ...theme.boxSizes.defaultBox,
         zIndex: 1,
-        mb: ["8.2rem", "8.2rem", "16.9rem"],
+        mb: ["8.2rem", null, null, "17rem"],
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+          mb: '14.8rem'
+        },
       }}
     >
       <Fade>
-        <Text as={"h2"} mb={["3.8rem", null, null, "6.4rem"]} lineHeight={['5.6rem', '8rem']}>
+        <Text 
+          as={"h2"} 
+          mb={["3.8rem", null, null, "6.8rem !important"]} 
+          lineHeight={['5.6rem', '8rem']}
+          sx={{
+            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+              mb: '6.4rem'
+            },
+          }}
+        >
           <AnimatedText>
             How it works
           </AnimatedText>
