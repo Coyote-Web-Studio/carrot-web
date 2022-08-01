@@ -30,7 +30,8 @@ const CarrotInNumbers = () => {
         opacity: 0.1,
         width: '100%',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          top: '21rem'
+          top: '21rem',
+          height: 'calc(6.4rem * 9)'
         },
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
           top: '31.6rem'
@@ -40,7 +41,7 @@ const CarrotInNumbers = () => {
         <GridBackground sx={{
           backgroundImage: 'url(/Pattern.svg)',
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-            backgroundPosition: 'center',
+            backgroundPosition: 'top center',
           },
           
         }}/>
