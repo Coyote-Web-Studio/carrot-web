@@ -49,7 +49,7 @@ const SuccesfulCampaigns = () => {
       {/* TABLET / DESKTOP VIEW */}
       <Flex
         as={"ul"}
-        mb={["1.6rem", '0']}
+        mb={["1.6rem", '3.2rem', null]}
         ref={sliderRef}
         sx={{
           display: ["none !important", "block !important", "block !important"],

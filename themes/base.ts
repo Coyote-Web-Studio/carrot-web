@@ -29,7 +29,7 @@ export default {
         mx: "auto",
         width: [
           "calc(100vw - 4rem)", 
-          "67.2rem", 
+          "60rem", 
           null,
           "88rem"
         ],
@@ -40,7 +40,7 @@ export default {
         [`@media screen and (min-width: ${breakpoints[4]})`]: {
           maxWidth: "160rem !important",
         },
-        [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
+        [`@media screen and (min-width: 415px) and (max-width: 639px)`]: {
           width: "calc(100vw - 8rem)", 
         },
       },
@@ -63,7 +63,7 @@ export default {
       reducedBox: {
         width: [
           "calc(100vw - 4rem)", 
-          "67.2rem", 
+          "60rem", 
           null,
           '88rem'
         ],

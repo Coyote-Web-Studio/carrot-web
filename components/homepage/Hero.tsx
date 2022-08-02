@@ -169,6 +169,7 @@ const Hero = (props : any) => {
                 <Box sx={{
                     ml: [
                         null,
+                        null,
                         '4.2rem'
                     ],
                     position: 'relative',
@@ -182,8 +183,8 @@ const Hero = (props : any) => {
                         }}/>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', '31.2rem', '31.2rem', '40.8rem'],
-                            height: ['120vw', '43.66rem', '43.66rem', '57rem'],
+                            width: ['100%', 'calc(2.4rem * 12)', '31.2rem', '40.8rem'],
+                            height: ['120vw', 'calc(2.4rem * 17)', '43.66rem', '57rem'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',
