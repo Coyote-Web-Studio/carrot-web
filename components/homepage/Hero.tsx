@@ -178,7 +178,7 @@ const Hero = (props : any) => {
                     <Fade sx={{position: 'relative'}}>
                         <PlayVideoButton label={'HOW IT WORKS'} sx={{
                             position: 'absolute',
-                            bottom: '7.6rem', 
+                            bottom: ['7.6rem', '5.2rem', '7.6rem'], 
                             zIndex: 1,
                         }}/>
                         <Box sx={{

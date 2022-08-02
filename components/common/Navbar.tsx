@@ -46,13 +46,13 @@ const Navbar = (props : any) => {
                 }}>
                     <NavigationLinks />
                     <StyleSwitch sx={{
-                        ml:['2.4rem', null, null, '3.2rem'],
+                        ml:['2.4rem', '1.2rem', null, '3.2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             ml: "4.8rem",
                         },
                     }}/>
                     <Button buttonWrapperStyles={{
-                        ml: ['2.4rem', null, null, '3.2rem'],
+                        ml: ['2.4rem', '1.2rem', '2.4rem', '3.2rem'],
                         height: [null, null, null, '4.8rem'],
                         minWidth: 'unset',
                         'button': {

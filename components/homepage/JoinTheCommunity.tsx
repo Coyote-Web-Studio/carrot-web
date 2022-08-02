@@ -19,7 +19,7 @@ const JoinTheCommunity = () => {
             <Flex sx={{
                 p: [
                     '2.4rem', 
-                    '6.1rem 2.4rem 6.1rem 4.8rem', 
+                    '6.1rem 2.4rem 6.1rem 2.4rem', 
                     '6.1rem 4.8rem', 
                     null],
                 width: [
@@ -45,11 +45,11 @@ const JoinTheCommunity = () => {
                                     'none'
                                 ],
                                 p: ['0 0 2.4rem', null, '3.2rem'],
-                                width: [null, null, null, '51.5rem'],
+                                width: ['100%', null, null, '51.5rem'],
                                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                     width: '64rem',
                                 },
-                                maxWidth: '95%',
+                                maxWidth: [null, null, null,'95%'],
                                 position: 'relative'
                             }}
                         >
