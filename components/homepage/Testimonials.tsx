@@ -45,7 +45,7 @@ const Testimonials = () => {
           sx={{
             ...theme.boxSizes.expandedBox,
             position: "absolute",
-            height: ["calc(2.4rem * 16)", "calc(2.4rem * 12)", "calc(6.4rem * 15)", "calc(6.4rem * 7)"],
+            height: ["calc(2.4rem * 16)", "calc(2.4rem * 13)", "calc(6.4rem * 15)", "calc(6.4rem * 7)"],
             top: [null, 'calc(2.4rem * 2)', null, "6.4rem"],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height:  "calc(6.4rem * 12)",
