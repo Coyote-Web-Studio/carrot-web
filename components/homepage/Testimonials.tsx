@@ -7,7 +7,7 @@ import GridBackground from '../common/GridBackground';
 import { transparentize } from 'polished';
 import AnimatedText from '../common/AnimatedText';
 
-const CustomerReview = () => {
+const Testimonials = () => {
   const theme : any = useTheme();
   const goldParallax = useParallax({
     speed: -5,
@@ -128,4 +128,4 @@ const CustomerReview = () => {
   );
 };
 
-export default CustomerReview;
+export default Testimonials;

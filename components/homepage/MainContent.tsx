@@ -8,7 +8,7 @@ import HowItWorks from './HowItWorks';
 import SuccesfulCampaigns from './SuccesfulCampaigns';
 import CarrotInNumbers from './CarrotInNumbers';
 import TrustingProtocols from './TrustingProtocols';
-import CustomerReview from './CustomerReview';
+import Testimonials from './Testimonials';
 
 const MainContent = (props : any) => {
 
@@ -31,7 +31,7 @@ const MainContent = (props : any) => {
       <SuccesfulCampaigns />
       <CarrotInNumbers />
       <TrustingProtocols />
-      <CustomerReview />
+      <Testimonials />
     </Flex>
   );
 };
