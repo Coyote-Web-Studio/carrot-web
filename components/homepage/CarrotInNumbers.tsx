@@ -4,6 +4,7 @@ import AnimatedText from '../common/AnimatedText';
 
 import Fade from '../common/Fade';
 import GridBackground from '../common/GridBackground';
+import CarrotInNumbersItem from './CarrotInNumbersItem';
 
 const CarrotInNumbers = () => {
   
@@ -78,7 +79,7 @@ const CarrotInNumbers = () => {
               Carrot in
             </AnimatedText>
             <Box as="br" sx={{display: ['block', 'none', 'none']}}/>
-            <AnimatedText color={theme.colors.gray10}>
+            <AnimatedText color={theme.colors.gray10} initialDelay={100}>
               numbers
             </AnimatedText>
           </Text>
@@ -95,54 +96,7 @@ const CarrotInNumbers = () => {
           },
         }}>
           {CarrotInNumbersData.map((item, index) => (
-            <Flex 
-              as={'li'} 
-              flexDirection={'column'} 
-              key={index} 
-              sx={{
-                borderTop: `0.1rem solid ${theme.colors.gray10}`,
-                width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
-                mx: ['0', '2.4rem', '6.4rem'],
-                '&:last-child': {
-                  borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
-                },
-                '&:nth-of-type(3)': {
-                  borderBottom: ['none', `0.1rem solid ${theme.colors.gray10}`],
-                },
-              }}
-            >
-              <Flex flexDirection={'column'} sx={{
-                py: '1.2rem',
-                justifyContent: 'center',
-                height: [
-                  'calc(2.4rem * 4 - 1px)', 
-                  null, 
-                  null, 
-                  'calc(6.4rem * 2 - 1px)'],
-                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                  height: 'calc(6.4rem * 3 - 1px)'
-                },
-              }}>
-                <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
-                  color: theme.colors.gray10, 
-                  mb: ['1rem', '1.4rem', null, '1.2rem'],
-                  whiteSpace: 'nowrap',
-                  [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                    fontSize: '9.9rem !important'
-                  }
-                  }}
-                >
-                  <AnimatedText color={theme.colors.gray10}>
-                    {item.value}
-                  </AnimatedText>
-                </Text>
-                <Text sx={{color: theme.colors.gray10, whiteSpace: 'nowrap'}} as={'p'}>
-                  <AnimatedText color={theme.colors.gray10}>
-                    {item.label}
-                  </AnimatedText>
-                </Text>
-              </Flex>
-            </Flex>
+            <CarrotInNumbersItem key={index} data={item}/>
           ))}
         </Fade>
       </Flex>
@@ -153,27 +107,33 @@ const CarrotInNumbers = () => {
 const CarrotInNumbersData = [
   {
     label: 'Total Number Of Campaigns',
-    value: '24'
+    value: 24,
+    type: 'integer'
   },
   {
     label: 'Total Historic Campaign Issuers',
-    value: '9',
+    value: 9,
+    type: 'integer'
   },
   {
     label: 'Total Historic Carrot Token Owners',
-    value: '2,324'
+    value: 2324,
+    type: 'integer'
   },
   {
     label: 'Total Historic TVL',
-    value: '$17.5M'
+    value: 17500000,
+    type: 'currency'
   },
   {
     label: 'Historic Rewards Distributed',
-    value: '$14.3M'
+    value: 1430000,
+    type: 'currency'
   },
   {
     label: 'Historic Value “Saved”',
-    value: '$3.2M'
+    value: 3200000,
+    type: 'currency'
   },
 ];
 

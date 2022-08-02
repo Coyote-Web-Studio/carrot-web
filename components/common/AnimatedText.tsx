@@ -14,7 +14,6 @@ const AnimatedText = (props : any) => {
 
     const animationRef = useRef(null);
 
-    
     useEffect(() => {
         let options = {
             rootMargin: '100px 0px',

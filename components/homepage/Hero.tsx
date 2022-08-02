@@ -178,13 +178,13 @@ const Hero = (props : any) => {
                     <Fade sx={{position: 'relative'}}>
                         <PlayVideoButton label={'HOW IT WORKS'} sx={{
                             position: 'absolute',
-                            bottom: ['7.6rem', '5.2rem', '7.6rem'], 
+                            bottom: ['7.6rem', '2.4rem', '7.6rem'], 
                             zIndex: 1,
                         }}/>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
-                            width: ['100%', 'calc(2.4rem * 12)', '31.2rem', '40.8rem'],
-                            height: ['120vw', 'calc(2.4rem * 17)', '43.66rem', '57rem'],
+                            width: ['100%', 'calc(2.4rem * 11)', '31.2rem', '40.8rem'],
+                            height: ['120vw', 'calc(2.4rem * 16)', '43.66rem', '57rem'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
                             border: `0.1rem solid ${theme.colors.textColor}`,
                             backgroundRepeat: 'no-repeat',

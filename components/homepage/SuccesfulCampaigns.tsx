@@ -84,6 +84,7 @@ const SuccesfulCampaigns = () => {
       >
         <Box className="highlight-box" ref={highlightRef} sx={{
           zIndex: 0,
+          display: ['none', null, null, 'block'],
           position: 'absolute',
           top: '-6.4rem',
           left: '-6.4rem',
@@ -105,14 +106,14 @@ const SuccesfulCampaigns = () => {
 
         </Box>
         <Fade sx={{display: ['none', 'flex']}}>
-          <Flex ref={sliderRef} justifyContent={'space-between'} mx={[null, '-3.2rem', '-2.4rem']}>
+          <Flex ref={sliderRef} justifyContent={'space-between'} mx={[null, '-1.6rem', '-3.2rem', '-2.4rem']}>
             {SuccesfullCampaigns.map((campaign, index) => (
               index < cardNumber && (
                 <CampaignCard
                   campaign={campaign}
                   sx={{
                     width: ["100%"],
-                    mx: [null, '3.2rem', '2.4rem']
+                    mx: [null, '1.6rem', '3.2rem', '2.4rem']
                   }}
                   key={index} onMouseEnter={(e : any) => {
                     e.stopPropagation();
