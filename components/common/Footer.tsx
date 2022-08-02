@@ -42,7 +42,7 @@ const Footer = (props: any) => {
         sx={{
           ...theme.boxSizes.expandedBox,
           position: 'absolute',
-          height: ['calc(2.4rem * 5)', '28.7rem', null, 'calc(6.4rem * 6)'], 
+          height: ['calc(2.4rem * 5)', 'calc(2.4rem * 12)', null, 'calc(6.4rem * 6)'], 
           top: ["2.8rem", "7rem", null, "calc(6.4rem * 1)"], 
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             height: "calc(6.4rem * 7)",
@@ -68,7 +68,8 @@ const Footer = (props: any) => {
         <Logo 
           color={theme.colors.orange6} 
           height={['auto', '15.5rem', null, 'auto']} 
-          width={['auto', 'auto', null, '100%']} 
+          width={['30rem', 'auto', null, '100%']} 
+          mx={['auto']}
           mb={["4.8rem", "12.2rem", null, "12.3rem"]} 
           sx={{ 
               zIndex: 1,
