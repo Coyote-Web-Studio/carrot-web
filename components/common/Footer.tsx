@@ -13,7 +13,7 @@ const Footer = (props: any) => {
   const theme: any = useTheme();
 
   const goldParallax = useParallax({
-    speed: -50,
+    speed: -18,
   });
 
   const sphereParallax = useParallax({
