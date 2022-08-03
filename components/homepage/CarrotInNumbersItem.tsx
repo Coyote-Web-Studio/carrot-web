@@ -57,7 +57,7 @@ const CarrotInNumbersItem = (props : any) => {
 
     useEffect(() => {
         let options = {
-            rootMargin: '-50px 0px',
+            rootMargin: '0px 0px',
             threshold: 1.0,
         };
     
@@ -80,7 +80,7 @@ const CarrotInNumbersItem = (props : any) => {
                 '&::after, &::before': {
                     content: "''",
                     height: '0.1rem',
-                    transition: '0.15s ease-in-out width',
+                    transition: '0.25s ease-in-out width',
                     width: isVisible ? '100%' : '0',
                     position: 'absolute',
                 },
@@ -101,18 +101,21 @@ const CarrotInNumbersItem = (props : any) => {
                 py: '1.2rem',
                 justifyContent: 'center',
                 height: [
-                    'calc(2.4rem * 4 - 1px)', 
+                    'calc(2.4rem * 4)', 
                     null, 
                     null, 
-                    'calc(6.4rem * 2 - 1px)'],
+                    'calc(6.4rem * 2)'],
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                     height: 'calc(6.4rem * 3 - 1px)'
+                },
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    height: 'calc(6.4rem * 3)'
                 },
             }}>
             <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
                     'h3': {
                         color: theme.colors.gray10, 
-                        mb: ['1rem', '1.4rem', null, '1.2rem'],
+                        mb: ['1rem', '0rem', null, '1.2rem'],
                         whiteSpace: 'nowrap',
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                             fontSize: '9.9rem !important'
@@ -120,7 +123,6 @@ const CarrotInNumbersItem = (props : any) => {
                     }
                 }}
             >
-                {/* <AnimatedText color={theme.colors.gray10}> */}
                 {isVisible && (
                     <Text as={'span'} sx={{whiteSpace: 'nowrap', display: 'inline-block'}}>
                         <Text as={'h3'} sx={{whiteSpace: 'nowrap', display: 'inline-block'}}>
@@ -139,8 +141,6 @@ const CarrotInNumbersItem = (props : any) => {
                     </Text>
 
                 )}
-                    {/* {data.value} */}
-                {/* </AnimatedText> */}
             </Text>
             <Text sx={{color: theme.colors.gray10, whiteSpace: 'nowrap'}} as={'p'}>
                 <AnimatedText color={theme.colors.gray10}>

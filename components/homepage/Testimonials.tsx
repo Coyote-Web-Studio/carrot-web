@@ -37,7 +37,9 @@ const Testimonials = () => {
           },
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             height: "calc(6.4rem * 16)",
-            mb: 'calc(6.4rem * 2)'
+            mb: 'calc(6.4rem * 3)',
+            pt: '17.7rem',
+            pb: '0'
           },
         }}
         >

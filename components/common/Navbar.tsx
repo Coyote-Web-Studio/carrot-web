@@ -53,7 +53,7 @@ const Navbar = (props : any) => {
                     }}/>
                     <Button buttonWrapperStyles={{
                         ml: ['2.4rem', '1.2rem', '2.4rem', '3.2rem'],
-                        height: [null, null, null, '4.8rem'],
+                        height: [null, '4.6rem'],
                         minWidth: 'unset',
                         'button': {
                             fontSize: [null, null, null, '1.2rem'],

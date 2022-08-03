@@ -61,7 +61,7 @@ const PlayVideoButton = (props : any) => {
                 color: theme.colors.white,
                 fontFamily: theme.fonts.monospace,
                 letterSpacing: '0.05rem',
-                fontSize: ['1rem', '1.2rem', '1.6rem']
+                fontSize: ['1.2rem', null, '1.6rem']
             }}>
                 {props.label}
             </Box>

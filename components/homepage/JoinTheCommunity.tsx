@@ -200,7 +200,10 @@ const JoinTheCommunity = () => {
                                                     border: 'none'
                                                 },
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    p: ['2.4rem 3.3rem 2.4rem 6.4rem', null, null, '3.2rem']
+                                                    p: ['3.2rem']
+                                                },
+                                                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                                    p: ['3.2rem 3.2rem 3.2rem 6.4rem']
                                                 }
                                             }} 
                                         >
@@ -214,17 +217,18 @@ const JoinTheCommunity = () => {
                                                     ],
                                                     width: ['100%', null, null, '12rem'],
                                                     height: ['5.4rem', null, '12.6rem'],
-                                                    mr: ['4.6rem', '2rem', null, 'auto'],
+                                                    mr: ['4.6rem', '2rem', null, '3.2rem'],
                                                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                                        minWidth: '12rem',
                                                         maxWidth: 'unset'
                                                     },
                                                 }}
                                             />
                                             <Flex flexDirection={['column']} sx={{
-                                                ml: ['auto', null, null, '2rem'],
+                                                ml: ['auto'],
                                                 width: ['100%'],
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    ml: ['5rem', '0'],
+                                                    ml: ['2rem'],
                                                     maxWidth: '34.6rem'
                                                 },
                                                 alignItems: ['start', null, null, 'end'],
@@ -242,7 +246,7 @@ const JoinTheCommunity = () => {
                                                 <Box>
                                                     <Button 
                                                         buttonWrapperStyles={{
-                                                            width:['auto', null, null, '20rem'],
+                                                            width:['12.5rem', null, null, '20rem'],
                                                             fontWeight: 400,
                                                             '&:hover': {
                                                                 '.button': {

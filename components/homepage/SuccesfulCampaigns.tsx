@@ -41,7 +41,18 @@ const SuccesfulCampaigns = () => {
         mb: ["9.6rem", null, null, "calc(6.4rem * 3)"],
       }}
     >
-      <Text as={"h2"} mb={["5rem", "3.8rem", null, "11.2rem"]}>
+      <Text 
+        as={"h2"} 
+        sx={{
+          mb: ["5rem", "4.5rem", null, "5.8rem"],
+          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            mb: '11.8rem'
+          },
+          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+            mb: '11rem'
+          },
+        }}
+      >
         <AnimatedText>
           Succesful Campaigns
         </AnimatedText>
@@ -49,7 +60,7 @@ const SuccesfulCampaigns = () => {
       {/* TABLET / DESKTOP VIEW */}
       <Flex
         as={"ul"}
-        mb={["1.6rem", '3.2rem', null]}
+        mb={["1.6rem", '4.9rem', null]}
         ref={sliderRef}
         sx={{
           display: ["none !important", "block !important", "block !important"],
@@ -144,7 +155,7 @@ const SuccesfulCampaigns = () => {
         as={"ul"}
         sx={{ display: ["block", "none", "none"] }}
         flexDirection={["column", "row"]}
-        mb={["1.6rem"]}
+        mb={["2.4rem"]}
       >
         {SuccesfullCampaigns.map(
           (campaign, index) =>
@@ -153,6 +164,10 @@ const SuccesfulCampaigns = () => {
                 campaign={campaign}
                 sx={{
                   width: ["100%", "100%", "37.3rem", "35.2rem"],
+                  mb: ['2.4rem', '0'],
+                  '&:last-child': {
+                    mb: 0
+                  }
                 }}
                 key={index}
               />

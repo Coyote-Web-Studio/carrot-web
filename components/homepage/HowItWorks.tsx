@@ -99,85 +99,91 @@ const HowItWorks = () => {
   ];
 
   return (
-    <Flex
-      flexDirection={"column"}
-      sx={{
-        ...theme.boxSizes.defaultBox,
-        zIndex: 1,
-        mb: ["8.2rem", null, null, "17rem"],
-        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-          mb: '14.8rem'
-        },
-      }}
-    >
-      <Fade>
-        <Text 
-          as={"h2"} 
-          mb={["3.8rem", null, null, "6.8rem !important"]} 
-          lineHeight={['5.6rem', '8rem']}
-          sx={{
-            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-              mb: '6.4rem'
-            },
-          }}
-        >
-          <AnimatedText>
-            How it works
-          </AnimatedText>
-        </Text>
-      </Fade>
-      <Flex as={"ul"} flexDirection={"column"} width={"100%"} sx={{position: 'relative'}}>
+    <Box sx={{
+      mb: ["8.6rem", null, null, "15.8rem"],
+      zIndex: 1,
+      [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+        mb: '17rem'
+      },
+      [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+        mb: '14.8rem'
+      },
+    }}>
+      <Flex
+        flexDirection={"column"}
+        sx={{
+          ...theme.boxSizes.defaultBox,
+        }}
+      >
         <Fade>
-        <>
-          <Box sx={{
-            width: '0.46rem', 
-            height: '0.46rem', 
-            background: theme.colors.protocolCardLine,
-            position: 'absolute',
-            top: '-0.25rem',
-            right: '-0.25rem',
-            display: ['block', 'none'],
-            zIndex: 10
-          }}/>
-          <Box sx={{
-            width: '0.46rem', 
-            height: '0.46rem', 
-            background: theme.colors.protocolCardLine,
-            position: 'absolute',
-            top: '-0.25rem',
-            left: '-0.25rem',
-            display: ['block', 'none'],
-            zIndex: 10
-          }}/>
-          <Box sx={{
-            width: '0.46rem', 
-            height: '0.46rem', 
-            background: theme.colors.protocolCardLine,
-            position: 'absolute',
-            bottom: '-0.25rem',
-            left: '-0.25rem',
-            display: ['block', 'none'],
-            zIndex: 10
-          }}/>
-          <Box sx={{
-            width: '0.46rem', 
-            height: '0.46rem', 
-            background: theme.colors.protocolCardLine,
-            position: 'absolute',
-            bottom: '-0.25rem',
-            right: '-0.25rem',
-            display: ['block', 'none'],
-            zIndex: 10
-          }}/>
-        </>
-          {HowItWorksContent.map((contentBlock, index, array) => (
-            <Fade key={index}>
-              <HowItWorksBlock content={contentBlock} key={index} index={index} totalElements={array.length}/>
-            </Fade>
-          ))}
+          <Text 
+            as={"h2"} 
+            lineHeight={['5.6rem', null, null, '8rem']}
+            sx={{
+              mb: ["3.6rem", null, null, "5rem !important"],
+              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                mb: '7.2rem !important'
+              },
+            }}
+          >
+            <AnimatedText>
+              How it works
+            </AnimatedText>
+          </Text>
         </Fade>
+        <Flex as={"ul"} flexDirection={"column"} width={"100%"} sx={{position: 'relative'}}>
+          <Fade>
+          <>
+            <Box sx={{
+              width: '0.46rem', 
+              height: '0.46rem', 
+              background: theme.colors.protocolCardLine,
+              position: 'absolute',
+              top: '-0.25rem',
+              right: '-0.25rem',
+              display: ['block', 'none'],
+              zIndex: 10
+            }}/>
+            <Box sx={{
+              width: '0.46rem', 
+              height: '0.46rem', 
+              background: theme.colors.protocolCardLine,
+              position: 'absolute',
+              top: '-0.25rem',
+              left: '-0.25rem',
+              display: ['block', 'none'],
+              zIndex: 10
+            }}/>
+            <Box sx={{
+              width: '0.46rem', 
+              height: '0.46rem', 
+              background: theme.colors.protocolCardLine,
+              position: 'absolute',
+              bottom: '-0.25rem',
+              left: '-0.25rem',
+              display: ['block', 'none'],
+              zIndex: 10
+            }}/>
+            <Box sx={{
+              width: '0.46rem', 
+              height: '0.46rem', 
+              background: theme.colors.protocolCardLine,
+              position: 'absolute',
+              bottom: '-0.25rem',
+              right: '-0.25rem',
+              display: ['block', 'none'],
+              zIndex: 10
+            }}/>
+          </>
+            {HowItWorksContent.map((contentBlock, index, array) => (
+              <Fade key={index}>
+                <HowItWorksBlock content={contentBlock} key={index} index={index} totalElements={array.length}/>
+              </Fade>
+            ))}
+          </Fade>
+        </Flex>
       </Flex>
-    </Flex>
+    </Box>
   );
 };
 

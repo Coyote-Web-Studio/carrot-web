@@ -56,8 +56,8 @@ const HowItWorksBlock = (props: any) => {
           className={"hiw-heading"}
           sx={{
             height: [
-              '9.2rem', 
-              isOpen ? 'auto' : '9.2rem', 
+              '9.6rem', 
+              isOpen ? 'auto' : '9.6rem', 
               null,
               isOpen ? 'auto' : '9.6rem'],
             transition: '0.25s ease-in-out height',
@@ -75,7 +75,7 @@ const HowItWorksBlock = (props: any) => {
             justifyContent={"center"}
             alignItems={"center"}
             fontSize={["4.8rem", "4rem"]}
-            height={['auto', '9.2rem', null, '9.6rem']}
+            height={['auto', '9.6rem', null, '9.6rem']}
             fontWeight={700}
             bg={theme.colors.cardBackground}
             sx={{
@@ -98,8 +98,9 @@ const HowItWorksBlock = (props: any) => {
             {props.index + 1 == props.totalElements && (
               <>
                 <Box className={'corner-square'} sx={{
-                  bottom:offsetStyles,
+                  bottom: offsetStyles,
                   left: offsetStyles,
+                  display: ['none', 'unset']
                 }}/>
               </>
             )}
@@ -116,7 +117,7 @@ const HowItWorksBlock = (props: any) => {
             width={['100%', '24.8rem', null, '41.6rem']}
             height={[
               'auto', 
-              isOpen ? '14.2rem' : '9.2rem', 
+              isOpen ? '14.2rem' : '9.6rem', 
               null,
               isOpen ? '12.6rem' : '9.6rem']}
             sx={{
@@ -159,7 +160,7 @@ const HowItWorksBlock = (props: any) => {
                 bottom: offsetStyles,
                 right: offsetStyles,
                 position: 'absolute',
-                display: ['none', 'block']
+                display: ['none', 'block'],
               }}/>
           )}
           <Flex
@@ -168,7 +169,7 @@ const HowItWorksBlock = (props: any) => {
             justifyContent={"space-between"}
             alignItems={"center"}
             width={"100%"}
-            minHeight={['9.2rem', null, null, '9.6rem'] }
+            minHeight={['9.6rem', null, null, '9.6rem'] }
             sx={{
               position: 'relative',
               p: ["2.4rem", "0 2.4rem"],
@@ -183,6 +184,7 @@ const HowItWorksBlock = (props: any) => {
                 background: theme.colors.protocolCardLine,
                 top: offsetStyles,
                 right: offsetStyles,
+                display: ['none', 'unset']
               }}/>
             )}
             <Text 
@@ -209,17 +211,17 @@ const HowItWorksBlock = (props: any) => {
               maxHeight: isOpen ? '100rem' : '0',
               height: [
                 null,
-                isOpen ? 'calc(6.4rem * 9) !important' : 'auto',
+                isOpen ? 'calc(6.4rem * 7) !important' : 'auto',
                 null,
-                isOpen ? 'calc(6.4rem * 11) !important' : 'auto'
+                isOpen ? 'calc(6.4rem * 6 + 3.2rem) !important' : 'auto'
               ],
               overflowY: 'hidden',
-              transition: '0.25s ease-in-out all, padding',
+              transition: '0.25s ease-in-out all',
               p: [
-                isOpen ? '0 2.2rem 2.2rem' : '0 2.2rem 0',
+                isOpen ? '0 2.2rem 0' : '0 2.2rem 0',
               ],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                p: isOpen ? '0 6.4rem 6.4rem' : '0 6.4rem 0' 
+                p: isOpen ? '0 6.4rem 0' : '0 6.4rem 0' 
               },
             }}
           >

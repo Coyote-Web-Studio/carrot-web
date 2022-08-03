@@ -17,74 +17,26 @@ const Hero = (props : any) => {
     const theme : any = useTheme();
 
     return (
-        <StyledHero className="hero" sx={{position: 'relative', pb: ['5.2rem', null, null, '11.3rem']}}>
+        <Flex className="hero" sx={{
+            position: 'relative', 
+            pb: ['4.2rem', '2.4rem', null, '6.4rem']
+        }}>
             {/* BACKGROUND DECORATION */}
-            <Flex className="side-text"
-                sx={{
-                    minWidth: ['6.4rem'],
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    height: '100%',
-                    zIndex: 100,
-                    fontWeight: 300,
-                    display: ['none !important', null, null, 'flex !important']
+            <Box sx={{
+                ...theme.boxSizes.heroGridBox, 
                 }}
             >
-                <Text 
-                    sx={{
-                        position: 'absolute', 
-                        top: '10.9rem', 
-                        display: 'flex',
-                        left: ['2rem'],
-                        alignItems: 'center',
-                        writingMode: 'vertical-rl',
-                        transform: `rotate(180deg)`,
-                        fontSize: '1.4rem',
-                        fontFamily: theme.fonts.monospace
-                    }}
-                >
-                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
-                    BY DXDAO
-                </Text>
-                <Text 
-                    sx={{
-                        position: 'absolute', 
-                        top: '42.1rem', 
-                        left: ['2.2rem'],
-                        alignItems: 'center',
-                        display: 'flex',
-                        writingMode: 'vertical-rl',
-                        transform: `rotate(180deg)`,
-                        fontSize: '1.4rem',
-                        fontFamily: theme.fonts.monospace
-                    }}
-                >   
-                    <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
-                    100% DECENTRALISED
-                </Text>
-            </Flex>
-            <Box sx={{
-                ...theme.boxSizes.expandedBox, 
-                position: 'absolute',
-                height: ['100%', null, null, '44.7rem'],
-                top: ['0', null, null, '6.4rem'],
-                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                    height: '57.6rem'
-                },
-                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                    height: 'calc(6.4rem * 13)'
-                }
-            }}>
                 <GridBackground 
                     sx={{
-                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                            backgroundPosition: 'top center'
+                        backgroundPosition: [null, null, null, 'top center'],
+                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                            backgroundPosition: 'unset'
                         },
                     }}
                 />
             </Box>
             {/* HERO CONTENT */}
+            <SideText />
             <Flex 
                 flexDirection={['column', 'row']} 
                 justifyContent={['auto', 'space-between']}
@@ -102,26 +54,26 @@ const Hero = (props : any) => {
                         '32rem', 
                         null,
                         'calc(50vw - 30rem)', '50%']} 
-                        sx={{
-                            position: 'relative', 
-                            pr: '1rem',
-                            pt: ['3rem', '7.6rem', '9rem', '11.8rem'],
-                            flexGrow: 1,
-                            maxWidth: [null, '36rem', '42rem', '60rem'],
-                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                pt: '10.4rem',
-                                maxWidth: '64rem',
-                            },
-                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                pt: '14rem',
-                                maxWidth: '68rem',
-                            }
-                     }}
+                    sx={{
+                        position: 'relative', 
+                        pr: '1rem',
+                        pt: ['3rem', '7.6rem', '9rem', '12.8rem'],
+                        flexGrow: 1,
+                        maxWidth: [null, '36rem', '42rem', '60rem'],
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            pt: '10.4rem',
+                            maxWidth: '64rem',
+                        },
+                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                            pt: '14.6rem',
+                            maxWidth: '68rem',
+                        }
+                    }}
                 >
                     <Text as="h1" sx={{
                         fontSize: ['4.8rem', null, null, '6.9rem'], 
                         lineHeight: ['4.88rem', '4.88rem', '4.8rem', '6.99rem'] ,
-                        mb: ['1.6rem', '1.6rem', '1.8rem', '2rem'],
+                        mb: ['1.6rem', '1.6rem', '1.8rem', '1rem'],
                         letterSpacing: '-0.02em',
                         pr: ['2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
@@ -140,14 +92,16 @@ const Hero = (props : any) => {
                         </AnimatedText>
                     </Text>
                     <Fade>
-                        <Text mb={['2.9rem', '3.7rem', null, '1.5rem']} sx={{
-                            fontSize: ['1.4rem', null, null, '1.9rem'],
-                            lineHeight: ['2.2rem', null, null, '2.85rem'],
+                        <Text mb={['2.9rem', '3.7rem', null, '2.6rem']} sx={{
+                            fontSize: ['1.4rem', null, null, '1.6rem'],
+                            lineHeight: ['2.2rem', null, null, '2.4rem'],
                             color: theme.colors.textColor,
                             fontFamily: 'IBM Plex Mono',
                             fontWeight: 300,
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                mb: '7.2rem !important'
+                                fontSize: '1.9rem',
+                                mb: '6.7rem !important',
+                                lineHeight: '2.85rem'
                             },
                         }}>
                             <AnimatedText speed={5} initialDelay={700}>
@@ -178,8 +132,19 @@ const Hero = (props : any) => {
                     <Fade sx={{position: 'relative'}}>
                         <PlayVideoButton label={'HOW IT WORKS'} sx={{
                             position: 'absolute',
-                            bottom: ['7.6rem', '2.4rem', '7.6rem'], 
+                            bottom: ['3rem', '2.4rem', '7.6rem'],
                             zIndex: 1,
+                            ml: [
+                                '2.4rem',
+                                'calc(50% - 9.6rem)',
+                                'calc(50% - 11.1rem)'
+                            ],
+                            [`@media screen and (min-width: 600px)`]: {
+                                ml: 'calc(50% - 9.6rem)'
+                            },
+                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                bottom: '18rem'
+                            }
                         }}/>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
@@ -197,17 +162,71 @@ const Hero = (props : any) => {
                                 height: '69.9rem'
                             },
                             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                width: "73.6rem",
-                                height: '95.8rem'
+                                width: "70rem",
+                                height: '82.1rem'
                             }
 ,                        }} />
                     </Fade>
                 </Box>
             </Flex>
-        </StyledHero>
+        </Flex>
     )
 };
 
-const StyledHero = styled(Flex)``;
+const SideText = (props : any) => {
+
+    const theme : any = useTheme();
+
+    return (
+        <Flex className="side-text"
+            sx={{
+                minWidth: ['6.4rem'],
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                height: '100%',
+                zIndex: 100,
+                fontWeight: 300,
+                display: ['none !important'],
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    display: 'flex !important'
+                },
+            }}
+        >
+            <Text 
+                sx={{
+                    position: 'absolute', 
+                    top: '10.9rem', 
+                    display: 'flex',
+                    left: ['2rem'],
+                    alignItems: 'center',
+                    writingMode: 'vertical-rl',
+                    transform: `rotate(180deg)`,
+                    fontSize: '1.4rem',
+                    fontFamily: theme.fonts.monospace
+                }}
+            >
+                <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
+                BY DXDAO
+            </Text>
+            <Text 
+                sx={{
+                    position: 'absolute', 
+                    top: '42.1rem', 
+                    left: ['2.2rem'],
+                    alignItems: 'center',
+                    display: 'flex',
+                    writingMode: 'vertical-rl',
+                    transform: `rotate(180deg)`,
+                    fontSize: '1.4rem',
+                    fontFamily: theme.fonts.monospace
+                }}
+            >   
+                <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
+                100% DECENTRALISED
+            </Text>
+        </Flex>
+    )
+}
 
 export default Hero;

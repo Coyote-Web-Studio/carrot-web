@@ -61,10 +61,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
     line-height: 150%;
     font-weight: 300;
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[1]}) {
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
       font-size: 1.6rem;
     }
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
       font-size: 1.9rem;
     }
   }

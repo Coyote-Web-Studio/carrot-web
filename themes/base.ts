@@ -28,7 +28,7 @@ export default {
       defaultBox: {
         mx: "auto",
         width: [
-          "calc(100vw - 4rem)", 
+          "calc(100vw - 4.8rem)", 
           "60rem", 
           null,
           "88rem"
@@ -45,6 +45,34 @@ export default {
         },
       },
       expandedBox: {
+        position: 'absolute',
+        height: '100%',
+        width: [
+          "calc(100vw)", 
+          "calc(72rem + 1px)", 
+          null,
+          "100vw"
+        ],
+        left: [
+          '0',
+          'calc(50% - (72rem / 2) + 2px)',
+          null,
+          '0'
+        ],
+        [`@media screen and (min-width: ${breakpoints[4]})`]: {
+          width: 'calc(6.4rem * 27 + 0.1rem)',
+          left: 'calc(50vw - ((6.4rem * 27) / 2))'
+        }
+      },
+      heroGridBox: {
+        position: 'absolute',
+        top: ['0', null, null, '6.4rem'],
+        height: [
+          'calc(2.4rem * 14)', 
+          'calc(2.4rem * 18)', 
+          null, 
+          '44.7rem'
+        ],
         width: [
           "calc(100vw)", 
           "calc(72rem + 1px)", 
@@ -58,11 +86,17 @@ export default {
           '0'
         ],
         [`@media screen and (min-width: ${breakpoints[3]})`]: {
+          height: '57.6rem',
+        [`@media screen and (min-width: ${breakpoints[4]})`]: {
+            height: 'calc(6.4rem * 11)',
+            width: 'calc(6.4rem * 27 + 0.1rem)',
+            left: 'calc(50vw - ((6.4rem * 27) / 2))'
         }
+      },
       },
       reducedBox: {
         width: [
-          "calc(100vw - 4rem)", 
+          "calc(100vw - 4.8rem)", 
           "60rem", 
           null,
           '88rem'

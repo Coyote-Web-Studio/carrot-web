@@ -19,9 +19,12 @@ const Breakdown = (props: any) => {
         ...theme.boxSizes.reducedBox,
         position: "relative",
         zIndex: 1,
+        pt: ["4.8rem", "calc(2.4rem * 2)", null, "12.8rem"],
+        pb: ["calc(2.4rem * 4 - 0.4rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "19rem"],
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+          pb: '17.6rem'
+        },
       }}
-      pt={["2.4rem", "calc(2.4rem * 2)", null, "12.8rem"]}
-      pb={["calc(2.4rem * 4 - 0.8rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "18rem"]}
     >
       <Image
         ref={sphereParallax.ref}
@@ -50,7 +53,7 @@ const Breakdown = (props: any) => {
           <Flex
             flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
             justifyContent={["auto", "center"]}
-            alignItems={["auto", "center"]}
+            alignItems={["auto"]}
             sx={{
               columnGap: '4rem',
               "&:last-child": {
@@ -85,7 +88,9 @@ const Breakdown = (props: any) => {
               flexDirection={"column"}
               width={["100%", "calc(50% - 1rem)", null, "53rem"]}
               sx={{
+                pt: ['0', '2.4rem', null, null],
                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                  pt: '3.2rem',
                   width: '70.4rem !important'
                 },
               }}

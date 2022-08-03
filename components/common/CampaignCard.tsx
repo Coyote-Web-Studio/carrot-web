@@ -7,7 +7,12 @@ const CampaignCard = (props : any) => {
 
     const theme : any = useTheme()
     return (
-      <Box sx={{position: 'relative'}} {...props}>
+      <Box 
+        sx={{
+          position: 'relative'
+        }} 
+        {...props}
+      >
         <StyledCampaignCard flexDirection={['column']} 
           bg={transparentize('0.1', theme.colors.cardBackground)} sx={{
             backdropFilter: 'blur(10px)',
@@ -15,7 +20,6 @@ const CampaignCard = (props : any) => {
             borderRadius: '1.6rem',
             overflow: 'hidden',
             height: ['38.4rem', '38.4rem', null, '38.4rem'],
-            mb: ['2.4rem', '0'],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height: '44.8rem'
             },

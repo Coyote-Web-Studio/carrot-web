@@ -27,55 +27,55 @@ const Footer = (props: any) => {
   return (
     <Flex
       as="footer"
-      pt={["4.8rem", '12.8rem', null, 'calc(6.4rem * 2)']}
-      pb={'5.6rem'}
-      bg={theme.colors.footerBackground}
       sx={{
+        bg: theme.colors.footerBackground,
         position: "relative",
         flexDirection: 'column',
+        pt:["4.8rem", '12.8rem', null, 'calc(6.4rem * 2)'],
+        pb: '5.6rem',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          pt: '26rem'
+          pt: 'calc(6.4rem * 4)'
         },
       }}
     >
-      <Box 
-        sx={{
-          ...theme.boxSizes.expandedBox,
-          position: 'absolute',
-          height: ['calc(2.4rem * 5)', 'calc(2.4rem * 12)', null, 'calc(6.4rem * 6)'], 
-          top: ["2.8rem", "7rem", null, "calc(6.4rem * 1)"], 
-          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-            height: "calc(6.4rem * 7)",
-            top: '6.4rem',
-          },
-          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-            height: "calc(6.4rem * 8)",
-            top: '6.4rem',
-          },
-
-        }}
-        >
-        <GridBackground color={theme.colors.gray9} sx={{
-          backgroundImage: theme.misc.footerPatternImage,
-          backgroundPosition: 'top center'
-        }}/>
+      <Box sx={{
+        position: 'absolute',
+        height: ['calc(2.4rem * 5)', 'calc(2.4rem * 12)', null, 'calc(6.4rem * 6)'], 
+        top: ["2.8rem", "7rem", null, "calc(6.4rem * 1)"], 
+        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+          height: "calc(6.4rem * 11)",
+          top: 'calc(6.4rem * 2)',
+        },
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+          height: "calc(6.4rem * 10)",
+          top: 'calc(6.4rem * 2)',
+        },
+      }}>
+        <Box sx={{ 
+            ...theme.boxSizes.expandedBox,
+          }} >
+          <GridBackground color={theme.colors.gray9} sx={{
+            backgroundImage: theme.misc.footerPatternImage,
+            backgroundPosition: 'top center'
+          }}/>
+        </Box>
       </Box>
 
-      <Fade sx={{
-        ...theme.boxSizes.defaultBox,
-        }}
-      >
+      <Fade sx={{ ...theme.boxSizes.defaultBox }} >
         <Logo 
-          color={theme.colors.orange6} 
-          height={['auto', '15.5rem', null, 'auto']} 
-          width={['30rem', 'auto', null, '100%']} 
-          mx={['auto']}
-          mb={["4.8rem", "12.2rem", null, "12.3rem"]} 
+          color={theme.colors.orange6}
           sx={{ 
-              zIndex: 1,
-              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                mb: '34rem'
-              },
+            zIndex: 1,
+            height: ['auto', '15.5rem', null, 'auto'], 
+            width: ['30rem', 'auto', null, '100%'], 
+            mx: ['auto'],
+            mb:["4.8rem", "12.2rem", null, "12.3rem"],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              mb: '34rem'
+            },
+            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+              mb: '34rem'
+            },
           }} 
         />
       </Fade>
@@ -87,7 +87,15 @@ const Footer = (props: any) => {
         >
           <Flex as="ul" flexWrap="wrap">
             {FooterLinks.map((footerColumn, i) => (
-              <Flex flexDirection="column" width={[1/2, 1/4, null, '15.2rem']} mb={['4.8rem', '4.8rem', null, 0]} fontFamily={'IBM Plex Mono'} key={i} fontWeight={300}>
+              <Flex 
+                flexDirection="column" 
+                width={[1/2, 1/4, null, '15.2rem']} 
+                mb={['4.8rem', '4.8rem', null, 0]} 
+                mr={[null, null, null, '3.2rem']}
+                fontFamily={'IBM Plex Mono'} 
+                key={i} 
+                fontWeight={300}
+              >
                 <Text 
                   fontSize={'1.4rem'} 
                   mb={['0.8rem', '2.4rem']} 
@@ -136,7 +144,7 @@ const Footer = (props: any) => {
           src={"misc/gold-curve.png"}
           sx={{
             position: "absolute",
-            top: ["75rem", "28rem"],
+            top: ["75rem", "28rem", "90rem"],
             width: ["8rem", null, null, "9rem"],
             height: ["8rem", null, null, '9rem'],
             right: ["4%", "45%"],

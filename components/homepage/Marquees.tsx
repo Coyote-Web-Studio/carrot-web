@@ -8,13 +8,21 @@ const Marquees = (props : any) => {
     return (
         <StyledMarquees flexDirection={'column'} sx={{
             '.marquee': {
-                height: ['4.8rem', '4.8rem', null, '7.2rem'],
+                height: ['4.8rem'],
                 zIndex: 0,
                 'img': {
                     mx: ['1.6rem', '1rem'],
-                    height: ['3rem', '2.7rem', null, '4.3rem']
+                    height: ['3rem', '2.7rem']
                 }
-            }
+            },
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                '.marquee': {
+                    height: '7.2rem',
+                    'img': {
+                        height: '4.3rem'
+                    }
+                }
+            },
         }}>
             <Box sx={{
                 '.marquee': {
@@ -45,9 +53,16 @@ const Marquees = (props : any) => {
                     bg: theme.colors.yellow6,
                     'img': {
                         mx: ['1.6rem', '1rem'],
-                        height: ['1.8rem', null, null, '2.8rem']
+                        height: ['1.8rem']
                     }
-                }
+                },
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    '.marquee': {
+                        'img': {
+                            height: '2.8rem'
+                        }
+                    }
+                },
             }}>
                 <Marquee gradient={false} direction={'left'}>
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg" />

@@ -16,8 +16,8 @@ const CarrotInNumbers = () => {
       position: 'relative', 
       bg: theme.colors.orange6, 
       borderRadius: ['1.6rem', null, null, '5rem'], 
-      pb: ['3.6rem', null, null, '4.8rem'],
-      height: ['calc(2.4rem * 34)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 10)'],
+      pb: [null, null, null, '4.8rem'],
+      height: ['calc(2.4rem * 33)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 10)'],
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
         height: 'calc(6.4rem * 14)'
       },
@@ -28,17 +28,18 @@ const CarrotInNumbers = () => {
     >
       <Box sx={{
         position: 'absolute',
-        height: ['57.8rem', 'calc(2.4rem * 12)', null, 'calc(6.4rem * 6)'],
-        top: ['15.2rem', '11.4rem', null, '16.6rem',],
+        height: ['calc(2.4rem * 27)', 'calc(2.4rem * 14)', null, 'calc(6.4rem * 7)'],
+        top: ['12.8rem', '8.8rem', null, '11.8rem',],
         mixBlendMode: 'color-burn',
         opacity: 0.1,
         width: '100%',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          top: '21rem',
-          height: 'calc(6.4rem * 9)'
+          top: '15rem',
+          height: 'calc(6.4rem * 11)'
         },
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-          top: '32.8rem'
+          top: '26.5rem',
+          height: 'calc(6.4rem * 11 - 0.1rem)'
         },
       }}
       >
@@ -46,13 +47,13 @@ const CarrotInNumbers = () => {
           backgroundImage: 'url(/Pattern.svg)',
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             backgroundPosition: 'top center',
-          },
-          
+          }
         }}/>
       </Box>
       <Flex sx={{
         ...theme.boxSizes.defaultBox,
-        py: ['4.8rem'],
+        pt: ['4.8rem', '4.8rem'],
+        pb: [null, '4.8rem'],
         flexDirection: 'column',
         position: 'relative',
       }}>
@@ -66,10 +67,7 @@ const CarrotInNumbers = () => {
           <Text as="h2"
             sx={{
               color: theme.colors.gray10,
-              mb: ['2.4rem', null, null, '4.8rem'],
-              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                mb: '6.4rem'
-              },
+              mb: ['4.8rem', null, null, '6.4rem'],
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 mb: '9rem'
               }
