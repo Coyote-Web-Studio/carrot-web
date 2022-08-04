@@ -73,7 +73,7 @@ const TrustingProtocols = () => {
                 maxWidth:['calc((2.4rem * 7) * 2)', 'unset']
               }}>
                 {Protocols.map((protocol, index) => (
-                  <ProtocolCard data={protocol} index={index}/>
+                  <ProtocolCard data={protocol} index={index} key={index}/>
                 ))}
               </Flex>
             </Flex>
