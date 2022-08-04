@@ -140,7 +140,7 @@ const Hero = (props : any) => {
                                 'calc(50% - 11.1rem)'
                             ],
                             [`@media screen and (min-width: 600px)`]: {
-                                ml: 'calc(50% - 9.6rem)'
+                                ml: 'calc(50% - 12rem)'
                             },
                             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                 bottom: '18rem'
