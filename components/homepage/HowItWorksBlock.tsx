@@ -112,7 +112,7 @@ const HowItWorksBlock = (props: any) => {
             fontWeight={700}
             alignItems={['center', 'unset']}
             bg={theme.colors.cardBackground}
-            px={["1.8rem", null, "3.2rem"]}
+            px={["1.8rem", null, "2.4rem", "3.2rem"]}
             py={['1.8rem', null, null, '1.8rem']}
             width={['100%', '24.8rem', null, '41.6rem']}
             height={[
