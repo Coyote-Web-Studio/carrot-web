@@ -19,19 +19,19 @@ const ProtocolCard = (props : any) => {
         <Flex 
             as={'li'} 
             key={props.index} 
-            // data-aos={'flip-left'} 
+            data-aos={'flip-left'} 
             maxWidth={['unset']}
             width={[
                 'calc(2.4rem * 7)', 
                 'calc(2.4rem * 6)', 
-                '19.9vw', 
-                '24rem'
+                null, 
+                'calc(6.4rem * 3.5)'
             ]}
             height={[
                 'calc(2.4rem * 7)', 
                 'calc(2.4rem * 6)', 
-                '19.9vw', 
-                '24rem'
+                null, 
+                'calc(6.4rem * 3.5)'
             ]}
             alignItems={'center'} 
             justifyContent={'center'}
@@ -42,8 +42,8 @@ const ProtocolCard = (props : any) => {
             mt: [
                 null,
                 props.index % 2 == 0 ? 0 : 'calc(2.4rem * 6)',
-                props.index % 2 == 0 ? 0 : '19.9vw',
-                props.index % 2 == 0 ? 0 : '24rem',
+                null,
+                props.index % 2 == 0 ? 0 : 'calc(6.4rem * 3.5)',
             ],
             [`@media screen and (max-width: 420px)`]: {
                 width: 'calc(2.4rem * 6)',
@@ -58,9 +58,18 @@ const ProtocolCard = (props : any) => {
                 height: 'calc(2.4rem * 4)',
             },
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                width: '19vw !important',
-                height: '19vw !important',
-                mt: props.index % 2 == 0 ? 0 : '19vw !important',
+                width: 'calc(6.4rem * 5) !important',
+                height: 'calc(6.4rem * 5) !important',
+                mt: props.index % 2 == 0 ? 
+                    0 : 
+                    'calc(6.4rem * 5) !important',
+            },
+            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                width: 'calc(6.4rem * 6) !important',
+                height: 'calc(6.4rem * 6) !important',
+                mt: props.index % 2 == 0 ? 
+                    0 : 
+                    'calc(6.4rem * 6) !important',
             },
             '.corner-square': {
                 width: [

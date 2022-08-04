@@ -144,7 +144,7 @@ const Footer = (props: any) => {
           src={"misc/gold-curve.png"}
           sx={{
             position: "absolute",
-            top: ["75rem", "28rem", "90rem"],
+            top: ["75rem", "28rem", "28rem", "90rem"],
             width: ["8rem", null, null, "9rem"],
             height: ["8rem", null, null, '9rem'],
             right: ["4%", "45%"],

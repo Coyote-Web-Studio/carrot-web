@@ -21,9 +21,9 @@ const TrustingProtocols = () => {
       sx={{ position: "relative", zIndex: 1 }} 
       mt={[
         "8.2rem",
-        "8rem", 
+        "8.4rem", 
         null,
-        "15.1rem"]} 
+        "19.8rem"]} 
       pb={['9.6rem', null, null, 'calc(6.4rem * 3)']}>
       <Image
         ref={hexagonParallax.ref}
@@ -43,7 +43,16 @@ const TrustingProtocols = () => {
             ...theme.boxSizes.defaultBox,
             flexDirection: 'column',
           }}>
-            <Text as="h2" mb={['2.4rem', '3.85rem', '9.6rem']}>
+            <Text as="h2" sx={{
+                mb: ['2.4rem', '5rem', '9.6rem', '11.8rem'],
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                  mb: '8.6rem'
+                },
+                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                  mb: '10.6rem'
+                }
+              }}
+            >
               <AnimatedText>
                 Trusted by Some of 
                 Your Favorite Protocols
@@ -51,7 +60,7 @@ const TrustingProtocols = () => {
             </Text>
             <Flex 
               as={'ul'} 
-              justifyContent={['center', null, 'unset']}
+              justifyContent={['center']}
               width={'100%'}
               >
               <Flex sx={{

@@ -200,9 +200,6 @@ const JoinTheCommunity = () => {
                                                     border: 'none'
                                                 },
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    p: ['3.2rem']
-                                                },
-                                                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                                     p: ['3.2rem 3.2rem 3.2rem 6.4rem']
                                                 }
                                             }} 

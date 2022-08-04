@@ -47,7 +47,7 @@ const Testimonials = () => {
           sx={{
             ...theme.boxSizes.expandedBox,
             position: "absolute",
-            height: ["calc(2.4rem * 16)", "calc(2.4rem * 13)", "calc(6.4rem * 15)", "calc(6.4rem * 7)"],
+            height: ["calc(2.4rem * 16)", "calc(2.4rem * 13)", "calc(2.4rem * 13)", "calc(6.4rem * 7)"],
             top: [null, 'calc(2.4rem * 2)', null, "6.4rem"],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height:  "calc(6.4rem * 12)",
@@ -80,7 +80,6 @@ const Testimonials = () => {
               },
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 fontSize: "8.3rem !important",
-                // mb: '13.4rem !important'
               },
             }}
           >
@@ -91,7 +90,7 @@ const Testimonials = () => {
             </AnimatedText>
           </Text>
           <Text
-            fontSize={["1.4rem", "1.4rem", "2.8rem"]}
+            fontSize={["1.4rem", "1.4rem", null, "2.8rem"]}
             color={theme.colors.customerCommentText}
             fontWeight={300}
           >

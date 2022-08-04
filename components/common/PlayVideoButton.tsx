@@ -10,11 +10,6 @@ const PlayVideoButton = (props : any) => {
             alignItems: 'center',
             cursor: 'pointer',
             fontWeight: 300,
-            ml: [
-                'calc(50% - 9.6rem)',
-                null,
-                'calc(50% - 11.1rem)'
-            ],
             width: ['19.2rem', '19.2rem', '22.2rem', '25.6rem'],
             border: `0.1rem solid ${theme.colors.gray10}`,
             borderRadius: '4.8rem',

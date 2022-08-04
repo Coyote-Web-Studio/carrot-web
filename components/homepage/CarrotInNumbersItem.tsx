@@ -94,6 +94,11 @@ const CarrotInNumbersItem = (props : any) => {
                     '&:before': {
                         background: theme.colors.gray10
                     },
+                },
+                '&:nth-of-type(3)': {
+                    '&:before': {
+                        background: ['transparent', theme.colors.gray10]
+                    },
                 }
             }}
         >
