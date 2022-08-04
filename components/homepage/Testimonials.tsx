@@ -27,7 +27,7 @@ const Testimonials = () => {
           borderRadius: ['1.6rem', null, null, '5rem'],
           pb: ["6.4rem", '6.8rem', null, "8.4rem"],
           pt: ["8.7rem" , '6.8rem', null, "8.4rem"],
-          mb: ["4.8rem", null, "12.8rem", "calc(2.4rem * 2)"],
+          mb: ["4.8rem", null, "12.8rem", "calc(6.4rem * 2)"],
           height: [null, 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: 'calc(6.4rem * 2)',
