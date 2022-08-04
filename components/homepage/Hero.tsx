@@ -100,7 +100,7 @@ const Hero = (props : any) => {
                             fontWeight: 300,
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                 fontSize: '1.9rem',
-                                mb: '6.7rem !important',
+                                mb: '7rem !important',
                                 lineHeight: '2.85rem'
                             },
                         }}>
