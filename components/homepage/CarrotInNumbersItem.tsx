@@ -74,8 +74,8 @@ const CarrotInNumbersItem = (props : any) => {
             as={'li'} 
             flexDirection={'column'}
             sx={{
-                width: ['100%', 'calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
-                mx: ['0', '2.4rem', '6.4rem'],
+                width: ['100%', 'calc(50% - 2.4rem)','calc(50% - 2.4rem)', 'calc(50% - 6.4rem)'],
+                mx: ['0', '2.4rem', '2.4rem', '6.4rem'],
                 position: 'relative',
                 '&::after, &::before': {
                     content: "''",

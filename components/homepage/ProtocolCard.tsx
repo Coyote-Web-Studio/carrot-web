@@ -46,8 +46,8 @@ const ProtocolCard = (props : any) => {
                 props.index % 2 == 0 ? 0 : 'calc(6.4rem * 3.5)',
             ],
             [`@media screen and (max-width: 420px)`]: {
-                width: 'calc(2.4rem * 6)',
-                height: 'calc(2.4rem * 6)',
+                width: 'calc(2.4rem * 5.5)',
+                height: 'calc(2.4rem * 5.5)',
             },
             [`@media screen and (max-width: 330px)`]: {
                 width: 'calc(2.4rem * 5)',

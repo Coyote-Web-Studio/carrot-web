@@ -85,7 +85,7 @@ const CarrotInNumbers = () => {
         <Fade as={'ul'} flexDirection={'column'} sx={{
           flexWrap: 'wrap',
           width: ['100%'],
-          mx: [0, '-2.4rem', '-6.4rem'],
+          mx: [0, '-2.4rem', '-2.4rem', '-6.4rem'],
           height: ['auto', '32rem', '31rem', '40rem'],
           position: 'relative',
           alignItems: ['auto', 'center', 'center'],
