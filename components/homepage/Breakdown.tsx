@@ -20,7 +20,7 @@ const Breakdown = (props: any) => {
         position: "relative",
         zIndex: 1,
         pt: ["4.8rem", "calc(2.4rem * 2)", null, "12.8rem"],
-        pb: ["calc(2.4rem * 4 - 0.4rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "19rem"],
+        pb: ["calc(2.4rem * 4 - 0.4rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "17.8rem"],
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
           pb: '17.6rem'
         },

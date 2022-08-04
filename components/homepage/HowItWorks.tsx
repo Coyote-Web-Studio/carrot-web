@@ -121,8 +121,11 @@ const HowItWorks = () => {
             lineHeight={['5.6rem', null, null, '8rem']}
             sx={{
               mb: ["3.6rem", null, null, "5rem !important"],
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                mb: '6.4rem !important'
+              },
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                mb: '7.2rem !important'
+                mb: '7.4rem !important'
               },
             }}
           >
