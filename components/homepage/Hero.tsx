@@ -103,6 +103,9 @@ const Hero = (props : any) => {
                                 mb: '7rem !important',
                                 lineHeight: '2.85rem'
                             },
+                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                mb: '6.7rem !important',
+                            },
                         }}>
                             <AnimatedText speed={5} initialDelay={700}>
                                 Increase your TVL, volume, price, engagement and more.
@@ -139,12 +142,9 @@ const Hero = (props : any) => {
                                 'calc(50% - 9.6rem)',
                                 'calc(50% - 11.1rem)'
                             ],
-                            [`@media screen and (min-width: 600px)`]: {
-                                ml: 'calc(50% - 12rem)'
-                            },
                             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                 bottom: '18rem'
-                            }
+                            },
                         }}/>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,

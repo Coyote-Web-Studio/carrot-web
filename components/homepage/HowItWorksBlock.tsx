@@ -223,6 +223,9 @@ const HowItWorksBlock = (props: any) => {
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                 p: isOpen ? '0 6.4rem 0' : '0 6.4rem 0' 
               },
+              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                height:  isOpen ? 'calc(6.4rem * 10) !important' : 'auto'
+              },
             }}
           >
             <Box 

@@ -17,28 +17,28 @@ const CarrotInNumbers = () => {
       bg: theme.colors.orange6, 
       borderRadius: ['1.6rem', null, null, '5rem'], 
       pb: [null, null, null, '4.8rem'],
-      height: ['calc(2.4rem * 33)', 'calc(2.4rem * 20)', null, 'calc(6.4rem * 10)'],
+      height: ['calc(2.4rem * 33)', 'calc(2.4rem * 19)', null, 'calc(6.4rem * 10)'],
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
         height: 'calc(6.4rem * 14)'
       },
       [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-        height: 'calc(6.4rem * 16)'
+        height: 'calc(6.4rem * 15)'
       },
     }}
     >
       <Box sx={{
         position: 'absolute',
-        height: ['calc(2.4rem * 27)', 'calc(2.4rem * 14)', null, 'calc(6.4rem * 7)'],
-        top: ['12.8rem', '8.8rem', null, '11.8rem',],
+        height: ['calc(2.4rem * 27)', 'calc(2.4rem * 14 + 1px)', null, 'calc(6.4rem * 7)'],
+        top: ['12.4rem', '8.4rem', null, '11.2rem',],
         mixBlendMode: 'color-burn',
         opacity: 0.1,
         width: '100%',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          top: '15rem',
+          top: '14.4rem',
           height: 'calc(6.4rem * 11)'
         },
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-          top: '26.5rem',
+          top: 'calc(6.4rem * 2.8)',
           height: 'calc(6.4rem * 11 - 0.1rem)'
         },
       }}
@@ -50,54 +50,58 @@ const CarrotInNumbers = () => {
           }
         }}/>
       </Box>
-      <Flex sx={{
-        ...theme.boxSizes.defaultBox,
+      <Box sx={{
         pt: ['4.8rem', '4.8rem'],
         pb: [null, '4.8rem'],
-        flexDirection: 'column',
-        position: 'relative',
+        width: '100%',
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+          pt: '6.4rem'
+        },
       }}>
-        <Fade sx={{
-          zIndexX: 1,
-          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-            pt: '6.4rem'
-          },
-          }}
-        >
-          <Text as="h2"
-            sx={{
-              color: theme.colors.gray10,
-              mb: ['4.8rem', null, null, '6.4rem'],
-              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                mb: '9rem'
-              }
+        <Flex sx={{
+          flexDirection: 'column',
+          position: 'relative',
+          ...theme.boxSizes.defaultBox,
+        }}>
+          <Fade sx={{
+            zIndexX: 1
             }}
           >
-            <AnimatedText color={theme.colors.gray10}>
-              Carrot in
-            </AnimatedText>
-            <Box as="br" sx={{display: ['block', 'none', 'none']}}/>
-            <AnimatedText color={theme.colors.gray10} initialDelay={100}>
-              numbers
-            </AnimatedText>
-          </Text>
-        </Fade>
-        <Fade as={'ul'} flexDirection={'column'} sx={{
-          flexWrap: 'wrap',
-          width: ['100%'],
-          mx: [0, '-2.4rem', '-2.4rem', '-6.4rem'],
-          height: ['auto', '32rem', '31rem', '40rem'],
-          position: 'relative',
-          alignItems: ['auto', 'center', 'center'],
-          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-            height: '60rem'
-          },
-        }}>
-          {CarrotInNumbersData.map((item, index) => (
-            <CarrotInNumbersItem key={index} data={item}/>
-          ))}
-        </Fade>
-      </Flex>
+            <Text as="h2"
+              sx={{
+                color: theme.colors.gray10,
+                mb: ['4.4rem', null, null, '6rem'],
+                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                  mb: '5.2rem'
+                }
+              }}
+            >
+              <AnimatedText color={theme.colors.gray10}>
+                Carrot in
+              </AnimatedText>
+              <Box as="br" sx={{display: ['block', 'none', 'none']}}/>
+              <AnimatedText color={theme.colors.gray10} initialDelay={100}>
+                numbers
+              </AnimatedText>
+            </Text>
+          </Fade>
+          <Fade as={'ul'} flexDirection={'column'} sx={{
+            flexWrap: 'wrap',
+            width: ['100%'],
+            mx: [0, '-2.4rem', '-2.4rem', '-6.4rem'],
+            height: ['auto', '32rem', '31rem', '40rem'],
+            position: 'relative',
+            alignItems: ['auto', 'center', 'center'],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: '60rem'
+            },
+          }}>
+            {CarrotInNumbersData.map((item, index) => (
+              <CarrotInNumbersItem key={index} data={item}/>
+            ))}
+          </Fade>
+        </Flex>
+      </Box>
     </Flex>
   )
 };

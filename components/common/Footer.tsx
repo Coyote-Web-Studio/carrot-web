@@ -34,6 +34,9 @@ const Footer = (props: any) => {
         pt:["4.8rem", '12.8rem', null, 'calc(6.4rem * 2)'],
         pb: '5.6rem',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+          pt: 'calc(6.4rem * 4 - 1.4rem)'
+        },
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
           pt: 'calc(6.4rem * 4)'
         },
       }}
@@ -43,7 +46,7 @@ const Footer = (props: any) => {
         height: ['calc(2.4rem * 5)', 'calc(2.4rem * 12)', null, 'calc(6.4rem * 6)'], 
         top: ["2.8rem", "7rem", null, "calc(6.4rem * 1)"], 
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          height: "calc(6.4rem * 11)",
+          height: "calc(6.4rem * 10)",
           top: 'calc(6.4rem * 2)',
         },
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
@@ -71,7 +74,8 @@ const Footer = (props: any) => {
             mx: ['auto'],
             mb:["4.8rem", "12.2rem", null, "12.3rem"],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              mb: '34rem'
+              mb: '34rem',
+              width: '108rem'
             },
             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
               mb: '34rem'
@@ -88,13 +92,18 @@ const Footer = (props: any) => {
           <Flex as="ul" flexWrap="wrap">
             {FooterLinks.map((footerColumn, i) => (
               <Flex 
-                flexDirection="column" 
-                width={[1/2, 1/4, null, '15.2rem']} 
-                mb={['4.8rem', '4.8rem', null, 0]} 
-                mr={[null, null, null, '3.2rem']}
-                fontFamily={'IBM Plex Mono'} 
                 key={i} 
-                fontWeight={300}
+                sx={{
+                  flexDirection: "column",
+                  width: ['50%', '25%', null, '12rem'], 
+                  mb: ['4.8rem', '4.8rem', null, 0],
+                  mr: [null, null, null, '3.2rem'],
+                  fontFamily: 'IBM Plex Mono',
+                  fontWeight: 300,
+                  [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    width: '15.2rem',
+                  },
+                }}
               >
                 <Text 
                   fontSize={'1.4rem'} 
@@ -102,7 +111,7 @@ const Footer = (props: any) => {
                   letterSpacing={'0.08em'} 
                   color={invert(theme.colors.textColor)}
                   sx={{
-                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                       fontSize: '1.6rem',
                     },
                   }}
@@ -121,7 +130,7 @@ const Footer = (props: any) => {
                       '&:hover': {
                         opacity: 0.7
                       },
-                      [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                      [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                         fontSize: '1.4rem',
                       },
                     }}
@@ -133,8 +142,14 @@ const Footer = (props: any) => {
             ))}
           </Flex>
           <Button inverted buttonWrapperStyles={{
-            mt: 'auto'
-          }}>CARROT DAPP</Button>
+            mt: 'auto',
+            height: [null, null, null, '4.8rem'],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: '6.4rem'
+            },
+          }}>
+            CARROT DAPP
+          </Button>
         </Flex>
       </Flex>
       

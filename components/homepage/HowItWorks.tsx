@@ -14,10 +14,12 @@ const HowItWorks = () => {
       heading: 'Create your campaign',
       triggerLabel: 'Set conditions and collateral',
       content: 
-        <Text as={'p'}>
-          <AnimatedText speed={5}>
-            Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
-          </AnimatedText>
+        <>
+          <Text as={'p'}>
+            <AnimatedText speed={5}>
+              Use the campaign creation interface to set your campaign&apos;s goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!
+            </AnimatedText>
+          </Text>
           <Box 
             className={'content-image'}
             mt={'3.2rem'} 
@@ -32,7 +34,7 @@ const HowItWorks = () => {
               backgroundPosition: 'center'
             }}
           />
-        </Text>
+        </>
     },
     {
       heading: 'Distribute KPI tokens',
@@ -122,10 +124,10 @@ const HowItWorks = () => {
             sx={{
               mb: ["3.6rem", null, null, "5rem !important"],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                mb: '6.4rem !important'
+                mb: '6.8rem !important'
               },
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                mb: '7.4rem !important'
+                mb: '7.6rem !important'
               },
             }}
           >

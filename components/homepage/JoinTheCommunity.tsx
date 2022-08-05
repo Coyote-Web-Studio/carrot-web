@@ -37,15 +37,20 @@ const JoinTheCommunity = () => {
                         <Box 
                             className="section-title"
                             sx={{
-                                boxShadow: [null, null,  `0 0 0 1px ${theme.colors.gray10}`],
+                                
                                 borderBottom: [
                                     `0.1rem solid ${theme.colors.gray10}`, 
                                     null, 
                                     'none', 
                                     'none'
                                 ],
-                                p: ['0 0 2.4rem', null, '3.2rem'],
-                                width: ['100%', null, null, '51.5rem'],
+                                p: ['0 0 2.4rem'],
+                                width: ['100%'],
+                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                    p: '3.2rem',
+                                    width: '51.5rem',
+                                    boxShadow: `0 0 0 1px ${theme.colors.gray10}`,
+                                },
                                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                     width: '64rem',
                                 },
@@ -58,7 +63,6 @@ const JoinTheCommunity = () => {
                                     className={'vertical-copy'}
                                     sx={{
                                         position: 'absolute',
-                                        display: [null, null, 'none !important'],
                                         top: '0',
                                         right: '0',
                                         flexDirection: 'column',
@@ -67,6 +71,9 @@ const JoinTheCommunity = () => {
                                                 'rotate(-90deg) translateX(-2.6rem) translateY(3.2rem)',
                                                 'rotate(-90deg) translateX(-2rem) translateY(3.2rem)',
                                             ],
+                                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                            display: 'none !important'
+                                        },
                                         [`@media screen and (max-width: 330px)`]: {
                                             display: 'none',
                                         },
@@ -131,15 +138,21 @@ const JoinTheCommunity = () => {
                             </Text>
                         </Box>
                         <Flex sx={{
-                            boxShadow: [null, null, null, `0 0 0 1px ${theme.colors.gray10}`],
-                            rowGap: '0.1rem', columnGap: '0.1rem'
+                            rowGap: '0.1rem', 
+                            columnGap: '0.1rem',
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                boxShadow: `0 0 0 1px ${theme.colors.gray10}`
+                            },
                         }}>
                             <Flex 
-                                sx={{
-                                    boxShadow: [null, null, null, `0 0 0 1px ${theme.colors.gray10}`], 
+                                sx={{ 
                                     minWidth: ['6.4rem'],
                                     position: 'relative',
-                                    display: ['none !important', null, null, 'flex !important']
+                                    display: ['none !important'],
+                                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                        display: 'flex !important',
+                                        boxShadow: `0 0 0 1px ${theme.colors.gray10}`
+                                    }
                                 }}
                             >
                                 <Text 
@@ -184,11 +197,10 @@ const JoinTheCommunity = () => {
                                             as={'li'} 
                                             key={index}
                                             sx={{
-                                                boxShadow: [null, null, `0 0 0 1px ${theme.colors.gray10}`], 
-                                                height: ['auto', null, null, '25.6rem'], 
+                                                height: ['auto'], 
                                                 width: '100%',
                                                 fontWeight: 300,
-                                                borderBottom: [`0.1rem solid ${theme.colors.gray10}`, null, 'none'],
+                                                borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
                                                 p: [
                                                     '2.6rem 1rem', 
                                                     null, 
@@ -200,7 +212,10 @@ const JoinTheCommunity = () => {
                                                     border: 'none'
                                                 },
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    p: ['3.2rem 3.2rem 3.2rem 6.4rem']
+                                                    p: ['3.2rem 3.2rem 3.2rem 6.4rem'],
+                                                    borderBottom: 'none',
+                                                    height: '25.6rem',
+                                                    boxShadow: `0 0 0 1px ${theme.colors.gray10}`, 
                                                 }
                                             }} 
                                         >
@@ -224,11 +239,14 @@ const JoinTheCommunity = () => {
                                             <Flex flexDirection={['column']} sx={{
                                                 ml: ['auto'],
                                                 width: ['100%'],
+                                                alignItems: ['start', null, null, 'end'],
                                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                                     ml: ['2rem'],
                                                     maxWidth: '34.6rem'
                                                 },
-                                                alignItems: ['start', null, null, 'end'],
+                                                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                                    ml: ['auto']
+                                                },
                                             }}>
                                                 <Text
                                                     sx={{

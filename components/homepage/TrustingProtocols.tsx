@@ -20,8 +20,14 @@ const TrustingProtocols = () => {
       flexDirection={"column"} 
       sx={{
         position: "relative", zIndex: 1,
-        mt: ["8.2rem","8.4rem", null, "19.4rem"] ,
-        pb: ['9.6rem', null, null, 'calc(6.4rem * 3)']
+        mt: ["8.6rem", "8.4rem", null, "19.4rem"] ,
+        pb: ['9.6rem', null, null, 'calc(6.4rem * 3)'],
+        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+          mt: '16.8rem'
+        },
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+          mt: '14.6rem'
+        }
       }}
     >
       <Image
@@ -30,8 +36,8 @@ const TrustingProtocols = () => {
         sx={{
           position: "absolute",
           top: "24rem",
-          width: ["8rem", "9rem"],
-          height: ["8rem", '10.9rem'],
+          width: ["8rem", "9rem", null, "14rem"],
+          height: ["8rem", '10.9rem', null, "16rem"],
           right: ["4%", null, "18%"],
           zIndex: "100000000",
           filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
@@ -43,9 +49,9 @@ const TrustingProtocols = () => {
             flexDirection: 'column',
           }}>
             <Text as="h2" sx={{
-                mb: ['2.4rem', '5rem', '9.6rem', '11.8rem'],
+                mb: ['3.6rem', '5rem', '9.6rem', '11.8rem'],
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                  mb: '8.6rem'
+                  mb: '8.2rem'
                 },
                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                   mb: '10.6rem'

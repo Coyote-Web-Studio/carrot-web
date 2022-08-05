@@ -28,7 +28,7 @@ const Testimonials = () => {
           pb: ["6.4rem", '6.8rem', null, "8.4rem"],
           pt: ["8.7rem" , '6.8rem', null, "8.4rem"],
           mb: ["4.8rem", null, "12.8rem", "calc(6.4rem * 2)"],
-          height: [null, 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
+          height: ['calc(2.4rem * 22)', 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: 'calc(6.4rem * 2)',
             pb: '21.3rem',
@@ -36,28 +36,34 @@ const Testimonials = () => {
             height: 'calc(6.4rem * 14)',
           },
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-            height: "calc(6.4rem * 16)",
+            height: "calc(6.4rem * 17)",
             mb: 'calc(6.4rem * 3)',
             pt: '17.7rem',
             pb: '0'
           },
         }}
         >
-        <Box
-          sx={{
-            ...theme.boxSizes.expandedBox,
-            position: "absolute",
-            height: ["calc(2.4rem * 16)", "calc(2.4rem * 13)", "calc(2.4rem * 13)", "calc(6.4rem * 7)"],
-            top: [null, 'calc(2.4rem * 2)', null, "6.4rem"],
-            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height:  "calc(6.4rem * 12)",
-            },
-            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-              height:  "calc(6.4rem * 14)",
-            },
-          }}
-          >
-          <GridBackground sx={{opacity: 0.1}}/>
+        <Box sx={{
+          height: ["calc(2.4rem * 18)", "calc(2.4rem * 13)", "calc(2.4rem * 13)", "calc(6.4rem * 7)"],
+          position: 'absolute',
+          top: ['calc(2.4rem * 2.5)', 'calc(2.4rem * 2)', null, "6.4rem"],
+          width: '100%',
+          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            height:  "calc(6.4rem * 12)",
+          },
+          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+            height:  "calc(6.4rem * 15)",
+          },
+        }}>
+          <Box
+            sx={{
+              ...theme.boxSizes.expandedBox,
+              position: "absolute",
+            }}
+            >
+            <GridBackground sx={{opacity: 0.1}}/>
+          </Box>
+
         </Box>
         <Fade
           sx={{
@@ -90,9 +96,14 @@ const Testimonials = () => {
             </AnimatedText>
           </Text>
           <Text
-            fontSize={["1.4rem", "1.4rem", null, "2.8rem"]}
-            color={theme.colors.customerCommentText}
-            fontWeight={300}
+            sx={{
+              fontSize: ["1.4rem"],
+              color: theme.colors.customerCommentText,
+              fontWeight: 300,
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                fontSize: "2.8rem",
+              },
+            }}
           >
             — Luigi Lemon, Agave Core Contributor
           </Text>

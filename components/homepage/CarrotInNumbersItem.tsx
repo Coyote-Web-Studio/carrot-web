@@ -117,14 +117,15 @@ const CarrotInNumbersItem = (props : any) => {
                     height: 'calc(6.4rem * 3)'
                 },
             }}>
-            <Text as={'h3'} fontSize={['4rem', '4rem', null, '7.2rem']} fontWeight={700} sx={{
+            <Text as={'h3'} fontWeight={700} sx={{
                     'h3': {
+                        fontSize: ['4rem', '4rem', null, '7.2rem'], 
                         color: theme.colors.gray10, 
                         mb: ['1rem', '0rem', null, '1.2rem'],
                         whiteSpace: 'nowrap',
-                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             fontSize: '9.9rem !important'
-                        }
+                        },
                     }
                 }}
             >

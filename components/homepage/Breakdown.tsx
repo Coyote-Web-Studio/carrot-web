@@ -13,103 +13,110 @@ const Breakdown = (props: any) => {
   });
 
   return (
-    <Flex
-      flexDirection={"column"}
+    <Box
       sx={{
-        ...theme.boxSizes.reducedBox,
-        position: "relative",
-        zIndex: 1,
         pt: ["4.8rem", "calc(2.4rem * 2)", null, "12.8rem"],
-        pb: ["calc(2.4rem * 4 - 0.4rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "19rem"],
-        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+        pb: ["calc(2.4rem * 4 - 0.4rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "19.4rem"],
+        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
           pb: '17.6rem'
         },
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+          pb: '17rem'
+        }
       }}
     >
-      <Image
-        ref={sphereParallax.ref}
-        src={"misc/sphere.png"}
+      <Flex
+        flexDirection={"column"}
         sx={{
-          position: "absolute",
-          top: ["-5rem", "10rem"],
-          width: [null, "6rem", "10rem"],
-          height:  [null, "6rem", "10rem"],
-          right: ["3rem", null, null, "-5rem"],
-          zIndex: "100000",
-          display: ['none', 'block']
+          ...theme.boxSizes.reducedBox,
+          position: "relative",
+          zIndex: 1,
         }}
-      />
-      {MainContent.map((contentBlock: ContentBlock, index: number) => (
-        <Fade
-          key={index}
+      >
+        <Image
+          ref={sphereParallax.ref}
+          src={"misc/sphere.png"}
           sx={{
-            mb: ["4.8rem", null, null, "6.4rem"],
-            position: "relative",
-            '&:last-child': {
-              mb: '0'
-            }
+            position: "absolute",
+            top: ["-5rem", "10rem"],
+            width: [null, "6rem", "10rem"],
+            height:  [null, "6rem", "10rem"],
+            right: ["3rem", null, null, "-5rem"],
+            zIndex: "100000",
+            display: ['none', 'block']
           }}
-        >
-          <Flex
-            flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
-            justifyContent={["auto", "center"]}
-            alignItems={["auto"]}
+        />
+        {MainContent.map((contentBlock: ContentBlock, index: number) => (
+          <Fade
+            key={index}
             sx={{
-              columnGap: '4rem',
-              "&:last-child": {
-                mb: 0,
-              },
-              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                justifyContent: 'space-between !important',
-              },
+              mb: ["4.8rem", null, null, "6.4rem"],
+              position: "relative",
+              '&:last-child': {
+                mb: '0'
+              }
             }}
           >
-            <Box
-              mb={["2.4rem", "0"]}
-              sx={{
-                width: ["100%", "31.2rem", null, "40.8rem"],
-                height: ['19.2rem', '24rem', null, "32rem"],
-                backgroundImage: `url(${contentBlock.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                border: `0.1rem solid ${theme.colors.textColor}`,
-                borderRadius: ['0.85rem', null, '1.3rem'],
-                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                  width: '53rem',
-                  height: '38.4rem'
-                },
-                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                  width: '70.4rem',
-                  height: '38.4rem'
-                },
-              }}
-            />
             <Flex
-              flexDirection={"column"}
-              width={["100%", "calc(50% - 1rem)", null, "53rem"]}
+              flexDirection={["column", index % 2 == 0 ? "row" : "row-reverse"]}
+              justifyContent={["auto", "center"]}
+              alignItems={["auto"]}
               sx={{
-                pt: ['0', '2.4rem', null, null],
+                columnGap: '4rem',
+                "&:last-child": {
+                  mb: 0,
+                },
                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                  pt: '3.2rem',
-                  width: '70.4rem !important'
+                  justifyContent: 'space-between !important',
                 },
               }}
             >
-              <Text as="h3" mb={["2rem", "1.6rem"]}>
-                <AnimatedText speed={20}>
-                  {contentBlock.heading}
-                </AnimatedText>
-              </Text>
-              <Text as="p">
-                <AnimatedText speed={5}>
-                  {contentBlock.content}
-                </AnimatedText>
-              </Text>
+              <Box
+                mb={["2.4rem", "0"]}
+                sx={{
+                  width: ["100%", "31.2rem", null, "40.8rem"],
+                  height: ['19.2rem', '24rem', null, "32rem"],
+                  backgroundImage: `url(${contentBlock.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  border: `0.1rem solid ${theme.colors.textColor}`,
+                  borderRadius: ['0.85rem', null, '1.3rem'],
+                  [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    width: '53rem',
+                    height: '38.4rem'
+                  },
+                  [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    width: '70.4rem',
+                    height: '38.4rem'
+                  },
+                }}
+              />
+              <Flex
+                flexDirection={"column"}
+                width={["100%", "calc(50% - 1rem)", null, "53rem"]}
+                sx={{
+                  justifyContent: [ 'center'],
+                  [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    width: '70.4rem !important'
+                  },
+                }}
+              >
+                <Text as="h3" mb={["2rem", "1.6rem", null, "2.4rem"]}>
+                  <AnimatedText speed={20}>
+                    {contentBlock.heading}
+                  </AnimatedText>
+                </Text>
+                <Text as="p">
+                  <AnimatedText speed={5}>
+                    {contentBlock.content}
+                  </AnimatedText>
+                </Text>
+              </Flex>
             </Flex>
-          </Flex>
-        </Fade>
-      ))}
-    </Flex>
+          </Fade>
+        ))}
+      </Flex>
+    </Box>
   );
 };
 

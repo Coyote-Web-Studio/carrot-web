@@ -67,7 +67,7 @@ const SuccesfulCampaigns = () => {
           position: 'relative',
           mb: [null, null, null, '6.4rem !important'],
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-            mb: '6.4rem !important'
+            mb: '6.5rem !important'
           },
           ['&:hover .highlight-box']: {
             opacity: 1,

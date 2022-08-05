@@ -74,16 +74,10 @@ export default {
         '44.7rem'
       ],
       width: [
-        "calc(100vw)", 
-        "calc(72rem + 1px)", 
-        null,
         "100vw"
       ],
       left: [
         '0',
-        'calc(50% - (72rem / 2) + 2px)',
-        null,
-        '0'
       ],
       [`@media screen and (min-width: ${breakpoints[3]})`]: {
         height: '57.6rem',
@@ -110,7 +104,7 @@ export default {
         width: '112.4rem'
       },
       [`@media screen and (min-width: ${breakpoints[4]})`]: {
-        width: '147.2rem'
+        width: '147.2rem !important'
       },
       [`@media screen and (min-width: 415px) and (max-width: 638px)`]: {
         width: "calc(100vw - 8rem)", 
