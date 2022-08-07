@@ -8,11 +8,11 @@ const Context : any = createContext('');
 const ThemeContext = ({children} : any) => {
     const [theme, setTheme] = useState(lightTheme);
 
-    useEffect(() => {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme(darkTheme);
-        };
-    }, [])
+    // useEffect(() => {
+    //     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    //         setTheme(darkTheme);
+    //     };
+    // }, [])
 
     return (
         <Context.Provider value={[theme, setTheme]}>

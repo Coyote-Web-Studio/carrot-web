@@ -44,7 +44,7 @@ const SuccesfulCampaigns = () => {
       <Text 
         as={"h2"} 
         sx={{
-          mb: ["5rem", "4.5rem", null, "5.8rem"],
+          mb: ["5rem", "4.2rem", null, "5.4rem"],
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: '11.8rem'
           },

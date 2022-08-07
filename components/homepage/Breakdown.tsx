@@ -16,7 +16,7 @@ const Breakdown = (props: any) => {
     <Box
       sx={{
         pt: ["4.8rem", "calc(2.4rem * 2)", null, "12.8rem"],
-        pb: ["calc(2.4rem * 4 - 0.4rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "19.4rem"],
+        pb: ["calc(2.4rem * 4 - 0.4rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "19rem"],
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
           pb: '17.6rem'
         },

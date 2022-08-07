@@ -145,7 +145,9 @@ const Footer = (props: any) => {
             mt: 'auto',
             height: [null, null, null, '4.8rem'],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height: '6.4rem'
+              height: '6.4rem',
+              width: '19.2rem',
+              borderRadius: '1.6rem'
             },
           }}>
             CARROT DAPP
@@ -178,15 +180,15 @@ const Footer = (props: any) => {
           sx={{
             position: "absolute",
             top: ["10rem", "5rem"],
-            width: ["8rem"],
-            height: ["8rem"],
+            width: ["3.7rem"],
+            height: ["3.7rem"],
             left: ["4%", null, "12%"],
             zIndex: "100000000",
             filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
             display: ['none', 'block'],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height: "10rem",
-              width: '10rem'
+              height: "7.4rem",
+              width: '7.4rem'
             },
           }}
         />
@@ -196,12 +198,16 @@ const Footer = (props: any) => {
           sx={{
             position: "absolute",
             top: ["24rem", "8rem"],
-            width: ["8rem", "11rem"],
-            height: ["8rem", '13rem'],
+            width: ["7.2rem", "9rem"],
+            height: ['8.7rem', '10.9rem'],
             right: ["4%", null, "12%"],
             zIndex: "100000000",
             filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-            display: ['none', 'block']
+            display: ['none', 'block'],
+            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+              height: "21.9rem",
+              width: '18.1rem'
+            },
           }}
         />
       </Box>

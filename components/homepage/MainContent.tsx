@@ -22,9 +22,18 @@ const MainContent = (props : any) => {
         position: 'absolute',
         height: '100%',
         width: '100vw !important',
-        left: '0 !important'
+        left: '0 !important',
+        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+          width: 'calc(6.4rem * 27 + 0.1rem) !important',
+          left: 'calc(50vw - ((6.4rem * 27) / 2)) !important',
+        }
       }}>
-        <GridBackground sx={{backgroundPosition: 'top center'}}/>
+        <GridBackground sx={{
+          backgroundPosition: 'top center',
+          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+            backgroundPosition: 'unset',
+          }
+        }}/>
       </Box>
       <Breakdown />
       <HowItWorks />

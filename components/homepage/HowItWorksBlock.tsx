@@ -64,7 +64,7 @@ const HowItWorksBlock = (props: any) => {
             rowGap: '1px',
             columnGap: '1px',
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height: isOpen ? 'auto !important' : '19rem !important'
+              height: isOpen ? 'auto !important' : 'calc(6.4rem * 3) !important'
             },
             
           }}
@@ -82,8 +82,8 @@ const HowItWorksBlock = (props: any) => {
               position: 'relative',
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                 fontSize: '11.9rem !important',
-                minWidth: '19rem !important',
-                height: '19rem !important'
+                minWidth: 'calc(6.4rem * 3) !important',
+                height: 'calc(6.4rem * 3) !important'
               },
             }}
           >
@@ -129,7 +129,7 @@ const HowItWorksBlock = (props: any) => {
                 fontSize: '4.8rem !important',
                 width: '54rem !important',
                 maxWidth: 'unset',
-                height: isOpen ? '32rem !important' : '19rem !important',
+                height: isOpen ? '32rem !important' : 'calc(6.4rem * 3) !important',
                 py: '4.2rem !important'
               },
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
@@ -149,7 +149,7 @@ const HowItWorksBlock = (props: any) => {
           sx={{
             flexDirection: 'column',
             transition: '0.25s ease-in-out all',
-            maxHeight: isOpen ? '1000px' : '19rem',
+            maxHeight: isOpen ? '1000px' : 'calc(6.4rem * 3)',
             position: 'relative',
             flexGrow: [null, null, 1],
           }}
@@ -174,7 +174,7 @@ const HowItWorksBlock = (props: any) => {
               position: 'relative',
               p: ["2.4rem", "0 2.4rem"],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                minHeight: '19rem !important',
+                minHeight: 'calc(6.4rem * 3) !important',
                 p: '0 6.4rem !important',
               }
             }}
@@ -213,7 +213,7 @@ const HowItWorksBlock = (props: any) => {
                 null,
                 isOpen ? 'calc(6.4rem * 7) !important' : 'auto',
                 null,
-                isOpen ? 'calc(6.4rem * 6 + 3.2rem) !important' : 'auto'
+                isOpen ? 'calc(6.4rem * 9 + 3.2rem) !important' : 'auto'
               ],
               overflowY: 'hidden',
               transition: '0.25s ease-in-out all',

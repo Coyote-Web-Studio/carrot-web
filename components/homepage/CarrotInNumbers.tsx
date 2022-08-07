@@ -15,11 +15,12 @@ const CarrotInNumbers = () => {
       zIndex: 1, 
       position: 'relative', 
       bg: theme.colors.orange6, 
-      borderRadius: ['1.6rem', null, null, '5rem'], 
+      borderRadius: ['1.6rem'], 
       pb: [null, null, null, '4.8rem'],
       height: ['calc(2.4rem * 33)', 'calc(2.4rem * 19)', null, 'calc(6.4rem * 10)'],
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-        height: 'calc(6.4rem * 14)'
+        height: 'calc(6.4rem * 14)',
+        borderRadius: '5rem'
       },
       [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
         height: 'calc(6.4rem * 15)'
@@ -34,11 +35,11 @@ const CarrotInNumbers = () => {
         opacity: 0.1,
         width: '100%',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-          top: '14.4rem',
+          top: '13.6rem',
           height: 'calc(6.4rem * 11)'
         },
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-          top: 'calc(6.4rem * 2.8)',
+          top: 'calc(6.4rem * 2.8 - 0.6rem)',
           height: 'calc(6.4rem * 11 - 0.1rem)'
         },
       }}
@@ -71,8 +72,11 @@ const CarrotInNumbers = () => {
               sx={{
                 color: theme.colors.gray10,
                 mb: ['4.4rem', null, null, '6rem'],
-                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                   mb: '5.2rem'
+                },
+                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                  mb: '4.6rem'
                 }
               }}
             >

@@ -245,7 +245,8 @@ const JoinTheCommunity = () => {
                                                     maxWidth: '34.6rem'
                                                 },
                                                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                                    ml: ['auto']
+                                                    ml: ['auto'],
+                                                    mt: 'auto'
                                                 },
                                             }}>
                                                 <Text

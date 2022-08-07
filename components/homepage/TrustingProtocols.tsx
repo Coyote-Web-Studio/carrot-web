@@ -20,7 +20,7 @@ const TrustingProtocols = () => {
       flexDirection={"column"} 
       sx={{
         position: "relative", zIndex: 1,
-        mt: ["8.6rem", "8.4rem", null, "19.4rem"] ,
+        mt: ["8.6rem", null, null,  "19.4rem"] ,
         pb: ['9.6rem', null, null, 'calc(6.4rem * 3)'],
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
           mt: '16.8rem'
@@ -54,7 +54,7 @@ const TrustingProtocols = () => {
                   mb: '8.2rem'
                 },
                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                  mb: '10.6rem'
+                  mb: '11rem'
                 }
               }}
             >

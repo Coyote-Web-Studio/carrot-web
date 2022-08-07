@@ -61,7 +61,7 @@ export default {
       ],
       [`@media screen and (min-width: ${breakpoints[4]})`]: {
         width: 'calc(6.4rem * 27 + 0.1rem)',
-        left: 'calc(50vw - ((6.4rem * 27) / 2))'
+        left: 'calc(50vw - ((6.4rem * 27) / 2))',
       }
     },
     heroGridBox: {
@@ -84,7 +84,7 @@ export default {
       [`@media screen and (min-width: ${breakpoints[4]})`]: {
           height: 'calc(6.4rem * 11)',
           width: 'calc(6.4rem * 27 + 0.1rem)',
-          left: 'calc(50vw - ((6.4rem * 27) / 2))'
+          left: 'calc(50vw - ((6.4rem * 27) / 2))',
       }
     },
     },

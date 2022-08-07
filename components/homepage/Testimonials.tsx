@@ -24,7 +24,7 @@ const Testimonials = () => {
           zIndex: 1,
           position: "relative",
           bg: theme.colors.customerCommentBackground,
-          borderRadius: ['1.6rem', null, null, '5rem'],
+          borderRadius: ['1.6rem'],
           pb: ["6.4rem", '6.8rem', null, "8.4rem"],
           pt: ["8.7rem" , '6.8rem', null, "8.4rem"],
           mb: ["4.8rem", null, "12.8rem", "calc(6.4rem * 2)"],
@@ -34,6 +34,7 @@ const Testimonials = () => {
             pb: '21.3rem',
             pt: '11.3rem',
             height: 'calc(6.4rem * 14)',
+            borderRadius: '5rem'
           },
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             height: "calc(6.4rem * 17)",

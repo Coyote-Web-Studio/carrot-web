@@ -102,10 +102,10 @@ const HowItWorks = () => {
 
   return (
     <Box sx={{
-      mb: ["8.6rem", null, null, "15.8rem"],
+      mb: ["8.6rem", null, null, "16.4rem"],
       zIndex: 1,
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-        mb: '17rem'
+        mb: '16.6rem'
       },
       [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
         mb: '14.8rem'
@@ -122,12 +122,12 @@ const HowItWorks = () => {
             as={"h2"} 
             lineHeight={['5.6rem', null, null, '8rem']}
             sx={{
-              mb: ["3.6rem", null, null, "5rem !important"],
+              mb: ["3.6rem", null, null, "5.1rem !important"],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                mb: '6.8rem !important'
+                mb: '6.5rem !important'
               },
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                mb: '7.6rem !important'
+                mb: '7.1rem !important'
               },
             }}
           >

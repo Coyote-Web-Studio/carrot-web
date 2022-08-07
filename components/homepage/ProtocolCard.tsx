@@ -107,8 +107,16 @@ const ProtocolCard = (props : any) => {
             <Flex flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
             <Image src={props.data.logo} sx={{
                 filter: theme.misc.invertedProtocolLogo ? 'invert(1)' : 'unset',
-                width: ['6.4rem', '10vw'],
-                height: ['6.4rem', '10vw']
+                width: ['6.4rem', null, null, '9.9rem'],
+                height: ['6.4rem', null, null, '9.9rem'],
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    width: '19.2rem',
+                    height: '19.2rem'
+                },
+                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                    width: '24rem',
+                    height: '24rem'
+                }
             }}/>
             <Text as={'p'} sx={{
                 fontSize: ['1.2rem'],
