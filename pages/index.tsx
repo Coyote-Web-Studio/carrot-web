@@ -23,15 +23,33 @@ const Home: NextPage = (props : any) => {
           Carrot | Increase your TVL, volume, price, engagement and more. Yes, on any campaign. Carrot does it all.
         </title>
       </Head>
-      <Flex flexDirection={'column'} bg={theme.colors.background}>
-        <WindowWidthIndicator />
-        <Navbar />
-        <Hero />
-        <Marquees />
-        <MainContent />
-        <Marquees />
-        <JoinTheCommunity />
-        <Footer />
+      <Flex sx={{
+        position: 'relative',
+      }}>
+        <Flex flexDirection={'column'} sx={{
+          // bg: theme.colors.background,
+          position: 'relative',
+          zIndex: 1
+        }}>
+          <WindowWidthIndicator />
+          <Navbar />
+          <Hero />
+          <Marquees />
+          <MainContent />
+          <Marquees />
+          <JoinTheCommunity />
+          <Footer />
+        </Flex>
+        <Box sx={{   
+          bg: theme.colors.background,
+          position: 'fixed',
+          top: props.top || 0,
+          zIndex: 0,
+          width: '100%',
+          backgroundPosition: 'top center',
+          height: ['calc(100% + 1px)', 'calc(100% + 0.5px)', null, 'calc(100% + 2px)'],
+          backgroundImage: theme.misc.patternImage,
+        }}></Box>
       </Flex>
     </>
   )

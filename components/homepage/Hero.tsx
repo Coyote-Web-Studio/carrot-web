@@ -74,7 +74,7 @@ const Hero = (props : any) => {
                         fontSize: ['4.8rem', null, null, '6.9rem'], 
                         lineHeight: ['4.88rem', '4.88rem', '4.8rem', '6.99rem'] ,
                         mb: ['1.6rem', '1.6rem', '1.8rem', '1rem'],
-                        letterSpacing: '-0.02em',
+                        letterSpacing: '-0.04em',
                         pr: ['2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             fontSize: '9.9rem',
