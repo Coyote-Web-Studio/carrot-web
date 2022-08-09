@@ -8,6 +8,7 @@ import Button from "./../common/Button";
 import CampaignCard from "./../common/CampaignCard";
 import Fade from "../common/Fade";
 import AnimatedText from "../common/AnimatedText";
+import { keyframes } from "@emotion/react";
 
 const SuccesfulCampaigns = () => {
   const theme: any = useTheme();
@@ -31,6 +32,15 @@ const SuccesfulCampaigns = () => {
     updateDimensions();
     window.addEventListener('resize', updateDimensions);
   }, []); 
+
+  const highlightAnimation = keyframes`
+    0% {
+      background-position: 0%;
+    };
+    100% {
+      background-position: 44%;
+    };
+  `;
 
   return (
     <Flex
@@ -106,13 +116,15 @@ const SuccesfulCampaigns = () => {
           opacity: 0,
           clipPath: 'polygon(0 100% ,0 100%, 0 100%, 0 100%)',
           transform: 'scale(0.5)',
-          background: `repeating-linear-gradient(
-            135deg,
-            transparent,
-            transparent 6.4rem,
-            ${theme.colors.green5} 6.4rem,
-            ${theme.colors.green5} 12.8rem
-          )`
+          animation: `${highlightAnimation} 3s linear forwards infinite`,
+          // background: `repeating-linear-gradient(
+          //   135deg,
+          //   transparent,
+          //   transparent 6.4rem,
+          //   ${theme.colors.green5} 6.4rem,
+          //   ${theme.colors.green5} 12.8rem
+          // )`
+          backgroundImage: 'url(back.svg)'
         }}>
 
         </Box>
@@ -182,6 +194,7 @@ const SuccesfulCampaigns = () => {
     </Flex>
   );
 };
+
 
 const SuccesfullCampaigns = [
   {

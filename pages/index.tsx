@@ -27,9 +27,18 @@ const Home: NextPage = (props : any) => {
         position: 'relative',
       }}>
         <Flex flexDirection={'column'} sx={{
-          // bg: theme.colors.background,
+          bg: theme.colors.background,
           position: 'relative',
-          zIndex: 1
+          zIndex: 2,
+          mb: ['57rem', '68rem', null, '66rem'],
+
+          backgroundImage: theme.misc.patternImage,
+          [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+            mb: '105rem'
+          },
+          [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+            mb: '105rem'
+          },
         }}>
           <WindowWidthIndicator />
           <Navbar />
@@ -38,6 +47,8 @@ const Home: NextPage = (props : any) => {
           <MainContent />
           <Marquees />
           <JoinTheCommunity />
+        </Flex>
+        <Flex sx={{direction: 'column', position: 'relative', zIndex: 1}}>
           <Footer />
         </Flex>
         <Box sx={{   
@@ -49,7 +60,9 @@ const Home: NextPage = (props : any) => {
           backgroundPosition: 'top center',
           height: ['calc(100% + 1px)', 'calc(100% + 0.5px)', null, 'calc(100% + 2px)'],
           backgroundImage: theme.misc.patternImage,
-        }}></Box>
+        }}>
+
+        </Box>
       </Flex>
     </>
   )

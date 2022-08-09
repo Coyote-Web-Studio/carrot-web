@@ -28,8 +28,11 @@ const Footer = (props: any) => {
     <Flex
       as="footer"
       sx={{
-        bg: theme.colors.footerBackground,
-        position: "relative",
+        bg: theme.colors.gray10,
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        width: '100%',
         flexDirection: 'column',
         pt:["4.8rem", '12.8rem', null, 'calc(6.4rem * 2)'],
         pb: '5.6rem',
@@ -109,7 +112,7 @@ const Footer = (props: any) => {
                   fontSize={'1.4rem'} 
                   mb={['0.8rem', '2.4rem']} 
                   letterSpacing={'0.08em'} 
-                  color={invert(theme.colors.textColor)}
+                  color={theme.colors.textColor}
                   sx={{
                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                       fontSize: '1.6rem',
@@ -125,7 +128,7 @@ const Footer = (props: any) => {
                     fontSize={'1.2rem'}
                     key={j}
                     sx={{
-                      color: invert(theme.colors.textColor),
+                      color: theme.colors.textColor,
                       transition: '0.15s ease-in-out all',
                       '&:hover': {
                         opacity: 0.7

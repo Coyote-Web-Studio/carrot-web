@@ -64,7 +64,7 @@ const Marquees = (props : any) => {
                     }
                 },
             }}>
-                <Marquee gradient={false} direction={'left'}>
+                <Marquee gradient={false} direction={'right'} speed={40}>
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg" />
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg" />
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg" />
