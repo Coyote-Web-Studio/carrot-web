@@ -182,14 +182,14 @@ const SideText = (props : any) => {
             sx={{
                 minWidth: ['6.4rem'],
                 position: 'absolute',
-                top: 0,
+                top: [null, null, null, '-5.2rem'],
                 left: 0,
                 height: '100%',
                 zIndex: 100,
                 fontWeight: 300,
-                display: ['none !important'],
+                display: ['none !important', null, null, 'flex !important'],
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                    display: 'flex !important'
+                    top: 0
                 },
             }}
         >
