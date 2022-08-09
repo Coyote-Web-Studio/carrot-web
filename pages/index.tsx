@@ -29,10 +29,14 @@ const Home: NextPage = (props : any) => {
         <Flex flexDirection={'column'} sx={{
           bg: theme.colors.background,
           position: 'relative',
-          zIndex: 2,
-          mb: ['57rem', '68rem', null, '66rem'],
-
+          backgroundAttachment: 'fixed',
+          backgroundPosition: 'top center',
+          height: ['calc(100% + 1px)', 'calc(100% + 0.5px)', null, 'calc(100% + 2px)'],
           backgroundImage: theme.misc.patternImage,
+          backgroundSize: ['2.4rem', null, null, '6.4rem'],
+          zIndex: 3,
+          mb: ['57rem', '68rem', null, '66rem'],
+          // backgroundImage: theme.misc.patternImage,
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: '105rem'
           },
@@ -40,29 +44,22 @@ const Home: NextPage = (props : any) => {
             mb: '105rem'
           },
         }}>
-          <WindowWidthIndicator />
-          <Navbar />
-          <Hero />
-          <Marquees />
-          <MainContent />
-          <Marquees />
-          <JoinTheCommunity />
+          <Flex sx={{
+            flexDirection: 'column',
+            zIndex: 1,
+          }}>
+            <WindowWidthIndicator />
+            <Navbar />
+            <Hero />
+            <Marquees />
+            <MainContent />
+            <Marquees />
+            <JoinTheCommunity />
+          </Flex>
         </Flex>
         <Flex sx={{direction: 'column', position: 'relative', zIndex: 1}}>
           <Footer />
         </Flex>
-        <Box sx={{   
-          bg: theme.colors.background,
-          position: 'fixed',
-          top: props.top || 0,
-          zIndex: 0,
-          width: '100%',
-          backgroundPosition: 'top center',
-          height: ['calc(100% + 1px)', 'calc(100% + 0.5px)', null, 'calc(100% + 2px)'],
-          backgroundImage: theme.misc.patternImage,
-        }}>
-
-        </Box>
       </Flex>
     </>
   )

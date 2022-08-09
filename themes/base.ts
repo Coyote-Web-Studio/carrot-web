@@ -44,6 +44,24 @@ export default {
         width: "calc(100vw - 8rem)", 
       },
     },
+    navbarBox: {
+      mx: "auto",
+      width: [
+        "calc(100vw - 4.8rem)", 
+        "calc(60rem + (3.2rem * 2))", 
+        null,
+        "calc(88rem + (3.2rem * 2))"
+      ],
+      [`@media screen and (min-width: ${breakpoints[3]})`]: {
+        width: "calc(124.8rem + (3.2rem *2)) !important",
+      },
+      [`@media screen and (min-width: ${breakpoints[4]})`]: {
+        width:  "calc(160rem + (3.2rem *2)) !important",
+      },
+      [`@media screen and (min-width: 415px) and (max-width: 639px)`]: {
+        width: "calc(100vw - 8rem)", 
+      },
+    },
     expandedBox: {
       position: 'absolute',
       height: '100%',

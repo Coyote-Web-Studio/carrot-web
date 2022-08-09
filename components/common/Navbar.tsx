@@ -29,7 +29,11 @@ const Navbar = (props : any) => {
                 pb: ['3.2rem', '2.4rem', null, '3.3rem']
             }}
         >
-            <Flex sx={theme.boxSizes.defaultBox} alignItems={'center'} justifyContent={'space-between'}>
+            <Flex 
+                sx={theme.boxSizes.navbarBox} 
+                alignItems={'center'} 
+                justifyContent={'space-between'}
+            >
                 <Logo 
                     color={theme.colors.logoColor} sx={{
                         height: ['2.7rem', '3rem', '4rem'],
