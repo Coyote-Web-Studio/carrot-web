@@ -17,7 +17,7 @@ const MainContent = (props : any) => {
   return (
     <Flex 
       flexDirection={"column"} sx={{ position: "relative" }} mt={["2.4rem", null, null, "6.4rem"]}>
-      <Box sx={{
+      {/* <Box sx={{
         ...theme.boxSizes.expandedBox, 
         position: 'absolute',
         height: '100%',
@@ -34,7 +34,7 @@ const MainContent = (props : any) => {
             backgroundPosition: 'unset',
           }
         }}/>
-      </Box>
+      </Box> */}
       <Breakdown />
       <HowItWorks />
       <SuccesfulCampaigns />

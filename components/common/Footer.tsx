@@ -112,7 +112,7 @@ const Footer = (props: any) => {
                   fontSize={'1.4rem'} 
                   mb={['0.8rem', '2.4rem']} 
                   letterSpacing={'0.08em'} 
-                  color={theme.colors.textColor}
+                  color={theme.colors.gray1}
                   sx={{
                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                       fontSize: '1.6rem',
@@ -128,7 +128,7 @@ const Footer = (props: any) => {
                     fontSize={'1.2rem'}
                     key={j}
                     sx={{
-                      color: theme.colors.textColor,
+                      color: theme.colors.gray1,
                       transition: '0.15s ease-in-out all',
                       '&:hover': {
                         opacity: 0.7

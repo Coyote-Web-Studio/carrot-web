@@ -22,7 +22,7 @@ const Hero = (props : any) => {
             pb: ['4.2rem', '2.4rem', null, '6.4rem']
         }}>
             {/* BACKGROUND DECORATION */}
-            <Box sx={{
+            {/* <Box sx={{
                 ...theme.boxSizes.heroGridBox, 
                 }}
             >
@@ -34,7 +34,7 @@ const Hero = (props : any) => {
                         },
                     }}
                 />
-            </Box>
+            </Box> */}
             {/* HERO CONTENT */}
             <SideText />
             <Flex 
