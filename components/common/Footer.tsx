@@ -61,7 +61,7 @@ const Footer = (props: any) => {
             ...theme.boxSizes.expandedBox,
           }} >
           <GridBackground color={theme.colors.gray9} sx={{
-            backgroundImage: theme.misc.footerPatternImage,
+            backgroundImage: 'url(./Pattern.svg)',
             backgroundPosition: 'top center'
           }}/>
         </Box>

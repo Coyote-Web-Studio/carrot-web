@@ -121,7 +121,7 @@ const CarrotInNumbersItem = (props : any) => {
                     'h3': {
                         fontSize: ['4rem', '4rem', null, '7.2rem'], 
                         color: theme.colors.gray10, 
-                        mb: ['1rem', '0rem', null, '1.2rem'],
+                        mb: ['1rem', '0rem', null, '0rem'],
                         whiteSpace: 'nowrap',
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             fontSize: '9.9rem !important'
