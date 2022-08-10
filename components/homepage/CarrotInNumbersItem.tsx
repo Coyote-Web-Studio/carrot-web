@@ -89,7 +89,8 @@ const CarrotInNumbersItem = (props : any) => {
                     background: theme.colors.gray10
                 },
                 '&:before': {
-                    bottom: 0
+                    bottom: 0,
+                    transitionDelay: '0.5s'
                 },
                 '&:last-child, &:nth-of-type(3)': {
                     '&:before': {
