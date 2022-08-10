@@ -46,7 +46,7 @@ const Navbar = (props : any) => {
                     }}/>
                 <Box sx={{
                     display: ['none', 'flex'],
-                    alignItems: 'center'
+                    alignItems: 'center',
                 }}>
                     <NavigationLinks />
                     <StyleSwitch sx={{

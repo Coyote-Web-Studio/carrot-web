@@ -19,7 +19,7 @@ const Hero = (props : any) => {
     return (
         <Flex className="hero" sx={{
             position: 'relative', 
-            pb: ['4.2rem', '2.4rem', null, '6.4rem']
+            pb: ['4.2rem', '4.8rem', null, '6.4rem']
         }}>
             {/* BACKGROUND DECORATION */}
             {/* <Box sx={{
@@ -72,19 +72,16 @@ const Hero = (props : any) => {
                 >
                     <Text as="h1" sx={{
                         fontSize: ['4.8rem', null, null, '6.9rem'], 
-                        lineHeight: ['4.88rem', '4.88rem', '4.8rem', '6.99rem'] ,
+                        lineHeight: '100%' ,
                         mb: ['1.6rem', '1.6rem', '1.8rem', '1rem'],
                         letterSpacing: '-0.04em',
                         pr: ['2rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             fontSize: '9.9rem',
-                            lineHeight: '9.9rem',
-                            mb: '4.6rem'
+                            mb: '2.4rem'
                         },
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            mb: '5.2rem',
                             fontSize: '11.9rem',
-                            lineHeight: '12.7rem'
                         },
                     }}>
                         <AnimatedText speed={20} initialDelay={150}>
@@ -92,7 +89,8 @@ const Hero = (props : any) => {
                         </AnimatedText>
                     </Text>
                     <Fade>
-                        <Text mb={['2.9rem', '3.7rem', null, '2.6rem']} sx={{
+                        <Text sx={{
+                            mb: ['2.9rem', '3.2rem', null, '2.6rem'],
                             fontSize: ['1.4rem', null, null, '1.6rem'],
                             lineHeight: ['2.2rem', null, null, '2.4rem'],
                             color: theme.colors.textColor,
@@ -100,11 +98,11 @@ const Hero = (props : any) => {
                             fontWeight: 300,
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                 fontSize: '1.9rem',
-                                mb: '7rem !important',
+                                mb: '2.8rem !important',
                                 lineHeight: '2.85rem'
                             },
                             [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                mb: '6.7rem !important',
+                                mb: '3.2rem !important',
                             },
                         }}>
                             <AnimatedText speed={5} initialDelay={700}>

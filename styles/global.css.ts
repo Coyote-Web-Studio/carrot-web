@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
   
   h3 {
     font-size: 3.3rem;
-    line-height: 101%;
+    line-height: 90%;
     letter-spacing: -0.04em;
     @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
       font-size: 4.8rem;

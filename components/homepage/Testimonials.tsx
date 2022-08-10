@@ -26,20 +26,20 @@ const Testimonials = () => {
           bg: theme.colors.customerCommentBackground,
           borderRadius: ['1.6rem'],
           pb: ["6.4rem", '6.8rem', null, "8.4rem"],
-          pt: ["8.7rem" , '6.8rem', null, "8.4rem"],
+          pt: ["8.7rem" , '6.8rem', null, "12.4rem"],
           mb: ["4.8rem", null, "12.8rem", "calc(6.4rem * 2)"],
           height: ['calc(2.4rem * 22)', 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: 'calc(6.4rem * 2)',
             pb: '21.3rem',
-            pt: '11.3rem',
+            pt: '19.5rem',
             height: 'calc(6.4rem * 14)',
             borderRadius: '5rem'
           },
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             height: "calc(6.4rem * 17)",
             mb: 'calc(6.4rem * 3)',
-            pt: '17.7rem',
+            pt: '24.7rem',
             pb: '0'
           },
         }}
@@ -78,7 +78,7 @@ const Testimonials = () => {
             fontSize={["2.8rem", "3.3rem", null, "4.8rem"]}
             mb={["3.8rem", "3.8rem", null, "5.3rem"]}
             fontWeight={700}
-            lineHeight={"110%"}
+            lineHeight={"100%"}
             color={theme.colors.customerCommentText}
             sx={{
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {

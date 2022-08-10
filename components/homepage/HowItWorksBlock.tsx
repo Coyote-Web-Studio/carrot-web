@@ -108,7 +108,7 @@ const HowItWorksBlock = (props: any) => {
           </Flex>
           <Flex
             className="block-title bordered"
-            lineHeight={['110%']}
+            lineHeight={['90%']}
             fontWeight={700}
             alignItems={['center', 'unset']}
             bg={theme.colors.cardBackground}
@@ -130,11 +130,11 @@ const HowItWorksBlock = (props: any) => {
                 width: '54rem !important',
                 maxWidth: 'unset',
                 height: isOpen ? '32rem !important' : 'calc(6.4rem * 3) !important',
-                py: '4.2rem !important'
+                py: '5.4rem !important'
               },
               [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                 width: '57.6rem !important',
-                py: '7rem !important'
+                py: '7.4rem !important'
               },
               
             }}

@@ -79,8 +79,9 @@ const CarrotInNumbersItem = (props : any) => {
                 position: 'relative',
                 '&::after, &::before': {
                     content: "''",
+                    transitionDelay: '2s',
                     height: '0.1rem',
-                    transition: '0.25s ease-in-out width',
+                    transition: '1s ease-in-out width',
                     width: isVisible ? '100%' : '0',
                     position: 'absolute',
                 },

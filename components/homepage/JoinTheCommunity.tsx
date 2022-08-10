@@ -116,15 +116,13 @@ const JoinTheCommunity = () => {
                                 as={'h2'} 
                                 sx={{
                                     fontSize: [null,  '4rem !important', null, '5.2rem !important'],
-                                    lineHeight: [null, '4rem !important', null, '5.2rem'],
+                                    lineHeight: '100%',
                                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                         fontSize: '6.9rem !important',
-                                        lineHeight: '6.9rem !important'
                                     },
                                     pr: ['4rem'],
                                     [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
                                         fontSize: "9.9rem !important",
-                                        lineHeight: '110% !important'
                                     },
                                 }}
                             >

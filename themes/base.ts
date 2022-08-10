@@ -46,6 +46,7 @@ export default {
     },
     navbarBox: {
       mx: "auto",
+      maxWidth: [null, 'calc(100% - 2.4rem)', null, 'unset'],
       width: [
         "calc(100vw - 4.8rem)", 
         "calc(60rem + (3.2rem * 2))", 

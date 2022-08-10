@@ -35,10 +35,10 @@ const SuccesfulCampaigns = () => {
 
   const highlightAnimation = keyframes`
     0% {
-      background-position: 0%;
+      background-position: 44%;
     };
     100% {
-      background-position: 44%;
+      background-position: 0%;
     };
   `;
 
