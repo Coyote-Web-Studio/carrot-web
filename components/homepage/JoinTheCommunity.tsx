@@ -235,8 +235,7 @@ const JoinTheCommunity = () => {
                                                 }
                                             }} 
                                         >
-                                            <Image 
-                                                src={item.img}
+                                            <Box 
                                                 sx={{
                                                     maxWidth: [
                                                         '5.4rem',
@@ -246,10 +245,21 @@ const JoinTheCommunity = () => {
                                                     width: ['100%', null, null, '12rem'],
                                                     height: ['5.4rem', null, '12.6rem'],
                                                     mr: ['4.6rem', '2rem', null, '3.2rem'],
+                                                    backgroundSize: 'cover',
+                                                    backgroundPosition: 'center',
+                                                    backgroundRepeat: 'no-repeat',
+                                                    backgroundImage: `url(${item.img})`,
                                                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                                                         minWidth: '12rem',
                                                         maxWidth: 'unset'
                                                     },
+                                                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                                        minWidth: '13.2rem',
+                                                        maxWidth: 'unset'
+                                                    },
+                                                    '&:hover': {
+                                                        backgroundImage: `url(${item.imgHover})`
+                                                    }
                                                 }}
                                             />
                                             <Flex flexDirection={['column']} sx={{
@@ -378,18 +388,21 @@ const JoinTheCommunity = () => {
 const CommunityData = [
     {
         img: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657852804/carrot/community/SocialMedia_Logos_oylwyq.svg',
+        imgHover: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1660236544/carrot/community/SocialMedia_Logos-2_akp599.svg',
         detail: 'Join in on community discussion on the Carrot Discord.',
         buttonLabel: 'JOIN DISCORD',
         buttonLink: '#'
     },
     {
         img: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657852804/carrot/community/SocialMedia_Logos-1_torz3r.svg',
+        imgHover: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1660236543/carrot/community/SocialMedia_Logos-1_kkyh6t.svg',
         detail: 'Contribute to the Carrot repositories on Github.',
         buttonLabel: 'JOIN GITHUB',
         buttonLink: '#'
     },
     {
         img: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657852804/carrot/community/SocialMedia_Logos-2_dp4zz3.svg',
+        imgHover: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1660236543/carrot/community/SocialMedia_Logos_rtolaw.svg',
         detail: 'Get the latest Carrot announcements on the Swapr Twitter.',
         buttonLabel: 'JOIN TWITTER',
         buttonLink: '#'

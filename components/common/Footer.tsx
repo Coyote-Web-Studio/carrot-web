@@ -97,7 +97,6 @@ const Footer = (props: any) => {
                 <Text 
                   fontSize={'1.4rem'} 
                   mb={['0.8rem', '2.4rem']} 
-                  letterSpacing={'0.08em'} 
                   color={theme.colors.gray1}
                   sx={{
                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {

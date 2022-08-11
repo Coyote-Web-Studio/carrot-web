@@ -21,7 +21,6 @@ const NavigationLinks = (props : any) => {
                             whiteSpace: 'nowrap',
                             transition: '0.1s ease-in-out all',
                             fontSize: ['1rem', null, null, '1.2rem'],
-                            letterSpacing: '0.08em',
                             '&:first-of-type': {
                                 ml: 0
                             },
