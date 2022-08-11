@@ -29,7 +29,7 @@ const Marquees = (props : any) => {
                     bg: theme.colors.green5,
                 },
             }}>
-                <Marquee gradient={false} direction={'left'}>
+                <Marquee gradient={false} direction={'left'} speed={15}>
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-6_bvjs0o.svg" />
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-7_cgznoy.svg" />
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-4_cg0jzm.svg" />
@@ -64,7 +64,7 @@ const Marquees = (props : any) => {
                     }
                 },
             }}>
-                <Marquee gradient={false} direction={'left'} speed={40}>
+                <Marquee gradient={false} direction={'left'} speed={30}>
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg" />
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg" />
                     <Image src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg" />

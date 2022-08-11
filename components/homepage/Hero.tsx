@@ -9,6 +9,7 @@ import Fade from '../common/Fade';
 import AnimatedText from '../common/AnimatedText';
 
 import PlayVideoButton from '../common/PlayVideoButton';
+import Button3D from '../common/Button3D';
 
 const Hero = (props : any) => {
 

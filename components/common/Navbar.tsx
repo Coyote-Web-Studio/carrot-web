@@ -36,12 +36,12 @@ const Navbar = (props : any) => {
             >
                 <Logo 
                     color={theme.colors.logoColor} sx={{
-                        height: ['2.7rem', '3rem', '4rem'],
+                        height: ['3.271rem', '4.4rem', null, '4.67rem'],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                            height: '4.8rem',
+                            height: '5.6rem',
                         },
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            height: "7.79rem",
+                            height: "9.3rem",
                         },
                     }}/>
                 <Box sx={{
@@ -54,25 +54,28 @@ const Navbar = (props : any) => {
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             ml: "4.8rem",
                         },
+                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                            ml: "6.4rem",
+                        },
                     }}/>
-                    <Button buttonWrapperStyles={{
-                        ml: ['2.4rem', '1.2rem', '2.4rem', '3.2rem'],
-                        height: [null, '4.6rem'],
-                        minWidth: 'unset',
-                        'button': {
-                            fontSize: [null, null, null, '1.2rem'],
-                        },
-                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                            height: '6.4rem',
-                            minWidth: '14.4rem',
-                            'button': {
-                                fontSize: '1.6rem',
-                            },
-                        },
-                    }}>
-                        CARROT DAPP
-                    </Button>
                 </Box>
+                <Button buttonWrapperStyles={{
+                    ml: ['2.4rem', '1.2rem', '2.4rem', '3.2rem'],
+                    height: [null, '4.6rem'],
+                    minWidth: 'unset',
+                    'button': {
+                        fontSize: [null, null, null, '1.2rem'],
+                    },
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        height: '6.4rem',
+                        minWidth: '14.4rem',
+                        'button': {
+                            fontSize: '1.6rem',
+                        },
+                    },
+                }}>
+                    CARROT DAPP
+                </Button>
                 <Flex 
                     className="mobile-controls" 
                     sx={{

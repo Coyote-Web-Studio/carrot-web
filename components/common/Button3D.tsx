@@ -1,10 +1,9 @@
-import { filterProps } from 'framer-motion';
 import { Button, Box, Flex } from 'rebass';
 import { useTheme } from 'styled-components';
 
 const Button3D = (props : any) => {
     const theme : any = useTheme();
-    const distance = 40;
+    const distance = 30;
     return (
         <Button sx={{
             color: 'white',
@@ -17,6 +16,8 @@ const Button3D = (props : any) => {
             p: '0 2rem',
             bg: theme.colors.orange6,
             zIndex: 0,
+            minWidth: 'unset',
+            width: '20rem',
             whiteSpace: 'nowrap',
             cursor: 'pointer',
             '&:hover .elevated': {
@@ -35,7 +36,7 @@ const Button3D = (props : any) => {
                 transform: 'perspective(250px) rotate3d(1, 0, 0, -97deg) scaleY(1)'
             }
         }}>
-            <Box opacity={0}>
+            <Box>
                 {props.children}
             </Box>
             <Box className={'elevated'} color={'black'} sx={{
@@ -53,7 +54,6 @@ const Button3D = (props : any) => {
                 left: '-2px',
                 background: 'transparent'
             }}>
-                {props.children}
             </Box>
             <Box className={'border-left'} sx={{
                 width: `${distance + (distance * 0.4)}px`,
