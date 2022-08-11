@@ -4,25 +4,11 @@ import Logo from './Logo';
 import GridBackground from './GridBackground';
 import Fade from './Fade';
 import Button from "./Button";
-import { invert, transparentize } from "polished";
-import { useParallax } from 'react-scroll-parallax';
 
 import FooterLinks from './../../content/footer-navigation';
 
 const Footer = (props: any) => {
   const theme: any = useTheme();
-
-  const goldParallax = useParallax({
-    speed: -18,
-  });
-
-  const sphereParallax = useParallax({
-    speed: -12.5,
-  });
-
-  const hexagonParallax = useParallax({
-    speed: -20,
-  });
 
   return (
     <Flex
@@ -157,63 +143,6 @@ const Footer = (props: any) => {
           </Button>
         </Flex>
       </Flex>
-      
-      <Box className="footer-decoration">
-        <Image
-          ref={goldParallax.ref}
-          src={"misc/gold-curve.png"}
-          sx={{
-            position: "absolute",
-            top: ["75rem", "28rem", "28rem", "90rem"],
-            width: ["8rem", null, null, "9rem"],
-            height: ["8rem", null, null, '9rem'],
-            right: ["4%", "45%"],
-            zIndex: "100000000",
-            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-            display: ['none', 'block'],
-            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height: "13rem",
-              width: '13rem'
-            },
-          }}
-          />
-        <Image
-          ref={sphereParallax.ref}
-          src={"misc/sphere.png"}
-          sx={{
-            position: "absolute",
-            top: ["10rem", "5rem"],
-            width: ["3.7rem"],
-            height: ["3.7rem"],
-            left: ["4%", null, "12%"],
-            zIndex: "100000000",
-            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-            display: ['none', 'block'],
-            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height: "7.4rem",
-              width: '7.4rem'
-            },
-          }}
-        />
-        <Image
-          ref={hexagonParallax.ref}
-          src={"hexagon.png"}
-          sx={{
-            position: "absolute",
-            top: ["24rem", "8rem"],
-            width: ["7.2rem", "9rem"],
-            height: ['8.7rem', '10.9rem'],
-            right: ["4%", null, "12%"],
-            zIndex: "100000000",
-            filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-            display: ['none', 'block'],
-            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height: "21.9rem",
-              width: '18.1rem'
-            },
-          }}
-        />
-      </Box>
     </Flex>
   );
 };

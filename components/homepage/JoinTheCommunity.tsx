@@ -3,13 +3,31 @@ import Button from '../common/Button';
 import { useTheme } from 'styled-components';
 import Fade from '../common/Fade';
 import AnimatedText from '../common/AnimatedText';
+import { useParallax } from 'react-scroll-parallax';
+import { invert, transparentize } from "polished";
+
+
 
 const JoinTheCommunity = () => {
     const theme : any = useTheme();
+
+    const goldParallax = useParallax({
+        speed: -18,
+      });
+    
+      const sphereParallax = useParallax({
+        speed: -15.5,
+      });
+    
+      const hexagonParallax = useParallax({
+        speed: -30,
+      });
+
     return (
         <Flex 
             sx={{
                 bg: theme.colors.orange6, 
+                position: 'relative',
                 '*': {
                     color: theme.colors.gray10
                 }
@@ -291,6 +309,68 @@ const JoinTheCommunity = () => {
             >
 
             </Flex>
+            <Box className="footer-decoration" sx={{
+                position: 'absolute',
+                top: '100%',
+                width: '100%',
+                // height: '30rem',
+                zIndex: 4
+            }}>
+                <Image
+                ref={goldParallax.ref}
+                src={"misc/gold-curve.png"}
+                sx={{
+                    position: "absolute",
+                    top: ["75rem", "28rem", "28rem", "90rem"],
+                    width: ["8rem", null, null, "9rem"],
+                    height: ["8rem", null, null, '9rem'],
+                    right: ["4%", "45%"],
+                    zIndex: "100000000",
+                    filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+                    display: ['none', 'block'],
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    height: "13rem",
+                    width: '13rem'
+                    },
+                }}
+                />
+                <Image
+                ref={sphereParallax.ref}
+                src={"misc/sphere.png"}
+                sx={{
+                    position: "absolute",
+                    top: ["10rem", "5rem"],
+                    width: ["3.7rem"],
+                    height: ["3.7rem"],
+                    left: ["4%", null, "12%"],
+                    zIndex: "100000000",
+                    filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+                    display: ['none', 'block'],
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    height: "7.4rem",
+                    width: '7.4rem'
+                    },
+                }}
+                />
+                <Image
+                ref={hexagonParallax.ref}
+                src={"hexagon.png"}
+                sx={{
+                    position: "absolute",
+                    top: ["24rem", "8rem"],
+                    width: ["7.2rem", "9rem"],
+                    height: ['8.7rem', '10.9rem'],
+                    right: ["4%", null, "12%"],
+                    zIndex: "100000000",
+                    filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+                    display: ['none', 'block'],
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                    height: "21.9rem",
+                    width: '18.1rem'
+                    },
+                }}
+                />
+            </Box>
         </Flex>
     );
 }
