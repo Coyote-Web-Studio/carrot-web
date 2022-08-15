@@ -130,13 +130,29 @@ const SuccesfulCampaigns = () => {
         </Box>
         <Fade sx={{display: ['none', 'flex']}}>
           <Flex ref={sliderRef} justifyContent={'space-between'} mx={[null, '-1.6rem', '-3.2rem', '-2.4rem']}>
+            <Splide
+              options={{
+                width: '100%',
+                gap: 48,
+                perPage: 4,
+                pagination: false,
+                breakpoints: {
+                  1918: {
+                    perPage: 3
+                  },
+                  1440: {
+                    perPage: 2
+                  },
+                }
+              }}
+            >
             {SuccesfullCampaigns.map((campaign, index) => (
-              index < cardNumber && (
+              <SplideSlide>
                 <CampaignCard
                   campaign={campaign}
                   sx={{
                     width: ["100%"],
-                    mx: [null, '1.6rem', '3.2rem', '2.4rem']
+                    // mx: [null, '1.6rem', '3.2rem', '2.4rem']
                   }}
                   key={index} onMouseEnter={(e : any) => {
                     e.stopPropagation();
@@ -155,8 +171,10 @@ const SuccesfulCampaigns = () => {
                     }
                   }}
                 />
-              )))
+              </SplideSlide>
+              ))
             }
+            </Splide>
           </Flex>
         </Fade>
       </Flex>
