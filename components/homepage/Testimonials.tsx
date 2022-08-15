@@ -109,6 +109,7 @@ const Testimonials = () => {
               },
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                 '.splide__arrow': {
+                  top: 'calc(50% - 12rem)',
                   transform: 'scale(3)'
                 },
                 '.splide__arrow--prev': {
