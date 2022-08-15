@@ -6,6 +6,26 @@ import Fade from '../common/Fade';
 import GridBackground from '../common/GridBackground';
 import { transparentize } from 'polished';
 import AnimatedText from '../common/AnimatedText';
+import Testimonial from './Testimonial';
+import { SplideSlide, Splide } from '@splidejs/react-splide';
+
+
+const testimonials = [
+  {
+    text: `“Carrot was the best project on xDAI that allowed us to deploy KPI options in the Agave incentives program. This allows us to optimize our rewards towards specific goals rather than just throw them away.”`,
+    author: 'Luigi Lemon, Agave Core Contributor'
+  },
+  {
+    text: `“Carrot was the best project on xDAI that allowed us to deploy KPI options in the Agave incentives program. This allows us to optimize our rewards towards specific goals rather than just throw them away.”
+    `,
+    author: 'Luigi Lemon, Agave Core Contributor'
+  },
+  {
+    text: `“Carrot was the best project on xDAI that allowed us to deploy KPI options in the Agave incentives program. This allows us to optimize our rewards towards specific goals rather than just throw them away.”
+    `,
+    author: 'Luigi Lemon, Agave Core Contributor'
+  },
+];
 
 const Testimonials = () => {
   const theme : any = useTheme();
@@ -72,42 +92,42 @@ const Testimonials = () => {
             flexDirection: "column",
             position: "relative",
             zIndex: 1,
+            '.splide .splide__arrows': {
+              '.splide__arrow': {
+                top: 'calc(50% - 1.5rem)',
+                bg: 'transparent',
+                transform: 'scale(1.5)',
+                'svg': {
+                  fill: theme.colors.borderColor
+                }
+              },
+              '.splide__arrow--prev': {
+                left: '-3rem'
+              },
+              '.splide__arrow--next': {
+                right: '-3rem'
+              },
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                '.splide__arrow': {
+                  transform: 'scale(3)'
+                },
+                '.splide__arrow--prev': {
+                  left: '-12rem'
+                },
+                '.splide__arrow--next': {
+                  right: '-12rem'
+                }
+              },
+            }
           }}
         >
-          <Text
-            fontSize={["2.8rem", "3.3rem", null, "4.8rem"]}
-            mb={["3.8rem", "3.8rem", null, "5.3rem"]}
-            fontWeight={700}
-            lineHeight={"100%"}
-            color={theme.colors.customerCommentText}
-            sx={{
-              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                fontSize: "6.9rem !important",
-                mb: '13.4rem !important'
-              },
-              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                fontSize: "8.3rem !important",
-              },
-            }}
-          >
-            <AnimatedText color={theme.colors.customerCommentText} speed={10}>
-              “Carrot was the best project on xDAI that allowed us to deploy KPI
-              options in the Agave incentives program. This allows us to optimize
-              our rewards towards specific goals rather than just throw them away.”
-            </AnimatedText>
-          </Text>
-          <Text
-            sx={{
-              fontSize: ["1.4rem"],
-              color: theme.colors.customerCommentText,
-              fontWeight: 300,
-              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                fontSize: "2.8rem",
-              },
-            }}
-          >
-            — Luigi Lemon, Agave Core Contributor
-          </Text>
+          <Splide options={{width: '100%'}}>
+            {testimonials.map((testimonial : any, index : any) => (
+              <SplideSlide>
+                <Testimonial data={testimonial} />
+              </SplideSlide>
+            ))}
+          </Splide>
         </Fade>
       </Flex>
       <Image

@@ -36,7 +36,7 @@ const Button3D = (props : any) => {
                 transform: 'perspective(250px) rotate3d(1, 0, 0, -97deg) scaleY(1)'
             }
         }}>
-            <Box>
+            <Box sx={}>
                 {props.children}
             </Box>
             <Box className={'elevated'} color={'black'} sx={{
