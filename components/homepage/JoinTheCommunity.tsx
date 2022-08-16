@@ -34,7 +34,6 @@ const JoinTheCommunity = () => {
         return (
             <Flex 
                 as={'li'} 
-                key={props.index}
                 sx={{
                     height: ['auto'], 
                     width: '100%',
@@ -334,7 +333,7 @@ const JoinTheCommunity = () => {
                                     rowGap: '0.1rem', columnGap: '0.1rem'
                                 }}>
                                     {CommunityData.map((item : any, index : any) => (
-                                        <CommunityCard data={item}/>
+                                        <CommunityCard data={item} key={index}/>
                                     ))}
                                 </Flex>
                             </Flex>
