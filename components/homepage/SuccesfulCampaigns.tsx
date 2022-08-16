@@ -129,7 +129,9 @@ const SuccesfulCampaigns = () => {
 
         </Box>
         <Fade sx={{display: ['none', 'flex']}}>
-          <Flex ref={sliderRef} justifyContent={'space-between'} mx={[null, '-1.6rem', '-3.2rem', '-2.4rem']}>
+          <Flex 
+            ref={sliderRef} 
+            justifyContent={'space-between'}>
             <Splide
               options={{
                 width: '100%',

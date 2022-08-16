@@ -9,6 +9,7 @@ const MobileNavbar = (props : any) => {
     const theme : any = useTheme();
     return (
         <Flex sx={{
+            display: ['block','none'] ,
             position: 'absolute',
             pointerEvents: props.isOpen ? 'auto' : 'none',
             opacity: props.isOpen ? 1 : 0,

@@ -129,14 +129,21 @@ const Footer = (props: any) => {
               </Flex>
             ))}
           </Flex>
-          <Button inverted buttonWrapperStyles={{
+          <Button buttonWrapperStyles={{
             mt: 'auto',
             height: [null, null, null, '4.8rem'],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height: '6.4rem',
               width: '19.2rem',
-              borderRadius: '1.6rem'
+              color: theme.colors.oragen6
             },
+            '&:hover .button': {
+              background: theme.colors.gray10,
+              boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBackground}`,
+              'span': {
+                color: theme.colors.orange6,
+              }
+            }
           }}>
             CARROT DAPP
           </Button>

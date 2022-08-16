@@ -189,13 +189,14 @@ const HowItWorksBlock = (props: any) => {
             )}
             <Text 
               fontSize={["1.6rem"]} 
-              lineHeight={["2.4rem", null, null, '3.3rem']} 
+              lineHeight={["2.4rem"]} 
               as={"p"}
               maxWidth={'40rem'}
               width={['auto', 'auto', null, '100%']}
               sx={{
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                  fontSize: '2.2rem'
+                  fontSize: '2.2rem',
+                  letterSpacing: '3.3rem'
                 }
               }}
             >
