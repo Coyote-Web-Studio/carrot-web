@@ -156,7 +156,7 @@ const SuccesfulCampaigns = () => {
             >
               <SplideTrack>
                 {SuccesfullCampaigns.map((campaign, index) => (
-                  <SplideSlide>
+                  <SplideSlide key={index}>
                     <CampaignCard
                       campaign={campaign}
                       sx={{
