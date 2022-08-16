@@ -28,7 +28,7 @@ const Button3D = (props : any) => {
                         color: theme.colors.buttonBackground,
                     },
                 },
-                '.line.left': {
+                '.line': {
                     transform: 'rotate(-45deg) scaleX(1)',
                 },
             },
@@ -61,9 +61,8 @@ const Button3D = (props : any) => {
                 
             }}/>
             <Box className={'side left'} sx={{
-                // background: theme.colors.background, 
                 width: '0.88rem',
-                height: '4.2rem',
+                height: ['2.6rem', null, null, '4.2rem'],
                 left: '0rem',
                 transition: '0.15s ease-in-out all',
                 position: 'absolute',
@@ -71,9 +70,8 @@ const Button3D = (props : any) => {
                 transform: 'skew(0, -45deg)',
                 boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`
             }}/>
-            <Box className={'side left'} sx={{
-                // background: theme.colors.background, 
-                width: 'calc(100% - 2.2rem)',
+            <Box className={'side bottom'} sx={{
+                width: ['calc(100% - 1.1rem)', null, null, 'calc(100% - 2.2rem)'],
                 transition: '0.15s ease-in-out all',
                 height: '1rem',
                 left: '1.6rem',

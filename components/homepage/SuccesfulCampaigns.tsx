@@ -5,6 +5,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { debounce } from "../../utils/utils";
 
 import Button from "./../common/Button";
+import Button3D from "./../common/Button3D";
 import CampaignCard from "./../common/CampaignCard";
 import Fade from "../common/Fade";
 import AnimatedText from "../common/AnimatedText";
@@ -206,11 +207,11 @@ const SuccesfulCampaigns = () => {
             )
         )}
       </Flex>
-      <Button sx={{
+      <Button3D sx={{
         px: [null, '3.2rem', null]
       }}>
         SEE ALL CAMPAIGNS
-      </Button>
+      </Button3D>
     </Flex>
   );
 };

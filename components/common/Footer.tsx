@@ -4,6 +4,7 @@ import Logo from './Logo';
 import GridBackground from './GridBackground';
 import Fade from './Fade';
 import Button from "./Button";
+import Button3D from "./Button3D";
 
 import FooterLinks from './../../content/footer-navigation';
 
@@ -129,13 +130,14 @@ const Footer = (props: any) => {
               </Flex>
             ))}
           </Flex>
-          <Button buttonWrapperStyles={{
+          <Button3D buttonWrapperStyles={{
             mt: 'auto',
+            bg: theme.colors.gray10,
             height: [null, null, null, '4.8rem'],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height: '6.4rem',
               width: '19.2rem',
-              color: theme.colors.oragen6
+              color: theme.colors.orange6
             },
             '&:hover .button': {
               background: theme.colors.gray10,
@@ -146,7 +148,7 @@ const Footer = (props: any) => {
             }
           }}>
             CARROT DAPP
-          </Button>
+          </Button3D>
         </Flex>
       </Flex>
     </Flex>
