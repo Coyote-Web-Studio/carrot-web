@@ -28,7 +28,7 @@ const Button = (props : any) => {
             },
             ...props.buttonWrapperStyles
         }}>
-            <StyledButton className={'button'} sx={{
+            <StyledButton {...props} className={'button'} sx={{
                 background: theme.colors.buttonBackground,
                 height: '100%',
                 px: ['1.8rem'],
@@ -50,7 +50,8 @@ const Button = (props : any) => {
                 minWidth: 'inherit',
                 boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBorder}`,
                 ...props.sx,
-            }}>
+            }}
+            >
                 <Text as={'span'} sx={{color: theme.colors.gray10, textShadow: '0 0 transparent', transition: '0.1s ease-in-out all'}}>
                     {props.children}
                 </Text>

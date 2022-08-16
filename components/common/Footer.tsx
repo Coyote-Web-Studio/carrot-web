@@ -73,7 +73,7 @@ const Footer = (props: any) => {
         />
       </Fade>
 
-      <Flex sx={{ ...theme.boxSizes.defaultBox, position: "relative", flexDirection: 'column' }}>
+      <Flex sx={{ ...theme.boxSizes.navbarBox, position: "relative", flexDirection: 'column' }}>
         <Flex 
           flexDirection={['column', 'column', null, 'row']} 
           justifyContent={['auto', null, null, 'space-between']}

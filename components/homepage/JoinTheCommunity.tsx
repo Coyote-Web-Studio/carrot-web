@@ -1,14 +1,18 @@
 import { Box, Flex, Text, Image } from 'rebass';
 import Button from '../common/Button';
+import { useState } from 'react';
 import { useTheme } from 'styled-components';
 import Fade from '../common/Fade';
 import AnimatedText from '../common/AnimatedText';
 import { useParallax } from 'react-scroll-parallax';
 import { invert, transparentize } from "polished";
+import { set } from 'nprogress';
 
 
 
 const JoinTheCommunity = () => {
+
+
     const theme : any = useTheme();
 
     const goldParallax = useParallax({
@@ -22,6 +26,126 @@ const JoinTheCommunity = () => {
       const hexagonParallax = useParallax({
         speed: -30,
       });
+
+    const CommunityCard = (props : any) => {
+
+        const [isButtonHovered, setIsButtonHovered] = useState(false);
+
+        return (
+            <Flex 
+                as={'li'} 
+                key={props.index}
+                sx={{
+                    height: ['auto'], 
+                    width: '100%',
+                    fontWeight: 300,
+                    borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
+                    p: [
+                        '2.6rem 1rem', 
+                        null, 
+                        '2.4rem',
+                        null,
+                    ],
+                    alignItems: 'center',
+                    '&:last-of-type': {
+                        border: 'none'
+                    },
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        p: ['3.2rem 3.2rem 3.2rem 6.4rem'],
+                        borderBottom: 'none',
+                        height: '25.6rem',
+                        boxShadow: `0 0 0 1px ${theme.colors.gray10}`, 
+                    }
+                }} 
+            >
+                <Box 
+                    sx={{
+                        maxWidth: [
+                            '5.4rem',
+                            '8rem', null,
+                            '10rem'
+                        ],
+                        width: ['100%', null, null, '12rem'],
+                        minWidth: '12rem',
+                        height: ['5.4rem', null, '12.6rem'],
+                        mr: ['4.6rem', '2rem', null, '3.2rem'],
+                        backgroundSize: 'cover',
+                        position: 'relative',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundImage: `url(${props.data.img})`,
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                            minWidth: '12rem',
+                            maxWidth: 'unset'
+                        },
+                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                            minWidth: '13.2rem',
+                            maxWidth: 'unset'
+                        },
+                    }}
+                >
+                    <Box className={'hovered-image'} sx={{
+                        width: 'inherit', 
+                        height: 'inherit',
+                        minWidth: 'inherit',
+                        maxWidth: 'inherit', 
+                        position: 'absolute',
+                        top: '0',
+                        left: '0',
+                        transition: '0.15s ease-in-out all',
+                        zIndex: 1,
+                        opacity:  isButtonHovered ? 1 : 0,
+                        pointerEvents: 'none',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
+                        // background: 'black',
+                        backgroundImage: `url(${props.data.imgHover})`
+                    }}/>
+                </Box>
+                <Flex flexDirection={['column']} sx={{
+                    ml: ['auto'],
+                    width: ['100%'],
+                    alignItems: ['start', null, null, 'end'],
+                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        ml: ['2rem'],
+                        maxWidth: '34.6rem'
+                    },
+                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                        ml: ['auto'],
+                        mt: 'auto'
+                    },
+                }}>
+                    <Text
+                        sx={{
+                            fontSize: ['1.2rem', null, null, '1.6rem'],
+                            lineHeight: ['1.8rem', null, null, '2.4rem'],
+                            mb: ['1.6rem', '2.4rem'],
+                            fontFamily: theme.fonts.monospace
+                        }}
+                    >
+                        {props.data.detail}
+                    </Text>
+                    <Box>
+                        <Button 
+                            onMouseEnter={() => {setIsButtonHovered(true)}}
+                            onMouseLeave={() => {setIsButtonHovered(false)}}
+                            buttonWrapperStyles={{
+                                width:['12.5rem', null, null, '20rem'],
+                                fontWeight: 400,
+                                '&:hover': {
+                                    '.button': {
+                                        backgroundColor: theme.colors.gray10
+                                    }
+                                }
+                            }}
+                        >
+                            {props.data.buttonLabel}
+                        </Button>
+                    </Box>
+                </Flex>
+            </Flex>
+        )
+    }
 
     return (
         <Flex 
@@ -209,100 +333,7 @@ const JoinTheCommunity = () => {
                                     rowGap: '0.1rem', columnGap: '0.1rem'
                                 }}>
                                     {CommunityData.map((item : any, index : any) => (
-                                        <Flex 
-                                            as={'li'} 
-                                            key={index}
-                                            sx={{
-                                                height: ['auto'], 
-                                                width: '100%',
-                                                fontWeight: 300,
-                                                borderBottom: [`0.1rem solid ${theme.colors.gray10}`],
-                                                p: [
-                                                    '2.6rem 1rem', 
-                                                    null, 
-                                                    '2.4rem',
-                                                    null,
-                                                ],
-                                                alignItems: 'center',
-                                                '&:last-of-type': {
-                                                    border: 'none'
-                                                },
-                                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    p: ['3.2rem 3.2rem 3.2rem 6.4rem'],
-                                                    borderBottom: 'none',
-                                                    height: '25.6rem',
-                                                    boxShadow: `0 0 0 1px ${theme.colors.gray10}`, 
-                                                }
-                                            }} 
-                                        >
-                                            <Box 
-                                                sx={{
-                                                    maxWidth: [
-                                                        '5.4rem',
-                                                        '8rem', null,
-                                                        '10rem'
-                                                    ],
-                                                    width: ['100%', null, null, '12rem'],
-                                                    minWidth: '12rem',
-                                                    height: ['5.4rem', null, '12.6rem'],
-                                                    mr: ['4.6rem', '2rem', null, '3.2rem'],
-                                                    backgroundSize: 'cover',
-                                                    backgroundPosition: 'center',
-                                                    backgroundRepeat: 'no-repeat',
-                                                    backgroundImage: `url(${item.img})`,
-                                                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                        minWidth: '12rem',
-                                                        maxWidth: 'unset'
-                                                    },
-                                                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                                        minWidth: '13.2rem',
-                                                        maxWidth: 'unset'
-                                                    },
-                                                    '&:hover': {
-                                                        backgroundImage: `url(${item.imgHover})`
-                                                    }
-                                                }}
-                                            />
-                                            <Flex flexDirection={['column']} sx={{
-                                                ml: ['auto'],
-                                                width: ['100%'],
-                                                alignItems: ['start', null, null, 'end'],
-                                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                                    ml: ['2rem'],
-                                                    maxWidth: '34.6rem'
-                                                },
-                                                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                                    ml: ['auto'],
-                                                    mt: 'auto'
-                                                },
-                                            }}>
-                                                <Text
-                                                    sx={{
-                                                        fontSize: ['1.2rem', null, null, '1.6rem'],
-                                                        lineHeight: ['1.8rem', null, null, '2.4rem'],
-                                                        mb: ['1.6rem', '2.4rem'],
-                                                        fontFamily: theme.fonts.monospace
-                                                    }}
-                                                >
-                                                    {item.detail}
-                                                </Text>
-                                                <Box>
-                                                    <Button 
-                                                        buttonWrapperStyles={{
-                                                            width:['12.5rem', null, null, '20rem'],
-                                                            fontWeight: 400,
-                                                            '&:hover': {
-                                                                '.button': {
-                                                                    backgroundColor: theme.colors.gray10
-                                                                }
-                                                            }
-                                                        }}
-                                                    >
-                                                        {item.buttonLabel}
-                                                    </Button>
-                                                </Box>
-                                            </Flex>
-                                        </Flex>
+                                        <CommunityCard data={item}/>
                                     ))}
                                 </Flex>
                             </Flex>
