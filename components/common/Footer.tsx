@@ -130,7 +130,7 @@ const Footer = (props: any) => {
               </Flex>
             ))}
           </Flex>
-          <Button3D buttonWrapperStyles={{
+          <Button buttonWrapperStyles={{
             mt: 'auto',
             bg: theme.colors.gray10,
             height: [null, null, null, '4.8rem'],
@@ -148,7 +148,7 @@ const Footer = (props: any) => {
             }
           }}>
             CARROT DAPP
-          </Button3D>
+          </Button>
         </Flex>
       </Flex>
     </Flex>

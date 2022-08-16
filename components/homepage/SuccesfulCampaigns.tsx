@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
-import { Flex, Box, Text } from "rebass";
+import { Flex, Box, Text, Image } from "rebass";
 import { useTheme } from "styled-components";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { debounce } from "../../utils/utils";
 
 import Button from "./../common/Button";
@@ -88,18 +88,22 @@ const SuccesfulCampaigns = () => {
           },
           '.splide .splide__arrows': {
             '.splide__arrow': {
-              top: 'calc(50% - 5rem)',
+              width: '5.6rem',
+              height: '5.6rem',
+              top: 'calc(50%)',
               bg: 'transparent',
-              transform: 'scale(1.5)',
-              'svg': {
-                fill: theme.colors.textColor
-              }
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             },
             '.splide__arrow--prev': {
-              left: '-4rem'
+              left: '-6rem',
             },
             '.splide__arrow--next': {
-              right: '-4rem'
+              'img': {
+                transform: 'rotate(180deg)'
+              },
+              right: '-6rem'
             },
           }
         }}
@@ -134,6 +138,7 @@ const SuccesfulCampaigns = () => {
             ref={sliderRef} 
             justifyContent={'space-between'}>
             <Splide
+              hasTrack={false}
               options={{
                 width: '100%',
                 gap: 48,
@@ -149,34 +154,44 @@ const SuccesfulCampaigns = () => {
                 }
               }}
             >
-            {SuccesfullCampaigns.map((campaign, index) => (
-              <SplideSlide>
-                <CampaignCard
-                  campaign={campaign}
-                  sx={{
-                    width: ["100%"],
-                    // mx: [null, '1.6rem', '3.2rem', '2.4rem']
-                  }}
-                  key={index} onMouseEnter={(e : any) => {
-                    e.stopPropagation();
-                    e.preventDefault();
-      
-                    let cardWidth = e.currentTarget.getBoundingClientRect().width;
-      
-                    let highlighterExtraWidth = 128;
-      
-                    if ( highlightRef.current && sliderRef.current ) {
-                      highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
-      
-                      highlightRef.current.style.left = e.currentTarget.getBoundingClientRect().left - sliderRef.current.offsetLeft + - highlighterExtraWidth / 2 + 'px';
-      
-                      highlightRef.current.style.top = - (64) + 'px';
-                    }
-                  }}
-                />
-              </SplideSlide>
-              ))
-            }
+              <SplideTrack>
+                {SuccesfullCampaigns.map((campaign, index) => (
+                  <SplideSlide>
+                    <CampaignCard
+                      campaign={campaign}
+                      sx={{
+                        width: ["100%"],
+                        // mx: [null, '1.6rem', '3.2rem', '2.4rem']
+                      }}
+                      key={index} onMouseEnter={(e : any) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+          
+                        let cardWidth = e.currentTarget.getBoundingClientRect().width;
+          
+                        let highlighterExtraWidth = 128;
+          
+                        if ( highlightRef.current && sliderRef.current ) {
+                          highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
+          
+                          highlightRef.current.style.left = e.currentTarget.getBoundingClientRect().left - sliderRef.current.offsetLeft + - highlighterExtraWidth / 2 + 'px';
+          
+                          highlightRef.current.style.top = - (64) + 'px';
+                        }
+                      }}
+                    />
+                  </SplideSlide>
+                  ))
+                }
+              </SplideTrack>
+              <div className="splide__arrows">
+                <Box as={'button'} sx={{bg: 'white', width: '1rem', height: '1rem'}} className="splide__arrow splide__arrow--prev">
+                  <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
+                </Box>
+                <Box as={'button'} sx={{bg: 'white', width: '1rem', height: '1rem'}} className="splide__arrow splide__arrow--next">
+                  <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
+                </Box>
+              </div>
             </Splide>
           </Flex>
         </Fade>
