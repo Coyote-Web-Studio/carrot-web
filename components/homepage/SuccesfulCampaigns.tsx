@@ -205,7 +205,7 @@ const SuccesfulCampaigns = () => {
         )}
       </Flex>
       <Button sx={{
-        px: [null, '3.2rem', null, '4.8rem']
+        px: [null, '3.2rem', null]
       }}>
         SEE ALL CAMPAIGNS
       </Button>

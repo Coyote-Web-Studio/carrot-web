@@ -111,14 +111,14 @@ const Hero = (props : any) => {
                                 Yes, on any campaign. Carrot does it all.
                             </AnimatedText>
                         </Text>
-                        <Button buttonWrapperStyles={{
+                        <Button3D buttonWrapperStyles={{
                             mb: '2.4rem',
                             position: 'relative',
                             top: [0,'-0.4rem','0.25rem'],
                             minWidth: 'unset'
                         }}>
                             CREATE YOUR CAMPAIGN
-                        </Button>
+                        </Button3D>
                     </Fade>
                 </Flex>
                 {/* IMAGE / VIDEO */}

@@ -243,6 +243,7 @@ const JoinTheCommunity = () => {
                                                         '10rem'
                                                     ],
                                                     width: ['100%', null, null, '12rem'],
+                                                    minWidth: '12rem',
                                                     height: ['5.4rem', null, '12.6rem'],
                                                     mr: ['4.6rem', '2rem', null, '3.2rem'],
                                                     backgroundSize: 'cover',
@@ -331,7 +332,7 @@ const JoinTheCommunity = () => {
                 src={"misc/gold-curve.png"}
                 sx={{
                     position: "absolute",
-                    top: ["75rem", "28rem", "28rem", "90rem"],
+                    top: ["75rem", "28rem", "28rem", "40rem"],
                     width: ["8rem", null, null, "9rem"],
                     height: ["8rem", null, null, '9rem'],
                     right: ["4%", "45%"],

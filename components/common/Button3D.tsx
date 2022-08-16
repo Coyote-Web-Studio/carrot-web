@@ -1,107 +1,109 @@
-import { Button, Box, Flex } from 'rebass';
-import { useTheme } from 'styled-components';
+import { Button as RBButton, Box, Text } from 'rebass';
+import styled, { useTheme } from 'styled-components';
+import { invert } from 'polished';
+import Theme from '../../types/Theme';
 
 const Button3D = (props : any) => {
     const theme : any = useTheme();
-    const distance = 30;
     return (
-        <Button sx={{
-            color: 'white',
-            background: 'transparent',
-            height: '6rem',
-            border: '2px solid black',
-            fontSize: '3rem',
-            position: 'relative',
+        <Box onClick={props.onClick} sx={{
+            width: 'fit-content',
+            height: ['4.6rem', null, null, '6.2rem'],
             borderRadius: '1rem',
-            p: '0 2rem',
-            bg: theme.colors.orange6,
-            zIndex: 0,
-            minWidth: 'unset',
-            width: '20rem',
-            whiteSpace: 'nowrap',
+            position: 'relative',
             cursor: 'pointer',
-            '&:hover .elevated': {
-                transform: `perspective(250px) translate3d(0px, 0, ${distance}px)`,
+            minWidth: [null, null, null, '14.4rem'],
+            boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`,
+            bg: theme.colors.background,
+            transition: '0.15s ease-in-out all',
+            '&:hover': {
+                '.button': {
+                    backgroundColor: 
+                    props.inverted ?
+                    invert(theme.colors.background) :
+                    theme.colors.background,
+                    boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBackground}`,
+                    'span': {
+                        color: theme.colors.buttonBackground,
+                    },
+                    transform: 'translate(1rem, -1rem)'
+                },
+                '.line.left': {
+                    transform: 'scaleX(1, 0)',
+                },
             },
-            '&:hover .border-left': {
-                transform: 'perspective(250px) rotate3d(0, 1, 0, 250deg) scaleX(1)'
-            },
-            '&:hover .border-right': {
-                transform: 'perspective(250px) rotate3d(0, 1, 0, 110deg) scaleX(1)'
-            },
-            '&:hover .border-top': {
-                transform: 'perspective(250px) rotate3d(1, 0, 0, 97deg) scaleY(1)'
-            },
-            '&:hover .border-bottom': {
-                transform: 'perspective(250px) rotate3d(1, 0, 0, -97deg) scaleY(1)'
-            }
+            ...props.buttonWrapperStyles
         }}>
-            <Box sx={}>
-                {props.children}
-            </Box>
-            <Box className={'elevated'} color={'black'} sx={{
-                transition: '0.15s ease-in-out all',
-                zIndex: 1,
-                borderRadius: 'inherit',
-                border: '2px solid black',
-                width: 'calc(100% + 4px)',
-                height: 'calc(100% + 4px)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+            <Box className={'line left'} sx={{
+                // background: theme.colors.background, 
+                width: '0rem',
+                height: '0.1rem',
+                left: '0.3rem',
                 position: 'absolute',
-                top: '-2px',
-                left: '-2px',
-                background: 'transparent'
-            }}>
-            </Box>
-            <Box className={'border-left'} sx={{
-                width: `${distance + (distance * 0.4)}px`,
-                height: 'calc(100% - 1rem)',
-                position: 'absolute',
-                border: '2px solid black',
-                top: '0.5rem',
-                left: 0,
-                transition: '0.15s ease-in-out all',
-                transformOrigin: 'center left',
-                transform: 'perspective(250px) rotate3d(0, 1, 0, 250deg) scaleX(0)'
-            }}></Box>
-            <Box className={'border-right'} sx={{
+                top: '-0.3rem',
+                transform: 'rotate(-45deg)',
+                bg: theme.colors.orange6,
+                transition: '0.15s ease-in-out all'
                 
-                width: `${distance + (distance * 0.4)}px`,
-                height: 'calc(100% - 1rem)',
+            }}/>
+            <Box className={'side left'} sx={{
+                // background: theme.colors.background, 
+                width: '0.88rem',
+                height: '4.2rem',
+                left: '0rem',
+                transition: '0.15s ease-in-out all',
                 position: 'absolute',
-                border: '2px solid black',
                 top: '0.5rem',
-                right: 0,
+                transform: 'skew(0, -45deg)',
+                boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`
+            }}/>
+            <Box className={'side left'} sx={{
+                // background: theme.colors.background, 
+                width: 'calc(100% - 2.2rem)',
                 transition: '0.15s ease-in-out all',
-                transformOrigin: 'center right',
-                transform: 'perspective(250px) rotate3d(0, 1, 0, 111deg) scaleX(0)'
-            }}></Box>
-            <Box className={'border-top'} sx={{
-                width: 'calc(100% - 2rem)',
-                height: `${distance}px`,
+                height: '1rem',
+                left: '1.6rem',
                 position: 'absolute',
-                border: '2px solid black',
-                top: '0rem',
-                right: '1rem',
-                transition: '0.15s ease-in-out all',
-                transformOrigin: 'center top',
-                transform: 'perspective(250px) rotate3d(1, 0, 0, 100deg) scaleY(0)'
-            }}></Box>
-            <Box className={'border-bottom'} sx={{
-                width: 'calc(100% - 2rem)',
-                height: `${distance}px`,
-                position: 'absolute',
-                border: '2px solid black',
                 bottom: '0rem',
-                right: '1rem',
+                transform: 'skew(-45deg, 0)',
+                boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`
+            }}/>
+            <StyledButton className={'button'} sx={{
+                background: theme.colors.buttonBackground,
+                height: '100%',
+                px: ['1.8rem'],
+                lineHeight: ['1.8rem'],
+                fontSize: ['1.2rem', null, null, '1.6rem'],
+                fontWeight: 300,
+                width: 'inherit',
+                fontFamily: 'IBM Plex Mono',
+                letterSpacing: '0.05rem',
+                borderRadius: 'inherit',
+                zIndex: 1,
+                whiteSpace: 'nowrap',
+                position: 'relative',
+                top: '0rem',
+                left: '0rem',
                 transition: '0.15s ease-in-out all',
-                transformOrigin: 'center bottom',
-                transform: 'perspective(250px) rotate3d(1, 0, 0, -98deg) scaleY(0)'
-            }}></Box>
-        </Button>
+                cursor: 'pointer',
+                m: 0,
+                minWidth: 'inherit',
+                boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBorder}`,
+                ...props.sx,
+            }}>
+                <Box className="lines" sx={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}>
+                    <Box className="line" />
+                    <Box className="line" />
+                    <Box className="line" />
+                </Box>
+                <Text as={'span'} sx={{color: theme.colors.gray10, textShadow: '0 0 transparent', transition: '0.1s ease-in-out all'}}>
+                    {props.children}
+                </Text>
+            </StyledButton>
+        </Box>
     )
 }
+
+const StyledButton = styled(RBButton)``;
 
 export default Button3D;

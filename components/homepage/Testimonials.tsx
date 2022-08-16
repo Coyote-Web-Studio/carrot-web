@@ -82,7 +82,10 @@ const Testimonials = () => {
               position: "absolute",
             }}
             >
-            <GridBackground sx={{opacity: 0.1}}/>
+            <GridBackground sx={{
+              opacity: 0.1,
+              backgroundPosition: 'top center'
+            }}/>
           </Box>
 
         </Box>
@@ -122,7 +125,7 @@ const Testimonials = () => {
             }
           }}
         >
-          <Splide options={{width: '100%'}}>
+          <Splide options={{width: '100%', pagination: false}}>
             {testimonials.map((testimonial : any, index : any) => (
               <SplideSlide>
                 <Testimonial data={testimonial} />
