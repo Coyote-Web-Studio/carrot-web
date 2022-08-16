@@ -196,7 +196,7 @@ const HowItWorksBlock = (props: any) => {
               sx={{
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                   fontSize: '2.2rem',
-                  letterSpacing: '3.3rem'
+                  lineHeight: '3.3rem'
                 }
               }}
             >

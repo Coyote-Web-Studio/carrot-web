@@ -23,27 +23,41 @@ const Button3D = (props : any) => {
                     invert(theme.colors.background) :
                     theme.colors.background,
                     boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBackground}`,
+                    transform: 'translate(1rem, -1rem)',
                     'span': {
                         color: theme.colors.buttonBackground,
                     },
-                    transform: 'translate(1rem, -1rem)'
                 },
                 '.line.left': {
-                    transform: 'scaleX(1, 0)',
+                    transform: 'rotate(-45deg) scaleX(1)',
                 },
             },
             ...props.buttonWrapperStyles
         }}>
             <Box className={'line left'} sx={{
                 // background: theme.colors.background, 
-                width: '0rem',
+                width: '1.2rem',
                 height: '0.1rem',
-                left: '0.3rem',
                 position: 'absolute',
-                top: '-0.3rem',
-                transform: 'rotate(-45deg)',
+                left: '0.3rem',
+                top: '0.15rem',
+                transform: 'rotate(-45deg) scaleX(0)',
                 bg: theme.colors.orange6,
-                transition: '0.15s ease-in-out all'
+                transition: '0.15s ease-in-out all',
+                transformOrigin: 'center left'
+                
+            }}/>
+            <Box className={'line left'} sx={{
+                // background: theme.colors.background, 
+                width: '1.4rem',
+                height: '0.1rem',
+                right: '-1.1rem',
+                position: 'absolute',
+                bottom: '0.15rem',
+                transform: 'rotate(-45deg) scaleX(0)',
+                bg: theme.colors.orange6,
+                transition: '0.15s ease-in-out all',
+                transformOrigin: 'center left'
                 
             }}/>
             <Box className={'side left'} sx={{
