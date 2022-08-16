@@ -124,7 +124,7 @@ const Testimonials = () => {
           <Splide options={{width: '100%', pagination: false}} hasTrack={false}>
             <SplideTrack>
               {testimonials.map((testimonial : any, index : any) => (
-                <SplideSlide>
+                <SplideSlide key={index}>
                   <Testimonial data={testimonial} />
                 </SplideSlide>
               ))}
