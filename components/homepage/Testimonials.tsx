@@ -7,7 +7,7 @@ import GridBackground from '../common/GridBackground';
 import { transparentize } from 'polished';
 import AnimatedText from '../common/AnimatedText';
 import Testimonial from './Testimonial';
-import { SplideSlide, Splide } from '@splidejs/react-splide';
+import { SplideSlide, Splide, SplideTrack } from '@splidejs/react-splide';
 
 
 const testimonials = [
@@ -97,40 +97,46 @@ const Testimonials = () => {
             zIndex: 1,
             '.splide .splide__arrows': {
               '.splide__arrow': {
-                top: 'calc(50% - 1.5rem)',
+                width: '5.6rem',
+                height: '5.6rem',
+                top: 'calc(50% - 1.2rem)',
                 bg: 'transparent',
-                transform: 'scale(1.5)',
-                'svg': {
-                  fill: theme.colors.borderColor
-                }
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
               },
               '.splide__arrow--prev': {
-                left: '-3rem'
+                left: '-6rem',
+                'img': {
+                  filter: 'invert(1)'
+                }
               },
               '.splide__arrow--next': {
-                right: '-3rem'
-              },
-              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                '.splide__arrow': {
-                  top: 'calc(50% - 12rem)',
-                  transform: 'scale(3)'
+                'img': {
+                  transform: 'rotate(180deg)',
+                    filter: 'invert(1)'
                 },
-                '.splide__arrow--prev': {
-                  left: '-12rem'
-                },
-                '.splide__arrow--next': {
-                  right: '-12rem'
-                }
+                right: '-6rem'
               },
             }
           }}
         >
-          <Splide options={{width: '100%', pagination: false}}>
-            {testimonials.map((testimonial : any, index : any) => (
-              <SplideSlide>
-                <Testimonial data={testimonial} />
-              </SplideSlide>
-            ))}
+          <Splide options={{width: '100%', pagination: false}} hasTrack={false}>
+            <SplideTrack>
+              {testimonials.map((testimonial : any, index : any) => (
+                <SplideSlide>
+                  <Testimonial data={testimonial} />
+                </SplideSlide>
+              ))}
+            </SplideTrack>
+            <div className="splide__arrows">
+              <Box as={'button'} sx={{bg: 'white', width: '1rem', height: '1rem'}} className="splide__arrow splide__arrow--prev">
+                <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
+              </Box>
+              <Box as={'button'} sx={{bg: 'white', width: '1rem', height: '1rem'}} className="splide__arrow splide__arrow--next">
+                <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
+              </Box>
+            </div>
           </Splide>
         </Fade>
       </Flex>
