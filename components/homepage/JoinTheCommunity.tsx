@@ -65,8 +65,8 @@ const JoinTheCommunity = () => {
                             '8rem', null,
                             '10rem'
                         ],
+                        minWidth: [null, null, null, '12rem'],
                         width: ['100%', null, null, '12rem'],
-                        minWidth: '12rem',
                         height: ['5.4rem', null, '12.6rem'],
                         mr: ['4.6rem', '2rem', null, '3.2rem'],
                         backgroundSize: 'cover',
@@ -89,6 +89,7 @@ const JoinTheCommunity = () => {
                         height: 'inherit',
                         minWidth: 'inherit',
                         maxWidth: 'inherit', 
+                        backgroundSize: 'inherit',
                         position: 'absolute',
                         top: '0',
                         left: '0',
