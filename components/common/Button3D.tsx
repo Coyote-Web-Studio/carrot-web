@@ -71,7 +71,7 @@ const Button3D = (props : any) => {
                 boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`
             }}/>
             <Box className={'side bottom'} sx={{
-                width: ['calc(100% - 1.1rem)', null, null, 'calc(100% - 2.2rem)'],
+                width: ['calc(100% - 2.2rem)'],
                 transition: '0.15s ease-in-out all',
                 height: '1rem',
                 left: '1.6rem',
