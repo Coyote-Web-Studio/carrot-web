@@ -7,6 +7,7 @@ import AnimatedText from '../common/AnimatedText';
 import { useParallax } from 'react-scroll-parallax';
 import { invert, transparentize } from "polished";
 import { set } from 'nprogress';
+import Button3D from '../common/Button3D';
 
 
 
@@ -58,6 +59,8 @@ const JoinTheCommunity = () => {
                 }} 
             >
                 <Box 
+                    onMouseEnter={() => {setIsButtonHovered(true)}}
+                    onMouseLeave={() => {setIsButtonHovered(false)}}
                     sx={{
                         maxWidth: [
                             '5.4rem',
@@ -73,6 +76,7 @@ const JoinTheCommunity = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                         backgroundImage: `url(${props.data.img})`,
+                        cursor: 'pointer',
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                             minWidth: '12rem',
                             maxWidth: 'unset'
@@ -126,7 +130,7 @@ const JoinTheCommunity = () => {
                         {props.data.detail}
                     </Text>
                     <Box>
-                        <Button 
+                        <Button
                             onMouseEnter={() => {setIsButtonHovered(true)}}
                             onMouseLeave={() => {setIsButtonHovered(false)}}
                             buttonWrapperStyles={{

@@ -6,14 +6,14 @@ import Theme from '../../types/Theme';
 const Button = (props : any) => {
     const theme : any = useTheme();
     return (
-        <Box onClick={props.onClick} sx={{
+        <Box onClick={props.onClick} className={props.className} sx={{
             width: 'fit-content',
             height: ['4.6rem', null, null, '6.2rem'],
             borderRadius: '1rem',
             position: 'relative',
             cursor: 'pointer',
             minWidth: [null, null, null, '14.4rem'],
-            '&:hover .button': {
+            '&:hover .button, &.hovered .button': {
                 backgroundColor: 
                     props.inverted ?
                         invert(theme.colors.background) :

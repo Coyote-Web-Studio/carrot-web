@@ -60,7 +60,7 @@ const StyleSwitch = (props : any) => {
                         bg: theme.colors.background,
                         top: '0.1rem',
                         zIndex: '100',
-                        transform: 'translate(0px, 0.5px) !important'
+                        transform: 'translate(0px, 0px) !important'
                     },
                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                         height: '2.2rem',
@@ -85,6 +85,7 @@ const StyleSwitch = (props : any) => {
                     width: [ '1.2rem', '0.8rem'],
                     height: [ '1.2rem', '0.8rem'],
                     opacity: darkThemeActive ? 1 : 0,
+                    filter: theme.name == 'dark' ? 'none' : 'invert(1)',
                     [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                         top: '0.5rem',
                         left: '0.5rem',

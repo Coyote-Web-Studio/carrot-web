@@ -6,7 +6,7 @@ import Theme from '../../types/Theme';
 const Button3D = (props : any) => {
     const theme : any = useTheme();
     return (
-        <Box onClick={props.onClick} sx={{
+        <Box onClick={props.onClick} className={props.className} sx={{
             width: 'fit-content',
             height: ['4.6rem', null, null, '6.2rem'],
             borderRadius: '1rem',
@@ -16,7 +16,7 @@ const Button3D = (props : any) => {
             boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`,
             bg: theme.colors.background,
             transition: '0.15s ease-in-out all',
-            '&:hover': {
+            '&:hover, &.hovered': {
                 '.button': {
                     backgroundColor: 
                     props.inverted ?

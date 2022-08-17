@@ -60,7 +60,7 @@ const Navbar = (props : any) => {
                         },
                     }}/>
                 </Box>
-                <Button buttonWrapperStyles={{
+                <Button3D buttonWrapperStyles={{
                     ml: ['2.4rem', '1.2rem', '2.4rem', '3.2rem'],
                     height: [null, '4.6rem'],
                     minWidth: 'unset',
@@ -77,7 +77,7 @@ const Navbar = (props : any) => {
                     },
                 }}>
                     CARROT DAPP
-                </Button>
+                </Button3D>
                 <Flex 
                     className="mobile-controls" 
                     sx={{

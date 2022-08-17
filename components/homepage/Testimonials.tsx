@@ -99,7 +99,7 @@ const Testimonials = () => {
               '.splide__arrow': {
                 width: '5.6rem',
                 height: '5.6rem',
-                top: 'calc(50% - 1.2rem)',
+                top: '20rem',
                 bg: 'transparent',
                 display: 'flex',
                 justifyContent: 'center',
