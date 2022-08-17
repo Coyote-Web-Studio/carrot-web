@@ -33,9 +33,10 @@ const MobileNavbar = (props : any) => {
                     height: 'calc(100% - 2rem)',
                     width: '100vw !important',
                     position: 'absolute',
+                    
                 }}
             >
-                <GridBackground trimRows={2}/>
+                <GridBackground trimRows={2} sx={{backgroundPosition: '50% 1.8rem'}}/>
             </Flex>
             <Flex 
                 className="navigation-container"
