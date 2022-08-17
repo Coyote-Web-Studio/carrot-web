@@ -99,14 +99,17 @@ const Testimonials = () => {
               '.splide__arrow': {
                 width: '5.6rem',
                 height: '5.6rem',
-                top: '20rem',
+                top: ['10rem', '10rem', null, '15rem'],
                 bg: 'transparent',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                  top: '20rem'
+              },
               },
               '.splide__arrow--prev': {
-                left: '-6rem',
+                left: ['-4.5rem', '-6rem', null, '-6rem'],
                 'img': {
                   filter: 'invert(1)'
                 }
@@ -116,7 +119,7 @@ const Testimonials = () => {
                   transform: 'rotate(180deg)',
                     filter: 'invert(1)'
                 },
-                right: '-6rem'
+                right: ['-4.5rem', '-6rem', null, '-6rem']
               },
             }
           }}
