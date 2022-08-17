@@ -48,9 +48,9 @@ const Testimonials = () => {
           pb: ["6.4rem", '6.8rem', null, "8.4rem"],
           pt: ["8.7rem" , '6.8rem', null, "12.4rem"],
           mb: ["4.8rem", null, "12.8rem", "calc(6.4rem * 2)"],
-          height: ['calc(4vw * 22)', 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
+          height: ['auto', 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
           [`@media screen and (min-width: 500px) and (max-width: 640px)`]: { 
-            maxHeight: '38rem'
+            maxHeight: [null, '38rem', 'unset']
           },
           [`@media screen and (min-width:${theme.breakpoints[3]})`]: {
             mb: 'calc(6.4rem * 2)',
@@ -109,27 +109,30 @@ const Testimonials = () => {
               '.splide__arrow': {
                 width: '5.6rem',
                 height: '5.6rem',
-                top: ['10rem', '10rem', null, '15rem'],
+                top: ['16rem', '10rem', null, '15rem'],
                 bg: 'transparent',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                'img': {
+                  transform: ['scale(0.5)', 'scale(1)'],
+                },
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                   top: '20rem'
                 },
               },
               '.splide__arrow--prev': {
-                left: ['-4.5rem', '-6rem', null, '-6rem'],
+                left: ['-3.8rem', '-6rem', null, '-6rem'],
                 'img': {
                   filter: 'invert(1)'
                 }
               },
               '.splide__arrow--next': {
                 'img': {
-                  transform: 'rotate(180deg)',
+                  transform: ['rotate(180deg) scale(0.5)', 'rotate(180deg) scale(1)'],
                     filter: 'invert(1)'
                 },
-                right: ['-4.5rem', '-6rem', null, '-6rem']
+                right: ['-3.8rem', '-6rem', null, '-6rem']
               },
             }
           }}
