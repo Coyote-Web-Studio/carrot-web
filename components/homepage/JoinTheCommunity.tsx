@@ -131,6 +131,7 @@ const JoinTheCommunity = () => {
                     </Text>
                     <Box>
                         <Button
+                            className={isButtonHovered ? 'hovered' : ''}
                             onMouseEnter={() => {setIsButtonHovered(true)}}
                             onMouseLeave={() => {setIsButtonHovered(false)}}
                             buttonWrapperStyles={{
