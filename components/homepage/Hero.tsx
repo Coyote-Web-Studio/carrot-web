@@ -126,7 +126,7 @@ const Hero = (props : any) => {
                     ml: [
                         null,
                         null,
-                        '4.2rem'
+                        // '4.2rem'
                     ],
                     position: 'relative',
                     top: [0, '2.4rem']
