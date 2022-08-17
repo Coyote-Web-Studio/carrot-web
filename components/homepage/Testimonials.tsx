@@ -48,7 +48,17 @@ const Testimonials = () => {
           pb: ["6.4rem", '6.8rem', null, "8.4rem"],
           pt: ["8.7rem" , '6.8rem', null, "12.4rem"],
           mb: ["4.8rem", null, "12.8rem", "calc(6.4rem * 2)"],
-          height: ['calc(2.4rem * 22)', 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
+          height: ['calc(4vw * 22)', 'calc(2.4rem * 16)', null, 'calc(6.4rem * 9)'],
+          [`@media screen and (min-width: 500px) and (max-width: 640px)`]: { 
+            maxHeight: '38rem'
+          },
+          [`@media screen and (min-width:${theme.breakpoints[3]})`]: {
+            mb: 'calc(6.4rem * 2)',
+            pb: '21.3rem',
+            pt: '19.5rem',
+            height: 'calc(6.4rem * 14)',
+            borderRadius: '5rem'
+          },
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: 'calc(6.4rem * 2)',
             pb: '21.3rem',
@@ -106,7 +116,7 @@ const Testimonials = () => {
                 alignItems: 'center',
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                   top: '20rem'
-              },
+                },
               },
               '.splide__arrow--prev': {
                 left: ['-4.5rem', '-6rem', null, '-6rem'],

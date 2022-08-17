@@ -133,10 +133,7 @@ const Footer = (props: any) => {
           <Button3D buttonWrapperStyles={{
             mt: 'auto',
             bg: theme.colors.gray10,
-            height: [null, null, null, '4.8rem'],
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-              height: '6.4rem',
-              width: '19.2rem',
               color: theme.colors.orange6
             },
             '&:hover .button': {
