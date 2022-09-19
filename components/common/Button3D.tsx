@@ -1,12 +1,11 @@
 import { Button as RBButton, Box, Text } from 'rebass';
 import styled, { useTheme } from 'styled-components';
 import { invert } from 'polished';
-import Theme from '../../types/Theme';
 
 const Button3D = (props : any) => {
     const theme : any = useTheme();
     return (
-        <Box onClick={props.onClick} className={props.className} sx={{
+        <Box onClick={props.onClick} className={`${props.className ? props.className : ''} int-cursor`} sx={{
             width: 'fit-content',
             height: ['4.6rem', null, null, '6.2rem'],
             borderRadius: '1rem',
@@ -44,7 +43,8 @@ const Button3D = (props : any) => {
                 transform: 'rotate(-45deg) scaleX(0)',
                 bg: theme.colors.orange6,
                 transition: '0.15s ease-in-out all',
-                transformOrigin: 'center left'
+                transformOrigin: 'center left',
+                pointerEvents: 'none'
                 
             }}/>
             <Box className={'line left'} sx={{
@@ -57,7 +57,8 @@ const Button3D = (props : any) => {
                 transform: 'rotate(-45deg) scaleX(0)',
                 bg: theme.colors.orange6,
                 transition: '0.15s ease-in-out all',
-                transformOrigin: 'center left'
+                transformOrigin: 'center left',
+                pointerEvents: 'none'
                 
             }}/>
             <Box className={'side left'} sx={{
@@ -68,7 +69,8 @@ const Button3D = (props : any) => {
                 position: 'absolute',
                 top: '0.5rem',
                 transform: 'skew(0, -45deg)',
-                boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`
+                boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`,
+                pointerEvents: 'none'
             }}/>
             <Box className={'side bottom'} sx={{
                 width: ['calc(100% - 2.2rem)'],
@@ -78,7 +80,8 @@ const Button3D = (props : any) => {
                 position: 'absolute',
                 bottom: '0rem',
                 transform: 'skew(-45deg, 0)',
-                boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`
+                boxShadow: `0 0 0 0.1rem ${theme.colors.orange6}`,
+                pointerEvents: 'none'
             }}/>
             <StyledButton className={'button'} sx={{
                 background: theme.colors.buttonBackground,
@@ -100,15 +103,16 @@ const Button3D = (props : any) => {
                 cursor: 'pointer',
                 m: 0,
                 minWidth: 'inherit',
+                pointerEvents: 'none',
                 boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBorder}`,
                 ...props.sx,
             }}>
-                <Box className="lines" sx={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}>
+                <Box className="lines" sx={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none'}}>
                     <Box className="line" />
                     <Box className="line" />
                     <Box className="line" />
                 </Box>
-                <Text as={'span'} sx={{color: theme.colors.gray10, textShadow: '0 0 transparent', transition: '0.1s ease-in-out all'}}>
+                <Text as={'span'} sx={{color: theme.colors.gray10, textShadow: '0 0 transparent', transition: '0.1s ease-in-out all', pointerEvents: 'none'}}>
                     {props.children}
                 </Text>
             </StyledButton>

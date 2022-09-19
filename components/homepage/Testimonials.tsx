@@ -105,6 +105,9 @@ const Testimonials = () => {
             flexDirection: "column",
             position: "relative",
             zIndex: 1,
+            '&&&&': {
+              maxWidth: '80% !important',
+            },
             '.splide .splide__arrows': {
               '.splide__arrow': {
                 width: '5.6rem',
@@ -122,7 +125,7 @@ const Testimonials = () => {
                 },
               },
               '.splide__arrow--prev': {
-                left: ['-3.8rem', '-6rem', null, '-6rem'],
+                left: ['-3.8rem', '-6rem', null, '-8rem'],
                 'img': {
                   filter: 'invert(1)'
                 }
@@ -132,7 +135,7 @@ const Testimonials = () => {
                   transform: ['rotate(180deg) scale(0.5)', 'rotate(180deg) scale(1)'],
                     filter: 'invert(1)'
                 },
-                right: ['-3.8rem', '-6rem', null, '-6rem']
+                right: ['-3.8rem', '-6rem', null, '-8rem']
               },
             }
           }}
@@ -146,10 +149,27 @@ const Testimonials = () => {
               ))}
             </SplideTrack>
             <div className="splide__arrows">
-              <Box as={'button'} sx={{bg: 'white', width: '1rem', height: '1rem'}} className="splide__arrow splide__arrow--prev">
+              <Box 
+                as={'button'} 
+                className="splide__arrow splide__arrow--prev"
+                sx={{
+                  width: '5.6rem !important', 
+                  height: '5.6rem !important',
+                  border: `0.1rem solid ${theme.colors.background}`
+                }} 
+              >
                 <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
               </Box>
-              <Box as={'button'} sx={{bg: 'white', width: '1rem', height: '1rem'}} className="splide__arrow splide__arrow--next">
+              <Box 
+                as={'button'} 
+                sx={{
+                  bg: 'white', 
+                  width: '1rem', 
+                  height: '1rem',
+                  border: `0.1rem solid ${theme.colors.background}`
+                }} 
+                className="splide__arrow splide__arrow--next"
+              >
                 <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
               </Box>
             </div>

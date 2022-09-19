@@ -73,6 +73,20 @@ const MobileNavbar = (props : any) => {
                                 fontWeight={400}
                                 lineHeight={'3.6rem'}
                                 key={index}
+                                onClick={() => {
+                                    props.setIsOpen(false);
+                                    let element = document.getElementById(link.scrollTo);
+                                    if (element) {
+                                        setTimeout(() => {
+                                            window.scrollTo({
+                                                top: element?.getBoundingClientRect().y ?
+                                                element?.getBoundingClientRect().y - 180 :
+                                                0,
+                                                behavior: 'smooth'
+                                            })
+                                        }, 100)
+                                    }
+                                }}
                                 sx={{
                                     whiteSpace: 'nowrap',
                                     mb: '2.35rem',

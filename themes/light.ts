@@ -30,6 +30,8 @@ export default {
     carrotInNumbersGrid: '#ED5B16',
     footerBackground: baseTheme.colors.gray10,
 
+    imageBorder: '#000000'
+
   },
   misc: {
     patternImage: 'url("/Pattern_light.svg")',

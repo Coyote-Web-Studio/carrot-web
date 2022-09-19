@@ -22,6 +22,7 @@ const StyleSwitch = (props : any) => {
                 position: 'relative', 
                 height: ['2.2rem', '1.32rem'], 
                 width: ['4.4rem', '2.6rem'],
+                // opacity: '0.7',
                 ...props.sx,
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                     height: '2.2rem',
@@ -31,7 +32,7 @@ const StyleSwitch = (props : any) => {
         >
             <Switch 
                 checked={darkThemeActive} 
-                color={theme.colors.textColor} 
+                color={darkThemeActive ? theme.colors.gray3 : theme.colors.gray4} 
                 onClick={() => {
                     setDarkThemeActive(!darkThemeActive);
                     setTheme(
@@ -42,7 +43,7 @@ const StyleSwitch = (props : any) => {
                     height: ['2.2rem', '1.32rem'], 
                     width: ['4.4rem', '2.6rem'],
                     cursor: 'pointer',
-                    bg: theme.colors.textColor,
+                    bg: darkThemeActive ? theme.colors.gray3 : theme.colors.gray4,
                     position: 'inherit',
                     '&[aria-checked=true] div': {
                         transform: [
@@ -57,6 +58,7 @@ const StyleSwitch = (props : any) => {
                         boxShadow: 'none',
                         width: ['2rem', '1.32rem'],
                         height: ['2rem', '1.32rem'],
+                        borderColor: darkThemeActive ? theme.colors.gray3 : theme.colors.gray4,
                         bg: theme.colors.background,
                         top: '0.1rem',
                         zIndex: '100',

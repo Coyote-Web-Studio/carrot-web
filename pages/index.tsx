@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Flex, Text, Box, Image, Button } from 'rebass'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head'
 import { useTheme } from 'styled-components';
 
@@ -10,8 +10,8 @@ import Hero from '../components/homepage/Hero';
 import Marquees from './../components/homepage/Marquees';
 import MainContent from '../components/homepage/MainContent';
 import JoinTheCommunity from '../components/homepage/JoinTheCommunity';
-
 import WindowWidthIndicator from '../components/common/WindowWidthIndicator';
+import Cursor from './../components/common/Cursor';
 
 const Home: NextPage = (props : any) => {
   const theme : any = useTheme();
@@ -25,7 +25,9 @@ const Home: NextPage = (props : any) => {
       </Head>
       <Flex className="root" sx={{
         position: 'relative',
+        cursor: 'none'
       }}>
+        <Cursor />
         <Flex flexDirection={'column'} className="body-background" sx={{
           bg: theme.colors.background,
           position: 'relative',
@@ -36,14 +38,13 @@ const Home: NextPage = (props : any) => {
           backgroundSize: ['2.4rem', null, null, '6.4rem'],
           zIndex: 3,
           mb: ['57rem', '68rem', null, '66rem'],
-          // backgroundImage: theme.misc.patternImage,
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: '105rem'
           },
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             mb: '105rem'
           },
-        }}></Flex>
+        }}> </Flex>
         <Flex flexDirection={'column'} className="page-content" sx={{
           bg: theme.colors.background,
           position: 'relative',
@@ -54,7 +55,6 @@ const Home: NextPage = (props : any) => {
           backgroundSize: ['2.4rem', null, null, '6.4rem'],
           zIndex: 3,
           mb: ['57rem', '68rem', null, '66rem'],
-          // backgroundImage: theme.misc.patternImage,
           [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
             mb: '105rem'
           },

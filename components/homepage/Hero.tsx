@@ -1,10 +1,7 @@
 import { useRef } from 'react';
-import { Flex, Box, Text, Image } from 'rebass';
-import { transparentize } from 'polished';
-import styled, { useTheme } from 'styled-components';
+import { Flex, Box, Text, Link } from 'rebass';
+import { useTheme } from 'styled-components';
 
-import Button from '../common/Button';
-import GridBackground from '../common/GridBackground';
 import Fade from '../common/Fade';
 import AnimatedText from '../common/AnimatedText';
 
@@ -22,20 +19,6 @@ const Hero = (props : any) => {
             position: 'relative', 
             pb: ['4.2rem', '4.8rem', null, '6.4rem']
         }}>
-            {/* BACKGROUND DECORATION */}
-            {/* <Box sx={{
-                ...theme.boxSizes.heroGridBox, 
-                }}
-            >
-                <GridBackground 
-                    sx={{
-                        backgroundPosition: [null, null, null, 'top center'],
-                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            backgroundPosition: 'unset'
-                        },
-                    }}
-                />
-            </Box> */}
             {/* HERO CONTENT */}
             <SideText />
             <Flex 
@@ -132,25 +115,12 @@ const Hero = (props : any) => {
                     top: [0, '2.4rem']
                 }}>
                     <Fade sx={{position: 'relative'}}>
-                        <PlayVideoButton label={'HOW IT WORKS'} sx={{
-                            position: 'absolute',
-                            bottom: ['3rem', '2.4rem', '7.6rem'],
-                            zIndex: 1,
-                            ml: [
-                                '2.4rem',
-                                'calc(50% - 9.6rem)',
-                                'calc(50% - 11.1rem)'
-                            ],
-                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                                bottom: '18rem'
-                            },
-                        }}/>
                         <Box sx={{
                             backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
                             width: ['100%', 'calc(2.4rem * 11)', '31.2rem', '40.8rem'],
                             height: ['120vw', 'calc(2.4rem * 16)', '43.66rem', '57rem'],
                             borderRadius: ['0.85rem', null, '1.3rem'],
-                            border: `0.1rem solid ${theme.colors.textColor}`,
+                            border: `0.1rem solid ${theme.colors.imageBorder}`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
@@ -164,13 +134,61 @@ const Hero = (props : any) => {
                                 width: "70rem",
                                 height: '82.1rem'
                             }
-,                        }} />
+,                        }}>
+                            <PlayVideoButton label={'HOW IT WORKS'} sx={{
+                            position: 'absolute',
+                            bottom: ['3rem', '4rem'],
+                            zIndex: 1,
+                            ml: ['4rem'],
+                            [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                                bottom: '4rem'
+                            },
+                            }}/>
+                        </Box>
                     </Fade>
                 </Box>
             </Flex>
         </Flex>
     )
 };
+
+const SideLink = (props : any) => {
+
+    const theme : any = useTheme();
+
+    return (
+        <Link 
+            href="https://dxdao.eth.limo/"
+            target="_blank"
+            className={'int-cursor'}
+            sx={{
+                position: 'absolute', 
+                top: props.top, 
+                display: 'flex',
+                left: ['2rem'],
+                alignItems: 'center',
+                writingMode: 'vertical-rl',
+                transform: `rotate(180deg)`,
+                fontSize: '1.4rem',
+                fontFamily: theme.fonts.monospace,
+                opacity: '0.7',
+                transition: '0.15s ease-in-out opacity',
+                '&:hover': {
+                    opacity: 1
+                }
+            }}
+        >
+            <Box as={'div'} sx={{
+                width: '0.8rem', 
+                height: '0.8rem', 
+                background: theme.colors.textColor, 
+                mb: '1rem', 
+                borderRadius: '1rem'}}
+            /> 
+            {props.children}
+        </Link>
+    )
+}
 
 const SideText = (props : any) => {
 
@@ -192,38 +210,8 @@ const SideText = (props : any) => {
                 },
             }}
         >
-            <Text 
-                sx={{
-                    position: 'absolute', 
-                    top: '10.9rem', 
-                    display: 'flex',
-                    left: ['2rem'],
-                    alignItems: 'center',
-                    writingMode: 'vertical-rl',
-                    transform: `rotate(180deg)`,
-                    fontSize: '1.4rem',
-                    fontFamily: theme.fonts.monospace
-                }}
-            >
-                <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
-                BY DXDAO
-            </Text>
-            <Text 
-                sx={{
-                    position: 'absolute', 
-                    top: '42.1rem', 
-                    left: ['2.2rem'],
-                    alignItems: 'center',
-                    display: 'flex',
-                    writingMode: 'vertical-rl',
-                    transform: `rotate(180deg)`,
-                    fontSize: '1.4rem',
-                    fontFamily: theme.fonts.monospace
-                }}
-            >   
-                <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.textColor, mb: '1rem', borderRadius: '1rem'}}/> 
-                100% DECENTRALISED
-            </Text>
+            <SideLink top='10.9rem'>BY DXDAO</SideLink>
+            <SideLink top='42.1rem'>100% DECENTRALIZE</SideLink>
         </Flex>
     )
 }

@@ -90,7 +90,7 @@ const Navbar = (props : any) => {
                     }} />
                 </Flex>
             </Flex>
-            <MobileNavbar isOpen={isMobileNavbarOpen} />
+            <MobileNavbar isOpen={isMobileNavbarOpen} setIsOpen={setIsMobileNavbarOpen} />
         </StyledNavbar>
     )
 }

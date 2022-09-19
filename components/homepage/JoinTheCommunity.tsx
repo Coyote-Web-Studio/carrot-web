@@ -35,6 +35,7 @@ const JoinTheCommunity = () => {
         return (
             <Flex 
                 as={'li'} 
+                id="community"
                 sx={{
                     height: ['auto'], 
                     width: '100%',
@@ -255,7 +256,7 @@ const JoinTheCommunity = () => {
                                         }}
                                     >   
                                         <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mr: '1rem', borderRadius: '1rem'}}/> 
-                                        DON&apos;T BY SHY
+                                        DON&apos;T BE SHY
                                     </Text>
                                 </Flex>
                             </Fade>
@@ -330,7 +331,7 @@ const JoinTheCommunity = () => {
                                     }}
                                 >   
                                     <Box as={'div'} sx={{width: '0.8rem', height: '0.8rem', background: theme.colors.gray10, mb: '1rem', borderRadius: '1rem'}}/> 
-                                    DON&apos;T BY SHY
+                                    DON&apos;T BE SHY
                                 </Text>
                             </Flex>
                             <Flex flexDirection={'column'} flexGrow={1}>

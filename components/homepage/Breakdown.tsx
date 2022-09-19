@@ -14,6 +14,7 @@ const Breakdown = (props: any) => {
 
   return (
     <Box
+      id="about"
       sx={{
         pt: ["4.8rem", "calc(2.4rem * 2)", null, "12.8rem"],
         pb: ["calc(2.4rem * 4 - 0.4rem)", 'calc(2.4rem * 3 + 0.3rem)', null, "19rem"],
@@ -79,7 +80,7 @@ const Breakdown = (props: any) => {
                   backgroundImage: `url(${contentBlock.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
-                  border: `0.1rem solid ${theme.colors.textColor}`,
+                  border: `0.1rem solid ${theme.colors.imageBorder}`,
                   borderRadius: ['0.85rem', null, '1.3rem'],
                   [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                     width: '53rem',

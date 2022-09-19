@@ -25,7 +25,7 @@ const HowItWorks = () => {
             mt={'3.2rem'} 
             sx={{
               borderRadius: '2rem', 
-              border: `1px solid ${theme.colors.textColor}`,
+              border: `1px solid ${theme.colors.imageBorder}`,
               backgroundImage: 'url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850167/carrot/main-content/Incentivize-your-community_svcdu3.png)',
               height: '31.8rem',
               width: '100%',
@@ -56,7 +56,7 @@ const HowItWorks = () => {
             mt={'3.2rem'} 
             sx={{
               borderRadius: '2rem', 
-              border: `1px solid ${theme.colors.textColor}`,
+              border: `1px solid ${theme.colors.imageBorder}`,
               backgroundImage: 'url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850167/carrot/main-content/Incentivize-your-community_svcdu3.png)',
               height: '31.8rem',
               width: '100%',
@@ -87,7 +87,7 @@ const HowItWorks = () => {
             mt={'3.2rem'} 
             sx={{
               borderRadius: '2rem', 
-              border: `1px solid ${theme.colors.textColor}`,
+              border: `1px solid ${theme.colors.imageBorder}`,
               backgroundImage: 'url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850167/carrot/main-content/Incentivize-your-community_svcdu3.png)',
               height: '31.8rem',
               width: '100%',

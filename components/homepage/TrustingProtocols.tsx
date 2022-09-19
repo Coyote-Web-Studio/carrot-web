@@ -17,6 +17,7 @@ const TrustingProtocols = () => {
 
   return (
     <Flex 
+      id="partners"
       flexDirection={"column"} 
       sx={{
         position: "relative", zIndex: 1,

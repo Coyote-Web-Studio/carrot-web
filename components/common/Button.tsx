@@ -1,12 +1,11 @@
 import { Button as RBButton, Box, Text } from 'rebass';
 import styled, { useTheme } from 'styled-components';
 import { invert } from 'polished';
-import Theme from '../../types/Theme';
 
 const Button = (props : any) => {
     const theme : any = useTheme();
     return (
-        <Box onClick={props.onClick} className={props.className} sx={{
+        <Box onClick={props.onClick} className={`${props.className} int-cursor`} sx={{
             width: 'fit-content',
             height: ['4.6rem', null, null, '6.2rem'],
             borderRadius: '1rem',
@@ -48,6 +47,7 @@ const Button = (props : any) => {
                 cursor: 'pointer',
                 m: 0,
                 minWidth: 'inherit',
+                pointerEvents: 'none',
                 boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBorder}`,
                 ...props.sx,
             }}

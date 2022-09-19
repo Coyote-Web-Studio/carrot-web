@@ -20,6 +20,10 @@ const CampaignCard = (props : any) => {
             borderRadius: '1.6rem',
             overflow: 'hidden',
             height: ['38.4rem', '38.4rem', null, '38.4rem'],
+            transition: '0.15s ease-in-out transform',
+            ['&:hover']: {
+              transform: 'scale(0.9)'
+            },
             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
               height: '44.8rem'
             },

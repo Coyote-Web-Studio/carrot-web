@@ -1,4 +1,4 @@
-import { Flex, Link, Box } from 'rebass';
+import { Flex, Link, Box, Text } from 'rebass';
 import { useTheme } from 'styled-components';
 import NavLinks from '../../content/navigation';
 
@@ -14,6 +14,20 @@ const NavigationLinks = (props : any) => {
                         fontFamily={'IBM Plex Mono'} 
                         href={'#'}
                         key={index}
+                        className={'int-cursor'}
+                        onClick={() => {
+                            let element = document.getElementById(link.scrollTo);
+                            if (element) {
+                                setTimeout(() => {
+                                    window.scrollTo({
+                                        top: element?.getBoundingClientRect().y ?
+                                        element?.getBoundingClientRect().y - 180 :
+                                        0,
+                                        behavior: 'smooth'
+                                    })
+                                }, 100)
+                            }
+                        }}
                         sx={{
                             ml:['1.2rem', null, null, '2.4rem'],
                             fontWeight: 300,
@@ -27,6 +41,9 @@ const NavigationLinks = (props : any) => {
                             '&:hover': {
                                 '.underline': {
                                     width: '100%'
+                                },
+                                'span': {
+                                    opacity: 1
                                 }
                             },
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
@@ -47,10 +64,10 @@ const NavigationLinks = (props : any) => {
                                 position: 'absolute',
                                 bottom: '-1rem',
                                 background: theme.colors.orange6,
-                                transition: '0.15s ease-in-out all'
+                                transition: '0.15s ease-in-out all',
                             }}
                         />
-                        {link.label}
+                        <Text as="span" sx={{opacity: '0.5', transition: '0.15s ease-in-out opacity'}}>↳</Text> {link.label}
                     </Link>
                 ))}
             </Flex>

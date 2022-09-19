@@ -4,7 +4,6 @@ import { useTheme } from "styled-components";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { debounce } from "../../utils/utils";
 
-import Button from "./../common/Button";
 import Button3D from "./../common/Button3D";
 import CampaignCard from "./../common/CampaignCard";
 import Fade from "../common/Fade";
@@ -45,6 +44,7 @@ const SuccesfulCampaigns = () => {
 
   return (
     <Flex
+      id="campaigns"
       flexDirection={"column"}
       sx={{
         ...theme.boxSizes.defaultBox,

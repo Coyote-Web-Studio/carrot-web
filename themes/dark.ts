@@ -29,6 +29,8 @@ export default {
   
     carrotInNumbersGrid: '#ED5B16',
     footerBackground: 'white',
+
+    imageBorder: '#797979',
   
   },
   misc: {

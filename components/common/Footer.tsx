@@ -109,6 +109,7 @@ const Footer = (props: any) => {
                 </Text>
                 {footerColumn.links.map((link, j) => (
                   <Link 
+                    className={'int-cursor'}
                     href={link.href} 
                     mb={['0.4rem', '0.8rem']} 
                     fontSize={'1.2rem'}
