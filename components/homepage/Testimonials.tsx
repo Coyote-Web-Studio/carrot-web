@@ -162,13 +162,12 @@ const Testimonials = () => {
               </Box>
               <Box 
                 as={'button'} 
+                className="splide__arrow splide__arrow--next"
                 sx={{
-                  bg: 'white', 
-                  width: '1rem', 
-                  height: '1rem',
+                  width: '5.6rem !important', 
+                  height: '5.6rem !important',
                   border: `0.1rem solid ${theme.colors.background}`
                 }} 
-                className="splide__arrow splide__arrow--next"
               >
                 <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
               </Box>

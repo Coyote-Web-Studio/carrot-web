@@ -97,13 +97,13 @@ const SuccesfulCampaigns = () => {
               alignItems: 'center',
             },
             '.splide__arrow--prev': {
-              left: '-6rem',
+              left: '-8rem',
             },
             '.splide__arrow--next': {
               'img': {
                 transform: 'rotate(180deg)'
               },
-              right: '-6rem'
+              right: '-8rem'
             },
           }
         }}
@@ -185,11 +185,27 @@ const SuccesfulCampaigns = () => {
                 }
               </SplideTrack>
               <div className="splide__arrows">
-                <Box as={'button'} sx={{bg: 'white', width: '1rem', height: '1rem'}} className="splide__arrow splide__arrow--prev">
-                  <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
+                <Box 
+                  as={'button'} 
+                  className="splide__arrow splide__arrow--prev int-cursor"
+                  sx={{
+                    width: '5.6rem !important', 
+                    height: '5.6rem !important',
+                    border: `0.1rem solid ${theme.colors.textColor}`
+                  }} 
+                >
+                  <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} sx={{pointerEvents: 'none'}}/>
                 </Box>
-                <Box as={'button'} sx={{bg: 'white', width: '1rem', height: '1rem'}} className="splide__arrow splide__arrow--next">
-                  <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
+                <Box 
+                  as={'button'} 
+                  sx={{
+                    width: '5.6rem !important', 
+                    height: '5.6rem !important',
+                    border: `0.1rem solid ${theme.colors.textColor}`
+                  }} 
+                  className="splide__arrow splide__arrow--next int-cursor"
+                >
+                  <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} sx={{pointerEvents: 'none'}}/>
                 </Box>
               </div>
             </Splide>

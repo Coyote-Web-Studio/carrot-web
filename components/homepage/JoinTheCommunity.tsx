@@ -5,9 +5,7 @@ import { useTheme } from 'styled-components';
 import Fade from '../common/Fade';
 import AnimatedText from '../common/AnimatedText';
 import { useParallax } from 'react-scroll-parallax';
-import { invert, transparentize } from "polished";
-import { set } from 'nprogress';
-import Button3D from '../common/Button3D';
+import { transparentize } from "polished";
 
 
 
@@ -181,7 +179,17 @@ const JoinTheCommunity = () => {
 
             }}>
                 <Fade width={'100%'}>
-                    <Flex flexDirection={'column'} sx={{rowGap: '0.1rem', columnGap: '0.1rem'}}>
+                    <Flex 
+                        flexDirection={'column'} 
+                        sx={{
+                            rowGap: '0.1rem', 
+                            columnGap: '0.1rem',
+                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                                minWidth: '90rem',
+                                ml: 'auto'
+                            },
+                        }}
+                    >
                         <Box 
                             className="section-title"
                             sx={{

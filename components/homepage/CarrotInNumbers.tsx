@@ -36,7 +36,9 @@ const CarrotInNumbers = () => {
         width: '100%',
         [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
           top: '15.2rem',
-          height: 'calc(6.4rem * 11)'
+          height: 'calc(6.4rem * 11)',
+          width: 'calc((6.4rem * 21) + 0.2rem)',
+          m: '0 calc(50% - (6.4rem * (21 / 2)))'
         },
         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
           top: 'calc(6.4rem * 2.8 - 0.6rem)',

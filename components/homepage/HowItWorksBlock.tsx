@@ -127,7 +127,7 @@ const HowItWorksBlock = (props: any) => {
               fontSize: ["2.8rem", "2.8rem", "2.8rem"],
               [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                 fontSize: '4.8rem !important',
-                width: '54rem !important',
+                width: '40rem !important',
                 maxWidth: 'unset',
                 height: isOpen ? '32rem !important' : 'calc(6.4rem * 3) !important',
                 py: '5.4rem !important'
@@ -214,7 +214,7 @@ const HowItWorksBlock = (props: any) => {
                 null,
                 isOpen ? 'calc(6.4rem * 7) !important' : 'auto',
                 null,
-                isOpen ? 'calc(6.4rem * 9 + 3.2rem) !important' : 'auto'
+                isOpen ? 'calc(6.4rem * 7 + 3.2rem) !important' : 'auto'
               ],
               overflowY: 'hidden',
               transition: '0.25s ease-in-out all',

@@ -90,7 +90,7 @@ const CampaignCard = (props : any) => {
             </Flex>
           </Flex>
           {/* LINK */}
-          <RBButton sx={{
+          <RBButton className={'int-cursor'} sx={{
             height: '6.4rem', 
             borderTop: `0.1rem solid ${theme.colors.cardLine}`, 
             bg: 'transparent', 
