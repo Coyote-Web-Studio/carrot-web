@@ -38,7 +38,9 @@ const Testimonials = () => {
   });
 
   return (
-    <Box sx={{position: 'relative'}}>
+    <Box sx={{position: 'relative', maxWidth: '1920px',
+    width: '100%',
+    mx: 'auto',}}>
       <Flex
         sx={{
           zIndex: 1,

@@ -16,6 +16,9 @@ const CarrotInNumbers = () => {
       position: 'relative', 
       bg: theme.colors.orange6, 
       borderRadius: ['1.6rem'], 
+      maxWidth: '1920px',
+      width: '100%',
+      mx: 'auto',
       pb: [null, null, null, '4.8rem'],
       height: ['calc(2.4rem * 33)', 'calc(2.4rem * 19)', null, 'calc(6.4rem * 10)'],
       [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {

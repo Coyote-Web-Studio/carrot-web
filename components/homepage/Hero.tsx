@@ -17,7 +17,10 @@ const Hero = (props : any) => {
     return (
         <Flex className="hero" sx={{
             position: 'relative', 
-            pb: ['4.2rem', '4.8rem', null, '6.4rem']
+            pb: ['4.2rem', '4.8rem', null, '6.4rem'],
+            [`@media screen and (min-width: 2800px)`]: {
+                mb: '50rem',
+            }
         }}>
             {/* HERO CONTENT */}
             <SideText />
@@ -27,6 +30,10 @@ const Hero = (props : any) => {
                 sx={{
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1,
+                    transformOrigin: 'top center',
+                    [`@media screen and (min-width: 2800px)`]: {
+                        transform: 'scale(1.5) translateY(4rem)',
+                    }
                 }} 
                 ref={heroContentRef}
                 >

@@ -90,9 +90,6 @@ const TrustingProtocols = () => {
             as={'ul'} 
             justifyContent={['center']}
             width={'100%'}
-            sx={{
-              display: [null, null, 'none']
-            }}
             >
             <Flex sx={{
               flexWrap: [
@@ -109,87 +106,12 @@ const TrustingProtocols = () => {
               ))}
             </Flex>
           </Flex>
-          <Splide
-            hasTrack={false}
-            options={{
-              // width: 'calc((6.4rem * 6) * 8)',
-              pagination: false,
-              autoWidth: true,
-              perPage: 4,
-              gap: 0,
-              // fixedWidth: 'calc',
-              breakpoints: {
-                1918: {
-                  perPage: 4
-                },
-                1440: {
-                  perPage: 3
-                },
-              }
-            }}
-          >
-            <SplideTrack style={{padding: '0.3rem 0.2rem'}}>
-              {Protocols.map((protocol, index) => (
-                <SplideSlide>
-                  <ProtocolCard 
-                    data={protocol} 
-                    index={index} 
-                    key={index}
-                  />
-                </SplideSlide>
-              ))}
-            </SplideTrack>
-            <div className="splide__arrows">
-              <Box 
-                as={'button'} 
-                className="splide__arrow splide__arrow--prev int-cursor"
-                sx={{
-                  width: '5.6rem !important', 
-                  height: '5.6rem !important',
-                  border: `0.1rem solid ${theme.colors.textColor}`
-                }} 
-              >
-                <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} sx={{pointerEvents: 'none'}}/>
-              </Box>
-              <Box 
-                as={'button'} 
-                sx={{
-                  width: '5.6rem !important', 
-                  height: '5.6rem !important',
-                  border: `0.1rem solid ${theme.colors.textColor}`
-                }} 
-                className="splide__arrow splide__arrow--next int-cursor"
-              >
-                <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} sx={{pointerEvents: 'none'}}/>
-              </Box>
-            </div>
-          </Splide>
         </Flex>
       </Flex>
   )
 };
 
 const Protocols = [
-  {
-    label: 'GNOSIS CHAIN',
-    logo: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657054886/carrot/protocols/gnosis_lyysrk.svg',
-    url: '#'
-  },
-  {
-    label: 'AGAVE',
-    logo: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657054886/carrot/protocols/agave_ch8rxi.svg',
-    url: '#'
-  },
-  {
-    label: 'COW PROTOCOL',
-    logo: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657054886/carrot/protocols/cow_e8h1lh.svg',
-    url: '#'
-  },
-  {
-    label: 'COWSWAP',
-    logo: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657054886/carrot/protocols/cow-swap_sgdmka.svg',
-    url: '#'
-  },
   {
     label: 'GNOSIS CHAIN',
     logo: 'https://res.cloudinary.com/guido-la-rosa/image/upload/v1657054886/carrot/protocols/gnosis_lyysrk.svg',

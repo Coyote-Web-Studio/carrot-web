@@ -156,6 +156,12 @@ const JoinTheCommunity = () => {
             sx={{
                 bg: theme.colors.orange6, 
                 position: 'relative',
+                maxWidth: '1920px',
+                width: '100%',
+                mx: 'auto',
+                mt: 'calc(6.4rem * 4)',
+                borderRadius: '3.2rem',
+                // overflow: 'hidden',
                 '*': {
                     color: theme.colors.gray10
                 }
@@ -175,6 +181,7 @@ const JoinTheCommunity = () => {
                 mx: "auto",
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
                     p: '12.6rem 6.4rem 12.6rem 9.6rem',
+                    maxWidth: '50%',
                 },
 
             }}>
@@ -185,8 +192,8 @@ const JoinTheCommunity = () => {
                             rowGap: '0.1rem', 
                             columnGap: '0.1rem',
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                                minWidth: '90rem',
-                                ml: 'auto'
+                                ml: 'auto',
+                                width: '100%',
                             },
                         }}
                     >
@@ -360,7 +367,10 @@ const JoinTheCommunity = () => {
                     backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657822465/carrot/antonitudisco_272455743_5068059243228334_3680368816274666884_n_4_vzorvz.png)`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    display: ['none', 'flex', 'flex']
+                    display: ['none', 'flex', 'flex'],
+                    [`@media screen and (min-width: 2800px)`]: {
+                        borderRadius: '0 3.2rem 3.2rem 0'
+                    }
                 }}
             >
 
@@ -373,6 +383,7 @@ const JoinTheCommunity = () => {
                 zIndex: 4
             }}>
                 <Image
+                alt="Hovering Element"
                 ref={goldParallax.ref}
                 src={"misc/gold-curve.png"}
                 sx={{
@@ -391,40 +402,42 @@ const JoinTheCommunity = () => {
                 }}
                 />
                 <Image
-                ref={sphereParallax.ref}
-                src={"misc/sphere.png"}
-                sx={{
-                    position: "absolute",
-                    top: ["10rem", "5rem"],
-                    width: ["3.7rem"],
-                    height: ["3.7rem"],
-                    left: ["4%", null, "12%"],
-                    zIndex: "100000000",
-                    filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-                    display: ['none', 'block'],
-                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                    height: "7.4rem",
-                    width: '7.4rem'
-                    },
-                }}
+                    alt="Hovering Element"
+                    ref={sphereParallax.ref}
+                    src={"misc/sphere.png"}
+                    sx={{
+                        position: "absolute",
+                        top: ["10rem", "5rem"],
+                        width: ["3.7rem"],
+                        height: ["3.7rem"],
+                        left: ["4%", null, "12%"],
+                        zIndex: "100000000",
+                        filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+                        display: ['none', 'block'],
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        height: "7.4rem",
+                        width: '7.4rem'
+                        },
+                    }}
                 />
                 <Image
-                ref={hexagonParallax.ref}
-                src={"hexagon.png"}
-                sx={{
-                    position: "absolute",
-                    top: ["24rem", "8rem"],
-                    width: ["7.2rem", "9rem"],
-                    height: ['8.7rem', '10.9rem'],
-                    right: ["4%", null, "12%"],
-                    zIndex: "100000000",
-                    filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
-                    display: ['none', 'block'],
-                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                    height: "21.9rem",
-                    width: '18.1rem'
-                    },
-                }}
+                    alt="Hovering Element"
+                    ref={hexagonParallax.ref}
+                    src={"hexagon.png"}
+                    sx={{
+                        position: "absolute",
+                        top: ["24rem", "8rem"],
+                        width: ["7.2rem", "9rem"],
+                        height: ['8.7rem', '10.9rem'],
+                        right: ["4%", null, "12%"],
+                        zIndex: "100000000",
+                        filter: `drop-shadow(-10px 10px 30px ${transparentize('0.4', theme.colors.black)})`,
+                        display: ['none', 'block'],
+                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                        height: "21.9rem",
+                        width: '18.1rem'
+                        },
+                    }}
                 />
             </Box>
         </Flex>
