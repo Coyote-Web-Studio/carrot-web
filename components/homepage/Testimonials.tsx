@@ -92,6 +92,16 @@ const Testimonials = () => {
             sx={{
               ...theme.boxSizes.expandedBox,
               position: "absolute",
+              [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
+                width: 'calc((6.4rem * 21) + 0.2rem)',
+                m: '0 calc(50% - (6.4rem * (21 / 2)))',
+                left: '0',
+              },
+              [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
+                width: 'calc((6.4rem * 27) + 0.2rem) !important',
+                m: '0 calc(50% - (6.4rem * (27 / 2))) !important',
+                left: '0',
+              },
             }}
             >
             <GridBackground sx={{
