@@ -81,7 +81,8 @@ const JoinTheCommunity = () => {
                             maxWidth: 'unset'
                         },
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                            minWidth: '13.2rem',
+                            minWidth: '17.1rem',
+                            height: '17.1rem',
                             maxWidth: 'unset'
                         },
                     }}
@@ -159,9 +160,10 @@ const JoinTheCommunity = () => {
                 maxWidth: '1920px',
                 width: '100%',
                 mx: 'auto',
-                mt: 'calc(6.4rem * 4)',
-                borderRadius: '3.2rem',
-                // overflow: 'hidden',
+                [`@media screen and (min-width: 2800px)`]: {
+                    mt: 'calc(6.4rem * 4)',
+                    borderRadius: '3.2rem'
+                },
                 '*': {
                     color: theme.colors.gray10
                 }

@@ -123,30 +123,33 @@ const Testimonials = () => {
               '.splide__arrow': {
                 width: '5.6rem',
                 height: '5.6rem',
-                top: ['16rem', '10rem', null, '15rem'],
+                top: ['calc(50% - 1.8rem)', '10rem', null, 'calc(50% - 1.8rem)'],
                 bg: 'transparent',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                'img': {
-                  transform: ['scale(0.5)', 'scale(1)'],
-                },
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                  top: '20rem'
+                  top: 'calc(50% - 2.8rem)'
+                },
+                '&:hover': {
+                  backgroundColor: `${theme.colors.orange6}`
+                },
+                'img': {
+                  transform: ['scale(0.8)', 'scale(1)'],
                 },
               },
               '.splide__arrow--prev': {
-                left: ['-3.8rem', '-6rem', null, '-8rem'],
+                left: ['-9%', '-4.2rem', '-8rem', '-12rem', '-8rem'],
                 'img': {
                   filter: 'invert(1)'
                 }
               },
               '.splide__arrow--next': {
+                right: ['-9%', '-4.2rem', '-8rem', '-12rem', '-8rem'],
                 'img': {
-                  transform: ['rotate(180deg) scale(0.5)', 'rotate(180deg) scale(1)'],
+                  transform: ['rotate(180deg) scale(0.8)', 'rotate(180deg) scale(1)'],
                     filter: 'invert(1)'
                 },
-                right: ['-3.8rem', '-6rem', null, '-8rem']
               },
             }
           }}
@@ -162,25 +165,37 @@ const Testimonials = () => {
             <div className="splide__arrows">
               <Box 
                 as={'button'} 
-                className="splide__arrow splide__arrow--prev"
+                className="splide__arrow splide__arrow--prev int-cursor"
                 sx={{
-                  width: '5.6rem !important', 
-                  height: '5.6rem !important',
-                  border: `0.1rem solid ${theme.colors.background}`
+                  width: ['2.8rem !important', null, '5.6rem !important'], 
+                  height: ['2.8rem !important', null, '5.6rem !important'],
+                  border: `0.1rem solid ${theme.colors.background}`,
                 }} 
               >
-                <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
+                <Image 
+                  src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'}
+                  alt={'Arrow'}
+                  sx={{
+                    pointerEvents: 'none'
+                  }}
+                />
               </Box>
               <Box 
                 as={'button'} 
-                className="splide__arrow splide__arrow--next"
+                className="splide__arrow splide__arrow--next int-cursor"
                 sx={{
-                  width: '5.6rem !important', 
-                  height: '5.6rem !important',
-                  border: `0.1rem solid ${theme.colors.background}`
+                  width: ['2.8rem !important', null, '5.6rem !important'], 
+                  height: ['2.8rem !important', null, '5.6rem !important'],
+                  border: `0.1rem solid ${theme.colors.background}`,
                 }} 
               >
-                <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} />
+                <Image 
+                  src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'}
+                  sx={{
+                    pointerEvents: 'none'
+                  }} 
+                  alt={'Arrow'}
+                />
               </Box>
             </div>
           </Splide>
@@ -198,10 +213,12 @@ const Testimonials = () => {
           zIndex: "10",
           display: ['none', 'block']
         }}
+        alt={'Floating Image'}
       />
       <Image
         ref={goldParallax.ref}
         src={"misc/gold-curve.png"}
+        alt={'Floating Image'}
         sx={{
           position: "absolute",
           top: "50rem",

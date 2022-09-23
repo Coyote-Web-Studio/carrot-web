@@ -95,7 +95,8 @@ const MobileNavbar = (props : any) => {
                                     },
                                 }}
                             >
-                                {link.label}
+                                <Text as="span" sx={{opacity: '0.5', transition: '0.15s ease-in-out opacity'}}>↳ </Text> {link.label}
+                                
                             </Link>
                         ))}
                     </Flex>

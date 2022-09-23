@@ -3,7 +3,7 @@ import { Flex, Box } from 'rebass';
 import styled, { useTheme } from 'styled-components';
 
 export const HamburgerIcon = (props : any) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(props.isOpen);
   const theme : any = useTheme();
   const lineStyle = {
     width: '2.4rem',
@@ -21,7 +21,7 @@ export const HamburgerIcon = (props : any) => {
   }
 
   return (
-    <StyledHamburgerIcon className={isActive ? 'active' : 'inactive'} {...props} sx={{
+    <StyledHamburgerIcon className={props.isOpen ? 'active' : 'inactive'} {...props} sx={{
       position: 'relative',
       flexDirection: 'column',
       width: '1.75rem',
@@ -35,22 +35,22 @@ export const HamburgerIcon = (props : any) => {
     >
       <Box sx={{
         top: '0',
-        opacity: isActive ? 0 : 1,
+        opacity: props.isOpen ? 0 : 1,
         ...lineStyle
       }}/>
       <Box sx={{
         top: '0.8rem',
-        transform: isActive ? 'rotate(45deg)' : 'none',
+        transform: props.isOpen ? 'rotate(45deg)' : 'none',
         ...lineStyle
       }}/>
       <Box sx={{
         top: '0.8rem',
-        transform: isActive ? 'rotate(-45deg)' : 'none',
+        transform: props.isOpen ? 'rotate(-45deg)' : 'none',
         ...lineStyle
       }}/>
       <Box sx={{
         top: '1.6rem',
-        opacity: isActive ? 0 : 1,
+        opacity: props.isOpen ? 0 : 1,
         ...lineStyle
       }}/>
     </StyledHamburgerIcon>

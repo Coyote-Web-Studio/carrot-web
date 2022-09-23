@@ -31,7 +31,7 @@ const SuccesfulCampaigns = () => {
   useEffect(() => {
     updateDimensions();
     window.addEventListener('resize', updateDimensions);
-  }, []); 
+  }, [updateDimensions]); 
 
   const highlightAnimation = keyframes`
     0% {
@@ -80,12 +80,6 @@ const SuccesfulCampaigns = () => {
           [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
             mb: '6.5rem !important'
           },
-          ['&:hover .highlight-box']: {
-            opacity: 1,
-            clipPath: 'polygon(0 0 ,100% 0, 100% 100%, 0 100%)',
-            filter: 'blur(0px)',
-            transform: 'scale(1)',
-          },
           '.splide .splide__arrows': {
             '.splide__arrow': {
               width: '5.6rem',
@@ -95,6 +89,9 @@ const SuccesfulCampaigns = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
+              '&:hover': {
+                backgroundColor: `${theme.colors.orange6}`
+              }
             },
             '.splide__arrow--prev': {
               left: '-8rem',
@@ -122,13 +119,6 @@ const SuccesfulCampaigns = () => {
           clipPath: 'polygon(0 100% ,0 100%, 0 100%, 0 100%)',
           transform: 'scale(0.5)',
           animation: `${highlightAnimation} 3s linear forwards infinite`,
-          // background: `repeating-linear-gradient(
-          //   135deg,
-          //   transparent,
-          //   transparent 6.4rem,
-          //   ${theme.colors.green5} 6.4rem,
-          //   ${theme.colors.green5} 12.8rem
-          // )`
           backgroundImage: 'url(back.svg)'
         }}>
 
@@ -149,6 +139,9 @@ const SuccesfulCampaigns = () => {
                     perPage: 3
                   },
                   1440: {
+                    perPage: 3
+                  },
+                  1024: {
                     perPage: 2
                   },
                 }
@@ -158,12 +151,10 @@ const SuccesfulCampaigns = () => {
                 {SuccesfullCampaigns.map((campaign, index) => (
                   <SplideSlide key={index}>
                     <CampaignCard
+                      key={index} 
                       campaign={campaign}
-                      sx={{
-                        width: ["100%"],
-                        // mx: [null, '1.6rem', '3.2rem', '2.4rem']
-                      }}
-                      key={index} onMouseEnter={(e : any) => {
+                      sx={{ width: ["100%"] }}
+                      onMouseEnter={(e : any) => {
                         e.stopPropagation();
                         e.preventDefault();
           
@@ -174,9 +165,30 @@ const SuccesfulCampaigns = () => {
                         if ( highlightRef.current && sliderRef.current ) {
                           highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
           
+                          highlightRef.current.style.transform = 'scale(1)';
+                          highlightRef.current.style.clipPath = 'polygon(0 0 ,100% 0, 100% 100%, 0 100%)';
+                          highlightRef.current.style.filter = `blur(0px)`;
+                          highlightRef.current.style.opacity = '1';
                           highlightRef.current.style.left = e.currentTarget.getBoundingClientRect().left - sliderRef.current.offsetLeft + - highlighterExtraWidth / 2 + 'px';
           
                           highlightRef.current.style.top = - (64) + 'px';
+                        }
+                      }}
+                      onMouseLeave={(e : any) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+          
+                        let cardWidth = e.currentTarget.getBoundingClientRect().width;
+          
+                        let highlighterExtraWidth = 128;
+          
+                        if ( highlightRef.current && sliderRef.current ) {
+                          highlightRef.current.style.width = cardWidth + highlighterExtraWidth + 'px';
+          
+                          highlightRef.current.style.transform = 'scale(0)';
+                          highlightRef.current.style.clipPath = 'polygon(0 0 ,0 0, 0 0, 0 0)';
+                          highlightRef.current.style.filter = `blur(1px)`;
+                          highlightRef.current.style.opacity = '0';
                         }
                       }}
                     />
@@ -184,30 +196,48 @@ const SuccesfulCampaigns = () => {
                   ))
                 }
               </SplideTrack>
-              <div className="splide__arrows">
+              <Box as="div" className="splide__arrows">
                 <Box 
                   as={'button'} 
                   className="splide__arrow splide__arrow--prev int-cursor"
                   sx={{
                     width: '5.6rem !important', 
                     height: '5.6rem !important',
-                    border: `0.1rem solid ${theme.colors.textColor}`
+                    border: `0.1rem solid ${theme.colors.textColor}`,
+                    '&:hover': {
+                      backgroundColor: theme.colors.orange
+                    }
                   }} 
                 >
-                  <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} sx={{pointerEvents: 'none'}}/>
+                  <Image 
+                    alt={'arrow'}
+                    src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} 
+                    sx={{
+                      pointerEvents: 'none'
+                    }}
+                  />
                 </Box>
                 <Box 
                   as={'button'} 
                   sx={{
                     width: '5.6rem !important', 
                     height: '5.6rem !important',
-                    border: `0.1rem solid ${theme.colors.textColor}`
+                    border: `0.1rem solid ${theme.colors.textColor}`,
+                    '&:hover': {
+                      backgroundColor: 'white'
+                    }
                   }} 
                   className="splide__arrow splide__arrow--next int-cursor"
                 >
-                  <Image src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} sx={{pointerEvents: 'none'}}/>
+                  <Image 
+                    alt={'arrow'}
+                    src={theme.name == 'light' ? '/arrow.svg' : '/arrow-dark.svg'} 
+                    sx={{
+                      pointerEvents: 'none'
+                    }}
+                  />
                 </Box>
-              </div>
+              </Box>
             </Splide>
           </Flex>
         </Fade>

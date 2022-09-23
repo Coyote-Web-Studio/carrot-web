@@ -3,7 +3,7 @@
 const breakpoints = ["640px", "831px", "1023px", "1440px", "1919px"];
 // [phone, tablet, tablet-xl, desktop, desktop-xl];
 
-export default {
+const base = {
   breakpoints: breakpoints,
   colors: {
     blue6: '#0029FF',
@@ -135,3 +135,5 @@ export default {
       invertedProtocolLogo: false
   }
 };
+
+export default base;

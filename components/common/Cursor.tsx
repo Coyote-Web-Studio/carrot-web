@@ -80,6 +80,7 @@ const Cursor = (props : any) => {
     return (
         <>
             <Box ref={mainCursor} sx={{
+                display: ['none', 'inline-block'],
                 position: 'absolute',
                 background: theme.colors.textColor,
                 width: '1.5rem',

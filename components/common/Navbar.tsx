@@ -66,19 +66,7 @@ const Navbar = (props : any) => {
                 </Box>
                 <Button3D buttonWrapperStyles={{
                     ml: ['2.4rem', '1.2rem', '2.4rem', '3.2rem'],
-                    // height: [null, '4.6rem'],
-                    // minWidth: 'unset',
                     display: ['none', 'flex'],
-                    'button': {
-                        // fontSize: [null, null, null, '1.2rem'],
-                    },
-                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                        // height: '6.4rem',
-                        // minWidth: '14.4rem',
-                        'button': {
-                            // fontSize: '1.6rem',
-                        },
-                    },
                 }}>
                     CARROT DAPP
                 </Button3D>
@@ -89,9 +77,12 @@ const Navbar = (props : any) => {
                         ml: 'auto', 
                     }}
                 >
-                    <HamburgerIcon onClick={() => {
-                        setIsMobileNavbarOpen(!isMobileNavbarOpen);
-                    }} />
+                    <HamburgerIcon 
+                        isOpen={isMobileNavbarOpen}
+                        onClick={() => {
+                            setIsMobileNavbarOpen(!isMobileNavbarOpen);
+                        }} 
+                    />
                 </Flex>
             </Flex>
             <MobileNavbar isOpen={isMobileNavbarOpen} setIsOpen={setIsMobileNavbarOpen} />
