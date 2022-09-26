@@ -135,19 +135,19 @@ const Testimonials = () => {
                   backgroundColor: `${theme.colors.orange6}`
                 },
                 'img': {
-                  transform: ['scale(0.8)', 'scale(1)'],
+                  transform: ['scale(1.2)', 'scale(1)'],
                 },
               },
               '.splide__arrow--prev': {
-                left: ['-9%', '-4.2rem', '-8rem', '-12rem', '-8rem'],
+                left: ['-10%', '-4.2rem', '-8rem', '-12rem', '-8rem'],
                 'img': {
                   filter: 'invert(1)'
                 }
               },
               '.splide__arrow--next': {
-                right: ['-9%', '-4.2rem', '-8rem', '-12rem', '-8rem'],
+                right: ['-10%', '-4.2rem', '-8rem', '-12rem', '-8rem'],
                 'img': {
-                  transform: ['rotate(180deg) scale(0.8)', 'rotate(180deg) scale(1)'],
+                  transform: ['rotate(180deg) scale(1.2)', 'rotate(180deg) scale(1)'],
                     filter: 'invert(1)'
                 },
               },
@@ -167,8 +167,8 @@ const Testimonials = () => {
                 as={'button'} 
                 className="splide__arrow splide__arrow--prev int-cursor"
                 sx={{
-                  width: ['2.8rem !important', null, '5.6rem !important'], 
-                  height: ['2.8rem !important', null, '5.6rem !important'],
+                  width: ['2.2rem !important', null, '5.6rem !important'], 
+                  height: ['2.2rem !important', null, '5.6rem !important'],
                   border: `0.1rem solid ${theme.colors.background}`,
                 }} 
               >
@@ -184,8 +184,8 @@ const Testimonials = () => {
                 as={'button'} 
                 className="splide__arrow splide__arrow--next int-cursor"
                 sx={{
-                  width: ['2.8rem !important', null, '5.6rem !important'], 
-                  height: ['2.8rem !important', null, '5.6rem !important'],
+                  width: ['2.2rem !important', null, '5.6rem !important'], 
+                  height: ['2.2rem !important', null, '5.6rem !important'],
                   border: `0.1rem solid ${theme.colors.background}`,
                 }} 
               >

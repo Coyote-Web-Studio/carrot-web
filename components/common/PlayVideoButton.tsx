@@ -47,12 +47,10 @@ const PlayVideoButton = (props : any) => {
                 borderRadius: 'inherit',
                 alignItems: 'center',
                 justifyContent: 'center',
-                // mr: ['1.6rem'],
                 position: 'relative',
-                left: '-0.1rem',
                 pointerEvents: 'none'
             }}>
-                <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="26" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17.0422 7.95493C18.3379 8.66718 18.3379 10.5289 17.0422 11.2411L3.29435 18.7984C2.04476 19.4853 0.516133 18.5812 0.516133 17.1553L0.516134 2.0408C0.516134 0.614861 2.04477 -0.28921 3.29436 0.397695L17.0422 7.95493Z"/>
                 </svg>
             </Flex>
