@@ -169,8 +169,8 @@ const SideLink = (props : any) => {
             target="_blank"
             className={'int-cursor'}
             sx={{
-                position: 'absolute', 
-                top: props.top, 
+                // position: 'absolute', 
+                // top: props.top, 
                 display: 'flex',
                 left: ['2rem'],
                 alignItems: 'center',
@@ -204,16 +204,19 @@ const SideText = (props : any) => {
     return (
         <Flex className="side-text"
             sx={{
-                minWidth: ['6.4rem'],
+                width: ['6.4rem'],
                 position: 'absolute',
                 top: [null, null, null, '-5.2rem'],
                 left: 0,
-                height: '100%',
+                height: 'calc(100% - 18rem)',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
                 zIndex: 100,
                 fontWeight: 300,
+                // background: 'blue',
                 display: ['none !important', null, null, 'flex !important'],
                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                    top: 0
+                    top: '5.2rem'
                 },
             }}
         >
