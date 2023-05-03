@@ -1,10 +1,10 @@
 import { Flex } from "rebass";
 import Breakdown from "./Breakdown";
 import HowItWorks from "./HowItWorks";
-import SuccesfulCampaigns from "./SuccesfulCampaigns";
-import CarrotInNumbers from "./CarrotInNumbers";
-import TrustingProtocols from "./TrustingProtocols";
-import Testimonials from "./Testimonials";
+// import SuccesfulCampaigns from "./SuccesfulCampaigns";
+// import CarrotInNumbers from "./CarrotInNumbers";
+// import TrustingProtocols from "./TrustingProtocols";
+// import Testimonials from "./Testimonials";
 
 const MainContent = () => {
     return (
@@ -33,10 +33,10 @@ const MainContent = () => {
       </Box> */}
             <Breakdown />
             <HowItWorks />
-            <SuccesfulCampaigns />
-            <CarrotInNumbers />
-            <TrustingProtocols />
-            <Testimonials />
+            {/* <SuccesfulCampaigns /> */}
+            {/* <CarrotInNumbers /> */}
+            {/* <TrustingProtocols /> */}
+            {/* <Testimonials /> */}
         </Flex>
     );
 };
