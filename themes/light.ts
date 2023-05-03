@@ -1,40 +1,39 @@
-import Theme from '../types/Theme';
-import baseTheme from './base';
+import Theme from "../types/Theme";
+import baseTheme from "./base";
 
 export default {
-  ...baseTheme,
-  name: 'light',
-  colors: {
-    ...baseTheme.colors,
+    ...baseTheme,
+    name: "light",
+    colors: {
+        ...baseTheme.colors,
 
-    background: "#FEFEFE",
-    logoColor: "#0B0B0B",
-    textColor: "#0B0B0B",
-    gridColor: "#F5F5F5",
+        background: "#FEFEFE",
+        logoColor: "#0B0B0B",
+        textColor: "#0B0B0B",
+        gridColor: "#F5F5F5",
 
-    buttonBackground: baseTheme.colors.orange6,
-    buttonBorder: baseTheme.colors.gray10,
+        buttonBackground: baseTheme.colors.orange6,
+        buttonBorder: baseTheme.colors.gray10,
 
-    customerCommentBackground: "#0B0B0B",
-    customerCommentGrid: "#272727",
-    customerCommentText: "#F5F5F5",
+        customerCommentBackground: "#0B0B0B",
+        customerCommentGrid: "#272727",
+        customerCommentText: "#F5F5F5",
 
-    protocolCardBackground: '#F5F5F5',
-    protocolCardLine: '#0B0B0B',
+        protocolCardBackground: "#F5F5F5",
+        protocolCardLine: "#0B0B0B",
 
-    cardBackground: '#FEFEFE',
-    cardText: '#0B0B0B',
-    cardLine: '#0B0B0B',
-    cardButtonHover: '#E9E9E9',
+        cardBackground: "#FEFEFE",
+        cardText: "#0B0B0B",
+        cardLine: "#0B0B0B",
+        cardButtonHover: "#E9E9E9",
 
-    carrotInNumbersGrid: '#ED5B16',
-    footerBackground: baseTheme.colors.gray10,
+        carrotInNumbersGrid: "#ED5B16",
+        footerBackground: baseTheme.colors.gray10,
 
-    imageBorder: '#000000'
-
-  },
-  misc: {
-    patternImage: 'url("/Pattern_light.svg")',
-    footerPatternImage: 'url("/Pattern.svg")'
-  }
+        imageBorder: "#000000",
+    },
+    misc: {
+        patternImage: 'url("/Pattern_light.svg")',
+        footerPatternImage: 'url("/Pattern.svg")',
+    },
 } as Theme;

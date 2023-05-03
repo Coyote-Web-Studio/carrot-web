@@ -1,19 +1,19 @@
 export const NavLinks = [
     {
-        label: 'ABOUT',
-        scrollTo: 'about'
+        label: "ABOUT",
+        scrollTo: "about",
     },
     {
-        label: 'PARTNER',
-        scrollTo: 'partners'
+        label: "PARTNER",
+        scrollTo: "partners",
     },
     {
-        label: 'CAMPAIGNS',
-        scrollTo: 'campaigns'
+        label: "CAMPAIGNS",
+        scrollTo: "campaigns",
     },
     {
-        label: 'COMMUNITY',
-        scrollTo: 'community'
+        label: "COMMUNITY",
+        scrollTo: "community",
     },
 ];
 

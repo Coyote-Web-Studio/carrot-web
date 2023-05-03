@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    color: ${(props : any) => props.theme.colors.textColor};
+    color: ${(props: any) => props.theme.colors.textColor};
   }   
 
   ul {
@@ -32,13 +32,16 @@ const GlobalStyle = createGlobalStyle`
     font-size: 4rem;
     line-height: 101%;
     letter-spacing: -0.08rem;
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props: any) =>
+        props.theme.breakpoints[2]}) {
       font-size: 6.9rem;
     }
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
+    @media screen and (min-width: ${(props: any) =>
+        props.theme.breakpoints[3]}) {
       font-size: 9.9rem;
     }
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[4]}) {
+    @media screen and (min-width: ${(props: any) =>
+        props.theme.breakpoints[4]}) {
       font-size: 11.9rem;
       line-height: 107%;
     }
@@ -48,10 +51,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 3.3rem;
     line-height: 90%;
     letter-spacing: -0.04em;
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props: any) =>
+        props.theme.breakpoints[2]}) {
       font-size: 4.8rem;
     }
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
+    @media screen and (min-width: ${(props: any) =>
+        props.theme.breakpoints[3]}) {
       font-size: 6.9rem;
     }
   }
@@ -61,10 +66,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
     line-height: 150%;
     font-weight: 300;
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[2]}) {
+    @media screen and (min-width: ${(props: any) =>
+        props.theme.breakpoints[2]}) {
       font-size: 1.6rem;
     }
-    @media screen and (min-width: ${(props : any) => props.theme.breakpoints[3]}) {
+    @media screen and (min-width: ${(props: any) =>
+        props.theme.breakpoints[3]}) {
       font-size: 1.9rem;
     }
   }
@@ -74,18 +81,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #nprogress .bar {
-    background: ${(props : any) => props.theme.colors.orange6}
+    background: ${(props: any) => props.theme.colors.orange6}
   }
 
   #nprogress .peg {
     box-shadow: 
-      0 0 10px ${(props : any) => props.theme.colors.orange6}, 
-      0 0 5px ${(props : any) => props.theme.colors.orange6};
+      0 0 10px ${(props: any) => props.theme.colors.orange6}, 
+      0 0 5px ${(props: any) => props.theme.colors.orange6};
   }
 
   #nprogress .spinner-icon { 
-    border-top-color: ${(props : any) => props.theme.colors.orange6};
-    border-left-color: ${(props : any) => props.theme.colors.orange6};
+    border-top-color: ${(props: any) => props.theme.colors.orange6};
+    border-left-color: ${(props: any) => props.theme.colors.orange6};
   }
 `;
 
