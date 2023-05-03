@@ -1,20 +1,21 @@
 import { ThemeProvider } from "styled-components";
-import { useState, createContext, useContext, useEffect } from "react";
-import darkTheme from "./../themes/dark";
+import { useState, createContext, useContext } from "react";
+// import darkTheme from "./../themes/dark";
+import lightTheme from "./../themes/light";
 
 const Context: any = createContext("");
 
 const ThemeContext = ({ children }: any) => {
-    const [theme, setTheme] = useState(darkTheme);
+    const [theme, setTheme] = useState(lightTheme);
 
-    useEffect(() => {
-        if (
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-        ) {
-            setTheme(darkTheme);
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (
+    //         window.matchMedia &&
+    //         window.matchMedia("(prefers-color-scheme: dark)").matches
+    //     ) {
+    //         setTheme(darkTheme);
+    //     }
+    // }, []);
 
     return (
         <Context.Provider value={[theme, setTheme]}>
