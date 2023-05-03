@@ -7,7 +7,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "format": "eslint --fix ."
+        "format": "eslint --fix .",
+        "commitlint": "commitlint -e",
+        "prepare": "husky install"
     },
     "dependencies": {
         "@emotion/react": "^11.9.3",
