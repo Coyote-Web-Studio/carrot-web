@@ -54,6 +54,7 @@ const TrustingProtocols = () => {
             }}
         >
             <Image
+                alt="Hexagon"
                 ref={hexagonParallax.ref}
                 src={"hexagon.png"}
                 sx={{

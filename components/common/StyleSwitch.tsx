@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Flex, Box, Image } from "rebass";
+import { Flex, Image } from "rebass";
 import { Switch } from "@rebass/forms";
 import { useThemeContext } from "../../context/theme";
 
@@ -100,6 +100,7 @@ const StyleSwitch = (props: any) => {
                 }}
             >
                 <Image
+                    alt="light"
                     sx={{
                         position: "absolute",
                         top: ["0.5rem", "0.30rem", "0.25rem"],
@@ -120,6 +121,7 @@ const StyleSwitch = (props: any) => {
                     src={"/icons/light-icon.svg"}
                 />
                 <Image
+                    alt="dark"
                     sx={{
                         position: "absolute",
                         top: ["0.5rem", "0.30rem", "0.25rem"],

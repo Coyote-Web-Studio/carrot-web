@@ -125,6 +125,7 @@ const ProtocolCard = (props: any) => {
                 justifyContent={"center"}
             >
                 <Image
+                    alt={props.data.label}
                     src={props.data.logo}
                     sx={{
                         filter: theme.misc.invertedProtocolLogo

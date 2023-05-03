@@ -39,6 +39,7 @@ const Breakdown = (props: any) => {
                 }}
             >
                 <Image
+                    alt="Sphere"
                     ref={sphereParallax.ref}
                     src={"misc/sphere.png"}
                     sx={{

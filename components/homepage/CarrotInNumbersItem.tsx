@@ -19,7 +19,7 @@ function Counter({ from, to, type }: any) {
         });
 
         return () => controls.stop();
-    }, [from, to]);
+    }, [from, to, type]);
 
     return (
         <Text
@@ -70,7 +70,7 @@ const CarrotInNumbersItem = (props: any) => {
         if (animationRef.current) {
             observer.observe(animationRef.current);
         }
-    }, [animationRef.current]);
+    }, []);
 
     return (
         <Flex

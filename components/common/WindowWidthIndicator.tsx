@@ -2,34 +2,34 @@ import { useState, useEffect } from "react";
 import { Box, Text } from "rebass";
 import { debounce } from "./../../utils/utils";
 
+const BREAKPOINTS = [
+    {
+        name: "phone",
+        value: 640,
+    },
+    {
+        name: "tablet",
+        value: 831,
+    },
+    {
+        name: "tablet-xl",
+        value: 1023,
+    },
+    {
+        name: "desktop",
+        value: 1440,
+    },
+    {
+        name: "desktop-xl",
+        value: Number.POSITIVE_INFINITY,
+    },
+];
+
 const WindowWidthIndicator = (props: any) => {
     const [windowWidth, setWindowWidth] = useState<number>(0);
     const [currentBreakpoint, setCurrentBreakpoint] =
         useState<string>("undefined");
     const [isVisible, setIsVisible] = useState(props.enabled);
-
-    const BREAKPOINTS = [
-        {
-            name: "phone",
-            value: 640,
-        },
-        {
-            name: "tablet",
-            value: 831,
-        },
-        {
-            name: "tablet-xl",
-            value: 1023,
-        },
-        {
-            name: "desktop",
-            value: 1440,
-        },
-        {
-            name: "desktop-xl",
-            value: Number.POSITIVE_INFINITY,
-        },
-    ];
 
     useEffect(() => {
         document.addEventListener("keydown", (e) => {
@@ -45,8 +45,9 @@ const WindowWidthIndicator = (props: any) => {
 
     useEffect(() => {
         updateWidth();
+        // FIXME: use a resize observer to improve performance
         window.addEventListener("resize", updateWidth);
-    }, []);
+    }, [updateWidth]);
 
     useEffect(() => {
         if (windowWidth <= BREAKPOINTS[0].value) {

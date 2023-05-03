@@ -49,7 +49,7 @@ const ProgramaticBackground = (props: any) => {
     useEffect(() => {
         updateDimensions();
         window.addEventListener("resize", updateDimensions);
-    }, []);
+    }, [updateDimensions]);
 
     useEffect(() => {
         const availableTabletRows = Math.floor(gridHeight / 24);

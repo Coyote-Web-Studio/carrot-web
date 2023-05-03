@@ -25,7 +25,7 @@ const AnimatedText = (props: any) => {
         if (animationRef.current) {
             observer.observe(animationRef.current);
         }
-    }, [animationRef.current]);
+    }, []);
 
     const initialTextState = {
         opacity: 0,
