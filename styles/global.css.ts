@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     padding: 0;
     margin: 0;
-    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Inter, sans-serif;
   }
 
   html {

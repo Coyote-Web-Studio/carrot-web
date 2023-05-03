@@ -1,6 +1,13 @@
+import "../styles/nprogress.css";
+
 import "aos/dist/aos.css";
 import "@splidejs/react-splide/css";
-import "../styles/nprogress.css";
+
+import "@fontsource/inter/700.css";
+
+import "@fontsource/ibm-plex-mono/300.css";
+import "@fontsource/ibm-plex-mono/400.css";
+
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import AOS from "aos";
