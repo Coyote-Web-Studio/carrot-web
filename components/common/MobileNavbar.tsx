@@ -3,7 +3,6 @@ import Button from "./Button";
 import { useTheme } from "styled-components";
 import NavLinks from "../../content/navigation";
 import GridBackground from "./GridBackground";
-import StyleSwitch from "./StyleSwitch";
 
 const MobileNavbar = (props: any) => {
     const theme: any = useTheme();
@@ -126,7 +125,7 @@ const MobileNavbar = (props: any) => {
                     }}
                 >
                     <Button>CARROT DAPP</Button>
-                    <StyleSwitch />
+                    {/* <StyleSwitch /> */}
                 </Flex>
             </Flex>
         </Flex>

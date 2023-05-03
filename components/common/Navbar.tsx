@@ -4,7 +4,6 @@ import styled, { useTheme } from "styled-components";
 import Logo from "./Logo";
 import HamburgerIcon from "./HamburgerIcon";
 import Button3D from "./Button3D";
-import StyleSwitch from "./StyleSwitch";
 import MobileNavbar from "./MobileNavbar";
 import NavigationLinks from "./NavigationLinks";
 
@@ -39,7 +38,7 @@ const Navbar = () => {
                 <Logo
                     color={theme.colors.logoColor}
                     sx={{
-                        height: ["3.271rem", "4.4rem", null, "4.67rem"],
+                        width: "188px",
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
                             {
                                 height: "5.6rem",
@@ -57,7 +56,7 @@ const Navbar = () => {
                     }}
                 >
                     <NavigationLinks />
-                    <StyleSwitch
+                    {/* <StyleSwitch
                         sx={{
                             ml: ["2.4rem", "1.2rem", null, "3.2rem"],
                             [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
@@ -69,7 +68,7 @@ const Navbar = () => {
                                     ml: "6.4rem",
                                 },
                         }}
-                    />
+                    /> */}
                 </Box>
                 <Button3D
                     buttonWrapperStyles={{
