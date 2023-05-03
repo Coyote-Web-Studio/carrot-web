@@ -10,7 +10,6 @@ import Marquees from "./../components/homepage/Marquees";
 import MainContent from "../components/homepage/MainContent";
 import JoinTheCommunity from "../components/homepage/JoinTheCommunity";
 import WindowWidthIndicator from "../components/common/WindowWidthIndicator";
-import Cursor from "./../components/common/Cursor";
 
 const Home: NextPage = () => {
     const theme: any = useTheme();
@@ -23,14 +22,7 @@ const Home: NextPage = () => {
                     more. Yes, on any campaign. Carrot does it all.
                 </title>
             </Head>
-            <Flex
-                className="root"
-                sx={{
-                    position: "relative",
-                    cursor: "none",
-                }}
-            >
-                <Cursor />
+            <Flex className="root" sx={{ position: "relative" }}>
                 <Flex
                     flexDirection={"column"}
                     className="body-background"
