@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Flex, Box, Text, Link } from "rebass";
+import { Flex, Box, Text } from "rebass";
 import { useTheme } from "styled-components";
 
 import Fade from "../common/Fade";
@@ -194,8 +194,7 @@ const SideLink = (props: any) => {
     const theme: any = useTheme();
 
     return (
-        <Link
-            href="https://dxdao.eth.limo/"
+        <Text
             target="_blank"
             className={"int-cursor"}
             sx={{
@@ -226,7 +225,7 @@ const SideLink = (props: any) => {
                 }}
             />
             {props.children}
-        </Link>
+        </Text>
     );
 };
 
@@ -253,8 +252,7 @@ const SideText = () => {
                 },
             }}
         >
-            <SideLink top="10.9rem">BY DXDAO</SideLink>
-            <SideLink top="42.1rem">100% DECENTRALIZE</SideLink>
+            <SideLink top="42.1rem">100% DECENTRALIZED</SideLink>
         </Flex>
     );
 };
