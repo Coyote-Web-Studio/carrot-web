@@ -2,7 +2,7 @@ import { useTheme } from "styled-components";
 import { Box } from "rebass";
 import { useEffect, useRef } from "react";
 
-const Cursor = (props: any) => {
+const Cursor = () => {
     const theme: any = useTheme();
     const secondaryCursor: any = useRef(null);
     const mainCursor: any = useRef(null);

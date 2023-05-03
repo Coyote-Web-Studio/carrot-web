@@ -3,13 +3,12 @@ import { Flex, Box } from "rebass";
 import styled, { useTheme } from "styled-components";
 import Logo from "./Logo";
 import HamburgerIcon from "./HamburgerIcon";
-import Button from "./Button";
 import Button3D from "./Button3D";
 import StyleSwitch from "./StyleSwitch";
 import MobileNavbar from "./MobileNavbar";
 import NavigationLinks from "./NavigationLinks";
 
-const Navbar = (props: any) => {
+const Navbar = () => {
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
     const theme: any = useTheme();
 

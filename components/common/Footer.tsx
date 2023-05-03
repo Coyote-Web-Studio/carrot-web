@@ -1,14 +1,13 @@
-import { Flex, Link, Text, Box, Image } from "rebass";
-import styled, { useTheme } from "styled-components";
+import { Flex, Link, Text, Box } from "rebass";
+import { useTheme } from "styled-components";
 import Logo from "./Logo";
 import GridBackground from "./GridBackground";
 import Fade from "./Fade";
-import Button from "./Button";
 import Button3D from "./Button3D";
 
 import FooterLinks from "./../../content/footer-navigation";
 
-const Footer = (props: any) => {
+const Footer = () => {
     const theme: any = useTheme();
 
     return (

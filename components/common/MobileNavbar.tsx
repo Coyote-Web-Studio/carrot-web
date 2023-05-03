@@ -1,4 +1,4 @@
-import { Flex, Box, Link, Text } from "rebass";
+import { Flex, Link, Text } from "rebass";
 import Button from "./Button";
 import { useTheme } from "styled-components";
 import NavLinks from "../../content/navigation";

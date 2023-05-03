@@ -1,11 +1,10 @@
-import { Flex, Box, Text, Image } from "rebass";
+import { Flex, Box, Image } from "rebass";
 import { useTheme } from "styled-components";
 import { useParallax } from "react-scroll-parallax";
 
 import Fade from "../common/Fade";
 import GridBackground from "../common/GridBackground";
 import { transparentize } from "polished";
-import AnimatedText from "../common/AnimatedText";
 import Testimonial from "./Testimonial";
 import { SplideSlide, Splide, SplideTrack } from "@splidejs/react-splide";
 

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Flex, Box, Text } from "rebass";
+import { Flex, Text } from "rebass";
 import { useTheme } from "styled-components";
 import AnimatedText from "../common/AnimatedText";
 const { animate } = require("framer-motion");
@@ -43,12 +43,10 @@ const CarrotInNumbersItem = (props: any) => {
         }
     };
 
-    const [from, setFrom] = useState(0);
     const [to, setTo] = useState(100);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setFrom(to);
             setTo(Math.floor(Math.random() * 100));
         }, 2000);
 

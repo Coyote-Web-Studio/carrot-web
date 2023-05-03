@@ -1,4 +1,4 @@
-import { Flex, Text, Box, Image } from "rebass";
+import { Flex, Text, Box } from "rebass";
 import { useTheme } from "styled-components";
 import AnimatedText from "../common/AnimatedText";
 

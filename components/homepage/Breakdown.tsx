@@ -4,7 +4,7 @@ import { useTheme } from "styled-components";
 import AnimatedText from "../common/AnimatedText";
 import { useParallax } from "react-scroll-parallax";
 
-const Breakdown = (props: any) => {
+const Breakdown = () => {
     const theme: any = useTheme();
 
     const sphereParallax = useParallax({

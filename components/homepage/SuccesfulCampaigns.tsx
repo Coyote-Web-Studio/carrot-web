@@ -1,8 +1,7 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { Flex, Box, Text, Image } from "rebass";
 import { useTheme } from "styled-components";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
-import { debounce } from "../../utils/utils";
 
 import Button3D from "./../common/Button3D";
 import CampaignCard from "./../common/CampaignCard";
@@ -15,32 +14,14 @@ const SuccesfulCampaigns = () => {
     const highlightRef = useRef<HTMLInputElement>();
     const sliderRef = useRef<HTMLInputElement>();
 
-    const [cardNumber, setCardNumber] = useState(4);
-
-    const updateDimensions = debounce(() => {
-        let windowWidth = window.innerWidth;
-        if (windowWidth > 500 && windowWidth < 1024) {
-            setCardNumber(2);
-        } else if (windowWidth >= 1024 && windowWidth < 1920) {
-            setCardNumber(3);
-        } else if (windowWidth >= 1920) {
-            setCardNumber(4);
-        }
-    }, 200);
-
-    useEffect(() => {
-        updateDimensions();
-        window.addEventListener("resize", updateDimensions);
-    }, [updateDimensions]);
-
     const highlightAnimation = keyframes`
-    0% {
-      background-position: 44%;
-    };
-    100% {
-      background-position: 0%;
-    };
-  `;
+        0% {
+        background-position: 44%;
+        };
+        100% {
+        background-position: 0%;
+        };
+    `;
 
     return (
         <Flex

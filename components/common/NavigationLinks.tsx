@@ -2,7 +2,7 @@ import { Flex, Link, Box, Text } from "rebass";
 import { useTheme } from "styled-components";
 import NavLinks from "../../content/navigation";
 
-const NavigationLinks = (props: any) => {
+const NavigationLinks = () => {
     const theme: any = useTheme();
 
     return (

@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 import { Box, Flex, Image } from "rebass";
 import styled, { useTheme } from "styled-components";
 
-const Marquees = (props: any) => {
+const Marquees = () => {
     const theme: any = useTheme();
 
     return (

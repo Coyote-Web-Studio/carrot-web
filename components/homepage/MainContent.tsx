@@ -1,8 +1,4 @@
-import { Flex, Box, Image, Text } from "rebass";
-import { useTheme } from "styled-components";
-
-import GridBackground from "./../common/GridBackground";
-
+import { Flex } from "rebass";
 import Breakdown from "./Breakdown";
 import HowItWorks from "./HowItWorks";
 import SuccesfulCampaigns from "./SuccesfulCampaigns";
@@ -10,9 +6,7 @@ import CarrotInNumbers from "./CarrotInNumbers";
 import TrustingProtocols from "./TrustingProtocols";
 import Testimonials from "./Testimonials";
 
-const MainContent = (props: any) => {
-    const theme: any = useTheme();
-
+const MainContent = () => {
     return (
         <Flex
             flexDirection={"column"}

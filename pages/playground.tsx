@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
-import { Flex, Text, Box, Image, Button } from "rebass";
-import { useState, useEffect } from "react";
+import { Flex } from "rebass";
 import Head from "next/head";
 import { useTheme } from "styled-components";
 import Button3D from "../components/common/Button3D";

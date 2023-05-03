@@ -1,4 +1,4 @@
-export default [
+const NAVIGATION = [
     {
         heading: "ABOUT",
         links: [
@@ -72,3 +72,5 @@ export default [
         ],
     },
 ];
+
+export default NAVIGATION;

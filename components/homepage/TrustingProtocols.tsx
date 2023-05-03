@@ -1,4 +1,4 @@
-import { Flex, Text, Image, Box } from "rebass";
+import { Flex, Text, Image } from "rebass";
 import { useTheme } from "styled-components";
 import AnimatedText from "../common/AnimatedText";
 
@@ -6,7 +6,6 @@ import { useParallax } from "react-scroll-parallax";
 import { transparentize } from "polished";
 
 import ProtocolCard from "./ProtocolCard";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
 const TrustingProtocols = () => {
     const theme: any = useTheme();

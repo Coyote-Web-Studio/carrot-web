@@ -1,10 +1,7 @@
 import { Box } from "rebass";
-import { useContext } from "react";
-import styled from "styled-components";
-import { ThemeContext } from "styled-components";
 
 const Logo = (props: any) => {
-    const { color, sx } = props;
+    const { color } = props;
 
     return (
         <Box

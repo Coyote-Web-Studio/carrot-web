@@ -1,4 +1,4 @@
-import { Flex, Box, Image, Text } from "rebass";
+import { Flex, Box } from "rebass";
 import { useTheme } from "styled-components";
 import { transparentize } from "polished";
 

@@ -1,7 +1,6 @@
-import { Flex, Box, Text } from "rebass";
+import { Text } from "rebass";
 import AnimatedText from "../common/AnimatedText";
 import { useTheme } from "styled-components";
-import { filterProps } from "framer-motion";
 
 const Testimonial = (props: any) => {
     const theme: any = useTheme();

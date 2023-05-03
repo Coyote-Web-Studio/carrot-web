@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
-import { Flex, Text, Box, Image, Button } from "rebass";
-import { useState, useEffect, useRef } from "react";
+import { Flex } from "rebass";
 import Head from "next/head";
 import { useTheme } from "styled-components";
 
@@ -13,7 +12,7 @@ import JoinTheCommunity from "../components/homepage/JoinTheCommunity";
 import WindowWidthIndicator from "../components/common/WindowWidthIndicator";
 import Cursor from "./../components/common/Cursor";
 
-const Home: NextPage = (props: any) => {
+const Home: NextPage = () => {
     const theme: any = useTheme();
 
     return (
