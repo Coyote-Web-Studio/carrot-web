@@ -22,7 +22,7 @@ const Navbar = () => {
         <StyledNavbar
             sx={{
                 width: "100%",
-                pt: ["2.4rem", "2.4rem", null, "6.2rem"],
+                pt: ["2.4rem", "2.4rem", null, "4rem"],
                 pb: ["3.2rem", "2.4rem", null, "3.3rem"],
                 [`@media screen and (min-width: 2800px)`]: {
                     transform: "scale(1.5)",

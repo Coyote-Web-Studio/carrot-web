@@ -29,6 +29,8 @@ const Hero = () => {
             <Flex
                 flexDirection={["column", "row"]}
                 justifyContent={["auto", "space-between"]}
+                alignItems={["auto", "center"]}
+                paddingY={"12rem"}
                 sx={{
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1,
@@ -46,17 +48,14 @@ const Hero = () => {
                     sx={{
                         position: "relative",
                         pr: "1rem",
-                        pt: ["3rem", "7.6rem", "9rem", "12.8rem"],
                         flexGrow: 1,
                         maxWidth: [null, "36rem", "42rem", "60rem"],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
                             {
-                                pt: "10.4rem",
                                 maxWidth: "64rem",
                             },
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
                             {
-                                pt: "14.6rem",
                                 maxWidth: "68rem",
                             },
                     }}
@@ -136,39 +135,37 @@ const Hero = () => {
                 >
                     <Fade sx={{ position: "relative" }}>
                         <Box
+                            as="video"
                             sx={{
-                                backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
                                 width: [
                                     "100%",
                                     "calc(2.4rem * 11)",
                                     "31.2rem",
                                     "40.8rem",
                                 ],
-                                height: [
-                                    "120vw",
-                                    "calc(2.4rem * 16)",
-                                    "43.66rem",
-                                    "57rem",
-                                ],
+                                // paddingTop: "56.25%",
                                 borderRadius: ["0.85rem", null, "1.3rem"],
                                 border: `0.1rem solid ${theme.colors.imageBorder}`,
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 position: "relative",
-                                top: [null, null, null, "-2.4rem"],
                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
                                     {
-                                        width: "50rem",
-                                        height: "69.9rem",
+                                        width: "60rem",
                                     },
                                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
                                     {
-                                        width: "70rem",
-                                        height: "82.1rem",
+                                        width: "80rem",
                                     },
                             }}
+                            controls
                         >
+                            <source
+                                src="https://d2l3j8l4t44bvz.cloudfront.net"
+                                type="video/webm"
+                            />
+                            Not supported
                             <PlayVideoButton
                                 label={"HOW IT WORKS"}
                                 sx={{
