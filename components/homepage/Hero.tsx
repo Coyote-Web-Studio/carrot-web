@@ -30,7 +30,7 @@ const Hero = () => {
                 flexDirection={["column", "row"]}
                 justifyContent={["auto", "space-between"]}
                 alignItems={["auto", "center"]}
-                paddingY={"12rem"}
+                paddingY={["2rem", "6rem", "12rem"]}
                 sx={{
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1,
@@ -124,11 +124,6 @@ const Hero = () => {
                 {/* IMAGE / VIDEO */}
                 <Box
                     sx={{
-                        ml: [
-                            null,
-                            null,
-                            // '4.2rem'
-                        ],
                         position: "relative",
                         top: [0, "2.4rem"],
                     }}
@@ -143,12 +138,9 @@ const Hero = () => {
                                     "31.2rem",
                                     "40.8rem",
                                 ],
-                                // paddingTop: "56.25%",
                                 borderRadius: ["0.85rem", null, "1.3rem"],
                                 border: `0.1rem solid ${theme.colors.imageBorder}`,
-                                backgroundRepeat: "no-repeat",
-                                backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundColor: "#828282",
                                 position: "relative",
                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
                                     {
