@@ -119,7 +119,7 @@ const HowItWorksBlock = (props: any) => {
                         className="block-title bordered"
                         lineHeight={["90%"]}
                         fontWeight={700}
-                        alignItems={["center", "unset"]}
+                        alignItems="center"
                         bg={theme.colors.cardBackground}
                         px={["1.8rem", null, "2.4rem", "3.2rem"]}
                         py={["1.8rem", null, null, "1.8rem"]}
@@ -148,7 +148,7 @@ const HowItWorksBlock = (props: any) => {
                             [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
                                 {
                                     width: "57.6rem !important",
-                                    py: "7.4rem !important",
+                                    // py: "7.4rem !important",
                                 },
                         }}
                     >

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Flex, Box, Text, Link } from "rebass";
+import { Flex, Box, Text } from "rebass";
 import { useTheme } from "styled-components";
 
 import Fade from "../common/Fade";
@@ -29,6 +29,8 @@ const Hero = () => {
             <Flex
                 flexDirection={["column", "row"]}
                 justifyContent={["auto", "space-between"]}
+                alignItems={["auto", "center"]}
+                paddingY={["2rem", "6rem", "12rem"]}
                 sx={{
                     ...theme.boxSizes.defaultBox,
                     zIndex: 1,
@@ -46,17 +48,14 @@ const Hero = () => {
                     sx={{
                         position: "relative",
                         pr: "1rem",
-                        pt: ["3rem", "7.6rem", "9rem", "12.8rem"],
                         flexGrow: 1,
                         maxWidth: [null, "36rem", "42rem", "60rem"],
                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
                             {
-                                pt: "10.4rem",
                                 maxWidth: "64rem",
                             },
                         [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
                             {
-                                pt: "14.6rem",
                                 maxWidth: "68rem",
                             },
                     }}
@@ -125,50 +124,40 @@ const Hero = () => {
                 {/* IMAGE / VIDEO */}
                 <Box
                     sx={{
-                        ml: [
-                            null,
-                            null,
-                            // '4.2rem'
-                        ],
                         position: "relative",
                         top: [0, "2.4rem"],
                     }}
                 >
                     <Fade sx={{ position: "relative" }}>
                         <Box
+                            as="video"
                             sx={{
-                                backgroundImage: `url(https://res.cloudinary.com/guido-la-rosa/image/upload/v1657847734/carrot/Header-image_big_auuteh.png)`,
                                 width: [
                                     "100%",
                                     "calc(2.4rem * 11)",
                                     "31.2rem",
                                     "40.8rem",
                                 ],
-                                height: [
-                                    "120vw",
-                                    "calc(2.4rem * 16)",
-                                    "43.66rem",
-                                    "57rem",
-                                ],
                                 borderRadius: ["0.85rem", null, "1.3rem"],
                                 border: `0.1rem solid ${theme.colors.imageBorder}`,
-                                backgroundRepeat: "no-repeat",
-                                backgroundSize: "cover",
-                                backgroundPosition: "center",
+                                backgroundColor: "#828282",
                                 position: "relative",
-                                top: [null, null, null, "-2.4rem"],
                                 [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
                                     {
-                                        width: "50rem",
-                                        height: "69.9rem",
+                                        width: "60rem",
                                     },
                                 [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
                                     {
-                                        width: "70rem",
-                                        height: "82.1rem",
+                                        width: "80rem",
                                     },
                             }}
+                            controls
                         >
+                            <source
+                                src="https://d2l3j8l4t44bvz.cloudfront.net"
+                                type="video/webm"
+                            />
+                            Not supported
                             <PlayVideoButton
                                 label={"HOW IT WORKS"}
                                 sx={{
@@ -194,8 +183,7 @@ const SideLink = (props: any) => {
     const theme: any = useTheme();
 
     return (
-        <Link
-            href="https://dxdao.eth.limo/"
+        <Text
             target="_blank"
             className={"int-cursor"}
             sx={{
@@ -226,7 +214,7 @@ const SideLink = (props: any) => {
                 }}
             />
             {props.children}
-        </Link>
+        </Text>
     );
 };
 
@@ -253,8 +241,7 @@ const SideText = () => {
                 },
             }}
         >
-            <SideLink top="10.9rem">BY DXDAO</SideLink>
-            <SideLink top="42.1rem">100% DECENTRALIZE</SideLink>
+            <SideLink top="42.1rem">100% DECENTRALIZED</SideLink>
         </Flex>
     );
 };
