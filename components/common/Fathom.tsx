@@ -1,9 +1,7 @@
 import { initialize as initializeFathom } from "use-fathom-client";
 import { registeredEventsResolver } from "../../out/fathom/utilities";
 
-const FATHOM_SITE_ID = process.env.REACT_APP_FATHOM_SITE_ID;
-
-console.log({ FATHOM_SITE_ID });
+const FATHOM_SITE_ID = process.env.NEXT_PUBLIC_FATHOM_SITE_ID;
 
 if (!FATHOM_SITE_ID) console.warn("Fathom tracking is disabled");
 
