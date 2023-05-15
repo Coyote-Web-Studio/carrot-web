@@ -8,7 +8,7 @@ and the preferred package manager is `yarn`.
 
 This application serves as Carrot's landing page, providing an overview of the
 protocol and its key features. It was built using Next.js and bootstrapped with
-create-next-app, utilizing Typescript
+`create-next-app`, utilizing Typescript
 
 ## Getting started
 
