@@ -1,12 +1,11 @@
 import { useRef } from "react";
-import { Flex, Box, Text } from "rebass";
+import { Flex, Box, Text, Link } from "rebass";
 import { useTheme } from "styled-components";
-
 import Fade from "../common/Fade";
 import AnimatedText from "../common/AnimatedText";
-
 import PlayVideoButton from "../common/PlayVideoButton";
 import Button3D from "../common/Button3D";
+import { CARROT_DOMAIN } from "../../constants";
 
 const Hero = () => {
     const heroContentRef = useRef(null);
@@ -109,16 +108,22 @@ const Hero = () => {
                                 more. Yes, on any campaign. Carrot does it all.
                             </AnimatedText>
                         </Text>
-                        <Button3D
-                            buttonWrapperStyles={{
-                                mb: "2.4rem",
-                                position: "relative",
-                                top: [0, "-0.4rem", "0.25rem"],
-                                minWidth: "unset",
-                            }}
+                        <Link
+                            href={`https://app.${CARROT_DOMAIN}/#/create`}
+                            target="_blank"
+                            rel="noopener noreferred"
                         >
-                            CREATE YOUR CAMPAIGN
-                        </Button3D>
+                            <Button3D
+                                buttonWrapperStyles={{
+                                    mb: "2.4rem",
+                                    position: "relative",
+                                    top: [0, "-0.4rem", "0.25rem"],
+                                    minWidth: "unset",
+                                }}
+                            >
+                                CREATE YOUR CAMPAIGN
+                            </Button3D>
+                        </Link>
                     </Fade>
                 </Flex>
                 {/* IMAGE / VIDEO */}
