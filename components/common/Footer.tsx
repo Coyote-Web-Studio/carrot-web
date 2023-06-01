@@ -120,6 +120,7 @@ const Footer = () => {
                                 <Text
                                     fontSize={"1.4rem"}
                                     mb={["0.8rem", "2.4rem"]}
+                                    fontWeight={500}
                                     color={theme.colors.gray1}
                                     sx={{
                                         [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
