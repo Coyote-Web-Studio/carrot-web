@@ -26,7 +26,21 @@ for the Carrot landing page.
 
 ## Getting Started
 
-First, run the development server:
+Start by installing the dependencies with `yarn`:
+
+```
+yarn install
+```
+
+An env variable is required to start the landing page and it determines if the
+landing page should run in dev mode or not. Create a `.env.local` file at the
+root of the repo and add the `NEXT_PUBLIC_DEV` env. You can set it to either
+true or false to determine how the landing page will run.
+
+Alternatively, just copy/paste and rename the `.env.example` file at the root of
+the project to `.env.local` and give a value to the env variables there.
+
+Once the env has been set up, you can start the dev server with:
 
 ```
 yarn dev
