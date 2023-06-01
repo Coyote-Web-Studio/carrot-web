@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Image } from "rebass";
+import { Box, Flex, Text, Image, Link } from "rebass";
 import Button from "../common/Button";
 import { useState } from "react";
 import { useTheme } from "styled-components";
@@ -130,7 +130,11 @@ const JoinTheCommunity = () => {
                     >
                         {props.data.detail}
                     </Text>
-                    <Box>
+                    <Link
+                        href={props.data.buttonLink}
+                        target="_blank"
+                        rel="noopener noreferred"
+                    >
                         <Button
                             className={isButtonHovered ? "hovered" : ""}
                             onMouseEnter={() => {
@@ -148,10 +152,11 @@ const JoinTheCommunity = () => {
                                     },
                                 },
                             }}
+                            href={props.data.buttonLink}
                         >
                             {props.data.buttonLabel}
                         </Button>
-                    </Box>
+                    </Link>
                 </Flex>
             </Flex>
         );
@@ -524,7 +529,7 @@ const CommunityData = [
             "https://res.cloudinary.com/guido-la-rosa/image/upload/v1660236544/carrot/community/SocialMedia_Logos-2_akp599.svg",
         detail: "Join in on community discussion on the Carrot Discord.",
         buttonLabel: "JOIN DISCORD",
-        buttonLink: "#",
+        buttonLink: "https://discord.gg/vssJce4H",
     },
     {
         img: "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657852804/carrot/community/SocialMedia_Logos-1_torz3r.svg",
@@ -532,7 +537,7 @@ const CommunityData = [
             "https://res.cloudinary.com/guido-la-rosa/image/upload/v1660236543/carrot/community/SocialMedia_Logos-1_kkyh6t.svg",
         detail: "Contribute to the Carrot repositories on Github.",
         buttonLabel: "JOIN GITHUB",
-        buttonLink: "#",
+        buttonLink: "https://github.com/carrot-kpi",
     },
     {
         img: "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657852804/carrot/community/SocialMedia_Logos-2_dp4zz3.svg",
@@ -540,7 +545,7 @@ const CommunityData = [
             "https://res.cloudinary.com/guido-la-rosa/image/upload/v1660236543/carrot/community/SocialMedia_Logos_rtolaw.svg",
         detail: "Get the latest Carrot announcements on the Swapr Twitter.",
         buttonLabel: "JOIN TWITTER",
-        buttonLink: "#",
+        buttonLink: "https://twitter.com/CarrotEth",
     },
 ];
 

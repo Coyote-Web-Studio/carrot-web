@@ -4,8 +4,8 @@ import Logo from "./Logo";
 import GridBackground from "./GridBackground";
 import Fade from "./Fade";
 import Button3D from "./Button3D";
-
 import FooterLinks from "./../../content/footer-navigation";
+import { CARROT_DOMAIN } from "../../constants";
 
 const Footer = () => {
     const theme: any = useTheme();
@@ -155,25 +155,31 @@ const Footer = () => {
                             </Flex>
                         ))}
                     </Flex>
-                    <Button3D
-                        buttonWrapperStyles={{
-                            mt: "auto",
-                            bg: theme.colors.gray10,
-                            [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
-                                {
-                                    color: theme.colors.orange6,
-                                },
-                            "&:hover .button": {
-                                background: theme.colors.gray10,
-                                boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBackground}`,
-                                span: {
-                                    color: theme.colors.orange6,
-                                },
-                            },
-                        }}
+                    <Link
+                        href={`https://app.${CARROT_DOMAIN}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        CARROT DAPP
-                    </Button3D>
+                        <Button3D
+                            buttonWrapperStyles={{
+                                mt: "auto",
+                                bg: theme.colors.gray10,
+                                [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
+                                    {
+                                        color: theme.colors.orange6,
+                                    },
+                                "&:hover .button": {
+                                    background: theme.colors.gray10,
+                                    boxShadow: `0 0 0 0.1rem ${theme.colors.buttonBackground}`,
+                                    span: {
+                                        color: theme.colors.orange6,
+                                    },
+                                },
+                            }}
+                        >
+                            CARROT DAPP
+                        </Button3D>
+                    </Link>
                 </Flex>
             </Flex>
         </Flex>

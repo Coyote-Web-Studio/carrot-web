@@ -3,6 +3,7 @@ import Button from "./Button";
 import { useTheme } from "styled-components";
 import NavLinks from "../../content/navigation";
 import GridBackground from "./GridBackground";
+import { CARROT_DOMAIN } from "../../constants";
 
 const MobileNavbar = (props: any) => {
     const theme: any = useTheme();
@@ -124,7 +125,13 @@ const MobileNavbar = (props: any) => {
                         alignItems: "center",
                     }}
                 >
-                    <Button>CARROT DAPP</Button>
+                    <Link
+                        href={`https://app.${CARROT_DOMAIN}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button>CARROT DAPP</Button>
+                    </Link>
                     {/* <StyleSwitch /> */}
                 </Flex>
             </Flex>

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Flex, Box } from "rebass";
+import { Flex, Box, Link } from "rebass";
 import styled, { useTheme } from "styled-components";
 import Logo from "./Logo";
 import HamburgerIcon from "./HamburgerIcon";
 import Button3D from "./Button3D";
 import MobileNavbar from "./MobileNavbar";
 import NavigationLinks from "./NavigationLinks";
+import { CARROT_DOMAIN } from "../../constants";
 
 const Navbar = () => {
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
@@ -70,14 +71,20 @@ const Navbar = () => {
                         }}
                     /> */}
                 </Box>
-                <Button3D
-                    buttonWrapperStyles={{
-                        ml: ["2.4rem", "1.2rem", "2.4rem", "3.2rem"],
-                        display: ["none", "flex"],
-                    }}
+                <Link
+                    href={`https://app.${CARROT_DOMAIN}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                 >
-                    CARROT DAPP
-                </Button3D>
+                    <Button3D
+                        buttonWrapperStyles={{
+                            ml: ["2.4rem", "1.2rem", "2.4rem", "3.2rem"],
+                            display: ["none", "flex"],
+                        }}
+                    >
+                        CARROT DAPP
+                    </Button3D>
+                </Link>
                 <Flex
                     className="mobile-controls"
                     sx={{
