@@ -3,7 +3,6 @@ import { Flex, Box, Text, Link } from "rebass";
 import { useTheme } from "styled-components";
 import Fade from "../common/Fade";
 import AnimatedText from "../common/AnimatedText";
-import PlayVideoButton from "../common/PlayVideoButton";
 import Button3D from "../common/Button3D";
 import { CARROT_DOMAIN } from "../../constants";
 
@@ -14,7 +13,6 @@ const Hero = () => {
 
     return (
         <Flex
-            className="hero"
             sx={{
                 position: "relative",
                 pb: ["4.2rem", "4.8rem", null, "6.4rem"],
@@ -163,19 +161,6 @@ const Hero = () => {
                                 type="video/webm"
                             />
                             Not supported
-                            <PlayVideoButton
-                                label={"HOW IT WORKS"}
-                                sx={{
-                                    position: "absolute",
-                                    bottom: ["3rem", "4rem"],
-                                    zIndex: 1,
-                                    ml: ["4rem"],
-                                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
-                                        {
-                                            bottom: "4rem",
-                                        },
-                                }}
-                            />
                         </Box>
                     </Fade>
                 </Box>
