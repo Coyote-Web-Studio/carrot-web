@@ -1,9 +1,8 @@
 import { Flex, Link, Text } from "rebass";
 import Button from "./Button";
 import { useTheme } from "styled-components";
-import NavLinks from "../../content/navigation";
 import GridBackground from "./GridBackground";
-import { CARROT_DOMAIN } from "../../constants";
+import { CARROT_DOMAIN, NAV_LINKS } from "../../constants";
 
 const MobileNavbar = (props: any) => {
     const theme: any = useTheme();
@@ -70,7 +69,7 @@ const MobileNavbar = (props: any) => {
                             pl: "1rem",
                         }}
                     >
-                        {NavLinks.map((link, index) => (
+                        {NAV_LINKS.map((link, index) => (
                             <Link
                                 fontFamily={"IBM Plex Mono"}
                                 fontSize={["2.4rem"]}
@@ -80,7 +79,7 @@ const MobileNavbar = (props: any) => {
                                 onClick={() => {
                                     props.setIsOpen(false);
                                     let element = document.getElementById(
-                                        link.scrollTo
+                                        link.to
                                     );
                                     if (element) {
                                         setTimeout(() => {

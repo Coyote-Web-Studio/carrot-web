@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
-import { Flex, Box, Link } from "rebass";
-import styled, { useTheme } from "styled-components";
+import { Flex } from "rebass";
 import Logo from "./Logo";
 import HamburgerIcon from "./HamburgerIcon";
-import Button3D from "./Button3D";
+import { Button } from "@carrot-kpi/ui";
 import MobileNavbar from "./MobileNavbar";
-import NavigationLinks from "./NavigationLinks";
-import { CARROT_DOMAIN } from "../../constants";
+import NavigationLink from "./NavLink";
+import { CARROT_DOMAIN, NAV_LINKS } from "../../constants";
 
 const Navbar = () => {
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
-    const theme: any = useTheme();
 
     useEffect(() => {
         let body = document.querySelector("html");
@@ -20,43 +18,15 @@ const Navbar = () => {
     }, [isMobileNavbarOpen]);
 
     return (
-        <StyledNavbar
-            sx={{
-                width: "100%",
-                pt: ["2.4rem", "2.4rem", null, "4rem"],
-                pb: ["3.2rem", "2.4rem", null, "3.3rem"],
-                [`@media screen and (min-width: 2800px)`]: {
-                    transform: "scale(1.5)",
-                    transformOrigin: "top center",
-                },
-            }}
-        >
-            <Flex
-                sx={theme.boxSizes.navbarBox}
-                alignItems={"center"}
-                justifyContent={"space-between"}
-            >
-                <Logo
-                    color={theme.colors.logoColor}
-                    sx={{
-                        width: "188px",
-                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
-                            {
-                                height: "5.6rem",
-                            },
-                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
-                            {
-                                height: "9.3rem",
-                            },
-                    }}
-                />
-                <Box
-                    sx={{
-                        display: ["none", "flex"],
-                        alignItems: "center",
-                    }}
-                >
-                    <NavigationLinks />
+        <div className="flex w-full px-6 xl:px-32 py-8 xl:py-11">
+            <div className="w-full flex items-center justify-between">
+                <Logo className="w-32 h-auto xl:w-[188px] text-black" />
+                <div className="hidden sm:block">
+                    <nav className="flex space-x-8">
+                        {NAV_LINKS.map((link, index) => {
+                            return <NavigationLink key={index} {...link} />;
+                        })}
+                    </nav>
                     {/* <StyleSwitch
                         sx={{
                             ml: ["2.4rem", "1.2rem", null, "3.2rem"],
@@ -70,21 +40,21 @@ const Navbar = () => {
                                 },
                         }}
                     /> */}
-                </Box>
-                <Link
+                </div>
+                <a
                     href={`https://app.${CARROT_DOMAIN}`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <Button3D
+                    <Button
                         buttonWrapperStyles={{
                             ml: ["2.4rem", "1.2rem", "2.4rem", "3.2rem"],
                             display: ["none", "flex"],
                         }}
                     >
                         CARROT DAPP
-                    </Button3D>
-                </Link>
+                    </Button>
+                </a>
                 <Flex
                     className="mobile-controls"
                     sx={{
@@ -99,15 +69,13 @@ const Navbar = () => {
                         }}
                     />
                 </Flex>
-            </Flex>
+            </div>
             <MobileNavbar
                 isOpen={isMobileNavbarOpen}
                 setIsOpen={setIsMobileNavbarOpen}
             />
-        </StyledNavbar>
+        </div>
     );
 };
-
-const StyledNavbar = styled(Flex)``;
 
 export default Navbar;

@@ -1,18 +1,22 @@
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/ibm-plex-mono/700.css";
+import "@carrot-kpi/switzer-font/400.css";
+import "@carrot-kpi/switzer-font/500.css";
+import "@carrot-kpi/switzer-font/700.css";
+import "@carrot-kpi/ui/styles.css";
+
+import "../styles/global.css";
 import "../styles/nprogress.css";
 
 import "aos/dist/aos.css";
 import "@splidejs/react-splide/css";
 
-import "@fontsource/inter/700.css";
-
-import "@fontsource/ibm-plex-mono/300.css";
-import "@fontsource/ibm-plex-mono/400.css";
-
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import AOS from "aos";
 import ThemeContext from "./../context/theme";
-import GlobalStyle from "../styles/global.css";
+// import GlobalStyle from "../styles/global.css";
 import { ParallaxProvider } from "react-scroll-parallax";
 import Loading from "../components/common/Loading";
 import { initialize as initializeFathom } from "use-fathom-client";
@@ -57,7 +61,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <ThemeContext>
-            <GlobalStyle />
+            {/* <GlobalStyle /> */}
             <ParallaxProvider>
                 <Loading />
                 <Component {...pageProps} />
