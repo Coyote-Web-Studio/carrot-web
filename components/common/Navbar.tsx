@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Flex } from "rebass";
 import Logo from "./Logo";
 import HamburgerIcon from "./HamburgerIcon";
 import { Button } from "@carrot-kpi/ui";
@@ -45,30 +44,18 @@ const Navbar = () => {
                     href={`https://app.${CARROT_DOMAIN}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="dark"
                 >
-                    <Button
-                        buttonWrapperStyles={{
-                            ml: ["2.4rem", "1.2rem", "2.4rem", "3.2rem"],
-                            display: ["none", "flex"],
-                        }}
-                    >
-                        CARROT DAPP
-                    </Button>
+                    <Button>CARROT DAPP</Button>
                 </a>
-                <Flex
-                    className="mobile-controls"
-                    sx={{
-                        display: ["inline-block", "none"],
-                        ml: "auto",
-                    }}
-                >
+                <div className="mobile-controls inline-block sm:hidden ml-auto">
                     <HamburgerIcon
                         isOpen={isMobileNavbarOpen}
                         onClick={() => {
                             setIsMobileNavbarOpen(!isMobileNavbarOpen);
                         }}
                     />
-                </Flex>
+                </div>
             </div>
             <MobileNavbar
                 isOpen={isMobileNavbarOpen}

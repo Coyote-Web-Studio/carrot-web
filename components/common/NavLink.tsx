@@ -16,7 +16,7 @@ const NavLink = ({ to, label }: NavLinkType) => {
 
     return (
         <a href="#" onClick={handleClick}>
-            <Typography variant="lg">↳ {label}</Typography>
+            <Typography>↳ {label}</Typography>
         </a>
     );
 };

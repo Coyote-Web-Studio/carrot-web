@@ -1,87 +1,62 @@
-import { Text } from "rebass";
-import { keyframes } from "@emotion/react";
 import { Fragment, useEffect, useRef, useState } from "react";
+import { cva } from "class-variance-authority";
+
+const letterStyles = cva(["opacity-0"], {
+    variants: {
+        visible: {
+            true: ["animate-text-fade-in"],
+        },
+    },
+});
 
 const AnimatedText = (props: any) => {
     let letterCounter = 0;
+    const animationRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
-    const ioCallback = (e: any) => {
-        if (e[0].isIntersecting) {
-            setIsVisible(e[0].isIntersecting);
-        }
-    };
-
-    const animationRef = useRef(null);
-
     useEffect(() => {
-        let options = {
-            rootMargin: "100px 0px",
-            threshold: 1.0,
-        };
+        let observer = new IntersectionObserver(
+            (e: any) => {
+                if (e[0].isIntersecting) {
+                    setIsVisible(e[0].isIntersecting);
+                }
+            },
+            {
+                rootMargin: "100px 0px",
+                threshold: 1.0,
+            }
+        );
 
-        let observer = new IntersectionObserver(ioCallback, options);
-
-        if (animationRef.current) {
-            observer.observe(animationRef.current);
-        }
+        if (animationRef.current) observer.observe(animationRef.current);
     }, []);
 
-    const initialTextState = {
-        opacity: 0,
-    };
-
-    const endTextState = {
-        opacity: 1,
-    };
-
-    const textAnimation = keyframes({
-        ["0%"]: {
-            ...initialTextState,
-        },
-        ["20%"]: {
-            ...initialTextState,
-        },
-        ["60%"]: {
-            ...endTextState,
-        },
-        ["100%"]: {
-            ...endTextState,
-        },
+    return props.children.split(" ").map((word: any, i: any) => {
+        return (
+            <Fragment key={i}>
+                <span
+                    className="word inline-block whitespace-nowrap"
+                    ref={animationRef}
+                >
+                    {word.split("").map((character: any, j: any) => (
+                        <span
+                            className={letterStyles({ visible: isVisible })}
+                            style={{
+                                color: props.color,
+                                animationDelay: `${
+                                    ++letterCounter * props.speed +
+                                    props.initialDelay
+                                }ms`,
+                            }}
+                            key={j}
+                        >
+                            {character}
+                        </span>
+                    ))}
+                </span>
+                <span> </span>
+            </Fragment>
+        );
     });
-
-    return props.children.split(" ").map((word: any, i: any) => (
-        <Fragment key={i}>
-            <Text
-                as={"span"}
-                className={"word"}
-                sx={{ display: "inline-block", whiteSpace: "nowrap" }}
-                ref={animationRef}
-            >
-                {word.split("").map((character: any, j: any) => (
-                    <Text
-                        as={"span"}
-                        sx={{
-                            ...initialTextState,
-                            color: props.color,
-                            animation: isVisible
-                                ? `${textAnimation} 0.50s ease-out forwards`
-                                : "none",
-                            animationDelay: `${
-                                ++letterCounter * props.speed +
-                                props.initialDelay
-                            }ms`,
-                            display: "inline-block",
-                        }}
-                        key={j}
-                    >
-                        {character}
-                    </Text>
-                ))}
-            </Text>
-            <Text as={"span"}> </Text>
-        </Fragment>
-    ));
 };
 
 AnimatedText.defaultProps = {

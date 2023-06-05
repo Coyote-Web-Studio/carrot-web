@@ -7,7 +7,6 @@ import "@carrot-kpi/switzer-font/700.css";
 import "@carrot-kpi/ui/styles.css";
 
 import "../styles/global.css";
-import "../styles/nprogress.css";
 
 import "aos/dist/aos.css";
 import "@splidejs/react-splide/css";
@@ -18,7 +17,6 @@ import AOS from "aos";
 import ThemeContext from "./../context/theme";
 // import GlobalStyle from "../styles/global.css";
 import { ParallaxProvider } from "react-scroll-parallax";
-import Loading from "../components/common/Loading";
 import { initialize as initializeFathom } from "use-fathom-client";
 import { useFathomTrackPageWatch } from "../hooks/useFathomTrackPageWatch";
 
@@ -61,9 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <ThemeContext>
-            {/* <GlobalStyle /> */}
             <ParallaxProvider>
-                <Loading />
                 <Component {...pageProps} />
             </ParallaxProvider>
         </ThemeContext>
