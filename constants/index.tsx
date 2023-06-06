@@ -135,3 +135,31 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
         ),
     },
 ];
+
+export interface CommunityData {
+    img: string;
+    detail: string;
+    buttonLabel: string;
+    buttonLink: string;
+}
+
+export const COMMUNITY_DATA: CommunityData[] = [
+    {
+        img: "/banner-images/community/discord.svg",
+        detail: "Join in on community discussion on the Carrot Discord.",
+        buttonLabel: "JOIN DISCORD",
+        buttonLink: "https://discord.gg/vssJce4H",
+    },
+    {
+        img: "/banner-images/community/github.svg",
+        detail: "Contribute to the Carrot repositories on Github.",
+        buttonLabel: "JOIN GITHUB",
+        buttonLink: "https://github.com/carrot-kpi",
+    },
+    {
+        img: "/banner-images/community/twitter.svg",
+        detail: "Get the latest Carrot announcements on the Swapr Twitter.",
+        buttonLabel: "JOIN TWITTER",
+        buttonLink: "https://twitter.com/CarrotEth",
+    },
+];
