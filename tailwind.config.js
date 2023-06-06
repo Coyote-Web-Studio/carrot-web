@@ -11,6 +11,7 @@ module.exports = {
                 "marquee-slow": "marquee 207s linear infinite",
                 "marquee-fast": "marquee 138s linear infinite",
                 "text-fade-in": "text-fade-in 0.4s ease-out forwards",
+                "fade-up": "fade-up 0.4s ease-out forwards",
             },
             keyframes: {
                 marquee: {
@@ -29,6 +30,16 @@ module.exports = {
                     },
                     "100%": {
                         opacity: 1,
+                    },
+                },
+                "fade-up": {
+                    "0%": {
+                        opacity: 0,
+                        transform: "translateY(40px)",
+                    },
+                    "100%": {
+                        opacity: 1,
+                        transform: "translateY(0px)",
                     },
                 },
             },
