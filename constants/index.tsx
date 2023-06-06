@@ -158,7 +158,7 @@ export const COMMUNITY_DATA: CommunityData[] = [
     },
     {
         img: "/banner-images/community/twitter.svg",
-        detail: "Get the latest Carrot announcements on the Swapr Twitter.",
+        detail: "Get the latest Carrot announcements on Twitter.",
         buttonLabel: "JOIN TWITTER",
         buttonLink: "https://twitter.com/CarrotEth",
     },
