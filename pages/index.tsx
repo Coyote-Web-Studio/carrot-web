@@ -2,12 +2,13 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import Navbar from "../components/common/Navbar";
-import Footer from "../components/common/Footer";
 import Hero from "../components/homepage/Hero";
 import Marquees from "./../components/homepage/Marquees";
 import JoinTheCommunity from "../components/homepage/JoinTheCommunity";
 import Breakdown from "../components/homepage/Breakdown";
 import HowItWorks from "../components/homepage/HowItWorks";
+import { Footer } from "../components/common/footer";
+import { FOOTER_LINKS } from "../constants";
 
 const Home: NextPage = () => {
     return (
@@ -33,7 +34,7 @@ const Home: NextPage = () => {
                     <JoinTheCommunity />
                 </div>
                 <div className="z-0">
-                    <Footer />
+                    <Footer footerLinks={FOOTER_LINKS} />
                 </div>
             </div>
         </>

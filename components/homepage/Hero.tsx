@@ -12,7 +12,7 @@ const Hero = () => {
                     >
                         Reach your goals with a Carrot
                     </Typography>
-                    <div className="flex flex-col gap-20">
+                    <div className="flex flex-col gap-14">
                         <Typography variant="lg">
                             Increase your TVL, volume, price, engagement and
                             more. Yes, on any campaign. Carrot does it all.

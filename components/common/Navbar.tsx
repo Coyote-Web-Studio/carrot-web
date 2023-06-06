@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Logo from "./Logo";
+import Logo from "../../icons/logo";
 import HamburgerIcon from "./HamburgerIcon";
 import { Button } from "@carrot-kpi/ui";
 import MobileNavbar from "./MobileNavbar";
