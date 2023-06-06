@@ -4,7 +4,7 @@
 
 @layer utilities {
     .bg-grid-light {
-        @apply bg-center;
+        @apply bg-left-top;
         @apply bg-2 md:bg-4;
         @apply bg-black-squares;
     }

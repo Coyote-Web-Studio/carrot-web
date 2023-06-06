@@ -1,8 +1,8 @@
-import Fade from "../common/Fade";
-import AnimatedText from "../common/AnimatedText";
 import { useParallax } from "react-scroll-parallax";
-import Image from "next/image";
-import { MAIN_CONTENT } from "../../constants";
+import {
+    MAIN_CONTENT,
+    ContentBlock as ContentBlockType,
+} from "../../constants";
 import { cva } from "class-variance-authority";
 import { Typography } from "@carrot-kpi/ui";
 
@@ -25,56 +25,51 @@ const Breakdown = () => {
     return (
         <div id="about" className="relative flex flex-col gap-40 my-40">
             <div className="absolute right-12 lg:right-40 hidden md:block z-10 md:w-16 md:h-16 lg:w-40 lg:h-40 md:top-40">
-                <Image
-                    alt="Sphere"
-                    fill
-                    src="/misc/sphere.png"
-                    ref={sphereRef}
-                />
+                <picture>
+                    <img alt="Sphere" src="/misc/sphere.png" ref={sphereRef} />
+                </picture>
             </div>
             {MAIN_CONTENT.map((contentBlock, index: number) => {
                 return (
-                    <Fade
+                    <ContentBlock
                         key={index}
-                        sx={{
-                            mb: ["4.8rem", null, null, "6.4rem"],
-                            position: "relative",
-                            "&:last-child": {
-                                mb: "0",
-                            },
-                        }}
-                    >
-                        <div
-                            className={sectionStyles({
-                                reverseRow: index % 2 !== 0,
-                            })}
-                        >
-                            <picture>
-                                <img
-                                    src={contentBlock.image}
-                                    alt="img"
-                                    className="border border-black rounded-2xl w-full h-[19.2rem] md:w-[33.125rem] md:h-[24rem] lg:w-[44rem] lg:h-[24rem]"
-                                />
-                            </picture>
-                            <div className="flex flex-col max-w-3xl justify-center">
-                                <Typography
-                                    variant="h2"
-                                    className={{ root: "text-[4.3rem] mb-8" }}
-                                >
-                                    <AnimatedText speed={20}>
-                                        {contentBlock.heading}
-                                    </AnimatedText>
-                                </Typography>
-                                <Typography variant="lg">
-                                    <AnimatedText speed={5}>
-                                        {contentBlock.content}
-                                    </AnimatedText>
-                                </Typography>
-                            </div>
-                        </div>
-                    </Fade>
+                        {...contentBlock}
+                        reverseRow={index % 2 !== 0}
+                    />
                 );
             })}
+        </div>
+    );
+};
+
+interface ContentBlockProps extends ContentBlockType {
+    reverseRow: boolean;
+}
+
+const ContentBlock = ({
+    reverseRow,
+    image,
+    heading,
+    content,
+}: ContentBlockProps) => {
+    return (
+        <div className={sectionStyles({ reverseRow })}>
+            <picture>
+                <img
+                    src={image}
+                    alt="img"
+                    className="border border-black rounded-2xl w-full h-[19.2rem] md:w-[33.125rem] md:h-[24rem] lg:w-[44rem] lg:h-[24rem]"
+                />
+            </picture>
+            <div className="flex flex-col max-w-3xl justify-center">
+                <Typography
+                    variant="h2"
+                    className={{ root: "text-[4.3rem] mb-8" }}
+                >
+                    {heading}
+                </Typography>
+                <Typography variant="lg">{content}</Typography>
+            </div>
         </div>
     );
 };

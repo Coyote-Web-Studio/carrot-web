@@ -15,7 +15,6 @@ export const HamburgerIcon = (props: any) => {
     };
 
     const onClick = () => {
-        console.log("he");
         props.onClick && props.onClick();
         setIsActive(!isActive);
     };

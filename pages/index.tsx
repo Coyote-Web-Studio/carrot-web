@@ -5,8 +5,9 @@ import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Hero from "../components/homepage/Hero";
 import Marquees from "./../components/homepage/Marquees";
-import MainContent from "../components/homepage/MainContent";
 import JoinTheCommunity from "../components/homepage/JoinTheCommunity";
+import Breakdown from "../components/homepage/Breakdown";
+import HowItWorks from "../components/homepage/HowItWorks";
 
 const Home: NextPage = () => {
     return (
@@ -22,7 +23,12 @@ const Home: NextPage = () => {
                     <Navbar />
                     <Hero />
                     <Marquees />
-                    <MainContent />
+                    <Breakdown />
+                    <HowItWorks />
+                    {/* <SuccesfulCampaigns /> */}
+                    {/* <CarrotInNumbers /> */}
+                    {/* <TrustingProtocols /> */}
+                    {/* <Testimonials /> */}
                     <Marquees />
                     <JoinTheCommunity />
                 </div>

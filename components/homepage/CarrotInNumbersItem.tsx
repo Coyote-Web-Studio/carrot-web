@@ -38,7 +38,6 @@ const CarrotInNumbersItem = (props: any) => {
 
     const ioCallback = (e: any) => {
         if (e[0].isIntersecting) {
-            console.log("is visible");
             setIsVisible(e[0].isIntersecting);
         }
     };

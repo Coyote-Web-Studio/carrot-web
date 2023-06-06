@@ -3,10 +3,14 @@ module.exports = {
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./constants/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     presets: [require("@carrot-kpi/ui/tailwind-preset")],
     theme: {
         extend: {
+            boxShadow: {
+                border: "0 0 0 1px rgb(0, 0, 0);",
+            },
             animation: {
                 "marquee-slow": "marquee 207s linear infinite",
                 "marquee-fast": "marquee 138s linear infinite",

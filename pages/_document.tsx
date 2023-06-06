@@ -6,7 +6,7 @@ export default function Document() {
             <Head>
                 <link rel="icon" href="/favicon.svg" />
             </Head>
-            <body style={{ visibility: "hidden" }}>
+            <body>
                 <Main />
                 <NextScript />
             </body>
