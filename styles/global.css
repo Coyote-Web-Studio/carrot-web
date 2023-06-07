@@ -18,5 +18,5 @@
 
 html,
 body {
-    @apply w-screen h-screen overflow-x-hidden;
+    @apply w-screen h-screen;
 }

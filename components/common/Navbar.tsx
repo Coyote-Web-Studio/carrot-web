@@ -1,20 +1,23 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import Logo from "../../icons/logo";
-import HamburgerIcon from "./HamburgerIcon";
 import { Button } from "@carrot-kpi/ui";
 import MobileNavbar from "./MobileNavbar";
 import NavigationLink from "./NavLink";
 import { CARROT_DOMAIN, NAV_LINKS } from "../../constants";
+import Menu from "../../icons/menu";
 
 const Navbar = () => {
     const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
 
-    useEffect(() => {
-        let body = document.querySelector("html");
-        if (body !== null) {
-            body.style.overflow = isMobileNavbarOpen ? "hidden" : "auto";
-        }
-    }, [isMobileNavbarOpen]);
+    const handleMobileNavbarOpen = useCallback(() => {
+        setIsMobileNavbarOpen(true);
+        document.body.style.overflow = "hidden";
+    }, []);
+
+    const handleMobileNavbarClose = useCallback(() => {
+        setIsMobileNavbarOpen(false);
+        document.body.style.overflow = "auto";
+    }, []);
 
     return (
         <div className="flex w-full px-6 xl:px-32 py-8 xl:py-11">
@@ -48,19 +51,16 @@ const Navbar = () => {
                 >
                     <Button>CARROT DAPP</Button>
                 </a>
-                <div className="mobile-controls inline-block sm:hidden ml-auto">
-                    <HamburgerIcon
-                        isOpen={isMobileNavbarOpen}
-                        onClick={() => {
-                            setIsMobileNavbarOpen(!isMobileNavbarOpen);
-                        }}
+                <div className="md:hidden flex items-center">
+                    <Menu
+                        className="cursor-pointer xl:hidden"
+                        onClick={handleMobileNavbarOpen}
                     />
                 </div>
             </div>
-            <MobileNavbar
-                isOpen={isMobileNavbarOpen}
-                setIsOpen={setIsMobileNavbarOpen}
-            />
+            {isMobileNavbarOpen && (
+                <MobileNavbar onClose={handleMobileNavbarClose} />
+            )}
         </div>
     );
 };

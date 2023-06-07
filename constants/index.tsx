@@ -15,13 +15,17 @@ export const NAV_LINKS: NavLink[] = [
         to: "about",
     },
     {
-        label: "PARTNER",
-        to: "partners",
+        label: "HOW IT WORKS",
+        to: "how-it-works",
     },
-    {
-        label: "CAMPAIGNS",
-        to: "campaigns",
-    },
+    // {
+    //     label: "PARTNER",
+    //     to: "partners",
+    // },
+    // {
+    //     label: "CAMPAIGNS",
+    //     to: "campaigns",
+    // },
     {
         label: "COMMUNITY",
         to: "community",
@@ -145,19 +149,19 @@ export interface CommunityData {
 
 export const COMMUNITY_DATA: CommunityData[] = [
     {
-        img: "/banner-images/community/discord.svg",
+        img: "/community/discord.svg",
         detail: "Join in on community discussion on the Carrot Discord.",
         buttonLabel: "JOIN DISCORD",
         buttonLink: "https://discord.gg/vssJce4H",
     },
     {
-        img: "/banner-images/community/github.svg",
+        img: "/community/github.svg",
         detail: "Contribute to the Carrot repositories on Github.",
         buttonLabel: "JOIN GITHUB",
         buttonLink: "https://github.com/carrot-kpi",
     },
     {
-        img: "/banner-images/community/twitter.svg",
+        img: "/community/twitter.svg",
         detail: "Get the latest Carrot announcements on Twitter.",
         buttonLabel: "JOIN TWITTER",
         buttonLink: "https://twitter.com/CarrotEth",

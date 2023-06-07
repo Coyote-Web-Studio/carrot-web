@@ -3,7 +3,7 @@ import { Typography, Button } from "@carrot-kpi/ui";
 
 const Hero = () => {
     return (
-        <div className="pb-6 flex justify-center">
+        <div className="pb-6 w-full flex justify-center">
             <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-32 px-6 pb-16 md:px-14 lg:px-36 pt-7 md:pt-24 md:pb-32">
                 <div className="flex flex-col gap-10 w-full max-w-xl">
                     <Typography

@@ -1,10 +1,11 @@
-import { useParallax } from "react-scroll-parallax";
+import { useParallax, useParallaxController } from "react-scroll-parallax";
 import {
     MAIN_CONTENT,
     ContentBlock as ContentBlockType,
 } from "../../constants";
 import { cva } from "class-variance-authority";
 import { Typography } from "@carrot-kpi/ui";
+import { useCallback, useRef } from "react";
 
 const sectionStyles = cva(
     ["flex flex-col md:flex-row md:justify-center gap-16"],
@@ -18,15 +19,34 @@ const sectionStyles = cva(
 );
 
 const Breakdown = () => {
-    const { ref: sphereRef } = useParallax<HTMLImageElement>({
+    const parallaxTarget = useRef(null);
+    const parallaxController = useParallaxController();
+
+    const { ref: sphereRef } = useParallax<HTMLDivElement>({
         speed: -10,
     });
 
+    const handleParallaxImageLoading = useCallback(() => {
+        if (!parallaxController) return;
+        parallaxController.update();
+    }, [parallaxController]);
+
     return (
-        <div id="about" className="relative flex flex-col gap-40 my-40">
-            <div className="absolute right-12 lg:right-40 hidden md:block z-10 md:w-16 md:h-16 lg:w-40 lg:h-40 md:top-40">
+        <div
+            id="about"
+            className="relative flex flex-col gap-40 py-40"
+            ref={parallaxTarget}
+        >
+            <div
+                className="absolute right-12 lg:right-32 hidden md:block z-10 md:w-16 md:h-16 lg:w-24 lg:h-24 md:top-30"
+                ref={sphereRef}
+            >
                 <picture>
-                    <img alt="Sphere" src="/misc/sphere.png" ref={sphereRef} />
+                    <img
+                        alt="Sphere"
+                        src="/parallax/sphere.png"
+                        onLoad={handleParallaxImageLoading}
+                    />
                 </picture>
             </div>
             {MAIN_CONTENT.map((contentBlock, index: number) => {

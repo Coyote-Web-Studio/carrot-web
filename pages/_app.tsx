@@ -8,21 +8,17 @@ import "@carrot-kpi/ui/styles.css";
 
 import "../styles/global.css";
 
-import "aos/dist/aos.css";
-import "@splidejs/react-splide/css";
-
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
-import AOS from "aos";
-import ThemeContext from "./../context/theme";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { initialize as initializeFathom } from "use-fathom-client";
 import { useFathomTrackPageWatch } from "../hooks/useFathomTrackPageWatch";
+import ParallaxControllerUpdater from "../components/ParallaxControllerUpdater";
 
 function App({ Component, pageProps }: AppProps) {
-    useEffect(() => {
-        AOS.init({ once: true });
+    useFathomTrackPageWatch();
 
+    useEffect(() => {
         if (
             process.env.NODE_ENV === "production" &&
             process.env.NEXT_PUBLIC_FATHOM_SITE_ID
@@ -41,14 +37,11 @@ function App({ Component, pageProps }: AppProps) {
         }
     }, []);
 
-    useFathomTrackPageWatch();
-
     return (
-        <ThemeContext>
-            <ParallaxProvider>
-                <Component {...pageProps} />
-            </ParallaxProvider>
-        </ThemeContext>
+        <ParallaxProvider>
+            <ParallaxControllerUpdater />
+            <Component {...pageProps} />
+        </ParallaxProvider>
     );
 }
 
