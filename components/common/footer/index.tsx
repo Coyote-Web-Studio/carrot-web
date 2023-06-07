@@ -77,11 +77,11 @@ export const Footer = ({ footerLinks }: FooterProps) => {
                 </div>
                 <div className="flex items-end dark">
                     <Button
-                        href={`https://www.${CARROT_DOMAIN}`}
+                        href={`https://app.${CARROT_DOMAIN}`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Carrot info page
+                        Carrot app
                     </Button>
                 </div>
             </div>

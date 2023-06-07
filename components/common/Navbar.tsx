@@ -49,7 +49,7 @@ const Navbar = () => {
                     rel="noopener noreferrer"
                     className="dark"
                 >
-                    <Button>CARROT DAPP</Button>
+                    <Button>CARROT APP</Button>
                 </a>
                 <div className="md:hidden flex items-center">
                     <Menu
