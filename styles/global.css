@@ -16,6 +16,10 @@
     }
 }
 
+html {
+    @apply overflow-x-hidden;
+}
+
 html,
 body {
     @apply w-screen h-screen;
