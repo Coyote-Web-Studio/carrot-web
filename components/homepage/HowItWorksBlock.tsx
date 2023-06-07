@@ -5,26 +5,24 @@ import { HowItWorks } from "../../constants";
 import { cva } from "class-variance-authority";
 
 const headingStyles = cva(
-    "bg-white flex w-[40%] h-48 flex items-center shadow-border text-[3rem] px-8 transition-all",
+    "bg-white flex flex-1 h-24 lg:h-48 items-center shadow-border text-[1.75rem] lg:text-[3rem] px-8 transition-height duration-400",
     {
         variants: {
             open: {
-                true: ["md:h-80"],
+                true: ["lg:h-80"],
             },
         },
     }
 );
 
-const contentStyles = cva(
-    "h-48 bg-white flex flex-col items-center flex-1 shadow-border transition-all overflow-hidden",
-    {
-        variants: {
-            open: {
-                true: ["h-[50rem]"],
-            },
+const contentStyles = cva("px-8 lg:px-14 transition-max-height duration-400", {
+    variants: {
+        open: {
+            true: ["max-h-[100rem]"],
+            false: ["max-h-0"],
         },
-    }
-);
+    },
+});
 
 interface HowItWorksBlockProps extends HowItWorks {
     index: number;
@@ -43,33 +41,34 @@ const HowItWorksBlock = ({
     }, [open]);
 
     return (
-        <div className="flex" data-aos="fade-up">
-            <div className="bg-white w-48 h-48 flex justify-center items-center shadow-border">
+        <div className="flex flex-col lg:flex-row w-full" data-aos="fade-up">
+            <div className="flex lg:w-[60%]">
                 <Typography
                     variant="h2"
                     className={{
-                        root: "text-[7.4rem]",
+                        root: "bg-white shadow-border w-24 h-24 lg:w-48 lg:h-48 text-[3rem] lg:text-[7.4rem] flex justify-center items-center",
                     }}
                 >
                     {index + 1}.
                 </Typography>
-            </div>
-            <div className="flex flex-1">
                 <Typography
                     variant="h2"
-                    weight="medium"
                     className={{
                         root: headingStyles({ open }),
                     }}
                 >
                     {heading}
                 </Typography>
+            </div>
+            <div className="bg-white flex flex-col items-center flex-1 shadow-border overflow-hidden">
+                <div className="lg:h-48 w-full flex py-7 px-8 lg:px-12 justify-between items-center gap-20">
+                    <Typography className={{ root: "text-base lg:text-xl" }}>
+                        {triggerLabel}
+                    </Typography>
+                    <SeeMoreButton open={open} onClick={handleExpand} />
+                </div>
                 <div className={contentStyles({ open })}>
-                    <div className="flex w-full min-h-[12rem] px-12 justify-between items-center gap-20">
-                        <Typography variant="xl">{triggerLabel}</Typography>
-                        <SeeMoreButton open={open} onClick={handleExpand} />
-                    </div>
-                    <div className="px-14">{content}</div>
+                    <div className="pb-10">{content}</div>
                 </div>
             </div>
         </div>

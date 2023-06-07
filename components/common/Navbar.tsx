@@ -23,8 +23,8 @@ const Navbar = () => {
         <div className="flex w-full px-6 xl:px-32 py-8 xl:py-11">
             <div className="w-full flex items-center justify-between">
                 <Logo className="w-32 h-auto xl:w-[188px] text-black" />
-                <div className="hidden sm:block">
-                    <nav className="flex space-x-8">
+                <div className="hidden md:block">
+                    <nav className="flex md:space-x-8 lg:space-x-12">
                         {NAV_LINKS.map((link, index) => {
                             return <NavigationLink key={index} {...link} />;
                         })}
@@ -43,19 +43,21 @@ const Navbar = () => {
                         }}
                     /> */}
                 </div>
-                <a
-                    href={`https://app.${CARROT_DOMAIN}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="dark"
-                >
-                    <Button>CARROT APP</Button>
-                </a>
-                <div className="md:hidden flex items-center">
-                    <Menu
-                        className="cursor-pointer xl:hidden"
-                        onClick={handleMobileNavbarOpen}
-                    />
+                <div className="flex gap-6">
+                    <a
+                        href={`https://app.${CARROT_DOMAIN}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="dark"
+                    >
+                        <Button>CARROT APP</Button>
+                    </a>
+                    <div className="md:hidden flex items-center">
+                        <Menu
+                            className="cursor-pointer xl:hidden w-7 h-7"
+                            onClick={handleMobileNavbarOpen}
+                        />
+                    </div>
                 </div>
             </div>
             {isMobileNavbarOpen && (

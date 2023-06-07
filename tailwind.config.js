@@ -17,6 +17,10 @@ module.exports = {
                 "fade-in": "fade-in 0.4s ease-out forwards",
                 "fade-up": "fade-up 0.4s ease-out forwards",
             },
+            transitionProperty: {
+                "max-height": "max-height",
+                height: "height",
+            },
             keyframes: {
                 marquee: {
                     "0%": { transform: "translateX(0%)" },

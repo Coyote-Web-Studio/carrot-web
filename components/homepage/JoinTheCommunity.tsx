@@ -3,26 +3,29 @@ import { COMMUNITY_DATA } from "../../constants";
 import { cva } from "class-variance-authority";
 import AnimatedText from "../AnimatedText";
 
-const socialsSectionStyles = cva("flex flex-1 w-full px-14 py-8 border-black", {
-    variants: {
-        borderBottom: {
-            true: "border-b",
-            false: "border-b-0",
+const socialsSectionStyles = cva(
+    "flex flex-col lg:flex-row flex-1 w-full px-14 py-8 border-black",
+    {
+        variants: {
+            borderBottom: {
+                true: "border-b",
+                false: "border-b-0",
+            },
         },
-    },
-});
+    }
+);
 
 const JoinTheCommunity = () => (
-    <div id="community" className="w-full flex bg-orange">
-        <div className="w-1/2" data-aos="fade-up">
-            <div className="p-20">
+    <div id="community" className="w-full flex flex-col lg:flex-row bg-orange">
+        <div className="w-full lg:w-1/2" data-aos="fade-up">
+            <div className="py-10 px-4 lg:p-20">
                 <Typography
                     variant="h2"
                     className={{
-                        root: "text-[6rem] px-6 pt-6 pb-10 border border-black border-b-0 max-w-xl",
+                        root: "text-[4rem] lg:text-[6rem] px-6 pt-6 pb-10 border border-black border-b-0 max-w-xl",
                     }}
                 >
-                    <AnimatedText speed={20} text="Join the community!" />
+                    <AnimatedText speed={20} text="Join the community" />
                 </Typography>
                 <div className="border border-black flex">
                     <div className="w-16 border-r border-black flex flex-col justify-between">
@@ -50,9 +53,9 @@ const JoinTheCommunity = () => (
                                             className="h-40 w-40"
                                         />
                                     </picture>
-                                    <div className="flex flex-col justify-center gap-4 max-w-sm mt-20">
+                                    <div className="flex flex-col justify-center gap-4 max-w-sm lg:mt-20">
                                         <Typography>{data.detail}</Typography>
-                                        <div className="flex justify-end dark">
+                                        <div className="flex justify-start lg:justify-end dark">
                                             <Button
                                                 variant="primary"
                                                 href={data.buttonLink}
@@ -70,7 +73,7 @@ const JoinTheCommunity = () => (
                 </div>
             </div>
         </div>
-        <div className="w-1/2">
+        <div className="hidden lg:block lg:w-1/2">
             <picture>
                 <img src="/footer-background.png" alt="footer-img" />
             </picture>

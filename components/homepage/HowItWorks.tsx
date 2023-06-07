@@ -4,10 +4,13 @@ import { Typography } from "@carrot-kpi/ui";
 
 const HowItWorks = () => {
     return (
-        <div id="how-it-works" className="px-40 py-36 flex flex-col gap-20">
+        <div
+            id="how-it-works"
+            className="px-4 md:px-10 lg:px-14 xl:px-40 py-36 flex flex-col gap-20"
+        >
             <Typography
                 variant="h2"
-                className={{ root: "text-[7.4rem]" }}
+                className={{ root: "text-[5rem] md:text-[7.4rem]" }}
                 data-aos="fade-up"
             >
                 How it works
