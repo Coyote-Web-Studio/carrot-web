@@ -4,7 +4,7 @@ import { Typography, Button } from "@carrot-kpi/ui";
 const Hero = () => {
     return (
         <div className="pb-6 w-full flex justify-center">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-32 px-6 pb-16 md:px-14 lg:px-36 pt-7 md:pt-24 md:pb-32">
+            <div className="w-full flex flex-col md:flex-row md:items-center md:justify-center gap-32 px-6 pb-16 md:px-14 lg:px-36 pt-7 md:pt-24 md:pb-32">
                 <div className="flex flex-col gap-10 w-full max-w-xl">
                     <Typography
                         variant="h1"
@@ -27,16 +27,18 @@ const Hero = () => {
                         </a>
                     </div>
                 </div>
-                <video
-                    className="w-full md:w-1/2 aspect-video border border-black rounded-xl bg-gray-500"
-                    controls
-                >
-                    <source
-                        src="https://d2l3j8l4t44bvz.cloudfront.net"
-                        type="video/webm"
-                    />
-                    Not supported
-                </video>
+                <div className="w-full md:w-1/2">
+                    <video
+                        controls
+                        className="aspect-video w-full border border-black rounded-xl bg-gray-500 overflow-hidden"
+                    >
+                        <source
+                            src="https://d2l3j8l4t44bvz.cloudfront.net"
+                            type="video/webm"
+                        />
+                        Not supported
+                    </video>
+                </div>
             </div>
         </div>
     );

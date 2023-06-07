@@ -19,8 +19,8 @@ const Home: NextPage = () => {
                     more. Yes, on any campaign. Carrot does it all.
                 </title>
             </Head>
-            <div className="flex flex-col">
-                <div className="flex flex-col bg-grid-light bg-white dark:bg-grid-dark dark:bg-black z-10">
+            <div className="w-full flex flex-col">
+                <div className="w-full flex flex-col bg-grid-light bg-white dark:bg-grid-dark dark:bg-black z-10">
                     <Navbar />
                     <Hero />
                     <Marquees />
