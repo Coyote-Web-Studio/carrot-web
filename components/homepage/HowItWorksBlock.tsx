@@ -43,7 +43,7 @@ const HowItWorksBlock = ({
     }, [open]);
 
     return (
-        <div className="flex">
+        <div className="flex" data-aos="fade-up">
             <div className="bg-white w-48 h-48 flex justify-center items-center shadow-border">
                 <Typography
                     variant="h2"

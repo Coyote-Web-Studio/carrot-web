@@ -7,6 +7,7 @@ import "@carrot-kpi/switzer-font/700.css";
 import "@carrot-kpi/ui/styles.css";
 
 import "../styles/global.css";
+import "aos/dist/aos.css";
 
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
@@ -14,11 +15,14 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { initialize as initializeFathom } from "use-fathom-client";
 import { useFathomTrackPageWatch } from "../hooks/useFathomTrackPageWatch";
 import ParallaxControllerUpdater from "../components/ParallaxControllerUpdater";
+import AOS from "aos";
 
 function App({ Component, pageProps }: AppProps) {
     useFathomTrackPageWatch();
 
     useEffect(() => {
+        AOS.init({ once: true });
+
         if (
             process.env.NODE_ENV === "production" &&
             process.env.NEXT_PUBLIC_FATHOM_SITE_ID

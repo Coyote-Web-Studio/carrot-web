@@ -14,21 +14,25 @@ const Hero = () => {
                         <AnimatedText text="Reach your goals with a Carrot" />
                     </Typography>
                     <div className="flex flex-col gap-14">
-                        <Typography variant="lg">
-                            Increase your TVL, volume, price, engagement and
-                            more. Yes, on any campaign. Carrot does it all.
+                        <Typography variant="lg" data-aos="fade-up">
+                            <AnimatedText
+                                text="Increase your TVL, volume, price, engagement and more. Yes, on any campaign. Carrot does it all."
+                                speed={10}
+                            ></AnimatedText>
                         </Typography>
                         <a
                             href={`https://app.${CARROT_DOMAIN}/#/create`}
                             target="_blank"
                             rel="noopener noreferred"
                             className="dark"
+                            data-aos="fade-up"
+                            data-aos-delay={200}
                         >
                             <Button>CREATE YOUR CAMPAIGN</Button>
                         </a>
                     </div>
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="w-full md:w-1/2" data-aos="fade-up">
                     <video
                         controls
                         className="aspect-video w-full border border-black rounded-xl bg-gray-500 overflow-hidden"

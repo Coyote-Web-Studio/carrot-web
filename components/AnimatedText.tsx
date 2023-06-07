@@ -51,25 +51,28 @@ const AnimatedText = ({
         <>
             {text.split(" ").map((word, i) => {
                 return (
-                    <Fragment key={i}>
-                        {word.split("").map((letter, i) => {
-                            return (
-                                <span
-                                    ref={targetRef}
-                                    key={i}
-                                    className={letterStyles({ visible })}
-                                    style={{
-                                        animationDelay: `${
-                                            letterCount++ * speed + initialDelay
-                                        }ms`,
-                                    }}
-                                >
-                                    {letter}
-                                </span>
-                            );
-                        })}
+                    <>
+                        <span className="inline-block" key={i}>
+                            {word.split("").map((letter, i) => {
+                                return (
+                                    <span
+                                        ref={targetRef}
+                                        key={i}
+                                        className={letterStyles({ visible })}
+                                        style={{
+                                            animationDelay: `${
+                                                letterCount++ * speed +
+                                                initialDelay
+                                            }ms`,
+                                        }}
+                                    >
+                                        {letter}
+                                    </span>
+                                );
+                            })}
+                        </span>
                         <span> </span>
-                    </Fragment>
+                    </>
                 );
             })}
         </>

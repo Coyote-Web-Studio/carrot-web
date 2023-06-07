@@ -1,6 +1,7 @@
 import { Button, Typography } from "@carrot-kpi/ui";
 import { COMMUNITY_DATA } from "../../constants";
 import { cva } from "class-variance-authority";
+import AnimatedText from "../AnimatedText";
 
 const socialsSectionStyles = cva("flex flex-1 w-full px-14 py-8 border-black", {
     variants: {
@@ -13,7 +14,7 @@ const socialsSectionStyles = cva("flex flex-1 w-full px-14 py-8 border-black", {
 
 const JoinTheCommunity = () => (
     <div id="community" className="w-full flex bg-orange">
-        <div className="w-1/2">
+        <div className="w-1/2" data-aos="fade-up">
             <div className="p-20">
                 <Typography
                     variant="h2"
@@ -21,7 +22,7 @@ const JoinTheCommunity = () => (
                         root: "text-[6rem] px-6 pt-6 pb-10 border border-black border-b-0 max-w-xl",
                     }}
                 >
-                    Join the community!
+                    <AnimatedText speed={20} text="Join the community!" />
                 </Typography>
                 <div className="border border-black flex">
                     <div className="w-16 border-r border-black flex flex-col justify-between">

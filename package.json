@@ -15,6 +15,7 @@
     "dependencies": {
         "@carrot-kpi/switzer-font": "^0.1.0",
         "@carrot-kpi/ui": "^0.47.0",
+        "aos": "^2.3.4",
         "autoprefixer": "^10.4.14",
         "class-variance-authority": "^0.6.0",
         "next": "13.4.4",
@@ -28,6 +29,7 @@
         "@commitlint/cli": "^17.6.5",
         "@commitlint/config-conventional": "^17.6.5",
         "@fontsource/ibm-plex-mono": "^5.0.2",
+        "@types/aos": "^3.0.4",
         "@types/react": "18.2.7",
         "@types/react-dom": "18.2.4",
         "eslint": "8.41.0",

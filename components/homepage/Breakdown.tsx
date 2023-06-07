@@ -74,7 +74,7 @@ const ContentBlock = ({
     content,
 }: ContentBlockProps) => {
     return (
-        <div className={sectionStyles({ reverseRow })}>
+        <div className={sectionStyles({ reverseRow })} data-aos="fade-up">
             <picture>
                 <img
                     src={image}
