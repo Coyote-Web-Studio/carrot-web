@@ -12,13 +12,13 @@ interface FooterProps {
 export const Footer = ({ footerLinks }: FooterProps) => {
     const parallaxController = useParallaxController();
     const { ref: sphereRef } = useParallax<HTMLDivElement>({
-        speed: -2,
+        speed: -20,
     });
     const { ref: curveRef } = useParallax<HTMLDivElement>({
-        speed: -10,
+        speed: -30,
     });
     const { ref: hexagonRef } = useParallax<HTMLDivElement>({
-        speed: -5,
+        speed: -10,
     });
 
     const handleParallaxImageLoading = useCallback(() => {

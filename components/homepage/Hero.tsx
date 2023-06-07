@@ -1,5 +1,6 @@
 import { CARROT_DOMAIN } from "../../constants";
 import { Typography, Button } from "@carrot-kpi/ui";
+import AnimatedText from "../AnimatedText";
 
 const Hero = () => {
     return (
@@ -10,7 +11,7 @@ const Hero = () => {
                         variant="h1"
                         className={{ root: "text-[4.8rem] lg:text-[6.9rem]" }}
                     >
-                        Reach your goals with a Carrot
+                        <AnimatedText text="Reach your goals with a Carrot" />
                     </Typography>
                     <div className="flex flex-col gap-14">
                         <Typography variant="lg">

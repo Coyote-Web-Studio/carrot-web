@@ -1,5 +1,6 @@
 import { Typography } from "@carrot-kpi/ui";
 import React, { FunctionComponent, ReactNode } from "react";
+import AnimatedText from "../components/AnimatedText";
 
 export const CARROT_DOMAIN =
     process.env.NEXT_PUBLIC_DEV === "true" ? "carrot-kpi.dev" : "carrot-kpi.io";
@@ -72,11 +73,10 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
         content: (
             <div className="flex flex-col gap-10">
                 <Typography variant="lg">
-                    Use the campaign creation interface to set your
-                    campaign&apos;s goal, collateral, duration, and more. Once
-                    established, Carrot campaign tokens are minted and sent to
-                    your wallet. This is usually at a 1:1 ratio for simplicity,
-                    but can be any specified amount!
+                    <AnimatedText
+                        speed={5}
+                        text="Use the campaign creation interface to set your campaign's goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!"
+                    />
                 </Typography>
                 <picture>
                     <img
@@ -94,14 +94,10 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
         content: (
             <div className="flex flex-col gap-10">
                 <Typography variant="lg">
-                    Distribute your KPI tokens to your community. This could be
-                    liquidity mining stakers, in-person event attendees, or
-                    anyone else relevant to your campaign!
-                </Typography>
-                <Typography variant="lg">
-                    These tokens will later be redeemable by users for the
-                    underlying collateral depending on how much of the condition
-                    was met.
+                    <AnimatedText
+                        speed={5}
+                        text="Distribute your KPI tokens to your community. This could be liquidity mining stakers, in-person event attendees, or anyone else relevant to your campaign! These tokens will later be redeemable by users for the underlying collateral depending on how much of the condition was met."
+                    />
                 </Typography>
                 <picture>
                     <img
@@ -119,14 +115,10 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
         content: (
             <div className="flex flex-col gap-10">
                 <Typography variant="lg">
-                    At the end of the campaign, finalization will occur through
-                    the selected oracle. KPI token holders can then convert to
-                    the collateral at the settled rate.
-                </Typography>
-                <Typography variant="lg">
-                    If 50% of the target is met, 50% of the rewards will be
-                    claimable by your community with the remaining 50%
-                    accessible to you!
+                    <AnimatedText
+                        speed={5}
+                        text="At the end of the campaign, finalization will occur through the selected oracle. KPI token holders can then convert to the collateral at the settled rate. If 50% of the target is met, 50% of the rewards will be claimable by your community with the remaining 50% accessible to you!"
+                    />
                 </Typography>
                 <picture>
                     <img

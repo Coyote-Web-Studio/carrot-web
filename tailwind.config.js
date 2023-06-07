@@ -14,7 +14,7 @@ module.exports = {
             animation: {
                 "marquee-slow": "marquee 207s linear infinite",
                 "marquee-fast": "marquee 138s linear infinite",
-                "text-fade-in": "text-fade-in 0.4s ease-out forwards",
+                "fade-in": "fade-in 0.4s ease-out forwards",
                 "fade-up": "fade-up 0.4s ease-out forwards",
             },
             keyframes: {
@@ -22,7 +22,7 @@ module.exports = {
                     "0%": { transform: "translateX(0%)" },
                     "100%": { transform: "translateX(-100%)" },
                 },
-                "text-fade-in": {
+                "fade-in": {
                     "0%": {
                         opacity: 0,
                     },

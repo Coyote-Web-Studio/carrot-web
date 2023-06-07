@@ -6,6 +6,7 @@ import {
 import { cva } from "class-variance-authority";
 import { Typography } from "@carrot-kpi/ui";
 import { useCallback, useRef } from "react";
+import AnimatedText from "../AnimatedText";
 
 const sectionStyles = cva(
     ["flex flex-col md:flex-row md:justify-center gap-16"],
@@ -86,9 +87,11 @@ const ContentBlock = ({
                     variant="h2"
                     className={{ root: "text-[4.3rem] mb-8" }}
                 >
-                    {heading}
+                    <AnimatedText speed={20} text={heading} />
                 </Typography>
-                <Typography variant="lg">{content}</Typography>
+                <Typography variant="lg">
+                    <AnimatedText speed={5} text={content} />
+                </Typography>
             </div>
         </div>
     );
