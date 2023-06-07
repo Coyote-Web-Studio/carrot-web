@@ -2,6 +2,7 @@ import React, { MouseEventHandler, ReactElement } from "react";
 import Logo from "../../icons/logo";
 import { NAV_LINKS } from "../../constants";
 import X from "../../icons/x";
+import NavLink from "./NavLink";
 
 interface MobileNavbarProps {
     onClose: MouseEventHandler;
@@ -23,20 +24,11 @@ const MobileNavbar = ({ onClose }: MobileNavbarProps): ReactElement => {
                         <ul className="flex flex-col gap-6">
                             {NAV_LINKS.map((link) => {
                                 return (
-                                    <li key={link.to}>
-                                        <a
-                                            className="flex items-start space-x-2 cursor-pointer"
-                                            href={`#${link.to}`}
-                                            onClick={onClose}
-                                        >
-                                            <span className="font-mono text-2xl xl:text-base">
-                                                ↳
-                                            </span>
-                                            <p className="font-mono text-black text-2xl hover:underline xl:text-base uppercase underline-offset-[12px]">
-                                                {link.label}
-                                            </p>
-                                        </a>
-                                    </li>
+                                    <NavLink
+                                        key={link.to}
+                                        to={link.to}
+                                        label={link.label}
+                                    />
                                 );
                             })}
                         </ul>

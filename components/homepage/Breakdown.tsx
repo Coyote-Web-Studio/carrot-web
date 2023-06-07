@@ -34,7 +34,7 @@ const Breakdown = () => {
     return (
         <div
             id="about"
-            className="relative flex flex-col gap-40 py-40"
+            className="relative flex flex-col gap-40 pt-40"
             ref={parallaxTarget}
         >
             <div

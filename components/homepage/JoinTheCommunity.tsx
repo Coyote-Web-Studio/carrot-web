@@ -12,7 +12,7 @@ const socialsSectionStyles = cva("flex flex-1 w-full px-14 py-8 border-black", {
 });
 
 const JoinTheCommunity = () => (
-    <div className="w-full flex bg-orange">
+    <div id="community" className="w-full flex bg-orange">
         <div className="w-1/2">
             <div className="p-20">
                 <Typography
