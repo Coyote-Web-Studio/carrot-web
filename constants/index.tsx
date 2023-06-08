@@ -200,7 +200,7 @@ export const FOOTER_LINKS: FooterLink[] = [
         links: [
             {
                 title: "Discord",
-                to: "https://discord.gg/vssJce4H",
+                to: "https://discord.gg/zCFXBEQkVa",
             },
             {
                 title: "Twitter",
