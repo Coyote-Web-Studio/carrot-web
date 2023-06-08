@@ -96,7 +96,9 @@ const ContentBlock = ({
             <div className="flex flex-col max-w-3xl justify-center">
                 <Typography
                     variant="h2"
-                    className={{ root: "text-[3rem] md:text-[4.3rem] mb-8" }}
+                    className={{
+                        root: "text-[3rem] md:text-[4.3rem] mb-8",
+                    }}
                 >
                     <AnimatedText speed={20} text={heading} />
                 </Typography>

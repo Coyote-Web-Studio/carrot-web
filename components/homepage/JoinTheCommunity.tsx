@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 import AnimatedText from "../AnimatedText";
 
 const socialsSectionStyles = cva(
-    "flex flex-col lg:flex-row flex-1 w-full px-14 py-8 border-black",
+    "flex flex-col lg:flex-row flex-1 w-full px-10 md:px-14 py-8 border-black",
     {
         variants: {
             borderBottom: {
@@ -16,13 +16,13 @@ const socialsSectionStyles = cva(
 );
 
 const JoinTheCommunity = () => (
-    <div id="community" className="w-full flex flex-col lg:flex-row bg-orange">
-        <div className="w-full lg:w-1/2" data-aos="fade-up">
+    <div id="community" className="w-full flex flex-col xl:flex-row bg-orange">
+        <div className="w-full xl:w-1/2" data-aos="fade-up">
             <div className="py-10 px-4 lg:p-20">
                 <Typography
                     variant="h2"
                     className={{
-                        root: "text-[4rem] lg:text-[6rem] px-6 pt-6 pb-10 border border-black border-b-0 max-w-xl",
+                        root: "text-[3.5rem] md:text-[4.7rem] lg:text-[6rem] px-6 pt-6 pb-10 border border-black border-b-0 max-w-xl",
                     }}
                 >
                     <AnimatedText speed={20} text="Join the community" />
@@ -73,9 +73,13 @@ const JoinTheCommunity = () => (
                 </div>
             </div>
         </div>
-        <div className="hidden lg:block lg:w-1/2">
-            <picture>
-                <img src="/footer-background.png" alt="footer-img" />
+        <div className="hidden lg:block w-full h-full xl:w-1/2">
+            <picture className="w-full h-full object-fill">
+                <img
+                    src="/footer-background.png"
+                    alt="footer-img"
+                    className="object-cover w-full h-full"
+                />
             </picture>
         </div>
     </div>

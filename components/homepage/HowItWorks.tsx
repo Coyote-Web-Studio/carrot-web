@@ -10,7 +10,9 @@ const HowItWorks = () => {
         >
             <Typography
                 variant="h2"
-                className={{ root: "text-[5rem] md:text-[7.4rem]" }}
+                className={{
+                    root: "text-[5rem] md:text-[6rem] lg:text-[7.4rem]",
+                }}
                 data-aos="fade-up"
             >
                 How it works

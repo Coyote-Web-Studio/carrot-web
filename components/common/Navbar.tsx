@@ -48,9 +48,9 @@ const Navbar = () => {
                         href={`https://app.${CARROT_DOMAIN}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="dark"
+                        className="dark hidden md:block"
                     >
-                        <Button>CARROT APP</Button>
+                        <Button size="small">CARROT APP</Button>
                     </a>
                     <div className="md:hidden flex items-center">
                         <Menu
