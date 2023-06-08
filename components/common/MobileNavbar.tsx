@@ -1,20 +1,20 @@
-import React, { MouseEventHandler, ReactElement } from "react";
+import React, { ReactElement } from "react";
 import Logo from "../../icons/logo";
 import { NAV_LINKS } from "../../constants";
 import X from "../../icons/x";
 import NavLink from "./NavLink";
 
 interface MobileNavbarProps {
-    onClose: MouseEventHandler;
+    onClose: () => void;
 }
 
 const MobileNavbar = ({ onClose }: MobileNavbarProps): ReactElement => {
     return (
         <div className="fixed top-0 left-0 w-full z-10">
-            <div className="flex h-screen justify-between bg-white bg-grid-light px-6 py-8">
+            <div className="flex h-screen justify-between bg-white bg-grid-light px-6 xl:px-32 py-8 xl:py-11">
                 <div className="w-full flex flex-col gap-10">
                     <div className="w-full mt-2 flex justify-between items-center">
-                        <Logo className="w-32 h-8 text-black" />
+                        <Logo className="w-32 h-auto xl:w-[188px] text-black" />
                         <X
                             className="cursor-pointer w-7 h-7"
                             onClick={onClose}
@@ -28,6 +28,7 @@ const MobileNavbar = ({ onClose }: MobileNavbarProps): ReactElement => {
                                         key={link.to}
                                         to={link.to}
                                         label={link.label}
+                                        onClick={onClose}
                                     />
                                 );
                             })}

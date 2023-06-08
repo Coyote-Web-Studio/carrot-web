@@ -2,10 +2,15 @@ import { Typography } from "@carrot-kpi/ui";
 import React, { useCallback } from "react";
 import { type NavLink as NavLinkType } from "../../constants";
 
-const NavLink = ({ to, label }: NavLinkType) => {
+interface NavLinkProps extends NavLinkType {
+    onClick?: () => void;
+}
+
+const NavLink = ({ to, label, onClick }: NavLinkProps) => {
     const handleClick = useCallback(
         (event: React.MouseEvent) => {
             event.preventDefault();
+            if (onClick) onClick();
             let element = document.getElementById(to);
             if (!element) return;
             element.scrollIntoView({
@@ -13,7 +18,7 @@ const NavLink = ({ to, label }: NavLinkType) => {
                 block: "start",
             });
         },
-        [to]
+        [onClick, to]
     );
 
     return (
