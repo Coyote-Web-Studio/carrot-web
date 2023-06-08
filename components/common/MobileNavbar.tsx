@@ -22,10 +22,10 @@ const MobileNavbar = ({ onClose }: MobileNavbarProps): ReactElement => {
                     </div>
                     <nav>
                         <ul className="flex flex-col gap-6">
-                            {NAV_LINKS.map((link) => {
+                            {NAV_LINKS.map((link, i) => {
                                 return (
                                     <NavLink
-                                        key={link.to}
+                                        key={i}
                                         to={link.to}
                                         label={link.label}
                                         onClick={onClose}

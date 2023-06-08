@@ -49,7 +49,7 @@ export const MAIN_CONTENT: ContentBlock[] = [
     {
         heading: "Incentivize your community",
         content:
-            "Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met. Carrot has helped distribute over $XX in rewards to date.",
+            "Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met.",
         image: "/main-content/incentivize.png",
     },
     {
@@ -75,7 +75,7 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
                 <Typography variant="lg">
                     <AnimatedText
                         speed={5}
-                        text="Use the campaign creation interface to set your campaign's goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount!"
+                        text="Use the campaign creation interface to set your campaign's goal, collateral, duration, and more. Once established, Carrot campaign tokens are minted and sent to your wallet. This is usually at a 1:1 ratio for simplicity, but can be any specified amount."
                     />
                 </Typography>
                 <picture>
@@ -96,7 +96,7 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
                 <Typography variant="lg">
                     <AnimatedText
                         speed={5}
-                        text="Distribute your KPI tokens to your community. This could be liquidity mining stakers, in-person event attendees, or anyone else relevant to your campaign! These tokens will later be redeemable by users for the underlying collateral depending on how much of the condition was met."
+                        text="Distribute your KPI tokens to your community. This could be liquidity mining stakers, in-person event attendees, or anyone else relevant to your campaign. These tokens will later be redeemable by users for the underlying collateral depending on how much of the condition was met."
                     />
                 </Typography>
                 <picture>
@@ -117,7 +117,7 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
                 <Typography variant="lg">
                     <AnimatedText
                         speed={5}
-                        text="At the end of the campaign, finalization will occur through the selected oracle. KPI token holders can then convert to the collateral at the settled rate. If 50% of the target is met, 50% of the rewards will be claimable by your community with the remaining 50% accessible to you!"
+                        text="At the end of the campaign, finalization will occur through the selected oracle. KPI token holders can then convert to the collateral at the settled rate. If 50% of the target is met, 50% of the rewards will be claimable by your community with the remaining 50% accessible to you."
                     />
                 </Typography>
                 <picture>

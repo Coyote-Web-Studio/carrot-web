@@ -52,12 +52,12 @@ const AnimatedText = ({
             {text.split(" ").map((word, i) => {
                 return (
                     <>
-                        <span className="inline-block" key={i}>
+                        <span className="inline-block" key={i + word}>
                             {word.split("").map((letter, i) => {
                                 return (
                                     <span
                                         ref={targetRef}
-                                        key={i}
+                                        key={i + letter}
                                         className={letterStyles({ visible })}
                                         style={{
                                             animationDelay: `${

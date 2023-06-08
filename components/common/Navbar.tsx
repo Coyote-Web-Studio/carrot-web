@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import Logo from "../../icons/logo";
 import { Button } from "@carrot-kpi/ui";
 import MobileNavbar from "./MobileNavbar";
-import NavigationLink from "./NavLink";
+import NavLink from "./NavLink";
 import { CARROT_DOMAIN, NAV_LINKS } from "../../constants";
 import Menu from "../../icons/menu";
 
@@ -26,7 +26,7 @@ const Navbar = () => {
                 <div className="hidden md:block">
                     <nav className="flex md:space-x-8 lg:space-x-12">
                         {NAV_LINKS.map((link, index) => {
-                            return <NavigationLink key={index} {...link} />;
+                            return <NavLink key={index} {...link} />;
                         })}
                     </nav>
                     {/* <StyleSwitch
