@@ -50,7 +50,7 @@ const JoinTheCommunity = () => (
                                         <img
                                             src={data.img}
                                             alt="discord"
-                                            className="h-40 w-40"
+                                            className="h-40 w-40 object-cover"
                                         />
                                     </picture>
                                     <div className="flex flex-col justify-center gap-4 max-w-sm lg:mt-20">
@@ -74,7 +74,7 @@ const JoinTheCommunity = () => (
             </div>
         </div>
         <div className="hidden lg:block w-full h-full xl:w-1/2">
-            <picture className="w-full h-full object-fill">
+            <picture className="w-full h-full">
                 <img
                     src="/footer-background.png"
                     alt="footer-img"

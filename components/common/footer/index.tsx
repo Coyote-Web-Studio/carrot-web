@@ -37,6 +37,7 @@ export const Footer = ({ footerLinks }: FooterProps) => {
                         alt="Sphere"
                         src="/parallax/sphere.png"
                         onLoad={handleParallaxImageLoading}
+                        className="object-cover"
                     />
                 </picture>
             </div>
@@ -49,6 +50,7 @@ export const Footer = ({ footerLinks }: FooterProps) => {
                         alt="Gold Curve"
                         src="/parallax/gold-curve.png"
                         onLoad={handleParallaxImageLoading}
+                        className="object-cover"
                     />
                 </picture>
             </div>
@@ -61,6 +63,7 @@ export const Footer = ({ footerLinks }: FooterProps) => {
                         alt="Hexagon"
                         src="/parallax/hexagon.png"
                         onLoad={handleParallaxImageLoading}
+                        className="object-cover"
                     />
                 </picture>
             </div>

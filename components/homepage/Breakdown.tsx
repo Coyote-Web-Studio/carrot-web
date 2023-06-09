@@ -58,6 +58,7 @@ const Breakdown = () => {
                         alt="Sphere"
                         src="/parallax/sphere.png"
                         onLoad={handleParallaxImageLoading}
+                        className="object-cover"
                     />
                 </picture>
             </div>
@@ -90,7 +91,7 @@ const ContentBlock = ({
                 <img
                     src={image}
                     alt="img"
-                    className="border border-black rounded-2xl w-full h-[19.2rem] md:w-[33.125rem] md:h-[24rem] lg:w-[44rem] lg:h-[24rem]"
+                    className="border border-black rounded-2xl w-full h-[19.2rem] md:w-[33.125rem] md:h-[24rem] lg:w-[44rem] lg:h-[24rem] object-cover"
                 />
             </picture>
             <div className="flex flex-col max-w-3xl justify-center">
