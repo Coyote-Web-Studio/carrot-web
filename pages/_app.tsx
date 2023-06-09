@@ -1,69 +1,52 @@
-import "../styles/nprogress.css";
-
-import "aos/dist/aos.css";
-import "@splidejs/react-splide/css";
-
-import "@fontsource/inter/700.css";
-
-import "@fontsource/ibm-plex-mono/300.css";
 import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/ibm-plex-mono/700.css";
+import "@carrot-kpi/switzer-font/400.css";
+import "@carrot-kpi/switzer-font/500.css";
+import "@carrot-kpi/switzer-font/700.css";
+import "@carrot-kpi/ui/styles.css";
+
+import "../styles/global.css";
+import "aos/dist/aos.css";
 
 import { useEffect } from "react";
 import type { AppProps } from "next/app";
-import AOS from "aos";
-import ThemeContext from "./../context/theme";
-import GlobalStyle from "../styles/global.css";
 import { ParallaxProvider } from "react-scroll-parallax";
-import Loading from "../components/common/Loading";
 import { initialize as initializeFathom } from "use-fathom-client";
 import { useFathomTrackPageWatch } from "../hooks/useFathomTrackPageWatch";
+import ParallaxControllerUpdater from "../components/ParallaxControllerUpdater";
+import AOS from "aos";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
+    useFathomTrackPageWatch();
+
     useEffect(() => {
         AOS.init({ once: true });
 
-        // Helper function
-        let domReady = (cb: any) => {
-            document.readyState === "interactive" ||
-            document.readyState === "complete"
-                ? cb()
-                : document.addEventListener("DOMContentLoaded", cb);
-        };
-
-        domReady(() => {
-            // Display body when DOM is loaded
-            document.body.style.visibility = "visible";
-
-            if (
-                process.env.NODE_ENV === "production" &&
-                process.env.NEXT_PUBLIC_FATHOM_SITE_ID
-            ) {
-                initializeFathom(process.env.NEXT_PUBLIC_FATHOM_SITE_ID, {
-                    src: "https://cdn.usefathom.com/script.js",
-                    "data-auto": false,
-                    "data-spa": "auto",
+        if (
+            process.env.NODE_ENV === "production" &&
+            process.env.NEXT_PUBLIC_FATHOM_SITE_ID
+        ) {
+            initializeFathom(process.env.NEXT_PUBLIC_FATHOM_SITE_ID, {
+                src: "https://cdn.usefathom.com/script.js",
+                "data-auto": false,
+                "data-spa": "auto",
+            })
+                .then(() => {
+                    console.log("fathom initialized successfully");
                 })
-                    .then(() => {
-                        console.log("fathom initialized successfully");
-                    })
-                    .catch((error) => {
-                        console.error("could not initialize fathom", error);
-                    });
-            }
-        });
+                .catch((error) => {
+                    console.error("could not initialize fathom", error);
+                });
+        }
     }, []);
 
-    useFathomTrackPageWatch();
-
     return (
-        <ThemeContext>
-            <GlobalStyle />
-            <ParallaxProvider>
-                <Loading />
-                <Component {...pageProps} />
-            </ParallaxProvider>
-        </ThemeContext>
+        <ParallaxProvider>
+            <ParallaxControllerUpdater />
+            <Component {...pageProps} />
+        </ParallaxProvider>
     );
 }
 
-export default MyApp;
+export default App;

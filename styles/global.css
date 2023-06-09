@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .bg-grid-light {
+        @apply bg-left-top;
+        @apply bg-2 md:bg-4;
+        @apply bg-black-squares;
+    }
+
+    .bg-grid-dark {
+        @apply bg-center;
+        @apply bg-2 md:bg-4;
+        @apply bg-white-squares;
+    }
+}
+
+html {
+    @apply overflow-x-hidden;
+}
+
+html,
+body {
+    @apply w-screen h-screen;
+}

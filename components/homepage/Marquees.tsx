@@ -1,196 +1,86 @@
-import Marquee from "react-fast-marquee";
-import { Box, Flex, Image } from "rebass";
-import styled, { useTheme } from "styled-components";
+import React, { ReactNode } from "react";
+import CommunityDrivenLogo from "../../icons/marquee/community-driven";
+import NetworkLogo from "../../icons/marquee/network";
+import Decentralized100Logo from "../../icons/marquee/decentralized100";
+import StarsLogo from "../../icons/marquee/stars";
+import CommunityLogo from "../../icons/marquee/community";
+import ClaimBounties from "../../icons/marquee/claim-bounties";
+import { cva } from "class-variance-authority";
+
+const GreenLogos = () => (
+    <>
+        <CommunityDrivenLogo />
+        <NetworkLogo />
+        <Decentralized100Logo />
+        <StarsLogo />
+    </>
+);
+
+const YellowLogos = () => (
+    <>
+        <CommunityLogo />
+        <ClaimBounties />
+    </>
+);
+
+interface MarqueeProps {
+    children: ReactNode;
+    color: "green" | "yellow";
+}
+
+const marqueeMainStyles = cva(["flex overflow-x-hidden"], {
+    variants: {
+        color: {
+            green: ["bg-green"],
+            yellow: ["bg-yellow"],
+        },
+    },
+});
+
+const marqueeRowStyles = cva(
+    ["relative flex items-center h-12 space-x-6 md:h-16"],
+    {
+        variants: {
+            color: {
+                green: ["animate-marquee-fast"],
+                yellow: ["animate-marquee-slow"],
+            },
+        },
+    }
+);
+
+const MarqueeRow = ({ children, color }: MarqueeProps) => (
+    <div className={marqueeMainStyles({ color })}>
+        <div className={marqueeRowStyles({ color })}>{children}</div>
+        <div className={marqueeRowStyles({ color })}>{children}</div>
+    </div>
+);
 
 const Marquees = () => {
-    const theme: any = useTheme();
-
     return (
-        <StyledMarquees
-            flexDirection={"column"}
-            sx={{
-                ".marquee": {
-                    height: ["4.8rem"],
-                    zIndex: 0,
-                    img: {
-                        mx: ["1.6rem", "1rem"],
-                        height: ["3rem", "2.7rem"],
-                    },
-                },
-                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                    ".marquee": {
-                        height: "7.2rem",
-                        img: {
-                            height: "4.3rem",
-                        },
-                    },
-                },
-            }}
-        >
-            <Box
-                sx={{
-                    ".marquee": {
-                        bg: theme.colors.green5,
-                    },
-                }}
-            >
-                <Marquee gradient={false} direction={"right"} speed={15}>
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-6_bvjs0o.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-7_cgznoy.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-4_cg0jzm.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045812/carrot/banner-images/Community_Icon-1_evemou.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-6_bvjs0o.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-7_cgznoy.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-4_cg0jzm.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045812/carrot/banner-images/Community_Icon-1_evemou.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-6_bvjs0o.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-7_cgznoy.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-4_cg0jzm.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045812/carrot/banner-images/Community_Icon-1_evemou.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-6_bvjs0o.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-7_cgznoy.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045811/carrot/banner-images/Community_Icon-4_cg0jzm.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657045812/carrot/banner-images/Community_Icon-1_evemou.svg"
-                    />
-                </Marquee>
-            </Box>
-            <Box
-                sx={{
-                    ".marquee": {
-                        bg: theme.colors.yellow6,
-                        img: {
-                            mx: ["1.6rem", "1rem"],
-                            height: ["1.8rem"],
-                        },
-                    },
-                    [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
-                        {
-                            ".marquee": {
-                                img: {
-                                    height: "2.8rem",
-                                },
-                            },
-                        },
-                }}
-            >
-                <Marquee gradient={false} direction={"right"} speed={30}>
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon-1_u1snjz.svg"
-                    />
-                    <Image
-                        alt="Illustration"
-                        src="https://res.cloudinary.com/guido-la-rosa/image/upload/v1657821857/carrot/banner-images/Community_Icon_lbn2i7.svg"
-                    />
-                </Marquee>
-            </Box>
-        </StyledMarquees>
+        <div>
+            <MarqueeRow color="green">
+                <GreenLogos />
+                <GreenLogos />
+                <GreenLogos />
+                <GreenLogos />
+                <GreenLogos />
+                <GreenLogos />
+                <GreenLogos />
+                <GreenLogos />
+            </MarqueeRow>
+            <MarqueeRow color="yellow">
+                <YellowLogos />
+                <YellowLogos />
+                <YellowLogos />
+                <YellowLogos />
+                <YellowLogos />
+                <YellowLogos />
+                <YellowLogos />
+                <YellowLogos />
+            </MarqueeRow>
+        </div>
     );
 };
-
-const StyledMarquees = styled(Flex)``;
 
 export default Marquees;

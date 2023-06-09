@@ -1,141 +1,42 @@
-import { Flex, Link, Text } from "rebass";
-import Button from "./Button";
-import { useTheme } from "styled-components";
-import NavLinks from "../../content/navigation";
-import GridBackground from "./GridBackground";
-import { CARROT_DOMAIN } from "../../constants";
+import React, { ReactElement } from "react";
+import Logo from "../../icons/logo";
+import { NAV_LINKS } from "../../constants";
+import X from "../../icons/x";
+import NavLink from "./NavLink";
 
-const MobileNavbar = (props: any) => {
-    const theme: any = useTheme();
+interface MobileNavbarProps {
+    onClose: () => void;
+}
+
+const MobileNavbar = ({ onClose }: MobileNavbarProps): ReactElement => {
     return (
-        <Flex
-            sx={{
-                display: ["block", "none"],
-                position: "absolute",
-                pointerEvents: props.isOpen ? "auto" : "none",
-                opacity: props.isOpen ? 1 : 0,
-                top: ["8rem", "14rem"],
-                left: 0,
-                width: "100vw",
-                height: "calc(100vh - 7rem)",
-                background: theme.colors.background,
-                zIndex: 4,
-                flexDirection: "column",
-                maxWidth: "100%",
-                transition: "0.25s ease-in-out opacity",
-                overflow: "hidden",
-            }}
-        >
-            <Flex
-                className={"grid-container"}
-                sx={{
-                    ...theme.boxSizes.defaultBox,
-                    left: 0,
-                    maxWidth: "unset",
-                    height: "calc(100% - 2rem)",
-                    width: "100vw !important",
-                    position: "absolute",
-                }}
-            >
-                <GridBackground
-                    trimRows={2}
-                    sx={{ backgroundPosition: "50% 1.8rem" }}
-                />
-            </Flex>
-            <Flex
-                className="navigation-container"
-                sx={{
-                    flexDirection: "column",
-                    height: "100%",
-                    pb: "12rem",
-                    ...theme.boxSizes.defaultBox,
-                    position: "relative",
-                    top: props.isOpen ? "0" : "20rem",
-                    transition: "0.3s ease-in-out all",
-                }}
-            >
-                <Flex
-                    as="nav"
-                    sx={{
-                        ...theme.boxSizes.defaultBox,
-                        pt: "6.4rem",
-                    }}
-                >
-                    <Flex
-                        as="ul"
-                        flexDirection={"column"}
-                        sx={{
-                            ...theme.boxSizes.defaultBox,
-                            zIndex: 10,
-                            pl: "1rem",
-                        }}
-                    >
-                        {NavLinks.map((link, index) => (
-                            <Link
-                                fontFamily={"IBM Plex Mono"}
-                                fontSize={["2.4rem"]}
-                                fontWeight={400}
-                                lineHeight={"3.6rem"}
-                                key={index}
-                                onClick={() => {
-                                    props.setIsOpen(false);
-                                    let element = document.getElementById(
-                                        link.scrollTo
-                                    );
-                                    if (element) {
-                                        setTimeout(() => {
-                                            window.scrollTo({
-                                                top: element?.getBoundingClientRect()
-                                                    .y
-                                                    ? element?.getBoundingClientRect()
-                                                          .y - 180
-                                                    : 0,
-                                                behavior: "smooth",
-                                            });
-                                        }, 100);
-                                    }
-                                }}
-                                sx={{
-                                    whiteSpace: "nowrap",
-                                    mb: "2.35rem",
-                                    "&:last-child": {
-                                        mb: 0,
-                                    },
-                                }}
-                            >
-                                <Text
-                                    as="span"
-                                    sx={{
-                                        opacity: "0.5",
-                                        transition: "0.15s ease-in-out opacity",
-                                    }}
-                                >
-                                    ↳{" "}
-                                </Text>{" "}
-                                {link.label}
-                            </Link>
-                        ))}
-                    </Flex>
-                </Flex>
-                <Flex
-                    justifyContent={"space-between"}
-                    sx={{
-                        mt: "auto",
-                        width: "100%",
-                        alignItems: "center",
-                    }}
-                >
-                    <Link
-                        href={`https://app.${CARROT_DOMAIN}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Button>CARROT DAPP</Button>
-                    </Link>
-                    {/* <StyleSwitch /> */}
-                </Flex>
-            </Flex>
-        </Flex>
+        <div className="fixed top-0 left-0 w-full z-10">
+            <div className="flex h-screen justify-between bg-white bg-grid-light px-6 xl:px-32 py-8 xl:py-11">
+                <div className="w-full flex flex-col gap-10">
+                    <div className="w-full mt-2 flex justify-between items-center">
+                        <Logo className="w-32 h-auto xl:w-[188px] text-black" />
+                        <X
+                            className="cursor-pointer w-7 h-7"
+                            onClick={onClose}
+                        />
+                    </div>
+                    <nav>
+                        <ul className="flex flex-col gap-6">
+                            {NAV_LINKS.map((link, i) => {
+                                return (
+                                    <NavLink
+                                        key={i}
+                                        to={link.to}
+                                        label={link.label}
+                                        onClick={onClose}
+                                    />
+                                );
+                            })}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
     );
 };
 

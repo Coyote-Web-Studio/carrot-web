@@ -1,188 +1,113 @@
-import { Flex, Image, Text, Box } from "rebass";
-import Fade from "../common/Fade";
-import { useTheme } from "styled-components";
-import AnimatedText from "../common/AnimatedText";
-import { useParallax } from "react-scroll-parallax";
+import { useParallax, useParallaxController } from "react-scroll-parallax";
+import {
+    MAIN_CONTENT,
+    ContentBlock as ContentBlockType,
+} from "../../constants";
+import { cva } from "class-variance-authority";
+import { Typography } from "@carrot-kpi/ui";
+import { useCallback, useRef } from "react";
+import AnimatedText from "../AnimatedText";
+
+const sectionStyles = cva(
+    [
+        "flex",
+        "flex-col",
+        "lg:flex-row",
+        "lg:justify-center",
+        "gap-8",
+        "md:gap-12",
+        "lg:gap-16",
+        "px-4",
+        "md:px-8",
+        "lg:px-12",
+    ],
+    {
+        variants: {
+            reverseRow: {
+                true: ["lg:flex-row-reverse"],
+            },
+        },
+    }
+);
 
 const Breakdown = () => {
-    const theme: any = useTheme();
+    const parallaxTarget = useRef(null);
+    const parallaxController = useParallaxController();
 
-    const sphereParallax = useParallax({
+    const { ref: sphereRef } = useParallax<HTMLDivElement>({
         speed: -10,
     });
 
+    const handleParallaxImageLoading = useCallback(() => {
+        if (!parallaxController) return;
+        parallaxController.update();
+    }, [parallaxController]);
+
     return (
-        <Box
+        <div
             id="about"
-            sx={{
-                pt: ["4.8rem", "calc(2.4rem * 2)", null, "12.8rem"],
-                pb: [
-                    "calc(2.4rem * 4 - 0.4rem)",
-                    "calc(2.4rem * 3 + 0.3rem)",
-                    null,
-                    "19rem",
-                ],
-                [`@media screen and (min-width: ${theme.breakpoints[3]})`]: {
-                    pb: "17.6rem",
-                },
-                [`@media screen and (min-width: ${theme.breakpoints[4]})`]: {
-                    pb: "17rem",
-                },
-            }}
+            className="relative flex flex-col gap-20 md:gap-40 pt-10 md:pt-40"
+            ref={parallaxTarget}
         >
-            <Flex
-                flexDirection={"column"}
-                sx={{
-                    ...theme.boxSizes.reducedBox,
-                    position: "relative",
-                    zIndex: 1,
-                }}
+            <div
+                className="absolute right-12 lg:right-32 hidden md:block z-10 md:w-16 md:h-16 lg:w-24 lg:h-24 md:top-30"
+                ref={sphereRef}
             >
-                <Image
-                    alt="Sphere"
-                    ref={sphereParallax.ref}
-                    src={"misc/sphere.png"}
-                    sx={{
-                        position: "absolute",
-                        top: ["-5rem", "10rem"],
-                        width: [null, "6rem", "10rem"],
-                        height: [null, "6rem", "10rem"],
-                        right: ["3rem", null, null, "-5rem"],
-                        zIndex: "100000",
-                        display: ["none", "block"],
-                    }}
-                />
-                {MainContent.map(
-                    (contentBlock: ContentBlock, index: number) => (
-                        <Fade
-                            key={index}
-                            sx={{
-                                mb: ["4.8rem", null, null, "6.4rem"],
-                                position: "relative",
-                                "&:last-child": {
-                                    mb: "0",
-                                },
-                            }}
-                        >
-                            <Flex
-                                flexDirection={[
-                                    "column",
-                                    index % 2 == 0 ? "row" : "row-reverse",
-                                ]}
-                                justifyContent={["auto", "center"]}
-                                alignItems={["auto"]}
-                                sx={{
-                                    columnGap: "4rem",
-                                    "&:last-child": {
-                                        mb: 0,
-                                    },
-                                    [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
-                                        {
-                                            justifyContent:
-                                                "space-between !important",
-                                        },
-                                }}
-                            >
-                                <Box
-                                    mb={["2.4rem", "0"]}
-                                    sx={{
-                                        width: [
-                                            "100%",
-                                            "31.2rem",
-                                            null,
-                                            "40.8rem",
-                                        ],
-                                        height: [
-                                            "19.2rem",
-                                            "24rem",
-                                            null,
-                                            "32rem",
-                                        ],
-                                        backgroundImage: `url(${contentBlock.image})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        border: `0.1rem solid ${theme.colors.imageBorder}`,
-                                        borderRadius: [
-                                            "0.85rem",
-                                            null,
-                                            "1.3rem",
-                                        ],
-                                        [`@media screen and (min-width: ${theme.breakpoints[3]})`]:
-                                            {
-                                                width: "53rem",
-                                                height: "38.4rem",
-                                            },
-                                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
-                                            {
-                                                width: "70.4rem",
-                                                height: "38.4rem",
-                                            },
-                                    }}
-                                />
-                                <Flex
-                                    flexDirection={"column"}
-                                    width={[
-                                        "100%",
-                                        "calc(50% - 1rem)",
-                                        null,
-                                        "53rem",
-                                    ]}
-                                    sx={{
-                                        justifyContent: ["center"],
-                                        [`@media screen and (min-width: ${theme.breakpoints[4]})`]:
-                                            {
-                                                width: "70.4rem !important",
-                                            },
-                                    }}
-                                >
-                                    <Text
-                                        as="h3"
-                                        mb={["2rem", "1.6rem", null, "2.4rem"]}
-                                    >
-                                        <AnimatedText speed={20}>
-                                            {contentBlock.heading}
-                                        </AnimatedText>
-                                    </Text>
-                                    <Text as="p">
-                                        <AnimatedText speed={5}>
-                                            {contentBlock.content}
-                                        </AnimatedText>
-                                    </Text>
-                                </Flex>
-                            </Flex>
-                        </Fade>
-                    )
-                )}
-            </Flex>
-        </Box>
+                <picture>
+                    <img
+                        alt="Sphere"
+                        src="/parallax/sphere.png"
+                        onLoad={handleParallaxImageLoading}
+                    />
+                </picture>
+            </div>
+            {MAIN_CONTENT.map((contentBlock, index: number) => {
+                return (
+                    <ContentBlock
+                        key={index}
+                        {...contentBlock}
+                        reverseRow={index % 2 !== 0}
+                    />
+                );
+            })}
+        </div>
     );
 };
 
-interface ContentBlock {
-    heading: string;
-    content: string;
-    image: string;
+interface ContentBlockProps extends ContentBlockType {
+    reverseRow: boolean;
 }
 
-const MainContent = [
-    {
-        heading: "Measure what matters",
-        content:
-            "Carrot allows you to set precise goals and targets based on the needs of your project. Use strong cryptoeconomic incentives to bring your community together and achieve common goals.",
-        image: "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850185/carrot/main-content/Measure-what-matters_dnay2p.png",
-    },
-    {
-        heading: "Incentivize your community",
-        content:
-            "Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met. Carrot has helped distribute over $XX in rewards to date.",
-        image: "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850167/carrot/main-content/Incentivize-your-community_svcdu3.png",
-    },
-    {
-        heading: "Reward real value",
-        content:
-            "Anyone who contributes to a goal will receive rewards directly proportional to their impact thanks to the magic of KPI tokens. Get real value in exchange for real value. ",
-        image: "https://res.cloudinary.com/guido-la-rosa/image/upload/v1657850191/carrot/main-content/Reward-real-value_souwan.png",
-    },
-];
+const ContentBlock = ({
+    reverseRow,
+    image,
+    heading,
+    content,
+}: ContentBlockProps) => {
+    return (
+        <div className={sectionStyles({ reverseRow })} data-aos="fade-up">
+            <picture>
+                <img
+                    src={image}
+                    alt="img"
+                    className="border border-black rounded-2xl w-full h-[19.2rem] md:w-[33.125rem] md:h-[24rem] lg:w-[44rem] lg:h-[24rem]"
+                />
+            </picture>
+            <div className="flex flex-col max-w-3xl justify-center">
+                <Typography
+                    variant="h2"
+                    className={{
+                        root: "text-[3rem] md:text-[4.3rem] mb-8",
+                    }}
+                >
+                    <AnimatedText speed={20} text={heading} />
+                </Typography>
+                <Typography variant="lg">
+                    <AnimatedText speed={5} text={content} />
+                </Typography>
+            </div>
+        </div>
+    );
+};
 
 export default Breakdown;
