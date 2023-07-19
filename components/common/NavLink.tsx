@@ -18,7 +18,7 @@ const NavLink = ({ to, label, onClick }: NavLinkProps) => {
                 block: "start",
             });
         },
-        [onClick, to]
+        [onClick, to],
     );
 
     return (

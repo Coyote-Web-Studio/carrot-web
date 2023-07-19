@@ -12,7 +12,7 @@ const headingStyles = cva(
                 true: ["lg:h-80"],
             },
         },
-    }
+    },
 );
 
 const contentStyles = cva("px-8 lg:px-14 transition-max-height duration-400", {
