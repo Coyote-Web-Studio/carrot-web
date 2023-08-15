@@ -73,11 +73,18 @@ const JoinTheCommunity = () => (
                 </div>
             </div>
         </div>
-        <div className="hidden lg:block w-full h-full xl:w-1/2">
+        <div className="hidden md:block md:relative w-full h-full xl:w-1/2 justify-center items-center">
             <picture className="w-full h-full">
                 <img
                     src="/footer-background.png"
                     alt="footer-img"
+                    className="object-cover w-full h-full"
+                />
+            </picture>
+            <picture className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72">
+                <img
+                    src="/logo.png"
+                    alt="footer-logo"
                     className="object-cover w-full h-full"
                 />
             </picture>

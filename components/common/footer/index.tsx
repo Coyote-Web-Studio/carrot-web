@@ -11,7 +11,7 @@ interface FooterProps {
 
 export const Footer = ({ footerLinks }: FooterProps) => {
     const parallaxController = useParallaxController();
-    const { ref: sphereRef } = useParallax<HTMLDivElement>({
+    const { ref: sphere2Ref } = useParallax<HTMLDivElement>({
         speed: -20,
     });
     const { ref: curveRef } = useParallax<HTMLDivElement>({
@@ -30,12 +30,12 @@ export const Footer = ({ footerLinks }: FooterProps) => {
         <div className="w-full py-16 bg-black md:py-24 lg:py-32 relative">
             <div
                 className="absolute left-[6%] lg:left-[10%] hidden md:block z-10 md:w-16 md:h-16 lg:w-24 lg:h-24 md:top-[10%]"
-                ref={sphereRef}
+                ref={sphere2Ref}
             >
                 <picture>
                     <img
-                        alt="Sphere"
-                        src="/parallax/sphere.png"
+                        alt="Sphere 2"
+                        src="/parallax/sphere2.png"
                         onLoad={handleParallaxImageLoading}
                         className="object-cover"
                     />

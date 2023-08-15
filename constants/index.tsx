@@ -39,26 +39,26 @@ export interface ContentBlock {
     image: string;
 }
 
-export const MAIN_CONTENT: ContentBlock[] = [
-    {
-        heading: "Measure what matters",
-        content:
-            "Carrot allows you to set precise goals and targets based on the needs of your project. Use strong cryptoeconomic incentives to bring your community together and achieve common goals.",
-        image: "/main-content/measure.png",
-    },
-    {
-        heading: "Incentivize your community",
-        content:
-            "Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met.",
-        image: "/main-content/incentivize.png",
-    },
-    {
-        heading: "Reward real value",
-        content:
-            "Anyone who contributes to a goal will receive rewards directly proportional to their impact thanks to the magic of KPI tokens. Get real value in exchange for real value. ",
-        image: "/main-content/reward.png",
-    },
-];
+export const MAIN_CONTENT_MEASURE: ContentBlock = {
+    heading: "Measure what matters",
+    content:
+        "Carrot allows you to set precise goals and targets based on the needs of your project. Use strong cryptoeconomic incentives to bring your community together and achieve common goals.",
+    image: "/main-content/measure.png",
+};
+
+export const MAIN_CONTENT_INCENTIVIZE: ContentBlock = {
+    heading: "Incentivize your community",
+    content:
+        "Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met.",
+    image: "/main-content/incentivize.png",
+};
+
+export const MAIN_CONTENT_REWARD: ContentBlock = {
+    heading: "Reward real value",
+    content:
+        "Anyone who contributes to a goal will receive rewards directly proportional to their impact thanks to the magic of KPI tokens. Get real value in exchange for real value. ",
+    image: "/main-content/reward.png",
+};
 
 export interface HowItWorks {
     heading: string;
@@ -122,7 +122,7 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
                 </Typography>
                 <picture>
                     <img
-                        src="/main-content/incentivize.png"
+                        src="/main-content/reward.png"
                         alt="create"
                         className="w-full h-72 border border-black rounded-2xl object-cover"
                     />
