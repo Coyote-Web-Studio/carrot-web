@@ -12,7 +12,7 @@ const socialsSectionStyles = cva(
                 false: "border-b-0",
             },
         },
-    }
+    },
 );
 
 const JoinTheCommunity = () => (

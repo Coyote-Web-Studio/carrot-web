@@ -14,7 +14,7 @@ const minusLineStyles = cva(
                 false: "rotate-0",
             },
         },
-    }
+    },
 );
 
 const SeeMoreButton = ({ open, onClick }: SeeMoreButtonProps) => {

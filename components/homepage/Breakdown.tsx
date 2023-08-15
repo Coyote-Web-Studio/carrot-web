@@ -31,7 +31,7 @@ const sectionStyles = cva(
                 true: ["lg:flex-row-reverse"],
             },
         },
-    }
+    },
 );
 
 const Breakdown = () => {
