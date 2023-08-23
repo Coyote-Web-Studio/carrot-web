@@ -5,7 +5,7 @@ import AnimatedText from "../AnimatedText";
 const Hero = () => {
     return (
         <div className="px-4 md:px-8 lg:px-48 pb-6 w-full flex justify-center">
-            <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-center gap-20 md:gap-36 pb-16 pt-7 md:pt-24 md:pb-32">
+            <div className="w-full flex flex-col lg:items-center lg:justify-center gap-20 md:gap-36 pb-16 pt-7 md:pt-24 md:pb-32">
                 <div className="flex flex-col gap-10 flex-1 w-full">
                     <Typography
                         variant="h1"
@@ -34,7 +34,7 @@ const Hero = () => {
                         </a>
                     </div>
                 </div>
-                <div className="w-full flex-1" data-aos="fade-up">
+                <div className="w-full flex-1 lg:max-w-5xl" data-aos="fade-up">
                     <video
                         controls
                         className="aspect-video w-full border border-black rounded-xl bg-gray-500 overflow-hidden"

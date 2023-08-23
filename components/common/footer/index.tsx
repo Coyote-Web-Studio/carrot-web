@@ -11,14 +11,11 @@ interface FooterProps {
 
 export const Footer = ({ footerLinks }: FooterProps) => {
     const parallaxController = useParallaxController();
-    const { ref: sphere2Ref } = useParallax<HTMLDivElement>({
+    const { ref: coneRef } = useParallax<HTMLDivElement>({
+        speed: -5,
+    });
+    const { ref: carrotRef } = useParallax<HTMLDivElement>({
         speed: -20,
-    });
-    const { ref: curveRef } = useParallax<HTMLDivElement>({
-        speed: -30,
-    });
-    const { ref: hexagonRef } = useParallax<HTMLDivElement>({
-        speed: -10,
     });
 
     const handleParallaxImageLoading = useCallback(() => {
@@ -29,39 +26,26 @@ export const Footer = ({ footerLinks }: FooterProps) => {
     return (
         <div className="w-full py-16 bg-black md:py-24 lg:py-32 relative">
             <div
-                className="absolute left-[6%] lg:left-[10%] hidden md:block z-10 md:w-16 md:h-16 lg:w-24 lg:h-24 md:top-[10%]"
-                ref={sphere2Ref}
+                className="absolute left-[16%] lg:left-[20%] hidden md:block z-10 md:w-20 md:h-20 lg:w-44 lg:h-44 md:top-[0%]"
+                ref={coneRef}
             >
                 <picture>
                     <img
-                        alt="Sphere 2"
-                        src="/parallax/sphere2.png"
+                        alt="Cone"
+                        src="/parallax/cone.png"
                         onLoad={handleParallaxImageLoading}
                         className="object-cover"
                     />
                 </picture>
             </div>
             <div
-                className="absolute right-[30%] lg:right-[40%] hidden md:block z-10 md:w-16 md:h-16 lg:w-24 lg:h-24 md:bottom-[30%]"
-                ref={curveRef}
+                className="absolute left-[20%] right-[20%] hidden md:block z-10 w-fit top-[5%]"
+                ref={carrotRef}
             >
                 <picture>
                     <img
-                        alt="Gold Curve"
-                        src="/parallax/gold-curve.png"
-                        onLoad={handleParallaxImageLoading}
-                        className="object-cover"
-                    />
-                </picture>
-            </div>
-            <div
-                className="absolute right-[10%] lg:right-[15%] hidden md:block z-10 md:w-32 md:h-32 lg:w-40 lg:h-40 md:top-[20%]"
-                ref={hexagonRef}
-            >
-                <picture>
-                    <img
-                        alt="Hexagon"
-                        src="/parallax/hexagon.png"
+                        alt="Carrot"
+                        src="/parallax/carrot.png"
                         onLoad={handleParallaxImageLoading}
                         className="object-cover"
                     />
