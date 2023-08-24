@@ -41,11 +41,11 @@ const Hero = () => {
                         className="aspect-video w-full border border-black rounded-xl bg-gray-500 overflow-hidden"
                     >
                         <source
-                            src="https://static.carrot-kpi.dev/hero-video.webm"
+                            src="https://static.carrot-kpi.dev/hero-video.webm#t=0.001"
                             type="video/webm"
                         />
                         <source
-                            src="https://static.carrot-kpi.dev/hero-video.mp4"
+                            src="https://static.carrot-kpi.dev/hero-video.mp4#t=0.001"
                             type="video/mp4"
                         />
                         Not supported
