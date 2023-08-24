@@ -63,11 +63,11 @@ const JoinTheCommunity = () => {
                                                 COMMUNITY_DATA.length - 1,
                                         })}
                                     >
-                                        <picture className="flex items-center mr-20">
+                                        <picture className="flex items-center mr-10">
                                             <img
                                                 src={data.img}
                                                 alt="discord"
-                                                className="h-40 w-40 object-cover"
+                                                className="w-40 object-cover"
                                             />
                                         </picture>
                                         <div className="flex flex-col justify-center gap-4 max-w-sm lg:mt-20">
@@ -100,9 +100,9 @@ const JoinTheCommunity = () => {
                         className="object-cover w-full h-full"
                     />
                 </picture>
-                <picture className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72">
+                <picture className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-44 h-44">
                     <img
-                        src="/logo.png"
+                        src="/carrot_logo.svg"
                         alt="footer-logo"
                         className="object-cover w-full h-full"
                     />
