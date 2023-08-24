@@ -37,6 +37,7 @@ const Hero = () => {
                 <div className="w-full flex-1 lg:max-w-5xl" data-aos="fade-up">
                     <video
                         controls
+                        preload="metadata"
                         className="aspect-video w-full border border-black rounded-xl bg-gray-500 overflow-hidden"
                     >
                         <source
