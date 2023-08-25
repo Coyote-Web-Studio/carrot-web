@@ -145,7 +145,7 @@ export const COMMUNITY_DATA: CommunityData[] = [
         img: "/community/discord.svg",
         detail: "Join in on community discussion on the Carrot Discord.",
         buttonLabel: "JOIN DISCORD",
-        buttonLink: "https://discord.gg/vssJce4H",
+        buttonLink: "https://discord.com/invite/uRer2D4Pdf",
     },
     {
         img: "/community/github.svg",
@@ -201,7 +201,7 @@ export const FOOTER_LINKS: FooterLink[] = [
         links: [
             {
                 title: "Discord",
-                to: "https://discord.gg/zCFXBEQkVa",
+                to: "https://discord.com/invite/uRer2D4Pdf",
             },
             {
                 title: "Twitter",
