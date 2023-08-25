@@ -43,7 +43,7 @@ export const MAIN_CONTENT: ContentBlock[] = [
     {
         heading: "Incentivize with purpose",
         content:
-            "Design your incentives that resonates with your community, ensuring actions are aligned with your project's goals.",
+            "Design your incentives that resonate with your community, ensuring actions are aligned with your project's goals.",
         image: "/main-content/measure.png",
     },
     {
