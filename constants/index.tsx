@@ -41,21 +41,22 @@ export interface ContentBlock {
 
 export const MAIN_CONTENT: ContentBlock[] = [
     {
-        heading: "Measure what matters",
+        heading: "Incentivize with purpose",
         content:
-            "Carrot allows you to set precise goals and targets based on the needs of your project. Use strong cryptoeconomic incentives to bring your community together and achieve common goals.",
+            "Design your incentives that resonates with your community, ensuring actions are aligned with your project's goals.",
         image: "/main-content/measure.png",
     },
     {
-        heading: "Incentivize your community",
+        heading: "Incentivize with efficiency",
         content:
-            "Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met.",
+            "Distribute rewards only when objectives are achieved. This ensures that every token spent is an investment towards progress, resulting in better financial prudence and token utility.",
+
         image: "/main-content/incentivize.png",
     },
     {
-        heading: "Reward real value",
+        heading: "Incentivize with flexibility",
         content:
-            "Anyone who contributes to a goal will receive rewards directly proportional to their impact thanks to the magic of KPI tokens. Get real value in exchange for real value. ",
+            "Whether you're a DeFi project or a DAO running grants programs, Carrot's flexible platform can be tailored to suit your unique incentivization requirements. From goal setting to reward distribution, adapt Carrot to work best for you.",
         image: "/main-content/reward.png",
     },
 ];
@@ -144,7 +145,7 @@ export const COMMUNITY_DATA: CommunityData[] = [
         img: "/community/discord.svg",
         detail: "Join in on community discussion on the Carrot Discord.",
         buttonLabel: "JOIN DISCORD",
-        buttonLink: "https://discord.gg/vssJce4H",
+        buttonLink: "https://discord.com/invite/uRer2D4Pdf",
     },
     {
         img: "/community/github.svg",
@@ -200,7 +201,7 @@ export const FOOTER_LINKS: FooterLink[] = [
         links: [
             {
                 title: "Discord",
-                to: "https://discord.gg/zCFXBEQkVa",
+                to: "https://discord.com/invite/uRer2D4Pdf",
             },
             {
                 title: "Twitter",
