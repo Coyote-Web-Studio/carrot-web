@@ -13,12 +13,12 @@ const Hero = () => {
                             root: "text-[4rem] md:text-[4.8rem] lg:text-[6.9rem]",
                         }}
                     >
-                        <AnimatedText text="Unlock the power of incentivization with Carrot" />
+                        <AnimatedText text="Unlock the power of incentivization" />
                     </Typography>
                     <div className="flex flex-col gap-14">
                         <Typography variant="lg" data-aos="fade-up">
                             <AnimatedText
-                                text="Reimagine the potential of your community with Carrot. Turn aspirations into actions and celebrate every milestone with tailored rewards."
+                                text="Reimagine the potential of your community with Carrot. Turn goals into actions and celebrate every milestone with tailored rewards."
                                 speed={10}
                             ></AnimatedText>
                         </Typography>
