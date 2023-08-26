@@ -39,27 +39,26 @@ export interface ContentBlock {
     image: string;
 }
 
-export const MAIN_CONTENT: ContentBlock[] = [
-    {
-        heading: "Incentivize with purpose",
-        content:
-            "Design incentives that resonate with your community, ensuring actions are aligned with your project's goals.",
-        image: "/main-content/measure.png",
-    },
-    {
-        heading: "Incentivize with efficiency",
-        content:
-            "Distribute rewards only when objectives are achieved. This ensures that every token spent is an investment towards progress, resulting in better financial prudence and token utility.",
+export const MAIN_CONTENT_MEASURE: ContentBlock = {
+    heading: "Incentivize with purpose",
+    content:
+        "Design your incentives that resonate with your community, ensuring actions are aligned with your project's goals.",
+    image: "/main-content/measure.png",
+};
 
-        image: "/main-content/incentivize.png",
-    },
-    {
-        heading: "Incentivize with flexibility",
-        content:
-            "Whether you're a DeFi project or a DAO running grants programs, Carrot's flexible platform can be tailored to suit your unique incentivization requirements. From goal setting to reward distribution, adapt Carrot to work best for you.",
-        image: "/main-content/reward.png",
-    },
-];
+export const MAIN_CONTENT_INCENTIVIZE: ContentBlock = {
+    heading: "Incentivize with efficiency",
+    content:
+        "Distribute rewards only when objectives are achieved. This ensures that every token spent is an investment towards progress, resulting in better financial prudence and token utility.",
+    image: "/main-content/incentivize.png",
+};
+
+export const MAIN_CONTENT_REWARD: ContentBlock = {
+    heading: "Incentivize with flexibility",
+    content:
+        "Whether you're a DeFi project or a DAO running grants programs, Carrot's flexible platform can be tailored to suit your unique incentivization requirements. From goal setting to reward distribution, adapt Carrot to work best for you.",
+    image: "/main-content/reward.png",
+};
 
 export interface HowItWorks {
     heading: string;
