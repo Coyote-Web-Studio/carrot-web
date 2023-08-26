@@ -62,7 +62,9 @@ const HowItWorksBlock = ({
             </div>
             <div className="bg-white flex flex-col items-center flex-1 shadow-border overflow-hidden">
                 <div className="lg:h-48 w-full flex py-7 px-8 lg:px-12 justify-between items-center gap-20">
-                    <Typography className={{ root: "text-base lg:text-xl" }}>
+                    <Typography
+                        className={{ root: "text-base lg:text-[1.25rem]" }}
+                    >
                         {triggerLabel}
                     </Typography>
                     <SeeMoreButton open={open} onClick={handleExpand} />
