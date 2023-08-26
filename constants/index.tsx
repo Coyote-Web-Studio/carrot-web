@@ -39,26 +39,27 @@ export interface ContentBlock {
     image: string;
 }
 
-export const MAIN_CONTENT_MEASURE: ContentBlock = {
-    heading: "Measure what matters",
-    content:
-        "Carrot allows you to set precise goals and targets based on the needs of your project. Use strong cryptoeconomic incentives to bring your community together and achieve common goals.",
-    image: "/main-content/measure.png",
-};
+export const MAIN_CONTENT: ContentBlock[] = [
+    {
+        heading: "Incentivize with purpose",
+        content:
+            "Design incentives that resonate with your community, ensuring actions are aligned with your project's goals.",
+        image: "/main-content/measure.png",
+    },
+    {
+        heading: "Incentivize with efficiency",
+        content:
+            "Distribute rewards only when objectives are achieved. This ensures that every token spent is an investment towards progress, resulting in better financial prudence and token utility.",
 
-export const MAIN_CONTENT_INCENTIVIZE: ContentBlock = {
-    heading: "Incentivize your community",
-    content:
-        "Encourage positive feedback through collective efforts by rewarding users when important milestones and goals are met.",
-    image: "/main-content/incentivize.png",
-};
-
-export const MAIN_CONTENT_REWARD: ContentBlock = {
-    heading: "Reward real value",
-    content:
-        "Anyone who contributes to a goal will receive rewards directly proportional to their impact thanks to the magic of KPI tokens. Get real value in exchange for real value. ",
-    image: "/main-content/reward.png",
-};
+        image: "/main-content/incentivize.png",
+    },
+    {
+        heading: "Incentivize with flexibility",
+        content:
+            "Whether you're a DeFi project or a DAO running grants programs, Carrot's flexible platform can be tailored to suit your unique incentivization requirements. From goal setting to reward distribution, adapt Carrot to work best for you.",
+        image: "/main-content/reward.png",
+    },
+];
 
 export interface HowItWorks {
     heading: string;
