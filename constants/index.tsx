@@ -2,8 +2,9 @@ import { Typography } from "@carrot-kpi/ui";
 import React, { FunctionComponent, ReactNode } from "react";
 import AnimatedText from "../components/AnimatedText";
 
-export const CARROT_DOMAIN =
-    process.env.NEXT_PUBLIC_DEV === "true" ? "carrot-kpi.dev" : "carrot-kpi.io";
+export const CARROT_DOMAIN = `${
+    process.env.NEXT_PUBLIC_STAGING === "true" ? "staging." : ""
+}carrot.community`;
 
 export interface NavLink {
     label: string;
