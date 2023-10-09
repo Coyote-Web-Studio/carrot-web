@@ -23,7 +23,7 @@ const Hero = () => {
                             ></AnimatedText>
                         </Typography>
                         <a
-                            href={`https://app.${CARROT_DOMAIN}/#/create`}
+                            href={`https://app.${CARROT_DOMAIN}`}
                             target="_blank"
                             rel="noopener noreferred"
                             className="dark"
