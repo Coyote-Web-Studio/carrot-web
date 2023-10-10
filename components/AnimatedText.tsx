@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { Fragment, useEffect, useRef, useState } from "react";
 
-const letterStyles = cva(["inline-block", "opacity-0"], {
+const letterStyles = cva(["inline", "opacity-0"], {
     variants: {
         visible: {
             true: ["animate-fade-in"],
@@ -48,7 +48,7 @@ const AnimatedText = ({
     }, []);
 
     return (
-        <>
+        <div className="text-clip" ref={targetRef}>
             {text.split(" ").map((word, i) => {
                 return (
                     <Fragment key={i + word}>
@@ -56,7 +56,6 @@ const AnimatedText = ({
                             {word.split("").map((letter, i) => {
                                 return (
                                     <span
-                                        ref={targetRef}
                                         key={i + letter}
                                         className={letterStyles({ visible })}
                                         style={{
@@ -75,7 +74,7 @@ const AnimatedText = ({
                     </Fragment>
                 );
             })}
-        </>
+        </div>
     );
 };
 
