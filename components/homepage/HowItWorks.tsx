@@ -8,11 +8,11 @@ const HowItWorks = () => {
             id="how-it-works"
             className="px-4 md:px-10 lg:px-14 xl:px-40 py-36 flex flex-col items-center"
         >
-            <div className="max-w-screen-2xl flex flex-col gap-20">
+            <div className="max-w-screen-2xl flex flex-col gap-12">
                 <Typography
-                    variant="h2"
+                    variant="h4"
                     className={{
-                        root: "text-[5rem] md:text-[6rem] lg:text-[7.4rem]",
+                        root: "text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem]",
                     }}
                     data-aos="fade-up"
                 >

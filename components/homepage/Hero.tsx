@@ -21,12 +21,12 @@ const Hero = () => {
 
     return (
         <div className="px-4 md:px-10 lg:px-14 xl:px-40 pb-6 w-full flex justify-center">
-            <div className="w-full max-w-screen-2xl flex flex-col lg:flex-row lg:items-center lg:justify-center gap-20 md:gap-36 pb-16 pt-7 md:pt-24 md:pb-32">
-                <div className="flex flex-col gap-10 flex-1 w-full">
+            <div className="w-full max-w-screen-2xl flex flex-col items-center lg:flex-row lg:justify-center gap-20 md:gap-36 pb-16 pt-7 md:pt-24 md:pb-32">
+                <div className="flex flex-col gap-10 flex-1 w-full max-w-xl lg:max-w-none">
                     <Typography
                         variant="h1"
                         className={{
-                            root: "text-[4rem] md:text-[4.8rem] lg:text-[6.9rem]",
+                            root: "text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem]",
                         }}
                     >
                         <AnimatedText text="Unlock the power of incentivization" />
@@ -36,7 +36,7 @@ const Hero = () => {
                             <AnimatedText
                                 text="Reimagine the potential of your community with Carrot. Turn goals into actions and celebrate every milestone with tailored rewards."
                                 speed={10}
-                            ></AnimatedText>
+                            />
                         </Typography>
                         <a
                             href={`https://app.${CARROT_DOMAIN}`}
@@ -51,7 +51,7 @@ const Hero = () => {
                     </div>
                 </div>
                 <div
-                    className="flex-1 max-w-xl w-60 aspect-9/12 relative"
+                    className="flex-1 flex justify-center max-w-xl w-full md:max-w-lg lg:w-60 aspect-9/12 relative"
                     data-aos="fade-up"
                 >
                     <Image
@@ -64,7 +64,8 @@ const Hero = () => {
                         <Button
                             onClick={handleClick}
                             className={{
-                                contentWrapper: "flex gap-3 items-center",
+                                contentWrapper:
+                                    "flex gap-3 items-center whitespace-nowrap",
                             }}
                             size="small"
                         >

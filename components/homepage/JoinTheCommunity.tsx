@@ -38,7 +38,7 @@ const JoinTheCommunity = () => {
                     <Typography
                         variant="h2"
                         className={{
-                            root: "text-[3.5rem] md:text-[4.7rem] lg:text-[5.5rem] px-6 pt-6 pb-10 border border-black border-b-0 max-w-xl",
+                            root: "text-[3rem] md:text-[3.5rem] lg:text-[4rem] px-6 pt-6 pb-10 border border-black border-b-0 max-w-xl",
                         }}
                     >
                         <AnimatedText speed={20} text="Join the community" />
