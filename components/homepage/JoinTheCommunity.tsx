@@ -20,7 +20,7 @@ const JoinTheCommunity = () => {
             id="community"
             className="w-full flex flex-col justify-center xl:flex-row relative mb-16"
         >
-            <div className="bg-orange xl:w-2/3 flex justify-center rounded-md border border-black p-14">
+            <div className="bg-orange w-full max-w-screen-2xl flex justify-center rounded-md border border-black p-14">
                 <div
                     className="absolute md:right-[5%] lg:right-[10%] hidden md:block z-10 md:w-48 md:h-48 lg:w-72 lg:h-72 md:top-[70%]"
                     ref={chainRef}
