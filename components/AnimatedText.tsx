@@ -48,7 +48,7 @@ const AnimatedText = ({
     }, []);
 
     return (
-        <div className="text-clip" ref={targetRef}>
+        <span className="text-clip" ref={targetRef}>
             {text.split(" ").map((word, i) => {
                 return (
                     <Fragment key={i + word}>
@@ -74,7 +74,7 @@ const AnimatedText = ({
                     </Fragment>
                 );
             })}
-        </div>
+        </span>
     );
 };
 
