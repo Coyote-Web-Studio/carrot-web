@@ -51,8 +51,8 @@ const AnimatedText = ({
         <>
             {text.split(" ").map((word, i) => {
                 return (
-                    <>
-                        <span className="inline-block" key={i + word}>
+                    <Fragment key={i + word}>
+                        <span className="inline-block">
                             {word.split("").map((letter, i) => {
                                 return (
                                     <span
@@ -72,7 +72,7 @@ const AnimatedText = ({
                             })}
                         </span>
                         <span> </span>
-                    </>
+                    </Fragment>
                 );
             })}
         </>
