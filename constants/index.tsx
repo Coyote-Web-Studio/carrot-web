@@ -1,6 +1,11 @@
 import { Typography } from "@carrot-kpi/ui";
-import React, { FunctionComponent, ReactNode } from "react";
+import React, { FunctionComponent, ReactElement, ReactNode } from "react";
 import AnimatedText from "../components/AnimatedText";
+import { SVGIcon } from "../icons/types";
+import X from "../icons/x";
+import Discord from "../icons/discord";
+import Medium from "../icons/medium";
+import Github from "../icons/github";
 
 export const CARROT_DOMAIN = `${
     process.env.NEXT_PUBLIC_STAGING === "true" ? "staging." : ""
@@ -134,30 +139,31 @@ export const HOW_IT_WORKS_CONTENT: HowItWorks[] = [
 ];
 
 export interface CommunityData {
-    img: string;
-    detail: string;
+    img: ReactElement;
     buttonLabel: string;
     buttonLink: string;
 }
 
 export const COMMUNITY_DATA: CommunityData[] = [
     {
-        img: "/community/discord.svg",
-        detail: "Join in on community discussion on the Carrot Discord.",
-        buttonLabel: "JOIN DISCORD",
+        img: <X className="stroke-white fill-white w-6 h-6" />,
+        buttonLabel: "X",
+        buttonLink: "https://twitter.com/CarrotEth",
+    },
+    {
+        img: <Discord className="stroke-white fill-white w-8 h-8" />,
+        buttonLabel: "Discord",
         buttonLink: "https://discord.gg/uRer2D4Pdf",
     },
     {
-        img: "/community/github.svg",
-        detail: "Contribute to the Carrot repositories on Github.",
-        buttonLabel: "JOIN GITHUB",
-        buttonLink: "https://github.com/carrot-kpi",
+        img: <Medium className="stroke-white fill-white w-9 h-8" />,
+        buttonLabel: "Medium",
+        buttonLink: "https://twitter.com/CarrotEth",
     },
     {
-        img: "/community/twitter.svg",
-        detail: "Get the latest Carrot announcements on Twitter.",
-        buttonLabel: "JOIN TWITTER",
-        buttonLink: "https://twitter.com/CarrotEth",
+        img: <Github className="stroke-white fill-white w-9 h-9" />,
+        buttonLabel: "GitHub",
+        buttonLink: "https://github.com/carrot-kpi",
     },
 ];
 

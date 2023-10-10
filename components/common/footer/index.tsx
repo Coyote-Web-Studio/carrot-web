@@ -39,7 +39,7 @@ export const Footer = ({ footerLinks }: FooterProps) => {
                 </picture>
             </div>
             <div
-                className="absolute hidden left-0 right-0 mx-auto md:block z-10 w-2/3 top-[5%]"
+                className="absolute hidden left-0 right-0 mx-auto md:block z-10 w-1/2 top-[5%]"
                 ref={carrotRef}
             >
                 <picture>

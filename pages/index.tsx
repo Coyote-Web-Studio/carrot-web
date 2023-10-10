@@ -30,8 +30,8 @@ const Home: NextPage = () => {
                     {/* <CarrotInNumbers /> */}
                     {/* <TrustingProtocols /> */}
                     {/* <Testimonials /> */}
-                    <Marquees />
                     <JoinTheCommunity />
+                    <Marquees />
                 </div>
                 <div className="z-0">
                     <Footer footerLinks={FOOTER_LINKS} />
