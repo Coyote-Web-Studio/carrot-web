@@ -31,10 +31,26 @@ const JoinTheCommunity = () => {
     return (
         <div
             id="community"
-            className="w-full flex flex-col xl:flex-row bg-orange"
+            className="w-full flex flex-col xl:flex-row bg-orange relative"
         >
-            <div className="w-full xl:w-1/2" data-aos="fade-up">
-                <div className="py-10 px-4 lg:p-20">
+            <div
+                className="absolute md:right-[5%] lg:right-[10%] hidden md:block z-10 md:w-48 md:h-48 lg:w-72 lg:h-72 md:top-[70%]"
+                ref={chainRef}
+            >
+                <picture>
+                    <img
+                        alt="Carrot Chain"
+                        src="/parallax/chain.png"
+                        onLoad={handleParallaxImageLoading}
+                        className="object-cover"
+                    />
+                </picture>
+            </div>
+            <div
+                className="w-full flex justify-center px-4 md:px-10 lg:px-14 xl:px-40 py-4 md:py-6 lg:py-12 xl:py-20"
+                data-aos="fade-up"
+            >
+                <div className="w-full max-w-screen-2xl py-10">
                     <Typography
                         variant="h2"
                         className={{
@@ -92,7 +108,7 @@ const JoinTheCommunity = () => {
                     </div>
                 </div>
             </div>
-            <div className="hidden md:block md:relative xl:w-1/2 justify-center items-center">
+            {/* <div className="hidden md:block md:relative xl:w-1/2 justify-center items-center">
                 <picture className="w-full h-full">
                     <img
                         src="/community-background.png"
@@ -107,20 +123,7 @@ const JoinTheCommunity = () => {
                         className="object-cover w-full h-full"
                     />
                 </picture>
-                <div
-                    className="absolute md:right-[5%] lg:right-[10%] hidden md:block z-10 md:w-48 md:h-48 lg:w-72 lg:h-72 md:top-[70%]"
-                    ref={chainRef}
-                >
-                    <picture>
-                        <img
-                            alt="Carrot Chain"
-                            src="/parallax/chain.png"
-                            onLoad={handleParallaxImageLoading}
-                            className="object-cover"
-                        />
-                    </picture>
-                </div>
-            </div>
+            </div> */}
         </div>
     );
 };
