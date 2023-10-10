@@ -14,7 +14,8 @@
     },
     "dependencies": {
         "@carrot-kpi/switzer-font": "^0.1.0",
-        "@carrot-kpi/ui": "^0.48.8",
+        "@carrot-kpi/ui": "^0.63.1",
+        "@fontsource/ibm-plex-mono": "^5.0.5",
         "aos": "^2.3.4",
         "autoprefixer": "^10.4.14",
         "class-variance-authority": "^0.7.0",
@@ -28,7 +29,6 @@
     "devDependencies": {
         "@commitlint/cli": "^17.6.6",
         "@commitlint/config-conventional": "^17.6.6",
-        "@fontsource/ibm-plex-mono": "^5.0.5",
         "@types/aos": "^3.0.4",
         "@types/react": "18.2.15",
         "@types/react-dom": "18.2.7",
