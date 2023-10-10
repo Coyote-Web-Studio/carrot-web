@@ -11,6 +11,8 @@ const Hero = () => {
 
     const handleClick = useCallback(() => {
         setShowVideo(true);
+        if (!videoRef || !videoRef.current) return;
+        videoRef.current.play();
     }, []);
 
     const handleDismiss = useCallback(() => {
