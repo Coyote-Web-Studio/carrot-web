@@ -24,7 +24,7 @@ export const Footer = ({ footerLinks }: FooterProps) => {
     }, [parallaxController]);
 
     return (
-        <div className="w-full py-16 bg-black md:py-24 lg:py-32 relative">
+        <div className="flex flex-col items-center w-full py-16 bg-black md:py-24 lg:py-32 relative px-6 md:px-24 xl:px-32 xxl:px-52">
             <div
                 className="absolute left-[16%] lg:left-[20%] hidden md:block z-10 md:w-20 md:h-20 lg:w-44 lg:h-44 md:top-[0%]"
                 ref={coneRef}
@@ -56,20 +56,26 @@ export const Footer = ({ footerLinks }: FooterProps) => {
                     <Logo className="relative w-full h-auto text-orange" />
                 </div>
             </div>
-            <div className="flex flex-col justify-between px-6 pt-8 space-y-24 md:pt-24 lg:pt-32 md:px-24 xl:px-32 xl:space-y-0 xl:flex-row xxl:px-52">
-                <div className="grid grid-cols-2 gap-8 xs:gap-10 md:gap-0 md:flex xl:space-x-6">
-                    {footerLinks.map(({ title, links }) => (
-                        <FooterLinks key={title} title={title} links={links} />
-                    ))}
-                </div>
-                <div className="flex items-end dark">
-                    <Button
-                        href={`https://app.${CARROT_DOMAIN}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Carrot app
-                    </Button>
+            <div className="flex justify-center w-full max-w-screen-2xl pt-8 md:pt-24 lg:pt-32">
+                <div className="w-full flex flex-col justify-between xl:flex-row space-y-24 xl:space-y-0">
+                    <div className="grid grid-cols-2 gap-8 xs:gap-10 md:gap-0 md:flex xl:space-x-6">
+                        {footerLinks.map(({ title, links }) => (
+                            <FooterLinks
+                                key={title}
+                                title={title}
+                                links={links}
+                            />
+                        ))}
+                    </div>
+                    <div className="flex items-end dark">
+                        <Button
+                            href={`https://app.${CARROT_DOMAIN}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Carrot app
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
