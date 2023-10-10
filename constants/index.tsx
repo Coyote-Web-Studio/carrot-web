@@ -158,7 +158,7 @@ export const COMMUNITY_DATA: CommunityData[] = [
     {
         img: <Medium className="stroke-white fill-white w-9 h-8" />,
         buttonLabel: "Medium",
-        buttonLink: "https://twitter.com/CarrotEth",
+        buttonLink: "https://medium.com/carrot-eth",
     },
     {
         img: <Github className="stroke-white fill-white w-9 h-9" />,
@@ -188,10 +188,6 @@ export const FOOTER_LINKS: FooterLink[] = [
             //     to: "/faq",
             // },
             {
-                title: "Documentation",
-                to: `https://docs.${CARROT_DOMAIN}`,
-            },
-            {
                 title: "Audits",
                 to: "https://github.com/carrot-kpi/v1-contracts/tree/main/audits",
             },
@@ -213,11 +209,21 @@ export const FOOTER_LINKS: FooterLink[] = [
                 title: "Twitter",
                 to: "https://twitter.com/CarrotEth",
             },
+            { title: "Medium", to: "https://medium.com/carrot-eth" },
             // TODO: add link back once we have it
             // {
             //     label: "Brand Forum",
             //     href: "#",
             // },
+        ],
+    },
+    {
+        title: "Documentation",
+        links: [
+            {
+                title: "Documentation Portal",
+                to: `https://docs.${CARROT_DOMAIN}`,
+            },
         ],
     },
     // TODO: add back this section once analytics are developed
