@@ -18,7 +18,7 @@ const JoinTheCommunity = () => {
     return (
         <div
             id="community"
-            className="w-full flex flex-col justify-center xl:flex-row relative mb-16 pt-36"
+            className="w-full flex flex-col justify-center xl:flex-row relative mb-16 pt-36 px-4"
         >
             <div className="bg-orange w-full max-w-screen-2xl flex justify-center rounded-2xl border border-black p-14">
                 <div
