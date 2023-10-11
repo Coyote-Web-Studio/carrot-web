@@ -20,8 +20,8 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className="flex w-full px-6 xl:px-32 py-8 xl:py-11">
-            <div className="w-full flex items-center justify-between">
+        <div className="flex justify-center w-full px-6 xl:px-32 py-8 xl:py-11">
+            <div className="w-full max-w-screen-2xl flex items-center justify-between">
                 <Logo className="w-32 h-auto xl:w-[188px] text-black" />
                 <div className="hidden md:block">
                     <nav className="flex md:space-x-8 lg:space-x-12">
