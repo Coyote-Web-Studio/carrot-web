@@ -6,7 +6,7 @@ const HowItWorks = () => {
     return (
         <div
             id="how-it-works"
-            className="px-4 md:px-10 lg:px-14 xl:px-40 py-36 flex flex-col items-center"
+            className="px-4 md:px-10 lg:px-14 xl:px-40 pt-36 flex flex-col items-center"
         >
             <div className="max-w-screen-2xl flex flex-col gap-12">
                 <Typography
