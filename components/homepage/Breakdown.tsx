@@ -152,7 +152,7 @@ const ContentBlock = ({
                     <Typography
                         variant="h2"
                         className={{
-                            root: "text-[3rem] md:text-[4.3rem] mb-8",
+                            root: "text-[2.5rem] md:text-[3.5rem] mb-8",
                         }}
                     >
                         <AnimatedText speed={20} text={heading} />

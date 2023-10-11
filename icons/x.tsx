@@ -3,23 +3,14 @@ import { SVGIcon } from "./types";
 
 const X = (props: SVGIcon) => (
     <svg
-        width="36"
-        height="36"
-        viewBox="0 0 36 36"
+        width="34"
+        height="31"
+        viewBox="0 0 34 31"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
     >
-        <path
-            d="M8.4541 8.43823L27.546 27.5301"
-            stroke="black"
-            strokeWidth="1.6875"
-        />
-        <path
-            d="M8.4541 27.562L27.546 8.47013"
-            stroke="black"
-            strokeWidth="1.6875"
-        />
+        <path d="M0.0829268 0L13.2113 17.1005L0 31H2.975L14.5381 18.8272L23.8829 31H34L20.1357 12.9402L32.4296 0H29.4598L18.8088 11.2085L10.2052 0H0.0829268ZM4.45732 2.13062H9.1064L29.6308 28.8643H24.9817L4.45732 2.13062Z" />
     </svg>
 );
 

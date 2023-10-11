@@ -8,6 +8,9 @@ module.exports = {
     presets: [require("@carrot-kpi/ui/tailwind-preset")],
     theme: {
         extend: {
+            aspectRatio: {
+                "9/12": "9 / 12",
+            },
             boxShadow: {
                 border: "0 0 0 1px rgb(0, 0, 0);",
             },

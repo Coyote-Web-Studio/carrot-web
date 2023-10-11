@@ -42,7 +42,7 @@ const HowItWorksBlock = ({
 
     return (
         <div className="flex flex-col lg:flex-row w-full" data-aos="fade-up">
-            <div className="flex lg:w-[60%]">
+            <div className="flex flex-1 lg:w-[60%]">
                 <Typography
                     variant="h2"
                     className={{
@@ -60,7 +60,7 @@ const HowItWorksBlock = ({
                     {heading}
                 </Typography>
             </div>
-            <div className="bg-white flex flex-col items-center flex-1 shadow-border overflow-hidden">
+            <div className="bg-white flex flex-col items-center flex-[1.1] shadow-border overflow-hidden">
                 <div className="lg:h-48 w-full flex py-7 px-8 lg:px-12 justify-between items-center gap-20">
                     <Typography
                         className={{ root: "text-base lg:text-[1.25rem]" }}
