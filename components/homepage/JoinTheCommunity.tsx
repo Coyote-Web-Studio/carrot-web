@@ -34,7 +34,7 @@ const JoinTheCommunity = () => {
                         />
                     </picture>
                 </div>
-                <div className="flex flex-col items-center gap-10 bg-orange bg-grid-light w-fit p-9">
+                <div className="flex flex-col items-center gap-10 bg-orange bg-grid-light !bg-center w-fit p-9">
                     <Typography
                         variant="h4"
                         className={{
