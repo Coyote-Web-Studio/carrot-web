@@ -2,7 +2,6 @@ import React, { useCallback } from "react";
 import { CARROT_DOMAIN, FooterLink } from "../../../constants";
 import { FooterLinks } from "./footer-column";
 import Logo from "../../../icons/logo";
-import { Button } from "@carrot-kpi/ui";
 import { useParallax, useParallaxController } from "react-scroll-parallax";
 
 interface FooterProps {
@@ -67,14 +66,15 @@ export const Footer = ({ footerLinks }: FooterProps) => {
                             />
                         ))}
                     </div>
-                    <div className="flex items-end dark">
-                        <Button
+                    <div className="flex items-end">
+                        <a
                             href={`https://app.${CARROT_DOMAIN}`}
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="px-6 py-5 font-mono text-black border border-black bg-orange rounded-xxl"
                         >
                             Carrot app
-                        </Button>
+                        </a>
                     </div>
                 </div>
             </div>

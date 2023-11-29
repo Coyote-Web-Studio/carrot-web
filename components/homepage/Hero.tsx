@@ -44,7 +44,6 @@ const Hero = () => {
                             href={`https://app.${CARROT_DOMAIN}`}
                             target="_blank"
                             rel="noopener noreferred"
-                            className="dark"
                             data-aos="fade-up"
                             data-aos-delay={200}
                         >
