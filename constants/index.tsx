@@ -1,7 +1,6 @@
 import { Typography } from "@carrot-kpi/ui";
 import React, { FunctionComponent, ReactElement, ReactNode } from "react";
 import AnimatedText from "../components/AnimatedText";
-import { SVGIcon } from "../icons/types";
 import X from "../icons/x";
 import Discord from "../icons/discord";
 import Medium from "../icons/medium";
