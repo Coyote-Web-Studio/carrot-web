@@ -1,25 +1,25 @@
 import { CARROT_DOMAIN } from "../../constants";
-import { Typography, Button, Modal } from "@carrot-kpi/ui";
+import { Typography, Button /* , Modal */ } from "@carrot-kpi/ui";
 import AnimatedText from "../AnimatedText";
 import Image from "next/image";
-import { useCallback, useRef, useState } from "react";
-import PlayVideo from "../../icons/play-video";
+// import { useCallback, useRef, useState } from "react";
+// import PlayVideo from "../../icons/play-video";
 
 const Hero = () => {
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const [showVideo, setShowVideo] = useState(false);
+    // const videoRef = useRef<HTMLVideoElement>(null);
+    // const [showVideo, setShowVideo] = useState(false);
 
-    const handleClick = useCallback(() => {
-        setShowVideo(true);
-        if (!videoRef || !videoRef.current) return;
-        videoRef.current.play();
-    }, []);
+    // const handleClick = useCallback(() => {
+    //     setShowVideo(true);
+    //     if (!videoRef || !videoRef.current) return;
+    //     videoRef.current.play();
+    // }, []);
 
-    const handleDismiss = useCallback(() => {
-        setShowVideo(false);
-        if (!videoRef || !videoRef.current) return;
-        videoRef.current.pause();
-    }, []);
+    // const handleDismiss = useCallback(() => {
+    //     setShowVideo(false);
+    //     if (!videoRef || !videoRef.current) return;
+    //     videoRef.current.pause();
+    // }, []);
 
     return (
         <div className="px-4 md:px-10 lg:px-14 xl:px-40 pb-6 w-full flex justify-center">
@@ -61,7 +61,7 @@ const Hero = () => {
                         fill
                         alt="poster"
                     />
-                    <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
+                    {/* <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
                         <Button
                             onClick={handleClick}
                             className={{
@@ -73,9 +73,9 @@ const Hero = () => {
                             <PlayVideo />
                             How it works
                         </Button>
-                    </div>
+                    </div> */}
                 </div>
-                <Modal open={showVideo} onDismiss={handleDismiss}>
+                {/* <Modal open={showVideo} onDismiss={handleDismiss}>
                     <div className="w-full md:w-1/2 aspect-video rounded-xl bg-gray-500">
                         <video
                             ref={videoRef}
@@ -93,7 +93,7 @@ const Hero = () => {
                             Not supported
                         </video>
                     </div>
-                </Modal>
+                </Modal> */}
             </div>
         </div>
     );
